@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'messages' %}
+
+{% block preloads %}{% endblock %}
+
+{# body #}
+{% block body %}
+
+{# header #}
+{% include '_partials/_header.html.twig' %}
+
+{# main #}
+{% block content %}{% endblock %}
+
+{# footer #}
+{% include '_partials/_footer.html.twig' %}
+{% endblock %}

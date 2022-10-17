@@ -1,0 +1,21 @@
+{% extends 'default.html.twig' %}
+{% block title %}{{ 'Start'|trans }}{% endblock %}
+
+{# preloads #}
+{% block preloads %}
+  {% apply spaceless %}
+
+  {# banner_images | preload #}
+  {% for image in banner_images %}
+    <link
+      rel="preload"
+      href="{{ asset(image, 'images_banner') }}"
+      as="image" />
+  {% endfor %}
+  {% endapply %}
+{% endblock %}
+
+{# content #}
+{% block content %}
+
+{% endblock %}

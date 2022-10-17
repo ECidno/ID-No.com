@@ -1,0 +1,42 @@
+parameters:
+
+  # preset env vars for case not set in .env.* files
+  env(BASE_HREF): ""
+
+
+  # settings
+  settings:
+
+    # baseHref
+    baseHref: '%env(resolve:BASE_HREF)%'
+
+    # languages
+    languages:
+      de:
+        title: Deutsch
+        locale: de_DE
+      en:
+        title: English
+        locale: en_US
+
+
+
+
+
+    # social
+    social:
+      instagram:
+        title: Instagram
+        icon: bi bi-instagram
+        href: https://www.instagram.com/idno_com/
+
+      facebook:
+        title: Facebook
+        icon: bi bi-facebook
+        href: https://m.facebook.com/idnocom/
+
+      tiktok:
+        title: Tik Tok
+        icon: bi bi-tiktok
+        href: https://vm.tiktok.com/ZMLWRPE6n
+
