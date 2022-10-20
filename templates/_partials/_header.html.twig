@@ -1,76 +1,172 @@
 
-
-<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a
-        class="navbar-brand col-md-1"
-        href="/">
+<header>
+  {# nav #}
+  <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark border-bottom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a
+          class="navbar-brand col-md-1"
+          href="{{ path('idno_standard_index') }}">
+          <img
+            src="{{ asset('images/id_no_logo.png', 'media') }}"
+            alt="ID-No Logo" /></a>
+        </a>
         <img
-          src="{{ asset('images/id_no_logo.png', 'media') }}"
-          alt="ID-No Logo" /></a>
-      </a>
-      <img
-        class="margin-left-168px anniversary_5"
-        src="{{ asset('images/JubiläumsLogo_IN.svg', 'media') }}"
-        alt="Jubilaeumslogo" />
-    </div>
+          class="anniversary_5"
+          src="{{ asset('images/JubiläumsLogo_IN.svg', 'media') }}"
+          alt="Jubilaeumslogo" />
+      </div>
 
-    <button class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div
+        class="collapse navbar-collapse"
+        id="navbarText">
+        <ul class="navbar-nav mb-2 ms-auto me-auto">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle active"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              href="#">ID-No.com</a>
+            <ul class="dropdown-menu">
+              {% for key, item in settings.menu.header.idno %}
+                {% set title = 'header.menu.idno.' ~ key ~ '.lbl' %}
+                {% set href = item.route is not defined or item.route is empty
+                  ? item.href ?? '#'
+                  : path(item.route) %}
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{{ href }}">{{ title|trans }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
 
-    <div
-      class="collapse navbar-collapse"
-      id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="true"
-            data-toggle="dropdown"
-            data-target="#"
-            href="{{ path('idno_standard_index') }}">ID-No.com</a>
-
-          <ul class="dropdown-menu m1">
-            <li><a class="active" href="#ueber_idno" tkey="about"></a></li>
-            <li><a href="#so_funktionierts" tkey="works"></a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="unternehmen" tkey="company"></a></li>
-            <li><a href="code-no-group">Group</a></li>
-            <li><a href="presse" tkey="press"></a></li>
-            <li><a href="#referenzen" tkey="references"></a></li>
-            <li><a href="https://www.code-no.shop/sie-sind-firmenkunde" tkey="bussiness_clients">Firmenkunden</a>
+          {# user logged in #}
+          {% if app.user is not empty %}
+            <li>
+              <a
+                class="nav-link"
+                href="https://www.code-no.shop/sos-id-chip/"
+                target="_blank">Mein ID-No.com</a>
             </li>
-          </ul>
-        </li>
+          {% endif %}
 
-        <li>
-          <a
-            class="nav-link"
-            href="https://www.code-no.shop/sos-id-chip/"
-            target="_blank">Shop</a>
-        </li>
+          {# shop #}
+          <li>
+            <a
+              class="nav-link"
+              href="https://www.code-no.shop/sos-id-chip/"
+              target="_blank">Shop</a>
+          </li>
 
-        <li>
-          <a
-            class="nav-link"
-            href="#">Login</a>
-        </li>
+          {# user logged in #}
+          {% if app.user is not empty %}
+            <li class="border rounded">
+              <a
+                class="nav-link"
+                href="https://www.code-no.shop/sos-id-chip/"
+                target="_blank">Abmelden</a>
+            </li>
+          {% else %}
+            <li class="border rounded">
+              <a
+                class="nav-link"
+                href="#">Login</a>
+            </li>
+          {% endif %}
 
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="{{ path('idno_standard_index', {_locale: 'en'}) }}">English</a>
-        </li>
-      </ul>
+          {# language #}
+          <li class="nav-item">
+            {% if language == 'de' %}
+              <a
+                class="nav-link"
+                href="{{ path('idno_standard_index', {_locale: 'en'}) }}">English</a>
+            {% else %}
+              <a
+                class="nav-link"
+                href="{{ path('idno_standard_index', {_locale: 'de'}) }}">Deutsch</a>
+            {% endif %}
+          </li>
+
+        	{# development environment #}
+	        {% if app.environment|lower != 'prod' %}
+            <li class="nav-item dropdown border border-warning rounded text-warning">
+              <a
+                class="nav-link dropdown-toggle small"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                href="#">{{ app.environment }}</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <h6 class="dropdown-header small">
+                    Environment: <span class="badge text-bg-warning">{{ app.environment }}</span><br />
+                    Language: <span class="badge text-bg-warning">{{ language }}/{{ locale }}</span>
+                  </h6>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{{ path('translation_webui') }}"
+                    target="_blank">Translator</a>
+                </li>
+              </ul>
+            </li>
+          {% endif %}
+        </ul>
+        <span class="navbar-text text-warning">@TODO: TF: Menu zentriert ausrichten</span>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+
+  {# form #}
+  <nav class="header-form bg-dark py-4">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-10 col-xl-6">
+          <form
+            role="form"
+            action=""
+            method="post"
+            id="idno_form">
+            <div class="chunky form-group">
+              <div class="formfields text-center">
+                <input type="hidden" name="idno1" id="idno1">
+                <input type="hidden" name="idno2" id="idno2">
+
+                <div class="input-group">
+                  <input class="form-control"
+                    type="text"
+                    placeholder="ID-Nummer checken/aktivieren"
+                    maxlength="9"
+                    style="background-color: white;"
+                    id="both_idno" />
+                  <span class="input-group-btn">
+                    <button
+                      class="btn btn-success"
+                      id="btn_start"
+                      name="btn_start"
+                      type="submit">GO !</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

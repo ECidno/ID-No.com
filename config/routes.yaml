@@ -1,3 +1,13 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+controllers:
+    resource: '../src/Controller'
+    type: annotation
+    prefix:
+        de: '/'
+        en: '/en'
+
+translation_webui:
+    path: /admin/_trans

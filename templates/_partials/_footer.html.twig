@@ -1,0 +1,67 @@
+
+<footer>
+	<div class="row mt-3 bg-green text-light">
+		<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+			<div class="row my-3">
+				<div class="col-5">
+					<h5 class="mb-3">{{ 'Social Media'|trans }}</h5>
+					{% for key, item in settings.social %}
+						<a href="{{ item.href }}">
+							<img
+								class="socialmedia_icon"
+								src="{{ asset(item.icon, 'media') }}"
+								target="_blank"
+								alt="{{ item.title }}" />
+						</a>
+						<br class="d-md-none" />
+					{% endfor %}
+				</div>
+
+				<div class="col-7">
+					<h5 class="text-end">{{ 'Kontakt'|trans }}</h5>
+					<p class="text-end">
+						<span class="bold">ID-No</span>.com GmbH - <br/>
+						{{ 'member_of'|trans }}<br/>
+						Cassellastra&szlig;e 30-32<br/>
+						D-60386 Frankfurt am Main<br/>
+						<br/>
+						T: +49 (0)69 - 941 43 88 -22<br/>
+						F: +49 (0)69 - 941 43 88 -29<br/>
+						E-Mail: <a href="mailto:service@id-no.com" class="text-white underlined">Service@ID-No.com</a>
+					</p>
+				</div>
+			</div>
+
+			{# menu #}
+			<div class="row my-3">
+				<div class="col text-end fs-6">
+					{% for key, item in settings.menu.footer %}
+						{% set title = 'footer.menu.' ~ key ~ '.lbl' %}
+						{% set href = item.route is not defined or item.route is empty
+							? item.href ?? '#'
+							: path(item.route) %}
+						<a
+							class="text-light"
+							href="{{ href }}">{{ title|trans }}</a>
+						{% if loop.revindex == 3 %}
+							<br class="d-md-none" /><span class="d-none d-md-inline">&nbsp;|&nbsp;</span>
+						{% else %}
+							&nbsp;|&nbsp;
+						{% endif %}
+					{% endfor %}
+					<a
+						class="text-light"
+						href="#"
+						onclick="CCM.openWidget();return false;">{{ 'footer.menu.cookie.lbl'|trans }}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# copy #}
+	<div class="row py-2">
+		<div class="col-md-12">
+			<small>{{ "now"|date('Y') }} &copy; ID-No.com - All rights reserved</small>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="de">
+  <file id="messages.de">
+    <unit id="5LufHs6" name="Start">
+      <segment>
+        <source>Start</source>
+        <target>Start</target>
+      </segment>
+    </unit>
+    <unit id="RBvZMsS" name="index.introduction1">
+      <segment>
+        <source>index.introduction1</source>
+        <target>Wussten Sie, dass jährlich über 29 Millionen Menschen ärztliche Hilfe nach einem Unfall benötigen?  
+Auch für Ihre Gesundheit - schnell und verlässlich: Tritt ein Notfall ein oder kommt es zu einem Unfall  
+hilft ID-No.com den Einsatzkräften relevante persönliche Notfall-Informationen des Patienten zu erhalten.  
+Das spart Zeit und kann im Ernstfall Leben retten.</target>
+      </segment>
+    </unit>
+    <unit id="VtIkqeC" name="index.introduction.header2">
+      <segment>
+        <source>index.introduction.header2</source>
+        <target>Mit lebensrettenden Notfalldaten</target>
+      </segment>
+    </unit>
+    <unit id="AB0XdUp" name="index.boxrow1.about.header">
+      <segment>
+        <source>index.boxrow1.about.header</source>
+        <target><![CDATA[Über <nobr>ID-No.com</nobr>]]></target>
+      </segment>
+    </unit>
+    <unit id="mX38078" name="index.boxrow1.about.text">
+      <segment>
+        <source>index.boxrow1.about.text</source>
+        <target>Mit ID-No.com kann rund um die Uhr weltweit auf hinterlegte Notfallinformationen zugegriffen werden. [Über ID-No.com](#ueber_idno)</target>
+      </segment>
+    </unit>
+    <unit id="3Vb_85h" name="index.boxrow1.works.header">
+      <segment>
+        <source>index.boxrow1.works.header</source>
+        <target>So funktioniert's</target>
+      </segment>
+    </unit>
+    <unit id="bTXdzec" name="index.boxrow1.works.text">
+      <segment>
+        <source>index.boxrow1.works.text</source>
+        <target>Über die ID-Nummer auf Ihrem SOS-ID-Chip hinterlegen Sie ganz einfach Ihren abrufbaren Notfall-ID Pass. [So funktioniert's](#so_funktionierts)</target>
+      </segment>
+    </unit>
+    <unit id="pnFTPhU" name="index.boxrow1.shop.header">
+      <segment>
+        <source>index.boxrow1.shop.header</source>
+        <target>Shop</target>
+      </segment>
+    </unit>
+    <unit id="7cX4FXm" name="index.boxrow1.shop.text">
+      <segment>
+        <source>index.boxrow1.shop.text</source>
+        <target>Unsere SOS-ID Produkte finden Sie ab einem UVP
+von 9,95 € hier im [Shop](https://www.code-no.shop/sos-id-chip/)</target>
+      </segment>
+    </unit>
+    <unit id="DqhitoI" name="index.boxrow1.datasecurity.header">
+      <segment>
+        <source>index.boxrow1.datasecurity.header</source>
+        <target>Datensicherheit</target>
+      </segment>
+    </unit>
+    <unit id=".6H1ZoO" name="index.boxrow1.datasecurity.text">
+      <segment>
+        <source>index.boxrow1.datasecurity.text</source>
+        <target>Wir schützen Ihre Daten! Geprüfte und zertifizierte [Datensicherheit](datensicherheit)</target>
+      </segment>
+    </unit>
+    <unit id="EpMvAOe" name="index.boxrow2.chip.header">
+      <segment>
+        <source>index.boxrow2.chip.header</source>
+        <target>SOS-ID-Chip</target>
+      </segment>
+    </unit>
+    <unit id="y8ZMWfS" name="index.boxrow2.bracelet.header">
+      <segment>
+        <source>index.boxrow2.bracelet.header</source>
+        <target>SOS-ID Armband</target>
+      </segment>
+    </unit>
+    <unit id="Dipbo0N" name="index.boxrow2.infos.header">
+      <segment>
+        <source>index.boxrow2.infos.header</source>
+        <target>Notfall-Infos abrufen</target>
+      </segment>
+    </unit>
+    <unit id="irMlJPi" name="index.boxrow2.pass.header">
+      <segment>
+        <source>index.boxrow2.pass.header</source>
+        <target>Notfall-ID Pass</target>
+      </segment>
+    </unit>
+    <unit id="_KdSYTr" name="Vorherige">
+      <segment>
+        <source>Vorherige</source>
+        <target>Vorherige</target>
+      </segment>
+    </unit>
+    <unit id="W13vMmV" name="Nächste">
+      <segment>
+        <source>Nächste</source>
+        <target>Nächste</target>
+      </segment>
+    </unit>
+    <unit id="8vOTifc" name="index.carousel.slide.sos_chip_shoe.caption">
+      <segment>
+        <source>index.carousel.slide.sos_chip_shoe.caption</source>
+        <target>SOS-ID-Chip am Schuh</target>
+      </segment>
+    </unit>
+    <unit id="bFD_QYh" name="index.carousel.slide.quick_sos_data.caption">
+      <segment>
+        <source>index.carousel.slide.quick_sos_data.caption</source>
+        <target>Schnell digitale SOS-Daten</target>
+      </segment>
+    </unit>
+    <unit id="DXhdVnO" name="index.carousel.slide.best_practice_barmer.caption">
+      <segment>
+        <source>index.carousel.slide.best_practice_barmer.caption</source>
+        <target>Best Practice: BARMER</target>
+      </segment>
+    </unit>
+    <unit id="Cp.xpr2" name="index.carousel.slide.sos_clip_bike.caption">
+      <segment>
+        <source>index.carousel.slide.sos_clip_bike.caption</source>
+        <target>SOS-ID Clip am Bike-Helm</target>
+      </segment>
+    </unit>
+    <unit id="8HWn53f" name="index.carousel.slide.sos_clip_motorcycle.caption">
+      <segment>
+        <source>index.carousel.slide.sos_clip_motorcycle.caption</source>
+        <target>SOS-ID Clip am Bike-Helm</target>
+      </segment>
+    </unit>
+    <unit id="UnDc50D" name="index.carousel.slide.best_practice_harley_davidson.caption">
+      <segment>
+        <source>index.carousel.slide.best_practice_harley_davidson.caption</source>
+        <target>Best Practice: Harley Davidson</target>
+      </segment>
+    </unit>
+    <unit id="lvarSw8" name="index.carousel.slide.sos_clip_senior.caption">
+      <segment>
+        <source>index.carousel.slide.sos_clip_senior.caption</source>
+        <target>SOS-ID-Chip für Senioren</target>
+      </segment>
+    </unit>
+    <unit id="TlrNx8P" name="index.carousel.slide.sos_chip_shoe.text">
+      <segment>
+        <source>index.carousel.slide.sos_chip_shoe.text</source>
+        <target>SOS-ID-Chip  
+am Schuh</target>
+      </segment>
+    </unit>
+    <unit id="YDwfe9A" name="index.carousel.slide.quick_sos_data.text">
+      <segment>
+        <source>index.carousel.slide.quick_sos_data.text</source>
+        <target>
+Schnell zu  
+digitalen Notfalldaten</target>
+      </segment>
+    </unit>
+    <unit id="MjBGaKz" name="index.carousel.slide.best_practice_barmer.text">
+      <segment>
+        <source>index.carousel.slide.best_practice_barmer.text</source>
+        <target>Best Practice</target>
+      </segment>
+    </unit>
+    <unit id="qzjpFEM" name="index.carousel.slide.sos_clip_bike.text">
+      <segment>
+        <source>index.carousel.slide.sos_clip_bike.text</source>
+        <target>SOS-ID-Clip  
+am Bike-Helm
+</target>
+      </segment>
+    </unit>
+    <unit id="NWx1KBW" name="index.carousel.slide.sos_clip_motorcycle.text">
+      <segment>
+        <source>index.carousel.slide.sos_clip_motorcycle.text</source>
+        <target>
+SOS-ID-Clip  
+am Motorrad-Helm</target>
+      </segment>
+    </unit>
+    <unit id="HCE4ffC" name="index.carousel.slide.best_practice_harley_davidson.text">
+      <segment>
+        <source>index.carousel.slide.best_practice_harley_davidson.text</source>
+        <target>index.carousel.slide.best_practice_harley_davidson.text</target>
+      </segment>
+    </unit>
+    <unit id="vzAGp5f" name="index.carousel.slide.sos_clip_senior.text">
+      <segment>
+        <source>index.carousel.slide.sos_clip_senior.text</source>
+        <target>SOS-ID-Chip  
+für Senioren</target>
+      </segment>
+    </unit>
+    <unit id="XEC976m" name="index.carousel.slide.covid.caption">
+      <segment>
+        <source>index.carousel.slide.covid.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="_lKLA0O" name="index.carousel.slide.covid.text">
+      <segment>
+        <source>index.carousel.slide.covid.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="cKgdBlx" name="member_of">
+      <segment>
+        <source>member_of</source>
+        <target>Mitglied der CODE-No.com Gruppe</target>
+      </segment>
+    </unit>
+    <unit id="jf28LvQ" name="Social Media">
+      <segment>
+        <source>Social Media</source>
+        <target>Social Media</target>
+      </segment>
+    </unit>
+    <unit id="Ml7s_dM" name="Kontakt">
+      <segment>
+        <source>Kontakt</source>
+        <target>Kontakt</target>
+      </segment>
+    </unit>
+    <unit id="dpO64G0" name="footer.menu.company.lbl">
+      <segment>
+        <source>footer.menu.company.lbl</source>
+        <target>Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="aZiriDJ" name="footer.menu.presse.lbl">
+      <segment>
+        <source>footer.menu.presse.lbl</source>
+        <target>Presse</target>
+      </segment>
+    </unit>
+    <unit id="MvrDYPi" name="footer.menu.agb.lbl">
+      <segment>
+        <source>footer.menu.agb.lbl</source>
+        <target>AGB</target>
+      </segment>
+    </unit>
+    <unit id="UO4k47g" name="footer.menu.privacy.lbl">
+      <segment>
+        <source>footer.menu.privacy.lbl</source>
+        <target> Datenschutz</target>
+      </segment>
+    </unit>
+    <unit id="zMJliAS" name="footer.menu.imprint.lbl">
+      <segment>
+        <source>footer.menu.imprint.lbl</source>
+        <target>Impressum</target>
+      </segment>
+    </unit>
+    <unit id="IKxeNV5" name="footer.menu.cookie.lbl">
+      <segment>
+        <source>footer.menu.cookie.lbl</source>
+        <target>Cookie-Einstellungen</target>
+      </segment>
+    </unit>
+    <unit id="1iQrU_D" name="index.about.text">
+      <segment>
+        <source>index.about.text</source>
+        <target><![CDATA[**ID-No.com - Sicherheit weltweit rund um die Uhr**  
+Mehr als 29 Millionen Menschen benötigen allein in Deutschland ärztliche Hilfe nach einem Notfall. Unfallgefahren gibt es überall: Im Beruf, im Haushalt, im Straßenverkehr, bei Sport und Freizeitaktivitäten. Zwei Drittel aller Unfällen sind Freizeitunfälle.
+
+Notfallrelevante Informationen wie Krankheiten, Medikationen, Allergien liegen den Ersthelfern sehr häufig nicht vor.
+
+Selbst Menschen mit gutem Gedächtnis haben in einem Notfall nicht immer alle lebenswichtigen Gesundheitsdetails von sich oder von Dritten parat oder stehen teilweise unter „Schock“.
+
+
+**Zentrale Speicherung von persönlichen Notfall-Informationen**  
+Mit ID-No.com kann rund um die Uhr und weltweit auf hinterlegte Notfallinformationen zugegriffen werden. Medizinische Einsatzkräfte erhalten einen Überblick zu Krankheiten, Medikationen, Allergien, Diabetes, Blutgruppe und bekommen Kontaktpersonen angezeigt, die im Falle eines medizinischen Notfalls oder plötzlichen Unfalls angerufen werden sollen.
+
+<img class="ms-3 mt-3 float-end align-bottom" src="/build/media/images/ID_Award_IM_2018.png.jpg" width="150" alt="INNOVATIONSPREIS-IT: BEST OF 2018" />
+
+**ID-No**.com ist Mitglied der **CODE-No**.com Gruppe und dient dem Schutz von Personen. **CODE-No**.com ist ein seit 2007 etabliertes System mit 10 Mio. Nummern im Markt.
+
+**ID-No.com** ist als Gebrauchsmuster geschützt sowie zum europäischen Patent angemeldet.
+
+**ID-No.com** wurde mit dem INNOVATIONSPREIS-IT "BEST OF 2018" der Initiative Mittelstand in der Kategorie "E-Health" ausgezeichnet.
+Der INNOVATIONSPREIS-IT steht unter der Schirmherrschaft des Bundesministeriums für Wirtschaft und Technologie.]]></target>
+      </segment>
+    </unit>
+    <unit id="vF0wkNl" name="header.menu.idno.about.lbl">
+      <segment>
+        <source>header.menu.idno.about.lbl</source>
+        <target>Über ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="PJdnZyr" name="header.menu.idno.works.lbl">
+      <segment>
+        <source>header.menu.idno.works.lbl</source>
+        <target>So funktioniert's</target>
+      </segment>
+    </unit>
+    <unit id="pOhZC7A" name="header.menu.idno.testimonials.lbl">
+      <segment>
+        <source>header.menu.idno.testimonials.lbl</source>
+        <target>Testimonials</target>
+      </segment>
+    </unit>
+    <unit id="vZUn30y" name="header.menu.idno.company.lbl">
+      <segment>
+        <source>header.menu.idno.company.lbl</source>
+        <target>Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="LzzzDam" name="header.menu.idno.group.lbl">
+      <segment>
+        <source>header.menu.idno.group.lbl</source>
+        <target>Group</target>
+      </segment>
+    </unit>
+    <unit id="x970SQq" name="header.menu.idno.press.lbl">
+      <segment>
+        <source>header.menu.idno.press.lbl</source>
+        <target>Presse</target>
+      </segment>
+    </unit>
+    <unit id="VPVogKi" name="header.menu.idno.references.lbl">
+      <segment>
+        <source>header.menu.idno.references.lbl</source>
+        <target>Referenzen</target>
+      </segment>
+    </unit>
+    <unit id="S.AtI.g" name="header.menu.idno.bussiness_clients.lbl">
+      <segment>
+        <source>header.menu.idno.bussiness_clients.lbl</source>
+        <target>Firmenkunden</target>
+      </segment>
+    </unit>
+    <unit id="QIQZDqB" name="index.features.header">
+      <segment>
+        <source>index.features.header</source>
+        <target>Schnell. Sicher. Verlässlich.</target>
+      </segment>
+    </unit>
+    <unit id="Q7VAK41" name="index.feature.1.lbl">
+      <segment>
+        <source>index.feature.1.lbl</source>
+        <target>Einfache Nutzung im Alltag, im Job sowie bei Sport- und Freizeitaktivitäten.</target>
+      </segment>
+    </unit>
+    <unit id="SsHHWWa" name="index.feature.2.lbl">
+      <segment>
+        <source>index.feature.2.lbl</source>
+        <target>Gut sichtbarer Hinweis auf digital abrufbare persönliche Notfall-Informationen.</target>
+      </segment>
+    </unit>
+    <unit id="mylgHlJ" name="index.feature.3.lbl">
+      <segment>
+        <source>index.feature.3.lbl</source>
+        <target>Notfallinformationen per Smartphone, QR-Code oder telefonisch über die Rettungsleitstelle via Online-Abfrage abrufbar.</target>
+      </segment>
+    </unit>
+    <unit id="vJUjqx4" name="index.feature.4.lbl">
+      <segment>
+        <source>index.feature.4.lbl</source>
+        <target>Sofortiger Zugriff über die ID-Nummer für Ersthelfern, Rettungsdienst, Arzt, Klinik.</target>
+      </segment>
+    </unit>
+    <unit id="CgUtLXN" name="index.feature.5.lbl">
+      <segment>
+        <source>index.feature.5.lbl</source>
+        <target>Einzelne Daten im Notfall-ID Pass können nach Belieben aktiv / passiv geschaltet werden.</target>
+      </segment>
+    </unit>
+    <unit id="ewwzPGE" name="index.feature.6.lbl">
+      <segment>
+        <source>index.feature.6.lbl</source>
+        <target>Auf Datensicherheit wird größter Wert gelegt.</target>
+      </segment>
+    </unit>
+    <unit id="jmpD903" name="index.works.header">
+      <segment>
+        <source>index.works.header</source>
+        <target>..und so funktioniert der ID-Chip</target>
+      </segment>
+    </unit>
+    <unit id="oOqkcJx" name="index.work.step1.header">
+      <segment>
+        <source>index.work.step1.header</source>
+        <target>Step 01</target>
+      </segment>
+    </unit>
+    <unit id="1cmJpQ_" name="index.work.step1.text">
+      <segment>
+        <source>index.work.step1.text</source>
+        <target>**SOS-ID-Chip befestigen** an z.B. Schuh, Rucksack, Jacke oder Armband.</target>
+      </segment>
+    </unit>
+    <unit id="F45r6to" name="index.work.step2.header">
+      <segment>
+        <source>index.work.step2.header</source>
+        <target>Step 02</target>
+      </segment>
+    </unit>
+    <unit id="RaOup.G" name="index.work.step2.text">
+      <segment>
+        <source>index.work.step2.text</source>
+        <target>**Aktivieren Sie Ihre persönliche ID-Nummer** auf www.ID-No.com und  **hinterlegen Sie Ihre individuellen Notfall-Informationen**.</target>
+      </segment>
+    </unit>
+    <unit id="3F0hygL" name="index.work.step3.header">
+      <segment>
+        <source>index.work.step3.header</source>
+        <target>Step 03</target>
+      </segment>
+    </unit>
+    <unit id="sFyAZuI" name="index.work.step3.text">
+      <segment>
+        <source>index.work.step3.text</source>
+        <target>**Fertig!** Den Ihnen zugesandten Freischaltungslink bestätigen und Ihr  
+**Notfall-ID Pass ist digital abrufbar**.</target>
+      </segment>
+    </unit>
+    <unit id="9V2Rdsu" name="index.references.header">
+      <segment>
+        <source>index.references.header</source>
+        <target>Referenzen</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

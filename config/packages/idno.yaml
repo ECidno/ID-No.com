@@ -20,23 +20,174 @@ parameters:
         locale: en_US
 
 
+    # menu
+    menu:
+      header:
+        idno:
+          about:
+            href: '#ueber_idno'
+            anchor: ueber_idno
+          works:
+            href: '#so_funktionierts'
+            anchor: so_funktionierts
+          testimonials:
+            href: '#testimonials'
+          company:
+            route:
+          group:
+            route:
+          press:
+            route:
+          references:
+            href: '#referenzen'
+            anchor: referenzen
+          bussiness_clients:
+             href: 'https://www.code-no.shop/sie-sind-firmenkunde'
 
+      footer:
+        company:
+          route:
+        presse:
+          route:
+        agb:
+          route:
+        privacy:
+          route:
+        imprint:
+          route:
+
+
+    # carousel
+    carousel:
+      sos_chip_shoe:
+        image:
+          desktop: slider/slider_desktop_1.jpg
+          mobile: slider/slider_mobile_1.jpg
+        textStyle: 'position:absolute; left:25%; top:25%; margin-left:-70px; text-shadow: black 1px 1px 1px;'
+
+      quick_sos_data:
+        image:
+          desktop: slider/Slider_2_desktop_080621.jpg
+          mobile: slider/slider_mobile_2.jpg
+        textStyle: 'position:absolute; left:25%; top:37%;  margin-left:-294px; text-shadow: black 1px 1px 1px;'
+
+      best_practice_barmer:
+        image:
+          desktop: slider/slider_desktop_3.jpg
+          mobile: slider/slider_mobile_3.jpg
+        textStyle: 'position:absolute; left:25%; top:28%; margin-left:-128px; text-shadow: black 1px 1px 1px;'
+
+      sos_clip_bike:
+        image:
+          desktop: slider/slider_desktop_4.jpg
+          mobile: slider/slider_mobile_4.jpg
+        textStyle: 'position:absolute; left:56%; top:35%; text-shadow: black 1px 1px 1px;'
+
+      sos_clip_motorcycle:
+        image:
+          desktop: slider/slider_desktop_5.jpg
+          mobile: slider/slider_mobile_5.jpg
+        textStyle: 'position:absolute; left:56%; top:35%; text-shadow: black 1px 1px 1px;'
+
+      best_practice_harley_davidson:
+        image:
+          desktop: slider/slider_desktop_6.jpg
+          mobile: slider/slider_mobile_6.jpg
+
+      sos_clip_senior:
+        image:
+          desktop: slider/slider_desktop_7.jpg
+          mobile: slider/slider_mobile_7.jpg
+        textStyle: 'position:absolute; left:25%; top:30%; text-shadow: black 1px 1px 1px;'
+
+      covid:
+        image:
+          desktop: slider/ID_No_CovidTeaser_2620x650_V1.png
+          mobile: slider/ID_No_CovidTeaser_1208x750_V1.png
+
+
+    # cards
+    cards:
+
+      # row 1
+      row1:
+        about:
+          image: images/cross.png
+          href: '#ueber_idno'
+        works:
+          image: images/info_2b.png
+          href: '#so_funktionierts'
+        shop:
+          image: images/shopbutton_1.png
+          href: 'https://www.code-no.shop/sos-id-chip/'
+          target: _blank
+        datasecurity:
+          image: images/safebutton_1.png
+          href: '#datenschutz'
+
+      # row 2
+      row2:
+        chip:
+          image: images/galerie-pic1_2.jpg
+        bracelet:
+          image: images/galerie-pic2c_2.jpg
+        infos:
+          image: images/galerie-pic3_2.jpg
+        pass:
+          image: images/galerie-pic4_2.jpg
+          buttons:
+            video:
+              href: https://youtu.be/3obkTbR6tg0
+              target: _blank
+            demo:
+              href: /N10D-BE2N
+              target: _blank
+
+    # references
+    references:
+      barmer:
+        logo: references/barmer.png
+        logo_bw: references/barmer_sw.png
+      ergo:
+        logo: references/ergo.png
+        logo_bw: references/ergo_sw.png
+      abus:
+        logo: references/abus.png
+        logo_bw: references/abus_sw.png
+      arag:
+        logo: references/arag.png
+        logo_bw: references/arag_sw.png
+      Allianz:
+        logo: references/allianz.png
+        logo_bw: references/allianz_sw.png
+      DRK:
+        logo: references/drk.svg
+        logo_bw: references/drk_sw.png
+      SportScheck:
+        logo: references/sportscheck.png
+        logo_bw: references/sportscheck_sw.png
+      Harley-Davidson:
+        logo: references/hdis.png
+        logo_bw: references/hdis_sw.png
+      AOK:
+        logo: references/aok.png
+        logo_bw: references/aok_sw.png
 
 
     # social
     social:
       instagram:
         title: Instagram
-        icon: bi bi-instagram
+        icon: images/instagram.png
         href: https://www.instagram.com/idno_com/
 
       facebook:
         title: Facebook
-        icon: bi bi-facebook
+        icon: images/facebook.png
         href: https://m.facebook.com/idnocom/
 
       tiktok:
-        title: Tik Tok
-        icon: bi bi-tiktok
+        title: TikTok
+        icon: images/tiktok.png
         href: https://vm.tiktok.com/ZMLWRPE6n
 

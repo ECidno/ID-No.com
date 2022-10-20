@@ -1,8 +1,17 @@
-
 @import "variables";
 @import "~bootstrap/scss/bootstrap";
 @import "fonts";
 
+
+/* background greeen */
+.bg-green {
+	background-color: $green;
+	opacity: .6 !important;
+	--bs-bg-opacity: .6 !important;
+}
+
+
+/* navbar */
 .navbar-header img {
 	max-width: 186px;
 	margin-left: 11px;
@@ -10,4 +19,44 @@
 
 img.anniversary_5  {
 	height: 61px !important;
+}
+
+.header-form .formfields {
+	border-radius: 15px;
+	max-width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* carousel */
+.carousel-caption {
+  bottom: 4%;
+}
+
+img.ref-logo {
+  -webkit-filter: grayscale(100%) brightness(2);
+  -moz-filter: grayscale(100%) brightness(2);
+  -ms-filter: grayscale(100%) brightness(2);
+  -o-filter: grayscale(100%) brightness(2);
+  filter: grayscale(100%) brightness(2);
+	transition: filter .3s ease-in-out;
+}
+img.ref-logo:hover {
+	filter: none;
+}
+
+
+/* footer */
+footer a {
+	text-decoration: none;
+}
+footer a:hover {
+	text-decoration: underline;
+}
+
+img.socialmedia_icon {
+  height: 45px;
+  margin-right: 20px;
+	margin-bottom: 20px;
 }

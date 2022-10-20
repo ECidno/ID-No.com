@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="en">
+  <file id="messages.en">
+    <unit id="5LufHs6" name="Start">
+      <segment>
+        <source>Start</source>
+        <target>Start</target>
+      </segment>
+    </unit>
+    <unit id="RBvZMsS" name="index.introduction1">
+      <segment>
+        <source>index.introduction1</source>
+        <target>Every year about 29 million people need medical treatment after an emergency! Also for your health - quick and reliable: In case an emergency or accident occurs, ID-No.com supports the emergency services obtain the patients relevant and personal emergency information. saves time and can save lives in case of emergency.</target>
+      </segment>
+    </unit>
+    <unit id="VtIkqeC" name="index.introduction.header2">
+      <segment>
+        <source>index.introduction.header2</source>
+        <target>With life-saving emergency data</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>
