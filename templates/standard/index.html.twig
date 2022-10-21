@@ -82,7 +82,7 @@
 	</div>
 
 	{# Intro #}
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row mt-3">
 			<div class="col-md-12">
 				<h1 class="text-center text-success">SOS-ID-Chip</h1>
@@ -92,11 +92,12 @@
 		<div class="row">
 			<div class="col-12 col-lg-10 offset-lg-1 text-center">
 				<p class="">{{ 'index.introduction1'|trans|raw|markdown_to_html }}</p>
+			</div>
 		</div>
 	</div>
 
 	{# Box row 1 #}
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row mt-3 row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
 			{% for key, card in settings.cards.row1 %}
 				{% set labelHeader = 'index.boxrow1.' ~ key ~ '.header' %}
@@ -114,7 +115,7 @@
 							</a>
 						</div>
 						<div class="card-body">
-							<h3 class="text-center text-success">{{ labelHeader|trans|raw }}</h3>
+							<h5 class="card-title text-center text-success">{{ labelHeader|trans|raw }}</h5>
 							<p class="card-text">{{ labelText|trans|raw|markdown_to_html }}</p>
 						</div>
 					</div>
@@ -124,27 +125,30 @@
 	</div>
 
 	{# Box row 2 #}
-	<div class="row mt-3 py-4 gy-3 bg-green">
-		{% for key, card in settings.cards.row2 %}
-			{% set labelHeader = 'index.boxrow2.' ~ key ~ '.header' %}
-			<div class="col-12 col-md-6 col-xl-3">
-				<div class="text-center">
-					<h3 class="text-center text-light">{{ labelHeader|trans }}</h3>
-					<div class="py-3">
-						<img
-							src="{{ asset(card.image, 'media') }}"
-							class="img-fluid border border-dark"
-							style="max-width:300px;"
-							alt="{{ labelHeader|trans }}" />
+	<div class="bg-green">
+		<div class="container">
+			<div class="row mt-3 py-4 g-3">
+				{% for key, card in settings.cards.row2 %}
+					{% set labelHeader = 'index.boxrow2.' ~ key ~ '.header' %}
+					<div class="col-12 col-md-6 col-xl-3">
+						<div class="text-center">
+							<h6 class="text-center text-light">{{ labelHeader|trans }}</h6>
+							<div class="py-3">
+								<img
+									src="{{ asset(card.image, 'media') }}"
+									class="img-fluid border border-dark"
+									alt="{{ labelHeader|trans }}" />
+							</div>
+						</div>
 					</div>
-				</div>
+				{% endfor %}
 			</div>
-		{% endfor %}
+		</div>
 	</div>
 
 	{# about #}
-	<a name="{{ settings.menu.header.idno.about.anchor }}" />
-	<div class="container-fluid">
+	<div class="container">
+		<a name="{{ settings.menu.header.idno.about.anchor }}" />
 		<div class="row mt-3 gy-3">
 			<div class="col-lg-1">
 				<img
@@ -163,10 +167,10 @@
 	</div>
 
 	{# features #}
-	<a name="features" />
-	<div class="row mt-3 bg-green">
-		<div class="container-fluid">
-			<div class="row my-3 gy-3">
+	<div class="bg-green">
+		<div class="container">
+			<a name="features" />
+			<div class="row mt-3 my-3 gy-3">
 				<div class="col-lg-1">
 					<img
 						src="{{ asset('images/vorteile_2b.png', 'media') }}"
@@ -197,8 +201,8 @@
 	</div>
 
 	{# works #}
-	<a name="{{ settings.menu.header.idno.works.anchor }}" />
-	<div class="container-fluid">
+	<div class="container">
+		<a name="{{ settings.menu.header.idno.works.anchor }}" />
 		<div class="row mt-3 gy-3">
 			<div class="col-lg-1">
 				<img
@@ -234,9 +238,9 @@
 	</div>
 
 	{# references #}
-	<a name="{{ settings.menu.header.idno.references.anchor }}" />
-	<div class="row mt-3 bg-green">
-		<div class="container-fluid">
+	<div class="bg-green pb-5">
+		<div class="container">
+			<a name="{{ settings.menu.header.idno.references.anchor }}" />
 			<div class="row mt-3 gy-3">
 				<div class="col-lg-1">
 					<img
@@ -250,11 +254,11 @@
 				</div>
 				<div class="col-md-9"></div>
 			</div>
-			<div class="row mb-5">
+			<div class="row">
 				<div class="col-10 offset-1 col-lg-8 offset-lg-2 bg-light">
 					<div class="row justify-content-center">
 						{% for key, ref in settings.references %}
-							<div class="col-12 col-md-6 col-lg-4 text-center">
+							<div class="col-12 col-md-6 col-lg-4 text-center p-5">
 								<img
 									src="{{ asset(ref.logo, 'media') }}"
 									class="img-fluid p-3 ref-logo"
@@ -268,8 +272,8 @@
 	</div>
 
 	{# testimonials #}
-	<a name="{{ settings.menu.header.idno.testimonials.anchor }}" />
-	<div class="container-fluid">
+	<div class="container">
+		<a name="{{ settings.menu.header.idno.testimonials.anchor }}" />
 		<div class="row mt-3 gy-3">
 			<div class="col-lg-1">
 				<img

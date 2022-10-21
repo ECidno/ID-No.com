@@ -1,7 +1,7 @@
 
 <header>
   {# nav #}
-  <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark border-bottom">
+  <nav class="navbar navbar-dark navbar-expand-lg bg-dark border-bottom">
     <div class="container-fluid">
       <div class="navbar-header">
         <a
@@ -127,46 +127,47 @@
             </li>
           {% endif %}
         </ul>
-        <span class="navbar-text text-warning">@TODO: TF: Menu zentriert ausrichten</span>
-      </div>
-    </div>
-  </nav>
-
-  {# form #}
-  <nav class="header-form bg-dark py-4">
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-10 col-xl-6">
-          <form
-            role="form"
-            action=""
-            method="post"
-            id="idno_form">
-            <div class="chunky form-group">
-              <div class="formfields text-center">
-                <input type="hidden" name="idno1" id="idno1">
-                <input type="hidden" name="idno2" id="idno2">
-
-                <div class="input-group">
-                  <input class="form-control"
-                    type="text"
-                    placeholder="ID-Nummer checken/aktivieren"
-                    maxlength="9"
-                    style="background-color: white;"
-                    id="both_idno" />
-                  <span class="input-group-btn">
-                    <button
-                      class="btn btn-success"
-                      id="btn_start"
-                      name="btn_start"
-                      type="submit">GO !</button>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
+        <i class="bi bi-person-circle"></i>
+    {#}    <span class="navbar-text text-warning">@TODO: TF: Menu zentriert ausrichten</span> #}
       </div>
     </div>
   </nav>
 </header>
+
+{# form #}
+<nav class="header-form sticky-top bg-dark py-4">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10 col-xl-6">
+        <form
+          role="form"
+          action=""
+          method="post"
+          id="idno_form">
+          <div class="chunky form-group">
+            <div class="formfields text-center">
+              <input type="hidden" name="idno1" id="idno1">
+              <input type="hidden" name="idno2" id="idno2">
+
+              <div class="input-group">
+                <input class="form-control"
+                  type="text"
+                  placeholder="ID-Nummer checken/aktivieren"
+                  maxlength="9"
+                  style="background-color: white;"
+                  id="both_idno" />
+                <span class="input-group-btn">
+                  <button
+                    class="btn btn-success"
+                    id="btn_start"
+                    name="btn_start"
+                    type="submit">GO !</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
