@@ -15,9 +15,6 @@ a:hover {
 	text-decoration: underline;
 }
 
-header nav {
-	z-index:1021;
-}
 
 /* background greeen */
 .bg-green {
@@ -28,6 +25,10 @@ header nav {
 
 
 /* navbar */
+header nav {
+	z-index:1021;
+}
+
 .navbar-header img {
 	max-width: 186px;
 	margin-left: 11px;
