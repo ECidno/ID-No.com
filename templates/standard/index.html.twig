@@ -147,8 +147,8 @@
 	</div>
 
 	{# about #}
+	<a name="{{ settings.menu.header.idno.about.anchor }}"></a>
 	<div class="container">
-		<a name="{{ settings.menu.header.idno.about.anchor }}" />
 		<div class="row mt-3 gy-3">
 			<div class="col-lg-1">
 				<img
@@ -169,7 +169,7 @@
 	{# features #}
 	<div class="bg-green">
 		<div class="container">
-			<a name="features" />
+			<a name="features"></a>
 			<div class="row mt-3 my-3 gy-3">
 				<div class="col-lg-1">
 					<img
@@ -201,8 +201,8 @@
 	</div>
 
 	{# works #}
+	<a name="{{ settings.menu.header.idno.works.anchor }}"></a>
 	<div class="container">
-		<a name="{{ settings.menu.header.idno.works.anchor }}" />
 		<div class="row mt-3 gy-3">
 			<div class="col-lg-1">
 				<img
@@ -238,9 +238,9 @@
 	</div>
 
 	{# references #}
+	<a name="{{ settings.menu.header.idno.references.anchor }}"></a>
 	<div class="bg-green pb-5">
 		<div class="container">
-			<a name="{{ settings.menu.header.idno.references.anchor }}" />
 			<div class="row mt-3 gy-3">
 				<div class="col-lg-1">
 					<img
@@ -272,8 +272,8 @@
 	</div>
 
 	{# testimonials #}
+	<a name="{{ settings.menu.header.idno.testimonials.anchor }}"></a>
 	<div class="container">
-		<a name="{{ settings.menu.header.idno.testimonials.anchor }}" />
 		<div class="row mt-3 gy-3">
 			<div class="col-lg-1">
 				<img
@@ -282,7 +282,7 @@
 					width="85"
 					alt="{{ 'index.testimonials.header'|trans }}" />
 			</div>
-			<div class="col-lg-10">
+			<div class="col-lg-11">
 				<h3 class="text-success">{{ 'index.testimonials.header'|trans|raw }}</h3>
 			</div>
 		</div>
@@ -313,4 +313,35 @@
 		</div>
 	</div>
 
+	{# reference-partner #}
+	<div class="bg-green pb-5">
+		<div class="container">
+			<div class="row mt-3 gy-3">
+				<div class="col-lg-1">
+					<img
+						src="{{ asset('images/icon_referenzen_white.png', 'media') }}"
+						class="img-fluid"
+						width="85"
+						alt="{{ 'index.references_partners.header'|trans }}" />
+				</div>
+				<div class="col-lg-10">
+					<h3 class="text-light">{{ 'index.references_partners.header'|trans|raw }}</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-10 offset-1 col-lg-8 offset-lg-2 bg-light">
+					<div class="row justify-content-center">
+						{% for key, ref in settings.references_partners %}
+							<div class="col-12 col-md-6 col-lg-4 text-center p-5">
+								<img
+									src="{{ asset(ref.logo, 'media') }}"
+									class="img-fluid p-3 ref-logo"
+									alt="{{ key }}" />
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

@@ -130,13 +130,13 @@ parameters:
       # row 2
       row2:
         chip:
-          image: images/galerie-pic1_2.jpg
+          image: images/galerie-pic_1.jpg
         bracelet:
-          image: images/galerie-pic2c_2.jpg
+          image: images/galerie-pic_2.jpg
         infos:
-          image: images/galerie-pic3_2.jpg
+          image: images/galerie-pic_3.jpg
         pass:
-          image: images/galerie-pic4_2.jpg
+          image: images/galerie-pic_4.jpg
           buttons:
             video:
               href: https://youtu.be/3obkTbR6tg0
@@ -144,6 +144,7 @@ parameters:
             demo:
               href: /N10D-BE2N
               target: _blank
+
 
     # references
     references:
@@ -176,6 +177,18 @@ parameters:
         logo_bw: references/aok_sw.png
 
 
+    # references
+    references_partners:
+      computer-bild:
+        logo: references/computer-bild.jpg
+      spobi:
+        logo: references/spobi.png
+        logo_bw: references/spobi_sw.png
+      reif:
+        logo: references/reif.jpg
+        logo_bw: references/reif_sw.jpg
+
+
     # social
     social:
       instagram:
@@ -192,4 +205,3 @@ parameters:
         title: TikTok
         icon: images/tiktok.png
         href: https://vm.tiktok.com/ZMLWRPE6n
-

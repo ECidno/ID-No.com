@@ -509,5 +509,11 @@ Katastrophenschutz</target>
         <target>index_testimonials.3.person</target>
       </segment>
     </unit>
+    <unit id="uTE8BNL" name="index.references_partners.header">
+      <segment>
+        <source>index.references_partners.header</source>
+        <target>Bekannt aus den Medien</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
