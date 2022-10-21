@@ -267,4 +267,46 @@
 		</div>
 	</div>
 
+	{# testimonials #}
+	<a name="{{ settings.menu.header.idno.testimonials.anchor }}" />
+	<div class="container-fluid">
+		<div class="row mt-3 gy-3">
+			<div class="col-lg-1">
+				<img
+					src="{{ asset('images/icon_testimonials.png', 'media') }}"
+					class="img-fluid"
+					width="85"
+					alt="{{ 'index.testimonials.header'|trans }}" />
+			</div>
+			<div class="col-lg-10">
+				<h3 class="text-success">{{ 'index.testimonials.header'|trans|raw }}</h3>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-10 offset-md-1 col-lg-9 offset-lg-1">
+				{% for i in 1..3 %}
+					{% set image = 'images/index_testimonial_' ~ i ~ '.jpg' %}
+					{% set text = 'index.testimonials.' ~ i ~ '.text' %}
+					{% set person = 'index.testimonials.' ~ i ~ '.person' %}
+					{% set location = 'index.testimonials.' ~ i ~ '.location' %}
+					<div class="row py-2">
+						<div class="col-lg-2 col-md-4 col-6">
+							<img
+								src="{{ asset(image, 'media') }}"
+								class="img-fluid"
+								alt="{{ person|trans|markdown_to_html }}" />
+						</div>
+						<div class="col-md-6 offset-md-2 col-lg-6 offset-lg-4 text-end">
+							<p>{{ text|trans|raw|markdown_to_html }}</p>
+							<h5 class="text-success">{{ person|trans|markdown_to_html }}</h5>
+							<h6 class="text-success">{{ location|trans }}</h6>
+						</div>
+					</div>
+					{% if i < 3 %}<hr />{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
 {% endblock %}
