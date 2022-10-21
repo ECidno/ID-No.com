@@ -32,6 +32,7 @@ parameters:
             anchor: so_funktionierts
           testimonials:
             href: '#testimonials'
+            anchor: testimonials
           company:
             route:
           group:
@@ -44,6 +45,7 @@ parameters:
           bussiness_clients:
              href: 'https://www.code-no.shop/sie-sind-firmenkunde'
 
+      # footer menu
       footer:
         company:
           route:
