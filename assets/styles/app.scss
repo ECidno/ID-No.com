@@ -2,6 +2,22 @@
 @import "~bootstrap/scss/bootstrap";
 @import "fonts";
 
+/* general */
+a,
+a:link,
+a:hover,
+a:active,
+a:visited {
+	color: $green;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+header nav {
+	z-index:1021;
+}
 
 /* background greeen */
 .bg-green {
@@ -39,7 +55,7 @@ img.ref-logo {
   -moz-filter: grayscale(100%) brightness(2);
   -ms-filter: grayscale(100%) brightness(2);
   -o-filter: grayscale(100%) brightness(2);
-  filter: grayscale(100%) brightness(2);
+  filter: grayscale(100%) brightness(1);
 	transition: filter .3s ease-in-out;
 }
 img.ref-logo:hover {
