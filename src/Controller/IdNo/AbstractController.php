@@ -3,7 +3,7 @@ namespace App\Controller\IdNo;
 
 /***********************************************************************
  *
- * (c) 2021 mpDevTeam <dev@mp-group.net>, mp group GmbH
+ * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
  *
  * /*********************************************************************/
 
@@ -55,7 +55,12 @@ class AbstractController extends SymfonyAbstractController
      */
     protected $logger;
 
-		/**
+    /**
+     * @var TranslatorInterface $translator
+     */
+    protected $translator;
+
+    /**
      * @var array
      */
     protected $motd = [];
@@ -158,8 +163,8 @@ class AbstractController extends SymfonyAbstractController
 
         // action: default to 'index'
         $this->actionName = empty($this->actionName)
-					? 'index'
-					: $this->actionName;
+            ? 'index'
+            : $this->actionName;
 
         /*
          * template

@@ -44,9 +44,9 @@
 				<div class="col text-center text-lg-end fs-6">
 					{% for key, item in settings.menu.footer %}
 						{% set title = 'footer.menu.' ~ key ~ '.lbl' %}
-						{% set href = item.route is not defined or item.route is empty
+						{% set href = item.page is not defined or item.page is empty
 							? item.href ?? '#'
-							: path(item.route) %}
+							: path(settings.pages[item.page].route) %}
 						<a href="{{ href }}">{{ title|trans }}</a>
 						{% if loop.revindex == 3 %}
 							<br class="d-sm-none" /><span class="d-none d-sm-inline">&nbsp;|&nbsp;</span>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="en">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="en">
   <file id="messages.en">
     <unit id="5LufHs6" name="Start">
       <segment>
@@ -17,6 +17,504 @@
       <segment>
         <source>index.introduction.header2</source>
         <target>With life-saving emergency data</target>
+      </segment>
+    </unit>
+    <unit id="brD5STe" name="Unternehmen">
+      <segment>
+        <source>Unternehmen</source>
+        <target>Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="vF0wkNl" name="header.menu.idno.about.lbl">
+      <segment>
+        <source>header.menu.idno.about.lbl</source>
+        <target>header.menu.idno.about.lbl</target>
+      </segment>
+    </unit>
+    <unit id="PJdnZyr" name="header.menu.idno.works.lbl">
+      <segment>
+        <source>header.menu.idno.works.lbl</source>
+        <target>header.menu.idno.works.lbl</target>
+      </segment>
+    </unit>
+    <unit id="pOhZC7A" name="header.menu.idno.testimonials.lbl">
+      <segment>
+        <source>header.menu.idno.testimonials.lbl</source>
+        <target>header.menu.idno.testimonials.lbl</target>
+      </segment>
+    </unit>
+    <unit id="vZUn30y" name="header.menu.idno.company.lbl">
+      <segment>
+        <source>header.menu.idno.company.lbl</source>
+        <target>header.menu.idno.company.lbl</target>
+      </segment>
+    </unit>
+    <unit id="LzzzDam" name="header.menu.idno.group.lbl">
+      <segment>
+        <source>header.menu.idno.group.lbl</source>
+        <target>header.menu.idno.group.lbl</target>
+      </segment>
+    </unit>
+    <unit id="x970SQq" name="header.menu.idno.press.lbl">
+      <segment>
+        <source>header.menu.idno.press.lbl</source>
+        <target>header.menu.idno.press.lbl</target>
+      </segment>
+    </unit>
+    <unit id="VPVogKi" name="header.menu.idno.references.lbl">
+      <segment>
+        <source>header.menu.idno.references.lbl</source>
+        <target>header.menu.idno.references.lbl</target>
+      </segment>
+    </unit>
+    <unit id="S.AtI.g" name="header.menu.idno.bussiness_clients.lbl">
+      <segment>
+        <source>header.menu.idno.bussiness_clients.lbl</source>
+        <target>header.menu.idno.bussiness_clients.lbl</target>
+      </segment>
+    </unit>
+    <unit id="8WjM3ZF" name="company">
+      <segment>
+        <source>company</source>
+        <target>company</target>
+      </segment>
+    </unit>
+    <unit id="VDR5HhO" name="company.introduction">
+      <segment>
+        <source>company.introduction</source>
+        <target>company.introduction</target>
+      </segment>
+    </unit>
+    <unit id="KIllofL" name="management">
+      <segment>
+        <source>management</source>
+        <target>management</target>
+      </segment>
+    </unit>
+    <unit id="dgXhF6w" name="company.ceo.caption">
+      <segment>
+        <source>company.ceo.caption</source>
+        <target>company.ceo.caption</target>
+      </segment>
+    </unit>
+    <unit id="JVCoYRg" name="company.ceo.text">
+      <segment>
+        <source>company.ceo.text</source>
+        <target>company.ceo.text</target>
+      </segment>
+    </unit>
+    <unit id="60op8LH" name="company.coo.caption">
+      <segment>
+        <source>company.coo.caption</source>
+        <target>company.coo.caption</target>
+      </segment>
+    </unit>
+    <unit id="WCA8n5w" name="company.coo.text">
+      <segment>
+        <source>company.coo.text</source>
+        <target>company.coo.text</target>
+      </segment>
+    </unit>
+    <unit id="IaFPsYm" name="Advisory board">
+      <segment>
+        <source>Advisory board</source>
+        <target>Advisory board</target>
+      </segment>
+    </unit>
+    <unit id="Bc1KxF_" name="company.advisory.caption">
+      <segment>
+        <source>company.advisory.caption</source>
+        <target>company.advisory.caption</target>
+      </segment>
+    </unit>
+    <unit id="kddzrsu" name="company.advisory.text">
+      <segment>
+        <source>company.advisory.text</source>
+        <target>company.advisory.text</target>
+      </segment>
+    </unit>
+    <unit id="cKgdBlx" name="member_of">
+      <segment>
+        <source>member_of</source>
+        <target>member_of</target>
+      </segment>
+    </unit>
+    <unit id="dpO64G0" name="footer.menu.company.lbl">
+      <segment>
+        <source>footer.menu.company.lbl</source>
+        <target>footer.menu.company.lbl</target>
+      </segment>
+    </unit>
+    <unit id="aZiriDJ" name="footer.menu.presse.lbl">
+      <segment>
+        <source>footer.menu.presse.lbl</source>
+        <target>footer.menu.presse.lbl</target>
+      </segment>
+    </unit>
+    <unit id="MvrDYPi" name="footer.menu.agb.lbl">
+      <segment>
+        <source>footer.menu.agb.lbl</source>
+        <target>footer.menu.agb.lbl</target>
+      </segment>
+    </unit>
+    <unit id="UO4k47g" name="footer.menu.privacy.lbl">
+      <segment>
+        <source>footer.menu.privacy.lbl</source>
+        <target>footer.menu.privacy.lbl</target>
+      </segment>
+    </unit>
+    <unit id="zMJliAS" name="footer.menu.imprint.lbl">
+      <segment>
+        <source>footer.menu.imprint.lbl</source>
+        <target>footer.menu.imprint.lbl</target>
+      </segment>
+    </unit>
+    <unit id="IKxeNV5" name="footer.menu.cookie.lbl">
+      <segment>
+        <source>footer.menu.cookie.lbl</source>
+        <target>footer.menu.cookie.lbl</target>
+      </segment>
+    </unit>
+    <unit id="8vOTifc" name="index.carousel.slide.sos_chip_shoe.caption">
+      <segment>
+        <source>index.carousel.slide.sos_chip_shoe.caption</source>
+        <target>index.carousel.slide.sos_chip_shoe.caption</target>
+      </segment>
+    </unit>
+    <unit id="TlrNx8P" name="index.carousel.slide.sos_chip_shoe.text">
+      <segment>
+        <source>index.carousel.slide.sos_chip_shoe.text</source>
+        <target>index.carousel.slide.sos_chip_shoe.text</target>
+      </segment>
+    </unit>
+    <unit id="bFD_QYh" name="index.carousel.slide.quick_sos_data.caption">
+      <segment>
+        <source>index.carousel.slide.quick_sos_data.caption</source>
+        <target>index.carousel.slide.quick_sos_data.caption</target>
+      </segment>
+    </unit>
+    <unit id="YDwfe9A" name="index.carousel.slide.quick_sos_data.text">
+      <segment>
+        <source>index.carousel.slide.quick_sos_data.text</source>
+        <target>index.carousel.slide.quick_sos_data.text</target>
+      </segment>
+    </unit>
+    <unit id="DXhdVnO" name="index.carousel.slide.best_practice_barmer.caption">
+      <segment>
+        <source>index.carousel.slide.best_practice_barmer.caption</source>
+        <target>index.carousel.slide.best_practice_barmer.caption</target>
+      </segment>
+    </unit>
+    <unit id="MjBGaKz" name="index.carousel.slide.best_practice_barmer.text">
+      <segment>
+        <source>index.carousel.slide.best_practice_barmer.text</source>
+        <target>index.carousel.slide.best_practice_barmer.text</target>
+      </segment>
+    </unit>
+    <unit id="Cp.xpr2" name="index.carousel.slide.sos_clip_bike.caption">
+      <segment>
+        <source>index.carousel.slide.sos_clip_bike.caption</source>
+        <target>index.carousel.slide.sos_clip_bike.caption</target>
+      </segment>
+    </unit>
+    <unit id="qzjpFEM" name="index.carousel.slide.sos_clip_bike.text">
+      <segment>
+        <source>index.carousel.slide.sos_clip_bike.text</source>
+        <target>index.carousel.slide.sos_clip_bike.text</target>
+      </segment>
+    </unit>
+    <unit id="8HWn53f" name="index.carousel.slide.sos_clip_motorcycle.caption">
+      <segment>
+        <source>index.carousel.slide.sos_clip_motorcycle.caption</source>
+        <target>index.carousel.slide.sos_clip_motorcycle.caption</target>
+      </segment>
+    </unit>
+    <unit id="NWx1KBW" name="index.carousel.slide.sos_clip_motorcycle.text">
+      <segment>
+        <source>index.carousel.slide.sos_clip_motorcycle.text</source>
+        <target>index.carousel.slide.sos_clip_motorcycle.text</target>
+      </segment>
+    </unit>
+    <unit id="UnDc50D" name="index.carousel.slide.best_practice_harley_davidson.caption">
+      <segment>
+        <source>index.carousel.slide.best_practice_harley_davidson.caption</source>
+        <target>index.carousel.slide.best_practice_harley_davidson.caption</target>
+      </segment>
+    </unit>
+    <unit id="HCE4ffC" name="index.carousel.slide.best_practice_harley_davidson.text">
+      <segment>
+        <source>index.carousel.slide.best_practice_harley_davidson.text</source>
+        <target>index.carousel.slide.best_practice_harley_davidson.text</target>
+      </segment>
+    </unit>
+    <unit id="lvarSw8" name="index.carousel.slide.sos_clip_senior.caption">
+      <segment>
+        <source>index.carousel.slide.sos_clip_senior.caption</source>
+        <target>index.carousel.slide.sos_clip_senior.caption</target>
+      </segment>
+    </unit>
+    <unit id="vzAGp5f" name="index.carousel.slide.sos_clip_senior.text">
+      <segment>
+        <source>index.carousel.slide.sos_clip_senior.text</source>
+        <target>index.carousel.slide.sos_clip_senior.text</target>
+      </segment>
+    </unit>
+    <unit id="XEC976m" name="index.carousel.slide.covid.caption">
+      <segment>
+        <source>index.carousel.slide.covid.caption</source>
+        <target>index.carousel.slide.covid.caption</target>
+      </segment>
+    </unit>
+    <unit id="_lKLA0O" name="index.carousel.slide.covid.text">
+      <segment>
+        <source>index.carousel.slide.covid.text</source>
+        <target>index.carousel.slide.covid.text</target>
+      </segment>
+    </unit>
+    <unit id="_KdSYTr" name="Vorherige">
+      <segment>
+        <source>Vorherige</source>
+        <target>Vorherige</target>
+      </segment>
+    </unit>
+    <unit id="W13vMmV" name="Nächste">
+      <segment>
+        <source>Nächste</source>
+        <target>Nächste</target>
+      </segment>
+    </unit>
+    <unit id="AB0XdUp" name="index.boxrow1.about.header">
+      <segment>
+        <source>index.boxrow1.about.header</source>
+        <target>index.boxrow1.about.header</target>
+      </segment>
+    </unit>
+    <unit id="mX38078" name="index.boxrow1.about.text">
+      <segment>
+        <source>index.boxrow1.about.text</source>
+        <target>index.boxrow1.about.text</target>
+      </segment>
+    </unit>
+    <unit id="3Vb_85h" name="index.boxrow1.works.header">
+      <segment>
+        <source>index.boxrow1.works.header</source>
+        <target>index.boxrow1.works.header</target>
+      </segment>
+    </unit>
+    <unit id="bTXdzec" name="index.boxrow1.works.text">
+      <segment>
+        <source>index.boxrow1.works.text</source>
+        <target>index.boxrow1.works.text</target>
+      </segment>
+    </unit>
+    <unit id="pnFTPhU" name="index.boxrow1.shop.header">
+      <segment>
+        <source>index.boxrow1.shop.header</source>
+        <target>index.boxrow1.shop.header</target>
+      </segment>
+    </unit>
+    <unit id="7cX4FXm" name="index.boxrow1.shop.text">
+      <segment>
+        <source>index.boxrow1.shop.text</source>
+        <target>index.boxrow1.shop.text</target>
+      </segment>
+    </unit>
+    <unit id="DqhitoI" name="index.boxrow1.datasecurity.header">
+      <segment>
+        <source>index.boxrow1.datasecurity.header</source>
+        <target>index.boxrow1.datasecurity.header</target>
+      </segment>
+    </unit>
+    <unit id=".6H1ZoO" name="index.boxrow1.datasecurity.text">
+      <segment>
+        <source>index.boxrow1.datasecurity.text</source>
+        <target>index.boxrow1.datasecurity.text</target>
+      </segment>
+    </unit>
+    <unit id="EpMvAOe" name="index.boxrow2.chip.header">
+      <segment>
+        <source>index.boxrow2.chip.header</source>
+        <target>index.boxrow2.chip.header</target>
+      </segment>
+    </unit>
+    <unit id="y8ZMWfS" name="index.boxrow2.bracelet.header">
+      <segment>
+        <source>index.boxrow2.bracelet.header</source>
+        <target>index.boxrow2.bracelet.header</target>
+      </segment>
+    </unit>
+    <unit id="Dipbo0N" name="index.boxrow2.infos.header">
+      <segment>
+        <source>index.boxrow2.infos.header</source>
+        <target>index.boxrow2.infos.header</target>
+      </segment>
+    </unit>
+    <unit id="irMlJPi" name="index.boxrow2.pass.header">
+      <segment>
+        <source>index.boxrow2.pass.header</source>
+        <target>index.boxrow2.pass.header</target>
+      </segment>
+    </unit>
+    <unit id="1iQrU_D" name="index.about.text">
+      <segment>
+        <source>index.about.text</source>
+        <target>index.about.text</target>
+      </segment>
+    </unit>
+    <unit id="QIQZDqB" name="index.features.header">
+      <segment>
+        <source>index.features.header</source>
+        <target>index.features.header</target>
+      </segment>
+    </unit>
+    <unit id="Q7VAK41" name="index.feature.1.lbl">
+      <segment>
+        <source>index.feature.1.lbl</source>
+        <target>index.feature.1.lbl</target>
+      </segment>
+    </unit>
+    <unit id="SsHHWWa" name="index.feature.2.lbl">
+      <segment>
+        <source>index.feature.2.lbl</source>
+        <target>index.feature.2.lbl</target>
+      </segment>
+    </unit>
+    <unit id="mylgHlJ" name="index.feature.3.lbl">
+      <segment>
+        <source>index.feature.3.lbl</source>
+        <target>index.feature.3.lbl</target>
+      </segment>
+    </unit>
+    <unit id="vJUjqx4" name="index.feature.4.lbl">
+      <segment>
+        <source>index.feature.4.lbl</source>
+        <target>index.feature.4.lbl</target>
+      </segment>
+    </unit>
+    <unit id="CgUtLXN" name="index.feature.5.lbl">
+      <segment>
+        <source>index.feature.5.lbl</source>
+        <target>index.feature.5.lbl</target>
+      </segment>
+    </unit>
+    <unit id="ewwzPGE" name="index.feature.6.lbl">
+      <segment>
+        <source>index.feature.6.lbl</source>
+        <target>index.feature.6.lbl</target>
+      </segment>
+    </unit>
+    <unit id="jmpD903" name="index.works.header">
+      <segment>
+        <source>index.works.header</source>
+        <target>index.works.header</target>
+      </segment>
+    </unit>
+    <unit id="oOqkcJx" name="index.work.step1.header">
+      <segment>
+        <source>index.work.step1.header</source>
+        <target>index.work.step1.header</target>
+      </segment>
+    </unit>
+    <unit id="1cmJpQ_" name="index.work.step1.text">
+      <segment>
+        <source>index.work.step1.text</source>
+        <target>index.work.step1.text</target>
+      </segment>
+    </unit>
+    <unit id="F45r6to" name="index.work.step2.header">
+      <segment>
+        <source>index.work.step2.header</source>
+        <target>index.work.step2.header</target>
+      </segment>
+    </unit>
+    <unit id="RaOup.G" name="index.work.step2.text">
+      <segment>
+        <source>index.work.step2.text</source>
+        <target>index.work.step2.text</target>
+      </segment>
+    </unit>
+    <unit id="3F0hygL" name="index.work.step3.header">
+      <segment>
+        <source>index.work.step3.header</source>
+        <target>index.work.step3.header</target>
+      </segment>
+    </unit>
+    <unit id="sFyAZuI" name="index.work.step3.text">
+      <segment>
+        <source>index.work.step3.text</source>
+        <target>index.work.step3.text</target>
+      </segment>
+    </unit>
+    <unit id="9V2Rdsu" name="index.references.header">
+      <segment>
+        <source>index.references.header</source>
+        <target>index.references.header</target>
+      </segment>
+    </unit>
+    <unit id="65PuaAo" name="index.testimonials.header">
+      <segment>
+        <source>index.testimonials.header</source>
+        <target>index.testimonials.header</target>
+      </segment>
+    </unit>
+    <unit id="bYnEruo" name="index.testimonials.1.person">
+      <segment>
+        <source>index.testimonials.1.person</source>
+        <target>index.testimonials.1.person</target>
+      </segment>
+    </unit>
+    <unit id="OJMVJl." name="index.testimonials.1.text">
+      <segment>
+        <source>index.testimonials.1.text</source>
+        <target>index.testimonials.1.text</target>
+      </segment>
+    </unit>
+    <unit id="fbCFoVU" name="index.testimonials.1.location">
+      <segment>
+        <source>index.testimonials.1.location</source>
+        <target>index.testimonials.1.location</target>
+      </segment>
+    </unit>
+    <unit id="O.OdL_F" name="index.testimonials.2.person">
+      <segment>
+        <source>index.testimonials.2.person</source>
+        <target>index.testimonials.2.person</target>
+      </segment>
+    </unit>
+    <unit id="_mhgh8X" name="index.testimonials.2.text">
+      <segment>
+        <source>index.testimonials.2.text</source>
+        <target>index.testimonials.2.text</target>
+      </segment>
+    </unit>
+    <unit id="a7SC6WD" name="index.testimonials.2.location">
+      <segment>
+        <source>index.testimonials.2.location</source>
+        <target>index.testimonials.2.location</target>
+      </segment>
+    </unit>
+    <unit id="I.upU3X" name="index.testimonials.3.person">
+      <segment>
+        <source>index.testimonials.3.person</source>
+        <target>index.testimonials.3.person</target>
+      </segment>
+    </unit>
+    <unit id="nlGECEu" name="index.testimonials.3.text">
+      <segment>
+        <source>index.testimonials.3.text</source>
+        <target>index.testimonials.3.text</target>
+      </segment>
+    </unit>
+    <unit id="X2cK9UT" name="index.testimonials.3.location">
+      <segment>
+        <source>index.testimonials.3.location</source>
+        <target>index.testimonials.3.location</target>
+      </segment>
+    </unit>
+    <unit id="uTE8BNL" name="index.references_partners.header">
+      <segment>
+        <source>index.references_partners.header</source>
+        <target>index.references_partners.header</target>
       </segment>
     </unit>
   </file>

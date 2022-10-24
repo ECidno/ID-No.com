@@ -41,9 +41,9 @@
             <ul class="dropdown-menu">
               {% for key, item in settings.menu.header.idno %}
                 {% set title = 'header.menu.idno.' ~ key ~ '.lbl' %}
-                {% set href = item.route is not defined or item.route is empty
+                {% set href = item.page is not defined or item.page is empty
                   ? item.href ?? '#'
-                  : path(item.route) %}
+                  : path(settings.pages[item.page].route) %}
                 <li>
                   <a
                     class="dropdown-item"
@@ -88,15 +88,17 @@
           {% endif %}
 
           {# language #}
+          {% set currentRoute = app.request.attributes.get('_route') %}
+          {% set currentRouteParams = app.request.attributes.get('_route_params') ?? {} %}
           <li class="nav-item">
             {% if language == 'de' %}
               <a
                 class="nav-link"
-                href="{{ path('idno_standard_index', {_locale: 'en'}) }}">English</a>
+                href="{{ path(currentRoute, currentRouteParams|merge({_locale: 'en'})) }}">English</a>
             {% else %}
               <a
                 class="nav-link"
-                href="{{ path('idno_standard_index', {_locale: 'de'}) }}">Deutsch</a>
+                href="{{ path(currentRoute, currentRouteParams|merge({_locale: 'de'})) }}">Deutsch</a>
             {% endif %}
           </li>
 
@@ -127,8 +129,12 @@
             </li>
           {% endif %}
         </ul>
-        <i class="bi bi-person-circle"></i>
-    {#}  #}  <span class="navbar-text text-warning">@TODO: TF: Menu zentriert ausrichten</span>
+
+        <span class="text-success pe-3">
+          <i class="bi bi-person-circle fs-3"></i>
+        </span>
+
+    {#}  <span class="navbar-text text-warning">@TODO: TF: Menu zentriert ausrichten</span>  #}
       </div>
     </div>
   </nav>
@@ -138,33 +144,26 @@
 <nav class="header-form sticky-top bg-dark py-4">
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-10 col-xl-6">
+      <div class="col-10 col-lg-8 col-xl-6">
         <form
           role="form"
           action=""
           method="post"
           id="idno_form">
-          <div class="chunky form-group">
-            <div class="formfields text-center">
-              <input type="hidden" name="idno1" id="idno1">
-              <input type="hidden" name="idno2" id="idno2">
-
-              <div class="input-group">
-                <input class="form-control"
-                  type="text"
-                  placeholder="ID-Nummer checken/aktivieren"
-                  maxlength="9"
-                  style="background-color: white;"
-                  id="both_idno" />
-                <span class="input-group-btn">
-                  <button
-                    class="btn btn-success"
-                    id="btn_start"
-                    name="btn_start"
-                    type="submit">GO !</button>
-                </span>
-              </div>
-            </div>
+          <div class="input-group input-group-lg">
+            <input
+              type="text"
+              id="fldIdNo"
+              class="form-control text-center"
+              placeholder="ID-Nummer checken/aktivieren"
+              maxlength="9"
+              pattern="[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}"
+              autocomplete="off"
+              aria-label="Id number" />
+            <button
+              class="btn btn-success"
+              name="btn_start"
+              type="submit">GO !</button>
           </div>
         </form>
       </div>

@@ -61,28 +61,58 @@ class StandardController extends AbstractController
 
 
     /**
-     * static action
+     * idno action
      *
-     * @param string $page
+     * @param string $idno
      *
-     * @Route("content/{page}", name="content", methods={"GET"})
+     * @Route("/{idno<[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}>}", name="idno", priority=100, methods={"GET","POST"})
      *
      * @return Response
      */
-    public function content($page): Response
+    public function idno($idno): Response
     {
         // set template name for controller/action
         $this->template = join(
             '/',
             [
                 strtolower($this->controllerName),
-                strtolower($page) . '.html.twig',
+                'idno.html.twig',
             ]
         );
 
         // variables
         $variables = [
-            'page' => $this->settings['pages'][$page] ?? $page,
+            'idno' => strtoupper($idno),
+        ];
+
+        // return
+        return $this->renderAndRespond($variables);
+    }
+
+
+    /**
+     * content action
+     *
+     * @param string $slug
+     *
+     * @return Response
+     *
+     * Route("/{slug}", name="content", priority=10, methods={"GET"})
+     */
+    public function content($slug): Response
+    {
+        // set template name for controller/action
+        $this->template = join(
+            '/',
+            [
+                strtolower($this->controllerName),
+                strtolower($slug).'.html.twig',
+            ]
+        );
+
+        // variables
+        $variables = [
+            'slug' => $this->settings['pages'][$slug] ?? $slug,
         ];
 
         // return
