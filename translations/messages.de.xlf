@@ -611,5 +611,11 @@ Prof. Dr. Ingo Kett (Beirat),
 Klaus Artmann (Beiratsvorsitzender)</target>
       </segment>
     </unit>
+    <unit id="u8KAyIN" name="Notfall-ID Pass">
+      <segment>
+        <source>Notfall-ID Pass</source>
+        <target>Notfall-ID Pass</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

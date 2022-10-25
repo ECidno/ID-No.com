@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller\IdNo;
+namespace App\Controller;
 
 /***********************************************************************
  *
@@ -44,11 +44,6 @@ class AbstractController extends SymfonyAbstractController
      * @var string language
      */
     protected $language = 'de';
-
-    /**
-     * @var string controllerName
-     */
-    protected $locale = 'de_DE';
 
     /**
      * @var LoggerInterface logger
@@ -133,9 +128,7 @@ class AbstractController extends SymfonyAbstractController
          * session, language, locale
          */
         $this->session = $currentRequest->getSession();
-
         $this->language = $currentRequest->getLocale();
-        $this->locale = $this->session->get('localeString');
 
         /*
          * controller, action
@@ -217,7 +210,6 @@ class AbstractController extends SymfonyAbstractController
         $twig->addGlobal('settings', $this->settings);
         $twig->addGlobal('ajax', $this->ajax);
         $twig->addGlobal('language', $this->language);
-        $twig->addGlobal('locale', $this->locale);
         $twig->addGlobal('motd', $this->motd);
     }
 

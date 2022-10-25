@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller\IdNo;
+namespace App\Controller;
 
 /***********************************************************************
  *
@@ -15,23 +15,36 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Standard controller
  *
- * @Route("/", name="idno_standard_")
+ * @Route("/", name="app_standard_")
  */
 class StandardController extends AbstractController
 {
     /**
      * index action
      *
+     * @param string $idno
      * @param Request $request
      *
-     * @Route("/", name="index", methods={"GET"})
      *
      * @return Response
+     *
+     * @Route("/{idno<[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}>?}", name="index", priority=100, methods={"GET", "POST"})
      */
-    public function index(Request $request): Response
+    public function index($idno = null, Request $request): Response
     {
         $bannerImages = [];
         $dir = 'media/images/banner';
+        $idno = strtoupper($request->get('p_idno') ?? $idno);
+
+        // redirect to pass
+        if(!empty($idno)) {
+            return $this->redirectToRoute(
+                'app_item_pass',
+                [
+                    'idno' => $idno,
+                ]
+            );
+        }
 
         // exists?
         if (file_exists($dir)) {
@@ -53,36 +66,6 @@ class StandardController extends AbstractController
         // variables
         $variables = [
             'banner_images' => $bannerImages,
-        ];
-
-        // return
-        return $this->renderAndRespond($variables);
-    }
-
-
-    /**
-     * idno action
-     *
-     * @param string $idno
-     *
-     * @Route("/{idno<[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}>}", name="idno", priority=100, methods={"GET","POST"})
-     *
-     * @return Response
-     */
-    public function idno($idno): Response
-    {
-        // set template name for controller/action
-        $this->template = join(
-            '/',
-            [
-                strtolower($this->controllerName),
-                'idno.html.twig',
-            ]
-        );
-
-        // variables
-        $variables = [
-            'idno' => strtoupper($idno),
         ];
 
         // return

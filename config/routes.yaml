@@ -21,6 +21,9 @@ translation_webui:
 app_static_routes:
     resource: App\Service\RoutingService
     type: service
+    prefix:
+        de: ''
+        en: 'en'
 
 
 # static external redirects

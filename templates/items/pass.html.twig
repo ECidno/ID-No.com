@@ -1,0 +1,29 @@
+{% extends 'default.html.twig' %}
+{% block title %}{{ 'Notfall-ID Pass'|trans }}{% endblock %}
+
+{# Content #}
+{% block content %}
+
+  {# Intro #}
+  <div class="container">
+    <div class="row mt-3 justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8 border">
+
+        <div class="row py-3 bg-green">
+          <div class="col-12">
+
+            <h1 class="text-light">{{ item.idNo }}</h1>
+                    {{ item.id }}
+
+          </div>
+        </div>
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

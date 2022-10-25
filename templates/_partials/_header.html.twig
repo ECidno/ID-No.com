@@ -6,7 +6,7 @@
       <div class="navbar-header">
         <a
           class="navbar-brand col-md-1"
-          href="{{ path('idno_standard_index') }}">
+          href="{{ path('app_standard_index') }}">
           <img
             src="{{ asset('images/id_no_logo.png', 'media') }}"
             alt="ID-No Logo" /></a>
@@ -115,7 +115,7 @@
                 <li>
                   <h6 class="dropdown-header small">
                     Environment: <span class="badge text-bg-warning">{{ app.environment }}</span><br />
-                    Language: <span class="badge text-bg-warning">{{ language }}/{{ locale }}</span>
+                    Language: <span class="badge text-bg-warning">{{ language }}</span>
                   </h6>
                 </li>
                 <li><hr class="dropdown-divider"></li>
@@ -141,32 +141,34 @@
 </header>
 
 {# form #}
-<nav class="header-form sticky-top bg-dark py-4">
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-10 col-lg-8 col-xl-6">
-        <form
-          role="form"
-          action=""
-          method="post"
-          id="idno_form">
-          <div class="input-group input-group-lg">
-            <input
-              type="text"
-              id="fldIdNo"
-              class="form-control text-center"
-              placeholder="ID-Nummer checken/aktivieren"
-              maxlength="9"
-              pattern="[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}"
-              autocomplete="off"
-              aria-label="Id number" />
-            <button
-              class="btn btn-success"
-              name="btn_start"
-              type="submit">GO !</button>
-          </div>
-        </form>
+{% if item is not defined %}
+  <nav class="header-form sticky-top bg-dark py-4">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-8 col-xl-6">
+          <form
+            role="form"
+            action="{{ path('app_standard_index') }}"
+            method="post"
+            id="idno_form">
+            <div class="input-group input-group-lg">
+              <input
+                type="text"
+                id="fldIdNo"
+                class="form-control text-center"
+                name="p_idno"
+                placeholder="ID-Nummer checken/aktivieren"
+                maxlength="9"
+                pattern="[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}"
+                autocomplete="off"
+                aria-label="Id number" />
+              <button
+                class="btn btn-success"
+                type="submit">GO !</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+{% endif %}
