@@ -7,15 +7,16 @@ namespace App\Controller;
  *
  * /*********************************************************************/
 
-use App\Entity\Items;
-use App\Repository\ItemsRepository;
+use App\Entity\Main\Items;
+use App\Entity\Nutzer\Nutzer;
+use App\Entity\Nutzer\Person;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
-
 /**
  * items controller
  *
@@ -33,26 +34,37 @@ class ItemsController extends AbstractController
      *
      * @param string $idno
      * @param Request $request
-     * @param ItemsRepository $repository
+     * @param ManagerRegistry $registry
      *
      * @return Response
      *
      * @Route("/notfallpass/{idno?}", name="app_item_pass", methods={"GET", "POST"})
      */
-    public function pass($idno = null, Request $request, ItemsRepository $repository): Response
+    public function pass($idno = null, Request $request, ManagerRegistry $registry): Response
     {
         $idno = strtoupper($request->get('p_idno') ?? $idno);
+        $emDefault = $registry->getManager('default');
+        $emNutzer = $registry->getManager('nutzer');
 
         // get item
-        $item = $repository->findOneByIdNo($idno);
+        $item = $emDefault
+            ->getRepository(Items::class)
+            ->findOneByIdNo($idno);
 
         // item?
         if($item !== null) {
+            $nutzerId = $item->getNutzerId();
+            $personId = $item->getPersonId();
 
             // variables
             $variables = [
                 'item' => $item,
-                'idno' => strtoupper($idno),
+                'nutzer' => $emNutzer
+                    ->getRepository(Nutzer::class)
+                    ->findOneById($nutzerId),
+                'person' => $emNutzer
+                    ->getRepository(Person::class)
+                    ->findOneById($personId),
             ];
 
         // redirect to index

@@ -617,5 +617,83 @@ Klaus Artmann (Beiratsvorsitzender)</target>
         <target>Notfall-ID Pass</target>
       </segment>
     </unit>
+    <unit id="4eCwpxs" name="person.last_change_datum">
+      <segment>
+        <source>person.last_change_datum</source>
+        <target>Letzte Änderung</target>
+      </segment>
+    </unit>
+    <unit id="41WERFZ" name="person.groesse">
+      <segment>
+        <source>person.groesse</source>
+        <target>Größe</target>
+      </segment>
+    </unit>
+    <unit id="grdjQzd" name="person.gewicht">
+      <segment>
+        <source>person.gewicht</source>
+        <target>Gewicht</target>
+      </segment>
+    </unit>
+    <unit id="htifoBR" name="person.geschlecht">
+      <segment>
+        <source>person.geschlecht</source>
+        <target>Geschlecht</target>
+      </segment>
+    </unit>
+    <unit id="n3k4yG5" name="person.geschlecht.w">
+      <segment>
+        <source>person.geschlecht.w</source>
+        <target>weiblich</target>
+      </segment>
+    </unit>
+    <unit id="7PNMyJI" name="Standort">
+      <segment>
+        <source>Standort</source>
+        <target>Standort</target>
+      </segment>
+    </unit>
+    <unit id="r_z_E60" name="Notruf">
+      <segment>
+        <source>Notruf</source>
+        <target>Notruf</target>
+      </segment>
+    </unit>
+    <unit id="VzYFJUZ" name="Blutgruppe">
+      <segment>
+        <source>Blutgruppe</source>
+        <target>Blutgruppe</target>
+      </segment>
+    </unit>
+    <unit id="AmfYaGh" name="Erkrankungen">
+      <segment>
+        <source>Erkrankungen</source>
+        <target>Erkrankungen</target>
+      </segment>
+    </unit>
+    <unit id="D4G5IGp" name="Medikamente">
+      <segment>
+        <source>Medikamente</source>
+        <target>Medikamente</target>
+      </segment>
+    </unit>
+    <unit id="gbjZnSl" name="Allergieen">
+      <segment>
+        <source>Allergieen</source>
+        <target>Allergieen</target>
+      </segment>
+    </unit>
+    <unit id="dPNXEiI" name="Anrufen">
+      <segment>
+        <source>Anrufen</source>
+        <target>Anrufen</target>
+      </segment>
+    </unit>
+    <unit id="U4wHbEk" name="person.geschlecht.m">
+      <segment>
+        <source>person.geschlecht.m</source>
+        <target>männlich</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
