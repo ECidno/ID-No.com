@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity;
+namespace App\Entity\Nutzer;
 
 /***********************************************************************
  *
@@ -10,11 +10,11 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Items
+ * Nutzer
  *
- * @ORM\Entity(repositoryClass="App\Repository\ItemsRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\NutzerRepository")
  */
-class Items
+class Nutzer
 {
     /**
      * @var int
@@ -23,13 +23,6 @@ class Items
      * @ORM\Column(type="integer")
      */
     private $id;
-
-
-    /**
-     * @var string
-     * @ORM\Column(type="string", length=9)
-     */
-    private $idNo;
 
 
 
@@ -42,22 +35,4 @@ class Items
     }
 
 
-
-    /**
-     * @param string $idNo
-     * @return Items
-     */
-    public function setIdNo(string $idNo): self
-    {
-        $this->idNo = $idNo;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getIdNo(): ?string
-    {
-        return $this->idNo;
-    }
 }
