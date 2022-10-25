@@ -515,5 +515,107 @@ Katastrophenschutz</target>
         <target>Bekannt aus den Medien</target>
       </segment>
     </unit>
+    <unit id="brD5STe" name="Unternehmen">
+      <segment>
+        <source>Unternehmen</source>
+        <target>Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="8WjM3ZF" name="company">
+      <segment>
+        <source>company</source>
+        <target>Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="VDR5HhO" name="company.introduction">
+      <segment>
+        <source>company.introduction</source>
+        <target><![CDATA[In Notfallsituationen sind verlässliche Informationen und Zeit von lebenswichtiger Bedeutung. Mit ID-No.com können medizinische Einsatzkräfte sofort auf digital hinterlegte individuelle Notfallinformationen wie Medikationen, Krankheiten, Allergien, Diabetes, Kontaktpersonen zugreifen. Das spart im Ernstfall Zeit und kann Leben retten! 
+
+ID-No.com, gelauncht im Mai 2017 in Frankfurt am Main (Deutschland), wurde gemeinsam mit Rettungsprofis entwickelt und in der Kategorie "E-Health" mit dem INNOVATIONSPREIS-IT "BEST OF 2018" der Initiative Mittelstand ausgezeichnet. Zu den namhafte Kunden zählen seither Unternehmen wie unter anderem AOK, BARMER, KKH, ERGO, ABUS, Harley Davidson und Sport Scheck.
+
+ID-No.com GmbH ist Mitglied der CODE-No.com Gruppe, die ursprünglich in 2007 mit der Marke CODE-No.com in Frankfurt am Main startete. Die CODE-No.com GmbH schützt Wertgegenstände vor Verlust und Diebstahl und ist hierzu mit über 12 Millionen CODE-Nummern im Markt vertreten. Die Marke ID-No.com ist eine konsequente Weiterentwicklung der Ursprungsidee und bietet seit 2017 Sicherheit im Bereich eHealth.
+
+Neu: Seit 2020 kooperiert ID-No.com mit ZOLL, dem Weltmarktführer für digitale Gesundheitslösungen, und wird in die Rescue-Pad-Systeme im Rettungswesen in Europa integriert. Dies führt zu einer schnellen und nahtlosen Notfalldatenübertragung vom Rettungsdienst bis ins Krankenhaus.
+
+Info-Videos finden Sie hier:  
+<a href="/infovideo" target="_blank">ID-No.com/infovideo</a>  
+<a href="/pad" target="_blank">ID-No.com/pad</a>  ]]></target>
+      </segment>
+    </unit>
+    <unit id="KIllofL" name="management">
+      <segment>
+        <source>management</source>
+        <target>Geschäftsleitung</target>
+      </segment>
+    </unit>
+    <unit id="JVCoYRg" name="company.ceo.text">
+      <segment>
+        <source>company.ceo.text</source>
+        <target>Dr. Markus J. Krechting, geb. 1965, studierte Betriebswirtschaft an der Universität Münster mit Schwerpunkt Marketing bei Herrn Prof. Dr. Dr. h.c. mult. Meffert. Seine Promotion erfolgte an der Universität Hamburg. Krechting arbeitete sechs Jahre für den Otto Konzern, u. a. verantwortete er dort den Markteinstieg in Indien. Danach leitete er als Unternehmensberater den Geschäftsbereich "Internationalisierung" der TellSell Consulting GmbH, Frankfurt. 2001 wurde Krechting Direktor Neue Medien bei Neckermann, Frankfurt.
+
+Krechting ist Autor zahlreicher Veröffentlichung. Darüber hinaus wirkte Krechting als Jury-Mitglied namhafter Multi-Channel-Veranstaltungen mit, u. a. Deutschen Multimedia Award, Berlin, und Online-Star Award, München.
+
+Im März 2007 gründete Krechting die CODE-No.com Group in Frankfurt, die er als CEO führt.</target>
+      </segment>
+    </unit>
+    <unit id="WCA8n5w" name="company.coo.text">
+      <segment>
+        <source>company.coo.text</source>
+        <target>Michael Sorg hat mehr als 20 Jahre Erfahrung in eBusiness, davon die letzten 5 Jahre als CEO von computeruniverse, ein Unternehmen der Burda Digital mit 170 Mitarbeitern. In dieser Zeit konnte er den Umsatz auf über 200 Mio. € mehr als verdoppeln.
+Michael Sorg hat den international erfolgreichen Onlineshop für Hardware, Software, Unterhaltungs- und Haushaltselektronik in die Profitabilität geführt.
+
+Zuvor hat er neckermann.de aufgebaut und 10 Jahre geleitet, bevor er in die Otto Group wechselte und dort neben der eCommerce Leitung für schwab.de auch den Plus Size Fashion Shop sheego.de mitgründete und 5 Jahre online verantwortete.</target>
+      </segment>
+    </unit>
+    <unit id="IaFPsYm" name="Advisory board">
+      <segment>
+        <source>Advisory board</source>
+        <target>Advisory board</target>
+      </segment>
+    </unit>
+    <unit id="kddzrsu" name="company.advisory.text">
+      <segment>
+        <source>company.advisory.text</source>
+        <target><![CDATA[**Klaus Artmann (Beiratsvorsitzender)**  
+**CEO holding ‹one› GmbH**  
+Klaus Artmann befasst sich seit über 15 Jahren mit Entwicklungen im Internet und Online Marketing. Schwerpunkte seiner Arbeit sind die strategische Kundenberatung, eRelations und Realisierung von kundenspezifischen Businessmodellen.
+
+**Helmut von der Lieck (stellvertretender Beiratsvorsitzender)**  
+**Geschäftsführender Gesellschafter gemeinsam&anders gmbh**  
+Helmut von der Lieck ist Experte für Vertrieb, Kundenservice und -marketing. Er hat in verschiedenen deutschen Finanz- und Medienunternehmen aus DAX und MDAX über 20 Jahre Berufserfahrung gesammelt.
+
+**Prof. Dr. Ingo Kett , Beirat,**  
+**Geschäftsführer Viaticum GmbH**  
+Ingo Kett leitete die Sapient Consulting in Deutschland. Zuvor verantwortete er bei IBM das Europageschäft für Energieversorger und war Executive Partner bei Accenture. Er ist Gründer der Viaticum, Venture Capital, und wurde als „Business Angel des Jahres“ ausgezeichnet.]]></target>
+      </segment>
+    </unit>
+    <unit id="dgXhF6w" name="company.ceo.caption">
+      <segment>
+        <source>company.ceo.caption</source>
+        <target>Dr. Markus J. Krechting, CEO</target>
+      </segment>
+    </unit>
+    <unit id="60op8LH" name="company.coo.caption">
+      <segment>
+        <source>company.coo.caption</source>
+        <target>Michael Sorg, COO</target>
+      </segment>
+    </unit>
+    <unit id="Bc1KxF_" name="company.advisory.caption">
+      <segment>
+        <source>company.advisory.caption</source>
+        <target>Von links:  
+Helmut von der Lieck (stellv. Beiratsvorsitzender),  
+Prof. Dr. Ingo Kett (Beirat),  
+Klaus Artmann (Beiratsvorsitzender)</target>
+      </segment>
+    </unit>
+    <unit id="u8KAyIN" name="Notfall-ID Pass">
+      <segment>
+        <source>Notfall-ID Pass</source>
+        <target>Notfall-ID Pass</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

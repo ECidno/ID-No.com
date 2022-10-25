@@ -1,9 +1,9 @@
 <?php
-namespace App\Controller\IdNo;
+namespace App\Controller;
 
 /***********************************************************************
  *
- * (c) 2021 mpDevTeam <dev@mp-group.net>, mp group GmbH
+ * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
  *
  * /*********************************************************************/
 
@@ -46,16 +46,16 @@ class AbstractController extends SymfonyAbstractController
     protected $language = 'de';
 
     /**
-     * @var string controllerName
-     */
-    protected $locale = 'de_DE';
-
-    /**
      * @var LoggerInterface logger
      */
     protected $logger;
 
-		/**
+    /**
+     * @var TranslatorInterface $translator
+     */
+    protected $translator;
+
+    /**
      * @var array
      */
     protected $motd = [];
@@ -128,9 +128,7 @@ class AbstractController extends SymfonyAbstractController
          * session, language, locale
          */
         $this->session = $currentRequest->getSession();
-
         $this->language = $currentRequest->getLocale();
-        $this->locale = $this->session->get('localeString');
 
         /*
          * controller, action
@@ -158,8 +156,8 @@ class AbstractController extends SymfonyAbstractController
 
         // action: default to 'index'
         $this->actionName = empty($this->actionName)
-					? 'index'
-					: $this->actionName;
+            ? 'index'
+            : $this->actionName;
 
         /*
          * template
@@ -212,7 +210,6 @@ class AbstractController extends SymfonyAbstractController
         $twig->addGlobal('settings', $this->settings);
         $twig->addGlobal('ajax', $this->ajax);
         $twig->addGlobal('language', $this->language);
-        $twig->addGlobal('locale', $this->locale);
         $twig->addGlobal('motd', $this->motd);
     }
 

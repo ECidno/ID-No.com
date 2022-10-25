@@ -20,6 +20,25 @@ parameters:
         locale: en_US
 
 
+    # pages
+    pages:
+      company:
+        route: idno_content_unternehmen
+        slug: unternehmen
+      press:
+        route: idno_content_presse
+        slug: presse
+      terms:
+        route: idno_content_agb
+        slug: agb
+      privacy:
+        route: idno_content_datenschutz
+        slug: datenschutz
+      imprint:
+        route: idno_content_impressum
+        slug: impressum
+
+
     # menu
     menu:
       header:
@@ -34,11 +53,11 @@ parameters:
             href: '#testimonials'
             anchor: testimonials
           company:
-            route:
+            page: company
           group:
             route:
           press:
-            route:
+            page: press
           references:
             href: '#referenzen'
             anchor: referenzen
@@ -48,7 +67,7 @@ parameters:
       # footer menu
       footer:
         company:
-          route:
+          page: company
         presse:
           route:
         agb:

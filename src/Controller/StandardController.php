@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller\IdNo;
+namespace App\Controller;
 
 /***********************************************************************
  *
@@ -15,23 +15,36 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Standard controller
  *
- * @Route("/", name="idno_standard_")
+ * @Route("/", name="app_standard_")
  */
 class StandardController extends AbstractController
 {
     /**
      * index action
      *
+     * @param string $idno
      * @param Request $request
      *
-     * @Route("/", name="index", methods={"GET"})
      *
      * @return Response
+     *
+     * @Route("/{idno<[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}>?}", name="index", priority=100, methods={"GET", "POST"})
      */
-    public function index(Request $request): Response
+    public function index($idno = null, Request $request): Response
     {
         $bannerImages = [];
         $dir = 'media/images/banner';
+        $idno = strtoupper($request->get('p_idno') ?? $idno);
+
+        // redirect to pass
+        if(!empty($idno)) {
+            return $this->redirectToRoute(
+                'app_item_pass',
+                [
+                    'idno' => $idno,
+                ]
+            );
+        }
 
         // exists?
         if (file_exists($dir)) {
@@ -61,28 +74,28 @@ class StandardController extends AbstractController
 
 
     /**
-     * static action
+     * content action
      *
-     * @param string $page
-     *
-     * @Route("content/{page}", name="content", methods={"GET"})
+     * @param string $slug
      *
      * @return Response
+     *
+     * Route("/{slug}", name="content", priority=10, methods={"GET"})
      */
-    public function content($page): Response
+    public function content($slug): Response
     {
         // set template name for controller/action
         $this->template = join(
             '/',
             [
                 strtolower($this->controllerName),
-                strtolower($page) . '.html.twig',
+                strtolower($slug).'.html.twig',
             ]
         );
 
         // variables
         $variables = [
-            'page' => $this->settings['pages'][$page] ?? $page,
+            'slug' => $this->settings['pages'][$slug] ?? $slug,
         ];
 
         // return

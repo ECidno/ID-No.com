@@ -1,5 +1,6 @@
 @import "variables";
 @import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 @import "fonts";
 
 /* general */
@@ -36,13 +37,6 @@ header nav {
 
 img.anniversary_5  {
 	height: 61px !important;
-}
-
-.header-form .formfields {
-	border-radius: 15px;
-	max-width: 650px;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 
