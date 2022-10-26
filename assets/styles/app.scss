@@ -3,7 +3,17 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 @import "fonts";
 
-/* general */
+/*
+ * general
+ */
+
+/* background greeen */
+.bg-green {
+	background-color: $green;
+	opacity: .6 !important;
+	--bs-bg-opacity: .6 !important;
+}
+
 a,
 a:link,
 a:hover,
@@ -16,14 +26,11 @@ a:hover {
 	text-decoration: underline;
 }
 
-
-/* background greeen */
-.bg-green {
-	background-color: $green;
-	opacity: .6 !important;
-	--bs-bg-opacity: .6 !important;
+/*
+.form-control:focus{
+	border:1px solid $green;
 }
-
+*/
 
 /* navbar */
 header nav {

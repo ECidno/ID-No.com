@@ -35,18 +35,9 @@ class StandardController extends AbstractController
         $bannerImages = [];
         $dir = 'media/images/banner';
         $idno = strtoupper($request->get('p_idno') ?? $idno);
-
-        // redirect to pass
-        if(!empty($idno)) {
-            return $this->redirectToRoute(
-                'app_item_pass',
-                [
-                    'idno' => $idno,
-                ]
-            );
-        }
-
-        // exists?
+        $submittedToken = $request->request->get('token');
+#$submittedToken = 'abc"';
+        // dir exists?
         if (file_exists($dir)) {
             $finder = new Finder();
 
@@ -67,6 +58,28 @@ class StandardController extends AbstractController
         $variables = [
             'banner_images' => $bannerImages,
         ];
+
+        // header form csrf
+        if (
+            !empty($request->get('p_idno')) &&
+            !$this->isCsrfTokenValid('idno', $submittedToken)
+        ) {
+            $variables['formError'] = 'CSRF failure';
+
+            // return
+            return $this->renderAndRespond($variables);
+        }
+
+        // redirect to pass
+        // @TODO store id in session and remove from path (parameter)
+        if(!empty($idno)) {
+            return $this->redirectToRoute(
+                'app_item_pass',
+                [
+                    'idno' => $idno,
+                ]
+            );
+        }
 
         // return
         return $this->renderAndRespond($variables);
