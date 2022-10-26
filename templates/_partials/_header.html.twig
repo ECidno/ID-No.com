@@ -30,6 +30,7 @@
       <div
         class="collapse navbar-collapse"
         id="navbarText">
+        {# center #}
         <ul class="navbar-nav mb-2 ms-auto me-auto">
           <li class="nav-item dropdown">
             <a
@@ -71,7 +72,7 @@
               target="_blank">Shop</a>
           </li>
 
-          {# user logged in #}
+          {# user logged in
           {% if app.user is not empty %}
             <li class="border rounded">
               <a
@@ -86,7 +87,7 @@
                 href="#">Login</a>
             </li>
           {% endif %}
-
+ #}
           {# language #}
           {% set currentRoute = app.request.attributes.get('_route') %}
           {% set currentRouteParams = app.request.attributes.get('_route_params') ?? {} %}
@@ -130,11 +131,17 @@
           {% endif %}
         </ul>
 
-        <span class="text-success pe-3">
-          <i class="bi bi-person-circle fs-3"></i>
-        </span>
-
-    {#}  <span class="navbar-text text-warning">@TODO: TF: Menu zentriert ausrichten</span>  #}
+        {# right #}
+        <ul class="navbar-nav mb-2 ms-auto">
+          <li>
+            <a
+              class="nav-link"
+              href="#">
+              <i class="bi bi-person-circle fs-3 pe-1 align-middle"></i>
+              <span class="align-middle">Anmelden</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -142,6 +149,7 @@
 
 {# form #}
 {% if item is not defined %}
+  {% set fieldErrorClass = formError is defined and formError is not empty ? ' is-invalid' : '' %}
   <nav class="header-form sticky-top bg-dark py-4">
     <div class="container-fluid">
       <div class="row justify-content-center">
@@ -150,22 +158,38 @@
             role="form"
             action="{{ path('app_standard_index') }}"
             method="post"
-            id="idno_form">
-            <div class="input-group input-group-lg">
-              <input
-                type="text"
-                id="fldIdNo"
-                class="form-control text-center"
-                name="p_idno"
-                placeholder="ID-Nummer checken/aktivieren"
-                maxlength="9"
-                pattern="[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}"
-                autocomplete="off"
-                aria-label="Id number" />
+            id="idno_form"
+            class="form-floating">
+            <div class="input-group input-group-lgX  ">
+
+              <div class="form-floating{{ fieldErrorClass }}">
+                <input
+                  type="text"
+                  id="fldIdNo"
+                  class="form-control text-center{{ fieldErrorClass }}"
+                  name="p_idno"
+                  placeholder="{{ 'ID-Nummer checken/aktivieren'|trans }}"
+                  maxlength="9"
+                  pattern="[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}"
+                  autocomplete="off"
+                  aria-label="Id number" />
+
+                {% if formError is defined and formError is not empty %}
+                  <label for="fldIdNo" class="invalid-feedback">{{ formError }}</label>
+                {% else %}
+                  <label for="fldIdNo">{{ 'ID-Nummer checken/aktivieren'|trans }}</label>
+                {% endif %}
+              </div>
+
               <button
                 class="btn btn-success"
                 type="submit">GO !</button>
             </div>
+            {# csrf #}
+            <input
+              type="hidden"
+              name="token"
+              value="{{ csrf_token('idno') }}"/>
           </form>
         </div>
       </div>

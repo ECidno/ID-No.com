@@ -695,5 +695,77 @@ Klaus Artmann (Beiratsvorsitzender)</target>
         <target>männlich</target>
       </segment>
     </unit>
+    <unit id="MM4P3i3" name="ID-Nummer checken/aktivieren">
+      <segment>
+        <source>ID-Nummer checken/aktivieren</source>
+        <target>ID-Nummer checken/aktivieren</target>
+      </segment>
+    </unit>
+    <unit id="cpJYWuS" name="Krankenversicherung">
+      <segment>
+        <source>Krankenversicherung</source>
+        <target>Krankenversicherung</target>
+      </segment>
+    </unit>
+    <unit id="VW8l8Fs" name="Versicherungs-Nr.">
+      <segment>
+        <source>Versicherungs-Nr.</source>
+        <target>Versicherungs-Nr.</target>
+      </segment>
+    </unit>
+    <unit id="WMKwySr" name="Wohnort">
+      <segment>
+        <source>Wohnort</source>
+        <target>Wohnort</target>
+      </segment>
+    </unit>
+    <unit id="nkoAp7D" name="Zusatzversicherung">
+      <segment>
+        <source>Zusatzversicherung</source>
+        <target>Zusatzversicherung</target>
+      </segment>
+    </unit>
+    <unit id="_mkG127" name="Telefon">
+      <segment>
+        <source>Telefon</source>
+        <target>Telefon</target>
+      </segment>
+    </unit>
+    <unit id="y6rTz0p" name="Mobile">
+      <segment>
+        <source>Mobile</source>
+        <target>Mobile</target>
+      </segment>
+    </unit>
+    <unit id="qLx0SWS" name="Organspendeausweis">
+      <segment>
+        <source>Organspendeausweis</source>
+        <target>Organspendeausweis</target>
+      </segment>
+    </unit>
+    <unit id="NwL8GGZ" name="ja">
+      <segment>
+        <source>ja</source>
+        <target>ja</target>
+      </segment>
+    </unit>
+    <unit id="WdYzR4S" name="Patienten­verfügung">
+      <segment>
+        <source>Patienten­verfügung</source>
+        <target>Patienten­verfügung</target>
+      </segment>
+    </unit>
+    <unit id="HtgsP5c" name="weitere Angaben">
+      <segment>
+        <source>weitere Angaben</source>
+        <target>weitere Angaben</target>
+      </segment>
+    </unit>
+    <unit id="ZvsVmzp" name="Weitere Angaben">
+      <segment>
+        <source>Weitere Angaben</source>
+        <target>Weitere Angaben</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

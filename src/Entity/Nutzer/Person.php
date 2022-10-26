@@ -40,10 +40,22 @@ class Person
     private $contacts;
 
     /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="App\Entity\Nutzer\PersonImages", mappedBy="person")
+     */
+    private $images;
+
+    /**
      * @var string
      * @ORM\Column(type="string", length=25)
      */
     private $status;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=3)
+     */
+    private $sprache;
 
     /**
      * @var string
@@ -94,7 +106,7 @@ class Person
     private $ort;
 
     /**
-     * @var string
+     * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
     private $ortShow = 1;
@@ -106,7 +118,7 @@ class Person
     private $zusatz;
 
     /**
-     * @var string
+     * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
     private $zusatzShow = 1;
@@ -136,42 +148,124 @@ class Person
     private $geburtsdatumJahr;
 
     /**
-     * @var int
+     * @var string
+     * @ORM\Column(type="string", length=6)
+     */
+    private $telefonLand;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=10)
+     */
+    private $telefonVorwahl;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=30)
+     */
+    private $telefon;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     */
+    private $telefonShow = 1;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     */
+    private $mobileShow = 1;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=6)
+     */
+    private $mobileLand;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=10)
+     */
+    private $mobileVorwahl;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=30)
+     */
+    private $mobile;
+
+    /**
+     * @var string
      * @ORM\Column(type="string", length=10)
      */
     private $gewicht;
 
     /**
-     * @var int
+     * @var string
      * @ORM\Column(type="string", length=5)
      */
     private $gewichtEinheit;
 
     /**
-     * @var string
+     * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
     private $gewichtShow = 1;
 
     /**
-     * @var int
+     * @var string
      * @ORM\Column(type="string", length=10)
      */
     private $groesse;
 
     /**
-     * @var int
+     * @var string
      * @ORM\Column(type="string", length=5)
      */
     private $groesseEinheit;
 
     /**
-     * @var string
+     * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
     private $groesseShow = 1;
 
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=100)
+     */
+    private $krankenversicherung;
 
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     */
+    private $krankenversicherungShow = 1;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=100)
+     */
+    private $versicherungsnummer;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     */
+    private $versicherungsnummerShow = 1;
+
+    /**
+     * @var string
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     */
+    private $zusatzversicherung;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     */
+    private $zusatzversicherungShow = 1;
 
     /**
      * @var string
@@ -180,7 +274,7 @@ class Person
     private $blutgruppe;
 
     /**
-     * @var string
+     * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
     private $blutgruppeShow = 1;
@@ -192,7 +286,7 @@ class Person
     private $erkrankungen;
 
     /**
-     * @var string
+     * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
     private $erkrankungenShow = 1;
@@ -204,7 +298,7 @@ class Person
     private $medikamente;
 
     /**
-     * @var string
+     * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
     private $medikamenteShow = 1;
@@ -216,10 +310,46 @@ class Person
     private $allergieen;
 
     /**
-     * @var string
+     * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
     private $allergieenShow = 1;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     */
+    private $organspender;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     */
+    private $organspenderShow = 1;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     */
+    private $patientenverf;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     */
+    private $patientenverfShow = 1;
+
+    /**
+     * @var string
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     */
+    private $weitereangaben;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     */
+    private $weitereangabenShow = 1;
 
 
     /**
@@ -235,6 +365,7 @@ class Person
     public function __construct()
     {
         $this->contacts = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
 
@@ -286,6 +417,25 @@ class Person
 
 
     /**
+     * @param Collection $images
+     * @return Items
+     */
+    public function setImages(Collection $images): self
+    {
+        $this->images = $images;
+        return $this;
+    }
+
+    /**
+     * @return Collection|Contact[]
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+
+    /**
      * @param string $status
      * @return Person
      */
@@ -301,6 +451,25 @@ class Person
     public function getStatus(): ?string
     {
         return $this->status;
+    }
+
+
+    /**
+     * @param string $sprache
+     * @return Person
+     */
+    public function setSprache(string $sprache): self
+    {
+        $this->sprache = $sprache;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getSprache(): ?string
+    {
+        return $this->sprache;
     }
 
 
@@ -410,9 +579,9 @@ class Person
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getStrasseShow(): ?bool
+    public function getStrasseShow(): bool
     {
         return $this->strasseShow;
     }
@@ -467,9 +636,9 @@ class Person
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getOrtShow(): ?bool
+    public function getOrtShow(): bool
     {
         return $this->ortShow;
     }
@@ -505,9 +674,9 @@ class Person
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getZusatzShow(): ?bool
+    public function getZusatzShow(): bool
     {
         return $this->zusatzShow;
     }
@@ -627,6 +796,194 @@ class Person
 
 
     /**
+     * @param string $telefonLand
+     * @return Person
+     */
+    public function setTelefonLand(string $telefonLand): self
+    {
+        $this->telefonLand = $telefonLand;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTelefonLand(): ?string
+    {
+        return $this->telefonLand;
+    }
+
+
+    /**
+     * @param string $telefonVorwahl
+     * @return Person
+     */
+    public function setTelefonVorwahl(string $telefonVorwahl): self
+    {
+        $this->telefonVorwahl = $telefonVorwahl;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTelefonVorwahl(): ?string
+    {
+        return $this->telefonVorwahl;
+    }
+
+
+    /**
+     * @param string $telefon
+     * @return Person
+     */
+    public function setTelefon(string $telefon): self
+    {
+        $this->telefon = $telefon;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTelefon(): ?string
+    {
+        return $this->telefon;
+    }
+
+
+    /**
+     * @param bool $telefonShow
+     * @return Person
+     */
+    public function setTelefonShow(bool $telefonShow): self
+    {
+        $this->telefonShow = $telefonShow;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getTelefonShow(): bool
+    {
+        return $this->telefonShow;
+    }
+
+
+    /**
+     * @return string|null
+     */
+    public function getTelefonDisplay(): ?string
+    {
+        return join(
+            ' ',
+            array_filter(
+                [
+                    $this->telefonLand,
+                    $this->telefonVorwahl,
+                    $this->telefon,
+                ]
+            )
+        );
+    }
+
+
+    /**
+     * @param string $mobileLand
+     * @return Person
+     */
+    public function setMobileLand(string $mobileLand): self
+    {
+        $this->mobileLand = $mobileLand;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getMobileLand(): ?string
+    {
+        return $this->mobileLand;
+    }
+
+
+    /**
+     * @param string $mobileVorwahl
+     * @return Person
+     */
+    public function setMobileVorwahl(string $mobileVorwahl): self
+    {
+        $this->mobileVorwahl = $mobileVorwahl;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getMobileVorwahl(): ?string
+    {
+        return $this->mobileVorwahl;
+    }
+
+
+    /**
+     * @param string $mobile
+     * @return Person
+     */
+    public function setMobile(string $mobile): self
+    {
+        $this->mobile = $mobile;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getMobile(): ?string
+    {
+        return $this->mobile;
+    }
+
+
+    /**
+     * @param bool $mobileShow
+     * @return Person
+     */
+    public function setMobileShow(bool $mobileShow): self
+    {
+        $this->mobileShow = $mobileShow;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getMobileShow(): bool
+    {
+        return $this->mobileShow;
+    }
+
+
+    /**
+     * @return string|null
+     */
+    public function getMobileDisplay(): ?string
+    {
+        return join(
+            ' ',
+            array_filter(
+                [
+                    $this->mobileLand,
+                    $this->mobileVorwahl,
+                    $this->mobile,
+                ]
+            )
+        );
+    }
+
+
+    /**
      * @param string $gewicht
      * @return Person
      */
@@ -675,9 +1032,9 @@ class Person
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getGewichtShow(): ?bool
+    public function getGewichtShow(): bool
     {
         return $this->gewichtShow;
     }
@@ -732,11 +1089,125 @@ class Person
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getGroesseShow(): ?bool
+    public function getGroesseShow(): bool
     {
         return $this->groesseShow;
+    }
+
+
+    /**
+     * @param string $krankenversicherung
+     * @return Person
+     */
+    public function setKrankenversicherung(string $krankenversicherung): self
+    {
+        $this->krankenversicherung = $krankenversicherung;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getKrankenversicherung(): ?string
+    {
+        return $this->krankenversicherung;
+    }
+
+
+    /**
+     * @param bool $krankenversicherungShow
+     * @return Person
+     */
+    public function setKrankenversicherungShow(bool $krankenversicherungShow): self
+    {
+        $this->krankenversicherungShow = $krankenversicherungShow;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getKrankenversicherungShow(): bool
+    {
+        return $this->krankenversicherungShow;
+    }
+
+
+    /**
+     * @param string $versicherungsnummer
+     * @return Person
+     */
+    public function setVersicherungsnummer(string $versicherungsnummer): self
+    {
+        $this->versicherungsnummer = $versicherungsnummer;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getVersicherungsnummer(): ?string
+    {
+        return $this->versicherungsnummer;
+    }
+
+
+    /**
+     * @param bool $versicherungsnummerShow
+     * @return Person
+     */
+    public function setVersicherungsnummerShow(bool $versicherungsnummerShow): self
+    {
+        $this->versicherungsnummerShow = $versicherungsnummerShow;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getVersicherungsnummerShow(): bool
+    {
+        return $this->versicherungsnummerShow;
+    }
+
+
+    /**
+     * @param string $zusatzversicherung
+     * @return Person
+     */
+    public function setZusatzversicherung(string $zusatzversicherung): self
+    {
+        $this->zusatzversicherung = $zusatzversicherung;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getZusatzversicherung(): ?string
+    {
+        return $this->zusatzversicherung;
+    }
+
+
+    /**
+     * @param bool $zusatzversicherungShow
+     * @return Person
+     */
+    public function setZusatzversicherungShow(bool $zusatzversicherungShow): self
+    {
+        $this->zusatzversicherungShow = $zusatzversicherungShow;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getZusatzversicherungShow(): bool
+    {
+        return $this->zusatzversicherungShow;
     }
 
 
@@ -770,9 +1241,9 @@ class Person
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getBlutgruppeShow(): ?bool
+    public function getBlutgruppeShow(): bool
     {
         return $this->blutgruppeShow;
     }
@@ -808,9 +1279,9 @@ class Person
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getErkrankungenShow(): ?bool
+    public function getErkrankungenShow(): bool
     {
         return $this->erkrankungenShow;
     }
@@ -846,9 +1317,9 @@ class Person
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getMedikamenteShow(): ?bool
+    public function getMedikamenteShow(): bool
     {
         return $this->medikamenteShow;
     }
@@ -884,28 +1355,152 @@ class Person
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getAllergieenShow(): ?bool
+    public function getAllergieenShow(): bool
     {
         return $this->allergieenShow;
     }
 
 
+    /**
+     * @param bool $organspender
+     * @return Person
+     */
+    public function setOrganspender(bool $organspender): self
+    {
+        $this->organspender = $organspender;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getOrganspender(): bool
+    {
+        return $this->organspender;
+    }
+
+
+    /**
+     * @param bool $organspenderShow
+     * @return Person
+     */
+    public function setOrganspenderShow(bool $organspenderShow): self
+    {
+        $this->organspenderShow = $organspenderShow;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getOrganspenderShow(): bool
+    {
+        return $this->organspenderShow;
+    }
+
+
+    /**
+     * @param bool $patientenverf
+     * @return Person
+     */
+    public function setPatientenverf(bool $patientenverf): self
+    {
+        $this->patientenverf = $patientenverf;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getPatientenverf(): bool
+    {
+        return $this->patientenverf;
+    }
+
+
+    /**
+     * @param bool $patientenverfShow
+     * @return Person
+     */
+    public function setPatientenverfShow(bool $patientenverfShow): self
+    {
+        $this->patientenverfShow = $patientenverfShow;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getPatientenverfShow(): bool
+    {
+        return $this->patientenverfShow;
+    }
+
+
+    /**
+     * @param string $weitereangaben
+     * @return Person
+     */
+    public function setWeitereangaben(string $weitereangaben): self
+    {
+        $this->weitereangaben = $weitereangaben;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getWeitereangaben(): ?string
+    {
+        return $this->weitereangaben;
+    }
+
+
+    /**
+     * @param bool $weitereangabenShow
+     * @return Person
+     */
+    public function setWeitereangabenShow(bool $weitereangabenShow): self
+    {
+        $this->weitereangabenShow = $weitereangabenShow;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getWeitereangabenShow(): bool
+    {
+        return $this->weitereangabenShow;
+    }
 
 
 
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getMedicalShow(): ?bool
+    public function getMedicalShow(): bool
     {
         return
             $this->blutgruppeShow ||
             $this->erkrankungenShow ||
             $this->medikamenteShow ||
-            $this->allergieen;
+            $this->allergieenShow;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function getInsuranceShow(): bool
+    {
+        return
+            $this->krankenversicherungShow ||
+            $this->versicherungsnummerShow ||
+            $this->zusatzversicherungShow;
     }
 
 
