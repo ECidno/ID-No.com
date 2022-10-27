@@ -22,6 +22,9 @@ parameters:
 
     # pages
     pages:
+      index:
+        route: app_standard_index
+        slug:
       company:
         route: idno_content_unternehmen
         slug: unternehmen
@@ -34,6 +37,9 @@ parameters:
       privacy:
         route: idno_content_datenschutz
         slug: datenschutz
+      security:
+        route: idno_content_datensicherheit
+        slug: datensicherheit
       imprint:
         route: idno_content_impressum
         slug: impressum
@@ -44,22 +50,20 @@ parameters:
       header:
         idno:
           about:
-            href: '#ueber_idno'
+            page: index
             anchor: ueber_idno
           works:
-            href: '#so_funktionierts'
+            page: index
             anchor: so_funktionierts
           testimonials:
-            href: '#testimonials'
+            page: index
             anchor: testimonials
           company:
             page: company
-          group:
-            route:
           press:
             page: press
           references:
-            href: '#referenzen'
+            page: index
             anchor: referenzen
           bussiness_clients:
              href: 'https://www.code-no.shop/sie-sind-firmenkunde'
@@ -69,13 +73,13 @@ parameters:
         company:
           page: company
         presse:
-          route:
+          page: press
         agb:
-          route:
+          page: terms
         privacy:
-          route:
+          page: privacy
         imprint:
-          route:
+          page: imprint
 
 
     # carousel
@@ -134,17 +138,19 @@ parameters:
       row1:
         about:
           image: images/cross.png
-          href: '#ueber_idno'
+          page: index
+          anchor: ueber_idno
         works:
           image: images/info_2b.png
-          href: '#so_funktionierts'
+          page: index
+          anchor: so_funktionierts
         shop:
           image: images/shopbutton_1.png
           href: 'https://www.code-no.shop/sos-id-chip/'
           target: _blank
         datasecurity:
           image: images/safebutton_1.png
-          href: '#datenschutz'
+          page: security
 
       # row 2
       row2:
@@ -224,3 +230,51 @@ parameters:
         title: TikTok
         icon: images/tiktok.png
         href: https://vm.tiktok.com/ZMLWRPE6n
+
+
+    # press
+    press:
+      -
+        id: 17
+        date: 2021-09-10
+        location: Frankfurt
+        image: Computerbild-presse.jpg
+      -
+        id: 16
+        date: 2021-09-10
+        location: Frankfurt
+        image: TikTok-presse.jpg
+      -
+        id: 15
+        date: 2021-09-08
+        location: Frankfurt
+        image: ZOLL-AmbulancePad-presse.jpg
+        doc: Pressemitteilung-ZOLL-AmbulancePad.pdf
+      -
+        id: 14
+        date: 2021-06-09
+        location: Frankfurt
+        image: Sportbild-presse.jpg
+      -
+        id: 13
+        date: 2021-06-11
+        location: Frankfurt
+        image: Reif-presse.jpg
+      -
+        id: 12
+        date: 2019-04-25
+        location: Frankfurt
+        image: arbeitssicherheit_presse.jpg
+        doc: Pressemeldung_Mehr_Sicherheit_im_Arbeitsschutz.pdf
+      -
+        id: 11
+        date: 2019-02-11
+        location: Frankfurt
+        image: TagDesNotrufs.jpg
+        doc: Pressemeldung_Tag_des_Notrufs.pdf
+      -
+        id: 10
+        date: 2018-05-18
+        location: Frankfurt
+        image: Notfallpass.jpg
+        doc: Pressemeldung_Da_es_im_Notfall_schnell_gehen_muss.pdf

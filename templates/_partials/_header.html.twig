@@ -44,7 +44,7 @@
                 {% set title = 'header.menu.idno.' ~ key ~ '.lbl' %}
                 {% set href = item.page is not defined or item.page is empty
                   ? item.href ?? '#'
-                  : path(settings.pages[item.page].route) %}
+                  : path(settings.pages[item.page].route, {'_fragment': item.anchor ?? null}) %}
                 <li>
                   <a
                     class="dropdown-item"

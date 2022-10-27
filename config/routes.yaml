@@ -46,3 +46,13 @@ redirect_pad:
         path: 'https://youtu.be/oo_JCWIkCqE'
         keepQueryParams: false
         keepRequestMethod: true
+
+redirect_zoll:
+    path: '/zoll'
+    methods: GET
+    defaults:
+        priority: 50
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+        path: 'https://youtu.be/oo_JCWIkCqE'
+        keepQueryParams: false
+        keepRequestMethod: true
