@@ -1,0 +1,77 @@
+{% extends 'default.html.twig' %}
+{% block title %}{{ 'login.title'|trans }}{% endblock %}
+
+{# Content #}
+{% block content %}
+  <div class="container-fluid">
+    <div class="row my-3 justify-content-center">
+      <div class="col-10 col-lg-8 col-xl-6">
+        <h1>{{ 'login.header'|trans }}</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-10 col-lg-8 col-xl-6">
+        {{ 'login.text'|trans|raw|markdown_to_html }}
+
+        {# error? #}
+        {% if error %}
+          <div
+            class="alert alert-warning alert-dismissible fade show my-3"
+            role="alert">
+            <div>
+              <i class="bi bi-exclamation-triangle pe-1"></i>
+              {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"></button>
+          </div>
+        {% endif %}
+
+        {# form #}
+        <form
+          action="{{ path('app_login') }}"
+          method="post">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="username"
+              value="{{ last_username }}"
+              name="_username"
+              placeholder="E-Mail" />
+            <label for="username">E-Mail</label>
+          </div>
+          <div class="form-floating">
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              name="_password"
+              placeholder="Passwort">
+            <label for="password">Passwort</label>
+          </div>
+
+          {# If you want to control the URL the user is redirected to on success #}
+          <input
+            type="hidden"
+            name="_target_path"
+            value="{{ path('app_meinidno') }}" />
+
+          <input
+            type="hidden"
+            name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}" />
+
+          <div class="float-end">
+            <button
+              type="submit"
+              class="btn btn-success text-light my-3 px-3 py-2">Einloggen</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -61,7 +61,7 @@ class RoutingService implements RouteLoaderInterface
             $route = new Route(
                 '/'.$slug,
                 [
-                    '_controller' => 'App\Controller\IdNo\StandardController::content',
+                    '_controller' => 'App\Controller\StandardController::content',
                     'slug' => $slug
                 ],
                 []

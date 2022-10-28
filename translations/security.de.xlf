@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="de">
+  <file id="security.de">
+    <unit id="xM9uX4L" name="Wrong credentials!">
+      <segment>
+        <source>Wrong credentials!</source>
+        <target>Wrong credentials!Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.</target>
+      </segment>
+    </unit>
+    <unit id="pMAY23j" name="Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.">
+      <segment>
+        <source>Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.</source>
+        <target>Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

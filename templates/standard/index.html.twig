@@ -51,7 +51,7 @@
 						class="d-none d-lg-block w-100"
 						alt="{{ caption|trans }}" />
 					<div class="d-none d-lg-block text-white" {{ textStyleProperty|raw }}>
-						<h2 class="h1" >{{ text|trans|raw|markdown_to_html }}</h2>
+						<h2 class="h1 text-light" >{{ text|trans|raw|markdown_to_html }}</h2>
 					</div>
 					<img
 						src="{{ asset(item.image.mobile, 'media') }}"
@@ -85,8 +85,8 @@
 	<div class="container">
 		<div class="row mt-3">
 			<div class="col-md-12">
-				<h1 class="text-center text-success">SOS-ID-Chip</h1>
-				<h5 class="text-center text-success">{{ 'index.introduction.header2'|trans }}</h5>
+				<h1 class="text-center">SOS-ID-Chip</h1>
+				<h5 class="text-center">{{ 'index.introduction.header2'|trans }}</h5>
 			</div>
 		</div>
 		<div class="row">
@@ -102,11 +102,14 @@
 			{% for key, card in settings.cards.row1 %}
 				{% set labelHeader = 'index.boxrow1.' ~ key ~ '.header' %}
 				{% set labelText = 'index.boxrow1.' ~ key ~ '.text' %}
+				{% set href = card.page is not defined or card.page is empty
+					? card.href ?? '#'
+					: path(settings.pages[card.page].route, {'_fragment': card.anchor ?? null}) %}
 				<div class="col">
 					<div class="card text-center h-100">
 						<div class="py-3">
 							<a
-								href="{{ card.href }}"
+								href="{{ href }}"
 								target="{{ card.target ?? '_top' }}">
 								<img
 									src="{{ asset(card.image, 'media') }}"
@@ -175,7 +178,7 @@
 					alt="{{ 'index.boxrow1.about.header'|trans }}" />
 			</div>
 			<div class="col-lg-2 text-lg-end">
-				<h3 class="text-success">{{ 'index.boxrow1.about.header'|trans|raw }}</h3>
+				<h5>{{ 'index.boxrow1.about.header'|trans|raw }}</h5>
 			</div>
 			<div class="col-lg-9">
 				{{ 'index.about.text'|trans|raw|markdown_to_html }}
@@ -196,7 +199,7 @@
 						alt="{{ 'index.features.header'|trans }}" />
 				</div>
 				<div class="col-lg-2 text-lg-end">
-					<h3 class="text-light">{{ 'index.features.header'|trans }}</h3>
+					<h5 class="text-light">{{ 'index.features.header'|trans }}</h5>
 				</div>
 				<div class="col-lg-9">
 					{% for i in 1..6 %}
@@ -229,7 +232,7 @@
 					alt="{{ 'index.works.header'|trans }}" />
 			</div>
 			<div class="col-lg-2 text-lg-end">
-				<h3 class="text-success">{{ 'index.works.header'|trans|raw }}</h3>
+				<h5 class="text-success">{{ 'index.works.header'|trans|raw }}</h5>
 			</div>
 			<div class="col-lg-9">
 				<div class="row row-cols-1 row-cols-md-3 g-3">
@@ -239,12 +242,12 @@
 						<div class="col">
 							<div class="card h-100">
 								<div class="card-body">
-									<h3 class="text-success card-title">{{ labelHeader|trans }}</h3>
+									<h5 class="card-title">{{ labelHeader|trans }}</h5>
 									<p class="card-text">{{ labelText|trans|raw|markdown_to_html }}</p>
 								</div>
 								<img
 									src="{{ asset('images/so_funktionierts_' ~ i ~ '.jpg', 'media') }}"
-									class="card-img-bottom img-fluid borderX border-dark"
+									class="card-img-bottom img-fluid border-dark"
 									alt="{{ labelHeader|trans }}" />
 							</div>
 						</div>
@@ -256,7 +259,7 @@
 
 	{# references #}
 	<a name="{{ settings.menu.header.idno.references.anchor }}"></a>
-	<div class="bg-green pb-5">
+	<div class="bg-green mt-3 pt-3 pb-5">
 		<div class="container">
 			<div class="row mt-3 gy-3">
 				<div class="col-lg-1">
@@ -267,7 +270,7 @@
 						alt="{{ 'index.references.header'|trans }}" />
 				</div>
 				<div class="col-lg-2 text-lg-end">
-					<h3 class="text-light">{{ 'index.references.header'|trans|raw }}</h3>
+					<h5 class="text-light">{{ 'index.references.header'|trans|raw }}</h5>
 				</div>
 				<div class="col-md-9"></div>
 			</div>
@@ -300,7 +303,7 @@
 					alt="{{ 'index.testimonials.header'|trans }}" />
 			</div>
 			<div class="col-lg-11">
-				<h3 class="text-success">{{ 'index.testimonials.header'|trans|raw }}</h3>
+				<h5 class="text-success">{{ 'index.testimonials.header'|trans|raw }}</h5>
 			</div>
 		</div>
 
@@ -331,7 +334,7 @@
 	</div>
 
 	{# reference-partner #}
-	<div class="bg-green pb-5">
+	<div class="bg-green pt-3 pb-5">
 		<div class="container">
 			<div class="row mt-3 gy-3">
 				<div class="col-lg-1">
@@ -342,7 +345,7 @@
 						alt="{{ 'index.references_partners.header'|trans }}" />
 				</div>
 				<div class="col-lg-10">
-					<h3 class="text-light">{{ 'index.references_partners.header'|trans|raw }}</h3>
+					<h5 class="text-light">{{ 'index.references_partners.header'|trans|raw }}</h5>
 				</div>
 			</div>
 			<div class="row">

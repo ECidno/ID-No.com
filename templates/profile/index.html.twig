@@ -1,0 +1,22 @@
+{% extends 'default.html.twig' %}
+{% block title %}{{ 'meinidno.title'|trans }}{% endblock %}
+
+{# Content #}
+{% block content %}
+  <div class="container-fluid">
+    <div class="row my-3 justify-content-center">
+      <div class="col-10 col-lg-8 col-xl-6">
+        <h1>{{ 'meinidno.title'|trans }}</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-10 col-lg-8 col-xl-6">
+				Profil / Notfall-Daten
+				{#}
+        {{ 'login.text'|trans|raw|markdown_to_html }}
+#}
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
