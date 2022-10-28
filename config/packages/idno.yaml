@@ -44,6 +44,16 @@ parameters:
         route: idno_content_impressum
         slug: impressum
 
+      login:
+        route: app_login
+        slug: login
+      logout:
+        route: app_logout
+        slug: logout
+      meinidno:
+        route: app_meinidno
+        slug: meinidno
+
 
     # menu
     menu:
@@ -67,6 +77,14 @@ parameters:
             anchor: referenzen
           bussiness_clients:
              href: 'https://www.code-no.shop/sie-sind-firmenkunde'
+
+        # user
+        user:
+          meinidno:
+            page: meinidno
+          logout:
+            page: logout
+
 
       # footer menu
       footer:

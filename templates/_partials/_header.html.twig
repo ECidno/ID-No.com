@@ -39,7 +39,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
               href="#">ID-No.com</a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-dark">
               {% for key, item in settings.menu.header.idno %}
                 {% set title = 'header.menu.idno.' ~ key ~ '.lbl' %}
                 {% set href = item.page is not defined or item.page is empty
@@ -54,7 +54,7 @@
             </ul>
           </li>
 
-          {# user logged in #}
+          {# user logged in
           {% if app.user is not empty %}
             <li>
               <a
@@ -63,7 +63,7 @@
                 target="_blank">Mein ID-No.com</a>
             </li>
           {% endif %}
-
+#}
           {# shop #}
           <li>
             <a
@@ -133,14 +133,47 @@
 
         {# right #}
         <ul class="navbar-nav mb-2 ms-auto">
-          <li>
-            <a
-              class="nav-link"
-              href="#">
-              <i class="bi bi-person-circle fs-3 pe-1 align-middle"></i>
-              <span class="align-middle">Anmelden</span>
-            </a>
-          </li>
+          {% if app.user is not empty %}
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="{{ path(settings.pages.meinidno.route) }}">
+                <i class="bi bi-person-circle fs-2"></i>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                href="#">
+                {{ 'meinidno.title'|trans }}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                {% for key, item in settings.menu.header.user %}
+                  {% set title = 'header.menu.user.' ~ key ~ '.lbl' %}
+                  {% set href = item.page is not defined or item.page is empty
+                    ? item.href ?? '#'
+                    : path(settings.pages[item.page].route, {'_fragment': item.anchor ?? null}) %}
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ href }}">{{ title|trans }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="{{ path(settings.pages.login.route) }}">
+                <i class="bi bi-person-circle fs-3 pe-1 align-middle"></i>
+                <span class="align-middle">Anmelden</span>
+              </a>
+            </li>
+          {% endif %}
         </ul>
       </div>
     </div>
@@ -148,7 +181,7 @@
 </header>
 
 {# form #}
-{% if item is not defined %}
+{% if (idno is not defined) and (app.user is null) %}
   {% set fieldErrorClass = formError is defined and formError is not empty ? ' is-invalid' : '' %}
   <nav class="header-form sticky-top bg-dark py-4">
     <div class="container-fluid">
@@ -160,7 +193,7 @@
             method="post"
             id="idno_form"
             class="form-floating">
-            <div class="input-group input-group-lgX  ">
+            <div class="input-group">
 
               <div class="form-floating{{ fieldErrorClass }}">
                 <input

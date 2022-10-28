@@ -1215,5 +1215,41 @@ Dies schützt vor unberechtigtem Auslesen durch Dritte.
 Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktualisierungserinnerungen haben die Helfer die Sicherheit, dass die gespeicherten Daten des Nutzers aktuell und verlässlich sind.</target>
       </segment>
     </unit>
+    <unit id="Kd99AFq" name="login.title">
+      <segment>
+        <source>login.title</source>
+        <target>Anmeldung</target>
+      </segment>
+    </unit>
+    <unit id="bEf896l" name="login.header">
+      <segment>
+        <source>login.header</source>
+        <target>Mein ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="XGTJLIG" name="login.text">
+      <segment>
+        <source>login.text</source>
+        <target>Bitte melden Sie sich hier mit Benutzernamen und Passwort an. Im Anschluss können Sie Ihre Notfall-Daten aktualisieren oder Ihre ID-Nummer aktivieren. </target>
+      </segment>
+    </unit>
+    <unit id="Y7eqvgE" name="meinidno.title">
+      <segment>
+        <source>meinidno.title</source>
+        <target>Mein ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="nZDkroM" name="header.menu.user.meinidno.lbl">
+      <segment>
+        <source>header.menu.user.meinidno.lbl</source>
+        <target>Mein ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="snIaWey" name="header.menu.user.logout.lbl">
+      <segment>
+        <source>header.menu.user.logout.lbl</source>
+        <target>Abmelden</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

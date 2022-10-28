@@ -55,7 +55,7 @@ class Person
      * @var string
      * @ORM\Column(type="string", length=3)
      */
-    private $sprache;
+    private $sprache = 'de';
 
     /**
      * @var string
@@ -350,7 +350,6 @@ class Person
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
     private $weitereangabenShow = 1;
-
 
     /**
      * @Assert\DateTime()
