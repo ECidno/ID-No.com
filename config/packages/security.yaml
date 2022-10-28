@@ -44,9 +44,9 @@ security:
                 target: app_standard_index
 
             # login throttle
-            # login_throttling:
-            #     max_attempts: 5
-            #     interval: '3 minutes'
+            login_throttling:
+                max_attempts: 5
+                interval: '3 minutes'
 
 
     # Easy way to control access for large sections of your site
