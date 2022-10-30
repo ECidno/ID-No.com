@@ -121,6 +121,31 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $lastLogin;
 
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=5)
+     */
+    private $gesperrt;
+
+    /**
+     * @var int
+     * @ORM\Column(type="integer")
+     */
+    private $gesperrtAnzahl;
+
+    /**
+     * @Assert\DateTime()
+     * @ORM\Column(type="integer")
+     */
+    private $gesperrtDatum;
+
+    /**
+     * @var int
+     * @ORM\Column(type="integer")
+     */
+    private $loginFehler;
+
+
 
     /**
      * @return int|null
@@ -470,5 +495,81 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         $this->plainPassword = null;
         $this->repeatPassword = null;
+    }
+
+
+    /**
+     * @param string $gesperrt
+     * @return Nutzer
+     */
+    public function setGesperrt(string $gesperrt): self
+    {
+        $this->gesperrt = $gesperrt;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getGesperrt(): ?string
+    {
+        return $this->gesperrt;
+    }
+
+
+    /**
+     * @param int $gesperrtAnzahl
+     * @return Nutzer
+     */
+    public function setGesperrtAnzahl(int $gesperrtAnzahl): self
+    {
+        $this->gesperrtAnzahl = $gesperrtAnzahl;
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getGesperrtAnzahl(): ?int
+    {
+        return $this->gesperrtAnzahl;
+    }
+
+
+    /**
+     * @param \DateTime $gesperrtDatum
+     * @return Nutzer
+     */
+    public function setGesperrtDatum(\DateTime $gesperrtDatum): self
+    {
+        $this->gesperrtDatum = $gesperrtDatum;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getGesperrtDatum(): ?\DateTime
+    {
+        return $this->gesperrtDatum;
+    }
+
+
+    /**
+     * @param int $loginFehler
+     * @return Nutzer
+     */
+    public function setLoginFehler(int $loginFehler): self
+    {
+        $this->loginFehler = $loginFehler;
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getLoginFehler(): ?int
+    {
+        return $this->loginFehler;
     }
 }

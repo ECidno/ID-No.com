@@ -16,11 +16,15 @@
         {# error? #}
         {% if error %}
           <div
-            class="alert alert-warning alert-dismissible fade show my-3"
+            class="alert alert-danger alert-dismissible fade show my-3"
             role="alert">
-            <div>
-              <i class="bi bi-exclamation-triangle pe-1"></i>
-              {{ error.messageKey|trans(error.messageData, 'security') }}
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <i class="bi bi-exclamation-triangle px-1"></i>
+              </div>
+              <div class="flex-grow-1 ms-2">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+              </div>
             </div>
             <button
               type="button"

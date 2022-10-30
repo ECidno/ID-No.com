@@ -26,8 +26,7 @@ class ProfileController extends AbstractController
      */
     public function index(Request $request): Response
     {
-        // usually you'll want to make sure the user is authenticated first,
-        // see "Authorization" below
+        // user authenticated
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         // vars
@@ -38,4 +37,27 @@ class ProfileController extends AbstractController
         // return
         return $this->renderAndRespond($variables);
     }
+
+
+    /**
+    * profile action
+    *
+    * @param Request $request
+    * @return Response
+    *
+    * @Route("/profil", name="app_profile", methods={"GET", "POST"})
+    */
+   public function profile(Request $request): Response
+   {
+       // user authenticated
+       $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+       // vars
+       $variables = [
+           'user' => $this->getUser(),
+       ];
+
+       // return
+       return $this->renderAndRespond($variables);
+   }
 }

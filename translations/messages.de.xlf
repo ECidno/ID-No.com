@@ -1251,5 +1251,29 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>Abmelden</target>
       </segment>
     </unit>
+    <unit id="AJQgdhc" name="header.menu.user.profile.lbl">
+      <segment>
+        <source>header.menu.user.profile.lbl</source>
+        <target>Profil bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="1_wnK76" name="profile.title">
+      <segment>
+        <source>profile.title</source>
+        <target>Profil</target>
+      </segment>
+    </unit>
+    <unit id="D_WugSp" name="profile.header">
+      <segment>
+        <source>profile.header</source>
+        <target>Meine Notfall-Daten</target>
+      </segment>
+    </unit>
+    <unit id="Hfl.SdK" name="profile.personal.header">
+      <segment>
+        <source>profile.personal.header</source>
+        <target>Persönliche Angaben</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
