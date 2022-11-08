@@ -313,13 +313,13 @@ Ingo Kett was head of Sapient Consulting in Germany. Before that, he was respons
     <unit id="AB0XdUp" name="index.boxrow1.about.header">
       <segment>
         <source>index.boxrow1.about.header</source>
-        <target>index.boxrow1.about.header</target>
+        <target><![CDATA[About <nobr>ID-No.com</nobr>]]></target>
       </segment>
     </unit>
     <unit id="mX38078" name="index.boxrow1.about.text">
       <segment>
         <source>index.boxrow1.about.text</source>
-        <target>index.boxrow1.about.text</target>
+        <target>ID-No.com enables you to access the stored emergency information – globally and 24/7. [About ID-No.com](#ueber_idno)</target>
       </segment>
     </unit>
     <unit id="3Vb_85h" name="index.boxrow1.works.header">
@@ -385,7 +385,22 @@ Ingo Kett was head of Sapient Consulting in Germany. Before that, he was respons
     <unit id="1iQrU_D" name="index.about.text">
       <segment>
         <source>index.about.text</source>
-        <target>index.about.text</target>
+        <target><![CDATA[**ID-No.com – global safety 24/7**  
+In Germany alone more than 29 Million people need medical assistance after an accident. Accident hazard is everywhere: at work, at home, in traffic, during sports or leisure activities. Two thirds of all accidents are leisure time accidents.
+
+During an emergency first aiders often lack of relevant information such as medical preconditions, medication, allergy etc.
+
+In extreme situations even people with excellent memory can‘t remember all vital details of themselves or third parties. They might also be in shock.
+
+
+**Central storage of individual emergency –information.**  
+ID-No.com provides worldwide and around the clock access to emergency information. Medical first responders receive an overview of illnesses, medications, allergies, diabetes, blood types and contact persons who should be called in case of a medical emergency or sudden accident.
+
+<img class="ms-3 mt-3 float-end align-bottom" src="/build/media/images/ID_Award_IM_2018.png.jpg" width="150" alt="INNOVATIONSPREIS-IT: BEST OF 2018" />**ID-No**.com is a trademark of **CODE-No**.com GmbH and serves to protect people. **CODE-No**.com is a system established since 2007 with 9 million numbers in the market.
+
+**ID-No**.com are protected as utility models and registered for european patent.
+
+**ID-No**.com was awarded the innovation prize "Best of 2018" of Initiative Mittelstand in the category "E-Health". The IT Innovation Award is under the patronage of the Federal Presidency for Economics and Technology.]]></target>
       </segment>
     </unit>
     <unit id="QIQZDqB" name="index.features.header">
