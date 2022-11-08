@@ -20,6 +20,17 @@ parameters:
         locale: en_US
 
 
+    # buttons
+    buttons:
+      add: 'bi bi-plus-square'
+      new: 'bi bi-plus-square'
+      edit: 'bi bi-pencil-square'
+      delete: 'bi bi-trash'
+
+    form:
+      type: floating
+
+
     # pages
     pages:
       index:
@@ -51,11 +62,17 @@ parameters:
         route: app_logout
         slug: logout
       meinidno:
-        route: app_meinidno
+        route: app_profile_index
         slug: meinidno
       profile:
-        route: app_profile
-        slug: profil
+        route: app_profile_edit
+        slug: profil/edit
+      account:
+        route: app_account_edit
+        slug: profil/edit
+      contacts:
+        route: app_contacts_index
+        slug: profil/edit
 
     # menu
     menu:

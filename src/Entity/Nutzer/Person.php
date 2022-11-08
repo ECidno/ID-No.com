@@ -29,9 +29,15 @@ class Person
 
     /**
      * @var Person
-     * @ORM\ManyToOne(targetEntity="Person")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Nutzer\Person")
      */
     private $parent = null;
+
+    /**
+     * @var Nutzer
+     * @ORM\ManyToOne(targetEntity="App\Entity\Nutzer\Nutzer", inversedBy="persons")
+     */
+    private $nutzer = null;
 
     /**
      * @var ArrayCollection
@@ -393,6 +399,25 @@ class Person
     public function getParent(): ?Person
     {
         return $this->parent;
+    }
+
+
+    /**
+     * @param Nutzer $nutzer
+     * @return Person
+     */
+    public function setNutzer(Nutzer $nutzer): self
+    {
+        $this->nutzer = $nutzer;
+        return $this;
+    }
+
+    /**
+     * @return Nutzer|null
+     */
+    public function getNutzer(): ?Nutzer
+    {
+        return $this->nutzer;
     }
 
 

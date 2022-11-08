@@ -205,7 +205,8 @@
                   maxlength="9"
                   pattern="[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}"
                   autocomplete="off"
-                  aria-label="Id number" />
+                  aria-label="Id number"
+                  required="required" />
 
                 {% if formError is defined and formError is not empty %}
                   <label for="fldIdNo" class="invalid-feedback">{{ formError }}</label>

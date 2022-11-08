@@ -7,6 +7,8 @@ namespace App\Entity\Nutzer;
  *
  **********************************************************************/
 
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -18,7 +20,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Entity(repositoryClass="App\Repository\NutzerRepository")
  */
 class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
-#class Nutzer
 {
     /**
      * @var int
@@ -27,6 +28,12 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="App\Entity\Nutzer\Person", mappedBy="nutzer")
+     */
+    private $persons;
 
     /**
      * @var string
@@ -153,6 +160,25 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+
+    /**
+     * @param Collection $persons
+     * @return Nutzer
+     */
+    public function setPersons(Collection $persons): self
+    {
+        $this->persons = $persons;
+        return $this;
+    }
+
+    /**
+     * @return Collection|Person[]
+     */
+    public function getPersons(): Collection
+    {
+        return $this->persons;
     }
 
 
@@ -474,7 +500,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function isAllowedToLogin(): bool
     {
-        return  $this->getStatus() === 'ok';
+        return $this->getStatus() === 'ok';
     }
 
 

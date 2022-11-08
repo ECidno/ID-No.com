@@ -1149,8 +1149,7 @@ Die Bonitätsauskunft kann Wahrscheinlichkeitswerte (Score-Werte) beinhalten, di
     <unit id="JR7p9yq" name="imprint.text">
       <segment>
         <source>imprint.text</source>
-        <target>#### ID-No.com GmbH  
-Mitglied der CODE-No.com Gruppe  
+        <target>#### ID-No.com GmbH   
 Cassellastraße 30-32  
 D-60386 Frankfurt am Main
 
@@ -1273,6 +1272,192 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
       <segment>
         <source>profile.personal.header</source>
         <target>Persönliche Angaben</target>
+      </segment>
+    </unit>
+    <unit id="kut5zCU" name="profile.edit.lbl">
+      <segment>
+        <source>profile.edit.lbl</source>
+        <target>Profil bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="VIK05IR" name="contacts.index.lbl">
+      <segment>
+        <source>contacts.index.lbl</source>
+        <target>Kontakte bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="hoXcfP0" name="profile.delete.lbl">
+      <segment>
+        <source>profile.delete.lbl</source>
+        <target>Profil löschen</target>
+      </segment>
+    </unit>
+    <unit id="LNtZqBU" name="account.edit.lbl">
+      <segment>
+        <source>account.edit.lbl</source>
+        <target>Zugangsdaten ändern</target>
+      </segment>
+    </unit>
+    <unit id="xgnCQl1" name="profile.actions.pass_enable.success">
+      <segment>
+        <source>profile.actions.pass_enable.success</source>
+        <target>Der Notfall-ID Pass wurde erfolgreich aktiviert.</target>
+      </segment>
+    </unit>
+    <unit id="Jtap8tY" name="profile.actions.pass_disable.success">
+      <segment>
+        <source>profile.actions.pass_disable.success</source>
+        <target>Der Notfall-ID Pass wurde deaktiviert!</target>
+      </segment>
+    </unit>
+    <unit id="yIoLkHQ" name="Success">
+      <segment>
+        <source>Success</source>
+        <target>Erfolgreich</target>
+      </segment>
+    </unit>
+    <unit id="fZ63rLE" name="Close">
+      <segment>
+        <source>Close</source>
+        <target>Close</target>
+      </segment>
+    </unit>
+    <unit id="S9PESaF" name="profile.actions.pass_enable_disable.error">
+      <segment>
+        <source>profile.actions.pass_enable_disable.error</source>
+        <target>Fehler beim Speichern des Notfall-ID Pass Status!</target>
+      </segment>
+    </unit>
+    <unit id="6YHdrkX" name="Warning">
+      <segment>
+        <source>Warning</source>
+        <target>Warnung</target>
+      </segment>
+    </unit>
+    <unit id="VKDowX6" name="Error">
+      <segment>
+        <source>Error</source>
+        <target>Fehler</target>
+      </segment>
+    </unit>
+    <unit id="nobaam5" name="Contactname">
+      <segment>
+        <source>Contactname</source>
+        <target>Contactname</target>
+      </segment>
+    </unit>
+    <unit id="Xn._JAF" name="Contactname show">
+      <segment>
+        <source>Contactname show</source>
+        <target>Contactname show</target>
+      </segment>
+    </unit>
+    <unit id="tS1JLaN" name="Beziehung">
+      <segment>
+        <source>Beziehung</source>
+        <target>Beziehung</target>
+      </segment>
+    </unit>
+    <unit id="zLTV0_h" name="Beziehung show">
+      <segment>
+        <source>Beziehung show</source>
+        <target>Beziehung show</target>
+      </segment>
+    </unit>
+    <unit id="GXZu1sy" name="Cancel">
+      <segment>
+        <source>Cancel</source>
+        <target>Abbrechen</target>
+      </segment>
+    </unit>
+    <unit id="FQn1YfJ" name="Save">
+      <segment>
+        <source>Save</source>
+        <target>Speichern</target>
+      </segment>
+    </unit>
+    <unit id="Cal6RGy" name="Telefon show">
+      <segment>
+        <source>Telefon show</source>
+        <target>Telefon show</target>
+      </segment>
+    </unit>
+    <unit id="MsGoHo_" name="sichtbar">
+      <segment>
+        <source>sichtbar</source>
+        <target>sichtbar</target>
+      </segment>
+    </unit>
+    <unit id="vgHgRUK" name="contact.contactname.lbl">
+      <segment>
+        <source>contact.contactname.lbl</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="KyXj8jF" name="contact.beziehung.lbl">
+      <segment>
+        <source>contact.beziehung.lbl</source>
+        <target>Beziehung (z.B. Ehefrau, Hausarzt)</target>
+      </segment>
+    </unit>
+    <unit id="CB3t2Xb" name="contact.telefon.lbl">
+      <segment>
+        <source>contact.telefon.lbl</source>
+        <target>Telefonnummer</target>
+      </segment>
+    </unit>
+    <unit id="znwucS3" name="contacts.action.new.header">
+      <segment>
+        <source>contacts.action.new.header</source>
+        <target>Neuer Kontakt</target>
+      </segment>
+    </unit>
+    <unit id="OPNQtnB" name="contact.table.contactname.lbl">
+      <segment>
+        <source>contact.table.contactname.lbl</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="jTaFKJ5" name="contact.table.telefon.lbl">
+      <segment>
+        <source>contact.table.telefon.lbl</source>
+        <target>Telefon</target>
+      </segment>
+    </unit>
+    <unit id="2HQxS3." name="contact.table.beziehung.lbl">
+      <segment>
+        <source>contact.table.beziehung.lbl</source>
+        <target>Beziehung</target>
+      </segment>
+    </unit>
+    <unit id="abhGHH7" name="contacts.action.edit.err.not_allowed">
+      <segment>
+        <source>contacts.action.edit.err.not_allowed</source>
+        <target>contacts.action.edit.err.not_allowed</target>
+      </segment>
+    </unit>
+    <unit id="jm4dwPc" name="contact.action.edit.success">
+      <segment>
+        <source>contact.action.edit.success</source>
+        <target>Der Kontakt wurde erfolgreich gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="O8xCtc0" name="contacts.action.err.not_allowed">
+      <segment>
+        <source>contacts.action.err.not_allowed</source>
+        <target>contacts.action.err.not_allowed</target>
+      </segment>
+    </unit>
+    <unit id="nsprlXv" name="action.err.not_allowed">
+      <segment>
+        <source>action.err.not_allowed</source>
+        <target>Zugriff verweigert!</target>
+      </segment>
+    </unit>
+    <unit id="AUvDNdU" name="contact.action.edit.error">
+      <segment>
+        <source>contact.action.edit.error</source>
+        <target>contact.action.edit.error</target>
       </segment>
     </unit>
   </file>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ language }}">
   <head>
-    {# ccm19 | needs to be the very first script on page!
-    <script src="https://ccm.mp-group.net/public/app.js?apiKey=d7fdcc2471aeb1033cf0e51d4f48140ba1679d72607eb9b6&amp;domain=7bf67dd" referrerpolicy="origin"></script>
-    #}
+    {# ccm19 | needs to be the very first script on page! #}
+    {% if app.environment|lower == 'prod' %}
+      <script src="https://ccm.mp-group.net/public/app.js?apiKey=d7fdcc2471aeb1033cf0e51d4f48140ba1679d72607eb9b6&amp;domain=7bf67dd" referrerpolicy="origin"></script>
+    {% endif %}
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +21,42 @@
     {% endblock %}
   </head>
   <body>
-    {% block body %}{% endblock %}
+    {% apply spaceless %}
+      {% block body %}{% endblock %}
+    {% endapply %}
+
+    {# toast | success #}
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+      class="toast-container position-absolute top-0 start-50 translate-middle-x p-3 mt-5">
+      <div
+        id="toastContainer"
+        class="toast"
+        role="alert"
+        data-success-header="{{ 'Success'|trans }}"
+        data-warning-header="{{ 'Warning'|trans }}"
+        data-danger-header="{{ 'Error'|trans }}">
+        <div class="toast-header">
+          <span class="me-auto text-dark fw-bold"></span>
+          <small></small>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="toast"
+            aria-label="{{ 'Close'|trans }}">
+          </button>
+        </div>
+        <div class="toast-body"></div>
+      </div>
+    </div>
+
+    {# modal #}
+    <div
+      id="modalContainer"
+      class="modal fade"
+      tabindex="-1">
+    </div>
   </body>
 
   {% block stylesheets_footer %}

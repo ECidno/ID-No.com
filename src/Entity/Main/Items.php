@@ -10,6 +10,7 @@ namespace App\Entity\Main;
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Nutzer\Nutzer;
 use App\Entity\Nutzer\Person;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Items
@@ -58,10 +59,27 @@ class Items
 
     /**
      * @var string
+     * @ORM\Column(type="text", length=65535)
+     */
+    private $anbringung;
+
+    /**
+     * @var string
      * @ORM\Column(type="string", length=9)
      */
     private $idNo;
 
+    /**
+     * @Assert\DateTime()
+     * @ORM\Column(type="datetime")
+     */
+    private $registriertDatum;
+
+    /**
+     * @Assert\DateTime()
+     * @ORM\Column(type="datetime")
+     */
+    private $aktiviertDatum;
 
 
     /**
@@ -169,6 +187,25 @@ class Items
 
 
     /**
+     * @param string $anbringung
+     * @return Items
+     */
+    public function setAnbringung(string $anbringung): self
+    {
+        $this->anbringung = $anbringung;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAnbringung(): ?string
+    {
+        return $this->anbringung;
+    }
+
+
+    /**
      * @param string $idNo
      * @return Items
      */
@@ -185,4 +222,43 @@ class Items
     {
         return $this->idNo;
     }
+
+
+    /**
+     * @param \DateTime $registriertDatum
+     * @return Nutzer
+     */
+    public function setRegistriertDatum(\DateTime $registriertDatum): self
+    {
+        $this->registriertDatum = $registriertDatum;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getRegistriertDatum(): ?\DateTime
+    {
+        return $this->registriertDatum;
+    }
+
+
+    /**
+     * @param \DateTime $aktiviertDatum
+     * @return Nutzer
+     */
+    public function setAktiviertDatum(\DateTime $aktiviertDatum): self
+    {
+        $this->aktiviertDatum = $aktiviertDatum;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getAktiviertDatum(): ?\DateTime
+    {
+        return $this->aktiviertDatum;
+    }
+
 }

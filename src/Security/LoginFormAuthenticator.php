@@ -244,7 +244,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         return new RedirectResponse(
-            $this->urlGenerator->generate('app_meinidno')
+            $this->urlGenerator->generate('app_profile_index')
         );
     }
 

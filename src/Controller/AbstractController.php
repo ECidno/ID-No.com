@@ -8,6 +8,8 @@ namespace App\Controller;
  * /*********************************************************************/
 
 use Psr\Log\LoggerInterface;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController as SymfonyAbstractController;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,6 +19,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
 use Twig\Environment;
+
+use Symfony\Component\Form\FormFactoryInterface;
 
 /**
  * Abstract Controller
@@ -46,14 +50,29 @@ class AbstractController extends SymfonyAbstractController
     protected $language = 'de';
 
     /**
+     * @var TranslatorInterface $translator
+     */
+    protected $translator;
+
+    /**
      * @var LoggerInterface logger
      */
     protected $logger;
 
     /**
-     * @var TranslatorInterface $translator
+     * @var EntityManagerInterface emDefault
      */
-    protected $translator;
+    protected $emDefault;
+
+    /**
+     * @var EntityManagerInterface emNutzer
+     */
+    protected $emNutzer;
+
+    /**
+     * @var FormFactoryInterface formFactory
+     */
+    protected $formFactory;
 
     /**
      * @var array
@@ -99,23 +118,34 @@ class AbstractController extends SymfonyAbstractController
     /**
      * constructor
      *
+     * @param ContainerBagInterface $params
+     * @param Environment $twig
      * @param RequestStack $requestStack
+     * @param TranslatorInterface $translator
+     * @param LoggerInterface $logger
+     * @param ManagerRegistry $registry
+     * @param FormFactoryInterface $formFactory
      */
     public function __construct(
         ContainerBagInterface $params,
         Environment $twig,
         RequestStack $requestStack,
         TranslatorInterface $translator,
-        LoggerInterface $logger
+        LoggerInterface $logger,
+        ManagerRegistry $registry,
+        FormFactoryInterface $formFactory
     ) {
         $this->now = new \DateTime();
 
         // Current route:
         //dump($requestStack->getCurrentRequest()->attributes->get('_route'));
 
+        $this->settings = $params->get('settings');
         $this->translator = $translator;
         $this->logger = $logger;
-        $this->settings = $params->get('settings');
+        $this->emDefault = $registry->getManager('default');
+        $this->emNutzer = $registry->getManager('nutzer');
+        $this->formFactory = $formFactory;
 
         /*
          * request
@@ -171,6 +201,9 @@ class AbstractController extends SymfonyAbstractController
                 $this->actionName . '.html.twig',
             ]
         );
+
+        // ajax
+        $this->ajax = $currentRequest->isXmlHttpRequest();
 
         // motd
         $this->_getMotd();
@@ -279,16 +312,17 @@ class AbstractController extends SymfonyAbstractController
      * render vars and return response
      *
      * @param array $variables
+     * @param bool $forceJsonResponse
      *
      * @return Response
      */
-    protected function renderAndRespond($variables = []): Response
+    protected function renderAndRespond($variables = [], $forceJsonResponse = false): Response
     {
         $loader = $this->twig->getLoader();
 
         // check if template exists
         if (!$loader->exists($this->template)) {
-             return $this->respond404();
+            return $this->respond404();
         }
 
         // render
@@ -298,7 +332,7 @@ class AbstractController extends SymfonyAbstractController
         );
 
         // return json
-        if ($this->ajax === true) {
+        if ($this->ajax === true || $forceJsonResponse === true) {
             return $this->json(
                 [
                     'status' => 'success',

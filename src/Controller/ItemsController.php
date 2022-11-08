@@ -10,7 +10,6 @@ namespace App\Controller;
 use App\Entity\Main\Items;
 use App\Entity\Nutzer\Nutzer;
 use App\Entity\Nutzer\Person;
-use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,20 +32,17 @@ class ItemsController extends AbstractController
      *
      * @param string $idno
      * @param Request $request
-     * @param ManagerRegistry $registry
      *
      * @return Response
      *
      * @Route("/notfallpass/{idno?}", name="app_item_pass", methods={"GET", "POST"})
      */
-    public function pass($idno = null, Request $request, ManagerRegistry $registry): Response
+    public function pass($idno = null, Request $request): Response
     {
         $idno = strtoupper($request->get('p_idno') ?? $idno);
-        $emDefault = $registry->getManager('default');
-        $emNutzer = $registry->getManager('nutzer');
 
         // get item
-        $item = $emDefault
+        $item = $this->emDefault
             ->getRepository(Items::class)
             ->findOneByIdNo($idno);
 
@@ -58,10 +54,10 @@ class ItemsController extends AbstractController
             // variables
             $variables = [
                 'idno' => $item,
-                'nutzer' => $emNutzer
+                'nutzer' => $this->emNutzer
                     ->getRepository(Nutzer::class)
                     ->findOneById($nutzerId),
-                'person' => $emNutzer
+                'person' => $this->emNutzer
                     ->getRepository(Person::class)
                     ->findOneById($personId),
             ];

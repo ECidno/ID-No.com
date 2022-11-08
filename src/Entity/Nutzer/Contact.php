@@ -44,9 +44,9 @@ class Contact
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=100, options={"default":""}))
      */
-    private $telefon;
+    private $telefon = '';
 
     /**
      * @var string
@@ -58,7 +58,7 @@ class Contact
      * @var string
      * @ORM\Column(type="string", length=100, nullable=true)
      */
-    private $beziehung;
+    private $beziehung = '';
 
     /**
      * @var string
@@ -134,10 +134,10 @@ class Contact
 
 
     /**
-     * @param string $telefon
+     * @param ?string $telefon
      * @return Person
      */
-    public function setTelefon(string $telefon): self
+    public function setTelefon(?string $telefon): self
     {
         $this->telefon = $telefon;
         return $this;
@@ -172,10 +172,10 @@ class Contact
 
 
     /**
-     * @param string $beziehung
+     * @param ?string $beziehung
      * @return Person
      */
-    public function setBeziehung(string $beziehung): self
+    public function setBeziehung(?string $beziehung): self
     {
         $this->beziehung = $beziehung;
         return $this;
