@@ -28,49 +28,49 @@
     <unit id="vF0wkNl" name="header.menu.idno.about.lbl">
       <segment>
         <source>header.menu.idno.about.lbl</source>
-        <target>header.menu.idno.about.lbl</target>
+        <target>About ID-No.com</target>
       </segment>
     </unit>
     <unit id="PJdnZyr" name="header.menu.idno.works.lbl">
       <segment>
         <source>header.menu.idno.works.lbl</source>
-        <target>header.menu.idno.works.lbl</target>
+        <target>How it works</target>
       </segment>
     </unit>
     <unit id="pOhZC7A" name="header.menu.idno.testimonials.lbl">
       <segment>
         <source>header.menu.idno.testimonials.lbl</source>
-        <target>header.menu.idno.testimonials.lbl</target>
+        <target>Testimonials</target>
       </segment>
     </unit>
     <unit id="vZUn30y" name="header.menu.idno.company.lbl">
       <segment>
         <source>header.menu.idno.company.lbl</source>
-        <target>header.menu.idno.company.lbl</target>
+        <target>Company</target>
       </segment>
     </unit>
     <unit id="LzzzDam" name="header.menu.idno.group.lbl">
       <segment>
         <source>header.menu.idno.group.lbl</source>
-        <target>header.menu.idno.group.lbl</target>
+        <target>Group</target>
       </segment>
     </unit>
     <unit id="x970SQq" name="header.menu.idno.press.lbl">
       <segment>
         <source>header.menu.idno.press.lbl</source>
-        <target>header.menu.idno.press.lbl</target>
+        <target>Press</target>
       </segment>
     </unit>
     <unit id="VPVogKi" name="header.menu.idno.references.lbl">
       <segment>
         <source>header.menu.idno.references.lbl</source>
-        <target>header.menu.idno.references.lbl</target>
+        <target>References</target>
       </segment>
     </unit>
     <unit id="S.AtI.g" name="header.menu.idno.bussiness_clients.lbl">
       <segment>
         <source>header.menu.idno.bussiness_clients.lbl</source>
-        <target>header.menu.idno.bussiness_clients.lbl</target>
+        <target>Bussiness clients</target>
       </segment>
     </unit>
     <unit id="8WjM3ZF" name="company">
@@ -169,37 +169,37 @@ Ingo Kett was head of Sapient Consulting in Germany. Before that, he was respons
     <unit id="dpO64G0" name="footer.menu.company.lbl">
       <segment>
         <source>footer.menu.company.lbl</source>
-        <target>footer.menu.company.lbl</target>
+        <target>Company</target>
       </segment>
     </unit>
     <unit id="aZiriDJ" name="footer.menu.presse.lbl">
       <segment>
         <source>footer.menu.presse.lbl</source>
-        <target>footer.menu.presse.lbl</target>
+        <target>Press</target>
       </segment>
     </unit>
     <unit id="MvrDYPi" name="footer.menu.agb.lbl">
       <segment>
         <source>footer.menu.agb.lbl</source>
-        <target>footer.menu.agb.lbl</target>
+        <target><![CDATA[Terms & Conditions]]></target>
       </segment>
     </unit>
     <unit id="UO4k47g" name="footer.menu.privacy.lbl">
       <segment>
         <source>footer.menu.privacy.lbl</source>
-        <target>footer.menu.privacy.lbl</target>
+        <target>Data Privacy</target>
       </segment>
     </unit>
     <unit id="zMJliAS" name="footer.menu.imprint.lbl">
       <segment>
         <source>footer.menu.imprint.lbl</source>
-        <target>footer.menu.imprint.lbl</target>
+        <target>Imprint</target>
       </segment>
     </unit>
     <unit id="IKxeNV5" name="footer.menu.cookie.lbl">
       <segment>
         <source>footer.menu.cookie.lbl</source>
-        <target>footer.menu.cookie.lbl</target>
+        <target>Cookie settings</target>
       </segment>
     </unit>
     <unit id="8vOTifc" name="index.carousel.slide.sos_chip_shoe.caption">
