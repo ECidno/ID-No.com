@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="en">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="en">
   <file id="messages.en">
     <unit id="5LufHs6" name="Start">
       <segment>
@@ -76,43 +76,58 @@
     <unit id="8WjM3ZF" name="company">
       <segment>
         <source>company</source>
-        <target>company</target>
+        <target>Company</target>
       </segment>
     </unit>
     <unit id="VDR5HhO" name="company.introduction">
       <segment>
         <source>company.introduction</source>
-        <target>company.introduction</target>
+        <target><![CDATA[In emergency situations, reliable information and time are of vital importance. With ID-No.com, medical emergency forces can immediately access digitally stored individual emergency information such as medications, diseases, allergies, diabetes, contact persons. This saves time in an emergency and can save lives!
+
+ID-No.com, launched in May 2017 in Frankfurt am Main (Germany), was developed together with rescue professionals and awarded the INNOVATIONSPREIS-IT "BEST OF 2018" by Initiative Mittelstand in the category "E-Health". Since then, well-known customers include companies such as AOK, BARMER, KKH, ERGO, ABUS, Harley Davidson and Sport Scheck, among others.
+
+ID-No.com GmbH is a member of the CODE-No.com Group, which originally started in 2007 with the CODE-No.com brand in Frankfurt am Main. CODE-No.com GmbH protects valuables against loss and theft and is represented in the market with over 12 million CODE numbers for this purpose. The ID-No.com brand is a consistent further development of the original idea and has been offering security in the field of eHealth since 2017.
+
+New: Since 2020, ID-No.com has been cooperating with ZOLL, the global market leader for digital health solutions, and will be integrated into the Rescue Pad systems in the emergency services in Europe. This leads to a fast and seamless emergency data transfer from the rescue service to the hospital.
+
+Info videos you can find here:  
+<a href="/infovideo" target="_blank">ID-No.com/infovideo  
+</a> <a href="/pad" target="_blank">ID-No.com/pad</a>]]></target>
       </segment>
     </unit>
     <unit id="KIllofL" name="management">
       <segment>
         <source>management</source>
-        <target>management</target>
+        <target>Management</target>
       </segment>
     </unit>
     <unit id="dgXhF6w" name="company.ceo.caption">
       <segment>
         <source>company.ceo.caption</source>
-        <target>company.ceo.caption</target>
+        <target>Dr. Markus J. Krechting, CEO</target>
       </segment>
     </unit>
     <unit id="JVCoYRg" name="company.ceo.text">
       <segment>
         <source>company.ceo.text</source>
-        <target>company.ceo.text</target>
+        <target>Dr. Markus J. Krechting, born in 1965, studied business administration at the University of Münster with a specialty in marketing with Prof. Dr. Dr. h.c. mult. Meffert. His doctorate on the subject of international marketing was completed at the University of Hamburg. Krechting worked for six years with the company Otto, handling amongst others the market entry in India. He then changed within the group to become Department Head of Marketing for Schwab Versand, Hanau, another mail-order firm. He then spent three years as a corporate consultant heading Internationalization at TellSell Consulting GmbH in Frankfurt.
+
+In 2001, Krechting became director of New Media at the Neckermann mail-order firm in Frankfurt. He expanded the company’s Internet presence to make it one of the most successful online shops in Germany (it was named, amongst others, Favorite Website of the Year, Best Website of the Year, Best Online Shop and also won the Convergence Award). In his additional functions as director of marketing and communication, Krechting simultaneously managed the restructuring of the entire company from the classical catalogue mail-order retailer Neckermann, to the home shopping provider neckermann.de. From April 2007 to April 2008, Krechting headed Neckermann.ch AG as CEO and President of the Board of Administration in Switzerland.</target>
       </segment>
     </unit>
     <unit id="60op8LH" name="company.coo.caption">
       <segment>
         <source>company.coo.caption</source>
-        <target>company.coo.caption</target>
+        <target>Michael Sorg, COO</target>
       </segment>
     </unit>
     <unit id="WCA8n5w" name="company.coo.text">
       <segment>
         <source>company.coo.text</source>
-        <target>company.coo.text</target>
+        <target>Michael Sorg has more than 20 years of experience in eBusiness, the last 5 years of which as CEO of computeruniverse, a Burda Digital company with 170 employees. During this time he was able to more than double the turnover to over 200 Mio €.
+Michael Sorg has led the internationally successful online store for hardware, software, consumer and household electronics into profitability.
+
+Previously, he built up neckermann.de and managed it for 10 years before moving to the Otto Group where, in addition to managing eCommerce for schwab.de, he also co-founded the plus size fashion store sheego.de and was responsible for it online for 5 years.</target>
       </segment>
     </unit>
     <unit id="IaFPsYm" name="Advisory board">
@@ -124,13 +139,25 @@
     <unit id="Bc1KxF_" name="company.advisory.caption">
       <segment>
         <source>company.advisory.caption</source>
-        <target>company.advisory.caption</target>
+        <target>From left: Helmut von der Lieck (Vice Chairman of the Advisory Board), Prof. Dr. Ingo Kett (Advisory Board), Klaus Artmann (Advisory Board Chairman)</target>
       </segment>
     </unit>
     <unit id="kddzrsu" name="company.advisory.text">
       <segment>
         <source>company.advisory.text</source>
-        <target>company.advisory.text</target>
+        <target><![CDATA[**Klaus Artmann (Chairman of the Advisory Board)**  
+**CEO holding ‹one› GmbH**
+Klaus Artmann has been involved in Internet and online marketing developments for over 15 years. His work focuses on strategic customer consulting, eRelations and the realization of customer-specific business models.
+
+**Helmut von der Lieck (Deputy Chairman of the Advisory Board)**  
+**Managing Partner gemeinsam&anders gmbh**  
+Helmut von der Lieck is an expert in sales, customer service and marketing. He has gained over 20 years of professional experience in various German financial and media companies from DAX and MDAX.
+
+**Prof. Dr. Ingo Kett, Advisory Board,**  
+**Managing Director Viaticum GmbH**  
+
+Ingo Kett was head of Sapient Consulting in Germany. Before that, he was responsible for the European business for utilities at IBM and was Executive Partner at Accenture. He is the founder of Viaticum, Venture Capital, and was awarded „Business Angel of the Year“.
+]]></target>
       </segment>
     </unit>
     <unit id="cKgdBlx" name="member_of">
@@ -515,6 +542,36 @@
       <segment>
         <source>index.references_partners.header</source>
         <target>index.references_partners.header</target>
+      </segment>
+    </unit>
+    <unit id="MM4P3i3" name="ID-Nummer checken/aktivieren">
+      <segment>
+        <source>ID-Nummer checken/aktivieren</source>
+        <target>ID-Nummer checken/aktivieren</target>
+      </segment>
+    </unit>
+    <unit id="yIoLkHQ" name="Success">
+      <segment>
+        <source>Success</source>
+        <target>Success</target>
+      </segment>
+    </unit>
+    <unit id="6YHdrkX" name="Warning">
+      <segment>
+        <source>Warning</source>
+        <target>Warning</target>
+      </segment>
+    </unit>
+    <unit id="VKDowX6" name="Error">
+      <segment>
+        <source>Error</source>
+        <target>Error</target>
+      </segment>
+    </unit>
+    <unit id="fZ63rLE" name="Close">
+      <segment>
+        <source>Close</source>
+        <target>Close</target>
       </segment>
     </unit>
   </file>
