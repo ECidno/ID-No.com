@@ -325,61 +325,61 @@ Ingo Kett was head of Sapient Consulting in Germany. Before that, he was respons
     <unit id="3Vb_85h" name="index.boxrow1.works.header">
       <segment>
         <source>index.boxrow1.works.header</source>
-        <target>index.boxrow1.works.header</target>
+        <target>How it works</target>
       </segment>
     </unit>
     <unit id="bTXdzec" name="index.boxrow1.works.text">
       <segment>
         <source>index.boxrow1.works.text</source>
-        <target>index.boxrow1.works.text</target>
+        <target>Use your individual ID-number from the SOS-ID-chip to store your retrievable emergency-ID pass. [How it works](#so_funktionierts)</target>
       </segment>
     </unit>
     <unit id="pnFTPhU" name="index.boxrow1.shop.header">
       <segment>
         <source>index.boxrow1.shop.header</source>
-        <target>index.boxrow1.shop.header</target>
+        <target>Shop</target>
       </segment>
     </unit>
     <unit id="7cX4FXm" name="index.boxrow1.shop.text">
       <segment>
         <source>index.boxrow1.shop.text</source>
-        <target>index.boxrow1.shop.text</target>
+        <target>Find our emergency ID products for RRP 9,95 € here in the [shop](https://www.code-no.shop/sos-id-chip/)</target>
       </segment>
     </unit>
     <unit id="DqhitoI" name="index.boxrow1.datasecurity.header">
       <segment>
         <source>index.boxrow1.datasecurity.header</source>
-        <target>index.boxrow1.datasecurity.header</target>
+        <target>Data security</target>
       </segment>
     </unit>
     <unit id=".6H1ZoO" name="index.boxrow1.datasecurity.text">
       <segment>
         <source>index.boxrow1.datasecurity.text</source>
-        <target>index.boxrow1.datasecurity.text</target>
+        <target>We protect your data. Checked and certified [Data security](datensicherheit)</target>
       </segment>
     </unit>
     <unit id="EpMvAOe" name="index.boxrow2.chip.header">
       <segment>
         <source>index.boxrow2.chip.header</source>
-        <target>index.boxrow2.chip.header</target>
+        <target>SOS-ID-chip</target>
       </segment>
     </unit>
     <unit id="y8ZMWfS" name="index.boxrow2.bracelet.header">
       <segment>
         <source>index.boxrow2.bracelet.header</source>
-        <target>index.boxrow2.bracelet.header</target>
+        <target>Emergency-ID helmet clip</target>
       </segment>
     </unit>
     <unit id="Dipbo0N" name="index.boxrow2.infos.header">
       <segment>
         <source>index.boxrow2.infos.header</source>
-        <target>index.boxrow2.infos.header</target>
+        <target>Retrieve emergency-info</target>
       </segment>
     </unit>
     <unit id="irMlJPi" name="index.boxrow2.pass.header">
       <segment>
         <source>index.boxrow2.pass.header</source>
-        <target>index.boxrow2.pass.header</target>
+        <target>Emergency-ID pass</target>
       </segment>
     </unit>
     <unit id="1iQrU_D" name="index.about.text">
@@ -406,157 +406,158 @@ ID-No.com provides worldwide and around the clock access to emergency informatio
     <unit id="QIQZDqB" name="index.features.header">
       <segment>
         <source>index.features.header</source>
-        <target>index.features.header</target>
+        <target>Quick. Safe. Reliable.</target>
       </segment>
     </unit>
     <unit id="Q7VAK41" name="index.feature.1.lbl">
       <segment>
         <source>index.feature.1.lbl</source>
-        <target>index.feature.1.lbl</target>
+        <target>Easy usage in everyday life, at the job plus during sports and leisure activities.</target>
       </segment>
     </unit>
     <unit id="SsHHWWa" name="index.feature.2.lbl">
       <segment>
         <source>index.feature.2.lbl</source>
-        <target>index.feature.2.lbl</target>
+        <target>Well visible reference on digital stored individual emergency-information.</target>
       </segment>
     </unit>
     <unit id="mylgHlJ" name="index.feature.3.lbl">
       <segment>
         <source>index.feature.3.lbl</source>
-        <target>index.feature.3.lbl</target>
+        <target>Emergency-information available via smartphone, QR-code or by telephone via rescue coordination centre.</target>
       </segment>
     </unit>
     <unit id="vJUjqx4" name="index.feature.4.lbl">
       <segment>
         <source>index.feature.4.lbl</source>
-        <target>index.feature.4.lbl</target>
+        <target>Immediate access for first aiders, rescue service, doctor or hospital via ID-number.</target>
       </segment>
     </unit>
     <unit id="CgUtLXN" name="index.feature.5.lbl">
       <segment>
         <source>index.feature.5.lbl</source>
-        <target>index.feature.5.lbl</target>
+        <target>Particular information can be set active/ passiv at will.</target>
       </segment>
     </unit>
     <unit id="ewwzPGE" name="index.feature.6.lbl">
       <segment>
         <source>index.feature.6.lbl</source>
-        <target>index.feature.6.lbl</target>
+        <target>Highest importance is given to data security.</target>
       </segment>
     </unit>
     <unit id="jmpD903" name="index.works.header">
       <segment>
         <source>index.works.header</source>
-        <target>index.works.header</target>
+        <target>...and this is how the ID-Chip works</target>
       </segment>
     </unit>
     <unit id="oOqkcJx" name="index.work.step1.header">
       <segment>
         <source>index.work.step1.header</source>
-        <target>index.work.step1.header</target>
+        <target>STEP 01</target>
       </segment>
     </unit>
     <unit id="1cmJpQ_" name="index.work.step1.text">
       <segment>
         <source>index.work.step1.text</source>
-        <target>index.work.step1.text</target>
+        <target>**Attach the SOS-ID-Chip** to e.g. shoe, backpack, jacket or bracelet.</target>
       </segment>
     </unit>
     <unit id="F45r6to" name="index.work.step2.header">
       <segment>
         <source>index.work.step2.header</source>
-        <target>index.work.step2.header</target>
+        <target>STEP 02</target>
       </segment>
     </unit>
     <unit id="RaOup.G" name="index.work.step2.text">
       <segment>
         <source>index.work.step2.text</source>
-        <target>index.work.step2.text</target>
+        <target>**Activate your personal ID-number** at www.ID-No.com and **deposit your individual emergency-information.**</target>
       </segment>
     </unit>
     <unit id="3F0hygL" name="index.work.step3.header">
       <segment>
         <source>index.work.step3.header</source>
-        <target>index.work.step3.header</target>
+        <target>STEP 03</target>
       </segment>
     </unit>
     <unit id="sFyAZuI" name="index.work.step3.text">
       <segment>
         <source>index.work.step3.text</source>
-        <target>index.work.step3.text</target>
+        <target>**Ready!** Confirm the clearing link sent to you and your **emergency-ID pass is digitally available.**</target>
       </segment>
     </unit>
     <unit id="9V2Rdsu" name="index.references.header">
       <segment>
         <source>index.references.header</source>
-        <target>index.references.header</target>
+        <target>References</target>
       </segment>
     </unit>
     <unit id="65PuaAo" name="index.testimonials.header">
       <segment>
         <source>index.testimonials.header</source>
-        <target>index.testimonials.header</target>
+        <target>What professionals say</target>
       </segment>
     </unit>
     <unit id="bYnEruo" name="index.testimonials.1.person">
       <segment>
         <source>index.testimonials.1.person</source>
-        <target>index.testimonials.1.person</target>
+        <target>Dr. med. Alexander Burkhard</target>
       </segment>
     </unit>
     <unit id="OJMVJl." name="index.testimonials.1.text">
       <segment>
         <source>index.testimonials.1.text</source>
-        <target>index.testimonials.1.text</target>
+        <target>„In case of emergency first aiders know at once, who the person is, whether diseases, allergies, diabetes, medications are present and which contact persons should be informed.“</target>
       </segment>
     </unit>
     <unit id="fbCFoVU" name="index.testimonials.1.location">
       <segment>
         <source>index.testimonials.1.location</source>
-        <target>index.testimonials.1.location</target>
+        <target>Darmstadt</target>
       </segment>
     </unit>
     <unit id="O.OdL_F" name="index.testimonials.2.person">
       <segment>
         <source>index.testimonials.2.person</source>
-        <target>index.testimonials.2.person</target>
+        <target>Pia Rebhorn, paramedic</target>
       </segment>
     </unit>
     <unit id="_mhgh8X" name="index.testimonials.2.text">
       <segment>
         <source>index.testimonials.2.text</source>
-        <target>index.testimonials.2.text</target>
+        <target>„For me as a paramedic a clear reference at the accident victim informing about a digital Emergency-Pass is very useful to get immediate access to vital medical information.“</target>
       </segment>
     </unit>
     <unit id="a7SC6WD" name="index.testimonials.2.location">
       <segment>
         <source>index.testimonials.2.location</source>
-        <target>index.testimonials.2.location</target>
+        <target>Stuttgart</target>
       </segment>
     </unit>
     <unit id="I.upU3X" name="index.testimonials.3.person">
       <segment>
         <source>index.testimonials.3.person</source>
-        <target>index.testimonials.3.person</target>
+        <target>Anne Waterstradt,
+Red Cross squad leader civil protection</target>
       </segment>
     </unit>
     <unit id="nlGECEu" name="index.testimonials.3.text">
       <segment>
         <source>index.testimonials.3.text</source>
-        <target>index.testimonials.3.text</target>
+        <target>„Quick access to stored relevant medical data on the emergency ID-Chip **creates reliability** and **gives us more time** and room to take care of the patient“</target>
       </segment>
     </unit>
     <unit id="X2cK9UT" name="index.testimonials.3.location">
       <segment>
         <source>index.testimonials.3.location</source>
-        <target>index.testimonials.3.location</target>
+        <target>Neubrandenburg</target>
       </segment>
     </unit>
     <unit id="uTE8BNL" name="index.references_partners.header">
       <segment>
         <source>index.references_partners.header</source>
-        <target>index.references_partners.header</target>
+        <target>Well known from the press</target>
       </segment>
     </unit>
     <unit id="MM4P3i3" name="ID-Nummer checken/aktivieren">
