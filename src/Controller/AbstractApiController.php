@@ -7,17 +7,17 @@ namespace App\Controller;
  *
  **********************************************************************/
 
+use App\Entity\Nutzer\Person;
 use Doctrine\Persistence\ManagerRegistry;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController as SymfonyAbstractController;
+use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
@@ -171,31 +171,56 @@ class AbstractApiController extends SymfonyAbstractController
     /**
      * read
      *
+     * @param int $personId
      * @param Request $request
+     * @param SerializerInterface $serializer
+     *
      * @return JsonResponse
      *
-     * @Route("/", name="read", methods={"GET", "POST"})
+     * @Route("/{personId}", name="read", methods={"GET", "POST"})
      */
-    public function read(Request $request): JsonResponse
+    public function read(int $personId, Request $request, SerializerInterface $serializer): JsonResponse
     {
-        // repository
-        $repository = $this->em
-            ->getRepository(static::$entityClassName);
+        // user authenticated
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
-        $query = $repository->createQueryBuilder();
+        $user = $this->getUser();
+        $person = $this->em
+            ->getRepository(Person::class)
+            ->findOneBy([
+                'id' => $personId,
+                'nutzer' => $user,
+            ]);
 
-        $items = $repository->findWithQuery($query);
-        $totalRows = $repository->getTotalResultsForQuery($query);
+        // check person
+        if($person === null) {
+            return (new JsonResponse())
+                ->setStatusCode(412)
+                ->setData(
+                    [
+                        'severity' => 9,
+                        'message' => $this->translator->trans(
+                            'action.err.not_allowed'
+                        )
+                    ]
+                );
+        }
+
+        // get
+        $objects = $this->em
+            ->getRepository(static::$entityClassName)
+            ->findByPerson($person);
+
+        // map
+        $items = $this->mapOperations($objects);
 
         // return
-        return (new JsonResponse())
-            ->setStatusCode(200)
-            ->setData(
-                [
-                    'items' => $items,
-                    'count' => $totalRows,
-                ]
-            );
+        return $this->json(
+            $items,
+            200,
+            [],
+            ['groups' => 'read']
+        );
     }
 
 
@@ -234,37 +259,37 @@ class AbstractApiController extends SymfonyAbstractController
             );
 
             // Return status code 400 for validation errors: https://stackoverflow.com/a/3290198
-            return (new JsonResponse())
-                ->setStatusCode(400)
-                ->setData(
-                    [
-                        'message' => $message,
-                        'errors' => $errors,
-                    ]
-                );
+            return $this->json(
+                [
+                    'message' => $message,
+                    'errors' => $errors,
+                ],
+                400
+            );
         }
 
         // return | page
-        return (new JsonResponse())
-            ->setStatusCode(200)
-            ->setData([
+        return $this->json(
+            [
                 'id' => $object->getId(),
                 'message' => $message,
                 'redirect-url' => '', # @TODO: entiy index route
-            ]);
+            ]
+        );
     }
 
 
     /**
      * update
      *
-     * @param Request $request
      * @param int $id
+     * @param Request $request
+     *
      * @return JsonResponse
      *
      * @Route("/update/{id}", name="update", methods={"POST"})
      */
-    public function update(Request $request, int $id): JsonResponse
+    public function update(int $id, Request $request): JsonResponse
     {
         $formType = static::$entityFormEditType;
 
@@ -296,14 +321,14 @@ class AbstractApiController extends SymfonyAbstractController
             );
 
             // Return status code 400 for validation errors: https://stackoverflow.com/a/3290198
-            return (new JsonResponse())
-                ->setStatusCode(400)
-                ->setData(
-                    [
-                        'message' => $message,
-                        'errors' => $errors,
-                    ]
-                );
+            return $this->json(
+                [
+                    'message' => $message,
+                    'errors' => $errors,
+                ],
+                400
+            );
+
         } else {
             $message = $this->translator->trans(
                 $this->getTranslateKey('action.edit.error')
@@ -311,15 +336,13 @@ class AbstractApiController extends SymfonyAbstractController
         }
 
         // return
-        return (new JsonResponse())
-            ->setStatusCode(200)
-            ->setData(
-                [
-                    'id' => $object->getId(),
-                    'message' => $message,
-                    'redirect-url' => '', # @TODO: entiy index route
-                ]
-            );
+        return $this->json(
+            [
+                'id' => $object->getId(),
+                'message' => $message,
+                'redirect-url' => '', # @TODO: entiy index route
+            ]
+        );
     }
 
 
@@ -358,24 +381,21 @@ class AbstractApiController extends SymfonyAbstractController
             );
 
             // return
-            return (new JsonResponse())
-                ->setStatusCode(400)
-                ->setData(
-                    [
-                        'errors' => $message,
-                    ]
-                );
+            return $this->json(
+                [
+                    'errors' => $message,
+                ],
+                400
+            );
         }
 
         // return
-        return (new JsonResponse())
-            ->setStatusCode(200)
-            ->setData(
-                [
-                    'message' => $message,
-                    'redirect-url' => '', # @TODO: entiy index route
-                ]
-            );
+        return $this->json(
+            [
+                'message' => $message,
+                'redirect-url' => '', # @TODO: entiy index route
+            ]
+        );
     }
 
 
@@ -419,5 +439,17 @@ class AbstractApiController extends SymfonyAbstractController
 
         // return
         return strtolower($name.'.'.$key);
+    }
+
+
+    /**
+     * get entity operatons
+     *
+     * @param iterable $objects
+     * @return array
+     */
+    public function mapOperations($objects): iterable
+    {
+        return $objects;
     }
 }

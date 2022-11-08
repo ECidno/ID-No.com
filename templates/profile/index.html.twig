@@ -146,11 +146,11 @@
     <div class="row justify-content-center mt-3">
       <div class="col-12 col-md-10 col-lg-8">
         <h3>Meine Kontakte</h3>
-				<div class="float-start pb-2">
+				<div class="float-startX pb-2">
           Im Folgenden finden Sie eine Übersicht Ihrer Notfall-Kontakte:
         </div>
 
-        <div class="float-end pb-2">
+        <div id="toolbarContacts">
           <button
             type="button"
             class="btn btn-sm btn-outline-success mx-1 ajax-modal"
@@ -161,41 +161,31 @@
         </div>
 
         <table
-          class="table table-sm table-hover"
+          id="tableContacts"
+          data-toggle="table"
+          data-classes="table table-sm table-hover"
+          data-toolbar="#toolbarContacts"
+          data-loading-template="loadingTemplate"
 
-          >
+          data-buttons-class="outline-dark btn-sm"
+          data-show-refresh="true"
+
+          data-url="{{ path('app_api_contacts_read', { personId:person.id }) }}"
+        >
           <thead class="bg-light">
             <tr>
-              <th scope="col">{{ 'contact.table.contactname.lbl'|trans }}</th>
-              <th scope="col">{{ 'contact.table.telefon.lbl'|trans }}</th>
-              <th scope="col">{{ 'contact.table.beziehung.lbl'|trans }}</th>
-              <th scope="col-3 col-md-2" class="text-center">Aktion</th>
+              <th scope="col" data-field="contactname">{{ 'contact.table.contactname.lbl'|trans }}</th>
+              <th scope="col" data-field="telefon">{{ 'contact.table.telefon.lbl'|trans }}</th>
+              <th scope="col" data-field="beziehung">{{ 'contact.table.beziehung.lbl'|trans }}</th>
+              <th scope="col-3 col-md-2"
+                data-align="right"
+                data-field="operate"
+                data-formatter="operateFormatter"
+                data-events="operateEvents"
+                >Aktion</th>
             </tr>
           </thead>
-          <tbody>
-            {% for contact in person.contacts %}
-            <tr data-id="{{ contact.id }}">
-              <td>{{ contact.contactname|raw }}</th>
-              <td>{{ contact.beziehung|raw }}</th>
-              <td>{{ contact.telefon }}</th>
-              <td class="text-center">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-outline-dark mx-1 ajax-modal"
-                  data-url="{{ path('app_contacts_edit', { personId:person.id , id:contact.id }) }}">
-                  <i class="{{ settings.buttons.edit }}"></i>
-                </button>
-                <button
-                  class="btn btn-sm btn-outline-dark mx-1"
-
-                  >
-                  <i class="{{ settings.buttons.delete }}"></i>
-                </button>
-              </th>
-            {% endfor %}
-          </tbody>
         </table>
-
       </div>
     </div>
   </div>

@@ -7,20 +7,23 @@ namespace App\Entity\Nutzer;
  *
  **********************************************************************/
 
+use App\Entity\AbstractEntity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Contact
  *
  * @ORM\Entity(repositoryClass="App\Repository\ContactRepository")
  */
-class Contact
+class Contact extends AbstractEntity
 {
     /**
      * @var int
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"read"})
      */
     private $id;
 
@@ -33,6 +36,7 @@ class Contact
     /**
      * @var string
      * @ORM\Column(type="string", length=100, nullable=true)
+     * @Groups({"read"})
      */
     private $contactname;
 
@@ -45,6 +49,7 @@ class Contact
     /**
      * @var string
      * @ORM\Column(type="string", length=100, options={"default":""}))
+     * @Groups({"read"})
      */
     private $telefon = '';
 
@@ -57,6 +62,7 @@ class Contact
     /**
      * @var string
      * @ORM\Column(type="string", length=100, nullable=true)
+     * @Groups({"read"})
      */
     private $beziehung = '';
 

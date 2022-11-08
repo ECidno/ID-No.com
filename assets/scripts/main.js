@@ -1,15 +1,69 @@
 'use strict';
 
 import { Modal, Toast } from 'bootstrap';
+import jquery from 'jquery';
+import bootstrapTable from 'bootstrap-table';
 
 // const's
 const toastContainer = document.getElementById('toastContainer') || null;
 const modalContainer = document.getElementById('modalContainer') || null;
 
 const ajaxForms = document.getElementsByClassName('ajax-form') || [];
-const ajaxBtn = document.querySelectorAll('button.ajax-modal') || [];
+const ajaxBtn = document.getElementsByClassName('button.ajax-modal') || [];
 const fldIdNo = document.getElementById('fldIdNo') || null;
 const fldPassEnable = document.getElementById('fldPassEnable') || null;
+
+var showModal;
+
+
+/*
+ * tables
+ */
+
+// loading template
+window.loadingTemplate = (loadingMessage) => {
+  return '<div class="ph-item"><div class="ph-picture"></div></div>';
+}
+
+// operate formatter
+window.operateFormatter = (value, row, index) => {
+  let operations = [];
+
+  Object
+    .keys(row.operations)
+    .forEach((key) => {
+      let val = row.operations[key];
+      operations.push(
+        [
+          '<button',
+          'type="button"',
+          'class="btn btn-sm btn-outline-dark ms-2 ajax-modal ' + key + '"',
+          'data-url="' + val.uri + '">',
+          '<i class="' + val.icon + '"></i>',
+          '</button>'
+        ].join(' ')
+      );
+  });
+
+  // return
+  return operations.join('');
+}
+
+// operate events
+window.operateEvents = {
+
+  // edit
+  'click .edit': (e, value, row, index) => {
+    showModal(row.operations.edit.uri);
+  },
+
+  // delete
+  'click .delete': (e, value, row, index) => {
+//    showModal(row.operations.edit.uri);
+    alert('Delete: ' + row.id)
+  }
+}
+
 
 
 // document DOM ready
@@ -89,6 +143,42 @@ document.addEventListener(
     }
 
 
+    /**
+     * showModal
+     *
+     * @param string uri
+     * @param string body
+     * @param boolean autohide
+     */
+     showModal = (uri, options) => {
+      options = options ?? {
+        method: 'GET'
+      };
+
+      // ajax
+      ajax(uri, options)
+        .then(res => {
+          modalContainer.innerHTML = res.html;
+          new Modal(
+            modalContainer,
+            {
+            }
+          )
+          .show();
+
+          // init ajax
+          initAjax();
+        })
+        .catch((err) => {
+          showMessage(
+            err.severity || 9,
+            null,
+            err.message
+          );
+        });
+    }
+
+
 
     // init ajax event listener
     var initAjax = () => {
@@ -114,7 +204,6 @@ document.addEventListener(
 
               ajax(url, options)
               .then(res => {
-    console.log(res);
 
                 // close modal if open/advised
                 let modalInstance = Modal.getInstance(modalContainer);
@@ -152,54 +241,31 @@ document.addEventListener(
 
 
       // add listener for buttons
-      ajaxBtn.forEach((el) => {
-        let initialized = el.dataset.initialized || false
-        if(initialized) {
-          return;
-        }
-
-        // listener
-        el.addEventListener(
-          'click',
-          e => {
-//            let url = el.getAttribute('data-url');
-            let url = el.dataset.url;
-            let options = {
-              method: 'GET'
-            };
-
-            // ajax
-            ajax(url, options)
-              .then(res => {
-                modalContainer.innerHTML = res.html;
-                new Modal(
-                  modalContainer,
-                  {
-                  }
-                )
-                .show();
-
-                // init ajax
-                initAjax();
-              })
-              .catch((err) => {
-                showMessage(
-                  err.severity || 9,
-                  null,
-                  err.message
-                );
-              });
+      Array
+        .from(ajaxBtn)
+        .forEach((el) => {
+          let initialized = el.dataset.initialized || false
+          if(initialized) {
+            return;
           }
-        );
 
-        // set init
-        el.dataset.initialized = true;
-      });
+          // listener
+          el.addEventListener(
+            'click',
+            e => {
+              showModal(el.dataset.url);
+            }
+          );
+
+          // set init
+          el.dataset.initialized = true;
+        });
     }
 
 
     // init ajax event listener
     initAjax();
+
 
     /*
      * page object event listener
