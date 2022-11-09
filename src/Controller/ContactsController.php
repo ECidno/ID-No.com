@@ -23,30 +23,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ContactsController extends AbstractController
 {
     /**
-     * index action
-     *
-     * @param Request $request
-     * @return Response
-     *
-     * @Route("/", name="index", methods={"GET", "POST"})
-     */
-    public function index(Request $request): Response
-    {
-        // user authenticated
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-
-        // vars
-        $variables = [
-            'user' => $this->getUser(),
-        ];
-
-        // return
-        return $this->renderAndRespond($variables);
-    }
-
-
-    /**
-     * new action
+     * new
      *
      * @param int $personId
      * @param Request $request
@@ -63,34 +40,9 @@ class ContactsController extends AbstractController
                 'nutzer' => $this->getUser(),
             ]);
 
-        // voter check
+        // voter
         $this->denyAccessUnlessGranted('edit', $person);
-/*
-        // user authenticated
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
-        $user = $this->getUser();
-        $person = $this->emNutzer
-            ->getRepository(Person::class)
-            ->findOneBy([
-                'id' => $personId,
-                'nutzer' => $user,
-            ]);
-
-        // check person
-        if($person === null) {
-            return (new JsonResponse())
-                ->setStatusCode(412)
-                ->setData(
-                    [
-                        'severity' => 9,
-                        'message' => $this->translator->trans(
-                            'action.err.not_allowed'
-                        )
-                    ]
-                );
-        }
-*/
         // new contact
         $contact = new Contact();
         $contact->setPerson($person);
@@ -120,75 +72,24 @@ class ContactsController extends AbstractController
 
 
     /**
-     * edit action
+     * edit
      *
-     * @param int $personId
      * @param int $id
      * @param Request $request
      * @return Response
      *
-     * @Route("/contact/edit/{personId}/{id}", name="edit", methods={"GET"})
+     * @Route("/contact/edit/{id}", name="edit", methods={"GET"})
      */
-    public function edit(int $personId, int $id, Request $request): Response
+    public function edit(int $id, Request $request): Response
     {
-        $person = $this->emNutzer
-            ->getRepository(Person::class)
-            ->findOneBy([
-                'id' => $personId,
-                'nutzer' => $this->getUser(),
-            ]);
-
-        // voter check
-        $this->denyAccessUnlessGranted('edit', $person);
-
-
-        /*
-        // user authenticated
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-        $user = $this->getUser();
-        $person = $this->emNutzer
-            ->getRepository(Person::class)
-            ->findOneBy([
-                'id' => $personId,
-                'nutzer' => $user,
-            ]);
-
-        // check person
-        if($person === null) {
-            return (new JsonResponse())
-                ->setStatusCode(412)
-                ->setData(
-                    [
-                        'severity' => 9,
-                        'message' => $this->translator->trans(
-                            'action.err.not_allowed'
-                        )
-                    ]
-                );
-        }
-*/
         // contact
         $contact = $this->emNutzer
             ->getRepository(Contact::class)
             ->find($id);
 
-        // voter check
+        // voter
         $this->denyAccessUnlessGranted('edit', $contact);
-/*
-        // return error if not allowed
-        if(!$person->getContacts()->contains($contact)) {
-            return (new JsonResponse())
-                ->setStatusCode(412)
-                ->setData(
-                    [
-                        'severity' => 9,
-                        'message' => $this->translator->trans(
-                            'action.err.not_allowed'
-                        )
-                    ]
-                );
-        }
-*/
+
         // form
         $form = $this->formFactory->createBuilder(
             ContactType::class,
@@ -203,6 +104,52 @@ class ContactsController extends AbstractController
             ]
         )
         ->getForm();
+
+        // vars
+        $variables = [
+            'contact' => $contact,
+            'form' => $form->createView(),
+        ];
+
+        // return
+        return $this->renderAndRespond(
+            $variables,
+            true
+        );
+    }
+
+
+    /**
+     * delete
+     *
+     * @param int $id
+     * @param Request $request
+     * @return Response
+     *
+     * @Route("/contact/delete/{id}", name="delete", methods={"GET"})
+     */
+    public function delete(int $id, Request $request): Response
+    {
+        // contact
+        $contact = $this->emNutzer
+            ->getRepository(Contact::class)
+            ->find($id);
+
+        // voter
+        $this->denyAccessUnlessGranted('delete', $contact);
+
+        // form
+        $form = $this
+            ->createFormBuilder($contact)
+            ->setAction(
+                $this->generateUrl(
+                    'app_api_contacts_delete',
+                    [
+                        'id' => $id
+                    ]
+                )
+            )
+            ->getForm();
 
         // vars
         $variables = [

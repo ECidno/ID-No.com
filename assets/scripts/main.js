@@ -1,8 +1,9 @@
 'use strict';
 
 import { Modal, Toast } from 'bootstrap';
-import jquery from 'jquery';
+import jQuery from 'jquery';
 import bootstrapTable from 'bootstrap-table';
+import bootstrapTableLocaleAll from 'bootstrap-table/dist/bootstrap-table-locale-all';
 
 // const's
 const toastContainer = document.getElementById('toastContainer') || null;
@@ -59,8 +60,7 @@ window.operateEvents = {
 
   // delete
   'click .delete': (e, value, row, index) => {
-//    showModal(row.operations.edit.uri);
-    alert('Delete: ' + row.id)
+    showModal(row.operations.delete.uri);
   }
 }
 
@@ -201,6 +201,7 @@ document.addEventListener(
                 method: el.getAttribute('method') || 'POST',
                 body: new FormData(el)
               };
+              let table = el.getAttribute('data-table') || null;
 
               ajax(url, options)
               .then(res => {
@@ -220,9 +221,20 @@ document.addEventListener(
                   );
                 }
 
+                // table refresh?
+                if(table) {
+                  jQuery('#' + table)
+                    .bootstrapTable(
+                      'refresh',
+                      {
+                        silent: true
+                      }
+                    );
+                  }
               })
-              .catch(err => {
 
+              // catch
+              .catch(err => {
     console.warn(err);
               });
 
@@ -293,13 +305,6 @@ document.addEventListener(
       fldPassEnable.addEventListener(
         'change',
         e => {
-/*
-          e.target
-            .closest('form')
-            .dispatchEvent(new Event('submit'));
-            return false;
-*/
-
           let el = e.target;
           let form = el.closest('form');
           let url = form.getAttribute('action');

@@ -58,7 +58,6 @@ class ContactsApiController extends AbstractApiController
                         'uri' => $this->generateUrl(
                             'app_contacts_edit',
                             [
-                                'personId' => $item->getPerson()->getId(),
                                 'id' => $item->getId(),
                             ]
                         )
@@ -66,7 +65,7 @@ class ContactsApiController extends AbstractApiController
                     'delete' => [
                         'icon' => $this->settings['buttons']['delete'],
                         'uri' => $this->generateUrl(
-                            'app_api_contacts_delete',
+                            'app_contacts_delete',
                             [
                                 'id' => $item->getId(),
                             ]

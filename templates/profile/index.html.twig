@@ -24,6 +24,7 @@
               </a>
             </div>
           </div>
+{#}
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
             <div class="d-grid mb-3">
               <a
@@ -33,6 +34,7 @@
               </a>
             </div>
           </div>
+          #}
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
             <div class="d-grid mb-3">
               <a
@@ -142,11 +144,11 @@
       </div>
     </div>
 
-    {# ontacts #}
+    {# contacts #}
     <div class="row justify-content-center mt-3">
       <div class="col-12 col-md-10 col-lg-8">
         <h3>Meine Kontakte</h3>
-				<div class="float-startX pb-2">
+				<div class="pb-2">
           Im Folgenden finden Sie eine Übersicht Ihrer Notfall-Kontakte:
         </div>
 
@@ -172,10 +174,11 @@
           data-url="{{ path('app_api_contacts_read', { personId:person.id }) }}">
           <thead class="bg-light">
             <tr>
-              <th scope="col" data-field="contactname">{{ 'contact.table.contactname.lbl'|trans }}</th>
-              <th scope="col" data-field="telefon">{{ 'contact.table.telefon.lbl'|trans }}</th>
-              <th scope="col" data-field="beziehung">{{ 'contact.table.beziehung.lbl'|trans }}</th>
-              <th scope="col-3 col-md-2"
+              <th data-field="contactname">{{ 'contact.table.contactname.lbl'|trans }}</th>
+              <th data-field="telefon">{{ 'contact.table.telefon.lbl'|trans }}</th>
+              <th data-field="beziehung">{{ 'contact.table.beziehung.lbl'|trans }}</th>
+              <th
+                data-width="100"
                 data-align="right"
                 data-field="operate"
                 data-formatter="operateFormatter"
