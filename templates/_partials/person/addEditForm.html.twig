@@ -1,0 +1,37 @@
+{{ form_errors(form) }}
+
+<div class="row">
+  <div class="col-9 col-sm-6">
+    {{ form_row(form.anrede) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-9 col-sm-6">
+    {{ form_row(form.vorname) }}
+  </div>
+  <div class="col-9 col-sm-6">
+    {{ form_row(form.nachname) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-9">
+    {{ form_row(form.strasse) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.strasseShow) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    {{ form_row(form.plz) }}
+  </div>
+  <div class="col-6">
+    {{ form_row(form.ort) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.ortShow) }}
+  </div>
+</div>

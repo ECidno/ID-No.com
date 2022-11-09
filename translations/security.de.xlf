@@ -13,5 +13,11 @@
         <target>Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.</target>
       </segment>
     </unit>
+    <unit id="uVKKMcJ" name="Username could not be found!">
+      <segment>
+        <source>Username could not be found!</source>
+        <target>Username could not be found!</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

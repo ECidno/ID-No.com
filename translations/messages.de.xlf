@@ -134,7 +134,8 @@ von 9,95 € hier im [Shop](https://www.code-no.shop/sos-id-chip/)</target>
     <unit id="8HWn53f" name="index.carousel.slide.sos_clip_motorcycle.caption">
       <segment>
         <source>index.carousel.slide.sos_clip_motorcycle.caption</source>
-        <target>SOS-ID Clip am Bike-Helm</target>
+        <target>SOS-ID Clip
+am Motorrad-Helm</target>
       </segment>
     </unit>
     <unit id="UnDc50D" name="index.carousel.slide.best_practice_harley_davidson.caption">
@@ -189,7 +190,7 @@ am Motorrad-Helm</target>
     <unit id="HCE4ffC" name="index.carousel.slide.best_practice_harley_davidson.text">
       <segment>
         <source>index.carousel.slide.best_practice_harley_davidson.text</source>
-        <target>index.carousel.slide.best_practice_harley_davidson.text</target>
+        <target>Best Practice: Harley Davidson</target>
       </segment>
     </unit>
     <unit id="vzAGp5f" name="index.carousel.slide.sos_clip_senior.text">
@@ -1149,8 +1150,7 @@ Die Bonitätsauskunft kann Wahrscheinlichkeitswerte (Score-Werte) beinhalten, di
     <unit id="JR7p9yq" name="imprint.text">
       <segment>
         <source>imprint.text</source>
-        <target>#### ID-No.com GmbH  
-Mitglied der CODE-No.com Gruppe  
+        <target>#### ID-No.com GmbH   
 Cassellastraße 30-32  
 D-60386 Frankfurt am Main
 
@@ -1249,6 +1249,402 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
       <segment>
         <source>header.menu.user.logout.lbl</source>
         <target>Abmelden</target>
+      </segment>
+    </unit>
+    <unit id="AJQgdhc" name="header.menu.user.profile.lbl">
+      <segment>
+        <source>header.menu.user.profile.lbl</source>
+        <target>Profil bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="1_wnK76" name="profile.title">
+      <segment>
+        <source>profile.title</source>
+        <target>Profil</target>
+      </segment>
+    </unit>
+    <unit id="D_WugSp" name="profile.header">
+      <segment>
+        <source>profile.header</source>
+        <target>Meine Notfall-Daten</target>
+      </segment>
+    </unit>
+    <unit id="Hfl.SdK" name="profile.personal.header">
+      <segment>
+        <source>profile.personal.header</source>
+        <target>Persönliche Angaben</target>
+      </segment>
+    </unit>
+    <unit id="kut5zCU" name="profile.edit.lbl">
+      <segment>
+        <source>profile.edit.lbl</source>
+        <target>Profil bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="VIK05IR" name="contacts.index.lbl">
+      <segment>
+        <source>contacts.index.lbl</source>
+        <target>Kontakte bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="hoXcfP0" name="profile.delete.lbl">
+      <segment>
+        <source>profile.delete.lbl</source>
+        <target>Profil löschen</target>
+      </segment>
+    </unit>
+    <unit id="LNtZqBU" name="account.edit.lbl">
+      <segment>
+        <source>account.edit.lbl</source>
+        <target>Zugangsdaten ändern</target>
+      </segment>
+    </unit>
+    <unit id="xgnCQl1" name="profile.actions.pass_enable.success">
+      <segment>
+        <source>profile.actions.pass_enable.success</source>
+        <target>Der Notfall-ID Pass wurde erfolgreich aktiviert.</target>
+      </segment>
+    </unit>
+    <unit id="Jtap8tY" name="profile.actions.pass_disable.success">
+      <segment>
+        <source>profile.actions.pass_disable.success</source>
+        <target>Der Notfall-ID Pass wurde deaktiviert!</target>
+      </segment>
+    </unit>
+    <unit id="yIoLkHQ" name="Success">
+      <segment>
+        <source>Success</source>
+        <target>Erfolgreich</target>
+      </segment>
+    </unit>
+    <unit id="fZ63rLE" name="Close">
+      <segment>
+        <source>Close</source>
+        <target>Close</target>
+      </segment>
+    </unit>
+    <unit id="S9PESaF" name="profile.actions.pass_enable_disable.error">
+      <segment>
+        <source>profile.actions.pass_enable_disable.error</source>
+        <target>Fehler beim Speichern des Notfall-ID Pass Status!</target>
+      </segment>
+    </unit>
+    <unit id="6YHdrkX" name="Warning">
+      <segment>
+        <source>Warning</source>
+        <target>Warnung</target>
+      </segment>
+    </unit>
+    <unit id="VKDowX6" name="Error">
+      <segment>
+        <source>Error</source>
+        <target>Fehler</target>
+      </segment>
+    </unit>
+    <unit id="nobaam5" name="Contactname">
+      <segment>
+        <source>Contactname</source>
+        <target>Contactname</target>
+      </segment>
+    </unit>
+    <unit id="Xn._JAF" name="Contactname show">
+      <segment>
+        <source>Contactname show</source>
+        <target>Contactname show</target>
+      </segment>
+    </unit>
+    <unit id="tS1JLaN" name="Beziehung">
+      <segment>
+        <source>Beziehung</source>
+        <target>Beziehung</target>
+      </segment>
+    </unit>
+    <unit id="zLTV0_h" name="Beziehung show">
+      <segment>
+        <source>Beziehung show</source>
+        <target>Beziehung show</target>
+      </segment>
+    </unit>
+    <unit id="GXZu1sy" name="Cancel">
+      <segment>
+        <source>Cancel</source>
+        <target>Abbrechen</target>
+      </segment>
+    </unit>
+    <unit id="FQn1YfJ" name="Save">
+      <segment>
+        <source>Save</source>
+        <target>Speichern</target>
+      </segment>
+    </unit>
+    <unit id="Cal6RGy" name="Telefon show">
+      <segment>
+        <source>Telefon show</source>
+        <target>Telefon show</target>
+      </segment>
+    </unit>
+    <unit id="MsGoHo_" name="sichtbar">
+      <segment>
+        <source>sichtbar</source>
+        <target>sichtbar</target>
+      </segment>
+    </unit>
+    <unit id="vgHgRUK" name="contact.contactname.lbl">
+      <segment>
+        <source>contact.contactname.lbl</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="KyXj8jF" name="contact.beziehung.lbl">
+      <segment>
+        <source>contact.beziehung.lbl</source>
+        <target>Beziehung (z.B. Ehefrau, Hausarzt)</target>
+      </segment>
+    </unit>
+    <unit id="CB3t2Xb" name="contact.telefon.lbl">
+      <segment>
+        <source>contact.telefon.lbl</source>
+        <target>Telefonnummer</target>
+      </segment>
+    </unit>
+    <unit id="znwucS3" name="contacts.action.new.header">
+      <segment>
+        <source>contacts.action.new.header</source>
+        <target>Neuer Kontakt</target>
+      </segment>
+    </unit>
+    <unit id="OPNQtnB" name="contact.table.contactname.lbl">
+      <segment>
+        <source>contact.table.contactname.lbl</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="jTaFKJ5" name="contact.table.telefon.lbl">
+      <segment>
+        <source>contact.table.telefon.lbl</source>
+        <target>Telefon</target>
+      </segment>
+    </unit>
+    <unit id="2HQxS3." name="contact.table.beziehung.lbl">
+      <segment>
+        <source>contact.table.beziehung.lbl</source>
+        <target>Beziehung</target>
+      </segment>
+    </unit>
+    <unit id="jm4dwPc" name="contact.action.edit.success">
+      <segment>
+        <source>contact.action.edit.success</source>
+        <target>Der Kontakt wurde erfolgreich gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="O8xCtc0" name="contacts.action.err.not_allowed">
+      <segment>
+        <source>contacts.action.err.not_allowed</source>
+        <target>Zugriff verweigert!</target>
+      </segment>
+    </unit>
+    <unit id="nsprlXv" name="action.err.not_allowed">
+      <segment>
+        <source>action.err.not_allowed</source>
+        <target>Zugriff verweigert!</target>
+      </segment>
+    </unit>
+    <unit id="AUvDNdU" name="contact.action.edit.error">
+      <segment>
+        <source>contact.action.edit.error</source>
+        <target>Fehler beim Speichern des Kontakts!</target>
+      </segment>
+    </unit>
+    <unit id="GtO_gRt" name="contacts.action.new.lbl">
+      <segment>
+        <source>contacts.action.new.lbl</source>
+        <target>Neuer Kontakt</target>
+      </segment>
+    </unit>
+    <unit id="pK0lnnH" name="Aktion">
+      <segment>
+        <source>Aktion</source>
+        <target>Aktion</target>
+      </segment>
+    </unit>
+    <unit id="IdjDkS_" name="contact.lbl">
+      <segment>
+        <source>contact.lbl</source>
+        <target>Kontakt</target>
+      </segment>
+    </unit>
+    <unit id="sek9koZ" name="contact.action.delete.header">
+      <segment>
+        <source>contact.action.delete.header</source>
+        <target>Kontakt entfernen?</target>
+      </segment>
+    </unit>
+    <unit id="N7BS7vS" name="contact.action.delete.text">
+      <segment>
+        <source>contact.action.delete.text</source>
+        <target>Möchten Sie den Kontakt "%contactname%" wirklich entfernen?</target>
+      </segment>
+    </unit>
+    <unit id="HqRCoTS" name="No">
+      <segment>
+        <source>No</source>
+        <target>No</target>
+      </segment>
+    </unit>
+    <unit id="haOas0X" name="Yes">
+      <segment>
+        <source>Yes</source>
+        <target>Yes</target>
+      </segment>
+    </unit>
+    <unit id="224ln89" name="contact.action.create.success">
+      <segment>
+        <source>contact.action.create.success</source>
+        <target>Der Kontakt wurde erfolgreich gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="Uvc.jio" name="contact.action.delete.success">
+      <segment>
+        <source>contact.action.delete.success</source>
+        <target>Der Kontakt wurde erfolgreich entfernt.</target>
+      </segment>
+    </unit>
+    <unit id="w.DLp.L" name="items.action.new.lbl">
+      <segment>
+        <source>items.action.new.lbl</source>
+        <target>Neue ID-Nummer aktivieren</target>
+      </segment>
+    </unit>
+    <unit id="aCDEdDE" name="items.table.idNo.lbl">
+      <segment>
+        <source>items.table.idNo.lbl</source>
+        <target>ID-Nummer</target>
+      </segment>
+    </unit>
+    <unit id="kDmm7gm" name="items.table.anbringung.lbl">
+      <segment>
+        <source>items.table.anbringung.lbl</source>
+        <target>Anbringung</target>
+      </segment>
+    </unit>
+    <unit id="vmH8Qp8" name="items.table.aktiviertDatum.lbl">
+      <segment>
+        <source>items.table.aktiviertDatum.lbl</source>
+        <target>Aktivierung</target>
+      </segment>
+    </unit>
+    <unit id="RLlT90S" name="item.lbl">
+      <segment>
+        <source>item.lbl</source>
+        <target>ID-Nummer</target>
+      </segment>
+    </unit>
+    <unit id="gmsAMFu" name="items.anbringung.lbl">
+      <segment>
+        <source>items.anbringung.lbl</source>
+        <target>Anbringung</target>
+      </segment>
+    </unit>
+    <unit id="dhETYUw" name="items.action.edit.error">
+      <segment>
+        <source>items.action.edit.error</source>
+        <target>Fehler beim Seichern!</target>
+      </segment>
+    </unit>
+    <unit id="KcpsvQI" name="items.action.new.header">
+      <segment>
+        <source>items.action.new.header</source>
+        <target>ID-Nummer aktivieren</target>
+      </segment>
+    </unit>
+    <unit id="pFzFHf8" name="items.idNo.lbl">
+      <segment>
+        <source>items.idNo.lbl</source>
+        <target>ID-Nummer</target>
+      </segment>
+    </unit>
+    <unit id="iN8764q" name="items.action.edit.success">
+      <segment>
+        <source>items.action.edit.success</source>
+        <target>Die ID-Nummer wurde erfolgreich gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="sDJSAg0" name="item.action.delete.header">
+      <segment>
+        <source>item.action.delete.header</source>
+        <target>ID-Nummer entfernen?</target>
+      </segment>
+    </unit>
+    <unit id="IA5y3yw" name="item.action.delete.text">
+      <segment>
+        <source>item.action.delete.text</source>
+        <target>Möchten Sie die ID-Nummer  "%idNo%" wirklich entfernen? </target>
+      </segment>
+    </unit>
+    <unit id="3Amepzd" name="person.lbl">
+      <segment>
+        <source>person.lbl</source>
+        <target>Person</target>
+      </segment>
+    </unit>
+    <unit id="YsZqel3" name="m">
+      <segment>
+        <source>m</source>
+        <target>m</target>
+      </segment>
+    </unit>
+    <unit id="UOch5Jw" name="w">
+      <segment>
+        <source>w</source>
+        <target>w</target>
+      </segment>
+    </unit>
+    <unit id="LXEWQrc" name="x">
+      <segment>
+        <source>x</source>
+        <target>x</target>
+      </segment>
+    </unit>
+    <unit id="81WNFXE" name="person.vorname.lbl">
+      <segment>
+        <source>person.vorname.lbl</source>
+        <target>Vorname</target>
+      </segment>
+    </unit>
+    <unit id="xhD40lC" name="person.nachname.lbl">
+      <segment>
+        <source>person.nachname.lbl</source>
+        <target>Nachname</target>
+      </segment>
+    </unit>
+    <unit id="kc9GJeS" name="person.strasse.lbl">
+      <segment>
+        <source>person.strasse.lbl</source>
+        <target>Straße</target>
+      </segment>
+    </unit>
+    <unit id="UFVHSnR" name="person.plz.lbl">
+      <segment>
+        <source>person.plz.lbl</source>
+        <target>PLZ</target>
+      </segment>
+    </unit>
+    <unit id="09.yEQd" name="person.ort.lbl">
+      <segment>
+        <source>person.ort.lbl</source>
+        <target>Wohnort</target>
+      </segment>
+    </unit>
+    <unit id="YcVR3nU" name="person.action.edit.success">
+      <segment>
+        <source>person.action.edit.success</source>
+        <target>Die Kontaktdaten wurden erfolgraich gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="Mrt1WB9" name="person.geschlecht.x">
+      <segment>
+        <source>person.geschlecht.x</source>
+        <target>divers</target>
       </segment>
     </unit>
   </file>

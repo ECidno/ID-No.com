@@ -10,6 +10,7 @@ namespace App\Entity\Nutzer;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -29,9 +30,15 @@ class Person
 
     /**
      * @var Person
-     * @ORM\ManyToOne(targetEntity="Person")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Nutzer\Person")
      */
     private $parent = null;
+
+    /**
+     * @var Nutzer
+     * @ORM\ManyToOne(targetEntity="App\Entity\Nutzer\Nutzer", inversedBy="persons")
+     */
+    private $nutzer = null;
 
     /**
      * @var ArrayCollection
@@ -352,7 +359,8 @@ class Person
     private $weitereangabenShow = 1;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime")
      */
     private $lastChangeDatum;
@@ -393,6 +401,25 @@ class Person
     public function getParent(): ?Person
     {
         return $this->parent;
+    }
+
+
+    /**
+     * @param Nutzer $nutzer
+     * @return Person
+     */
+    public function setNutzer(Nutzer $nutzer): self
+    {
+        $this->nutzer = $nutzer;
+        return $this;
+    }
+
+    /**
+     * @return Nutzer|null
+     */
+    public function getNutzer(): ?Nutzer
+    {
+        return $this->nutzer;
     }
 
 
@@ -545,6 +572,22 @@ class Person
     public function getNachname(): ?string
     {
         return $this->nachname;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFullName(): ?string
+    {
+        return join(
+            ' ',
+            array_filter(
+                [
+                    $this->vorname,
+                    $this->nachname,
+                ]
+            )
+        );
     }
 
 

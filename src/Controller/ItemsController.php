@@ -10,8 +10,8 @@ namespace App\Controller;
 use App\Entity\Main\Items;
 use App\Entity\Nutzer\Nutzer;
 use App\Entity\Nutzer\Person;
-use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use App\Form\Type\ItemsAddType;
+use App\Form\Type\ItemsEditType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -20,7 +20,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * items controller
  *
- * Route("/item", name="app_item_")
+ * @Route("/", name="app_items_")
  */
 class ItemsController extends AbstractController
 {
@@ -33,20 +33,17 @@ class ItemsController extends AbstractController
      *
      * @param string $idno
      * @param Request $request
-     * @param ManagerRegistry $registry
      *
      * @return Response
      *
-     * @Route("/notfallpass/{idno?}", name="app_item_pass", methods={"GET", "POST"})
+     * @Route("/notfallpass/{idno?}", name="pass", methods={"GET", "POST"})
      */
-    public function pass($idno = null, Request $request, ManagerRegistry $registry): Response
+    public function pass($idno = null, Request $request): Response
     {
         $idno = strtoupper($request->get('p_idno') ?? $idno);
-        $emDefault = $registry->getManager('default');
-        $emNutzer = $registry->getManager('nutzer');
 
         // get item
-        $item = $emDefault
+        $item = $this->emDefault
             ->getRepository(Items::class)
             ->findOneByIdNo($idno);
 
@@ -58,10 +55,10 @@ class ItemsController extends AbstractController
             // variables
             $variables = [
                 'idno' => $item,
-                'nutzer' => $emNutzer
+                'nutzer' => $this->emNutzer
                     ->getRepository(Nutzer::class)
                     ->findOneById($nutzerId),
-                'person' => $emNutzer
+                'person' => $this->emNutzer
                     ->getRepository(Person::class)
                     ->findOneById($personId),
             ];
@@ -76,5 +73,147 @@ class ItemsController extends AbstractController
     }
 
 
+    /**
+     * new
+     *
+     * @param int $personId
+     * @param Request $request
+     * @return Response
+     *
+     * @Route("/items/new/{personId}", name="new", methods={"GET"})
+     */
+    public function new(int $personId, Request $request): Response
+    {
+        $user = $this->getUser();
+        $person = $this->emNutzer
+            ->getRepository(Person::class)
+            ->findOneBy([
+                'id' => $personId,
+                'nutzer' => $this->getUser(),
+            ]);
 
+        // voter
+        $this->denyAccessUnlessGranted('edit', $person);
+
+        // new item
+        $item = new Items();
+        $item
+            ->setNutzerId($user->getId())
+            ->setPersonId($person->getId());
+
+        // form
+        $form = $this->formFactory->createBuilder(
+            ItemsAddType::class,
+            $item,
+            [
+                'action' => $this->generateUrl('app_api_items_create'),
+            ]
+        )
+        ->getForm();
+
+        // vars
+        $variables = [
+            'form' => $form->createView()
+        ];
+
+        // return
+        return $this->renderAndRespond(
+            $variables,
+            true
+        );
+    }
+
+
+    /**
+     * edit
+     *
+     * @param int $id
+     * @param Request $request
+     * @return Response
+     *
+     * @Route("/items/edit/{id}", name="edit", methods={"GET"})
+     */
+    public function edit(int $id, Request $request): Response
+    {
+        // item
+        $item = $this->emDefault
+            ->getRepository(Items::class)
+            ->find($id);
+
+        // voter
+        $this->denyAccessUnlessGranted('edit', $item);
+
+        // form
+        $form = $this->formFactory->createBuilder(
+            ItemsEditType::class,
+            $item,
+            [
+                'action' => $this->generateUrl(
+                    'app_api_items_update',
+                     [
+                        'id' => $id
+                    ]
+                ),
+            ]
+        )
+        ->getForm();
+
+        // vars
+        $variables = [
+            'item' => $item,
+            'form' => $form->createView(),
+        ];
+
+        // return
+        return $this->renderAndRespond(
+            $variables,
+            true
+        );
+    }
+
+
+    /**
+     * delete
+     *
+     * @param int $id
+     * @param Request $request
+     * @return Response
+     *
+     * @Route("/items/delete/{id}", name="delete", methods={"GET"})
+     */
+    public function delete(int $id, Request $request): Response
+    {
+        // item
+        $item = $this->emDefault
+            ->getRepository(Items::class)
+            ->find($id);
+
+        // voter
+        $this->denyAccessUnlessGranted('delete', $item);
+
+        // form
+        $form = $this
+            ->createFormBuilder($item)
+            ->setAction(
+                $this->generateUrl(
+                    'app_api_items_delete',
+                    [
+                        'id' => $id
+                    ]
+                )
+            )
+            ->getForm();
+
+        // vars
+        $variables = [
+            'item' => $item,
+            'form' => $form->createView(),
+        ];
+
+        // return
+        return $this->renderAndRespond(
+            $variables,
+            true
+        );
+    }
 }

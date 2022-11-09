@@ -7,7 +7,10 @@ namespace App\Entity\Nutzer;
  *
  **********************************************************************/
 
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -18,7 +21,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Entity(repositoryClass="App\Repository\NutzerRepository")
  */
 class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
-#class Nutzer
 {
     /**
      * @var int
@@ -27,6 +29,12 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="App\Entity\Nutzer\Person", mappedBy="nutzer")
+     */
+    private $persons;
 
     /**
      * @var string
@@ -92,34 +100,60 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     private $passwort;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
      */
     private $stempel;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
      */
     private $registriertDatum;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
      */
     private $aktiviertDatum;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime")
      */
     private $lastChangeDatum;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
      */
     private $lastLogin;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=5)
+     */
+    private $gesperrt;
+
+    /**
+     * @var int
+     * @ORM\Column(type="integer")
+     */
+    private $gesperrtAnzahl;
+
+    /**
+     * @Assert\Type("\DateTimeInterface")
+     * @ORM\Column(type="integer")
+     */
+    private $gesperrtDatum;
+
+    /**
+     * @var int
+     * @ORM\Column(type="integer")
+     */
+    private $loginFehler;
+
 
 
     /**
@@ -128,6 +162,25 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+
+    /**
+     * @param Collection $persons
+     * @return Nutzer
+     */
+    public function setPersons(Collection $persons): self
+    {
+        $this->persons = $persons;
+        return $this;
+    }
+
+    /**
+     * @return Collection|Person[]
+     */
+    public function getPersons(): Collection
+    {
+        return $this->persons;
     }
 
 
@@ -350,95 +403,95 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 
 
     /**
-     * @param \DateTime $stempel
+     * @param \DateTimeInterface $stempel
      * @return Nutzer
      */
-    public function setStempel(\DateTime $stempel): self
+    public function setStempel(\DateTimeInterface $stempel): self
     {
         $this->stempel = $stempel;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return \DateTimeInterface|null
      */
-    public function getStempel(): ?\DateTime
+    public function getStempel(): ?\DateTimeInterface
     {
         return $this->stempel;
     }
 
 
     /**
-     * @param \DateTime $registriertDatum
+     * @param \DateTimeInterface $registriertDatum
      * @return Nutzer
      */
-    public function setRegistriertDatum(\DateTime $registriertDatum): self
+    public function setRegistriertDatum(\DateTimeInterface $registriertDatum): self
     {
         $this->registriertDatum = $registriertDatum;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return \DateTimeInterface|null
      */
-    public function getRegistriertDatum(): ?\DateTime
+    public function getRegistriertDatum(): ?\DateTimeInterface
     {
         return $this->registriertDatum;
     }
 
 
     /**
-     * @param \DateTime $aktiviertDatum
+     * @param \DateTimeInterface $aktiviertDatum
      * @return Nutzer
      */
-    public function setAktiviertDatum(\DateTime $aktiviertDatum): self
+    public function setAktiviertDatum(\DateTimeInterface $aktiviertDatum): self
     {
         $this->aktiviertDatum = $aktiviertDatum;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return \DateTimeInterface|null
      */
-    public function getAktiviertDatum(): ?\DateTime
+    public function getAktiviertDatum(): ?\DateTimeInterface
     {
         return $this->aktiviertDatum;
     }
 
 
     /**
-     * @param \DateTime $lastChangeDatum
+     * @param \DateTimeInterface $lastChangeDatum
      * @return Nutzer
      */
-    public function setLastChangeDatum(\DateTime $lastChangeDatum): self
+    public function setLastChangeDatum(\DateTimeInterface $lastChangeDatum): self
     {
         $this->lastChangeDatum = $lastChangeDatum;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return \DateTimeInterface|null
      */
-    public function getLastChangeDatum(): ?\DateTime
+    public function getLastChangeDatum(): ?\DateTimeInterface
     {
         return $this->lastChangeDatum;
     }
 
 
     /**
-     * @param \DateTime $lastLogin
+     * @param \DateTimeInterface $lastLogin
      * @return Nutzer
      */
-    public function setLastLogin(\DateTime $lastLogin): self
+    public function setLastLogin(\DateTimeInterface $lastLogin): self
     {
         $this->lastLogin = $lastLogin;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return \DateTimeInterface|null
      */
-    public function getLastLogin(): ?\DateTime
+    public function getLastLogin(): ?\DateTimeInterface
     {
         return $this->lastLogin;
     }
@@ -449,7 +502,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function isAllowedToLogin(): bool
     {
-        return  $this->getStatus() === 'ok';
+        return $this->getStatus() === 'ok';
     }
 
 
@@ -470,5 +523,81 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         $this->plainPassword = null;
         $this->repeatPassword = null;
+    }
+
+
+    /**
+     * @param string $gesperrt
+     * @return Nutzer
+     */
+    public function setGesperrt(string $gesperrt): self
+    {
+        $this->gesperrt = $gesperrt;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getGesperrt(): ?string
+    {
+        return $this->gesperrt;
+    }
+
+
+    /**
+     * @param int $gesperrtAnzahl
+     * @return Nutzer
+     */
+    public function setGesperrtAnzahl(int $gesperrtAnzahl): self
+    {
+        $this->gesperrtAnzahl = $gesperrtAnzahl;
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getGesperrtAnzahl(): ?int
+    {
+        return $this->gesperrtAnzahl;
+    }
+
+
+    /**
+     * @param \DateTime $gesperrtDatum
+     * @return Nutzer
+     */
+    public function setGesperrtDatum(\DateTime $gesperrtDatum): self
+    {
+        $this->gesperrtDatum = $gesperrtDatum;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getGesperrtDatum(): ?\DateTime
+    {
+        return $this->gesperrtDatum;
+    }
+
+
+    /**
+     * @param int $loginFehler
+     * @return Nutzer
+     */
+    public function setLoginFehler(int $loginFehler): self
+    {
+        $this->loginFehler = $loginFehler;
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getLoginFehler(): ?int
+    {
+        return $this->loginFehler;
     }
 }

@@ -74,7 +74,7 @@ class StandardController extends AbstractController
         // @TODO store id in session and remove from path (parameter)
         if(!empty($idno)) {
             return $this->redirectToRoute(
-                'app_item_pass',
+                'app_items_pass',
                 [
                     'idno' => $idno,
                 ]

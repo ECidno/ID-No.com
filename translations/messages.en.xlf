@@ -28,91 +28,106 @@
     <unit id="vF0wkNl" name="header.menu.idno.about.lbl">
       <segment>
         <source>header.menu.idno.about.lbl</source>
-        <target>header.menu.idno.about.lbl</target>
+        <target>About ID-No.com</target>
       </segment>
     </unit>
     <unit id="PJdnZyr" name="header.menu.idno.works.lbl">
       <segment>
         <source>header.menu.idno.works.lbl</source>
-        <target>header.menu.idno.works.lbl</target>
+        <target>How it works</target>
       </segment>
     </unit>
     <unit id="pOhZC7A" name="header.menu.idno.testimonials.lbl">
       <segment>
         <source>header.menu.idno.testimonials.lbl</source>
-        <target>header.menu.idno.testimonials.lbl</target>
+        <target>Testimonials</target>
       </segment>
     </unit>
     <unit id="vZUn30y" name="header.menu.idno.company.lbl">
       <segment>
         <source>header.menu.idno.company.lbl</source>
-        <target>header.menu.idno.company.lbl</target>
+        <target>Company</target>
       </segment>
     </unit>
     <unit id="LzzzDam" name="header.menu.idno.group.lbl">
       <segment>
         <source>header.menu.idno.group.lbl</source>
-        <target>header.menu.idno.group.lbl</target>
+        <target>Group</target>
       </segment>
     </unit>
     <unit id="x970SQq" name="header.menu.idno.press.lbl">
       <segment>
         <source>header.menu.idno.press.lbl</source>
-        <target>header.menu.idno.press.lbl</target>
+        <target>Press</target>
       </segment>
     </unit>
     <unit id="VPVogKi" name="header.menu.idno.references.lbl">
       <segment>
         <source>header.menu.idno.references.lbl</source>
-        <target>header.menu.idno.references.lbl</target>
+        <target>References</target>
       </segment>
     </unit>
     <unit id="S.AtI.g" name="header.menu.idno.bussiness_clients.lbl">
       <segment>
         <source>header.menu.idno.bussiness_clients.lbl</source>
-        <target>header.menu.idno.bussiness_clients.lbl</target>
+        <target>Bussiness clients</target>
       </segment>
     </unit>
     <unit id="8WjM3ZF" name="company">
       <segment>
         <source>company</source>
-        <target>company</target>
+        <target>Company</target>
       </segment>
     </unit>
     <unit id="VDR5HhO" name="company.introduction">
       <segment>
         <source>company.introduction</source>
-        <target>company.introduction</target>
+        <target><![CDATA[In emergency situations, reliable information and time are of vital importance. With ID-No.com, medical emergency forces can immediately access digitally stored individual emergency information such as medications, diseases, allergies, diabetes, contact persons. This saves time in an emergency and can save lives!
+
+ID-No.com, launched in May 2017 in Frankfurt am Main (Germany), was developed together with rescue professionals and awarded the INNOVATIONSPREIS-IT "BEST OF 2018" by Initiative Mittelstand in the category "E-Health". Since then, well-known customers include companies such as AOK, BARMER, KKH, ERGO, ABUS, Harley Davidson and Sport Scheck, among others.
+
+ID-No.com GmbH is a member of the CODE-No.com Group, which originally started in 2007 with the CODE-No.com brand in Frankfurt am Main. CODE-No.com GmbH protects valuables against loss and theft and is represented in the market with over 12 million CODE numbers for this purpose. The ID-No.com brand is a consistent further development of the original idea and has been offering security in the field of eHealth since 2017.
+
+New: Since 2020, ID-No.com has been cooperating with ZOLL, the global market leader for digital health solutions, and will be integrated into the Rescue Pad systems in the emergency services in Europe. This leads to a fast and seamless emergency data transfer from the rescue service to the hospital.
+
+Info videos you can find here:  
+<a href="/infovideo" target="_blank">ID-No.com/infovideo  
+</a> <a href="/pad" target="_blank">ID-No.com/pad</a>]]></target>
       </segment>
     </unit>
     <unit id="KIllofL" name="management">
       <segment>
         <source>management</source>
-        <target>management</target>
+        <target>Management</target>
       </segment>
     </unit>
     <unit id="dgXhF6w" name="company.ceo.caption">
       <segment>
         <source>company.ceo.caption</source>
-        <target>company.ceo.caption</target>
+        <target>Dr. Markus J. Krechting, CEO</target>
       </segment>
     </unit>
     <unit id="JVCoYRg" name="company.ceo.text">
       <segment>
         <source>company.ceo.text</source>
-        <target>company.ceo.text</target>
+        <target>Dr. Markus J. Krechting, born in 1965, studied business administration at the University of Münster with a specialty in marketing with Prof. Dr. Dr. h.c. mult. Meffert. His doctorate on the subject of international marketing was completed at the University of Hamburg. Krechting worked for six years with the company Otto, handling amongst others the market entry in India. He then changed within the group to become Department Head of Marketing for Schwab Versand, Hanau, another mail-order firm. He then spent three years as a corporate consultant heading Internationalization at TellSell Consulting GmbH in Frankfurt.
+
+In 2001, Krechting became director of New Media at the Neckermann mail-order firm in Frankfurt. He expanded the company’s Internet presence to make it one of the most successful online shops in Germany (it was named, amongst others, Favorite Website of the Year, Best Website of the Year, Best Online Shop and also won the Convergence Award). In his additional functions as director of marketing and communication, Krechting simultaneously managed the restructuring of the entire company from the classical catalogue mail-order retailer Neckermann, to the home shopping provider neckermann.de. From April 2007 to April 2008, Krechting headed Neckermann.ch AG as CEO and President of the Board of Administration in Switzerland.</target>
       </segment>
     </unit>
     <unit id="60op8LH" name="company.coo.caption">
       <segment>
         <source>company.coo.caption</source>
-        <target>company.coo.caption</target>
+        <target>Michael Sorg, COO</target>
       </segment>
     </unit>
     <unit id="WCA8n5w" name="company.coo.text">
       <segment>
         <source>company.coo.text</source>
-        <target>company.coo.text</target>
+        <target>Michael Sorg has more than 20 years of experience in eBusiness, the last 5 years of which as CEO of computeruniverse, a Burda Digital company with 170 employees. During this time he was able to more than double the turnover to over 200 Mio €.
+Michael Sorg has led the internationally successful online store for hardware, software, consumer and household electronics into profitability.
+
+Previously, he built up neckermann.de and managed it for 10 years before moving to the Otto Group where, in addition to managing eCommerce for schwab.de, he also co-founded the plus size fashion store sheego.de and was responsible for it online for 5 years.</target>
       </segment>
     </unit>
     <unit id="IaFPsYm" name="Advisory board">
@@ -124,13 +139,25 @@
     <unit id="Bc1KxF_" name="company.advisory.caption">
       <segment>
         <source>company.advisory.caption</source>
-        <target>company.advisory.caption</target>
+        <target>From left: Helmut von der Lieck (Vice Chairman of the Advisory Board), Prof. Dr. Ingo Kett (Advisory Board), Klaus Artmann (Advisory Board Chairman)</target>
       </segment>
     </unit>
     <unit id="kddzrsu" name="company.advisory.text">
       <segment>
         <source>company.advisory.text</source>
-        <target>company.advisory.text</target>
+        <target><![CDATA[**Klaus Artmann (Chairman of the Advisory Board)**  
+**CEO holding ‹one› GmbH**
+Klaus Artmann has been involved in Internet and online marketing developments for over 15 years. His work focuses on strategic customer consulting, eRelations and the realization of customer-specific business models.
+
+**Helmut von der Lieck (Deputy Chairman of the Advisory Board)**  
+**Managing Partner gemeinsam&anders gmbh**  
+Helmut von der Lieck is an expert in sales, customer service and marketing. He has gained over 20 years of professional experience in various German financial and media companies from DAX and MDAX.
+
+**Prof. Dr. Ingo Kett, Advisory Board,**  
+**Managing Director Viaticum GmbH**  
+
+Ingo Kett was head of Sapient Consulting in Germany. Before that, he was responsible for the European business for utilities at IBM and was Executive Partner at Accenture. He is the founder of Viaticum, Venture Capital, and was awarded „Business Angel of the Year“.
+]]></target>
       </segment>
     </unit>
     <unit id="cKgdBlx" name="member_of">
@@ -142,133 +169,138 @@
     <unit id="dpO64G0" name="footer.menu.company.lbl">
       <segment>
         <source>footer.menu.company.lbl</source>
-        <target>footer.menu.company.lbl</target>
+        <target>Company</target>
       </segment>
     </unit>
     <unit id="aZiriDJ" name="footer.menu.presse.lbl">
       <segment>
         <source>footer.menu.presse.lbl</source>
-        <target>footer.menu.presse.lbl</target>
+        <target>Press</target>
       </segment>
     </unit>
     <unit id="MvrDYPi" name="footer.menu.agb.lbl">
       <segment>
         <source>footer.menu.agb.lbl</source>
-        <target>footer.menu.agb.lbl</target>
+        <target><![CDATA[Terms & Conditions]]></target>
       </segment>
     </unit>
     <unit id="UO4k47g" name="footer.menu.privacy.lbl">
       <segment>
         <source>footer.menu.privacy.lbl</source>
-        <target>footer.menu.privacy.lbl</target>
+        <target>Data Privacy</target>
       </segment>
     </unit>
     <unit id="zMJliAS" name="footer.menu.imprint.lbl">
       <segment>
         <source>footer.menu.imprint.lbl</source>
-        <target>footer.menu.imprint.lbl</target>
+        <target>Imprint</target>
       </segment>
     </unit>
     <unit id="IKxeNV5" name="footer.menu.cookie.lbl">
       <segment>
         <source>footer.menu.cookie.lbl</source>
-        <target>footer.menu.cookie.lbl</target>
+        <target>Cookie settings</target>
       </segment>
     </unit>
     <unit id="8vOTifc" name="index.carousel.slide.sos_chip_shoe.caption">
       <segment>
         <source>index.carousel.slide.sos_chip_shoe.caption</source>
-        <target>index.carousel.slide.sos_chip_shoe.caption</target>
+        <target>SOS-ID-Chip on shoe</target>
       </segment>
     </unit>
     <unit id="TlrNx8P" name="index.carousel.slide.sos_chip_shoe.text">
       <segment>
         <source>index.carousel.slide.sos_chip_shoe.text</source>
-        <target>index.carousel.slide.sos_chip_shoe.text</target>
+        <target>SOS-ID-Chip  
+on shoe</target>
       </segment>
     </unit>
     <unit id="bFD_QYh" name="index.carousel.slide.quick_sos_data.caption">
       <segment>
         <source>index.carousel.slide.quick_sos_data.caption</source>
-        <target>index.carousel.slide.quick_sos_data.caption</target>
+        <target>Fast to digital emergency data</target>
       </segment>
     </unit>
     <unit id="YDwfe9A" name="index.carousel.slide.quick_sos_data.text">
       <segment>
         <source>index.carousel.slide.quick_sos_data.text</source>
-        <target>index.carousel.slide.quick_sos_data.text</target>
+        <target>Fast to  
+digital emergency data</target>
       </segment>
     </unit>
     <unit id="DXhdVnO" name="index.carousel.slide.best_practice_barmer.caption">
       <segment>
         <source>index.carousel.slide.best_practice_barmer.caption</source>
-        <target>index.carousel.slide.best_practice_barmer.caption</target>
+        <target>Best Practice: BARMER</target>
       </segment>
     </unit>
     <unit id="MjBGaKz" name="index.carousel.slide.best_practice_barmer.text">
       <segment>
         <source>index.carousel.slide.best_practice_barmer.text</source>
-        <target>index.carousel.slide.best_practice_barmer.text</target>
+        <target>Best Practice</target>
       </segment>
     </unit>
     <unit id="Cp.xpr2" name="index.carousel.slide.sos_clip_bike.caption">
       <segment>
         <source>index.carousel.slide.sos_clip_bike.caption</source>
-        <target>index.carousel.slide.sos_clip_bike.caption</target>
+        <target>SOS-ID-Chip on bicycle helmet</target>
       </segment>
     </unit>
     <unit id="qzjpFEM" name="index.carousel.slide.sos_clip_bike.text">
       <segment>
         <source>index.carousel.slide.sos_clip_bike.text</source>
-        <target>index.carousel.slide.sos_clip_bike.text</target>
+        <target>SOS-ID-Chip  
+on bicycle helmet</target>
       </segment>
     </unit>
     <unit id="8HWn53f" name="index.carousel.slide.sos_clip_motorcycle.caption">
       <segment>
         <source>index.carousel.slide.sos_clip_motorcycle.caption</source>
-        <target>index.carousel.slide.sos_clip_motorcycle.caption</target>
+        <target>SOS-ID-Chip on motorcycle helmet</target>
       </segment>
     </unit>
     <unit id="NWx1KBW" name="index.carousel.slide.sos_clip_motorcycle.text">
       <segment>
         <source>index.carousel.slide.sos_clip_motorcycle.text</source>
-        <target>index.carousel.slide.sos_clip_motorcycle.text</target>
+        <target>SOS-ID-Chip  
+on motorcycle helmet</target>
       </segment>
     </unit>
     <unit id="UnDc50D" name="index.carousel.slide.best_practice_harley_davidson.caption">
       <segment>
         <source>index.carousel.slide.best_practice_harley_davidson.caption</source>
-        <target>index.carousel.slide.best_practice_harley_davidson.caption</target>
+        <target>Best Practice: Harley Davidson</target>
       </segment>
     </unit>
     <unit id="HCE4ffC" name="index.carousel.slide.best_practice_harley_davidson.text">
       <segment>
         <source>index.carousel.slide.best_practice_harley_davidson.text</source>
-        <target>index.carousel.slide.best_practice_harley_davidson.text</target>
+        <target>Best Practice: Harley Davidson</target>
       </segment>
     </unit>
     <unit id="lvarSw8" name="index.carousel.slide.sos_clip_senior.caption">
       <segment>
         <source>index.carousel.slide.sos_clip_senior.caption</source>
-        <target>index.carousel.slide.sos_clip_senior.caption</target>
+        <target>SOS-ID-Chip for seniors</target>
       </segment>
     </unit>
     <unit id="vzAGp5f" name="index.carousel.slide.sos_clip_senior.text">
       <segment>
         <source>index.carousel.slide.sos_clip_senior.text</source>
-        <target>index.carousel.slide.sos_clip_senior.text</target>
+        <target>SOS-ID-Chip  
+for seniors</target>
       </segment>
     </unit>
     <unit id="XEC976m" name="index.carousel.slide.covid.caption">
       <segment>
         <source>index.carousel.slide.covid.caption</source>
-        <target>index.carousel.slide.covid.caption</target>
+        <target> </target>
       </segment>
     </unit>
     <unit id="_lKLA0O" name="index.carousel.slide.covid.text">
       <segment>
         <source>index.carousel.slide.covid.text</source>
-        <target>index.carousel.slide.covid.text</target>
+        <target> </target>
       </segment>
     </unit>
     <unit id="_KdSYTr" name="Vorherige">
@@ -286,235 +318,845 @@
     <unit id="AB0XdUp" name="index.boxrow1.about.header">
       <segment>
         <source>index.boxrow1.about.header</source>
-        <target>index.boxrow1.about.header</target>
+        <target><![CDATA[About <nobr>ID-No.com</nobr>]]></target>
       </segment>
     </unit>
     <unit id="mX38078" name="index.boxrow1.about.text">
       <segment>
         <source>index.boxrow1.about.text</source>
-        <target>index.boxrow1.about.text</target>
+        <target>ID-No.com enables you to access the stored emergency information – globally and 24/7. [About ID-No.com](#ueber_idno)</target>
       </segment>
     </unit>
     <unit id="3Vb_85h" name="index.boxrow1.works.header">
       <segment>
         <source>index.boxrow1.works.header</source>
-        <target>index.boxrow1.works.header</target>
+        <target>How it works</target>
       </segment>
     </unit>
     <unit id="bTXdzec" name="index.boxrow1.works.text">
       <segment>
         <source>index.boxrow1.works.text</source>
-        <target>index.boxrow1.works.text</target>
+        <target>Use your individual ID-number from the SOS-ID-chip to store your retrievable emergency-ID pass. [How it works](#so_funktionierts)</target>
       </segment>
     </unit>
     <unit id="pnFTPhU" name="index.boxrow1.shop.header">
       <segment>
         <source>index.boxrow1.shop.header</source>
-        <target>index.boxrow1.shop.header</target>
+        <target>Shop</target>
       </segment>
     </unit>
     <unit id="7cX4FXm" name="index.boxrow1.shop.text">
       <segment>
         <source>index.boxrow1.shop.text</source>
-        <target>index.boxrow1.shop.text</target>
+        <target>Find our emergency ID products for RRP 9,95 € here in the [shop](https://www.code-no.shop/sos-id-chip/)</target>
       </segment>
     </unit>
     <unit id="DqhitoI" name="index.boxrow1.datasecurity.header">
       <segment>
         <source>index.boxrow1.datasecurity.header</source>
-        <target>index.boxrow1.datasecurity.header</target>
+        <target>Data security</target>
       </segment>
     </unit>
     <unit id=".6H1ZoO" name="index.boxrow1.datasecurity.text">
       <segment>
         <source>index.boxrow1.datasecurity.text</source>
-        <target>index.boxrow1.datasecurity.text</target>
+        <target>We protect your data. Checked and certified [Data security](datensicherheit)</target>
       </segment>
     </unit>
     <unit id="EpMvAOe" name="index.boxrow2.chip.header">
       <segment>
         <source>index.boxrow2.chip.header</source>
-        <target>index.boxrow2.chip.header</target>
+        <target>SOS-ID-chip</target>
       </segment>
     </unit>
     <unit id="y8ZMWfS" name="index.boxrow2.bracelet.header">
       <segment>
         <source>index.boxrow2.bracelet.header</source>
-        <target>index.boxrow2.bracelet.header</target>
+        <target>Emergency-ID helmet clip</target>
       </segment>
     </unit>
     <unit id="Dipbo0N" name="index.boxrow2.infos.header">
       <segment>
         <source>index.boxrow2.infos.header</source>
-        <target>index.boxrow2.infos.header</target>
+        <target>Retrieve emergency-info</target>
       </segment>
     </unit>
     <unit id="irMlJPi" name="index.boxrow2.pass.header">
       <segment>
         <source>index.boxrow2.pass.header</source>
-        <target>index.boxrow2.pass.header</target>
+        <target>Emergency-ID pass</target>
       </segment>
     </unit>
     <unit id="1iQrU_D" name="index.about.text">
       <segment>
         <source>index.about.text</source>
-        <target>index.about.text</target>
+        <target><![CDATA[**ID-No.com – global safety 24/7**  
+In Germany alone more than 29 Million people need medical assistance after an accident. Accident hazard is everywhere: at work, at home, in traffic, during sports or leisure activities. Two thirds of all accidents are leisure time accidents.
+
+During an emergency first aiders often lack of relevant information such as medical preconditions, medication, allergy etc.
+
+In extreme situations even people with excellent memory can‘t remember all vital details of themselves or third parties. They might also be in shock.
+
+
+**Central storage of individual emergency –information.**  
+ID-No.com provides worldwide and around the clock access to emergency information. Medical first responders receive an overview of illnesses, medications, allergies, diabetes, blood types and contact persons who should be called in case of a medical emergency or sudden accident.
+
+<img class="ms-3 mt-3 float-end align-bottom" src="/build/media/images/ID_Award_IM_2018.png.jpg" width="150" alt="INNOVATIONSPREIS-IT: BEST OF 2018" />**ID-No**.com is a trademark of **CODE-No**.com GmbH and serves to protect people. **CODE-No**.com is a system established since 2007 with 9 million numbers in the market.
+
+**ID-No**.com are protected as utility models and registered for european patent.
+
+**ID-No**.com was awarded the innovation prize "Best of 2018" of Initiative Mittelstand in the category "E-Health". The IT Innovation Award is under the patronage of the Federal Presidency for Economics and Technology.]]></target>
       </segment>
     </unit>
     <unit id="QIQZDqB" name="index.features.header">
       <segment>
         <source>index.features.header</source>
-        <target>index.features.header</target>
+        <target>Quick. Safe. Reliable.</target>
       </segment>
     </unit>
     <unit id="Q7VAK41" name="index.feature.1.lbl">
       <segment>
         <source>index.feature.1.lbl</source>
-        <target>index.feature.1.lbl</target>
+        <target>Easy usage in everyday life, at the job plus during sports and leisure activities.</target>
       </segment>
     </unit>
     <unit id="SsHHWWa" name="index.feature.2.lbl">
       <segment>
         <source>index.feature.2.lbl</source>
-        <target>index.feature.2.lbl</target>
+        <target>Well visible reference on digital stored individual emergency-information.</target>
       </segment>
     </unit>
     <unit id="mylgHlJ" name="index.feature.3.lbl">
       <segment>
         <source>index.feature.3.lbl</source>
-        <target>index.feature.3.lbl</target>
+        <target>Emergency-information available via smartphone, QR-code or by telephone via rescue coordination centre.</target>
       </segment>
     </unit>
     <unit id="vJUjqx4" name="index.feature.4.lbl">
       <segment>
         <source>index.feature.4.lbl</source>
-        <target>index.feature.4.lbl</target>
+        <target>Immediate access for first aiders, rescue service, doctor or hospital via ID-number.</target>
       </segment>
     </unit>
     <unit id="CgUtLXN" name="index.feature.5.lbl">
       <segment>
         <source>index.feature.5.lbl</source>
-        <target>index.feature.5.lbl</target>
+        <target>Particular information can be set active/ passiv at will.</target>
       </segment>
     </unit>
     <unit id="ewwzPGE" name="index.feature.6.lbl">
       <segment>
         <source>index.feature.6.lbl</source>
-        <target>index.feature.6.lbl</target>
+        <target>Highest importance is given to data security.</target>
       </segment>
     </unit>
     <unit id="jmpD903" name="index.works.header">
       <segment>
         <source>index.works.header</source>
-        <target>index.works.header</target>
+        <target>...and this is how the ID-Chip works</target>
       </segment>
     </unit>
     <unit id="oOqkcJx" name="index.work.step1.header">
       <segment>
         <source>index.work.step1.header</source>
-        <target>index.work.step1.header</target>
+        <target>STEP 01</target>
       </segment>
     </unit>
     <unit id="1cmJpQ_" name="index.work.step1.text">
       <segment>
         <source>index.work.step1.text</source>
-        <target>index.work.step1.text</target>
+        <target>**Attach the SOS-ID-Chip** to e.g. shoe, backpack, jacket or bracelet.</target>
       </segment>
     </unit>
     <unit id="F45r6to" name="index.work.step2.header">
       <segment>
         <source>index.work.step2.header</source>
-        <target>index.work.step2.header</target>
+        <target>STEP 02</target>
       </segment>
     </unit>
     <unit id="RaOup.G" name="index.work.step2.text">
       <segment>
         <source>index.work.step2.text</source>
-        <target>index.work.step2.text</target>
+        <target>**Activate your personal ID-number** at www.ID-No.com and **deposit your individual emergency-information.**</target>
       </segment>
     </unit>
     <unit id="3F0hygL" name="index.work.step3.header">
       <segment>
         <source>index.work.step3.header</source>
-        <target>index.work.step3.header</target>
+        <target>STEP 03</target>
       </segment>
     </unit>
     <unit id="sFyAZuI" name="index.work.step3.text">
       <segment>
         <source>index.work.step3.text</source>
-        <target>index.work.step3.text</target>
+        <target>**Ready!** Confirm the clearing link sent to you and your **emergency-ID pass is digitally available.**</target>
       </segment>
     </unit>
     <unit id="9V2Rdsu" name="index.references.header">
       <segment>
         <source>index.references.header</source>
-        <target>index.references.header</target>
+        <target>References</target>
       </segment>
     </unit>
     <unit id="65PuaAo" name="index.testimonials.header">
       <segment>
         <source>index.testimonials.header</source>
-        <target>index.testimonials.header</target>
+        <target>What professionals say</target>
       </segment>
     </unit>
     <unit id="bYnEruo" name="index.testimonials.1.person">
       <segment>
         <source>index.testimonials.1.person</source>
-        <target>index.testimonials.1.person</target>
+        <target>Dr. med. Alexander Burkhard</target>
       </segment>
     </unit>
     <unit id="OJMVJl." name="index.testimonials.1.text">
       <segment>
         <source>index.testimonials.1.text</source>
-        <target>index.testimonials.1.text</target>
+        <target>„In case of emergency first aiders know at once, who the person is, whether diseases, allergies, diabetes, medications are present and which contact persons should be informed.“</target>
       </segment>
     </unit>
     <unit id="fbCFoVU" name="index.testimonials.1.location">
       <segment>
         <source>index.testimonials.1.location</source>
-        <target>index.testimonials.1.location</target>
+        <target>Darmstadt</target>
       </segment>
     </unit>
     <unit id="O.OdL_F" name="index.testimonials.2.person">
       <segment>
         <source>index.testimonials.2.person</source>
-        <target>index.testimonials.2.person</target>
+        <target>Pia Rebhorn, paramedic</target>
       </segment>
     </unit>
     <unit id="_mhgh8X" name="index.testimonials.2.text">
       <segment>
         <source>index.testimonials.2.text</source>
-        <target>index.testimonials.2.text</target>
+        <target>„For me as a paramedic a clear reference at the accident victim informing about a digital Emergency-Pass is very useful to get immediate access to vital medical information.“</target>
       </segment>
     </unit>
     <unit id="a7SC6WD" name="index.testimonials.2.location">
       <segment>
         <source>index.testimonials.2.location</source>
-        <target>index.testimonials.2.location</target>
+        <target>Stuttgart</target>
       </segment>
     </unit>
     <unit id="I.upU3X" name="index.testimonials.3.person">
       <segment>
         <source>index.testimonials.3.person</source>
-        <target>index.testimonials.3.person</target>
+        <target>Anne Waterstradt,
+Red Cross squad leader civil protection</target>
       </segment>
     </unit>
     <unit id="nlGECEu" name="index.testimonials.3.text">
       <segment>
         <source>index.testimonials.3.text</source>
-        <target>index.testimonials.3.text</target>
+        <target>„Quick access to stored relevant medical data on the emergency ID-Chip **creates reliability** and **gives us more time** and room to take care of the patient“</target>
       </segment>
     </unit>
     <unit id="X2cK9UT" name="index.testimonials.3.location">
       <segment>
         <source>index.testimonials.3.location</source>
-        <target>index.testimonials.3.location</target>
+        <target>Neubrandenburg</target>
       </segment>
     </unit>
     <unit id="uTE8BNL" name="index.references_partners.header">
       <segment>
         <source>index.references_partners.header</source>
-        <target>index.references_partners.header</target>
+        <target>Well known from the press</target>
+      </segment>
+    </unit>
+    <unit id="MM4P3i3" name="ID-Nummer checken/aktivieren">
+      <segment>
+        <source>ID-Nummer checken/aktivieren</source>
+        <target>Check/activate ID number</target>
+      </segment>
+    </unit>
+    <unit id="yIoLkHQ" name="Success">
+      <segment>
+        <source>Success</source>
+        <target>Success</target>
+      </segment>
+    </unit>
+    <unit id="6YHdrkX" name="Warning">
+      <segment>
+        <source>Warning</source>
+        <target>Warning</target>
+      </segment>
+    </unit>
+    <unit id="VKDowX6" name="Error">
+      <segment>
+        <source>Error</source>
+        <target>Error</target>
+      </segment>
+    </unit>
+    <unit id="fZ63rLE" name="Close">
+      <segment>
+        <source>Close</source>
+        <target>Close</target>
+      </segment>
+    </unit>
+    <unit id="SEE3tBg" name="imprint.title">
+      <segment>
+        <source>imprint.title</source>
+        <target>Impressum</target>
+      </segment>
+    </unit>
+    <unit id="JR7p9yq" name="imprint.text">
+      <segment>
+        <source>imprint.text</source>
+        <target>####ID-No.com GmbH  
+Member of the CODE-No.com group  
+Cassellastraße 30-32  
+D-60386 Frankfurt am Main
+
+E-Mail: info@ID-No.com  
+Telefon: +49 (0)69 - 941 43 88 -22  
+Telefax: +49 (0)69 - 941 43 88 -29  
+
+Responsible for the content is ID-No.com GmbH  
+**Managing Director**  
+Dr. Markus J. Krechting
+
+**Commercial register**  
+District Court Frankfurt am Main, HRB 115072
+
+**Tax number**  
+Tax-No.. 045 236 030 38  
+VAT ID no. DE 312 100 382
+
+**Bank details**  
+Bank: Commerzbank AG  
+IBAN DE21 5004 0000 0337 5847 00  
+BIC: COBADEFFXXX
+
+**Authorship**  
+Copyright @ CODE-No.com GmbH. All rights reserved. All data, texts and images are the property of CODE-No.com GmbH. The use for commercial purposes is prohibited. Warranty The warranty conditions can be found in our terms and conditions.
+
+**Liability**  
+All external links were carefully checked prior to inclusion; despite careful content control, however, we assume no liability for their content. The content of the pages is the sole responsibility of their operators.</target>
+      </segment>
+    </unit>
+    <unit id="9iT88Ny" name="Datenschutz">
+      <segment>
+        <source>Datenschutz</source>
+        <target>Datenschutz</target>
+      </segment>
+    </unit>
+    <unit id="2SrCPL4" name="privacy.title">
+      <segment>
+        <source>privacy.title</source>
+        <target>Privacy statement</target>
+      </segment>
+    </unit>
+    <unit id="QSuBkxQ" name="privacy.version">
+      <segment>
+        <source>privacy.version</source>
+        <target>Version: 16 May 2018</target>
+      </segment>
+    </unit>
+    <unit id="b1r_dDe" name="privacy.text">
+      <segment>
+        <source>privacy.text</source>
+        <target>The following privacy statement complies with the requirements of the General Data Protection Regulation (GDPR) which took effect on 25 May.
+
+**Privacy information**  
+We appreciate your interest in our website. Protecting your privacy is very important to us. Below we inform you in detail on how we use your data.
+
+**Collection, processing and usage of personal data**  
+You may visit our site without providing personal information. We only store non-personal access data, e.g. the name of your Internet Service Provider, the page from which you visited us, or the name of the requested file. This data is purely analysed to improve our service, and cannot in any way be traced back to you.
+
+Personal data is only collected if you voluntarily share this with us as part of an order, when opening a customer account, or subscribing to our newsletter. The respective entry forms also show which data is collected.
+
+We only use your shared data without your specific consent to execute the contract and process your requests.
+
+Once the contract has been fully executed and the full purchase price paid, your data will be locked from further usage, and deleted once the fiscal and commercial storage deadlines have elapsed, unless you have expressly consented to further usage of your data. You may delete your customer account at any time, either by sending a message via the contact details below or using the designated function in the customer account.
+
+We provide the user with SOS-ID-Chips to store personal emergency data in an “emergency ID pass”. The emergency data stored in the emergency ID pass may be retrieved online by first aiders in an emergency. Entering the ID number, which is not outwardly visible and is located in a protected area on the back of the SOS-ID-Chip, enables the emergency ID pass to be viewed. The holder of the SOS-ID-Chip enters their emergency data in a customer area secured by a username and password. The holder is entitled to use our website for contractual purposes in accordance with the aforementioned usage conditions.
+
+The user decides which information is visible in the emergency ID pass. The settings and information relating to their personal data may only be entered through full access authorisation, consisting of a username and password. Personal data may only be changed via the access authorisation individually set up by the user.
+
+We take suitable technical and organisational security measures to protect your data from accidental or deliberate tampering, full or partial loss, destruction, or unauthorised access.
+
+**Data sharing for contract execution**  
+Your data is shared with the shipping company hired to perform the delivery, insofar as this is necessary to deliver the goods. To process payments, we share your payment data with the credit institution Heidelpay, which has been contracted to handle the payment.
+
+The selected payment service providers sometimes also collect this data themselves if you have an account with them. In this case, you need to use your access details to log into the payment service provider during the order process. The privacy policy of the respective payment service provider shall apply here.
+
+Data usage when subscribing to e-newsletter
+If you subscribe to our newsletter, we use the necessary data, or the data separately provided by you, to regularly send you our e-newsletter as per your consent. You may unsubscribe from the newsletter at any time, either by sending a message via the contact details below or using the designated link in the newsletter.
+
+**Cookies**  
+We use cookies on various pages to make visits to our website more attractive and enable certain functions to be enjoyed. Cookies are small text files stored on your computer. Most of the cookies used by us are deleted from your hard drive at the end of your browser session (“session cookies”).
+
+Other cookies remain on your computer, and enable us to recognise your computer next time you visit (“persistent cookies”). These cookies allow you to be welcomed with your username, and spare you the need to re-enter your password or complete forms with your data for subsequent orders. Our partner companies are not allowed to use cookies to collect, process or use personal data through our website.
+
+**Use of Google (Universal) Analytics for web analysis**  
+This website uses Google (Universal) Analytics, a web analysis service run by Google Inc. (www.google.de). Google (Universal) Analytics uses methods which enable your use of the website to be analysed, e.g. “cookies” – text files stored on your computer. The information generated in relation to your use of this website is generally sent to a Google server in the USA, where it is stored. Activating IP anonymisation on this website enables IP addresses to be shortened within the European Union or other countries in the European Economic Area before being sent. Only in exceptional cases is the full IP address sent to a Google server in the USA and then shortened. The anonymised IP address sent by your browser as part of Google Analytics is not combined with other Google data.
+
+You can prevent Google from collecting and storing the data (incl. your IP address) generated by the cookie in relation to your website usage by downloading and installing the browser plugin available at the following link:
+
+[Browser-Plugin](http://tools.google.com/dlpage/gaoptout?hl=en)
+
+Alternatively to the browser plugin, you can click this link to prevent Google Analytics from recording data on this website in future. This involves placing an opt-out cookie on your end device. If you clear your cookies, you will have to re-click the link.
+
+**Right of access and contact options**  
+You are entitled to receive free information on your stored personal data and, if applicable, have this data rectified, locked or erased. If you have any questions about the collection, processing or usage of your personal data, or if you wish to access, rectify, lock or erase data, revoke any consents, or raise any objections against a specific case of data usage, please contact:
+
+[Datenschutz@ID-No.com](mailto:Datenschutz@ID-No.com)  
+069-941 43 88 -0
+
+or send a letter to
+
+**ID-No**.com GmbH  
+Ms Birgit Krechting  
+Cassellastraße 30-32  
+60386 Frankfurt am Main.
+
+**Data security**  
+During the order process, your personal data is encrypted and transmitted through the Internet via the SSL (Secure Socket Layer) process. Credit card data is not stored; it is instead collected and processed directly by our payment service provider “Heidelpay”. We take technical and organisational measures to protect our website and other systems against the loss, destruction, access, modification or circulation of your data by unauthorised parties.
+
+Your customer account may only be accessed by entering your personal password. You should always keep your access information confidential, and close the browser window when you have finished communicating with us, especially if you are on a shared computer.
+
+
+**Verified security**  
+**ID-No**.com has been intensively audited by the internationally recognised company SySS GmbH in Tübingen, which specialises in security during the handling of confidential information on the Internet, and has been awarded the “Verified security” certificate. The certification underlines our high standards of security and quality when handling your data and processing your order.
+
+For you as a user, this means:
+
+Verified security and quality at ID-No.com, particularly when personal data is being handled.
+
+**Repeated declarations of consent**  
+It is possible you have expressly issued us with the following consent(s), and we have recorded your consent. Under the German Telemedia Act, we are obliged to make the content of consents available for retrieval at any time. You may revoke your consent(s) at any time with effect for the future.
+
+a) Permission for email advertising When subscribing to the newsletter, your email address will be used for our own advertising purposes until you unsubscribe from the newsletter. You may unsubscribe at any time.
+
+b) Registration I would like to register for future orders, and request that my data be included in your customer database. By registering, you will be able to enjoy the benefits of **ID-No**.com free of charge.
+
+**Credit check and scoring**  
+If we make an advance payment, e.g. for purchases on account, we may obtain credit-rating information from SCHUFA Holding AG, Kormoranweg 5, 65201 Wiesbaden, based on mathematical statistical processes, to protect our justified interests. To do this, we send the personal data required for the credit check to SCHUFA Holding AG, and use the received information on the statistical probability of a payment default to make a balanced decision on whether to establish, execute or terminate the contract.
+
+The credit-rating information may contain probability values (score values) calculated based on scientifically recognised mathematical/statistical processes, and whose calculation includes other address data. Your legitimate interests and concerns shall be taken into account in accordance with the legal regulations.</target>
+      </segment>
+    </unit>
+    <unit id="7w.oc7t" name="AGB">
+      <segment>
+        <source>AGB</source>
+        <target>AGB</target>
+      </segment>
+    </unit>
+    <unit id="5p.z.wp" name="terms.title">
+      <segment>
+        <source>terms.title</source>
+        <target>General terms and conditions</target>
+      </segment>
+    </unit>
+    <unit id="ak75LZR" name="terms.version">
+      <segment>
+        <source>terms.version</source>
+        <target>Version: Mai 2021</target>
+      </segment>
+    </unit>
+    <unit id="UwG9Hvp" name="terms.text">
+      <segment>
+        <source>terms.text</source>
+        <target>**§ 1 Scope; contract conclusion**  
+(1) The business relationship between us and the purchaser is governed exclusively by the following general terms and conditions. Differing and additional customer conditions shall not be recognised, unless we have expressly consented to them in writing.
+
+(2) These general terms and conditions shall also apply to customers who have purchased our SOS-ID-Chips from third parties (hereinafter also known as purchasers), with the exception of the provisions relating to our duties to deliver SOS-ID-Chips, and the customer’s duties to pay of these services.
+
+(3) The product images in the online shop are not legally binding; they constitute a non-binding online catalogue. By clicking the “Send order” button, you commit to placing a binding order for the items in your shopping basket. Receipt of your order is confirmed, together with order acceptance, via automated email as soon as the order has been sent. This email confirmation marks the start of the purchase contract.
+
+**§ 2 Consumer’s right of cancellation**  
+**Right of cancellation**  
+You are entitled to cancel this contract within fourteen days, without providing reasons. The cancellation period is fourteen days from the day on which you, or a third party appointed by you who is not the carrier, have/has taken possession of the last item.
+To exercise your right of cancellation, please clearly inform us
+
+**ID-No**.com GmbH – Member of the **CODE-No**.com Group  
+Cassellastr. 30-32  
+60386 Frankfurt  
+E-Mail: info@ID-No.com
+
+(e.g. by a posted letter, fax or email) of your decision to cancel this contract. Sending this notice by the cancellation deadline shall suffice to consider the deadline upheld.
+
+**Consequences of cancellation**
+If you cancel this contract, we must refund you all payments we have received from you, including delivery costs (except for the additional costs resulting from you choosing a different delivery method from the cheapest standard delivery offered by us) immediately or at least within fourteen days of the day on which we receive your contract-cancellation notice. To make this refund, we use the same method of payment used by you in the original transaction, unless otherwise expressly agreed on with you; under no circumstances will you be charged any fees for this refund. We can refuse to make the refund until the items have been returned to us, or until you prove you have sent the items – depending on which occurs first. You must return or send the items to 
+
+**ID-No**.com GmbH  
+Cassellastraße 30-32  
+D-60386 Frankfurt am Main
+
+immediately, or at the very least within fourteen days of the day on which you advise of the contract cancellation. 
+The deadline is deemed as having been upheld if you send the items before the fourteen-day deadline has elapsed. You shall bear the direct costs of returning the items. End of instructions on cancellations.
+
+**§ 3 Cost-bearing agreement**  
+f you exercise your right of cancellation, you must bear the standard reshipping costs if the delivered items match those ordered, and if the price of the returned object does not exceed an amount of 40 Euros, or if you have not yet performed the return service or made a contractually agreed part-payment for a more expensive object at the time of cancellation. Reshipping is otherwise free of charge for you.
+
+**§ 4 Service description**  
+(1) We provide the purchaser with SOS-ID-Chips to store personal emergency data in an “emergency ID pass”. The ordered quantity of SOS-ID-Chips is given an individual identification number (“ID number”), and are delivered to the purchaser. We send the chips 3-4 days after contract conclusion. Each SOS-ID-Chip may only be used once. Usage is limited to a duration of 2 years, and is free of charge for you. The usage term does not extend automatically, so no written terminations are required. We commit to promptly, i.e. at least 6 weeks prior to the term ending, informing you of the option of extending your service.
+
+2) The emergency personal data stored in the emergency ID pass can be retrieved online by first aiders in an emergency. Entering the ID number, which is not outwardly visible and is located in a protected area on the back of the SOS-ID-Chip, enables the emergency ID pass to be viewed. The holder of the SOS-ID-Chip enters their emergency data in a customer area secured by a username and password.
+
+(3) The user decides which information is visible in the emergency ID pass. The settings and information relating to their personal data may only be entered through full access authorisation, consisting of a username and password. Personal data may only be changed via the access authorisation individually set up by the user.
+
+(4) By purchasing, ordering/registering and activating this service, the user automatically consents to these general terms and conditions, and accepts them as the contractual basis. The user also consents to the data stored in the emergency pass being provided, and hereby similarly consents to their emergency pass being made publicly available for viewing on the Internet by virtue of the ID number being entered.
+
+(5) The rights to the personal data remain exclusively held by the user. The provider can only access the personal user data (name, address, telephone number etc.) as part of customer service/user management.
+
+(6) The provider does not, at any time, provide a consultancy service, and makes it expressly clear that using its services is not a guarantee for completeness or accuracy.
+
+(7) Users are personally liable for any personal damage resulting from erroneous entries. Users are also obliged to monitor their information stored online, or have this monitored by other parties.
+
+**§ 5 Prices; payment**  
+(1) Our services are rendered at the prices agreed on with the purchaser, shown on the website and applicable on the day of contract conclusion. Prices consist of the order value and shipping costs incl. all taxes; for shipments to countries outside the European Union, they also include any customs duties or other pricing components. All prices are in Euros, and include the legal VAT.
+
+(2) The purchaser must permit us to collect payment for our services and debit the owed amount from their account, and must issue the relevant direct-debit authorisation for this, or pay by credit card. Payments may also be made by PayPal. Payments are due within 5 days of the purchaser receiving the label/tag and a verifiable invoice.
+
+(3) Sales/item deliveries to Switzerland are, according to invoicing practices, invoiced net (without German VAT), and are performed and imported into Switzerland by our logistics partner in accordance with the law. The purchaser bears the resulting customs-clearance fees, any customs duties or the Swiss import sales tax (Swiss VAT) and all ancillary costs.
+
+**§ 6 Purchaser duties**  
+The purchaser of a product containing an ID number is obliged to provide truthful information when registering at ID-No.com.
+
+**§ 7 Warranty**  
+The legal warranty provisions apply. No guarantees are made.
+
+**§ 8 Disclaimer**  
+The operator of the ID-No.com website makes no guarantee that the data will be correct, complete or up to date, and excludes any liability. The disclaimer includes the fact that liability claims raised against the website operator, and which relate to health, medical, intellectual or material damage caused by using or not using the provided information, or by incorrect and incomplete information, are excluded. If in doubt about the data relating to your own state of health or other medical data, ID-No.com GmbH expressly recommends consulting a doctor before entering data on the www.ID-No.com website.
+
+**§ 9 Choice of law**  
+Any legal disputes associated with this business relationship shall be governed exclusively by German law, under exclusion of the UN Convention on Contracts for the International Sale of Goods.
+
+**General**  
+We do not store the contract text.</target>
+      </segment>
+    </unit>
+    <unit id="zpEnaGA" name="Presse">
+      <segment>
+        <source>Presse</source>
+        <target>Presse</target>
+      </segment>
+    </unit>
+    <unit id="2ZQT5ah" name="press.17.text">
+      <segment>
+        <source>press.17.text</source>
+        <target>###Gratis: Dieser Chip kann Leben retten  
+Mit dem SOS-ID-Label von Ergo erleichtern Sie im Ernstfall Rettern die Arbeit
+
+Egal, ob beim Sport, im Straßenverkehr oder auf Reisen: Dass sich die meisten Unfälle in der Freizeit ereignen, ist kein Geheimnis.
+
+Gut, wenn im Ernstfall ein umsichtiger Passant den Notruf wählt und die Rettungskräfte schnell zur Stelle sind.
+
+Noch besser, wenn diese gleich alle relevanten Daten zu Hand haben.
+
+Auch wenn die meisten Menschen sich bereits Gedanken darüber gemacht haben, welche nahestehende Person im Notfall benachrichtigt werden soll, stellt sich die Frage: Wer händigt die Kontaktdaten Ersthelfern und Krankenhauspersonal aus, wenn der Verunfallte nicht mehr an sprechbar sein sollte? Gleiches gilt für medizinische Daten, die nicht nur bei Allergikern für eine erfolgreiche Behandlung entscheidend sein können. Die Lösung heißt Ergo SOS-ID-Label und klebt auf der Titelseite Ihrer COMPUTER BILD. Für Sie ist der Lebensretter, der sonst 9,95 Euro kostet, somit komplett kostenlos.
+
+######Kleiner Chip, große Wirkung  
+Der kleine Chip hat es in sich: Er enthält alle Informationen, die für eine Notfallversorgung nötig sind. Somit spart das SOS-ID-Label Ihren Rettern im Ernstfall kostbare Zeit. Wer den Chip am Schuh, Helm, oder Rucksack anbringt, hat alle Informationen jederzeit dabei und ist bestens gerüstet.
+
+Sie müssen nur einmal die Notfallinformationen auf der Website [www.ID-No.com](http://www.ID-No.com) unter der persönlichen ID-Nummer des Labels hinterlegen, schon ist der Lebensretter aktiviert. Neben Alter, Blutgruppe und einem Notfallkontakt sind dies beispielsweise Angaben zu Vorerkrankungen, Allergien und einer eventuellen Medikation.
+
+Besonders beruhigend: die Daten sind weltweit rund um die Uhr abrufbar und haben bereits zahlreichen Patienten das Leben gerettet. Die komplette Anleitung zum cleveren Notfallpass von Ergo und ID-No.com erhalten Sie auf [www.ID-No.com/ID-Video](http://www.ID-No.com/ID-Video) als Video. Mehr Informationen über das SOS-ID-Label erhalten Sie auf [www.ID-No.com](http://www.ID-No.com) oder über den unten stehenden QR-Code. Wer noch eine passende Versicherung sucht, findet unter [www.ergo.de/unfall](https://www.ergo.de/unfall) Infos zu der neuen Ergo Unfallversicherung.</target>
+      </segment>
+    </unit>
+    <unit id="sI9K3Hq" name="press.16.text">
+      <segment>
+        <source>press.16.text</source>
+        <target><![CDATA[###ID-No.com auf TikTok  
+Der Rettungssanitäter und Social Media Influencer Luis Teichmann alias „5_Sprechwunsch“ postet im September 2021 SOS-ID-Produkte von ID-No.com auf TikTok.
+
+In einem seiner erfolgreichen Videos, in denen er aus dem Alltag eines Rettungssanitäters berichtet, stellt er den SOS-ID-CHIP und das SOS-ID-Armband vor.
+
+Luis Teichmann arbeitet als Rettungssanitäter und erlebt bei seinen Einsätzen immer wieder, dass gesundheitsrelevante Daten im entscheidenden Moment Leben retten können. Deswegen ist es ihm ein Anliegen, diese Möglichkeit, Notfalldaten zu übermitteln, einer breiteren Öffentlichkeit bekannt zu machen.
+
+Sein Video: https://www.tiktok.com/@5_sprechwunsch/video/7006322334122396934?is_copy_url=0&is_from_webapp=v1&sender_device=pc&sender_web_id=7011431012048635398
+
+Über 125.000 Follower haben das Video bereits gesehen; danach haben es über 30.000 Menschen geliked.]]></target>
+      </segment>
+    </unit>
+    <unit id="5KHZhPj" name="press.15.text">
+      <segment>
+        <source>press.15.text</source>
+        <target>###ZOLL AmbulancePad ist kompatibel zu ID-No.com  
+Mehr als 29 Millionen Menschen benötigen allein in Deutschland ärztliche Hilfe nach einem Notfall. Unfallgefahren gibt es überall: Im Beruf, im Haushalt, im Straßenverkehr, bei Sport und Freizeitaktivitäten.
+
+Zwei Drittel aller Unfälle sind Freizeitunfälle. Notfallrelevante Informationen wie Krankheiten, Medikationen, Allergien liegen den Ersthelfern sehr häufig nicht vor.
+
+Selbst Menschen mit gutem Gedächtnis haben in einem Notfall nicht immer alle lebenswichtigen Gesundheitsdetails von sich oder von Dritten parat oder stehen teilweise unter „Schock“.
+
+Mit ID-No.com kann rund um die Uhr und weltweit auf hinterlegte Notfallinformationen zugegriffen werden. Medizinische Einsatzkräfte erhalten einen Überblick zu Krankheiten, Medikationen, Allergien, Diabetes, Blutgruppe und bekommen Kontaktpersonen angezeigt, die im Falle eines medizinischen Notfalls oder plötzlichen Unfalls angerufen werden sollen.
+
+ZOLL entwickelt und vertreibt Medizinprodukte und Softwarelösungen, die Fortschritt in der Notfallversorgung bedeuten und Leben retten, während die klinische und operative Effizienz gesteigert wird. Die digitale Einsatzdokumentation ZOLL AmbulancePad unterstützt den Rettungsdienst bei der Dokumentation der Einsätze und stellt durchgängig Daten von der Einsatzannahme bis zum Abschluss bereit. Anwender des AmbulancePad können ID-No.com Labels und Tags nun auslesen und direkt auf wichtige Patientendaten zugreifen.
+
+Damit wollen ZOLL und ID-No.com den Rettungsdienst unterstützen und schnelle, effiziente Hilfe gewährleisten.
+
+Info-Video: [www.ID-No.com/Zoll](http://www.ID-No.com/Zoll)
+
+</target>
+      </segment>
+    </unit>
+    <unit id="q65PbU0" name="press.13.text">
+      <segment>
+        <source>press.13.text</source>
+        <target>###SOS-ID-Label in „REIF ist LIVE“ passend zum EM Start am 11.06.2021  
+Passend zum EM Start am 11.06.2021 präsentiert die Redaktion des beliebten Podcast **„REIF ist LIVE“** mit Sport-Kommentator-Legende Marcel Reif das SOS-ID-Label von ID-No.com in der SPORT BILD.
+
+In der Ausgabe 23/2021 stellt SPORT BILD den **Kleinen Lebensretter** ausführlich vor. Leser der SPORT BILD erhalten in Kooperation mit ERGO das SOS-ID-Label GRATIS auf der Titelseite.
+
+Wie das Notfall-ID-Label funktioniert, erfahren Sie unter [www.ID-No.com](http://www.ID-No.com) oder im Erklärvideo: [www.ID-No.com/ID-Video](http://www.ID-No.com/ID-Video).</target>
+      </segment>
+    </unit>
+    <unit id="sxc9MuN" name="press.14.text">
+      <segment>
+        <source>press.14.text</source>
+        <target>###Kleiner Lebensretter – gratis für Sie!  
+Egal ob ein Schwächeanfall beim Joggen oder ein heftiger Unfall mit dem Auto. Schon ein kurzer Moment der Unachtsamkeit genügt, und es kann zu einem Unglück kommen.
+
+**Das Problem**: Nicht immer sind die betroffenen Personen mit einem Bekannten oder einem Familienmitglied unterwegs, wodurch den Rettungskräften notfallrelevante Informationen wie Krankheiten, Medikationen, Blutgruppe sowie Ansprechpartner nicht vorliegen. Hier hilft das ERGO Notfall-ID-Label von ID-No.com, welches im Normalfall 9,95 Euro kostet, für die Leser dieser SPORT BILD-Ausgabe jedoch GRATIS ist (siehe Titelseite, bei Abonnenten Seite 3).
+
+**Der Clou**: Das Notfall-Label kann ganz einfach an Schuh, Rucksack, Mütze oder Helm angebracht werden. Unter [www.ID-No.com](http://www.ID-No.com) hinterlegt man dann unter der persönlichen ID-Nummer des Labels alle relevanten Notfallinformationen. Einmal aktiviert, können diese dann weltweit und rund um die Uhr von Ersthelfern und Krankenhauspersonal eingesehen werden. So wie bei Horst S. aus Gelsenkirchen. „Nachdem ich aus dem Koma erwacht war, sagte mir der behandelnde Arzt, dass der SOS-ID-Chip mir wegen meiner vielen Allergien gegen Stoffe und Medikamente mein Leben gerettet hat.“
+
+Wie genau das Notfall-ID-Label von ERGO und ID-No.com funktioniert, erfahren Sie unter [www.ID-No.com](http://www.ID-No.com) oder in einem Erklär-Video, welches Sie mit einer QR-Scan-App Ihres Smartphones oder unter [www.ID-No.com/ID-Video](http://www.ID-No.com/ID-Video) sehen können. Infos zur neuen ERGO Unfallschutz-Versicherung finden Sie unter [www.ergo.de/unfall](http://www.ergo.de/unfall).</target>
+      </segment>
+    </unit>
+    <unit id=".Pd89Iw" name="press.12.text">
+      <segment>
+        <source>press.12.text</source>
+        <target>###Mehr Sicherheit im Berufsalltag mit ID-No.com
+####Bei Unfall am Arbeitsplatz sofort Notfall-Informationen abrufen
+**Der Notfall-ID Chip spart Zeit und kann Leben retten**  
+
+Laut DEKRA Arbeitsschutzreport gibt es jedes Jahr etwa 950.000 Arbeitsunfälle in Deutschland. Die Ursachen dafür sind unterschiedlich und werden am 28. April zum Welttag für Sicherheit und Gesundheit am Arbeitsplatz angesprochen.
+
+**Welttag für Arbeitssicherheit**
+
+Das Thema Arbeitssicherheit spielt in Betrieb und Büro eine wichtige Rolle.
+
+Der Aktionstag am 28. April soll daher auf die Arbeitsplatzsituation sowohl in Industrie- als auch in Schwellenländern aufmerksam machen. Vor allem die Verbesserung von Sicherheitsrichtlinien, die Anpassung von unternehmensinternen Kommunikationsstrukturen und das Schaffen eines angenehmen Arbeitsklimas spielen hierbei eine Rolle. Verfolgt wird damit das übergeordnete Ziel, weltweit sichere, gesunde und menschenwürdige Arbeitsbedingungen durchzusetzen.
+
+**Richtige Behandlung dank ID-No.com**
+
+Selbst mit entsprechenden Sicherheitsstandards lässt sich nicht jeder Unfall am Arbeitsplatz vermeiden. Und dann zählt oft jede Sekunde. Meistens wissen die Helfer vor Ort allerdings nicht, ob der verunfallte Mitarbeiter chronisch krank ist, Medikamente einnimmt oder Allergien bestehen. Diese Informationen sind für die Rettung aber von zentraler Bedeutung.
+
+Mit Hilfe des Notfall-ID Chips von ID-No.com, einer Marke der CODE-No.com Gruppe mit Sitz in Frankfurt, können medizinische Ersthelfer sofort mit jedem Smartphone Notfall-Informationen abrufen, die im Ernstfall das Leben des Arbeitnehmers retten können. Dazu gehören nicht nur Informationen zu Allergien, Medikamente oder Krankheiten, sondern unter anderem auch die zu kontaktierenden Familienangehörigen.
+
+**So funktioniert der Notfall-ID Chip**
+
+Der Notfall-ID Chip wird gut erkennbar, zum Beispiel am Schuh, angebracht oder als Armband am Handgelenk getragen. Vorab müssen Anwender lediglich ihre individuelle ID-Nummer registrieren und ihren digitalen Notfall-Pass unter [www.ID-No.com](http://www.ID-No.com) einrichten. Die Datenhoheit liegt also allein beim Mitarbeiter, der den Notfall-Pass in seinem passwortgeschützten Account selbst anlegt und verwaltet. Er ist somit weder inhaltlich noch technisch mit dem Arbeitgeber verbunden.
+
+Im Falle eines Unfalls, bei dem medizinische Hilfe benötigt wird, können die Einsatzkräfte die ID-Nummer auf [www.ID-No.com](http://www.ID-No.com) eingeben oder noch schneller den QR-Code scannen und erhalten sofort alle relevanten Notfall-Informationen zum Patienten, um schnell und verlässlich handeln zu können. Dank entsprechender Zeitstempel im Notfall-Pass sowie regelmäßige Aktualisierungserinnerungen können die Helfer dabei sicher sein, dass die gespeicherten Daten des Mitarbeiters aktuell und verlässlich sind.
+
+**Schutz vor Missbrauch**
+
+Durch die verdeckte Rückseite der Notfall-ID Produkte kann der persönliche Notfall-Pass nicht einfach im Vorbeigehen von Dritten ausgelesen werden. Zudem sendet das ID-No.com System unter anderem eine automatische Benachrichtigungsfunktion an den Nutzer, wenn sein Notfall-ID Pass ausgelesen wurde, um ggf. Missbrauch sofort ermitteln zu können.
+
+Der Notfall-ID Chip ist damit eine sichere und praktische Lösung, die im Ernstfall Leben retten kann. Informationen: [www.ID-No.com](http://www.ID-No.com).</target>
+      </segment>
+    </unit>
+    <unit id="qBXUi7W" name="press.11.text">
+      <segment>
+        <source>press.11.text</source>
+        <target>###Zum europäischen Tag des „Notrufs 112“
+####Die schnelle Notfallkette mit ID-No.com spart Zeit und kann Leben retten!
+Über 10 Millionen Notfalleinsätze pro Jahr in Deutschland. Situationen in denen es vor allem um Schnelligkeit geht. Nach Studien des Deutschen Roten Kreuzes könnten zehn Prozent der Unfalltoten noch leben, wenn schnelle Hilfe vor Ort gewesen wäre.
+
+Im Jahr 1973 wurde die Notrufnummer 112 bundesweit eingeführt und seit 1991 ist diese Nummer europaweit gültig. Um die Bekanntheit der 112 zu steigern, hat die Europäische Kommission vor 10 Jahren den 11. Februar als jährlichen europäischen Tag des Notrufs ausgerufen. Denn je mehr Bürger die richtige Notfallnummer wählen, desto schneller können die Einsatzkräfte vor Ort sein und helfen.
+
+**ID-No.com verbessert die Arbeitsbedingungen der Einsatzkräfte vor Ort um eine weitere lebenswichtige Komponente – schneller und verlässlicher Zugriff auf notfallrelevante Gesundheitsdaten.**
+
+Dazu stellt ID-No.com eine Auswahl an Produkten (u.a. einen Notfall-ID Chip zu Anbringung am Schuh oder einen Notfall-ID Clip für Helme) sowie einen digitalen Notfall-Pass zur Verfügung. Nutzer können nach der Registrierung Ihre gesundheitsrelevanten Daten einfach und sicher hinterlegen. Damit haben Einsatzkräfte im Ernstfall auf alle wichtigen Informationen wie z.B. Medikation, Allergien, Kontaktpersonen und Operationen Zugriff. Lediglich ein internetfähiges Endgerät wird zum Auslesen der Daten benötigt.
+
+ID-No.com macht den Zugriff auf Notfalldaten sicher und verlässlich. Dadurch wird die Arbeit der Einsatzkräfte entlang der Notfallkette maßgeblich verbessert. Im Infovideo unter [www.ID-No.com/infovideo](http://www.ID-No.com/infovideo) wird die Funktionsweise kurz und verständlich gezeigt.
+
+Die Notrufnummer 112 sorgt für schnelle Hilfe am Unfallort, ID-No.com stellt sicher das am Unfallort alle notfallrelevanten Informationen vorliegen - 112 und ID-No.com – ein starkes Team im Notfall.</target>
+      </segment>
+    </unit>
+    <unit id="GVz.9wW" name="press.10.text">
+      <segment>
+        <source>press.10.text</source>
+        <target>###Da es im Notfall schnell gehen muss: Persönliche Notfall-Informationen sofort verfügbar – dank ID-No.com
+####ID-No.com hilft, die Verfügbarkeit von relevanten Notfall-Informationen in Deutschland und weltweit zu verbessern
+Jedes Jahr gibt es allein in Deutschland 29 Millionen Notfallsituationen, bei denen Informationen über den Patienten benötigt werden. Die aktuelle Notfalldatenlage sorgt jedoch dafür, dass eine bestmögliche Versorgung nicht immer gewährleistet werden kann. Das kann in einigen Situationen ernste Folgen haben. Stellen Sie sich vor, einem Patienten muss aufgrund einer akuten Notsituation schnell geholfen werden. Die Information, dass er regelmäßig Blutverdünner, bspw. Marcumar einnehmen muss, lag zum Zeitpunkt der Notfallbehandlung jedoch nicht vor. Der Notfall-ID Chip schafft hier nun Abhilfe.
+
+ID-No.com wurde mit dem INNOVATIONSPREIS-IT „BEST OF 2018“ der Initiative Mittelstand in der Kategorie „E-Health“ ausgezeichnet. Der INNOVATIONSPREIS-IT steht unter der Schirmherrschaft des Bundesministeriums für Wirtschaft und Technologie.
+
+**Ersthelfern fehlen häufig lebenswichtige Notfall-Informationen**
+
+Ob im Beruf, im Haushalt oder beim Sport – Unfallgefahren lauern überall. Ist der Unfall erst mal passiert und es wird medizinische Hilfe benötigt, stehen Ersthelfer wie beispielswiese Rettungssanitäter oder Ärzte häufig vor einem Problem: Ihnen liegen die notfallrelevanten Informationen wie Vorerkrankungen, notwendige Medikationen oder Allergien nicht vor, die für eine optimale medizinische Versorgung benötigt werden.
+
+Ist der Patient beim Eintreffen der Ersthelfer bewusstlos, kann er nicht selbst befragt werden. Aber auch Menschen mit einem guten Gedächtnis kennen in einer Notfallsituation nicht immer alle lebenswichtigen Gesundheitsdetails. ID-No.com löst dieses Problem. Seit dem Start im April 2017 wurden bereits über 1 Million Notfall-ID Chips im Markt platziert.
+
+**So funktioniert ID-No.com**
+
+Über den Notfall-ID Chip können medizinische Ersthelfer rund um die Uhr und weltweit auf die hinterlegten Notfall-Informationen zugreifen. Im Notfall erhalten sie so einen Überblick über alle behandlungsrelevanten Daten wie beispielsweise Informationen zu Vorerkrankungen, Medikation oder Allergien. Daneben werden im digitalen Notfall-ID Pass Kontaktpersonen angezeigt, die bei einem medizinischen Notfall oder plötzlichen Unfall angerufen werden sollen. Im Infovideo unter [www.ID-No.com/infovideo](http://www.ID-No.com/infovideo) wird die Funktionsweise kurz und verständlich gezeigt.
+
+ID-No.com gibt es sowohl als Chip wie auch als Armband, welche einfach am Schuh, Rucksack oder Jacke angebracht beziehungsweise am Handgelenk getragen werden. Damit der digitale Notfall-ID Pass im Ernstfall auch funktioniert, müssen Nutzer lediglich ihre persönliche ID-Nummer auf www.ID-No.com aktivieren und ihre individuellen Notfall-Informationen hinterlegen. Nach Freischaltung ist der Notfall-ID Pass digital abrufbar – und das jederzeit, schnell, verlässlich und weltweit.
+
+Tritt nun ein Notfall ein oder kommt es zu einem Unfall, bei dem medizinische Hilfe benötigt wird, können Ersthelfer die ID-Nummer auf dem Chip per QR Code scannen oder diese auf www.ID-No.com eingeben. Anschließend erhalten sie sofort die relevanten Notfall-Informationen zum Patienten, um richtig handeln zu können.
+
+**Datenschutz wird großgeschrieben**
+
+Gerade bei sensiblen Themen wie der Gesundheitshistorie einer Person wird der Datenschutz großgeschrieben. Die ID-Nummer und der QR Code sind daher an der verdeckten Unterseite des Chips beziehungsweise Armbands angebracht. Diese können also nicht einfach im Vorbeigehen gescannt werden, sondern sind sicher verborgen. Anwender können darüber hinaus individuell entscheiden, welche Felder im digitalen Notfall-ID Pass aktiv oder passiv geschaltet sind.
+
+Die Sicherheit der Daten auf deutschen Hochleistungsservern wird regelmäßig durch die renommierte SySS GmbH geprüft und zertifiziert.
+
+**Ersthelfer und Patienten profitieren**
+
+Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine einfache, sichere und bewährte Lösung entwickelt, die im Ernstfall Leben retten kann und die Arbeit professioneller Ersthelfer maßgeblich erleichtert.</target>
+      </segment>
+    </unit>
+    <unit id="u8KAyIN" name="Notfall-ID Pass">
+      <segment>
+        <source>Notfall-ID Pass</source>
+        <target>Notfall-ID Pass</target>
+      </segment>
+    </unit>
+    <unit id="4eCwpxs" name="person.last_change_datum">
+      <segment>
+        <source>person.last_change_datum</source>
+        <target>last change</target>
+      </segment>
+    </unit>
+    <unit id="41WERFZ" name="person.groesse">
+      <segment>
+        <source>person.groesse</source>
+        <target>Size:</target>
+      </segment>
+    </unit>
+    <unit id="grdjQzd" name="person.gewicht">
+      <segment>
+        <source>person.gewicht</source>
+        <target>Weight:</target>
+      </segment>
+    </unit>
+    <unit id="htifoBR" name="person.geschlecht">
+      <segment>
+        <source>person.geschlecht</source>
+        <target>Sex:</target>
+      </segment>
+    </unit>
+    <unit id="n3k4yG5" name="person.geschlecht.w">
+      <segment>
+        <source>person.geschlecht.w</source>
+        <target>Female</target>
+      </segment>
+    </unit>
+    <unit id="7PNMyJI" name="Standort">
+      <segment>
+        <source>Standort</source>
+        <target>Location</target>
+      </segment>
+    </unit>
+    <unit id="r_z_E60" name="Notruf">
+      <segment>
+        <source>Notruf</source>
+        <target>Emergency</target>
+      </segment>
+    </unit>
+    <unit id="VzYFJUZ" name="Blutgruppe">
+      <segment>
+        <source>Blutgruppe</source>
+        <target>Blood group</target>
+      </segment>
+    </unit>
+    <unit id="AmfYaGh" name="Erkrankungen">
+      <segment>
+        <source>Erkrankungen</source>
+        <target>Disease</target>
+      </segment>
+    </unit>
+    <unit id="D4G5IGp" name="Medikamente">
+      <segment>
+        <source>Medikamente</source>
+        <target>Medication</target>
+      </segment>
+    </unit>
+    <unit id="gbjZnSl" name="Allergieen">
+      <segment>
+        <source>Allergieen</source>
+        <target>Allergies</target>
+      </segment>
+    </unit>
+    <unit id="dPNXEiI" name="Anrufen">
+      <segment>
+        <source>Anrufen</source>
+        <target>Call</target>
+      </segment>
+    </unit>
+    <unit id="cpJYWuS" name="Krankenversicherung">
+      <segment>
+        <source>Krankenversicherung</source>
+        <target>Health insurance</target>
+      </segment>
+    </unit>
+    <unit id="VW8l8Fs" name="Versicherungs-Nr.">
+      <segment>
+        <source>Versicherungs-Nr.</source>
+        <target>Insurance policy No.</target>
+      </segment>
+    </unit>
+    <unit id="WMKwySr" name="Wohnort">
+      <segment>
+        <source>Wohnort</source>
+        <target>Location</target>
+      </segment>
+    </unit>
+    <unit id="_mkG127" name="Telefon">
+      <segment>
+        <source>Telefon</source>
+        <target>Phone</target>
+      </segment>
+    </unit>
+    <unit id="y6rTz0p" name="Mobile">
+      <segment>
+        <source>Mobile</source>
+        <target>Mobile</target>
+      </segment>
+    </unit>
+    <unit id="qLx0SWS" name="Organspendeausweis">
+      <segment>
+        <source>Organspendeausweis</source>
+        <target>Organ donor card</target>
+      </segment>
+    </unit>
+    <unit id="NwL8GGZ" name="ja">
+      <segment>
+        <source>ja</source>
+        <target>yes</target>
+      </segment>
+    </unit>
+    <unit id="WdYzR4S" name="Patienten­verfügung">
+      <segment>
+        <source>Patienten­verfügung</source>
+        <target>Advance decision</target>
+      </segment>
+    </unit>
+    <unit id="ZvsVmzp" name="Weitere Angaben">
+      <segment>
+        <source>Weitere Angaben</source>
+        <target>Frther details</target>
+      </segment>
+    </unit>
+    <unit id="Kd99AFq" name="login.title">
+      <segment>
+        <source>login.title</source>
+        <target>Login</target>
+      </segment>
+    </unit>
+    <unit id="bEf896l" name="login.header">
+      <segment>
+        <source>login.header</source>
+        <target>My ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="XGTJLIG" name="login.text">
+      <segment>
+        <source>login.text</source>
+        <target>Please log in here with your user name and password. Afterwards you can update your emergency data or activate your ID number.</target>
+      </segment>
+    </unit>
+    <unit id="U4wHbEk" name="person.geschlecht.m">
+      <segment>
+        <source>person.geschlecht.m</source>
+        <target>Male</target>
       </segment>
     </unit>
   </file>

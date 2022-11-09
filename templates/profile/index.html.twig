@@ -5,17 +5,187 @@
 {% block content %}
   <div class="container-fluid">
     <div class="row my-3 justify-content-center">
-      <div class="col-10 col-lg-8 col-xl-6">
+      <div class="col-12 col-md-10 col-lg-8">
         <h1>{{ 'meinidno.title'|trans }}</h1>
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-10 col-lg-8 col-xl-6">
-				Profil / Notfall-Daten
-				{#}
-        {{ 'login.text'|trans|raw|markdown_to_html }}
-#}
+      <div class="col-12 col-md-10 col-lg-8">
+				<h3>Profil / Notfall-Daten</h3>
+        <p>Hier können Sie Ihre Notfall-Daten verwalten.</p>
 
+        <div class="row mt-3">
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="d-grid mb-3">
+              <button
+                type="button"
+                class="btn btn-outline-dark ajax-modal"
+                data-url="{{ path('app_person_edit', { id:person.id }) }}">
+                {{ 'profile.edit.lbl'|trans }}
+              </button>
+            </div>
+          </div>
+{#}
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="d-grid mb-3">
+              <a
+                class="btn btn-outline-dark"
+                href="{{ path('app_contacts_index') }}">
+                {{ 'contacts.index.lbl'|trans }}
+              </a>
+            </div>
+          </div>
+          #}
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="d-grid mb-3">
+              <a
+                class="btn btn-outline-dark"
+                href="{{ path('app_account_edit') }}">
+                {{ 'account.edit.lbl'|trans }}
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="d-grid mb-3">
+              <a
+                class="btn btn-outline-dark"
+                href="{{ path('app_profile_delete') }}">
+                {{ 'profile.delete.lbl'|trans }}
+              </a>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-8 col-xl-6">
+            {# @TODO: Find a better solution for this div have btn look w/o hover! #}
+            <div class="d-grid mb-3 btn border-{{ user.sichtbar == true ? 'dark' : 'dark' }}">
+              <form
+                role="form"
+                action="{{ path('app_api_profile_pass_enable', { id: user.id }) }}"
+                method="post"
+                data-callback="pass_enable"
+                class="">
+                <div class="form-check form-check-inline form-switch">
+                  <input
+                    type="hidden"
+                    name="sichtbar"
+                    value="0" />
+                  <label
+                    class="form-check-label text-dark"
+                    for="fldPassEnable">Notfall-ID Pass aktiv
+                    {{ user.sichtbar == true
+                      ? '<i class="bi bi-check-circle text-success ps-1"></i>'
+                      : '<i class="bi bi-exclamation-triangle text-warning ps-1"></i>'
+                    }}
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="fldPassEnable"
+                    class="form-check-input"
+                    name="sichtbar"
+                    value="1"
+                    role="switch"
+                    {{ user.sichtbar == true ? 'checked="checked"' }}
+                    autocomplete="off" />
+                  <input
+                    type="hidden"
+                    name="token"
+                    value="{{ csrf_token('pass_enable') }}"/>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# id number #}
+    <div class="row my-4">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+				<h3>Übersicht: ID-Nummern</h3>
+        <p>
+          Hier können Sie weitere ID-Nummern aktivieren und Ihre bereits registrierten ID-Nummern einsehen und verwalten.
+        </p>
+
+        <div id="toolbarItems">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-success mx-1 ajax-modal"
+            data-url="{{ path('app_items_new', { personId:person.id }) }}">
+            <i class="{{ settings.buttons.new }}"></i>
+            {{ 'items.action.new.lbl'|trans }}
+          </button>
+        </div>
+
+        <table
+          id="tableItems"
+          data-toggle="table"
+          data-classes="table table-sm table-hover"
+          data-toolbar="#toolbarItems"
+          data-locale="{{ language }}"
+          data-loading-template="loadingTemplate"
+          data-buttons-class="outline-dark btn-sm"
+          data-show-refresh="false"
+          data-url="{{ path('app_api_items_read', { personId:person.id }) }}">
+          <thead class="bg-light">
+            <tr>
+              <th data-field="idNo">{{ 'items.table.idNo.lbl'|trans }}</th>
+              <th data-field="anbringung">{{ 'items.table.anbringung.lbl'|trans }}</th>
+              <th data-field="aktiviertDatum">{{ 'items.table.aktiviertDatum.lbl'|trans }}</th>
+              <th
+                data-width="100"
+                data-align="right"
+                data-field="operate"
+                data-formatter="operateFormatter"
+                data-events="operateEvents">{{ 'Aktion'|trans }}</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+
+    {# contacts #}
+    <div class="row my-4">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <h3>Meine Kontakte</h3>
+				<p>
+          Im Folgenden finden Sie eine Übersicht Ihrer Notfall-Kontakte:
+        </p>
+
+        <div id="toolbarContacts">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-success mx-1 ajax-modal"
+            data-url="{{ path('app_contacts_new', { personId:person.id }) }}">
+            <i class="{{ settings.buttons.new }}"></i>
+            {{ 'contacts.action.new.lbl'|trans }}
+          </button>
+        </div>
+
+        <table
+          id="tableContacts"
+          data-toggle="table"
+          data-classes="table table-sm table-hover"
+          data-toolbar="#toolbarContacts"
+          data-locale="{{ language }}"
+          data-loading-template="loadingTemplate"
+          data-buttons-class="outline-dark btn-sm"
+          data-show-refresh="false"
+          data-url="{{ path('app_api_contacts_read', { personId:person.id }) }}">
+          <thead class="bg-light">
+            <tr>
+              <th data-field="contactname">{{ 'contact.table.contactname.lbl'|trans }}</th>
+              <th data-field="telefon">{{ 'contact.table.telefon.lbl'|trans }}</th>
+              <th data-field="beziehung">{{ 'contact.table.beziehung.lbl'|trans }}</th>
+              <th
+                data-width="100"
+                data-align="right"
+                data-field="operate"
+                data-formatter="operateFormatter"
+                data-events="operateEvents">{{ 'Aktion'|trans }}</th>
+            </tr>
+          </thead>
+        </table>
       </div>
     </div>
   </div>

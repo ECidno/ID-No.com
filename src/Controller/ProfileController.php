@@ -7,12 +7,14 @@ namespace App\Controller;
  *
  * /*********************************************************************/
 
+use App\Entity\Main\Items;
+use App\Entity\Nutzer\Person;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Profile controller
+ * profile controller
  */
 class ProfileController extends AbstractController
 {
@@ -22,12 +24,101 @@ class ProfileController extends AbstractController
      * @param Request $request
      * @return Response
      *
-     * @Route("/meinidno", name="app_meinidno", methods={"GET", "POST"})
+     * @Route("/meinidno", name="app_profile_index", methods={"GET"})
      */
     public function index(Request $request): Response
     {
-        // usually you'll want to make sure the user is authenticated first,
-        // see "Authorization" below
+        // user authenticated
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->getUser();
+
+        // objects
+        $persons = $user->getPersons();
+        $person = $persons->first() ?? [];
+
+        // vars
+        $variables = [
+            'user' => $user,
+            'person' => $person,
+        ];
+
+        // return
+        return $this->renderAndRespond($variables);
+    }
+
+
+    /**
+    * edit action
+    *
+    * @param Request $request
+    * @return Response
+    *
+    * @Route("/profil/edit", name="app_profile_edit", methods={"GET"})
+    */
+   public function edit(Request $request): Response
+   {
+        // user authenticated
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->getUser();
+
+        // objects
+        $persons = $user->getPersons();
+        $person = $persons->first() ?? new Person();
+
+        // form
+        $form = $this->createFormBuilder($person);
+
+        // vars
+        $variables = [
+            'user' => $user,
+            'person' => $person,
+            'form' => $form->getForm(),
+        ];
+
+        // return
+        return $this->renderForm(
+            $this->template,
+            $variables
+        );
+
+       #return $this->renderAndRespond($variables);
+   }
+
+
+    /**
+     * update action
+     *
+     * @param Request $request
+     * @return Response
+     *
+     * @Route("/profil/update", name="app_profile_update", methods={"POST"})
+     */
+    public function update(Request $request): Response
+    {
+        // user authenticated
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        // vars
+        $variables = [
+            'user' => $this->getUser(),
+        ];
+
+        // return
+        return $this->renderAndRespond($variables);
+    }
+
+
+    /**
+     * delete action
+     *
+     * @param Request $request
+     * @return Response
+     *
+     * @Route("/profil/delete", name="app_profile_delete", methods={"GET"})
+     */
+    public function delete(Request $request): Response
+    {
+        // user authenticated
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         // vars

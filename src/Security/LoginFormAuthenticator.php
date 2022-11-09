@@ -7,6 +7,7 @@ namespace App\Security;
  *
  /*********************************************************************/
 
+use App\Entity\Nutzer\Nutzer;
 use App\Repository\NutzerRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
@@ -32,6 +33,11 @@ use Symfony\Component\Security\Http\EntryPoint\AuthenticationEntryPointInterface
  */
 class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements AuthenticationEntryPointInterface
 {
+    /**
+     * @var ManagerRegistry $registry
+     */
+    private $registry;
+
     /**
      * @var NutzerRepository $userRepository
      */
@@ -64,13 +70,15 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
      * @param ManagerRegistry $registry
      */
     public function __construct(
-        NutzerRepository $userRepository,
+        ManagerRegistry $registry,
+#        NutzerRepository $userRepository,
         UrlGeneratorInterface $urlGenerator,
         CsrfTokenManagerInterface $csrfTokenManager,
         UserPasswordHasherInterface $passwordEncoder,
         ParameterBagInterface $params
     ) {
-        $this->userRepository = $userRepository;
+        $this->registry = $registry;
+ #       $this->userRepository = $userRepository;
         $this->urlGenerator = $urlGenerator;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
@@ -93,6 +101,8 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
         $username = $credentials['username'];
         $password = $credentials['password'];
 
+        $em = $this->registry->getManager('nutzer');
+
         // credentials?
         if (
             empty($username) ||
@@ -109,7 +119,10 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
         }
 
         // get user
-        $user = $this->userRepository->findOneBy(['email' => $username]);
+#        $user = $this->userRepository->findOneBy(['email' => $username]);
+        $user = $em
+            ->getRepository(Nutzer::class)
+            ->findOneBy(['email' => $username]);
 
         // user found?
         if (!$user || !$user->isAllowedToLogin()) {
@@ -138,8 +151,15 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
              * @TODO set pass to new encoder here and save
              */
 
+            // reset login errors
+            $user
+                ->setLoginFehler(0)
+                ->setLastLogin(new \DateTime());
+            $em->persist($user);
+            $em->flush();
 
-             return new SelfValidatingPassport(new UserBadge($username), []);
+            // return
+            return new SelfValidatingPassport(new UserBadge($username), []);
 /*
             return new Passport(
                 new UserBadge(
@@ -190,8 +210,22 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
                 $credentials['password']
             ) === true
         ) {
+            // reset login errors
+            $user
+                ->setLoginFehler(0)
+                ->setLastLogin(new \DateTime());
+            $em->persist($user);
+            $em->flush();
+
+            // return
             return new SelfValidatingPassport(new UserBadge($username), []);
         }
+
+        // increase user's login errors
+        $loginFehler = $user->getLoginFehler();
+        $user->setLoginFehler($loginFehler++);
+        $em->persist($user);
+        $em->flush();
 
         // fail authentication with a custom error
         throw new CustomUserMessageAuthenticationException('Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.');
@@ -210,7 +244,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         return new RedirectResponse(
-            $this->urlGenerator->generate('app_meinidno')
+            $this->urlGenerator->generate('app_profile_index')
         );
     }
 

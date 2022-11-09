@@ -1617,6 +1617,11 @@ bootstrap-icons@^1.9.1:
   resolved "https://registry.yarnpkg.com/bootstrap-icons/-/bootstrap-icons-1.9.1.tgz#cf22d91a25447645e45c49ebde4e56eafdfe761b"
   integrity sha512-d4ZkO30MIkAhQ2nNRJqKXJVEQorALGbLWTuRxyCTJF96lRIV6imcgMehWGJUiJMJhglN0o2tqLIeDnMdiQEE9g==
 
+bootstrap-table@^1.21.1:
+  version "1.21.1"
+  resolved "https://registry.yarnpkg.com/bootstrap-table/-/bootstrap-table-1.21.1.tgz#2af4bb1fc31c5264088377c96c44e34bc9506360"
+  integrity sha512-WHw4qEBftg3wLmY80EiB9gTpk51TXPPu/OYxcLnd/amOFwtJzpejbBe4RlziVNDMGavQyhdsnX/jVcnCe37qDQ==
+
 bootstrap@5.2:
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.2.2.tgz#834e053eed584a65e244d8aa112a6959f56e27a0"
@@ -2782,6 +2787,11 @@ jest-worker@^29.1.2:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
+jquery@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.1.tgz#fab0408f8b45fc19f956205773b62b292c147a16"
+  integrity sha512-opJeO4nCucVnsjiXOE+/PcCgYw9Gwpvs/a6B1LL/lQhwWwpbVEVYDZ1FokFr8PRc7ghYlrFPuyHuiiDNTQxmcw==
+
 js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -3249,6 +3259,11 @@ pkg-up@^3.1.0:
   integrity sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==
   dependencies:
     find-up "^3.0.0"
+
+placeholder-loading@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/placeholder-loading/-/placeholder-loading-0.6.0.tgz#32310c02b8aa1a24cf87958dc50aa1f695135cb1"
+  integrity sha512-KdUnwa3AEuXlem7QeSi4qtny+QfiACUh0P0iYskJBwfg3LtAUMQFyd9L21ysdBQ65KbK6tZ4VsKPkcF3mULwMQ==
 
 postcss-calc@^8.2.3:
   version "8.2.4"

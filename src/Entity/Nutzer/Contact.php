@@ -7,20 +7,23 @@ namespace App\Entity\Nutzer;
  *
  **********************************************************************/
 
+use App\Entity\AbstractEntity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Contact
  *
  * @ORM\Entity(repositoryClass="App\Repository\ContactRepository")
  */
-class Contact
+class Contact extends AbstractEntity
 {
     /**
      * @var int
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"read"})
      */
     private $id;
 
@@ -33,6 +36,7 @@ class Contact
     /**
      * @var string
      * @ORM\Column(type="string", length=100, nullable=true)
+     * @Groups({"read"})
      */
     private $contactname;
 
@@ -44,9 +48,10 @@ class Contact
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=false)
+     * @Groups({"read"})
      */
-    private $telefon;
+    private $telefon = '';
 
     /**
      * @var string
@@ -56,9 +61,10 @@ class Contact
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=false)
+     * @Groups({"read"})
      */
-    private $beziehung;
+    private $beziehung = '';
 
     /**
      * @var string
@@ -134,12 +140,12 @@ class Contact
 
 
     /**
-     * @param string $telefon
+     * @param ?string $telefon
      * @return Person
      */
-    public function setTelefon(string $telefon): self
+    public function setTelefon(?string $telefon): self
     {
-        $this->telefon = $telefon;
+        $this->telefon = $telefon ?? '';
         return $this;
     }
 
@@ -172,12 +178,12 @@ class Contact
 
 
     /**
-     * @param string $beziehung
+     * @param ?string $beziehung
      * @return Person
      */
-    public function setBeziehung(string $beziehung): self
+    public function setBeziehung(?string $beziehung): self
     {
-        $this->beziehung = $beziehung;
+        $this->beziehung = $beziehung ?? '';
         return $this;
     }
 

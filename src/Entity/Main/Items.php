@@ -7,28 +7,35 @@ namespace App\Entity\Main;
  *
  **********************************************************************/
 
-use Doctrine\ORM\Mapping as ORM;
+use App\Entity\AbstractEntity;
 use App\Entity\Nutzer\Nutzer;
 use App\Entity\Nutzer\Person;
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Serializer\Annotation\Context;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Items
  * @ORM\Table(name="items")
  * @ORM\Entity(repositoryClass="App\Repository\ItemsRepository")
  */
-class Items
+class Items extends AbstractEntity
 {
     /**
      * @var int
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"read"})
      */
     private $id;
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=12)
+     * @ORM\Column(type="string", length=12, nullable=false)
      */
     private $noStatus;
 
@@ -58,10 +65,38 @@ class Items
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=9)
+     * @ORM\Column(type="text", length=65535, nullable=false)
+     * @Groups({"read"})
+     */
+    private $anbringung;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=9, nullable=false)
+     * @Groups({"read"})
      */
     private $idNo;
 
+    /**
+     * @Assert\Type("\DateTimeInterface")
+     * @ORM\Column(type="datetime", nullable=false)
+     */
+    private $registriertDatum;
+
+    /**
+     * @Assert\Type("\DateTimeInterface")
+     * @ORM\Column(type="datetime", nullable=false)
+     * @Groups({"read"})
+     * @Context({DateTimeNormalizer::FORMAT_KEY = "d.m.Y"})
+     */
+    private $aktiviertDatum;
+
+    /**
+     * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime")
+     */
+    private $lastChangeDatum;
 
 
     /**
@@ -74,10 +109,10 @@ class Items
 
 
     /**
-     * @param string $noStatus
+     * @param ?string $noStatus
      * @return Items
      */
-    public function setNoStatus(string $noStatus): self
+    public function setNoStatus(?string $noStatus): self
     {
         $this->noStatus = $noStatus;
         return $this;
@@ -95,27 +130,28 @@ class Items
     /**
      * @param Nutzer $nutzer
      * @return Items
-     */
-    public function setNutzer(Nutzer $nutzer): self
-    {
-        $this->nutzer = $nutzer;
-        return $this;
-    }
+     public function setNutzer(Nutzer $nutzer): self
+     {
+         $this->nutzer = $nutzer;
+         return $this;
+        }
+     /
 
     /**
      * @return Nutzer|null
-     */
+
     public function getNutzer(): ?Nutzer
     {
         return $this->nutzer;
     }
+    */
 
 
     /**
-     * @param int $nutzerId
+     * @param ?int $nutzerId
      * @return Items
      */
-    public function setNutzerId(int $nutzerId): self
+    public function setNutzerId(?int $nutzerId): self
     {
         $this->nutzerId = $nutzerId;
         return $this;
@@ -133,27 +169,29 @@ class Items
     /**
      * @param Person $person
      * @return Items
-     */
+
     public function setPerson(Person $person): self
     {
         $this->person = $person;
         return $this;
     }
+     */
 
     /**
      * @return Person|null
-     */
+
     public function getPerson(): ?Person
     {
         return $this->person;
     }
+     */
 
 
     /**
-     * @param int $personId
+     * @param ?int $personId
      * @return Items
      */
-    public function setPersonId(int $personId): self
+    public function setPersonId(?int $personId): self
     {
         $this->personId = $personId;
         return $this;
@@ -169,10 +207,29 @@ class Items
 
 
     /**
-     * @param string $idNo
+     * @param ?string $anbringung
      * @return Items
      */
-    public function setIdNo(string $idNo): self
+    public function setAnbringung(?string $anbringung): self
+    {
+        $this->anbringung = $anbringung;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAnbringung(): ?string
+    {
+        return $this->anbringung;
+    }
+
+
+    /**
+     * @param ?string $idNo
+     * @return Items
+     */
+    public function setIdNo(?string $idNo): self
     {
         $this->idNo = $idNo;
         return $this;
@@ -184,5 +241,62 @@ class Items
     public function getIdNo(): ?string
     {
         return $this->idNo;
+    }
+
+
+    /**
+     * @param ?\DateTimeInterface $registriertDatum
+     * @return Items
+     */
+    public function setRegistriertDatum(?\DateTimeInterface $registriertDatum): self
+    {
+        $this->registriertDatum = $registriertDatum;
+        return $this;
+    }
+
+    /**
+     * @return \DateTimeInterface|null
+     */
+    public function getRegistriertDatum(): ?\DateTimeInterface
+    {
+        return $this->registriertDatum;
+    }
+
+
+    /**
+     * @param ?\DateTimeInterface $aktiviertDatum
+     * @return Items
+     */
+    public function setAktiviertDatum(?\DateTimeInterface $aktiviertDatum): self
+    {
+        $this->aktiviertDatum = $aktiviertDatum;
+        return $this;
+    }
+
+    /**
+     * @return \DateTimeInterface|null
+     */
+    public function getAktiviertDatum(): ?\DateTimeInterface
+    {
+        return $this->aktiviertDatum;
+    }
+
+
+    /**
+     * @param \DateTimeInterface $lastChangeDatum
+     * @return Items
+     */
+    public function setLastChangeDatum(\DateTimeInterface $lastChangeDatum): self
+    {
+        $this->lastChangeDatum = $lastChangeDatum;
+        return $this;
+    }
+
+    /**
+     * @return \DateTimeInterface|null
+     */
+    public function getLastChangeDatum(): ?\DateTimeInterface
+    {
+        return $this->lastChangeDatum;
     }
 }

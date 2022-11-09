@@ -7,6 +7,7 @@ namespace App\Controller;
  *
  * /*********************************************************************/
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -47,4 +48,26 @@ class SecurityController extends AbstractController
     public function logout(): void
     { }
 
+
+    /**
+    * edit action
+    *
+    * @param Request $request
+    * @return Response
+    *
+    * @Route("/account/edit", name="app_account_edit", methods={"GET"})
+    */
+    public function edit(Request $request): Response
+    {
+        // user authenticated
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        // vars
+        $variables = [
+            'user' => $this->getUser(),
+        ];
+
+        // return
+        return $this->renderAndRespond($variables);
+    }
 }
