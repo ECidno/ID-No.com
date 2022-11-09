@@ -134,7 +134,8 @@ von 9,95 € hier im [Shop](https://www.code-no.shop/sos-id-chip/)</target>
     <unit id="8HWn53f" name="index.carousel.slide.sos_clip_motorcycle.caption">
       <segment>
         <source>index.carousel.slide.sos_clip_motorcycle.caption</source>
-        <target>SOS-ID Clip am Bike-Helm</target>
+        <target>SOS-ID Clip
+am Motorrad-Helm</target>
       </segment>
     </unit>
     <unit id="UnDc50D" name="index.carousel.slide.best_practice_harley_davidson.caption">
@@ -189,7 +190,7 @@ am Motorrad-Helm</target>
     <unit id="HCE4ffC" name="index.carousel.slide.best_practice_harley_davidson.text">
       <segment>
         <source>index.carousel.slide.best_practice_harley_davidson.text</source>
-        <target>index.carousel.slide.best_practice_harley_davidson.text</target>
+        <target>Best Practice: Harley Davidson</target>
       </segment>
     </unit>
     <unit id="vzAGp5f" name="index.carousel.slide.sos_clip_senior.text">

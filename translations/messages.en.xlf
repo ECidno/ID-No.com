@@ -205,97 +205,102 @@ Ingo Kett was head of Sapient Consulting in Germany. Before that, he was respons
     <unit id="8vOTifc" name="index.carousel.slide.sos_chip_shoe.caption">
       <segment>
         <source>index.carousel.slide.sos_chip_shoe.caption</source>
-        <target>index.carousel.slide.sos_chip_shoe.caption</target>
+        <target>SOS-ID-Chip on shoe</target>
       </segment>
     </unit>
     <unit id="TlrNx8P" name="index.carousel.slide.sos_chip_shoe.text">
       <segment>
         <source>index.carousel.slide.sos_chip_shoe.text</source>
-        <target>index.carousel.slide.sos_chip_shoe.text</target>
+        <target>SOS-ID-Chip  
+on shoe</target>
       </segment>
     </unit>
     <unit id="bFD_QYh" name="index.carousel.slide.quick_sos_data.caption">
       <segment>
         <source>index.carousel.slide.quick_sos_data.caption</source>
-        <target>index.carousel.slide.quick_sos_data.caption</target>
+        <target>Fast to digital emergency data</target>
       </segment>
     </unit>
     <unit id="YDwfe9A" name="index.carousel.slide.quick_sos_data.text">
       <segment>
         <source>index.carousel.slide.quick_sos_data.text</source>
-        <target>index.carousel.slide.quick_sos_data.text</target>
+        <target>Fast to  
+digital emergency data</target>
       </segment>
     </unit>
     <unit id="DXhdVnO" name="index.carousel.slide.best_practice_barmer.caption">
       <segment>
         <source>index.carousel.slide.best_practice_barmer.caption</source>
-        <target>index.carousel.slide.best_practice_barmer.caption</target>
+        <target>Best Practice: BARMER</target>
       </segment>
     </unit>
     <unit id="MjBGaKz" name="index.carousel.slide.best_practice_barmer.text">
       <segment>
         <source>index.carousel.slide.best_practice_barmer.text</source>
-        <target>index.carousel.slide.best_practice_barmer.text</target>
+        <target>Best Practice</target>
       </segment>
     </unit>
     <unit id="Cp.xpr2" name="index.carousel.slide.sos_clip_bike.caption">
       <segment>
         <source>index.carousel.slide.sos_clip_bike.caption</source>
-        <target>index.carousel.slide.sos_clip_bike.caption</target>
+        <target>SOS-ID-Chip on bicycle helmet</target>
       </segment>
     </unit>
     <unit id="qzjpFEM" name="index.carousel.slide.sos_clip_bike.text">
       <segment>
         <source>index.carousel.slide.sos_clip_bike.text</source>
-        <target>index.carousel.slide.sos_clip_bike.text</target>
+        <target>SOS-ID-Chip  
+on bicycle helmet</target>
       </segment>
     </unit>
     <unit id="8HWn53f" name="index.carousel.slide.sos_clip_motorcycle.caption">
       <segment>
         <source>index.carousel.slide.sos_clip_motorcycle.caption</source>
-        <target>index.carousel.slide.sos_clip_motorcycle.caption</target>
+        <target>SOS-ID-Chip on motorcycle helmet</target>
       </segment>
     </unit>
     <unit id="NWx1KBW" name="index.carousel.slide.sos_clip_motorcycle.text">
       <segment>
         <source>index.carousel.slide.sos_clip_motorcycle.text</source>
-        <target>index.carousel.slide.sos_clip_motorcycle.text</target>
+        <target>SOS-ID-Chip  
+on motorcycle helmet</target>
       </segment>
     </unit>
     <unit id="UnDc50D" name="index.carousel.slide.best_practice_harley_davidson.caption">
       <segment>
         <source>index.carousel.slide.best_practice_harley_davidson.caption</source>
-        <target>index.carousel.slide.best_practice_harley_davidson.caption</target>
+        <target>Best Practice: Harley Davidson</target>
       </segment>
     </unit>
     <unit id="HCE4ffC" name="index.carousel.slide.best_practice_harley_davidson.text">
       <segment>
         <source>index.carousel.slide.best_practice_harley_davidson.text</source>
-        <target>index.carousel.slide.best_practice_harley_davidson.text</target>
+        <target>Best Practice: Harley Davidson</target>
       </segment>
     </unit>
     <unit id="lvarSw8" name="index.carousel.slide.sos_clip_senior.caption">
       <segment>
         <source>index.carousel.slide.sos_clip_senior.caption</source>
-        <target>index.carousel.slide.sos_clip_senior.caption</target>
+        <target>SOS-ID-Chip for seniors</target>
       </segment>
     </unit>
     <unit id="vzAGp5f" name="index.carousel.slide.sos_clip_senior.text">
       <segment>
         <source>index.carousel.slide.sos_clip_senior.text</source>
-        <target>index.carousel.slide.sos_clip_senior.text</target>
+        <target>SOS-ID-Chip  
+for seniors</target>
       </segment>
     </unit>
     <unit id="XEC976m" name="index.carousel.slide.covid.caption">
       <segment>
         <source>index.carousel.slide.covid.caption</source>
-        <target>index.carousel.slide.covid.caption</target>
+        <target> </target>
       </segment>
     </unit>
     <unit id="_lKLA0O" name="index.carousel.slide.covid.text">
       <segment>
         <source>index.carousel.slide.covid.text</source>
-        <target>index.carousel.slide.covid.text</target>
+        <target> </target>
       </segment>
     </unit>
     <unit id="_KdSYTr" name="Vorherige">
