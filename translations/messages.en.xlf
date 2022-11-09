@@ -1153,5 +1153,11 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
         <target>Please log in here with your user name and password. Afterwards you can update your emergency data or activate your ID number.</target>
       </segment>
     </unit>
+    <unit id="U4wHbEk" name="person.geschlecht.m">
+      <segment>
+        <source>person.geschlecht.m</source>
+        <target>Male</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
