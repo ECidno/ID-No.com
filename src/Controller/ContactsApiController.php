@@ -9,7 +9,6 @@ namespace App\Controller;
 
 use App\Entity\Nutzer\Contact;
 use App\Form\Type\ContactType;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -35,8 +34,6 @@ class ContactsApiController extends AbstractApiController
     public static $entityFormEditType = ContactType::class;
 
 
-
-
     /**
      * get entity operatons
      *
@@ -50,6 +47,10 @@ class ContactsApiController extends AbstractApiController
         // iterate
         foreach ($objects as $item) {
 
+            // voter check | read
+            $this->denyAccessUnlessGranted('read', $item);
+
+            // set operations
             $item->setOperations(
                 [
                     'edit' => [

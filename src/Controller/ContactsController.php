@@ -5,7 +5,7 @@ namespace App\Controller;
  *
  * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
  *
- * /*********************************************************************/
+ **********************************************************************/
 
 use App\Entity\Nutzer\Contact;
 use App\Entity\Nutzer\Person;
@@ -19,7 +19,6 @@ use Symfony\Component\Routing\Annotation\Route;
  * contacts controller
  *
  * @Route("/contacts", name="app_contacts_")
- *
  */
 class ContactsController extends AbstractController
 {
@@ -57,11 +56,20 @@ class ContactsController extends AbstractController
      */
     public function new(int $personId, Request $request): Response
     {
+        $person = $this->emNutzer
+            ->getRepository(Person::class)
+            ->findOneBy([
+                'id' => $personId,
+                'nutzer' => $this->getUser(),
+            ]);
+
+        // voter check
+        $this->denyAccessUnlessGranted('edit', $person);
+/*
         // user authenticated
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         $user = $this->getUser();
-#        $person = $user->getPersons()->first() ?? null;
         $person = $this->emNutzer
             ->getRepository(Person::class)
             ->findOneBy([
@@ -82,7 +90,7 @@ class ContactsController extends AbstractController
                     ]
                 );
         }
-
+*/
         // new contact
         $contact = new Contact();
         $contact->setPerson($person);
@@ -99,7 +107,6 @@ class ContactsController extends AbstractController
 
         // vars
         $variables = [
-            'user' => $user,
             'contact' => $contact,
             'form' => $form->createView()
         ];
@@ -124,9 +131,20 @@ class ContactsController extends AbstractController
      */
     public function edit(int $personId, int $id, Request $request): Response
     {
+        $person = $this->emNutzer
+            ->getRepository(Person::class)
+            ->findOneBy([
+                'id' => $personId,
+                'nutzer' => $this->getUser(),
+            ]);
+
+        // voter check
+        $this->denyAccessUnlessGranted('edit', $person);
+
+
+        /*
         // user authenticated
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-
         $user = $this->getUser();
         $person = $this->emNutzer
             ->getRepository(Person::class)
@@ -148,12 +166,15 @@ class ContactsController extends AbstractController
                     ]
                 );
         }
-
+*/
         // contact
         $contact = $this->emNutzer
             ->getRepository(Contact::class)
             ->find($id);
 
+        // voter check
+        $this->denyAccessUnlessGranted('edit', $contact);
+/*
         // return error if not allowed
         if(!$person->getContacts()->contains($contact)) {
             return (new JsonResponse())
@@ -167,7 +188,7 @@ class ContactsController extends AbstractController
                     ]
                 );
         }
-
+*/
         // form
         $form = $this->formFactory->createBuilder(
             ContactType::class,
@@ -185,7 +206,6 @@ class ContactsController extends AbstractController
 
         // vars
         $variables = [
-            'user' => $user,
             'contact' => $contact,
             'form' => $form->createView(),
         ];
@@ -196,5 +216,4 @@ class ContactsController extends AbstractController
             true
         );
     }
-
 }

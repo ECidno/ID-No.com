@@ -9,7 +9,7 @@ const toastContainer = document.getElementById('toastContainer') || null;
 const modalContainer = document.getElementById('modalContainer') || null;
 
 const ajaxForms = document.getElementsByClassName('ajax-form') || [];
-const ajaxBtn = document.getElementsByClassName('button.ajax-modal') || [];
+const ajaxBtn = document.getElementsByClassName('ajax-modal') || [];
 const fldIdNo = document.getElementById('fldIdNo') || null;
 const fldPassEnable = document.getElementById('fldPassEnable') || null;
 
@@ -37,7 +37,7 @@ window.operateFormatter = (value, row, index) => {
         [
           '<button',
           'type="button"',
-          'class="btn btn-sm btn-outline-dark ms-2 ajax-modal ' + key + '"',
+          'class="btn btn-sm btn-outline-dark ms-2 ' + key + '"',
           'data-url="' + val.uri + '">',
           '<i class="' + val.icon + '"></i>',
           '</button>'

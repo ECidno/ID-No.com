@@ -42,7 +42,6 @@ class AbstractEntity
     }
 
 
-
     /**
      * @param array $operations
      * @return void

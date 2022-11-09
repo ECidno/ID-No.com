@@ -293,12 +293,13 @@ class AbstractApiController extends SymfonyAbstractController
     {
         $formType = static::$entityFormEditType;
 
-// @TODO Check id and relation!!!
-
-
+        // get object
         $object = $this->em
             ->getRepository(static::$entityClassName)
             ->find($id);
+
+        // voter check | update
+        $this->denyAccessUnlessGranted('update', $object);
 
         // form
         $form = $this->createForm($formType, $object);
@@ -361,6 +362,10 @@ class AbstractApiController extends SymfonyAbstractController
             ->getRepository(static::$entityClassName)
             ->find($id);
 
+        // voter check | delete
+        $this->denyAccessUnlessGranted('delete', $object);
+
+        // csrf
         if (
             $this->isCsrfTokenValid(
                 'delete'.$object->getId(),

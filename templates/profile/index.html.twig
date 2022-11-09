@@ -156,7 +156,7 @@
             class="btn btn-sm btn-outline-success mx-1 ajax-modal"
             data-url="{{ path('app_contacts_new', { personId:person.id }) }}">
             <i class="{{ settings.buttons.new }}"></i>
-            Neuer Kontakt
+            {{ 'contacts.action.new.lbl'|trans }}
           </button>
         </div>
 
@@ -165,13 +165,11 @@
           data-toggle="table"
           data-classes="table table-sm table-hover"
           data-toolbar="#toolbarContacts"
+          data-locale="{{ language }}"
           data-loading-template="loadingTemplate"
-
           data-buttons-class="outline-dark btn-sm"
           data-show-refresh="true"
-
-          data-url="{{ path('app_api_contacts_read', { personId:person.id }) }}"
-        >
+          data-url="{{ path('app_api_contacts_read', { personId:person.id }) }}">
           <thead class="bg-light">
             <tr>
               <th scope="col" data-field="contactname">{{ 'contact.table.contactname.lbl'|trans }}</th>
@@ -181,8 +179,7 @@
                 data-align="right"
                 data-field="operate"
                 data-formatter="operateFormatter"
-                data-events="operateEvents"
-                >Aktion</th>
+                data-events="operateEvents">{{ 'Aktion'|trans }}</th>
             </tr>
           </thead>
         </table>

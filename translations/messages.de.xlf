@@ -1460,5 +1460,17 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>contact.action.edit.error</target>
       </segment>
     </unit>
+    <unit id="GtO_gRt" name="contacts.action.new.lbl">
+      <segment>
+        <source>contacts.action.new.lbl</source>
+        <target>Neuer Kontakt</target>
+      </segment>
+    </unit>
+    <unit id="pK0lnnH" name="Aktion">
+      <segment>
+        <source>Aktion</source>
+        <target>Aktion</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
