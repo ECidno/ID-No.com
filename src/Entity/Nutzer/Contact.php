@@ -48,7 +48,7 @@ class Contact extends AbstractEntity
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=100, options={"default":""}))
+     * @ORM\Column(type="string", length=100, nullable=false)
      * @Groups({"read"})
      */
     private $telefon = '';
@@ -61,7 +61,7 @@ class Contact extends AbstractEntity
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=false)
      * @Groups({"read"})
      */
     private $beziehung = '';
@@ -145,7 +145,7 @@ class Contact extends AbstractEntity
      */
     public function setTelefon(?string $telefon): self
     {
-        $this->telefon = $telefon;
+        $this->telefon = $telefon ?? '';
         return $this;
     }
 
@@ -183,7 +183,7 @@ class Contact extends AbstractEntity
      */
     public function setBeziehung(?string $beziehung): self
     {
-        $this->beziehung = $beziehung;
+        $this->beziehung = $beziehung ?? '';
         return $this;
     }
 

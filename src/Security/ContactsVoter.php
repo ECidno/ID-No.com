@@ -81,6 +81,10 @@ class ContactsVoter extends Voter
 
         // switch case operation
         switch ($attribute) {
+
+            case self::CREATE:
+                return $this->canC($contact, $user);
+
             case self::READ:
             case self::EDIT:
             case self::UPDATE:
@@ -93,7 +97,21 @@ class ContactsVoter extends Voter
 
 
     /**
-     * RUD (read, update, delete) allowed?
+     * can create
+     *
+     * @param Contact $contact
+     * @param Nutzer $user
+     *
+     * @return bool
+     */
+    private function canC(Contact $contact, Nutzer $user): bool
+    {
+        return $user->getPersons()->contains($contact->getPerson());
+    }
+
+
+    /**
+     * can read, update, delete
      *
      * @param Contact $contact
      * @param Nutzer $user

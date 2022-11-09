@@ -169,62 +169,6 @@ class AbstractApiController extends SymfonyAbstractController
 
 
     /**
-     * read
-     *
-     * @param int $personId
-     * @param Request $request
-     * @param SerializerInterface $serializer
-     *
-     * @return JsonResponse
-     *
-     * @Route("/{personId}", name="read", methods={"GET", "POST"})
-     */
-    public function read(int $personId, Request $request, SerializerInterface $serializer): JsonResponse
-    {
-        // user authenticated
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-
-        $user = $this->getUser();
-        $person = $this->em
-            ->getRepository(Person::class)
-            ->findOneBy([
-                'id' => $personId,
-                'nutzer' => $user,
-            ]);
-
-        // check person
-        if($person === null) {
-            return (new JsonResponse())
-                ->setStatusCode(412)
-                ->setData(
-                    [
-                        'severity' => 9,
-                        'message' => $this->translator->trans(
-                            'action.err.not_allowed'
-                        )
-                    ]
-                );
-        }
-
-        // get
-        $objects = $this->em
-            ->getRepository(static::$entityClassName)
-            ->findByPerson($person);
-
-        // map
-        $items = $this->mapOperations($objects);
-
-        // return
-        return $this->json(
-            $items,
-            200,
-            [],
-            ['groups' => 'read']
-        );
-    }
-
-
-    /**
      * create
      *
      * @param Request $request
@@ -243,6 +187,10 @@ class AbstractApiController extends SymfonyAbstractController
 
         // form valid
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // voter
+            $this->denyAccessUnlessGranted('create', $object);
+
             $this->em->persist($object);
             $this->em->flush($object);
 
@@ -280,6 +228,47 @@ class AbstractApiController extends SymfonyAbstractController
 
 
     /**
+     * read
+     *
+     * @param int $personId
+     * @param Request $request
+     * @param SerializerInterface $serializer
+     *
+     * @return JsonResponse
+     *
+     * @Route("/{personId}", name="read", methods={"GET", "POST"})
+     */
+    public function read(int $personId, Request $request, SerializerInterface $serializer): JsonResponse
+    {
+        $person = $this->em
+            ->getRepository(Person::class)
+            ->findOneBy([
+                'id' => $personId,
+                'nutzer' => $this->getUser(),
+            ]);
+
+        // voter check
+        $this->denyAccessUnlessGranted('read', $person);
+
+        // get
+        $objects = $this->em
+            ->getRepository(static::$entityClassName)
+            ->findByPerson($person);
+
+        // map
+        $items = $this->mapOperations($objects);
+
+        // return
+        return $this->json(
+            $items,
+            200,
+            [],
+            ['groups' => 'read']
+        );
+    }
+
+
+    /**
      * update
      *
      * @param int $id
@@ -298,7 +287,7 @@ class AbstractApiController extends SymfonyAbstractController
             ->getRepository(static::$entityClassName)
             ->find($id);
 
-        // voter check | update
+        // voter | update
         $this->denyAccessUnlessGranted('update', $object);
 
         // form
@@ -350,19 +339,19 @@ class AbstractApiController extends SymfonyAbstractController
     /**
      * delete
      *
-     * @param Request $request
      * @param int $id
+     * @param Request $request
      * @return JsonResponse
      *
-     * @Route("/delete/{id}", name="delete", methods={"DELETE"})
+     * @Route("/delete/{id}", name="delete", methods={"POST","DELETE"})
      */
-    public function delete(Request $request, int $id): JsonResponse
+    public function delete(int $id, Request $request): JsonResponse
     {
         $object = $this->em
             ->getRepository(static::$entityClassName)
             ->find($id);
 
-        // voter check | delete
+        // voter
         $this->denyAccessUnlessGranted('delete', $object);
 
         // csrf
@@ -376,13 +365,13 @@ class AbstractApiController extends SymfonyAbstractController
             $this->em->flush($object);
 
             $message = $this->translator->trans(
-                strtolower(static::$entityClassName).'.action.delete.success'
+                $this->getTranslateKey('action.delete.success')
             );
 
          // invalid request
         } else {
             $message = $this->translator->trans(
-                strtolower(static::$entityClassName).'.action.delete.error'
+                $this->getTranslateKey('action.delete.error')
             );
 
             // return
@@ -390,7 +379,7 @@ class AbstractApiController extends SymfonyAbstractController
                 [
                     'errors' => $message,
                 ],
-                400
+                412
             );
         }
 
