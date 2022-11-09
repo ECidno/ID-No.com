@@ -7,15 +7,15 @@ namespace App\Security;
  *
  **********************************************************************/
 
+use App\Entity\Main\Items;
 use App\Entity\Nutzer\Nutzer;
-use App\Entity\Nutzer\Person;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 
 /**
- * person voter
+ * items voter
  */
-class PersonVoter extends Voter
+class ItemsVoter extends Voter
 {
     // operations
     const NEW = 'new';
@@ -54,7 +54,7 @@ class PersonVoter extends Voter
         }
 
         // subject match
-        return $subject instanceof Person;
+        return $subject instanceof Items;
     }
 
 
@@ -76,16 +76,20 @@ class PersonVoter extends Voter
             return false;
         }
 
-        /** @var Person $person */
-        $person = $subject;
+        /** @var Items $item */
+        $item = $subject;
 
         // switch case operation
         switch ($attribute) {
+
+            case self::CREATE:
+                return $this->canC($item, $user);
+
             case self::READ:
             case self::EDIT:
             case self::UPDATE:
             case self::DELETE:
-                return $this->canRud($person, $user);
+                return $this->canRud($item, $user);
         }
 
         throw new \LogicException('This code should not be reached!');
@@ -93,15 +97,40 @@ class PersonVoter extends Voter
 
 
     /**
-     * can read, update, delete
+     * can create
      *
-     * @param Person $person
+     * @param Items $item
      * @param Nutzer $user
      *
      * @return bool
      */
-    private function canRud(Person $person, Nutzer $user): bool
+    private function canC(Items $item, Nutzer $user): bool
     {
-				return $user->getPersons()->contains($person);
+        return $this->canRud($item, $user);
+    }
+
+
+    /**
+     * can read, update, delete
+     *
+     * @param Items $item
+     * @param Nutzer $user
+     *
+     * @return bool
+     */
+    private function canRud(Items $item, Nutzer $user): bool
+    {
+        // iterate user's persons
+        foreach ($user->getPersons() as $person) {
+            if(
+                    $person->getId() === $item->getPersonId() &&
+                    $user->getId() === $item->getNutzerId()
+            ) {
+                return true;
+            }
+        }
+
+        // return false
+        return false;
     }
 }

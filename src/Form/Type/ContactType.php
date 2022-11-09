@@ -33,7 +33,10 @@ class ContactType extends AbstractType
             ->add('person', EntityHiddenType::class)
             ->add('contactname', TextType::class, [
                 'label' => new TranslatableMessage('contact.contactname.lbl'),
-                'attr' => ['placeholder' => new TranslatableMessage('contact.contactname.lbl')],
+                'attr' => [
+                    'placeholder' => new TranslatableMessage('contact.contactname.lbl'),
+                    'maxlength' => 100,
+                ],
                 'required' => true
             ])
             ->add('contactnameShow', CheckboxType::class, [
@@ -44,7 +47,10 @@ class ContactType extends AbstractType
             ])
             ->add('telefon', TextType::class, [
                 'label' => new TranslatableMessage('contact.telefon.lbl'),
-                'attr' => ['placeholder' => new TranslatableMessage('contact.telefon.lbl')],
+                'attr' => [
+                    'placeholder' => new TranslatableMessage('contact.telefon.lbl'),
+                    'maxlength' => 100,
+                ],
                 'required' => false
             ])
             ->add('telefonShow', CheckboxType::class, [
@@ -55,7 +61,10 @@ class ContactType extends AbstractType
             ])
             ->add('beziehung', TextType::class, [
                 'label' => new TranslatableMessage('contact.beziehung.lbl'),
-                'attr' => ['placeholder' => new TranslatableMessage('contact.beziehung.lbl')],
+                'attr' => [
+                    'placeholder' => new TranslatableMessage('contact.beziehung.lbl'),
+                    'maxlength' => 100,
+                ],
                 'required' => false
             ])
             ->add('beziehungShow', CheckboxType::class, [

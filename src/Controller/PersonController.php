@@ -7,20 +7,20 @@ namespace App\Controller;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Contact;
 use App\Entity\Nutzer\Person;
-use App\Form\Type\ContactType;
+use App\Form\Type\PersonType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * contacts controller
+ * person controller
  *
- * @Route("/contacts", name="app_contacts_")
+ * @Route("/person", name="app_person_")
  */
-class ContactsController extends AbstractController
+class PersonController extends AbstractController
 {
+
     /**
      * new
      *
@@ -28,30 +28,19 @@ class ContactsController extends AbstractController
      * @param Request $request
      * @return Response
      *
-     * @Route("/contact/new/{personId}", name="new", methods={"GET"})
+     * @Route("/new", name="new", methods={"GET"})
      */
-    public function new(int $personId, Request $request): Response
+    public function new(Request $request): Response
     {
-        $person = $this->emNutzer
-            ->getRepository(Person::class)
-            ->findOneBy([
-                'id' => $personId,
-                'nutzer' => $this->getUser(),
-            ]);
-
-        // voter
-        $this->denyAccessUnlessGranted('edit', $person);
-
-        // new contact
-        $contact = new Contact();
-        $contact->setPerson($person);
+        $person = new Person();
+        $person->setNutzer($this->getUser());
 
         // form
         $form = $this->formFactory->createBuilder(
-            ContactType::class,
-            $contact,
+            PersonType::class,
+            $person,
             [
-                'action' => $this->generateUrl('app_api_contacts_create'),
+                'action' => $this->generateUrl('app_api_person_create'),
             ]
         )
         ->getForm();
@@ -76,25 +65,25 @@ class ContactsController extends AbstractController
      * @param Request $request
      * @return Response
      *
-     * @Route("/contact/edit/{id}", name="edit", methods={"GET"})
+     * @Route("/edit/{id}", name="edit", methods={"GET"})
      */
     public function edit(int $id, Request $request): Response
     {
-        // contact
-        $contact = $this->emNutzer
-            ->getRepository(Contact::class)
+        // person
+        $person = $this->emNutzer
+            ->getRepository(Person::class)
             ->find($id);
 
         // voter
-        $this->denyAccessUnlessGranted('edit', $contact);
+        $this->denyAccessUnlessGranted('edit', $person);
 
         // form
         $form = $this->formFactory->createBuilder(
-            ContactType::class,
-            $contact,
+            PersonType::class,
+            $person,
             [
                 'action' => $this->generateUrl(
-                    'app_api_contacts_update',
+                    'app_api_person_update',
                      [
                         'id' => $id
                     ]
@@ -105,7 +94,7 @@ class ContactsController extends AbstractController
 
         // vars
         $variables = [
-            'contact' => $contact,
+            'person' => $person,
             'form' => $form->createView(),
         ];
 
@@ -124,24 +113,24 @@ class ContactsController extends AbstractController
      * @param Request $request
      * @return Response
      *
-     * @Route("/contact/delete/{id}", name="delete", methods={"GET"})
+     * @Route("/delete/{id}", name="delete", methods={"GET"})
      */
     public function delete(int $id, Request $request): Response
     {
-        // contact
-        $contact = $this->emNutzer
-            ->getRepository(Contact::class)
+        // person
+        $person = $this->emNutzer
+            ->getRepository(Person::class)
             ->find($id);
 
         // voter
-        $this->denyAccessUnlessGranted('delete', $contact);
+        $this->denyAccessUnlessGranted('delete', $person);
 
         // form
         $form = $this
-            ->createFormBuilder($contact)
+            ->createFormBuilder($person)
             ->setAction(
                 $this->generateUrl(
-                    'app_api_contacts_delete',
+                    'app_api_person_delete',
                     [
                         'id' => $id
                     ]
@@ -151,7 +140,7 @@ class ContactsController extends AbstractController
 
         // vars
         $variables = [
-            'contact' => $contact,
+            'person' => $person,
             'form' => $form->createView(),
         ];
 

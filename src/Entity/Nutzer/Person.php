@@ -10,6 +10,7 @@ namespace App\Entity\Nutzer;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -358,7 +359,8 @@ class Person
     private $weitereangabenShow = 1;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime")
      */
     private $lastChangeDatum;
@@ -570,6 +572,22 @@ class Person
     public function getNachname(): ?string
     {
         return $this->nachname;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFullName(): ?string
+    {
+        return join(
+            ' ',
+            array_filter(
+                [
+                    $this->vorname,
+                    $this->nachname,
+                ]
+            )
+        );
     }
 
 

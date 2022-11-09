@@ -7,30 +7,32 @@ namespace App\Controller;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Contact;
-use App\Form\Type\ContactType;
+use App\Entity\Nutzer\Person;
+use App\Form\Type\PersonType;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * contacts api controller
- * @Route("/api/contacts", name="app_api_contacts_")
+ * person api controller
+ * @Route("/api/person", name="app_api_person_")
  */
-class ContactsApiController extends AbstractApiController
+class PersonApiController extends AbstractApiController
 {
     /**
      * @var string entityClassName
      */
-    public static $entityClassName = Contact::class;
+    public static $entityClassName = Person::class;
 
     /**
-     * @var string entityFormAddType
+     * @var string entityFormType
      */
-    public static $entityFormAddType = ContactType::class;
+    public static $entityFormAddType = PersonType::class;
 
     /**
-     * @var string entityFormEditType
+     * @var string entityFormType
      */
-    public static $entityFormEditType = ContactType::class;
+    public static $entityFormEditType = PersonType::class;
 
 
     /**
@@ -52,25 +54,27 @@ class ContactsApiController extends AbstractApiController
             // set operations
             $item->setOperations(
                 [
+/* not jet implemented
                     'edit' => [
                         'icon' => $this->settings['buttons']['edit'],
                         'uri' => $this->generateUrl(
-                            'app_contacts_edit',
-                            [
-                                'id' => $item->getId(),
-                            ]
-                        )
-                    ],
-                    'delete' => [
-                        'icon' => $this->settings['buttons']['delete'],
-                        'uri' => $this->generateUrl(
-                            'app_contacts_delete',
+                            'app_person_edit',
                             [
                                 'id' => $item->getId(),
                             ]
                         )
                     ],
 
+                    'delete' => [
+                        'icon' => $this->settings['buttons']['delete'],
+                        'uri' => $this->generateUrl(
+                            'app_person_delete',
+                            [
+                                'id' => $item->getId(),
+                            ]
+                        )
+                    ],
+*/
                 ]
             );
 

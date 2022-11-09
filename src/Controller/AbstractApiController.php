@@ -7,6 +7,7 @@ namespace App\Controller;
  *
  **********************************************************************/
 
+use App\Entity\Main\Items;
 use App\Entity\Nutzer\Person;
 use Doctrine\Persistence\ManagerRegistry;
 use Psr\Log\LoggerInterface;
@@ -43,11 +44,6 @@ class AbstractApiController extends SymfonyAbstractController
     public static $entityFormEditType = null;
 
     /**
-     * @var string entityManager
-     */
-    public static $entityManager = 'nutzer';
-
-    /**
      * @var ManagerRegistry registry
      */
     protected $registry;
@@ -56,6 +52,16 @@ class AbstractApiController extends SymfonyAbstractController
      * @var EntitiyManager em
      */
     protected $em;
+
+    /**
+     * @var EntitiyManager emDefault
+     */
+    protected $emDefault;
+
+    /**
+     * @var EntitiyManager emNutzer
+     */
+    protected $emNutzer;
 
     /**
      * @var TranslatorInterface $translator
@@ -99,7 +105,8 @@ class AbstractApiController extends SymfonyAbstractController
         $this->settings = $params->get('settings');
         $this->registry = $registry;
 
-        $this->em = $registry->getManager(static::$entityManager);
+        $this->emDefault = $registry->getManager('default');
+        $this->emNutzer = $registry->getManager('nutzer');
         $this->translator = $translator;
         $this->logger = $logger;
     }
@@ -180,6 +187,9 @@ class AbstractApiController extends SymfonyAbstractController
     {
         $object = new static::$entityClassName();
         $formType = static::$entityFormAddType;
+        $em = static::$entityClassName === Items::class
+            ? $this->emDefault
+            : $this->emNutzer;
 
         // form
         $form = $this->createForm($formType, $object);
@@ -191,8 +201,8 @@ class AbstractApiController extends SymfonyAbstractController
             // voter
             $this->denyAccessUnlessGranted('create', $object);
 
-            $this->em->persist($object);
-            $this->em->flush($object);
+            $em->persist($object);
+            $em->flush($object);
 
             // message
             $message = $this->translator->trans(
@@ -240,7 +250,7 @@ class AbstractApiController extends SymfonyAbstractController
      */
     public function read(int $personId, Request $request, SerializerInterface $serializer): JsonResponse
     {
-        $person = $this->em
+        $person = $this->emNutzer
             ->getRepository(Person::class)
             ->findOneBy([
                 'id' => $personId,
@@ -251,9 +261,15 @@ class AbstractApiController extends SymfonyAbstractController
         $this->denyAccessUnlessGranted('read', $person);
 
         // get
-        $objects = $this->em
-            ->getRepository(static::$entityClassName)
-            ->findByPerson($person);
+        if(static::$entityClassName === Items::class) {
+            $objects = $this->emDefault
+                ->getRepository(static::$entityClassName)
+                ->findByPersonId($person->getId());
+        } else {
+            $objects = $this->emNutzer
+                ->getRepository(static::$entityClassName)
+                ->findByPerson($person);
+        }
 
         // map
         $items = $this->mapOperations($objects);
@@ -281,14 +297,14 @@ class AbstractApiController extends SymfonyAbstractController
     public function update(int $id, Request $request): JsonResponse
     {
         $formType = static::$entityFormEditType;
+        $em = static::$entityClassName === Items::class
+            ? $this->emDefault
+            : $this->emNutzer;
 
         // get object
-        $object = $this->em
+        $object = $em
             ->getRepository(static::$entityClassName)
             ->find($id);
-
-        // voter | update
-        $this->denyAccessUnlessGranted('update', $object);
 
         // form
         $form = $this->createForm($formType, $object);
@@ -296,7 +312,10 @@ class AbstractApiController extends SymfonyAbstractController
 
         // form valid
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->em->flush($object);
+
+            // voter
+            $this->denyAccessUnlessGranted('update', $object);
+            $em->flush($object);
 
             // message
             $message = $this->translator->trans(
@@ -347,7 +366,10 @@ class AbstractApiController extends SymfonyAbstractController
      */
     public function delete(int $id, Request $request): JsonResponse
     {
-        $object = $this->em
+        $em = static::$entityClassName === Items::class
+            ? $this->emDefault
+            : $this->emNutzer;
+        $object = $em
             ->getRepository(static::$entityClassName)
             ->find($id);
 
@@ -361,8 +383,8 @@ class AbstractApiController extends SymfonyAbstractController
                 $request->request->get('_token')
             )
         ) {
-            $this->em->remove($object);
-            $this->em->flush($object);
+            $em->remove($object);
+            $em->flush($object);
 
             $message = $this->translator->trans(
                 $this->getTranslateKey('action.delete.success')
@@ -403,8 +425,11 @@ class AbstractApiController extends SymfonyAbstractController
     {
         $errors = [];
         foreach ($form->getErrors() as $error) {
+
+      #      var_dump($error)        ;
             $errors[] = $error->getMessage();
         }
+
         foreach ($form->all() as $childForm) {
             if ($childForm instanceof FormInterface) {
                 $childErrors = $this->collectFormErrors($childForm);

@@ -17,11 +17,12 @@
         <div class="row mt-3">
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
             <div class="d-grid mb-3">
-              <a
-                class="btn btn-outline-dark"
-                href="{{ path('app_profile_edit') }}">
+              <button
+                type="button"
+                class="btn btn-outline-dark ajax-modal"
+                data-url="{{ path('app_person_edit', { id:person.id }) }}">
                 {{ 'profile.edit.lbl'|trans }}
-              </a>
+              </button>
             </div>
           </div>
 {#}
@@ -56,7 +57,7 @@
 
           <div class="col-12 col-lg-8 col-xl-6">
             {# @TODO: Find a better solution for this div have btn look w/o hover! #}
-            <div class="d-grid mb-3 btn border-{{ user.sichtbar == true ? 'dark' : 'warning' }}">
+            <div class="d-grid mb-3 btn border-{{ user.sichtbar == true ? 'dark' : 'dark' }}">
               <form
                 role="form"
                 action="{{ path('app_api_profile_pass_enable', { id: user.id }) }}"
@@ -99,58 +100,57 @@
     </div>
 
     {# id number #}
-    <div class="row justify-content-center mt-3">
-      <div class="col-12 col-md-10 col-lg-8">
+    <div class="row my-4">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 				<h3>Übersicht: ID-Nummern</h3>
-        <p>Hier können Sie weitere ID-Nummern aktivieren und Ihre bereits registrierten ID-Nummern einsehen und verwalten.</p>
+        <p>
+          Hier können Sie weitere ID-Nummern aktivieren und Ihre bereits registrierten ID-Nummern einsehen und verwalten.
+        </p>
 
+        <div id="toolbarItems">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-success mx-1 ajax-modal"
+            data-url="{{ path('app_items_new', { personId:person.id }) }}">
+            <i class="{{ settings.buttons.new }}"></i>
+            {{ 'items.action.new.lbl'|trans }}
+          </button>
+        </div>
 
         <table
-          class="table table-sm table-hover"
-          >
+          id="tableItems"
+          data-toggle="table"
+          data-classes="table table-sm table-hover"
+          data-toolbar="#toolbarItems"
+          data-locale="{{ language }}"
+          data-loading-template="loadingTemplate"
+          data-buttons-class="outline-dark btn-sm"
+          data-show-refresh="false"
+          data-url="{{ path('app_api_items_read', { personId:person.id }) }}">
           <thead class="bg-light">
             <tr>
-              <th scope="col">ID-Nummer</th>
-              <th scope="col">Anbringung</th>
-              <th scope="col">Aktivierung</th>
-              <th scope="col" class="text-center">Aktion</th>
+              <th data-field="idNo">{{ 'items.table.idNo.lbl'|trans }}</th>
+              <th data-field="anbringung">{{ 'items.table.anbringung.lbl'|trans }}</th>
+              <th data-field="aktiviertDatum">{{ 'items.table.aktiviertDatum.lbl'|trans }}</th>
+              <th
+                data-width="100"
+                data-align="right"
+                data-field="operate"
+                data-formatter="operateFormatter"
+                data-events="operateEvents">{{ 'Aktion'|trans }}</th>
             </tr>
           </thead>
-          <tbody>
-            {% for item in items %}
-            <tr data-id="{{ item.id }} ">
-              <td>{{ item.idNo }}</th>
-              <td>{{ item.anbringung|raw }}</th>
-              <td>{{ item.aktiviertDatum|date('d.m.Y') }}</th>
-              <td class="text-center">
-                <button
-                  class="btn btn-sm btn-outline-dark mx-1"
-
-                  >
-                  <i class="{{ settings.buttons.edit }}"></i>
-                </button>
-                <button
-                  class="btn btn-sm btn-outline-dark mx-1"
-
-                  >
-                  <i class="{{ settings.buttons.delete }}"></i>
-                </button>
-              </th>
-            {% endfor %}
-          </tbody>
         </table>
-
-
       </div>
     </div>
 
     {# contacts #}
-    <div class="row justify-content-center mt-3">
-      <div class="col-12 col-md-10 col-lg-8">
+    <div class="row my-4">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <h3>Meine Kontakte</h3>
-				<div class="pb-2">
+				<p>
           Im Folgenden finden Sie eine Übersicht Ihrer Notfall-Kontakte:
-        </div>
+        </p>
 
         <div id="toolbarContacts">
           <button
@@ -170,7 +170,7 @@
           data-locale="{{ language }}"
           data-loading-template="loadingTemplate"
           data-buttons-class="outline-dark btn-sm"
-          data-show-refresh="true"
+          data-show-refresh="false"
           data-url="{{ path('app_api_contacts_read', { personId:person.id }) }}">
           <thead class="bg-light">
             <tr>

@@ -1,10 +1,9 @@
 <div class="modal-dialog modal-fullscreen-md-down">
   <div class="modal-content">
-    {{ form_start(form, {'attr': {'class':'ajax-form', 'data-table':'tableContacts'} }) }}
-      <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contact.id) }}"/>
+    {{ form_start(form, {'attr': {'class':'ajax-form', 'data-table':'tableItems'} }) }}
       <div class="modal-header">
         <h1 class="modal-title fs-5">
-          {{ 'contact.action.delete.header'|trans }}
+          {{ 'item.lbl'|trans }} {{ item.idNo|raw }}
         </h1>
         <button
           type="button"
@@ -13,7 +12,11 @@
           aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        {{ 'contact.action.delete.text'|trans({ '%contactname%': contact.contactname|raw }) }}
+        <div class="row">
+          <div class="col">
+            {{ form_row(form.anbringung) }}
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button
@@ -21,12 +24,12 @@
           class="btn btn-outline-dark"
           data-bs-dismiss="modal"
           aria-label="Close">
-          {{ 'No'|trans }}
+          {{ 'Cancel'|trans }}
         </button>
         <button
           type="submit"
-          class="btn btn-warning">
-          {{ 'Yes'|trans }}
+          class="btn btn-primary">
+          {{ 'Save'|trans }}
         </button>
       </div>
     {{ form_end(form) }}

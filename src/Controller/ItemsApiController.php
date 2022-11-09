@@ -7,30 +7,68 @@ namespace App\Controller;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Contact;
-use App\Form\Type\ContactType;
+use App\Entity\Main\Items;
+use App\Form\Type\ItemsAddType;
+use App\Form\Type\ItemsEditType;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * contacts api controller
- * @Route("/api/contacts", name="app_api_contacts_")
+ * items api controller
+ * @Route("/api/items", name="app_api_items_")
  */
-class ContactsApiController extends AbstractApiController
+class ItemsApiController extends AbstractApiController
 {
     /**
      * @var string entityClassName
      */
-    public static $entityClassName = Contact::class;
+    public static $entityClassName = Items::class;
 
     /**
      * @var string entityFormAddType
      */
-    public static $entityFormAddType = ContactType::class;
+    public static $entityFormAddType = ItemsAddType::class;
 
     /**
      * @var string entityFormEditType
      */
-    public static $entityFormEditType = ContactType::class;
+    public static $entityFormEditType = ItemsEditType::class;
+
+
+    /**
+     * create
+     *
+     * @param Request $request
+     * @return JsonResponse
+     *
+     * @Route("/create", name="create", methods={"POST"})
+     */
+    public function create(Request $request): JsonResponse
+    {
+        return $this->json(
+            [],
+            403
+        );
+    }
+
+
+    /**
+     * delete
+     *
+     * @param int $id
+     * @param Request $request
+     * @return JsonResponse
+     *
+     * @Route("/delete/{id}", name="delete", methods={"POST","DELETE"})
+     */
+    public function delete(int $id, Request $request): JsonResponse
+    {
+        return $this->json(
+            [],
+            403
+        );
+    }
 
 
     /**
@@ -55,7 +93,7 @@ class ContactsApiController extends AbstractApiController
                     'edit' => [
                         'icon' => $this->settings['buttons']['edit'],
                         'uri' => $this->generateUrl(
-                            'app_contacts_edit',
+                            'app_items_edit',
                             [
                                 'id' => $item->getId(),
                             ]
@@ -64,7 +102,7 @@ class ContactsApiController extends AbstractApiController
                     'delete' => [
                         'icon' => $this->settings['buttons']['delete'],
                         'uri' => $this->generateUrl(
-                            'app_contacts_delete',
+                            'app_items_delete',
                             [
                                 'id' => $item->getId(),
                             ]

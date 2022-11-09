@@ -122,7 +122,10 @@ class ContactsVoter extends Voter
     {
         // iterate user's persons
         foreach ($user->getPersons() as $person) {
-            if($person->getContacts()->contains($contact)) {
+            if(
+                $person->getContacts()->contains($contact) &&
+                $user->getPersons()->contains($contact->getPerson())
+            ) {
                 return true;
             }
         }

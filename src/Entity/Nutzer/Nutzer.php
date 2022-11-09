@@ -10,6 +10,7 @@ namespace App\Entity\Nutzer;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -99,31 +100,32 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     private $passwort;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
      */
     private $stempel;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
      */
     private $registriertDatum;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
      */
     private $aktiviertDatum;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime")
      */
     private $lastChangeDatum;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
      */
     private $lastLogin;
@@ -141,7 +143,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     private $gesperrtAnzahl;
 
     /**
-     * @Assert\DateTime()
+     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="integer")
      */
     private $gesperrtDatum;
@@ -401,95 +403,95 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 
 
     /**
-     * @param \DateTime $stempel
+     * @param \DateTimeInterface $stempel
      * @return Nutzer
      */
-    public function setStempel(\DateTime $stempel): self
+    public function setStempel(\DateTimeInterface $stempel): self
     {
         $this->stempel = $stempel;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return \DateTimeInterface|null
      */
-    public function getStempel(): ?\DateTime
+    public function getStempel(): ?\DateTimeInterface
     {
         return $this->stempel;
     }
 
 
     /**
-     * @param \DateTime $registriertDatum
+     * @param \DateTimeInterface $registriertDatum
      * @return Nutzer
      */
-    public function setRegistriertDatum(\DateTime $registriertDatum): self
+    public function setRegistriertDatum(\DateTimeInterface $registriertDatum): self
     {
         $this->registriertDatum = $registriertDatum;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return \DateTimeInterface|null
      */
-    public function getRegistriertDatum(): ?\DateTime
+    public function getRegistriertDatum(): ?\DateTimeInterface
     {
         return $this->registriertDatum;
     }
 
 
     /**
-     * @param \DateTime $aktiviertDatum
+     * @param \DateTimeInterface $aktiviertDatum
      * @return Nutzer
      */
-    public function setAktiviertDatum(\DateTime $aktiviertDatum): self
+    public function setAktiviertDatum(\DateTimeInterface $aktiviertDatum): self
     {
         $this->aktiviertDatum = $aktiviertDatum;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return \DateTimeInterface|null
      */
-    public function getAktiviertDatum(): ?\DateTime
+    public function getAktiviertDatum(): ?\DateTimeInterface
     {
         return $this->aktiviertDatum;
     }
 
 
     /**
-     * @param \DateTime $lastChangeDatum
+     * @param \DateTimeInterface $lastChangeDatum
      * @return Nutzer
      */
-    public function setLastChangeDatum(\DateTime $lastChangeDatum): self
+    public function setLastChangeDatum(\DateTimeInterface $lastChangeDatum): self
     {
         $this->lastChangeDatum = $lastChangeDatum;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return \DateTimeInterface|null
      */
-    public function getLastChangeDatum(): ?\DateTime
+    public function getLastChangeDatum(): ?\DateTimeInterface
     {
         return $this->lastChangeDatum;
     }
 
 
     /**
-     * @param \DateTime $lastLogin
+     * @param \DateTimeInterface $lastLogin
      * @return Nutzer
      */
-    public function setLastLogin(\DateTime $lastLogin): self
+    public function setLastLogin(\DateTimeInterface $lastLogin): self
     {
         $this->lastLogin = $lastLogin;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return \DateTimeInterface|null
      */
-    public function getLastLogin(): ?\DateTime
+    public function getLastLogin(): ?\DateTimeInterface
     {
         return $this->lastLogin;
     }

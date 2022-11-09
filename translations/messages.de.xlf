@@ -1509,5 +1509,143 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>Der Kontakt wurde erfolgreich entfernt.</target>
       </segment>
     </unit>
+    <unit id="w.DLp.L" name="items.action.new.lbl">
+      <segment>
+        <source>items.action.new.lbl</source>
+        <target>Neue ID-Nummer aktivieren</target>
+      </segment>
+    </unit>
+    <unit id="aCDEdDE" name="items.table.idNo.lbl">
+      <segment>
+        <source>items.table.idNo.lbl</source>
+        <target>ID-Nummer</target>
+      </segment>
+    </unit>
+    <unit id="kDmm7gm" name="items.table.anbringung.lbl">
+      <segment>
+        <source>items.table.anbringung.lbl</source>
+        <target>Anbringung</target>
+      </segment>
+    </unit>
+    <unit id="vmH8Qp8" name="items.table.aktiviertDatum.lbl">
+      <segment>
+        <source>items.table.aktiviertDatum.lbl</source>
+        <target>Aktivierung</target>
+      </segment>
+    </unit>
+    <unit id="RLlT90S" name="item.lbl">
+      <segment>
+        <source>item.lbl</source>
+        <target>ID-Nummer</target>
+      </segment>
+    </unit>
+    <unit id="gmsAMFu" name="items.anbringung.lbl">
+      <segment>
+        <source>items.anbringung.lbl</source>
+        <target>Anbringung</target>
+      </segment>
+    </unit>
+    <unit id="dhETYUw" name="items.action.edit.error">
+      <segment>
+        <source>items.action.edit.error</source>
+        <target>Fehler beim Seichern!</target>
+      </segment>
+    </unit>
+    <unit id="KcpsvQI" name="items.action.new.header">
+      <segment>
+        <source>items.action.new.header</source>
+        <target>ID-Nummer aktivieren</target>
+      </segment>
+    </unit>
+    <unit id="pFzFHf8" name="items.idNo.lbl">
+      <segment>
+        <source>items.idNo.lbl</source>
+        <target>ID-Nummer</target>
+      </segment>
+    </unit>
+    <unit id="iN8764q" name="items.action.edit.success">
+      <segment>
+        <source>items.action.edit.success</source>
+        <target>Die ID-Nummer wurde erfolgreich gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="sDJSAg0" name="item.action.delete.header">
+      <segment>
+        <source>item.action.delete.header</source>
+        <target>ID-Nummer entfernen?</target>
+      </segment>
+    </unit>
+    <unit id="IA5y3yw" name="item.action.delete.text">
+      <segment>
+        <source>item.action.delete.text</source>
+        <target>Möchten Sie die ID-Nummer  "%idNo%" wirklich entfernen? </target>
+      </segment>
+    </unit>
+    <unit id="3Amepzd" name="person.lbl">
+      <segment>
+        <source>person.lbl</source>
+        <target>Person</target>
+      </segment>
+    </unit>
+    <unit id="YsZqel3" name="m">
+      <segment>
+        <source>m</source>
+        <target>m</target>
+      </segment>
+    </unit>
+    <unit id="UOch5Jw" name="w">
+      <segment>
+        <source>w</source>
+        <target>w</target>
+      </segment>
+    </unit>
+    <unit id="LXEWQrc" name="x">
+      <segment>
+        <source>x</source>
+        <target>x</target>
+      </segment>
+    </unit>
+    <unit id="81WNFXE" name="person.vorname.lbl">
+      <segment>
+        <source>person.vorname.lbl</source>
+        <target>Vorname</target>
+      </segment>
+    </unit>
+    <unit id="xhD40lC" name="person.nachname.lbl">
+      <segment>
+        <source>person.nachname.lbl</source>
+        <target>Nachname</target>
+      </segment>
+    </unit>
+    <unit id="kc9GJeS" name="person.strasse.lbl">
+      <segment>
+        <source>person.strasse.lbl</source>
+        <target>Straße</target>
+      </segment>
+    </unit>
+    <unit id="UFVHSnR" name="person.plz.lbl">
+      <segment>
+        <source>person.plz.lbl</source>
+        <target>PLZ</target>
+      </segment>
+    </unit>
+    <unit id="09.yEQd" name="person.ort.lbl">
+      <segment>
+        <source>person.ort.lbl</source>
+        <target>Wohnort</target>
+      </segment>
+    </unit>
+    <unit id="YcVR3nU" name="person.action.edit.success">
+      <segment>
+        <source>person.action.edit.success</source>
+        <target>Die Kontaktdaten wurden erfolgraich gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="Mrt1WB9" name="person.geschlecht.x">
+      <segment>
+        <source>person.geschlecht.x</source>
+        <target>divers</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

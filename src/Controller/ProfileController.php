@@ -35,15 +35,11 @@ class ProfileController extends AbstractController
         // objects
         $persons = $user->getPersons();
         $person = $persons->first() ?? [];
-        $items = $this->emDefault
-            ->getRepository(Items::class)
-            ->findByNutzerId($user->getId());
 
         // vars
         $variables = [
             'user' => $user,
             'person' => $person,
-            'items' => $items,
         ];
 
         // return

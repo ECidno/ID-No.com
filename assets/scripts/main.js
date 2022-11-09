@@ -162,6 +162,7 @@ document.addEventListener(
           new Modal(
             modalContainer,
             {
+              backdrop:'static'
             }
           )
           .show();

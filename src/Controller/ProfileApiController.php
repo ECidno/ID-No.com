@@ -37,15 +37,12 @@ class ProfileApiController extends AbstractApiController
     public function pass_enable(int $id, Request $request): JsonResponse
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-        $user = $this->getUser();
-        $object = $this->em
-            ->getRepository(static::$entityClassName)
-            ->find($id);
+
+        $object = $this->getUser();
         $enable = ((bool) $request->get('sichtbar')) ?? null;
 
         // check, update
         if(
-            $user->getId() === $id &&
             $enable !== null &&
             $this->isCsrfTokenValid(
                 'pass_enable',
@@ -53,7 +50,7 @@ class ProfileApiController extends AbstractApiController
             )
         ) {
             $object->setSichtbar($enable);
-            $this->em->flush();
+            $this->emNutzer->flush();
 
             // message, severity
             $message = $this->translator->trans(
@@ -62,8 +59,8 @@ class ProfileApiController extends AbstractApiController
                     : 'profile.actions.pass_disable.success'
             );
             $severity = $enable === true
-            ? 0
-            : 1;
+                ? 0
+                : 1;
 
         // fail
         } else {
