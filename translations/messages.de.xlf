@@ -1431,12 +1431,6 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>Beziehung</target>
       </segment>
     </unit>
-    <unit id="abhGHH7" name="contacts.action.edit.err.not_allowed">
-      <segment>
-        <source>contacts.action.edit.err.not_allowed</source>
-        <target>contacts.action.edit.err.not_allowed</target>
-      </segment>
-    </unit>
     <unit id="jm4dwPc" name="contact.action.edit.success">
       <segment>
         <source>contact.action.edit.success</source>
@@ -1446,7 +1440,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="O8xCtc0" name="contacts.action.err.not_allowed">
       <segment>
         <source>contacts.action.err.not_allowed</source>
-        <target>contacts.action.err.not_allowed</target>
+        <target>Zugriff verweigert!</target>
       </segment>
     </unit>
     <unit id="nsprlXv" name="action.err.not_allowed">
@@ -1458,7 +1452,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="AUvDNdU" name="contact.action.edit.error">
       <segment>
         <source>contact.action.edit.error</source>
-        <target>contact.action.edit.error</target>
+        <target>Fehler beim Speichern des Kontakts!</target>
       </segment>
     </unit>
     <unit id="GtO_gRt" name="contacts.action.new.lbl">
@@ -1471,6 +1465,48 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
       <segment>
         <source>Aktion</source>
         <target>Aktion</target>
+      </segment>
+    </unit>
+    <unit id="IdjDkS_" name="contact.lbl">
+      <segment>
+        <source>contact.lbl</source>
+        <target>Kontakt</target>
+      </segment>
+    </unit>
+    <unit id="sek9koZ" name="contact.action.delete.header">
+      <segment>
+        <source>contact.action.delete.header</source>
+        <target>Kontakt entfernen?</target>
+      </segment>
+    </unit>
+    <unit id="N7BS7vS" name="contact.action.delete.text">
+      <segment>
+        <source>contact.action.delete.text</source>
+        <target>Möchten Sie den Kontakt "%contactname%" wirklich entfernen?</target>
+      </segment>
+    </unit>
+    <unit id="HqRCoTS" name="No">
+      <segment>
+        <source>No</source>
+        <target>No</target>
+      </segment>
+    </unit>
+    <unit id="haOas0X" name="Yes">
+      <segment>
+        <source>Yes</source>
+        <target>Yes</target>
+      </segment>
+    </unit>
+    <unit id="224ln89" name="contact.action.create.success">
+      <segment>
+        <source>contact.action.create.success</source>
+        <target>Der Kontakt wurde erfolgreich gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="Uvc.jio" name="contact.action.delete.success">
+      <segment>
+        <source>contact.action.delete.success</source>
+        <target>Der Kontakt wurde erfolgreich entfernt.</target>
       </segment>
     </unit>
   </file>
