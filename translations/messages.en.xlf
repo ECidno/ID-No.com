@@ -1159,5 +1159,425 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
         <target>Male</target>
       </segment>
     </unit>
+    <unit id="Y7eqvgE" name="meinidno.title">
+      <segment>
+        <source>meinidno.title</source>
+        <target>My ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="nZDkroM" name="header.menu.user.meinidno.lbl">
+      <segment>
+        <source>header.menu.user.meinidno.lbl</source>
+        <target>My ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="AJQgdhc" name="header.menu.user.profile.lbl">
+      <segment>
+        <source>header.menu.user.profile.lbl</source>
+        <target>Edit Profile</target>
+      </segment>
+    </unit>
+    <unit id="snIaWey" name="header.menu.user.logout.lbl">
+      <segment>
+        <source>header.menu.user.logout.lbl</source>
+        <target>Logout</target>
+      </segment>
+    </unit>
+    <unit id="kut5zCU" name="profile.edit.lbl">
+      <segment>
+        <source>profile.edit.lbl</source>
+        <target>Edit Profile</target>
+      </segment>
+    </unit>
+    <unit id="LNtZqBU" name="account.edit.lbl">
+      <segment>
+        <source>account.edit.lbl</source>
+        <target>Edit Account</target>
+      </segment>
+    </unit>
+    <unit id="hoXcfP0" name="profile.delete.lbl">
+      <segment>
+        <source>profile.delete.lbl</source>
+        <target>Delete Profile</target>
+      </segment>
+    </unit>
+    <unit id="w.DLp.L" name="items.action.new.lbl">
+      <segment>
+        <source>items.action.new.lbl</source>
+        <target>Activate new ID-number</target>
+      </segment>
+    </unit>
+    <unit id="aCDEdDE" name="items.table.idNo.lbl">
+      <segment>
+        <source>items.table.idNo.lbl</source>
+        <target>ID-number</target>
+      </segment>
+    </unit>
+    <unit id="kDmm7gm" name="items.table.anbringung.lbl">
+      <segment>
+        <source>items.table.anbringung.lbl</source>
+        <target>Attachment</target>
+      </segment>
+    </unit>
+    <unit id="vmH8Qp8" name="items.table.aktiviertDatum.lbl">
+      <segment>
+        <source>items.table.aktiviertDatum.lbl</source>
+        <target>Activation</target>
+      </segment>
+    </unit>
+    <unit id="pK0lnnH" name="Aktion">
+      <segment>
+        <source>Aktion</source>
+        <target>Action</target>
+      </segment>
+    </unit>
+    <unit id="GtO_gRt" name="contacts.action.new.lbl">
+      <segment>
+        <source>contacts.action.new.lbl</source>
+        <target>New Contact</target>
+      </segment>
+    </unit>
+    <unit id="OPNQtnB" name="contact.table.contactname.lbl">
+      <segment>
+        <source>contact.table.contactname.lbl</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="jTaFKJ5" name="contact.table.telefon.lbl">
+      <segment>
+        <source>contact.table.telefon.lbl</source>
+        <target>Phone</target>
+      </segment>
+    </unit>
+    <unit id="2HQxS3." name="contact.table.beziehung.lbl">
+      <segment>
+        <source>contact.table.beziehung.lbl</source>
+        <target>Relation</target>
+      </segment>
+    </unit>
+    <unit id="3Amepzd" name="person.lbl">
+      <segment>
+        <source>person.lbl</source>
+        <target>Person</target>
+      </segment>
+    </unit>
+    <unit id="ETC5b4d" name="person.personalDetails.lbl">
+      <segment>
+        <source>person.personalDetails.lbl</source>
+        <target>Personal data</target>
+      </segment>
+    </unit>
+    <unit id="Mrt1WB9" name="person.geschlecht.x">
+      <segment>
+        <source>person.geschlecht.x</source>
+        <target>divers</target>
+      </segment>
+    </unit>
+    <unit id="81WNFXE" name="person.vorname.lbl">
+      <segment>
+        <source>person.vorname.lbl</source>
+        <target>Firstname</target>
+      </segment>
+    </unit>
+    <unit id="xhD40lC" name="person.nachname.lbl">
+      <segment>
+        <source>person.nachname.lbl</source>
+        <target>Lastname</target>
+      </segment>
+    </unit>
+    <unit id="HEPQHqC" name="person.geburtsdatum.lbl">
+      <segment>
+        <source>person.geburtsdatum.lbl</source>
+        <target>Birthdate</target>
+      </segment>
+    </unit>
+    <unit id="NlkhDdJ" name="person.geburtsdatumTag.lbl">
+      <segment>
+        <source>person.geburtsdatumTag.lbl</source>
+        <target>Day</target>
+      </segment>
+    </unit>
+    <unit id="8OrWCMF" name="person.geburtsdatumMonat.lbl">
+      <segment>
+        <source>person.geburtsdatumMonat.lbl</source>
+        <target>Month</target>
+      </segment>
+    </unit>
+    <unit id="k4Ak4q9" name="person.geburtsdatumJahr.lbl">
+      <segment>
+        <source>person.geburtsdatumJahr.lbl</source>
+        <target>Year</target>
+      </segment>
+    </unit>
+    <unit id="kc9GJeS" name="person.strasse.lbl">
+      <segment>
+        <source>person.strasse.lbl</source>
+        <target>Street</target>
+      </segment>
+    </unit>
+    <unit id="MsGoHo_" name="sichtbar">
+      <segment>
+        <source>sichtbar</source>
+        <target>visible</target>
+      </segment>
+    </unit>
+    <unit id="UFVHSnR" name="person.plz.lbl">
+      <segment>
+        <source>person.plz.lbl</source>
+        <target>Zip code</target>
+      </segment>
+    </unit>
+    <unit id="09.yEQd" name="person.ort.lbl">
+      <segment>
+        <source>person.ort.lbl</source>
+        <target>City</target>
+      </segment>
+    </unit>
+    <unit id="92IadfQ" name="person.zusatz.lbl">
+      <segment>
+        <source>person.zusatz.lbl</source>
+        <target>Further Details</target>
+      </segment>
+    </unit>
+    <unit id="GXZVMss" name="person.land.lbl">
+      <segment>
+        <source>person.land.lbl</source>
+        <target>Country</target>
+      </segment>
+    </unit>
+    <unit id="J1zKgeK" name="+49">
+      <segment>
+        <source>+49</source>
+        <target>+49</target>
+      </segment>
+    </unit>
+    <unit id="jz_EKfa" name="person.telefonLand.lbl">
+      <segment>
+        <source>person.telefonLand.lbl</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="sA6e0z0" name="person.telefonVorwahl.lbl">
+      <segment>
+        <source>person.telefonVorwahl.lbl</source>
+        <target>person.telefonVorwahl.lbl</target>
+      </segment>
+    </unit>
+    <unit id="WAqW5FP" name="person.telefon.lbl">
+      <segment>
+        <source>person.telefon.lbl</source>
+        <target>Prefix</target>
+      </segment>
+    </unit>
+    <unit id="lUlVJJV" name="person.mobileLand.lbl">
+      <segment>
+        <source>person.mobileLand.lbl</source>
+        <target>Phone</target>
+      </segment>
+    </unit>
+    <unit id="YNUN52S" name="person.mobileVorwahl.lbl">
+      <segment>
+        <source>person.mobileVorwahl.lbl</source>
+        <target>Prefix</target>
+      </segment>
+    </unit>
+    <unit id="z_VuPWK" name="person.mobile.lbl">
+      <segment>
+        <source>person.mobile.lbl</source>
+        <target>Mobile</target>
+      </segment>
+    </unit>
+    <unit id="pCYoZcZ" name="person.medicalDetails.lbl">
+      <segment>
+        <source>person.medicalDetails.lbl</source>
+        <target>Medical Details</target>
+      </segment>
+    </unit>
+    <unit id="G61rjPl" name="-1">
+      <segment>
+        <source>-1</source>
+        <target>-1</target>
+      </segment>
+    </unit>
+    <unit id="KB734SJ" name="0+">
+      <segment>
+        <source>0+</source>
+        <target>0+</target>
+      </segment>
+    </unit>
+    <unit id="ruhzbCt" name="A+">
+      <segment>
+        <source>A+</source>
+        <target>A+</target>
+      </segment>
+    </unit>
+    <unit id="QhHyzI4" name="B+">
+      <segment>
+        <source>B+</source>
+        <target>B+</target>
+      </segment>
+    </unit>
+    <unit id="nz5XTy9" name="AB+">
+      <segment>
+        <source>AB+</source>
+        <target>AB+</target>
+      </segment>
+    </unit>
+    <unit id="bm3aRbw" name="0-">
+      <segment>
+        <source>0-</source>
+        <target>0-</target>
+      </segment>
+    </unit>
+    <unit id="Plj1OXB" name="A-">
+      <segment>
+        <source>A-</source>
+        <target>A-</target>
+      </segment>
+    </unit>
+    <unit id="dNIb.z1" name="B-">
+      <segment>
+        <source>B-</source>
+        <target>B-</target>
+      </segment>
+    </unit>
+    <unit id="8Dj4XuJ" name="AB-">
+      <segment>
+        <source>AB-</source>
+        <target>AB-</target>
+      </segment>
+    </unit>
+    <unit id="i2wE6hf" name="person.blutgruppe.lbl">
+      <segment>
+        <source>person.blutgruppe.lbl</source>
+        <target>Blood type</target>
+      </segment>
+    </unit>
+    <unit id="ibdotsG" name="person.erkrankungen.lbl">
+      <segment>
+        <source>person.erkrankungen.lbl</source>
+        <target>Diseases</target>
+      </segment>
+    </unit>
+    <unit id="AP2GP5d" name="person.medikamente.lbl">
+      <segment>
+        <source>person.medikamente.lbl</source>
+        <target>Medication</target>
+      </segment>
+    </unit>
+    <unit id="ICC_8GP" name="person.allergieen.lbl">
+      <segment>
+        <source>person.allergieen.lbl</source>
+        <target>Allergies</target>
+      </segment>
+    </unit>
+    <unit id="vvwEE68" name="person.gewicht.lbl">
+      <segment>
+        <source>person.gewicht.lbl</source>
+        <target>Weight</target>
+      </segment>
+    </unit>
+    <unit id="Ex7XNCk" name="kg">
+      <segment>
+        <source>kg</source>
+        <target>kg</target>
+      </segment>
+    </unit>
+    <unit id="Voz.TnC" name="lbs">
+      <segment>
+        <source>lbs</source>
+        <target>lbs</target>
+      </segment>
+    </unit>
+    <unit id="CcjFcL8" name="person.gewichtEinheit.lbl">
+      <segment>
+        <source>person.gewichtEinheit.lbl</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="ekMryqc" name="person.groesse.lbl">
+      <segment>
+        <source>person.groesse.lbl</source>
+        <target>Size</target>
+      </segment>
+    </unit>
+    <unit id="tQOcMl1" name="cm">
+      <segment>
+        <source>cm</source>
+        <target>cm</target>
+      </segment>
+    </unit>
+    <unit id="HPbnKjt" name="inch">
+      <segment>
+        <source>inch</source>
+        <target>inch</target>
+      </segment>
+    </unit>
+    <unit id="qhMFe_A" name="person.groesseEinheit.lbl">
+      <segment>
+        <source>person.groesseEinheit.lbl</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="8NNQs.D" name="person.krankenversicherungDetails.lbl">
+      <segment>
+        <source>person.krankenversicherungDetails.lbl</source>
+        <target>Health insurance</target>
+      </segment>
+    </unit>
+    <unit id="DrzbMfV" name="person.krankenversicherung.lbl">
+      <segment>
+        <source>person.krankenversicherung.lbl</source>
+        <target>Health insurance</target>
+      </segment>
+    </unit>
+    <unit id="S6uHNHe" name="person.versicherungsnummer.lbl">
+      <segment>
+        <source>person.versicherungsnummer.lbl</source>
+        <target>Insurace number</target>
+      </segment>
+    </unit>
+    <unit id="7EGqC16" name="person.zusatzversicherung.lbl">
+      <segment>
+        <source>person.zusatzversicherung.lbl</source>
+        <target>Supplementary insurance</target>
+      </segment>
+    </unit>
+    <unit id="wJQUGJJ" name="person.morePatientDetails.lbl">
+      <segment>
+        <source>person.morePatientDetails.lbl</source>
+        <target>More Patient Details</target>
+      </segment>
+    </unit>
+    <unit id="E7XFQ93" name="person.organspender.lbl">
+      <segment>
+        <source>person.organspender.lbl</source>
+        <target>Organ Donor</target>
+      </segment>
+    </unit>
+    <unit id="cSp0aWO" name="person.patientenverf.lbl">
+      <segment>
+        <source>person.patientenverf.lbl</source>
+        <target>Patient directive</target>
+      </segment>
+    </unit>
+    <unit id="uSf25t8" name="person.weitereangaben.lbl">
+      <segment>
+        <source>person.weitereangaben.lbl</source>
+        <target>further details</target>
+      </segment>
+    </unit>
+    <unit id="GXZu1sy" name="Cancel">
+      <segment>
+        <source>Cancel</source>
+        <target>Cancel</target>
+      </segment>
+    </unit>
+    <unit id="FQn1YfJ" name="Save">
+      <segment>
+        <source>Save</source>
+        <target>Save</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

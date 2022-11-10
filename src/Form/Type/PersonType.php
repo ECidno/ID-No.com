@@ -12,7 +12,7 @@ use App\Form\Type\EntityHiddenType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -46,7 +46,6 @@ class PersonType extends AbstractType
                 },
                 'required' => true
             ])
-
             ->add('vorname', TextType::class, [
                 'label' => new TranslatableMessage('person.vorname.lbl'),
                 'attr' => [
@@ -63,7 +62,30 @@ class PersonType extends AbstractType
                 ],
                 'required' => true
             ])
-
+            ->add('geburtsdatumTag', IntegerType::class, [
+                'label' => new TranslatableMessage('person.geburtsdatumTag.lbl'),
+                'attr' => [
+                    'minValue' => 1,
+                    'maxValue' => 31
+                ],
+                'required' => false
+            ])
+            ->add('geburtsdatumMonat', IntegerType::class, [
+                'label' => new TranslatableMessage('person.geburtsdatumMonat.lbl'),
+                'attr' => [
+                    'minValue' => 1,
+                    'maxVal' => 12
+                ],
+                'required' => false
+            ])
+            ->add('geburtsdatumJahr', IntegerType::class, [
+                'label' => new TranslatableMessage('person.geburtsdatumJahr.lbl'),
+                'attr' => [
+                    'minValue' => 1900,
+                    'maxValue' => date('Y')
+                ],
+                'required' => false
+            ])
             ->add('strasse', TextType::class, [
                 'label' => new TranslatableMessage('person.strasse.lbl'),
                 'attr' => [
@@ -95,6 +117,225 @@ class PersonType extends AbstractType
                 'required' => false
             ])
             ->add('ortShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('zusatz', TextType::class, [
+                'label' => new TranslatableMessage('person.zusatz.lbl'),
+                'attr' => [
+                    'maxlength' => 100,
+                ],
+                'required' => false
+            ])
+            ->add('zusatzShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('land', TextType::class, [
+                'label' => new TranslatableMessage('person.land.lbl'),
+                'required' => false
+            ])
+            ->add('telefonLand', TextType::class, [
+                'label' => new TranslatableMessage('person.telefonLand.lbl'),
+                'attr' => [
+                    'placeholder' => '+49',
+                    'maxlenght' => 6
+                ],
+                'required' => false
+            ])
+            ->add('telefonVorwahl', TextType::class, [
+                'label' => new TranslatableMessage('person.telefonVorwahl.lbl'),
+                'attr' => ['maxlength' => 10],
+                'required' => false
+            ])
+            ->add('telefon', TextType::class, [
+                'label' => new TranslatableMessage('person.telefon.lbl'),
+                'attr' => ['maxlength' => 30],
+                'required' => false
+            ])
+            ->add('telefonShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('mobileLand', TextType::class, [
+                'label' => new TranslatableMessage('person.mobileLand.lbl'),
+                'attr' => [
+                    'placeholder' => '+49',
+                    'maxlength' => 6
+                ],
+                'required' => false
+            ])
+            ->add('mobileVorwahl', TextType::class, [
+                'label' => new TranslatableMessage('person.mobileVorwahl.lbl'),
+                'attr' => ['maxlength' => 10],
+                'required' => false
+            ])
+            ->add('mobile', TextType::class, [
+                'label' => new TranslatableMessage('person.mobile.lbl'),
+                'attr' => ['maxlength' => 30],
+                'required' => false
+            ])
+            ->add('mobileShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('blutgruppe', ChoiceType::class, [
+                'label' => new TranslatableMessage('person.blutgruppe.lbl'),
+                'choices' => [
+                    '-1' => '-1',
+                    '0+' => '0+',
+                    'A+' => 'A+',
+                    'B+' => 'B+',
+                    'AB+' => 'AB+',
+                    '0-' => '0-',
+                    'A-' => 'A-',
+                    'B-' => 'B-',
+                    'AB-' => 'AB-'
+                ],
+                // 'choice_label' => function($choice, $key, $value) {
+                //     return new TranslatableMessage('person.blutgruppe.lbl.'.$key);
+                // },
+                'required' => false
+            ])
+            ->add('blutgruppeShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('erkrankungen', TextareaType::class, [
+                'label' => new TranslatableMessage('person.erkrankungen.lbl'),
+                'required' => false,
+            ])
+            ->add('erkrankungenShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('medikamente', TextareaType::class, [
+                'label' => new TranslatableMessage('person.medikamente.lbl'),
+                'required' => false
+            ])
+            ->add('medikamenteShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('allergieen', TextareaType::class, [
+                'label' => new TranslatableMessage('person.allergieen.lbl'),
+                'required' => false
+            ])
+            ->add('allergieenShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('gewicht', TextType::class, [
+                'label' => new TranslatableMessage('person.gewicht.lbl'),
+                'attr' => ['maxlenght' => 10],
+                'required' => false
+            ])
+            ->add('gewichtEinheit', ChoiceType::class, [
+                'label' => new TranslatableMessage('person.gewichtEinheit.lbl'),
+                'choices' => [
+                    'kg' => 'kg',
+                    'lbs' => 'lbs',
+                ],
+                'required' => false
+            ])
+            ->add('gewichtShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('groesse', TextType::class, [
+                'label' => new TranslatableMessage('person.groesse.lbl'),
+                'attr' => ['maxlength' => 10],
+                'required' => false
+            ])
+            ->add('groesseEinheit', ChoiceType::class, [
+                'label' => new TranslatableMessage('person.groesseEinheit.lbl'),
+                'choices' => [
+                    'cm' => 'cm',
+                    'inch' => 'inch',
+                ],
+                'required' => false
+            ])
+            ->add('groesseShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('krankenversicherung', TextType::class, [
+                'label' => new TranslatableMessage('person.krankenversicherung.lbl'),
+                'attr' => ['maxlength' => 100],
+                'required' => false
+            ])
+            ->add('krankenversicherungShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('versicherungsnummer', TextType::class, [
+                'label' => new TranslatableMessage('person.versicherungsnummer.lbl'),
+                'attr' => ['maxlength' => 100],
+                'required' => false
+            ])
+            ->add('versicherungsnummerShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('zusatzversicherung', TextareaType::class, [
+                'label' => new TranslatableMessage('person.zusatzversicherung.lbl'),
+                'required' => false
+            ])
+            ->add('zusatzversicherungShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('organspender', CheckboxType::class, [
+                'label' => new TranslatableMessage('person.organspender.lbl'),
+                'required' => false
+            ])
+            ->add('organspenderShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('patientenverf', CheckboxType::class, [
+                'label' => new TranslatableMessage('person.patientenverf.lbl'),
+                'required' => false
+            ])
+            ->add('patientenverfShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => ['role' => 'switch'],
+                'required' => false
+            ])
+            ->add('weitereangaben', TextareaType::class, [
+                'label' => new TranslatableMessage('person.weitereangaben.lbl'),
+                'required' => false
+            ])
+            ->add('weitereangabenShow', CheckboxType::class, [
                 'label' => new TranslatableMessage('sichtbar'),
                 'row_attr' => ['class' => 'form-switch'],
                 'attr' => ['role' => 'switch'],

@@ -1,5 +1,7 @@
 {{ form_errors(form) }}
 
+<h2>{{ 'person.personalDetails.lbl'|trans }}</h2>
+
 <div class="row">
   <div class="col-9 col-sm-6">
     {{ form_row(form.anrede) }}
@@ -13,6 +15,22 @@
   <div class="col-9 col-sm-6">
     {{ form_row(form.nachname) }}
   </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    {{ 'person.geburtsdatum.lbl'|trans }}
+  </div>
+  <div class="col-2">
+    {{ form_row(form.geburtsdatumTag) }}
+  </div>
+  <div class="col-2">
+    {{ form_row(form.geburtsdatumMonat) }}
+  </div>
+  <div class="col-2">
+    {{ form_row(form.geburtsdatumJahr) }}
+  </div>
+  <div class="col-3"></div>
 </div>
 
 <div class="row">
@@ -33,5 +51,176 @@
   </div>
   <div class="col-3">
     {{ form_row(form.ortShow) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-9">
+    {{ form_row(form.zusatz) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.zusatzShow) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-9">
+    {{ form_row(form.land) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-2">
+    {{ form_row(form.telefonLand) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.telefonVorwahl) }}
+  </div>
+  <div class="col-4">
+    {{ form_row(form.telefon) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.telefonShow) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-2">
+    {{ form_row(form.mobileLand) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.mobileVorwahl) }}
+  </div>
+  <div class="col-4">
+    {{ form_row(form.mobile) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.mobileShow) }}
+  </div>
+</div>
+
+<div class="row bg-dark">
+  <h2 class="text-light">{{ 'person.medicalDetails.lbl'|trans }}</h2>
+</div>
+
+<div class="row bg-dark">
+  <div class="col-9">
+    {{ form_row(form.blutgruppe) }}
+  </div>
+  <div class="col-3 text-light">
+    {{ form_row(form.blutgruppeShow) }}
+  </div>
+</div>
+
+<div class="row bg-dark">
+  <div class="col-9">
+    {{ form_row(form.erkrankungen) }}
+  </div>
+  <div class="col-3 text-light">
+    {{ form_row(form.erkrankungenShow) }}
+  </div>
+</div>
+
+<div class="row bg-dark">
+  <div class="col-9">
+    {{ form_row(form.medikamente) }}
+  </div>
+  <div class="col-3 text-light">
+    {{ form_row(form.medikamenteShow) }}
+  </div>
+</div>
+
+<div class="row bg-dark">
+  <div class="col-9">
+    {{ form_row(form.allergieen) }}
+  </div>
+  <div class="col-3 text-light">
+    {{ form_row(form.allergieenShow) }}
+  </div>
+</div>
+
+<div class="row bg-dark">
+  <div class="col-6">
+    {{ form_row(form.gewicht) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.gewichtEinheit) }}
+  </div>
+  <div class="col-3 text-light">
+    {{ form_row(form.gewichtShow) }}
+  </div>
+</div>
+
+<div class="row bg-dark">
+  <div class="col-6">
+    {{ form_row(form.groesse) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.groesseEinheit) }}
+  </div>
+  <div class="col-3 text-light">
+    {{ form_row(form.groesseShow) }}
+  </div>
+</div>
+
+<div class="row bg-dark">
+  <h2 class="text-light">{{ 'person.krankenversicherungDetails.lbl'|trans }}</h2>
+</div>
+
+<div class="row bg-dark">
+  <div class="col-9">
+    {{ form_row(form.krankenversicherung) }}
+  </div>
+  <div class="col-3 text-light">
+    {{ form_row(form.krankenversicherungShow) }}
+  </div>
+</div>
+
+<div class="row bg-dark">
+  <div class="col-9">
+    {{ form_row(form.versicherungsnummer) }}
+  </div>
+  <div class="col-3 text-light">
+    {{ form_row(form.versicherungsnummerShow) }}
+  </div>
+</div>
+
+<div class="row bg-dark">
+  <div class="col-9">
+    {{ form_row(form.zusatzversicherung) }}
+  </div>
+  <div class="col-3 text-light">
+    {{ form_row(form.zusatzversicherungShow) }}
+  </div>
+</div>
+
+<div class="row bg-dark">
+  <h2 class="text-light">{{ 'person.morePatientDetails.lbl'|trans }}</h2>
+</div>
+
+<div class="row bg-dark">
+  <div class="col-9 text-light">
+    {{ form_row(form.organspender) }}
+  </div>
+  <div class="col-3 text-light">
+    {{ form_row(form.organspenderShow) }}
+  </div>
+</div>
+
+<div class="row bg-dark">
+  <div class="col-9 text-light">
+    {{ form_row(form.patientenverf) }}
+  </div>
+  <div class="col-3 text-light">
+    {{ form_row(form.patientenverfShow) }}
+  </div>
+</div>
+
+<div class="row bg-dark">
+  <div class="col-9">
+    {{ form_row(form.weitereangaben) }}
+  </div>
+  <div class="col-3 text-light">
+    {{ form_row(form.weitereangabenShow) }}
   </div>
 </div>

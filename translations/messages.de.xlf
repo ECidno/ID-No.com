@@ -1647,5 +1647,305 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>divers</target>
       </segment>
     </unit>
+    <unit id="ETC5b4d" name="person.personalDetails.lbl">
+      <segment>
+        <source>person.personalDetails.lbl</source>
+        <target>Persönliche Angaben</target>
+      </segment>
+    </unit>
+    <unit id="HEPQHqC" name="person.geburtsdatum.lbl">
+      <segment>
+        <source>person.geburtsdatum.lbl</source>
+        <target>Geburtsdatum</target>
+      </segment>
+    </unit>
+    <unit id="NlkhDdJ" name="person.geburtsdatumTag.lbl">
+      <segment>
+        <source>person.geburtsdatumTag.lbl</source>
+        <target>Tag</target>
+      </segment>
+    </unit>
+    <unit id="8OrWCMF" name="person.geburtsdatumMonat.lbl">
+      <segment>
+        <source>person.geburtsdatumMonat.lbl</source>
+        <target>Monat</target>
+      </segment>
+    </unit>
+    <unit id="k4Ak4q9" name="person.geburtsdatumJahr.lbl">
+      <segment>
+        <source>person.geburtsdatumJahr.lbl</source>
+        <target>Jahr</target>
+      </segment>
+    </unit>
+    <unit id="92IadfQ" name="person.zusatz.lbl">
+      <segment>
+        <source>person.zusatz.lbl</source>
+        <target>weitere Angaben</target>
+      </segment>
+    </unit>
+    <unit id="GXZVMss" name="person.land.lbl">
+      <segment>
+        <source>person.land.lbl</source>
+        <target>Land</target>
+      </segment>
+    </unit>
+    <unit id="J1zKgeK" name="+49">
+      <segment>
+        <source>+49</source>
+        <target>+49</target>
+      </segment>
+    </unit>
+    <unit id="NI1gN58" name="Telefon land">
+      <segment>
+        <source>Telefon land</source>
+        <target>Telefon land</target>
+      </segment>
+    </unit>
+    <unit id="meKsSMp" name="Telefon vorwahl">
+      <segment>
+        <source>Telefon vorwahl</source>
+        <target>Telefon vorwahl</target>
+      </segment>
+    </unit>
+    <unit id="DgtXwmv" name="Mobile land">
+      <segment>
+        <source>Mobile land</source>
+        <target>Mobile land</target>
+      </segment>
+    </unit>
+    <unit id="5Rl61kn" name="Mobile vorwahl">
+      <segment>
+        <source>Mobile vorwahl</source>
+        <target>Mobile vorwahl</target>
+      </segment>
+    </unit>
+    <unit id="pCYoZcZ" name="person.medicalDetails.lbl">
+      <segment>
+        <source>person.medicalDetails.lbl</source>
+        <target>Medizinische Informationen</target>
+      </segment>
+    </unit>
+    <unit id="G61rjPl" name="-1">
+      <segment>
+        <source>-1</source>
+        <target>-1</target>
+      </segment>
+    </unit>
+    <unit id="KB734SJ" name="0+">
+      <segment>
+        <source>0+</source>
+        <target>0+</target>
+      </segment>
+    </unit>
+    <unit id="ruhzbCt" name="A+">
+      <segment>
+        <source>A+</source>
+        <target>A+</target>
+      </segment>
+    </unit>
+    <unit id="QhHyzI4" name="B+">
+      <segment>
+        <source>B+</source>
+        <target>B+</target>
+      </segment>
+    </unit>
+    <unit id="nz5XTy9" name="AB+">
+      <segment>
+        <source>AB+</source>
+        <target>AB+</target>
+      </segment>
+    </unit>
+    <unit id="bm3aRbw" name="0-">
+      <segment>
+        <source>0-</source>
+        <target>0-</target>
+      </segment>
+    </unit>
+    <unit id="Plj1OXB" name="A-">
+      <segment>
+        <source>A-</source>
+        <target>A-</target>
+      </segment>
+    </unit>
+    <unit id="dNIb.z1" name="B-">
+      <segment>
+        <source>B-</source>
+        <target>B-</target>
+      </segment>
+    </unit>
+    <unit id="8Dj4XuJ" name="AB-">
+      <segment>
+        <source>AB-</source>
+        <target>AB-</target>
+      </segment>
+    </unit>
+    <unit id="i2wE6hf" name="person.blutgruppe.lbl">
+      <segment>
+        <source>person.blutgruppe.lbl</source>
+        <target>Blutgruppe</target>
+      </segment>
+    </unit>
+    <unit id="ibdotsG" name="person.erkrankungen.lbl">
+      <segment>
+        <source>person.erkrankungen.lbl</source>
+        <target>Erkrankungen</target>
+      </segment>
+    </unit>
+    <unit id="AP2GP5d" name="person.medikamente.lbl">
+      <segment>
+        <source>person.medikamente.lbl</source>
+        <target>Medikation</target>
+      </segment>
+    </unit>
+    <unit id="ICC_8GP" name="person.allergieen.lbl">
+      <segment>
+        <source>person.allergieen.lbl</source>
+        <target>Allergien</target>
+      </segment>
+    </unit>
+    <unit id="vvwEE68" name="person.gewicht.lbl">
+      <segment>
+        <source>person.gewicht.lbl</source>
+        <target>Gewicht</target>
+      </segment>
+    </unit>
+    <unit id="Ex7XNCk" name="kg">
+      <segment>
+        <source>kg</source>
+        <target>kg</target>
+      </segment>
+    </unit>
+    <unit id="Voz.TnC" name="lbs">
+      <segment>
+        <source>lbs</source>
+        <target>lbs</target>
+      </segment>
+    </unit>
+    <unit id="CcjFcL8" name="person.gewichtEinheit.lbl">
+      <segment>
+        <source>person.gewichtEinheit.lbl</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="ekMryqc" name="person.groesse.lbl">
+      <segment>
+        <source>person.groesse.lbl</source>
+        <target>Größe</target>
+      </segment>
+    </unit>
+    <unit id="tQOcMl1" name="cm">
+      <segment>
+        <source>cm</source>
+        <target>cm</target>
+      </segment>
+    </unit>
+    <unit id="HPbnKjt" name="inch">
+      <segment>
+        <source>inch</source>
+        <target>inch</target>
+      </segment>
+    </unit>
+    <unit id="qhMFe_A" name="person.groesseEinheit.lbl">
+      <segment>
+        <source>person.groesseEinheit.lbl</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="8NNQs.D" name="person.krankenversicherungDetails.lbl">
+      <segment>
+        <source>person.krankenversicherungDetails.lbl</source>
+        <target>Krankenversicherung</target>
+      </segment>
+    </unit>
+    <unit id="DrzbMfV" name="person.krankenversicherung.lbl">
+      <segment>
+        <source>person.krankenversicherung.lbl</source>
+        <target>Krankenversicherung</target>
+      </segment>
+    </unit>
+    <unit id="S6uHNHe" name="person.versicherungsnummer.lbl">
+      <segment>
+        <source>person.versicherungsnummer.lbl</source>
+        <target>Versicherungs-Nr.</target>
+      </segment>
+    </unit>
+    <unit id="7EGqC16" name="person.zusatzversicherung.lbl">
+      <segment>
+        <source>person.zusatzversicherung.lbl</source>
+        <target>Zusatzversicherung</target>
+      </segment>
+    </unit>
+    <unit id="wJQUGJJ" name="person.morePatientDetails.lbl">
+      <segment>
+        <source>person.morePatientDetails.lbl</source>
+        <target>Weitere Patientenangaben</target>
+      </segment>
+    </unit>
+    <unit id="E7XFQ93" name="person.organspender.lbl">
+      <segment>
+        <source>person.organspender.lbl</source>
+        <target>Organspender</target>
+      </segment>
+    </unit>
+    <unit id="cSp0aWO" name="person.patientenverf.lbl">
+      <segment>
+        <source>person.patientenverf.lbl</source>
+        <target>Patienten­verfügung</target>
+      </segment>
+    </unit>
+    <unit id="uSf25t8" name="person.weitereangaben.lbl">
+      <segment>
+        <source>person.weitereangaben.lbl</source>
+        <target>weitere Angaben</target>
+      </segment>
+    </unit>
+    <unit id="sND_BfY" name="Gewicht einheit">
+      <segment>
+        <source>Gewicht einheit</source>
+        <target>Gewicht einheit</target>
+      </segment>
+    </unit>
+    <unit id="ShhJz71" name="Groesse einheit">
+      <segment>
+        <source>Groesse einheit</source>
+        <target>Groesse einheit</target>
+      </segment>
+    </unit>
+    <unit id="jz_EKfa" name="person.telefonLand.lbl">
+      <segment>
+        <source>person.telefonLand.lbl</source>
+        <target>Ländervorwahl</target>
+      </segment>
+    </unit>
+    <unit id="sA6e0z0" name="person.telefonVorwahl.lbl">
+      <segment>
+        <source>person.telefonVorwahl.lbl</source>
+        <target>Vorwahl</target>
+      </segment>
+    </unit>
+    <unit id="WAqW5FP" name="person.telefon.lbl">
+      <segment>
+        <source>person.telefon.lbl</source>
+        <target>Festnetznummer</target>
+      </segment>
+    </unit>
+    <unit id="lUlVJJV" name="person.mobileLand.lbl">
+      <segment>
+        <source>person.mobileLand.lbl</source>
+        <target>Ländervorwahl</target>
+      </segment>
+    </unit>
+    <unit id="YNUN52S" name="person.mobileVorwahl.lbl">
+      <segment>
+        <source>person.mobileVorwahl.lbl</source>
+        <target>Vorwahl</target>
+      </segment>
+    </unit>
+    <unit id="z_VuPWK" name="person.mobile.lbl">
+      <segment>
+        <source>person.mobile.lbl</source>
+        <target>Mobilnummer</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

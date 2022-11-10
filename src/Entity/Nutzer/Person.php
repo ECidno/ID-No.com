@@ -649,10 +649,10 @@ class Person
 
 
     /**
-     * @param string $ort
+     * @param string|null $ort
      * @return Person
      */
-    public function setOrt(string $ort): self
+    public function setOrt(?string $ort): self
     {
         $this->ort = $ort;
         return $this;
@@ -690,9 +690,9 @@ class Person
      * @param string $zusatz
      * @return Person
      */
-    public function setZusatz(string $zusatz): self
+    public function setZusatz(?string $zusatz): self
     {
-        $this->zusatz = $zusatz;
+        $this->zusatz = $zusatz ?? null;
         return $this;
     }
 
@@ -841,9 +841,9 @@ class Person
      * @param string $telefonLand
      * @return Person
      */
-    public function setTelefonLand(string $telefonLand): self
+    public function setTelefonLand(?string $telefonLand): self
     {
-        $this->telefonLand = $telefonLand;
+        $this->telefonLand = $telefonLand ?? '';
         return $this;
     }
 
@@ -860,9 +860,9 @@ class Person
      * @param string $telefonVorwahl
      * @return Person
      */
-    public function setTelefonVorwahl(string $telefonVorwahl): self
+    public function setTelefonVorwahl(?string $telefonVorwahl): self
     {
-        $this->telefonVorwahl = $telefonVorwahl;
+        $this->telefonVorwahl = $telefonVorwahl ?? null;
         return $this;
     }
 
@@ -879,9 +879,9 @@ class Person
      * @param string $telefon
      * @return Person
      */
-    public function setTelefon(string $telefon): self
+    public function setTelefon(?string $telefon): self
     {
-        $this->telefon = $telefon;
+        $this->telefon = $telefon ?? null;
         return $this;
     }
 
@@ -935,9 +935,9 @@ class Person
      * @param string $mobileLand
      * @return Person
      */
-    public function setMobileLand(string $mobileLand): self
+    public function setMobileLand(?string $mobileLand): self
     {
-        $this->mobileLand = $mobileLand;
+        $this->mobileLand = $mobileLand ?? '';
         return $this;
     }
 
@@ -954,9 +954,9 @@ class Person
      * @param string $mobileVorwahl
      * @return Person
      */
-    public function setMobileVorwahl(string $mobileVorwahl): self
+    public function setMobileVorwahl(?string $mobileVorwahl): self
     {
-        $this->mobileVorwahl = $mobileVorwahl;
+        $this->mobileVorwahl = $mobileVorwahl ?? null;
         return $this;
     }
 
@@ -973,9 +973,9 @@ class Person
      * @param string $mobile
      * @return Person
      */
-    public function setMobile(string $mobile): self
+    public function setMobile(?string $mobile): self
     {
-        $this->mobile = $mobile;
+        $this->mobile = $mobile ?? null;
         return $this;
     }
 
@@ -1029,9 +1029,9 @@ class Person
      * @param string $gewicht
      * @return Person
      */
-    public function setGewicht(string $gewicht): self
+    public function setGewicht(?string $gewicht): self
     {
-        $this->gewicht = $gewicht;
+        $this->gewicht = $gewicht ?? null;
         return $this;
     }
 
@@ -1086,9 +1086,9 @@ class Person
      * @param string $groesse
      * @return Person
      */
-    public function setGroesse(string $groesse): self
+    public function setGroesse(?string $groesse): self
     {
-        $this->groesse = $groesse;
+        $this->groesse = $groesse ?? null;
         return $this;
     }
 
@@ -1143,9 +1143,9 @@ class Person
      * @param string $krankenversicherung
      * @return Person
      */
-    public function setKrankenversicherung(string $krankenversicherung): self
+    public function setKrankenversicherung(?string $krankenversicherung): self
     {
-        $this->krankenversicherung = $krankenversicherung;
+        $this->krankenversicherung = $krankenversicherung ?? null;
         return $this;
     }
 
@@ -1181,9 +1181,9 @@ class Person
      * @param string $versicherungsnummer
      * @return Person
      */
-    public function setVersicherungsnummer(string $versicherungsnummer): self
+    public function setVersicherungsnummer(?string $versicherungsnummer): self
     {
-        $this->versicherungsnummer = $versicherungsnummer;
+        $this->versicherungsnummer = $versicherungsnummer ?? null;
         return $this;
     }
 
@@ -1219,9 +1219,9 @@ class Person
      * @param string $zusatzversicherung
      * @return Person
      */
-    public function setZusatzversicherung(string $zusatzversicherung): self
+    public function setZusatzversicherung(?string $zusatzversicherung): self
     {
-        $this->zusatzversicherung = $zusatzversicherung;
+        $this->zusatzversicherung = $zusatzversicherung ?? null;
         return $this;
     }
 
@@ -1295,9 +1295,9 @@ class Person
      * @param string $erkrankungen
      * @return Person
      */
-    public function setErkrankungen(string $erkrankungen): self
+    public function setErkrankungen(?string $erkrankungen): self
     {
-        $this->erkrankungen = $erkrankungen;
+        $this->erkrankungen = $erkrankungen ?? null;
         return $this;
     }
 
@@ -1333,9 +1333,9 @@ class Person
      * @param string $medikamente
      * @return Person
      */
-    public function setMedikamente(string $medikamente): self
+    public function setMedikamente(?string $medikamente): self
     {
-        $this->medikamente = $medikamente;
+        $this->medikamente = $medikamente ?? null;
         return $this;
     }
 
@@ -1371,9 +1371,9 @@ class Person
      * @param string $allergieen
      * @return Person
      */
-    public function setAllergieen(string $allergieen): self
+    public function setAllergieen(?string $allergieen): self
     {
-        $this->allergieen = $allergieen;
+        $this->allergieen = $allergieen ?? null;
         return $this;
     }
 
@@ -1485,9 +1485,9 @@ class Person
      * @param string $weitereangaben
      * @return Person
      */
-    public function setWeitereangaben(string $weitereangaben): self
+    public function setWeitereangaben(?string $weitereangaben): self
     {
-        $this->weitereangaben = $weitereangaben;
+        $this->weitereangaben = $weitereangaben ?? null;
         return $this;
     }
 
