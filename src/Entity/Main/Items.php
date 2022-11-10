@@ -36,8 +36,15 @@ class Items extends AbstractEntity
     /**
      * @var string
      * @ORM\Column(type="string", length=12, nullable=false)
+     * @Groups({"read"})
      */
     private $noStatus;
+
+    /**
+     * @var bool
+     * @Groups({"read"})
+     */
+    private $status;
 
     /**
      * @var Nutzer
@@ -124,6 +131,26 @@ class Items extends AbstractEntity
     public function getNoStatus(): ?string
     {
         return $this->noStatus;
+    }
+
+    /**
+     * @param bool $status
+     * @return Items
+     */
+    public function setStatus(bool $status): self
+    {
+        $this->noStatus = $status === true
+            ? 'registriert'
+            : 'deaktiviert';
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getStatus(): bool
+    {
+        return $this->noStatus === 'registriert';
     }
 
 

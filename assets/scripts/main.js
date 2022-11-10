@@ -29,7 +29,6 @@ window.loadingTemplate = (loadingMessage) => {
 // operate formatter
 window.operateFormatter = (value, row, index) => {
   let operations = [];
-
   Object
     .keys(row.operations)
     .forEach((key) => {
@@ -49,6 +48,15 @@ window.operateFormatter = (value, row, index) => {
   // return
   return operations.join('');
 }
+
+
+// item status formatter
+window.itemStatusFormatter = (value, row, index) => {
+  return row.status === true
+    ? '<span><i class="bi bi-check-circle text-success me-1"></i> aktiv</span>'
+    : '<span><i class="bi bi-exclamation-triangle text-warning me-1"></i> inaktiv</span>';
+}
+
 
 // operate events
 window.operateEvents = {
@@ -70,6 +78,31 @@ window.operateEvents = {
 document.addEventListener(
   'DOMContentLoaded',
   function() {
+
+    /*
+     * bootstrap tables
+     */
+    jQuery('table[data-toggle="table"]').on(
+      'post-header.bs.table',
+      function() {
+        let table = jQuery(this);
+        let toolbar = jQuery(table.data('toolbar'));
+
+        if (toolbar.hasClass('d-none')) {
+          toolbar
+            .hide()
+            .removeClass('d-none')
+            .fadeIn(300);
+        }
+        if (table.hasClass('d-none')) {
+          table
+            .hide()
+            .removeClass('d-none')
+            .fadeIn(400);
+        }
+      }
+    );
+
 
     /**
      * ajax

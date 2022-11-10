@@ -107,7 +107,9 @@
           Hier können Sie weitere ID-Nummern aktivieren und Ihre bereits registrierten ID-Nummern einsehen und verwalten.
         </p>
 
-        <div id="toolbarItems">
+        <div
+          id="toolbarItems"
+          class="d-none">
           <button
             type="button"
             class="btn btn-sm btn-outline-success mx-1 ajax-modal"
@@ -119,6 +121,7 @@
 
         <table
           id="tableItems"
+          class="d-none"
           data-toggle="table"
           data-classes="table table-sm table-hover"
           data-toolbar="#toolbarItems"
@@ -131,6 +134,9 @@
             <tr>
               <th data-field="idNo">{{ 'items.table.idNo.lbl'|trans }}</th>
               <th data-field="anbringung">{{ 'items.table.anbringung.lbl'|trans }}</th>
+              <th
+                data-field="noStatus"
+                data-formatter="itemStatusFormatter">{{ 'items.table.noStatus.lbl'|trans }}</th>
               <th data-field="aktiviertDatum">{{ 'items.table.aktiviertDatum.lbl'|trans }}</th>
               <th
                 data-width="100"
@@ -152,7 +158,9 @@
           Im Folgenden finden Sie eine Übersicht Ihrer Notfall-Kontakte:
         </p>
 
-        <div id="toolbarContacts">
+        <div
+          id="toolbarContacts"
+          class="d-none">
           <button
             type="button"
             class="btn btn-sm btn-outline-success mx-1 ajax-modal"
@@ -164,6 +172,7 @@
 
         <table
           id="tableContacts"
+          class="d-none"
           data-toggle="table"
           data-classes="table table-sm table-hover"
           data-toolbar="#toolbarContacts"

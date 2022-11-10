@@ -9,6 +9,7 @@ namespace App\Form\Type;
 
 use App\Entity\Main\Items;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -29,6 +30,16 @@ class ItemsEditType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('status', CheckboxType::class, [
+                'label' => new TranslatableMessage('items.noStatus.lbl'),
+                'row_attr' => [
+                    'class' => 'form-switch'
+                ],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+             ])
             ->add('anbringung', TextType::class, [
                 'label' => new TranslatableMessage('items.anbringung.lbl'),
                 'attr' => [
