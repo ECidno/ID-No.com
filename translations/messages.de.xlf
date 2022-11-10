@@ -1899,5 +1899,17 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>-- Bitte wählen Sie ihre Blutgruppe --</target>
       </segment>
     </unit>
+    <unit id="8QBTTol" name="items.table.noStatus.lbl">
+      <segment>
+        <source>items.table.noStatus.lbl</source>
+        <target>Status</target>
+      </segment>
+    </unit>
+    <unit id="c69XQyB" name="items.noStatus.lbl">
+      <segment>
+        <source>items.noStatus.lbl</source>
+        <target>ID-Nummer aktiv</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

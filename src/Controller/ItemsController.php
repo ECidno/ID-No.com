@@ -47,29 +47,57 @@ class ItemsController extends AbstractController
             ->getRepository(Items::class)
             ->findOneByIdNo($idno);
 
-        // item?
-        if($item !== null) {
-            $nutzerId = $item->getNutzerId();
-            $personId = $item->getPersonId();
-
-            // variables
-            $variables = [
-                'idno' => $item,
-                'nutzer' => $this->emNutzer
-                    ->getRepository(Nutzer::class)
-                    ->findOneById($nutzerId),
-                'person' => $this->emNutzer
-                    ->getRepository(Person::class)
-                    ->findOneById($personId),
-            ];
-
-        // redirect to index
-        } else {
+        // not found
+        if($item === null) {
             return $this->redirectToRoute('app_standard_index');
         }
 
-        // return
-        return $this->renderAndRespond($variables);
+        // switch item statis (noStatus)
+        switch ($item->getNoStatus()) {
+            case 'deaktiviert':
+                return $this->redirectToRoute('app_standard_index');
+                break;
+
+            // ready for activation
+            case 'aktiviert':
+                return $this->redirectToRoute('app_standard_index');
+                break;
+
+            // active
+            case 'registriert':
+
+                // proceed
+                $nutzerId = $item->getNutzerId();
+                $personId = $item->getPersonId();
+
+                // user
+                $nutzer = $this->emNutzer
+                    ->getRepository(Nutzer::class)
+                    ->findOneById($nutzerId);
+
+                // user pass active (sichtbar)
+                if($nutzer->getSichtbar() === false) {
+                    return $this->redirectToRoute('app_standard_index');
+                }
+
+                // variables
+                $variables = [
+                    'idno' => $item,
+                    'nutzer' => $nutzer,
+                    'person' => $this->emNutzer
+                        ->getRepository(Person::class)
+                        ->findOneById($personId),
+                ];
+
+                // return
+                return $this->renderAndRespond($variables);
+                break;
+
+            // redirect to index - to be sure
+            default:
+                return $this->redirectToRoute('app_standard_index');
+                break;
+        }
     }
 
 
