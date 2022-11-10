@@ -1488,13 +1488,13 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="HqRCoTS" name="No">
       <segment>
         <source>No</source>
-        <target>No</target>
+        <target>Nein</target>
       </segment>
     </unit>
     <unit id="haOas0X" name="Yes">
       <segment>
         <source>Yes</source>
-        <target>Yes</target>
+        <target>Ja</target>
       </segment>
     </unit>
     <unit id="224ln89" name="contact.action.create.success">
@@ -1587,18 +1587,6 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>Person</target>
       </segment>
     </unit>
-    <unit id="YsZqel3" name="m">
-      <segment>
-        <source>m</source>
-        <target>m</target>
-      </segment>
-    </unit>
-    <unit id="UOch5Jw" name="w">
-      <segment>
-        <source>w</source>
-        <target>w</target>
-      </segment>
-    </unit>
     <unit id="LXEWQrc" name="x">
       <segment>
         <source>x</source>
@@ -1638,7 +1626,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="YcVR3nU" name="person.action.edit.success">
       <segment>
         <source>person.action.edit.success</source>
-        <target>Die Kontaktdaten wurden erfolgraich gespeichert.</target>
+        <target>Die Kontaktdaten wurden erfolgreich gespeichert.</target>
       </segment>
     </unit>
     <unit id="Mrt1WB9" name="person.geschlecht.x">
@@ -1725,58 +1713,16 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>Medizinische Informationen</target>
       </segment>
     </unit>
-    <unit id="G61rjPl" name="-1">
-      <segment>
-        <source>-1</source>
-        <target>-1</target>
-      </segment>
-    </unit>
-    <unit id="KB734SJ" name="0+">
-      <segment>
-        <source>0+</source>
-        <target>0+</target>
-      </segment>
-    </unit>
-    <unit id="ruhzbCt" name="A+">
-      <segment>
-        <source>A+</source>
-        <target>A+</target>
-      </segment>
-    </unit>
     <unit id="QhHyzI4" name="B+">
       <segment>
         <source>B+</source>
         <target>B+</target>
       </segment>
     </unit>
-    <unit id="nz5XTy9" name="AB+">
-      <segment>
-        <source>AB+</source>
-        <target>AB+</target>
-      </segment>
-    </unit>
-    <unit id="bm3aRbw" name="0-">
-      <segment>
-        <source>0-</source>
-        <target>0-</target>
-      </segment>
-    </unit>
-    <unit id="Plj1OXB" name="A-">
-      <segment>
-        <source>A-</source>
-        <target>A-</target>
-      </segment>
-    </unit>
     <unit id="dNIb.z1" name="B-">
       <segment>
         <source>B-</source>
         <target>B-</target>
-      </segment>
-    </unit>
-    <unit id="8Dj4XuJ" name="AB-">
-      <segment>
-        <source>AB-</source>
-        <target>AB-</target>
       </segment>
     </unit>
     <unit id="i2wE6hf" name="person.blutgruppe.lbl">
@@ -1824,7 +1770,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="CcjFcL8" name="person.gewichtEinheit.lbl">
       <segment>
         <source>person.gewichtEinheit.lbl</source>
-        <target></target>
+        <target>Einheit</target>
       </segment>
     </unit>
     <unit id="ekMryqc" name="person.groesse.lbl">
@@ -1848,7 +1794,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="qhMFe_A" name="person.groesseEinheit.lbl">
       <segment>
         <source>person.groesseEinheit.lbl</source>
-        <target></target>
+        <target>Einheit</target>
       </segment>
     </unit>
     <unit id="8NNQs.D" name="person.krankenversicherungDetails.lbl">
@@ -1945,6 +1891,12 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
       <segment>
         <source>person.mobile.lbl</source>
         <target>Mobilnummer</target>
+      </segment>
+    </unit>
+    <unit id="F81R_cb" name="person.blutgruppe.choose.lbl">
+      <segment>
+        <source>person.blutgruppe.choose.lbl</source>
+        <target>-- Bitte wählen Sie ihre Blutgruppe --</target>
       </segment>
     </unit>
   </file>
