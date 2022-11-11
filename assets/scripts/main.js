@@ -6,6 +6,8 @@ import bootstrapTable from 'bootstrap-table';
 import bootstrapTableLocaleAll from 'bootstrap-table/dist/bootstrap-table-locale-all';
 
 // const's
+const btnToTop = document.getElementById('toTop') || null;
+
 const toastContainer = document.getElementById('toastContainer') || null;
 const modalContainer = document.getElementById('modalContainer') || null;
 
@@ -92,13 +94,13 @@ document.addEventListener(
           toolbar
             .hide()
             .removeClass('d-none')
-            .fadeIn(300);
+            .fadeIn(400);
         }
         if (table.hasClass('d-none')) {
           table
             .hide()
             .removeClass('d-none')
-            .fadeIn(400);
+            .fadeIn(500);
         }
       }
     );
@@ -316,6 +318,38 @@ document.addEventListener(
     /*
      * page object event listener
      */
+
+    // button | scroll top
+    if(btnToTop) {
+      window.addEventListener(
+        'scroll',
+        e => {
+          if (
+            /* hide at top */
+            (
+              document.body.scrollTop > 30 ||
+              document.documentElement.scrollTop > 30
+            ) &&
+            /* hide at bottom */
+            jQuery(window).scrollTop() + window.innerHeight !== jQuery(document).height()
+          ) {
+            jQuery(btnToTop).fadeIn();
+          } else {
+            jQuery(btnToTop).fadeOut();
+          }
+        }
+      );
+
+      // scroll
+      btnToTop.addEventListener(
+        'click',
+        e => {
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+      );
+    }
+
 
     // fldIdNo | keyup | input pattern on field idno
     if(fldIdNo) {
