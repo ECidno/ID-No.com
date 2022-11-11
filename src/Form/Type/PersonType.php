@@ -9,17 +9,15 @@ namespace App\Form\Type;
 
 use App\Entity\Nutzer\Person;
 use App\Form\Type\EntityHiddenType;
-use App\Repository\PersonRepository;
-use App\Repository\TexteRepository;
 use Locale;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Intl\Countries;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Translation\TranslatableMessage;
 
@@ -28,14 +26,6 @@ use Symfony\Component\Translation\TranslatableMessage;
  */
 class PersonType extends AbstractType
 {
-    private $personRepository;
-    private $texteRepository;
-
-    public function __construct(PersonRepository $personRepository, TexteRepository $texteRepository)
-    {
-        $this->personRepository = $personRepository;
-        $this->texteRepository = $texteRepository;
-    }
     /**
      * buildForm
      *
@@ -164,13 +154,9 @@ class PersonType extends AbstractType
                 'required' => false
             ])
 
-            ->add('land', TextType::class, [
-                'label' => new TranslatableMessage('person.land.lbl'),
-                'required' => false
-            ])
             ->add('land', ChoiceType::class, [
                 'label' => new TranslatableMessage('person.land.lbl'),
-                'choices' => $this->getCountryChoices(),
+                'choices' => ['please choose' => '',] + $this->getCountryChoices(),
                 'choice_label' => function($choice, $key, $value) {
                     if (empty($choice)) {
                        return new TranslatableMessage('person.land.choose.lbl');
@@ -507,15 +493,6 @@ class PersonType extends AbstractType
                 'required' => false
             ]);
 
-            $builder->get('land')
-                ->addModelTransformer(new CallbackTransformer(
-                    function ($landToChoice) {
-                        return 'land_'.$landToChoice;
-                    },
-                    function ($choiceToLand) {
-                        return str_replace('land_', '', $choiceToLand);
-                    }
-                ));
     }
 
 
@@ -535,15 +512,8 @@ class PersonType extends AbstractType
 
     private function getCountryChoices()
     {
-        $countries = $this->texteRepository
-        ->getCountries(Locale::getDefault());
+        $countries = Countries::getNames(Locale::getDefault());
 
-        $choices = [];
-
-        foreach ($countries as $country) {
-            $choices[$country->getString()] = $country->getBez();
-        }
-
-        return $choices;
+        return array_flip($countries);
     }
 }
