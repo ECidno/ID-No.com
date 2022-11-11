@@ -104,7 +104,7 @@
           </li>
 
         	{# development environment #}
-	        {% if app.environment|lower != 'prod' %}
+	        {% if app.environment|lower == 'dev' %}
             <li class="nav-item dropdown border border-warning rounded text-warning">
               <a
                 class="nav-link dropdown-toggle small"
