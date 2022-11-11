@@ -127,3 +127,22 @@ img.socialmedia_icon {
   margin-right: 20px;
   margin-bottom: 20px;
 }
+
+
+/*
+ * ids
+ */
+
+#toTop {
+  display:none;
+}
+
+#myIdNoHeader {
+  height: 150px;
+  background: url('../media/images/header_schuh50.jpg') no-repeat left center scroll;
+  background-size: 1306px 230px;
+
+  h1 {
+    color: $dark;
+  }
+}
