@@ -37,41 +37,6 @@ class ItemsApiController extends AbstractApiController
 
 
     /**
-     * create
-     *
-     * @param Request $request
-     * @return JsonResponse
-     *
-     * @Route("/create", name="create", methods={"POST"})
-     */
-    public function create(Request $request): JsonResponse
-    {
-        return $this->json(
-            [],
-            403
-        );
-    }
-
-
-    /**
-     * delete
-     *
-     * @param int $id
-     * @param Request $request
-     * @return JsonResponse
-     *
-     * @Route("/delete/{id}", name="delete", methods={"POST","DELETE"})
-     */
-    public function delete(int $id, Request $request): JsonResponse
-    {
-        return $this->json(
-            [],
-            403
-        );
-    }
-
-
-    /**
      * get entity operatons
      *
      * @param iterable $objects

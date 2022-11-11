@@ -83,12 +83,12 @@ class ItemsVoter extends Voter
         switch ($attribute) {
 
             case self::CREATE:
-                return $this->canC($item, $user);
+            case self::DELETE:
+                return false; # $this->canC($item, $user);
 
             case self::READ:
             case self::EDIT:
             case self::UPDATE:
-            case self::DELETE:
                 return $this->canRud($item, $user);
         }
 

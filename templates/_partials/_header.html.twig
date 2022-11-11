@@ -181,12 +181,22 @@
 </header>
 
 {# form #}
-{% if (idno is not defined) and (app.user is null) %}
-  {% set fieldErrorClass = formError is defined and formError is not empty ? ' is-invalid' : '' %}
+{% if ((idno is not defined) and (item is not defined)) and (app.user is null) %}
+
+  {% set fieldErrorMessage = '' %}
+  {% for flashMessage in app.flashes('error') %}
+    {% set fieldErrorMessage = flashMessage %}
+  {% endfor %}
+
+  {% set fieldErrorClass = fieldErrorMessage is defined and fieldErrorMessage is not empty
+    ? ' is-invalid'
+    : '' %}
+
   <nav class="header-form sticky-top bg-dark py-4">
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-10 col-lg-8 col-xl-6">
+
           <form
             role="form"
             action="{{ path('app_standard_index') }}"
@@ -208,8 +218,11 @@
                   aria-label="Id number"
                   required="required" />
 
-                {% if formError is defined and formError is not empty %}
-                  <label for="fldIdNo" class="invalid-feedback">{{ formError }}</label>
+                {% if fieldErrorMessage is defined and fieldErrorMessage is not empty %}
+{#}                  <label for="fldIdNo" class="invalid-feedback">{{ fieldErrorMessage }}</label> #}
+                  <label for="fldIdNo">{{ 'ID-Nummer checken/aktivieren'|trans }}
+                    <span class="invalid-feedback d-inline ">{{ fieldErrorMessage }}</span>
+                  </label>
                 {% else %}
                   <label for="fldIdNo">{{ 'ID-Nummer checken/aktivieren'|trans }}</label>
                 {% endif %}
@@ -219,6 +232,7 @@
                 class="btn btn-success"
                 type="submit">GO !</button>
             </div>
+
             {# csrf #}
             <input
               type="hidden"

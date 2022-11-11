@@ -1911,5 +1911,17 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>ID-Nummer aktiv</target>
       </segment>
     </unit>
+    <unit id="ysrE5hH" name="ID-Number locked!">
+      <segment>
+        <source>ID-Number locked!</source>
+        <target>ID-Nummer gesperrt!</target>
+      </segment>
+    </unit>
+    <unit id="1IRSI.n" name="ID-Number not found!">
+      <segment>
+        <source>ID-Number not found!</source>
+        <target>ID-Nummer nicht gefunden!</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
