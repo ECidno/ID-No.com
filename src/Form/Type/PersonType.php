@@ -9,6 +9,7 @@ namespace App\Form\Type;
 
 use App\Entity\Nutzer\Person;
 use App\Form\Type\EntityHiddenType;
+use Locale;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -16,6 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Intl\Countries;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Translation\TranslatableMessage;
 
@@ -152,8 +154,16 @@ class PersonType extends AbstractType
                 'required' => false
             ])
 
-            ->add('land', TextType::class, [
+            ->add('land', ChoiceType::class, [
                 'label' => new TranslatableMessage('person.land.lbl'),
+                'choices' => ['please choose' => '',] + $this->getCountryChoices(),
+                'choice_label' => function($choice, $key, $value) {
+                    if (empty($choice)) {
+                       return new TranslatableMessage('person.land.choose.lbl');
+                    } else {
+                        return $key;
+                    }
+                },
                 'required' => false
             ])
             ->add('telefonLand', TextType::class, [
@@ -482,6 +492,7 @@ class PersonType extends AbstractType
                 ],
                 'required' => false
             ]);
+
     }
 
 
@@ -497,5 +508,12 @@ class PersonType extends AbstractType
             'csrf_token_id' => Person::class,
             'csrf_protection' => true,
         ]);
+    }
+
+    private function getCountryChoices()
+    {
+        $countries = Countries::getNames(Locale::getDefault());
+
+        return array_flip($countries);
     }
 }

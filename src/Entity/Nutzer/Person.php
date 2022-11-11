@@ -728,9 +728,9 @@ class Person
      * @param string $land
      * @return Person
      */
-    public function setLand(string $land): self
+    public function setLand(?string $land): self
     {
-        $this->land = $land;
+        $this->land = $land ?? null;
         return $this;
     }
 

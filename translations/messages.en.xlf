@@ -1579,5 +1579,1517 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
         <target>Save</target>
       </segment>
     </unit>
+    <unit id="8QBTTol" name="items.table.noStatus.lbl">
+      <segment>
+        <source>items.table.noStatus.lbl</source>
+        <target>items.table.noStatus.lbl</target>
+      </segment>
+    </unit>
+    <unit id="HcgVLC7" name="person.land.choose.lbl">
+      <segment>
+        <source>person.land.choose.lbl</source>
+        <target>-- Please choose your country --</target>
+      </segment>
+    </unit>
+    <unit id="Xb3fkR_" name="Afghanistan">
+      <segment>
+        <source>Afghanistan</source>
+        <target>Afghanistan</target>
+      </segment>
+    </unit>
+    <unit id="HSjjCK3" name="Åland Islands">
+      <segment>
+        <source>Åland Islands</source>
+        <target>Åland Islands</target>
+      </segment>
+    </unit>
+    <unit id="GvALh0." name="Albania">
+      <segment>
+        <source>Albania</source>
+        <target>Albania</target>
+      </segment>
+    </unit>
+    <unit id="MOIwIpd" name="Algeria">
+      <segment>
+        <source>Algeria</source>
+        <target>Algeria</target>
+      </segment>
+    </unit>
+    <unit id="HrSMA4B" name="American Samoa">
+      <segment>
+        <source>American Samoa</source>
+        <target>American Samoa</target>
+      </segment>
+    </unit>
+    <unit id="PjQL5N4" name="Andorra">
+      <segment>
+        <source>Andorra</source>
+        <target>Andorra</target>
+      </segment>
+    </unit>
+    <unit id="IrllMoF" name="Angola">
+      <segment>
+        <source>Angola</source>
+        <target>Angola</target>
+      </segment>
+    </unit>
+    <unit id="pKDH57d" name="Anguilla">
+      <segment>
+        <source>Anguilla</source>
+        <target>Anguilla</target>
+      </segment>
+    </unit>
+    <unit id="xD8z8Fe" name="Antarctica">
+      <segment>
+        <source>Antarctica</source>
+        <target>Antarctica</target>
+      </segment>
+    </unit>
+    <unit id="NV.ht9f" name="Antigua &amp; Barbuda">
+      <segment>
+        <source>Antigua &amp; Barbuda</source>
+        <target><![CDATA[Antigua & Barbuda]]></target>
+      </segment>
+    </unit>
+    <unit id="6guTfqM" name="Argentina">
+      <segment>
+        <source>Argentina</source>
+        <target>Argentina</target>
+      </segment>
+    </unit>
+    <unit id="LdxWNP9" name="Armenia">
+      <segment>
+        <source>Armenia</source>
+        <target>Armenia</target>
+      </segment>
+    </unit>
+    <unit id="tWYlXrB" name="Aruba">
+      <segment>
+        <source>Aruba</source>
+        <target>Aruba</target>
+      </segment>
+    </unit>
+    <unit id="we9AzgS" name="Australia">
+      <segment>
+        <source>Australia</source>
+        <target>Australia</target>
+      </segment>
+    </unit>
+    <unit id="ycqwI43" name="Austria">
+      <segment>
+        <source>Austria</source>
+        <target>Austria</target>
+      </segment>
+    </unit>
+    <unit id="76kVCv3" name="Azerbaijan">
+      <segment>
+        <source>Azerbaijan</source>
+        <target>Azerbaijan</target>
+      </segment>
+    </unit>
+    <unit id="WPkaKu." name="Bahamas">
+      <segment>
+        <source>Bahamas</source>
+        <target>Bahamas</target>
+      </segment>
+    </unit>
+    <unit id="lLKFm5E" name="Bahrain">
+      <segment>
+        <source>Bahrain</source>
+        <target>Bahrain</target>
+      </segment>
+    </unit>
+    <unit id="Lx1H62e" name="Bangladesh">
+      <segment>
+        <source>Bangladesh</source>
+        <target>Bangladesh</target>
+      </segment>
+    </unit>
+    <unit id="jo366bd" name="Barbados">
+      <segment>
+        <source>Barbados</source>
+        <target>Barbados</target>
+      </segment>
+    </unit>
+    <unit id="S_8W3xd" name="Belarus">
+      <segment>
+        <source>Belarus</source>
+        <target>Belarus</target>
+      </segment>
+    </unit>
+    <unit id="NIhB71P" name="Belgium">
+      <segment>
+        <source>Belgium</source>
+        <target>Belgium</target>
+      </segment>
+    </unit>
+    <unit id="cdyB8Tw" name="Belize">
+      <segment>
+        <source>Belize</source>
+        <target>Belize</target>
+      </segment>
+    </unit>
+    <unit id="adCnuEz" name="Benin">
+      <segment>
+        <source>Benin</source>
+        <target>Benin</target>
+      </segment>
+    </unit>
+    <unit id="ecif1Ff" name="Bermuda">
+      <segment>
+        <source>Bermuda</source>
+        <target>Bermuda</target>
+      </segment>
+    </unit>
+    <unit id="2IniFyo" name="Bhutan">
+      <segment>
+        <source>Bhutan</source>
+        <target>Bhutan</target>
+      </segment>
+    </unit>
+    <unit id="liHAc2R" name="Bolivia">
+      <segment>
+        <source>Bolivia</source>
+        <target>Bolivia</target>
+      </segment>
+    </unit>
+    <unit id="BFplDr6" name="Bosnia &amp; Herzegovina">
+      <segment>
+        <source>Bosnia &amp; Herzegovina</source>
+        <target><![CDATA[Bosnia & Herzegovina]]></target>
+      </segment>
+    </unit>
+    <unit id="FnL2DDq" name="Botswana">
+      <segment>
+        <source>Botswana</source>
+        <target>Botswana</target>
+      </segment>
+    </unit>
+    <unit id="9rXJ_xS" name="Bouvet Island">
+      <segment>
+        <source>Bouvet Island</source>
+        <target>Bouvet Island</target>
+      </segment>
+    </unit>
+    <unit id="B.YrAhd" name="Brazil">
+      <segment>
+        <source>Brazil</source>
+        <target>Brazil</target>
+      </segment>
+    </unit>
+    <unit id="OX1JSwB" name="British Indian Ocean Territory">
+      <segment>
+        <source>British Indian Ocean Territory</source>
+        <target>British Indian Ocean Territory</target>
+      </segment>
+    </unit>
+    <unit id="DEfdr5k" name="British Virgin Islands">
+      <segment>
+        <source>British Virgin Islands</source>
+        <target>British Virgin Islands</target>
+      </segment>
+    </unit>
+    <unit id="mev32RI" name="Brunei">
+      <segment>
+        <source>Brunei</source>
+        <target>Brunei</target>
+      </segment>
+    </unit>
+    <unit id="Zrhr8PB" name="Bulgaria">
+      <segment>
+        <source>Bulgaria</source>
+        <target>Bulgaria</target>
+      </segment>
+    </unit>
+    <unit id="pWQ3GsD" name="Burkina Faso">
+      <segment>
+        <source>Burkina Faso</source>
+        <target>Burkina Faso</target>
+      </segment>
+    </unit>
+    <unit id="yDW9HEV" name="Burundi">
+      <segment>
+        <source>Burundi</source>
+        <target>Burundi</target>
+      </segment>
+    </unit>
+    <unit id="DCywGi2" name="Cambodia">
+      <segment>
+        <source>Cambodia</source>
+        <target>Cambodia</target>
+      </segment>
+    </unit>
+    <unit id="CFgH8i9" name="Cameroon">
+      <segment>
+        <source>Cameroon</source>
+        <target>Cameroon</target>
+      </segment>
+    </unit>
+    <unit id="vlXvP0x" name="Canada">
+      <segment>
+        <source>Canada</source>
+        <target>Canada</target>
+      </segment>
+    </unit>
+    <unit id="n6by2qV" name="Cape Verde">
+      <segment>
+        <source>Cape Verde</source>
+        <target>Cape Verde</target>
+      </segment>
+    </unit>
+    <unit id="pvpN_HV" name="Caribbean Netherlands">
+      <segment>
+        <source>Caribbean Netherlands</source>
+        <target>Caribbean Netherlands</target>
+      </segment>
+    </unit>
+    <unit id="g.KzM2R" name="Cayman Islands">
+      <segment>
+        <source>Cayman Islands</source>
+        <target>Cayman Islands</target>
+      </segment>
+    </unit>
+    <unit id="5QnNpMR" name="Central African Republic">
+      <segment>
+        <source>Central African Republic</source>
+        <target>Central African Republic</target>
+      </segment>
+    </unit>
+    <unit id="QlblEvz" name="Chad">
+      <segment>
+        <source>Chad</source>
+        <target>Chad</target>
+      </segment>
+    </unit>
+    <unit id="9Sc_I21" name="Chile">
+      <segment>
+        <source>Chile</source>
+        <target>Chile</target>
+      </segment>
+    </unit>
+    <unit id="EENoKQM" name="China">
+      <segment>
+        <source>China</source>
+        <target>China</target>
+      </segment>
+    </unit>
+    <unit id="ENAlwgO" name="Christmas Island">
+      <segment>
+        <source>Christmas Island</source>
+        <target>Christmas Island</target>
+      </segment>
+    </unit>
+    <unit id="uOVuQa0" name="Cocos (Keeling) Islands">
+      <segment>
+        <source>Cocos (Keeling) Islands</source>
+        <target>Cocos (Keeling) Islands</target>
+      </segment>
+    </unit>
+    <unit id="a2Fa2xM" name="Colombia">
+      <segment>
+        <source>Colombia</source>
+        <target>Colombia</target>
+      </segment>
+    </unit>
+    <unit id="6BT9tF." name="Comoros">
+      <segment>
+        <source>Comoros</source>
+        <target>Comoros</target>
+      </segment>
+    </unit>
+    <unit id="6KfSjBK" name="Congo - Brazzaville">
+      <segment>
+        <source>Congo - Brazzaville</source>
+        <target>Congo - Brazzaville</target>
+      </segment>
+    </unit>
+    <unit id="WP.2pHh" name="Congo - Kinshasa">
+      <segment>
+        <source>Congo - Kinshasa</source>
+        <target>Congo - Kinshasa</target>
+      </segment>
+    </unit>
+    <unit id="VoUPPpy" name="Cook Islands">
+      <segment>
+        <source>Cook Islands</source>
+        <target>Cook Islands</target>
+      </segment>
+    </unit>
+    <unit id="4mdC183" name="Costa Rica">
+      <segment>
+        <source>Costa Rica</source>
+        <target>Costa Rica</target>
+      </segment>
+    </unit>
+    <unit id="uch3uX." name="Côte d’Ivoire">
+      <segment>
+        <source>Côte d’Ivoire</source>
+        <target>Côte d’Ivoire</target>
+      </segment>
+    </unit>
+    <unit id="cyjT_Cm" name="Croatia">
+      <segment>
+        <source>Croatia</source>
+        <target>Croatia</target>
+      </segment>
+    </unit>
+    <unit id="DQtOQQI" name="Cuba">
+      <segment>
+        <source>Cuba</source>
+        <target>Cuba</target>
+      </segment>
+    </unit>
+    <unit id="mx2Ts8v" name="Curaçao">
+      <segment>
+        <source>Curaçao</source>
+        <target>Curaçao</target>
+      </segment>
+    </unit>
+    <unit id="XxFixX7" name="Cyprus">
+      <segment>
+        <source>Cyprus</source>
+        <target>Cyprus</target>
+      </segment>
+    </unit>
+    <unit id="7PqWfpA" name="Czechia">
+      <segment>
+        <source>Czechia</source>
+        <target>Czechia</target>
+      </segment>
+    </unit>
+    <unit id="xScJdXd" name="Denmark">
+      <segment>
+        <source>Denmark</source>
+        <target>Denmark</target>
+      </segment>
+    </unit>
+    <unit id="RnilezC" name="Djibouti">
+      <segment>
+        <source>Djibouti</source>
+        <target>Djibouti</target>
+      </segment>
+    </unit>
+    <unit id="vip.VoT" name="Dominica">
+      <segment>
+        <source>Dominica</source>
+        <target>Dominica</target>
+      </segment>
+    </unit>
+    <unit id="geiEyy6" name="Dominican Republic">
+      <segment>
+        <source>Dominican Republic</source>
+        <target>Dominican Republic</target>
+      </segment>
+    </unit>
+    <unit id="LKJsYP4" name="Ecuador">
+      <segment>
+        <source>Ecuador</source>
+        <target>Ecuador</target>
+      </segment>
+    </unit>
+    <unit id="VXwVmdm" name="Egypt">
+      <segment>
+        <source>Egypt</source>
+        <target>Egypt</target>
+      </segment>
+    </unit>
+    <unit id="xAjSbB7" name="El Salvador">
+      <segment>
+        <source>El Salvador</source>
+        <target>El Salvador</target>
+      </segment>
+    </unit>
+    <unit id="iZRoeEO" name="Equatorial Guinea">
+      <segment>
+        <source>Equatorial Guinea</source>
+        <target>Equatorial Guinea</target>
+      </segment>
+    </unit>
+    <unit id="AbxACTk" name="Eritrea">
+      <segment>
+        <source>Eritrea</source>
+        <target>Eritrea</target>
+      </segment>
+    </unit>
+    <unit id="EK66aX9" name="Estonia">
+      <segment>
+        <source>Estonia</source>
+        <target>Estonia</target>
+      </segment>
+    </unit>
+    <unit id="4FaOTOn" name="Eswatini">
+      <segment>
+        <source>Eswatini</source>
+        <target>Eswatini</target>
+      </segment>
+    </unit>
+    <unit id="fZSXfgM" name="Ethiopia">
+      <segment>
+        <source>Ethiopia</source>
+        <target>Ethiopia</target>
+      </segment>
+    </unit>
+    <unit id="w4fi1Q." name="Falkland Islands">
+      <segment>
+        <source>Falkland Islands</source>
+        <target>Falkland Islands</target>
+      </segment>
+    </unit>
+    <unit id="dzyk1hg" name="Faroe Islands">
+      <segment>
+        <source>Faroe Islands</source>
+        <target>Faroe Islands</target>
+      </segment>
+    </unit>
+    <unit id="Z5wC3NK" name="Fiji">
+      <segment>
+        <source>Fiji</source>
+        <target>Fiji</target>
+      </segment>
+    </unit>
+    <unit id="rtj1Map" name="Finland">
+      <segment>
+        <source>Finland</source>
+        <target>Finland</target>
+      </segment>
+    </unit>
+    <unit id="ehyk73U" name="France">
+      <segment>
+        <source>France</source>
+        <target>France</target>
+      </segment>
+    </unit>
+    <unit id="K0V82H7" name="French Guiana">
+      <segment>
+        <source>French Guiana</source>
+        <target>French Guiana</target>
+      </segment>
+    </unit>
+    <unit id="C24nby1" name="French Polynesia">
+      <segment>
+        <source>French Polynesia</source>
+        <target>French Polynesia</target>
+      </segment>
+    </unit>
+    <unit id="4FkRUmE" name="French Southern Territories">
+      <segment>
+        <source>French Southern Territories</source>
+        <target>French Southern Territories</target>
+      </segment>
+    </unit>
+    <unit id="fiIqeOd" name="Gabon">
+      <segment>
+        <source>Gabon</source>
+        <target>Gabon</target>
+      </segment>
+    </unit>
+    <unit id="xuaBsZa" name="Gambia">
+      <segment>
+        <source>Gambia</source>
+        <target>Gambia</target>
+      </segment>
+    </unit>
+    <unit id="RpFJIXn" name="Georgia">
+      <segment>
+        <source>Georgia</source>
+        <target>Georgia</target>
+      </segment>
+    </unit>
+    <unit id="gNtMzco" name="Germany">
+      <segment>
+        <source>Germany</source>
+        <target>Germany</target>
+      </segment>
+    </unit>
+    <unit id="WDIBwe_" name="Ghana">
+      <segment>
+        <source>Ghana</source>
+        <target>Ghana</target>
+      </segment>
+    </unit>
+    <unit id="CXztWC8" name="Gibraltar">
+      <segment>
+        <source>Gibraltar</source>
+        <target>Gibraltar</target>
+      </segment>
+    </unit>
+    <unit id="nJOtQ5N" name="Greece">
+      <segment>
+        <source>Greece</source>
+        <target>Greece</target>
+      </segment>
+    </unit>
+    <unit id="SOEClq4" name="Greenland">
+      <segment>
+        <source>Greenland</source>
+        <target>Greenland</target>
+      </segment>
+    </unit>
+    <unit id="BZOqDI7" name="Grenada">
+      <segment>
+        <source>Grenada</source>
+        <target>Grenada</target>
+      </segment>
+    </unit>
+    <unit id="NcnePGO" name="Guadeloupe">
+      <segment>
+        <source>Guadeloupe</source>
+        <target>Guadeloupe</target>
+      </segment>
+    </unit>
+    <unit id="XEsyHst" name="Guam">
+      <segment>
+        <source>Guam</source>
+        <target>Guam</target>
+      </segment>
+    </unit>
+    <unit id="RaFaJHD" name="Guatemala">
+      <segment>
+        <source>Guatemala</source>
+        <target>Guatemala</target>
+      </segment>
+    </unit>
+    <unit id="ucSMsf6" name="Guernsey">
+      <segment>
+        <source>Guernsey</source>
+        <target>Guernsey</target>
+      </segment>
+    </unit>
+    <unit id="3Vkdd_p" name="Guinea">
+      <segment>
+        <source>Guinea</source>
+        <target>Guinea</target>
+      </segment>
+    </unit>
+    <unit id="dej0Yvn" name="Guinea-Bissau">
+      <segment>
+        <source>Guinea-Bissau</source>
+        <target>Guinea-Bissau</target>
+      </segment>
+    </unit>
+    <unit id="6jv8Jvp" name="Guyana">
+      <segment>
+        <source>Guyana</source>
+        <target>Guyana</target>
+      </segment>
+    </unit>
+    <unit id="0JC4fko" name="Haiti">
+      <segment>
+        <source>Haiti</source>
+        <target>Haiti</target>
+      </segment>
+    </unit>
+    <unit id="Dw4tB7T" name="Heard &amp; McDonald Islands">
+      <segment>
+        <source>Heard &amp; McDonald Islands</source>
+        <target><![CDATA[Heard & McDonald Islands]]></target>
+      </segment>
+    </unit>
+    <unit id="t5tfl7x" name="Honduras">
+      <segment>
+        <source>Honduras</source>
+        <target>Honduras</target>
+      </segment>
+    </unit>
+    <unit id="lbbKFCp" name="Hong Kong SAR China">
+      <segment>
+        <source>Hong Kong SAR China</source>
+        <target>Hong Kong SAR China</target>
+      </segment>
+    </unit>
+    <unit id="UEvjCE9" name="Hungary">
+      <segment>
+        <source>Hungary</source>
+        <target>Hungary</target>
+      </segment>
+    </unit>
+    <unit id="WV1tkUl" name="Iceland">
+      <segment>
+        <source>Iceland</source>
+        <target>Iceland</target>
+      </segment>
+    </unit>
+    <unit id="q9FJIUU" name="India">
+      <segment>
+        <source>India</source>
+        <target>India</target>
+      </segment>
+    </unit>
+    <unit id="28dKNtj" name="Indonesia">
+      <segment>
+        <source>Indonesia</source>
+        <target>Indonesia</target>
+      </segment>
+    </unit>
+    <unit id="GNThcHZ" name="Iran">
+      <segment>
+        <source>Iran</source>
+        <target>Iran</target>
+      </segment>
+    </unit>
+    <unit id="3lAI0ZS" name="Iraq">
+      <segment>
+        <source>Iraq</source>
+        <target>Iraq</target>
+      </segment>
+    </unit>
+    <unit id="Ar8d_po" name="Ireland">
+      <segment>
+        <source>Ireland</source>
+        <target>Ireland</target>
+      </segment>
+    </unit>
+    <unit id="NAlvlva" name="Isle of Man">
+      <segment>
+        <source>Isle of Man</source>
+        <target>Isle of Man</target>
+      </segment>
+    </unit>
+    <unit id="NVKsDAM" name="Israel">
+      <segment>
+        <source>Israel</source>
+        <target>Israel</target>
+      </segment>
+    </unit>
+    <unit id="Wpz2csi" name="Italy">
+      <segment>
+        <source>Italy</source>
+        <target>Italy</target>
+      </segment>
+    </unit>
+    <unit id="QsKYuhf" name="Jamaica">
+      <segment>
+        <source>Jamaica</source>
+        <target>Jamaica</target>
+      </segment>
+    </unit>
+    <unit id="ZHKUODs" name="Japan">
+      <segment>
+        <source>Japan</source>
+        <target>Japan</target>
+      </segment>
+    </unit>
+    <unit id="dkqMBK1" name="Jersey">
+      <segment>
+        <source>Jersey</source>
+        <target>Jersey</target>
+      </segment>
+    </unit>
+    <unit id="6L.h7Wk" name="Jordan">
+      <segment>
+        <source>Jordan</source>
+        <target>Jordan</target>
+      </segment>
+    </unit>
+    <unit id="dcArjS_" name="Kazakhstan">
+      <segment>
+        <source>Kazakhstan</source>
+        <target>Kazakhstan</target>
+      </segment>
+    </unit>
+    <unit id="dOGJHcY" name="Kenya">
+      <segment>
+        <source>Kenya</source>
+        <target>Kenya</target>
+      </segment>
+    </unit>
+    <unit id="gZEjFGw" name="Kiribati">
+      <segment>
+        <source>Kiribati</source>
+        <target>Kiribati</target>
+      </segment>
+    </unit>
+    <unit id="EMPC4u3" name="Kuwait">
+      <segment>
+        <source>Kuwait</source>
+        <target>Kuwait</target>
+      </segment>
+    </unit>
+    <unit id="bxib8He" name="Kyrgyzstan">
+      <segment>
+        <source>Kyrgyzstan</source>
+        <target>Kyrgyzstan</target>
+      </segment>
+    </unit>
+    <unit id="mOGPRmh" name="Laos">
+      <segment>
+        <source>Laos</source>
+        <target>Laos</target>
+      </segment>
+    </unit>
+    <unit id="mIyBYLd" name="Latvia">
+      <segment>
+        <source>Latvia</source>
+        <target>Latvia</target>
+      </segment>
+    </unit>
+    <unit id="403WFrl" name="Lebanon">
+      <segment>
+        <source>Lebanon</source>
+        <target>Lebanon</target>
+      </segment>
+    </unit>
+    <unit id="XC5HRcY" name="Lesotho">
+      <segment>
+        <source>Lesotho</source>
+        <target>Lesotho</target>
+      </segment>
+    </unit>
+    <unit id="ydJgTdU" name="Liberia">
+      <segment>
+        <source>Liberia</source>
+        <target>Liberia</target>
+      </segment>
+    </unit>
+    <unit id="KqL871D" name="Libya">
+      <segment>
+        <source>Libya</source>
+        <target>Libya</target>
+      </segment>
+    </unit>
+    <unit id="b.CAwHi" name="Liechtenstein">
+      <segment>
+        <source>Liechtenstein</source>
+        <target>Liechtenstein</target>
+      </segment>
+    </unit>
+    <unit id="XIOmMbz" name="Lithuania">
+      <segment>
+        <source>Lithuania</source>
+        <target>Lithuania</target>
+      </segment>
+    </unit>
+    <unit id="7XbxkWI" name="Luxembourg">
+      <segment>
+        <source>Luxembourg</source>
+        <target>Luxembourg</target>
+      </segment>
+    </unit>
+    <unit id="Eud7SBT" name="Macao SAR China">
+      <segment>
+        <source>Macao SAR China</source>
+        <target>Macao SAR China</target>
+      </segment>
+    </unit>
+    <unit id="1oBEZMX" name="Madagascar">
+      <segment>
+        <source>Madagascar</source>
+        <target>Madagascar</target>
+      </segment>
+    </unit>
+    <unit id="YRAlzd4" name="Malawi">
+      <segment>
+        <source>Malawi</source>
+        <target>Malawi</target>
+      </segment>
+    </unit>
+    <unit id="CEUEFls" name="Malaysia">
+      <segment>
+        <source>Malaysia</source>
+        <target>Malaysia</target>
+      </segment>
+    </unit>
+    <unit id="j7VEcaS" name="Maldives">
+      <segment>
+        <source>Maldives</source>
+        <target>Maldives</target>
+      </segment>
+    </unit>
+    <unit id="7lchpaY" name="Mali">
+      <segment>
+        <source>Mali</source>
+        <target>Mali</target>
+      </segment>
+    </unit>
+    <unit id="cenrEHV" name="Malta">
+      <segment>
+        <source>Malta</source>
+        <target>Malta</target>
+      </segment>
+    </unit>
+    <unit id=".jPJJc4" name="Marshall Islands">
+      <segment>
+        <source>Marshall Islands</source>
+        <target>Marshall Islands</target>
+      </segment>
+    </unit>
+    <unit id="xlkG3Hz" name="Martinique">
+      <segment>
+        <source>Martinique</source>
+        <target>Martinique</target>
+      </segment>
+    </unit>
+    <unit id="v7DI029" name="Mauritania">
+      <segment>
+        <source>Mauritania</source>
+        <target>Mauritania</target>
+      </segment>
+    </unit>
+    <unit id="qoBX7LQ" name="Mauritius">
+      <segment>
+        <source>Mauritius</source>
+        <target>Mauritius</target>
+      </segment>
+    </unit>
+    <unit id="0ItKDw3" name="Mayotte">
+      <segment>
+        <source>Mayotte</source>
+        <target>Mayotte</target>
+      </segment>
+    </unit>
+    <unit id="p9NVsmv" name="Mexico">
+      <segment>
+        <source>Mexico</source>
+        <target>Mexico</target>
+      </segment>
+    </unit>
+    <unit id="1wg1tWR" name="Micronesia">
+      <segment>
+        <source>Micronesia</source>
+        <target>Micronesia</target>
+      </segment>
+    </unit>
+    <unit id="FK1jocY" name="Moldova">
+      <segment>
+        <source>Moldova</source>
+        <target>Moldova</target>
+      </segment>
+    </unit>
+    <unit id="k1AYzEF" name="Monaco">
+      <segment>
+        <source>Monaco</source>
+        <target>Monaco</target>
+      </segment>
+    </unit>
+    <unit id="mafAZac" name="Mongolia">
+      <segment>
+        <source>Mongolia</source>
+        <target>Mongolia</target>
+      </segment>
+    </unit>
+    <unit id="erWX4bX" name="Montenegro">
+      <segment>
+        <source>Montenegro</source>
+        <target>Montenegro</target>
+      </segment>
+    </unit>
+    <unit id="EnvP6XZ" name="Montserrat">
+      <segment>
+        <source>Montserrat</source>
+        <target>Montserrat</target>
+      </segment>
+    </unit>
+    <unit id="tnX131." name="Morocco">
+      <segment>
+        <source>Morocco</source>
+        <target>Morocco</target>
+      </segment>
+    </unit>
+    <unit id="yQVIJvc" name="Mozambique">
+      <segment>
+        <source>Mozambique</source>
+        <target>Mozambique</target>
+      </segment>
+    </unit>
+    <unit id="wNFL2lt" name="Myanmar (Burma)">
+      <segment>
+        <source>Myanmar (Burma)</source>
+        <target>Myanmar (Burma)</target>
+      </segment>
+    </unit>
+    <unit id="6lvTmEj" name="Namibia">
+      <segment>
+        <source>Namibia</source>
+        <target>Namibia</target>
+      </segment>
+    </unit>
+    <unit id="V_kAiF1" name="Nauru">
+      <segment>
+        <source>Nauru</source>
+        <target>Nauru</target>
+      </segment>
+    </unit>
+    <unit id="4VoYqty" name="Nepal">
+      <segment>
+        <source>Nepal</source>
+        <target>Nepal</target>
+      </segment>
+    </unit>
+    <unit id="OjhsE9K" name="Netherlands">
+      <segment>
+        <source>Netherlands</source>
+        <target>Netherlands</target>
+      </segment>
+    </unit>
+    <unit id="vmABH1Y" name="New Caledonia">
+      <segment>
+        <source>New Caledonia</source>
+        <target>New Caledonia</target>
+      </segment>
+    </unit>
+    <unit id="KJjhbU5" name="New Zealand">
+      <segment>
+        <source>New Zealand</source>
+        <target>New Zealand</target>
+      </segment>
+    </unit>
+    <unit id="lOa9V0t" name="Nicaragua">
+      <segment>
+        <source>Nicaragua</source>
+        <target>Nicaragua</target>
+      </segment>
+    </unit>
+    <unit id="LL68VB_" name="Niger">
+      <segment>
+        <source>Niger</source>
+        <target>Niger</target>
+      </segment>
+    </unit>
+    <unit id="BJUqD5h" name="Nigeria">
+      <segment>
+        <source>Nigeria</source>
+        <target>Nigeria</target>
+      </segment>
+    </unit>
+    <unit id="SVbCCQ." name="Niue">
+      <segment>
+        <source>Niue</source>
+        <target>Niue</target>
+      </segment>
+    </unit>
+    <unit id="TQ37h38" name="Norfolk Island">
+      <segment>
+        <source>Norfolk Island</source>
+        <target>Norfolk Island</target>
+      </segment>
+    </unit>
+    <unit id="rmF18cz" name="North Korea">
+      <segment>
+        <source>North Korea</source>
+        <target>North Korea</target>
+      </segment>
+    </unit>
+    <unit id="zYRyJkj" name="North Macedonia">
+      <segment>
+        <source>North Macedonia</source>
+        <target>North Macedonia</target>
+      </segment>
+    </unit>
+    <unit id="ZlRdNbP" name="Northern Mariana Islands">
+      <segment>
+        <source>Northern Mariana Islands</source>
+        <target>Northern Mariana Islands</target>
+      </segment>
+    </unit>
+    <unit id="vqVKNJe" name="Norway">
+      <segment>
+        <source>Norway</source>
+        <target>Norway</target>
+      </segment>
+    </unit>
+    <unit id="w85L_I2" name="Oman">
+      <segment>
+        <source>Oman</source>
+        <target>Oman</target>
+      </segment>
+    </unit>
+    <unit id="4lZzEux" name="Pakistan">
+      <segment>
+        <source>Pakistan</source>
+        <target>Pakistan</target>
+      </segment>
+    </unit>
+    <unit id="f6ZHc9z" name="Palau">
+      <segment>
+        <source>Palau</source>
+        <target>Palau</target>
+      </segment>
+    </unit>
+    <unit id="Y0aSE5e" name="Palestinian Territories">
+      <segment>
+        <source>Palestinian Territories</source>
+        <target>Palestinian Territories</target>
+      </segment>
+    </unit>
+    <unit id="w2aPWBK" name="Panama">
+      <segment>
+        <source>Panama</source>
+        <target>Panama</target>
+      </segment>
+    </unit>
+    <unit id="xldCzrK" name="Papua New Guinea">
+      <segment>
+        <source>Papua New Guinea</source>
+        <target>Papua New Guinea</target>
+      </segment>
+    </unit>
+    <unit id="f7TReex" name="Paraguay">
+      <segment>
+        <source>Paraguay</source>
+        <target>Paraguay</target>
+      </segment>
+    </unit>
+    <unit id="UIcxo8X" name="Peru">
+      <segment>
+        <source>Peru</source>
+        <target>Peru</target>
+      </segment>
+    </unit>
+    <unit id="w3gshtg" name="Philippines">
+      <segment>
+        <source>Philippines</source>
+        <target>Philippines</target>
+      </segment>
+    </unit>
+    <unit id="yVWX6xk" name="Pitcairn Islands">
+      <segment>
+        <source>Pitcairn Islands</source>
+        <target>Pitcairn Islands</target>
+      </segment>
+    </unit>
+    <unit id="f2lkmtc" name="Poland">
+      <segment>
+        <source>Poland</source>
+        <target>Poland</target>
+      </segment>
+    </unit>
+    <unit id="TH3iw9p" name="Portugal">
+      <segment>
+        <source>Portugal</source>
+        <target>Portugal</target>
+      </segment>
+    </unit>
+    <unit id="2apD6tX" name="Puerto Rico">
+      <segment>
+        <source>Puerto Rico</source>
+        <target>Puerto Rico</target>
+      </segment>
+    </unit>
+    <unit id="VczFAU8" name="Qatar">
+      <segment>
+        <source>Qatar</source>
+        <target>Qatar</target>
+      </segment>
+    </unit>
+    <unit id="fN9XOwy" name="Réunion">
+      <segment>
+        <source>Réunion</source>
+        <target>Réunion</target>
+      </segment>
+    </unit>
+    <unit id="6iNybdD" name="Romania">
+      <segment>
+        <source>Romania</source>
+        <target>Romania</target>
+      </segment>
+    </unit>
+    <unit id="M6PY7ZK" name="Russia">
+      <segment>
+        <source>Russia</source>
+        <target>Russia</target>
+      </segment>
+    </unit>
+    <unit id="Esj49JE" name="Rwanda">
+      <segment>
+        <source>Rwanda</source>
+        <target>Rwanda</target>
+      </segment>
+    </unit>
+    <unit id="DqeBzUK" name="Samoa">
+      <segment>
+        <source>Samoa</source>
+        <target>Samoa</target>
+      </segment>
+    </unit>
+    <unit id="IwRQokm" name="San Marino">
+      <segment>
+        <source>San Marino</source>
+        <target>San Marino</target>
+      </segment>
+    </unit>
+    <unit id="kTRlt0H" name="São Tomé &amp; Príncipe">
+      <segment>
+        <source>São Tomé &amp; Príncipe</source>
+        <target><![CDATA[São Tomé & Príncipe]]></target>
+      </segment>
+    </unit>
+    <unit id="7ZrRNhH" name="Saudi Arabia">
+      <segment>
+        <source>Saudi Arabia</source>
+        <target>Saudi Arabia</target>
+      </segment>
+    </unit>
+    <unit id="Nk5fZSX" name="Senegal">
+      <segment>
+        <source>Senegal</source>
+        <target>Senegal</target>
+      </segment>
+    </unit>
+    <unit id="6HOcg5V" name="Serbia">
+      <segment>
+        <source>Serbia</source>
+        <target>Serbia</target>
+      </segment>
+    </unit>
+    <unit id="0dYzIIU" name="Seychelles">
+      <segment>
+        <source>Seychelles</source>
+        <target>Seychelles</target>
+      </segment>
+    </unit>
+    <unit id="9AW5jV." name="Sierra Leone">
+      <segment>
+        <source>Sierra Leone</source>
+        <target>Sierra Leone</target>
+      </segment>
+    </unit>
+    <unit id="yW3YHbG" name="Singapore">
+      <segment>
+        <source>Singapore</source>
+        <target>Singapore</target>
+      </segment>
+    </unit>
+    <unit id="u6KLCDB" name="Sint Maarten">
+      <segment>
+        <source>Sint Maarten</source>
+        <target>Sint Maarten</target>
+      </segment>
+    </unit>
+    <unit id="ouozhOA" name="Slovakia">
+      <segment>
+        <source>Slovakia</source>
+        <target>Slovakia</target>
+      </segment>
+    </unit>
+    <unit id="VgWef7T" name="Slovenia">
+      <segment>
+        <source>Slovenia</source>
+        <target>Slovenia</target>
+      </segment>
+    </unit>
+    <unit id="z.TFjeC" name="Solomon Islands">
+      <segment>
+        <source>Solomon Islands</source>
+        <target>Solomon Islands</target>
+      </segment>
+    </unit>
+    <unit id="vQXTJNi" name="Somalia">
+      <segment>
+        <source>Somalia</source>
+        <target>Somalia</target>
+      </segment>
+    </unit>
+    <unit id="PgSdeNl" name="South Africa">
+      <segment>
+        <source>South Africa</source>
+        <target>South Africa</target>
+      </segment>
+    </unit>
+    <unit id="..uMHlE" name="South Georgia &amp; South Sandwich Islands">
+      <segment>
+        <source>South Georgia &amp; South Sandwich Islands</source>
+        <target><![CDATA[South Georgia & South Sandwich Islands]]></target>
+      </segment>
+    </unit>
+    <unit id="yFMp43e" name="South Korea">
+      <segment>
+        <source>South Korea</source>
+        <target>South Korea</target>
+      </segment>
+    </unit>
+    <unit id="j_WpMRP" name="South Sudan">
+      <segment>
+        <source>South Sudan</source>
+        <target>South Sudan</target>
+      </segment>
+    </unit>
+    <unit id="jvQeb0s" name="Spain">
+      <segment>
+        <source>Spain</source>
+        <target>Spain</target>
+      </segment>
+    </unit>
+    <unit id="B.jRFEo" name="Sri Lanka">
+      <segment>
+        <source>Sri Lanka</source>
+        <target>Sri Lanka</target>
+      </segment>
+    </unit>
+    <unit id="ozyw8QK" name="St. Barthélemy">
+      <segment>
+        <source>St. Barthélemy</source>
+        <target>St. Barthélemy</target>
+      </segment>
+    </unit>
+    <unit id="2jBT9c_" name="St. Helena">
+      <segment>
+        <source>St. Helena</source>
+        <target>St. Helena</target>
+      </segment>
+    </unit>
+    <unit id="V.FPhuq" name="St. Kitts &amp; Nevis">
+      <segment>
+        <source>St. Kitts &amp; Nevis</source>
+        <target><![CDATA[St. Kitts & Nevis]]></target>
+      </segment>
+    </unit>
+    <unit id="LSc9h5c" name="St. Lucia">
+      <segment>
+        <source>St. Lucia</source>
+        <target>St. Lucia</target>
+      </segment>
+    </unit>
+    <unit id="UKp0VQS" name="St. Martin">
+      <segment>
+        <source>St. Martin</source>
+        <target>St. Martin</target>
+      </segment>
+    </unit>
+    <unit id="BepntSa" name="St. Pierre &amp; Miquelon">
+      <segment>
+        <source>St. Pierre &amp; Miquelon</source>
+        <target><![CDATA[St. Pierre & Miquelon]]></target>
+      </segment>
+    </unit>
+    <unit id="CShMbeI" name="St. Vincent &amp; Grenadines">
+      <segment>
+        <source>St. Vincent &amp; Grenadines</source>
+        <target><![CDATA[St. Vincent & Grenadines]]></target>
+      </segment>
+    </unit>
+    <unit id="7WjU3vG" name="Sudan">
+      <segment>
+        <source>Sudan</source>
+        <target>Sudan</target>
+      </segment>
+    </unit>
+    <unit id="scuOrFs" name="Suriname">
+      <segment>
+        <source>Suriname</source>
+        <target>Suriname</target>
+      </segment>
+    </unit>
+    <unit id="Dfla4hO" name="Svalbard &amp; Jan Mayen">
+      <segment>
+        <source>Svalbard &amp; Jan Mayen</source>
+        <target><![CDATA[Svalbard & Jan Mayen]]></target>
+      </segment>
+    </unit>
+    <unit id="hTY3E2V" name="Sweden">
+      <segment>
+        <source>Sweden</source>
+        <target>Sweden</target>
+      </segment>
+    </unit>
+    <unit id="InVYMZb" name="Switzerland">
+      <segment>
+        <source>Switzerland</source>
+        <target>Switzerland</target>
+      </segment>
+    </unit>
+    <unit id="z2rCm_H" name="Syria">
+      <segment>
+        <source>Syria</source>
+        <target>Syria</target>
+      </segment>
+    </unit>
+    <unit id="3XavGW4" name="Taiwan">
+      <segment>
+        <source>Taiwan</source>
+        <target>Taiwan</target>
+      </segment>
+    </unit>
+    <unit id="BmsCEwt" name="Tajikistan">
+      <segment>
+        <source>Tajikistan</source>
+        <target>Tajikistan</target>
+      </segment>
+    </unit>
+    <unit id="lVVmT89" name="Tanzania">
+      <segment>
+        <source>Tanzania</source>
+        <target>Tanzania</target>
+      </segment>
+    </unit>
+    <unit id="bknmUIG" name="Thailand">
+      <segment>
+        <source>Thailand</source>
+        <target>Thailand</target>
+      </segment>
+    </unit>
+    <unit id="YwPoRxg" name="Timor-Leste">
+      <segment>
+        <source>Timor-Leste</source>
+        <target>Timor-Leste</target>
+      </segment>
+    </unit>
+    <unit id="QIA0PuD" name="Togo">
+      <segment>
+        <source>Togo</source>
+        <target>Togo</target>
+      </segment>
+    </unit>
+    <unit id="OfwVA6d" name="Tokelau">
+      <segment>
+        <source>Tokelau</source>
+        <target>Tokelau</target>
+      </segment>
+    </unit>
+    <unit id="MQvDJQl" name="Tonga">
+      <segment>
+        <source>Tonga</source>
+        <target>Tonga</target>
+      </segment>
+    </unit>
+    <unit id="FxTCMdv" name="Trinidad &amp; Tobago">
+      <segment>
+        <source>Trinidad &amp; Tobago</source>
+        <target><![CDATA[Trinidad & Tobago]]></target>
+      </segment>
+    </unit>
+    <unit id="RgloKi8" name="Tunisia">
+      <segment>
+        <source>Tunisia</source>
+        <target>Tunisia</target>
+      </segment>
+    </unit>
+    <unit id="B8Z9du_" name="Turkey">
+      <segment>
+        <source>Turkey</source>
+        <target>Turkey</target>
+      </segment>
+    </unit>
+    <unit id="s9.IUF1" name="Turkmenistan">
+      <segment>
+        <source>Turkmenistan</source>
+        <target>Turkmenistan</target>
+      </segment>
+    </unit>
+    <unit id="WT1bbGc" name="Turks &amp; Caicos Islands">
+      <segment>
+        <source>Turks &amp; Caicos Islands</source>
+        <target><![CDATA[Turks & Caicos Islands]]></target>
+      </segment>
+    </unit>
+    <unit id="MLH.mu7" name="Tuvalu">
+      <segment>
+        <source>Tuvalu</source>
+        <target>Tuvalu</target>
+      </segment>
+    </unit>
+    <unit id="fE5Dtz8" name="U.S. Outlying Islands">
+      <segment>
+        <source>U.S. Outlying Islands</source>
+        <target>U.S. Outlying Islands</target>
+      </segment>
+    </unit>
+    <unit id="4ySewR2" name="U.S. Virgin Islands">
+      <segment>
+        <source>U.S. Virgin Islands</source>
+        <target>U.S. Virgin Islands</target>
+      </segment>
+    </unit>
+    <unit id="iT1ThWO" name="Uganda">
+      <segment>
+        <source>Uganda</source>
+        <target>Uganda</target>
+      </segment>
+    </unit>
+    <unit id="WA7txmn" name="Ukraine">
+      <segment>
+        <source>Ukraine</source>
+        <target>Ukraine</target>
+      </segment>
+    </unit>
+    <unit id="3WSRPIu" name="United Arab Emirates">
+      <segment>
+        <source>United Arab Emirates</source>
+        <target>United Arab Emirates</target>
+      </segment>
+    </unit>
+    <unit id="jSOm434" name="United Kingdom">
+      <segment>
+        <source>United Kingdom</source>
+        <target>United Kingdom</target>
+      </segment>
+    </unit>
+    <unit id="SdymXzY" name="United States">
+      <segment>
+        <source>United States</source>
+        <target>United States</target>
+      </segment>
+    </unit>
+    <unit id=".iQD8l6" name="Uruguay">
+      <segment>
+        <source>Uruguay</source>
+        <target>Uruguay</target>
+      </segment>
+    </unit>
+    <unit id="S8Lxwjs" name="Uzbekistan">
+      <segment>
+        <source>Uzbekistan</source>
+        <target>Uzbekistan</target>
+      </segment>
+    </unit>
+    <unit id="xbKm3p1" name="Vanuatu">
+      <segment>
+        <source>Vanuatu</source>
+        <target>Vanuatu</target>
+      </segment>
+    </unit>
+    <unit id="sM4QKW8" name="Vatican City">
+      <segment>
+        <source>Vatican City</source>
+        <target>Vatican City</target>
+      </segment>
+    </unit>
+    <unit id="Ag5Di6." name="Venezuela">
+      <segment>
+        <source>Venezuela</source>
+        <target>Venezuela</target>
+      </segment>
+    </unit>
+    <unit id="Ll6BBmo" name="Vietnam">
+      <segment>
+        <source>Vietnam</source>
+        <target>Vietnam</target>
+      </segment>
+    </unit>
+    <unit id="XpeAW4a" name="Wallis &amp; Futuna">
+      <segment>
+        <source>Wallis &amp; Futuna</source>
+        <target><![CDATA[Wallis & Futuna]]></target>
+      </segment>
+    </unit>
+    <unit id="iblOUj_" name="Western Sahara">
+      <segment>
+        <source>Western Sahara</source>
+        <target>Western Sahara</target>
+      </segment>
+    </unit>
+    <unit id="IcGQOvJ" name="Yemen">
+      <segment>
+        <source>Yemen</source>
+        <target>Yemen</target>
+      </segment>
+    </unit>
+    <unit id="tfkiGuB" name="Zambia">
+      <segment>
+        <source>Zambia</source>
+        <target>Zambia</target>
+      </segment>
+    </unit>
+    <unit id="xyGZqFt" name="Zimbabwe">
+      <segment>
+        <source>Zimbabwe</source>
+        <target>Zimbabwe</target>
+      </segment>
+    </unit>
+    <unit id="F81R_cb" name="person.blutgruppe.choose.lbl">
+      <segment>
+        <source>person.blutgruppe.choose.lbl</source>
+        <target>-- Pleasy choose your blood type --</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
