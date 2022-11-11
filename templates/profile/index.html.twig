@@ -11,8 +11,8 @@
     </div>
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8">
-				<h3>Profil / Notfall-Daten</h3>
-        <p>Hier können Sie Ihre Notfall-Daten verwalten.</p>
+				<h3>{{ 'meinidno.profile.title'|trans }}</h3>
+        <p>{{ 'meinidno.profile.description'|trans }}</p>
 
         <div class="row mt-3">
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
@@ -71,7 +71,7 @@
                     value="0" />
                   <label
                     class="form-check-label text-dark"
-                    for="fldPassEnable">Notfall-ID Pass aktiv
+                    for="fldPassEnable">{{ 'meinidno.profile.check'|trans }}
                     {{ user.sichtbar == true
                       ? '<i class="bi bi-check-circle text-success ps-1"></i>'
                       : '<i class="bi bi-exclamation-triangle text-warning ps-1"></i>'
@@ -102,10 +102,8 @@
     {# id number #}
     <div class="row my-4">
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-				<h3>Übersicht: ID-Nummern</h3>
-        <p>
-          Hier können Sie weitere ID-Nummern aktivieren und Ihre bereits registrierten ID-Nummern einsehen und verwalten.
-        </p>
+				<h3>{{ 'meinidno.idno.title'|trans }}</h3>
+        <p>{{ 'meinidno.idno.description'|trans }}</p>
 
         <div
           id="toolbarItems"
@@ -153,10 +151,8 @@
     {# contacts #}
     <div class="row my-4">
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <h3>Meine Kontakte</h3>
-				<p>
-          Im Folgenden finden Sie eine Übersicht Ihrer Notfall-Kontakte:
-        </p>
+        <h3>{{ 'meinidno.contact.title'|trans }}</h3>
+				<p>{{ 'meinidno.contact.description'|trans }}</p>
 
         <div
           id="toolbarContacts"

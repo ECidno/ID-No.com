@@ -3423,5 +3423,47 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>ID-Nummer nicht gefunden!</target>
       </segment>
     </unit>
+    <unit id="K3PKIb6" name="meinidno.profile.title">
+      <segment>
+        <source>meinidno.profile.title</source>
+        <target>Profil / Notfall-Daten</target>
+      </segment>
+    </unit>
+    <unit id="k7IqGnH" name="meinidno.profile.description">
+      <segment>
+        <source>meinidno.profile.description</source>
+        <target>Hier können Sie Ihare Notfall-Daten verwalten.</target>
+      </segment>
+    </unit>
+    <unit id="De.BaGl" name="meinidno.profile.check">
+      <segment>
+        <source>meinidno.profile.check</source>
+        <target>Notfall-ID Pass aktiv</target>
+      </segment>
+    </unit>
+    <unit id="lbhUQQO" name="meinidno.idno.title">
+      <segment>
+        <source>meinidno.idno.title</source>
+        <target>Übersicht: ID-Nummern</target>
+      </segment>
+    </unit>
+    <unit id="q5AtHiT" name="meinidno.idno.description">
+      <segment>
+        <source>meinidno.idno.description</source>
+        <target>Hier können Sie weitere ID-Nummern aktivieren und Ihre bereits registrierten ID-Nummern einsehen und verwalten.</target>
+      </segment>
+    </unit>
+    <unit id="sC3Y1zj" name="meinidno.contact.title">
+      <segment>
+        <source>meinidno.contact.title</source>
+        <target>Meine Kontakte</target>
+      </segment>
+    </unit>
+    <unit id="mVElgW5" name="meinidno.contact.description">
+      <segment>
+        <source>meinidno.contact.description</source>
+        <target>Im Folgenden finden Sie eine Übersicht Ihrer NOtfall-Kontakte</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

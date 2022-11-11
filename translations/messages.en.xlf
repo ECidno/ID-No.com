@@ -1582,7 +1582,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="8QBTTol" name="items.table.noStatus.lbl">
       <segment>
         <source>items.table.noStatus.lbl</source>
-        <target>items.table.noStatus.lbl</target>
+        <target>Status</target>
       </segment>
     </unit>
     <unit id="HcgVLC7" name="person.land.choose.lbl">
@@ -3089,6 +3089,108 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
       <segment>
         <source>person.blutgruppe.choose.lbl</source>
         <target>-- Pleasy choose your blood type --</target>
+      </segment>
+    </unit>
+    <unit id="K3PKIb6" name="meinidno.profile.title">
+      <segment>
+        <source>meinidno.profile.title</source>
+        <target>Profil / Emergency Data</target>
+      </segment>
+    </unit>
+    <unit id="k7IqGnH" name="meinidno.profile.description">
+      <segment>
+        <source>meinidno.profile.description</source>
+        <target>Here you can manage your emergency data.</target>
+      </segment>
+    </unit>
+    <unit id="De.BaGl" name="meinidno.profile.check">
+      <segment>
+        <source>meinidno.profile.check</source>
+        <target>Emergency-ID Pass</target>
+      </segment>
+    </unit>
+    <unit id="lbhUQQO" name="meinidno.idno.title">
+      <segment>
+        <source>meinidno.idno.title</source>
+        <target>Overview: ID-No</target>
+      </segment>
+    </unit>
+    <unit id="q5AtHiT" name="meinidno.idno.description">
+      <segment>
+        <source>meinidno.idno.description</source>
+        <target>Here you can activate additional ID numbers and view and manage your already registered ID numbers.</target>
+      </segment>
+    </unit>
+    <unit id="sC3Y1zj" name="meinidno.contact.title">
+      <segment>
+        <source>meinidno.contact.title</source>
+        <target>My Contacts</target>
+      </segment>
+    </unit>
+    <unit id="mVElgW5" name="meinidno.contact.description">
+      <segment>
+        <source>meinidno.contact.description</source>
+        <target>Below you will find an overview of your emergency contacts</target>
+      </segment>
+    </unit>
+    <unit id="KcpsvQI" name="items.action.new.header">
+      <segment>
+        <source>items.action.new.header</source>
+        <target>Activate ID number</target>
+      </segment>
+    </unit>
+    <unit id="pFzFHf8" name="items.idNo.lbl">
+      <segment>
+        <source>items.idNo.lbl</source>
+        <target>ID number</target>
+      </segment>
+    </unit>
+    <unit id="gmsAMFu" name="items.anbringung.lbl">
+      <segment>
+        <source>items.anbringung.lbl</source>
+        <target>Attachment</target>
+      </segment>
+    </unit>
+    <unit id="znwucS3" name="contacts.action.new.header">
+      <segment>
+        <source>contacts.action.new.header</source>
+        <target>New Contact</target>
+      </segment>
+    </unit>
+    <unit id="vgHgRUK" name="contact.contactname.lbl">
+      <segment>
+        <source>contact.contactname.lbl</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="CB3t2Xb" name="contact.telefon.lbl">
+      <segment>
+        <source>contact.telefon.lbl</source>
+        <target>Phone</target>
+      </segment>
+    </unit>
+    <unit id="KyXj8jF" name="contact.beziehung.lbl">
+      <segment>
+        <source>contact.beziehung.lbl</source>
+        <target>Relation</target>
+      </segment>
+    </unit>
+    <unit id="RLlT90S" name="item.lbl">
+      <segment>
+        <source>item.lbl</source>
+        <target>item.lbl</target>
+      </segment>
+    </unit>
+    <unit id="c69XQyB" name="items.noStatus.lbl">
+      <segment>
+        <source>items.noStatus.lbl</source>
+        <target>ID number activ</target>
+      </segment>
+    </unit>
+    <unit id="iN8764q" name="items.action.edit.success">
+      <segment>
+        <source>items.action.edit.success</source>
+        <target>items.action.edit.success</target>
       </segment>
     </unit>
   </file>
