@@ -4,7 +4,7 @@
     <unit id="xM9uX4L" name="Wrong credentials!">
       <segment>
         <source>Wrong credentials!</source>
-        <target>Wrong credentials!Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.</target>
+        <target>Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.</target>
       </segment>
     </unit>
     <unit id="pMAY23j" name="Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.">
@@ -16,7 +16,13 @@
     <unit id="uVKKMcJ" name="Username could not be found!">
       <segment>
         <source>Username could not be found!</source>
-        <target>Username could not be found!</target>
+        <target>Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.</target>
+      </segment>
+    </unit>
+    <unit id="U4boV4W" name="Empty credentials!">
+      <segment>
+        <source>Empty credentials!</source>
+        <target>Es wurden keine Anmeldedaten übermittelt!</target>
       </segment>
     </unit>
   </file>
