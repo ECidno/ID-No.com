@@ -250,7 +250,7 @@ class PersonType extends AbstractType
                 ],
                 'choice_label' => function($choice, $key, $value) {
                     if (empty($choice)) {
-                       return new TranslatableMessage('person.blutgruppe.choose.lbl');
+                        return new TranslatableMessage('person.blutgruppe.choose.lbl');
                     } else {
                         return $key;
                     }
@@ -272,6 +272,7 @@ class PersonType extends AbstractType
             ->add('erkrankungen', TextareaType::class, [
                 'label' => new TranslatableMessage('person.erkrankungen.lbl'),
                 'attr' => [
+                    'class' => 'h-100',
                     'maxlength' => 16777215,
                 ],
                 'required' => false,
@@ -290,6 +291,7 @@ class PersonType extends AbstractType
             ->add('medikamente', TextareaType::class, [
                 'label' => new TranslatableMessage('person.medikamente.lbl'),
                 'attr' => [
+                    'class' => 'h-100',
                     'maxlength' => 65535,
                 ],
                 'required' => false
@@ -308,6 +310,7 @@ class PersonType extends AbstractType
             ->add('allergieen', TextareaType::class, [
                 'label' => new TranslatableMessage('person.allergieen.lbl'),
                 'attr' => [
+                    'class' => 'h-100',
                     'maxlength' => 65535,
                 ],
                 'required' => false
@@ -418,6 +421,7 @@ class PersonType extends AbstractType
             ->add('zusatzversicherung', TextareaType::class, [
                 'label' => new TranslatableMessage('person.zusatzversicherung.lbl'),
                 'attr' => [
+                    'class' => 'h-100',
                     'maxlength' => 65535,
                 ],
                 'required' => false
@@ -477,6 +481,7 @@ class PersonType extends AbstractType
             ->add('weitereangaben', TextareaType::class, [
                 'label' => new TranslatableMessage('person.weitereangaben.lbl'),
                 'attr' => [
+                    'class' => 'h-100',
                     'maxlength' => 65535,
                 ],
                 'required' => false
@@ -492,7 +497,6 @@ class PersonType extends AbstractType
                 ],
                 'required' => false
             ]);
-
     }
 
 
