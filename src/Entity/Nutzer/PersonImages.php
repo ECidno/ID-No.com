@@ -63,6 +63,18 @@ class PersonImages
      */
     private $height;
 
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=15)
+     */
+    private $ip;
+
+    /**
+     * @Assert\Type("\DateTimeInterface")
+     * @ORM\Column(type="datetime")
+     */
+    private $created;
+
 
     /**
      * @return int|null
@@ -183,5 +195,41 @@ class PersonImages
     public function getHeight(): ?int
     {
         return $this->height;
+    }
+
+    /**
+     * @param string $ip
+     * @return PersonImages
+     */
+    public function setIp(string $ip): self
+    {
+        $this->ip = $ip;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIp(): string
+    {
+        return $this->ip;
+    }
+
+    /**
+     * @param \DateTimeInterface $created
+     * @return PersonImages
+     */
+    public function setCreated(\DateTimeInterface $created): self
+    {
+        $this->created = $created;
+        return $this;
+    }
+
+    /**
+     * @return \DateTimeInterface|null
+     */
+    public function getCreated(): ?\DateTimeInterface
+    {
+        return $this->created;
     }
 }

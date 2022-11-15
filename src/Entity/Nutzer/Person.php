@@ -453,7 +453,7 @@ class Person
     }
 
     /**
-     * @return Collection|Contact[]
+     * @return Collection|PersonImages[]
      */
     public function getImages(): Collection
     {
