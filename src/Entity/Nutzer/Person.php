@@ -462,6 +462,11 @@ class Person
         return $this->images;
     }
 
+
+    /**
+     * @param bool $imageShow
+     * @return Items
+     */
     public function setImageShow(bool $imageShow): self
     {
         if(!empty($this->images)) {
@@ -471,15 +476,16 @@ class Person
         return $this;
     }
 
+    /**
+     * @return bool
+     */
     public function getImageShow(): bool
     {
-        $this->imageShow = false;
-
-        if(!empty($this->images)) {
-            $this->imageShow = $this->images[0]->getBildShow();
-        }
-
-        return $this->imageShow;
+        return $this->getImages()->isEmpty()
+            ? false
+            : $this->getImages()
+                ->first()
+                ->getBildShow();
     }
 
 
