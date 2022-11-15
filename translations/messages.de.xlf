@@ -535,9 +535,7 @@ Katastrophenschutz</target>
 
 ID-No.com, gelauncht im Mai 2017 in Frankfurt am Main (Deutschland), wurde gemeinsam mit Rettungsprofis entwickelt und in der Kategorie "E-Health" mit dem INNOVATIONSPREIS-IT "BEST OF 2018" der Initiative Mittelstand ausgezeichnet. Zu den namhafte Kunden zählen seither Unternehmen wie unter anderem AOK, BARMER, KKH, ERGO, ABUS, Harley Davidson und Sport Scheck.
 
-ID-No.com GmbH ist Mitglied der CODE-No.com Gruppe, die ursprünglich in 2007 mit der Marke CODE-No.com in Frankfurt am Main startete. Die CODE-No.com GmbH schützt Wertgegenstände vor Verlust und Diebstahl und ist hierzu mit über 12 Millionen CODE-Nummern im Markt vertreten. Die Marke ID-No.com ist eine konsequente Weiterentwicklung der Ursprungsidee und bietet seit 2017 Sicherheit im Bereich eHealth.
-
-Neu: Seit 2020 kooperiert ID-No.com mit ZOLL, dem Weltmarktführer für digitale Gesundheitslösungen, und wird in die Rescue-Pad-Systeme im Rettungswesen in Europa integriert. Dies führt zu einer schnellen und nahtlosen Notfalldatenübertragung vom Rettungsdienst bis ins Krankenhaus.
+Seit 2020 kooperiert ID-No.com mit ZOLL, dem Weltmarktführer für digitale Gesundheitslösungen, und wird in die Rescue-Pad-Systeme im Rettungswesen in Europa integriert. Dies führt zu einer schnellen und nahtlosen Notfalldatenübertragung vom Rettungsdienst bis ins Krankenhaus.
 
 Info-Videos finden Sie hier:  
 <a href="/infovideo" target="_blank">ID-No.com/infovideo</a>  
@@ -553,20 +551,9 @@ Info-Videos finden Sie hier:
     <unit id="JVCoYRg" name="company.ceo.text">
       <segment>
         <source>company.ceo.text</source>
-        <target>Dr. Markus J. Krechting, geb. 1965, studierte Betriebswirtschaft an der Universität Münster mit Schwerpunkt Marketing bei Herrn Prof. Dr. Dr. h.c. mult. Meffert. Seine Promotion erfolgte an der Universität Hamburg. Krechting arbeitete sechs Jahre für den Otto Konzern, u. a. verantwortete er dort den Markteinstieg in Indien. Danach leitete er als Unternehmensberater den Geschäftsbereich "Internationalisierung" der TellSell Consulting GmbH, Frankfurt. 2001 wurde Krechting Direktor Neue Medien bei Neckermann, Frankfurt.
+        <target>Dr. Markus J. Krechting, geb. 1965, studierte Betriebswirtschaft an der Universität Münster mit Schwerpunkt Marketing bei Herrn Prof. Dr. Dr. h.c. mult. Meffert. Seine Promotion erfolgte an der Universität Hamburg. Krechting arbeitete sechs Jahre für den Otto Konzern, u. a. verantwortete er dort den Markteinstieg in Indien. Danach leitete er als Unternehmensberater den Geschäftsbereich "Internationalisierung" der TellSell Consulting GmbH, Frankfurt. Danach war Krechting u.a. CEO der Neckermann AG, St. Gallen, Schweiz.
 
-Krechting ist Autor zahlreicher Veröffentlichung. Darüber hinaus wirkte Krechting als Jury-Mitglied namhafter Multi-Channel-Veranstaltungen mit, u. a. Deutschen Multimedia Award, Berlin, und Online-Star Award, München.
-
-Im März 2007 gründete Krechting die CODE-No.com Group in Frankfurt, die er als CEO führt.</target>
-      </segment>
-    </unit>
-    <unit id="WCA8n5w" name="company.coo.text">
-      <segment>
-        <source>company.coo.text</source>
-        <target>Michael Sorg hat mehr als 20 Jahre Erfahrung in eBusiness, davon die letzten 5 Jahre als CEO von computeruniverse, ein Unternehmen der Burda Digital mit 170 Mitarbeitern. In dieser Zeit konnte er den Umsatz auf über 200 Mio. € mehr als verdoppeln.
-Michael Sorg hat den international erfolgreichen Onlineshop für Hardware, Software, Unterhaltungs- und Haushaltselektronik in die Profitabilität geführt.
-
-Zuvor hat er neckermann.de aufgebaut und 10 Jahre geleitet, bevor er in die Otto Group wechselte und dort neben der eCommerce Leitung für schwab.de auch den Plus Size Fashion Shop sheego.de mitgründete und 5 Jahre online verantwortete.</target>
+Krechting ist Autor zahlreicher Veröffentlichung. Darüber hinaus wirkte Krechting als Jury-Mitglied namhafter Multi-Channel-Veranstaltungen mit, u. a. Deutschen Multimedia Award, Berlin, und Online-Star Award, München.</target>
       </segment>
     </unit>
     <unit id="IaFPsYm" name="Advisory board">
@@ -595,12 +582,6 @@ Ingo Kett leitete die Sapient Consulting in Deutschland. Zuvor verantwortete er 
       <segment>
         <source>company.ceo.caption</source>
         <target>Dr. Markus J. Krechting, CEO</target>
-      </segment>
-    </unit>
-    <unit id="60op8LH" name="company.coo.caption">
-      <segment>
-        <source>company.coo.caption</source>
-        <target>Michael Sorg, COO</target>
       </segment>
     </unit>
     <unit id="Bc1KxF_" name="company.advisory.caption">
@@ -3475,6 +3456,18 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
       <segment>
         <source>person.action.edit.error</source>
         <target>Die Kontaktdaten konnten nicht erfolgreich gespeichert werden.</target>
+      </segment>
+    </unit>
+    <unit id="WCA8n5w" name="company.coo.text">
+      <segment>
+        <source>company.coo.text</source>
+        <target>company.coo.text</target>
+      </segment>
+    </unit>
+    <unit id="60op8LH" name="company.coo.caption">
+      <segment>
+        <source>company.coo.caption</source>
+        <target>company.coo.caption</target>
       </segment>
     </unit>
   </file>
