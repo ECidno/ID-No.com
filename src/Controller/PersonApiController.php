@@ -175,7 +175,6 @@ class PersonApiController extends AbstractApiController
                 if (!$image) {
                     $image = new PersonImages;
                 } else {
-                    $image = $image[0];
                     $oldImagePath = $this->getParameter('userimages_directory').'/'.$image->getBild();
                     $filesystem = new Filesystem();
                     if ($filesystem->exists($oldImagePath)) {
@@ -187,7 +186,7 @@ class PersonApiController extends AbstractApiController
                 $image->setPerson($object);
                 $image->setStatus('ok');
                 $image->setBild($filename);
-                $image->setBildShow(0);
+                $image->setBildShow($imageShow);
                 $image->setHeight($height);
                 $image->setWidth($width);
                 $image->setIp($_SERVER['REMOTE_ADDR']);
