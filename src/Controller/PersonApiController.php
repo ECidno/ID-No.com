@@ -124,7 +124,22 @@ class PersonApiController extends AbstractApiController
             $this->denyAccessUnlessGranted('update', $object);
             $em->flush($object);
 
-            $personImage = $form->get('personimage')->getData();
+            $personImage = $form->get('personImage')->getData();
+            $imageShow = $form->get('imageShow')->getData();
+
+            /**
+             * @var PersonImages $image
+             */
+            $image = $em
+                ->getRepository(PersonImages::class)
+                ->findBy(['person' => $id]);
+
+            if ($image) {
+                $image = $image[0];
+                $image->setBildShow($imageShow);
+                $em->persist($image);
+                $em->flush($image);
+            }
 
             if ($personImage) {
 
@@ -155,12 +170,7 @@ class PersonApiController extends AbstractApiController
                 $photo = $imagine->open($filepath);
                 $photo->resize(new Box($width, $height))->save($filepath);
 
-                /**
-                 * @var PersonImages $image
-                 */
-                $image = $em
-                    ->getRepository(PersonImages::class)
-                    ->findBy(['person' => $id]);
+                
 
                 if (!$image) {
                     $image = new PersonImages;

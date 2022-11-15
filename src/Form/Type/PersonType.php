@@ -239,7 +239,7 @@ class PersonType extends AbstractType
                 'required' => false
             ])
 
-            ->add('personimage', FileType::class, [
+            ->add('personImage', FileType::class, [
                 'label' => new TranslatableMessage('person.image.lbl'),
                 'mapped' => false,
                 'required' => false,
@@ -253,6 +253,17 @@ class PersonType extends AbstractType
                         ],
                     ])
                 ]
+            ])
+            ->add('imageShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
             ])
 
             ->add('blutgruppe', ChoiceType::class, [

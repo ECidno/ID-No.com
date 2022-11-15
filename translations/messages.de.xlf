@@ -3465,5 +3465,17 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>Im Folgenden finden Sie eine Übersicht Ihrer NOtfall-Kontakte</target>
       </segment>
     </unit>
+    <unit id="mD32oKh" name="person.image.lbl">
+      <segment>
+        <source>person.image.lbl</source>
+        <target>Mein Foto</target>
+      </segment>
+    </unit>
+    <unit id="W7wpO.H" name="person.action.edit.error">
+      <segment>
+        <source>person.action.edit.error</source>
+        <target>Die Kontaktdaten konnten nicht erfolgreich gespeichert werden.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
