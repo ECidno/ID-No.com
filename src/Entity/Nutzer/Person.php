@@ -469,8 +469,10 @@ class Person
      */
     public function setImageShow(bool $imageShow): self
     {
-        if(!empty($this->images)) {
-            $this->images[0]->setBildShow($imageShow);
+        if(!$this->getImages()->isEmpty()) {
+            $this->getImages()
+                ->first()
+                ->setBildShow($imageShow);
         }
         $this->imageShow = $imageShow;
         return $this;
