@@ -51,7 +51,7 @@ window.operateFormatter = (value, row, index) => {
   return operations.join('');
 }
 
-// item status formatter
+// item idNo formatter
 window.itemidNoFormatter = (value, row, index) => {
   return '<a href="/' + value + '" target="_blank">' + value + '</a>';
 }
