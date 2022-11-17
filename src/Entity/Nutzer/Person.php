@@ -52,6 +52,8 @@ class Person
      */
     private $images;
 
+    private $imageShow;
+
     /**
      * @var string
      * @ORM\Column(type="string", length=25)
@@ -453,11 +455,39 @@ class Person
     }
 
     /**
-     * @return Collection|Contact[]
+     * @return Collection|PersonImages[]
      */
     public function getImages(): Collection
     {
         return $this->images;
+    }
+
+
+    /**
+     * @param bool $imageShow
+     * @return Items
+     */
+    public function setImageShow(bool $imageShow): self
+    {
+        if(!$this->getImages()->isEmpty()) {
+            $this->getImages()
+                ->first()
+                ->setBildShow($imageShow);
+        }
+        $this->imageShow = $imageShow;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getImageShow(): bool
+    {
+        return $this->getImages()->isEmpty()
+            ? false
+            : $this->getImages()
+                ->first()
+                ->getBildShow();
     }
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="en">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="en">
   <file id="messages.en">
     <unit id="5LufHs6" name="Start">
       <segment>
@@ -86,9 +86,7 @@
 
 ID-No.com, launched in May 2017 in Frankfurt am Main (Germany), was developed together with rescue professionals and awarded the INNOVATIONSPREIS-IT "BEST OF 2018" by Initiative Mittelstand in the category "E-Health". Since then, well-known customers include companies such as AOK, BARMER, KKH, ERGO, ABUS, Harley Davidson and Sport Scheck, among others.
 
-ID-No.com GmbH is a member of the CODE-No.com Group, which originally started in 2007 with the CODE-No.com brand in Frankfurt am Main. CODE-No.com GmbH protects valuables against loss and theft and is represented in the market with over 12 million CODE numbers for this purpose. The ID-No.com brand is a consistent further development of the original idea and has been offering security in the field of eHealth since 2017.
-
-New: Since 2020, ID-No.com has been cooperating with ZOLL, the global market leader for digital health solutions, and will be integrated into the Rescue Pad systems in the emergency services in Europe. This leads to a fast and seamless emergency data transfer from the rescue service to the hospital.
+Since 2020, ID-No.com has been cooperating with ZOLL, the global market leader for digital health solutions, and will be integrated into the Rescue Pad systems in the emergency services in Europe. This leads to a fast and seamless emergency data transfer from the rescue service to the hospital.
 
 Info videos you can find here:  
 <a href="/infovideo" target="_blank">ID-No.com/infovideo  
@@ -112,22 +110,7 @@ Info videos you can find here:
         <source>company.ceo.text</source>
         <target>Dr. Markus J. Krechting, born in 1965, studied business administration at the University of Münster with a specialty in marketing with Prof. Dr. Dr. h.c. mult. Meffert. His doctorate on the subject of international marketing was completed at the University of Hamburg. Krechting worked for six years with the company Otto, handling amongst others the market entry in India. He then changed within the group to become Department Head of Marketing for Schwab Versand, Hanau, another mail-order firm. He then spent three years as a corporate consultant heading Internationalization at TellSell Consulting GmbH in Frankfurt.
 
-In 2001, Krechting became director of New Media at the Neckermann mail-order firm in Frankfurt. He expanded the company’s Internet presence to make it one of the most successful online shops in Germany (it was named, amongst others, Favorite Website of the Year, Best Website of the Year, Best Online Shop and also won the Convergence Award). In his additional functions as director of marketing and communication, Krechting simultaneously managed the restructuring of the entire company from the classical catalogue mail-order retailer Neckermann, to the home shopping provider neckermann.de. From April 2007 to April 2008, Krechting headed Neckermann.ch AG as CEO and President of the Board of Administration in Switzerland.</target>
-      </segment>
-    </unit>
-    <unit id="60op8LH" name="company.coo.caption">
-      <segment>
-        <source>company.coo.caption</source>
-        <target>Michael Sorg, COO</target>
-      </segment>
-    </unit>
-    <unit id="WCA8n5w" name="company.coo.text">
-      <segment>
-        <source>company.coo.text</source>
-        <target>Michael Sorg has more than 20 years of experience in eBusiness, the last 5 years of which as CEO of computeruniverse, a Burda Digital company with 170 employees. During this time he was able to more than double the turnover to over 200 Mio €.
-Michael Sorg has led the internationally successful online store for hardware, software, consumer and household electronics into profitability.
-
-Previously, he built up neckermann.de and managed it for 10 years before moving to the Otto Group where, in addition to managing eCommerce for schwab.de, he also co-founded the plus size fashion store sheego.de and was responsible for it online for 5 years.</target>
+In 2001, Krechting became director of New Media at the Neckermann mail-order firm in Frankfurt. He expanded the company’s Internet presence to make it one of the most successful online shops in Germany (it was named, amongst others, Favorite Website of the Year, Best Website of the Year, Best Online Shop and also won the Convergence Award). In his additional functions as director of marketing and communication, Krechting simultaneously managed the restructuring of the entire company from the classical catalogue mail-order retailer Neckermann, to the home shopping provider neckermann.de. After that, Krechting was, among other executive positions, CEO of Neckermann AG, St. Gallen, Switzerland.</target>
       </segment>
     </unit>
     <unit id="IaFPsYm" name="Advisory board">
@@ -1393,58 +1376,16 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
         <target>Medical Details</target>
       </segment>
     </unit>
-    <unit id="G61rjPl" name="-1">
-      <segment>
-        <source>-1</source>
-        <target>-1</target>
-      </segment>
-    </unit>
-    <unit id="KB734SJ" name="0+">
-      <segment>
-        <source>0+</source>
-        <target>0+</target>
-      </segment>
-    </unit>
-    <unit id="ruhzbCt" name="A+">
-      <segment>
-        <source>A+</source>
-        <target>A+</target>
-      </segment>
-    </unit>
     <unit id="QhHyzI4" name="B+">
       <segment>
         <source>B+</source>
         <target>B+</target>
       </segment>
     </unit>
-    <unit id="nz5XTy9" name="AB+">
-      <segment>
-        <source>AB+</source>
-        <target>AB+</target>
-      </segment>
-    </unit>
-    <unit id="bm3aRbw" name="0-">
-      <segment>
-        <source>0-</source>
-        <target>0-</target>
-      </segment>
-    </unit>
-    <unit id="Plj1OXB" name="A-">
-      <segment>
-        <source>A-</source>
-        <target>A-</target>
-      </segment>
-    </unit>
     <unit id="dNIb.z1" name="B-">
       <segment>
         <source>B-</source>
         <target>B-</target>
-      </segment>
-    </unit>
-    <unit id="8Dj4XuJ" name="AB-">
-      <segment>
-        <source>AB-</source>
-        <target>AB-</target>
       </segment>
     </unit>
     <unit id="i2wE6hf" name="person.blutgruppe.lbl">
@@ -1582,7 +1523,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="8QBTTol" name="items.table.noStatus.lbl">
       <segment>
         <source>items.table.noStatus.lbl</source>
-        <target>items.table.noStatus.lbl</target>
+        <target>Status</target>
       </segment>
     </unit>
     <unit id="HcgVLC7" name="person.land.choose.lbl">
@@ -3089,6 +3030,114 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
       <segment>
         <source>person.blutgruppe.choose.lbl</source>
         <target>-- Pleasy choose your blood type --</target>
+      </segment>
+    </unit>
+    <unit id="K3PKIb6" name="meinidno.profile.title">
+      <segment>
+        <source>meinidno.profile.title</source>
+        <target>Profil / Emergency Data</target>
+      </segment>
+    </unit>
+    <unit id="k7IqGnH" name="meinidno.profile.description">
+      <segment>
+        <source>meinidno.profile.description</source>
+        <target>Here you can manage your emergency data.</target>
+      </segment>
+    </unit>
+    <unit id="De.BaGl" name="meinidno.profile.check">
+      <segment>
+        <source>meinidno.profile.check</source>
+        <target>Emergency-ID Pass</target>
+      </segment>
+    </unit>
+    <unit id="lbhUQQO" name="meinidno.idno.title">
+      <segment>
+        <source>meinidno.idno.title</source>
+        <target>Overview: ID-No</target>
+      </segment>
+    </unit>
+    <unit id="q5AtHiT" name="meinidno.idno.description">
+      <segment>
+        <source>meinidno.idno.description</source>
+        <target>Here you can activate additional ID numbers and view and manage your already registered ID numbers.</target>
+      </segment>
+    </unit>
+    <unit id="sC3Y1zj" name="meinidno.contact.title">
+      <segment>
+        <source>meinidno.contact.title</source>
+        <target>My Contacts</target>
+      </segment>
+    </unit>
+    <unit id="mVElgW5" name="meinidno.contact.description">
+      <segment>
+        <source>meinidno.contact.description</source>
+        <target>Below you will find an overview of your emergency contacts</target>
+      </segment>
+    </unit>
+    <unit id="KcpsvQI" name="items.action.new.header">
+      <segment>
+        <source>items.action.new.header</source>
+        <target>Activate ID number</target>
+      </segment>
+    </unit>
+    <unit id="pFzFHf8" name="items.idNo.lbl">
+      <segment>
+        <source>items.idNo.lbl</source>
+        <target>ID number</target>
+      </segment>
+    </unit>
+    <unit id="gmsAMFu" name="items.anbringung.lbl">
+      <segment>
+        <source>items.anbringung.lbl</source>
+        <target>Attachment</target>
+      </segment>
+    </unit>
+    <unit id="znwucS3" name="contacts.action.new.header">
+      <segment>
+        <source>contacts.action.new.header</source>
+        <target>New Contact</target>
+      </segment>
+    </unit>
+    <unit id="vgHgRUK" name="contact.contactname.lbl">
+      <segment>
+        <source>contact.contactname.lbl</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="CB3t2Xb" name="contact.telefon.lbl">
+      <segment>
+        <source>contact.telefon.lbl</source>
+        <target>Phone</target>
+      </segment>
+    </unit>
+    <unit id="KyXj8jF" name="contact.beziehung.lbl">
+      <segment>
+        <source>contact.beziehung.lbl</source>
+        <target>Relation</target>
+      </segment>
+    </unit>
+    <unit id="RLlT90S" name="item.lbl">
+      <segment>
+        <source>item.lbl</source>
+        <target>item.lbl</target>
+      </segment>
+    </unit>
+    <unit id="c69XQyB" name="items.noStatus.lbl">
+      <segment>
+        <source>items.noStatus.lbl</source>
+        <target>ID number activ</target>
+      </segment>
+    </unit>
+    <unit id="iN8764q" name="items.action.edit.success">
+      <segment>
+        <source>items.action.edit.success</source>
+        <target>items.action.edit.success</target>
+      </segment>
+    </unit>
+    <unit id="mD32oKh" name="person.image.lbl">
+      <segment>
+        <source>person.image.lbl</source>
+        <target>My Photo</target>
       </segment>
     </unit>
   </file>

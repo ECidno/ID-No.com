@@ -13,6 +13,8 @@ parameters:
     # array/collection parameters
     app.supported_locales: ['de', 'en']
 
+    userimages_directory: '%kernel.project_dir%/media/userimages'
+
 services:
     # default configuration for services in *this* file
     _defaults:

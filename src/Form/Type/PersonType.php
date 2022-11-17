@@ -8,11 +8,14 @@ namespace App\Form\Type;
  **********************************************************************/
 
 use App\Entity\Nutzer\Person;
+use App\Entity\Nutzer\PersonImages;
 use App\Form\Type\EntityHiddenType;
 use Locale;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -20,6 +23,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Intl\Countries;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Translation\TranslatableMessage;
+use Symfony\Component\Validator\Constraints\File;
 
 /**
  * person form type
@@ -224,6 +228,33 @@ class PersonType extends AbstractType
                 'required' => false
             ])
             ->add('mobileShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+            ])
+
+            ->add('personImage', FileType::class, [
+                'label' => new TranslatableMessage('person.image.lbl'),
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '2048k',
+                        'mimeTypes' => [
+                            'image/gif',
+                            'image/jpeg',
+                            'image/png',
+                        ],
+                    ])
+                ]
+            ])
+            ->add('imageShow', CheckboxType::class, [
                 'label' => new TranslatableMessage('sichtbar'),
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
