@@ -104,7 +104,6 @@
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 				<h3>{{ 'meinidno.idno.title'|trans }}</h3>
         <p>{{ 'meinidno.idno.description'|trans }}</p>
-
         <div
           id="toolbarItems"
           class="d-none">
@@ -116,7 +115,6 @@
             {{ 'items.action.new.lbl'|trans }}
           </button>
         </div>
-
         <table
           id="tableItems"
           class="d-none"
@@ -127,7 +125,9 @@
           data-loading-template="loadingTemplate"
           data-buttons-class="outline-dark btn-sm"
           data-show-refresh="false"
-          data-url="{{ path('app_api_items_read', { personId:person.id }) }}">
+          data-url="{{ path('app_api_items_read', { personId:person.id }) }}"
+          data-ll-active="{{ 'active'|trans() }}"
+          data-ll-inactive="{{ 'inactive'|trans() }}">
           <thead class="bg-light">
             <tr>
               <th data-field="idNo">{{ 'items.table.idNo.lbl'|trans }}</th>
@@ -153,7 +153,6 @@
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <h3>{{ 'meinidno.contact.title'|trans }}</h3>
 				<p>{{ 'meinidno.contact.description'|trans }}</p>
-
         <div
           id="toolbarContacts"
           class="d-none">
@@ -165,7 +164,6 @@
             {{ 'contacts.action.new.lbl'|trans }}
           </button>
         </div>
-
         <table
           id="tableContacts"
           class="d-none"

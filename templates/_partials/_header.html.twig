@@ -209,13 +209,13 @@
                 <input
                   type="text"
                   id="fldIdNo"
-                  class="form-control text-center{{ fieldErrorClass }}"
+                  class="form-control text-center{{ fieldErrorClass }} idNo"
                   name="p_idno"
                   placeholder="{{ 'ID-Nummer checken/aktivieren'|trans }}"
                   maxlength="9"
                   pattern="[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}"
                   autocomplete="off"
-                  aria-label="Id number"
+                  aria-label="ID number"
                   required="required" />
 
                 {% if fieldErrorMessage is defined and fieldErrorMessage is not empty %}

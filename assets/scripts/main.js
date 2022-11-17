@@ -13,7 +13,7 @@ const modalContainer = document.getElementById('modalContainer') || null;
 
 const ajaxForms = document.getElementsByClassName('ajax-form') || [];
 const ajaxBtn = document.getElementsByClassName('ajax-modal') || [];
-const fldIdNo = document.getElementById('fldIdNo') || null;
+const fldIdNo = document.getElementsByClassName('idNo') || [];
 const fldPassEnable = document.getElementById('fldPassEnable') || null;
 
 var showModal;
@@ -54,9 +54,10 @@ window.operateFormatter = (value, row, index) => {
 
 // item status formatter
 window.itemStatusFormatter = (value, row, index) => {
+  var table = jQuery('#tableItems');
   return row.status === true
-    ? '<span><i class="bi bi-check-circle text-success me-1"></i> aktiv</span>'
-    : '<span><i class="bi bi-exclamation-triangle text-warning me-1"></i> inaktiv</span>';
+    ? '<span><i class="bi bi-check-circle text-success me-1"></i> ' + table.data('llActive') + '</span>'
+    : '<span><i class="bi bi-exclamation-triangle text-warning me-1"></i>' + table.data('llInactive') + '</span>';
 }
 
 
@@ -352,21 +353,24 @@ document.addEventListener(
 
 
     // fldIdNo | keyup | input pattern on field idno
-    if(fldIdNo) {
-      fldIdNo.addEventListener(
-        'keyup',
-        e => {
-          if(e.key === 'Backspace' || e.key === 'Delete') {
-            return;
-          }
+    Array
+      .from(fldIdNo)
+      .forEach((el) => {
+        el.addEventListener(
+          'keyup',
+          e => {
+            if(e.key === 'Backspace' || e.key === 'Delete') {
+              return;
+            }
 
-          // pattern xxxx-yyyy
-          if(e.target.value.length === 4) {
-            fldIdNo.value += '-';
+            // pattern xxxx-yyyy
+            if(e.target.value.length === 4) {
+              el.value += '-';
+            }
           }
-        }
-      );
-    }
+        );
+      });
+
 
     // fldPassEnable | change
     if(fldPassEnable) {
