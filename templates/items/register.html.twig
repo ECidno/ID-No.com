@@ -15,8 +15,78 @@
 
         <div class="row py-3">
           <div class="col-12">
+            {{ form_start(form) }}
 
-            {{ item.idNo }}
+              {{ form_errors(form) }}
+
+              {{ item.idNo }}
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.email) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.plainPasswort.first) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.plainPasswort.second) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.anrede) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.vorname) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.nachname) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-1">
+                  {{ form_row(form.agb) }}
+                </div>
+                <div class="col-11">
+                  Ich habe die AGB gelesen und bin mit deren Geltung einverstanden. Der Datenvorhaltung meiner im Notfallpass hinterlegten Daten stimme ich zu.
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-1">
+                  {{ form_row(form.sendInformation) }}
+                </div>
+                <div class="col-11">
+                  Ja, ich möchte per E-Mail* über Verbesserungen des Service informiert werden.
+
+                *ID-No.com nimmt den Schutz Ihrer persönlichen Daten sehr ernst.
+                Wir behandeln Ihre personenbezogenen Daten vertraulich und verwenden sie nicht für Werbezwecke.
+                Die Anmeldung für Ihren Notfall-ID Pass ist kostenfrei.
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary w-100">{{ 'Create Profile'|trans }}</button>
+                </div>
+              </div>
+
+
+            {{ form_end(form) }}
+
           </div>
         </div>
 

@@ -12,6 +12,8 @@ use App\Entity\Nutzer\Nutzer;
 use App\Entity\Nutzer\Person;
 use App\Form\Type\ItemsAddType;
 use App\Form\Type\ItemsEditType;
+use App\Form\Type\RegistrationType;
+use DateTime;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -155,18 +157,6 @@ class ItemsController extends AbstractController
                 return $this->redirectToRoute('app_standard_index');
                 break;
 
-            // ready for activation
-            case 'aktiviert':
-
-                // variables
-                $variables = [
-                    'item' => $item
-                ];
-
-                // return
-                return $this->renderAndRespond($variables);
-                break;
-
             // active
             case 'registriert':
                 $this->addFlash(
@@ -174,6 +164,42 @@ class ItemsController extends AbstractController
                     $this->translator->trans('ID-Number already registered!')
                 );
                 return $this->redirectToRoute('app_standard_index');
+                break;
+
+            // ready for activation
+            case 'aktiviert':
+
+                $nutzer = new Nutzer();
+                $form = $this->createForm(RegistrationType::class, $nutzer);
+
+                $form->handleRequest($request);
+                if ($form->isSubmitted() && $form->isValid()) {
+                    $pwd = md5(substr($nutzer->getEmail(), 2, 2) . $nutzer->getPlainPasswort());
+
+                    $dateTime = new DateTime();
+                    $source = isset($_SESSION['source']) ? $_SESSION['source'] : 1;
+                    
+                    $nutzer->setStatus('unlogged');
+                    $nutzer->setSprache('de');
+                    $nutzer->setSource($source);
+                    $nutzer->setPasswort($pwd);
+                    $nutzer->setStempel($dateTime);
+                    $nutzer->setRegistriertDatum($dateTime);
+                    $nutzer->setLastChangeDatum($dateTime);
+
+                    $this->emNutzer->persist($nutzer);
+                    $this->emNutzer->flush();
+                }
+
+                // variables
+                $variables = [
+                    'item' => $item,
+                    'form' => $form->createView()
+                ];
+
+                // return
+                return $this->renderAndRespond($variables);
+                break;
 
             // redirect to index - to be sure
             default:

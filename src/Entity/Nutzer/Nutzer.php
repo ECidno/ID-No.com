@@ -100,6 +100,13 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     private $passwort;
 
     /**
+     * Plain Password for double Check
+     *
+     * @var string
+     */
+    private $plainPasswort;
+
+    /**
      * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
      */
@@ -153,6 +160,18 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="integer")
      */
     private $loginFehler;
+
+    /**
+     * @var int
+     * @ORM\Column(type="integer", options={"default":"1"})
+     */
+    private $source;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @var int
+     */
+    private $sendInformation;
 
 
 
@@ -393,12 +412,30 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->passwort;
     }
 
-    /**
+     /**
      * @return string|null
      */
     public function getPassword(): ?string
     {
         return $this->passwort;
+    }
+
+    /**
+     * @param string $passwort
+     * @return Nutzer
+     */
+    public function setPlainPasswort(string $passwort): self
+    {
+        $this->plainPasswort = $passwort;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlainPasswort(): string
+    {
+        return $this->plainPasswort;
     }
 
 
@@ -599,5 +636,34 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     public function getLoginFehler(): ?int
     {
         return $this->loginFehler;
+    }
+
+    /**
+     * @param integer $source
+     * @return self
+     */
+    public function setSource(int $source): self
+    {
+        $this->source = $source;
+        return $this;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getSource(): int
+    {
+        return $this->source;
+    }
+
+    public function setSendInformation(int $sendInformation): self
+    {
+        $this->sendInformation = $sendInformation;
+        return $this;
+    }
+
+    public function getSendInformation(): ?int
+    {
+        return $this->sendInformation;
     }
 }
