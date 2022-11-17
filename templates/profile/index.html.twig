@@ -130,7 +130,9 @@
           data-ll-inactive="{{ 'inactive'|trans() }}">
           <thead class="bg-light">
             <tr>
-              <th data-field="idNo">{{ 'items.table.idNo.lbl'|trans }}</th>
+              <th
+                data-field="idNo"
+                data-formatter="itemidNoFormatter">{{ 'items.table.idNo.lbl'|trans }}</th>
               <th data-field="anbringung">{{ 'items.table.anbringung.lbl'|trans }}</th>
               <th
                 data-field="noStatus"
