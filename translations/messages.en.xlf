@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="en">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="en">
   <file id="messages.en">
     <unit id="5LufHs6" name="Start">
       <segment>
@@ -110,7 +110,7 @@ Info videos you can find here:
         <source>company.ceo.text</source>
         <target>Dr. Markus J. Krechting, born in 1965, studied business administration at the University of Münster with a specialty in marketing with Prof. Dr. Dr. h.c. mult. Meffert. His doctorate on the subject of international marketing was completed at the University of Hamburg. Krechting worked for six years with the company Otto, handling amongst others the market entry in India. He then changed within the group to become Department Head of Marketing for Schwab Versand, Hanau, another mail-order firm. He then spent three years as a corporate consultant heading Internationalization at TellSell Consulting GmbH in Frankfurt.
 
-In 2001, Krechting became director of New Media at the Neckermann mail-order firm in Frankfurt. He expanded the company’s Internet presence to make it one of the most successful online shops in Germany (it was named, amongst others, Favorite Website of the Year, Best Website of the Year, Best Online Shop and also won the Convergence Award). In his additional functions as director of marketing and communication, Krechting simultaneously managed the restructuring of the entire company from the classical catalogue mail-order retailer Neckermann, to the home shopping provider neckermann.de. From April 2007 to April 2008, Krechting headed Neckermann.ch AG as CEO and President of the Board of Administration in Switzerland.</target>
+In 2001, Krechting became director of New Media at the Neckermann mail-order firm in Frankfurt. He expanded the company’s Internet presence to make it one of the most successful online shops in Germany (it was named, amongst others, Favorite Website of the Year, Best Website of the Year, Best Online Shop and also won the Convergence Award). In his additional functions as director of marketing and communication, Krechting simultaneously managed the restructuring of the entire company from the classical catalogue mail-order retailer Neckermann, to the home shopping provider neckermann.de. After that, Krechting was, among other executive positions, CEO of Neckermann AG, St. Gallen, Switzerland.</target>
       </segment>
     </unit>
     <unit id="IaFPsYm" name="Advisory board">
@@ -1376,58 +1376,16 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
         <target>Medical Details</target>
       </segment>
     </unit>
-    <unit id="G61rjPl" name="-1">
-      <segment>
-        <source>-1</source>
-        <target>-1</target>
-      </segment>
-    </unit>
-    <unit id="KB734SJ" name="0+">
-      <segment>
-        <source>0+</source>
-        <target>0+</target>
-      </segment>
-    </unit>
-    <unit id="ruhzbCt" name="A+">
-      <segment>
-        <source>A+</source>
-        <target>A+</target>
-      </segment>
-    </unit>
     <unit id="QhHyzI4" name="B+">
       <segment>
         <source>B+</source>
         <target>B+</target>
       </segment>
     </unit>
-    <unit id="nz5XTy9" name="AB+">
-      <segment>
-        <source>AB+</source>
-        <target>AB+</target>
-      </segment>
-    </unit>
-    <unit id="bm3aRbw" name="0-">
-      <segment>
-        <source>0-</source>
-        <target>0-</target>
-      </segment>
-    </unit>
-    <unit id="Plj1OXB" name="A-">
-      <segment>
-        <source>A-</source>
-        <target>A-</target>
-      </segment>
-    </unit>
     <unit id="dNIb.z1" name="B-">
       <segment>
         <source>B-</source>
         <target>B-</target>
-      </segment>
-    </unit>
-    <unit id="8Dj4XuJ" name="AB-">
-      <segment>
-        <source>AB-</source>
-        <target>AB-</target>
       </segment>
     </unit>
     <unit id="i2wE6hf" name="person.blutgruppe.lbl">
