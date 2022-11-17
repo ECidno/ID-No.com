@@ -3470,5 +3470,41 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>company.coo.caption</target>
       </segment>
     </unit>
+    <unit id="KB734SJ" name="0+">
+      <segment>
+        <source>0+</source>
+        <target>0+</target>
+      </segment>
+    </unit>
+    <unit id="ruhzbCt" name="A+">
+      <segment>
+        <source>A+</source>
+        <target>A+</target>
+      </segment>
+    </unit>
+    <unit id="nz5XTy9" name="AB+">
+      <segment>
+        <source>AB+</source>
+        <target>AB+</target>
+      </segment>
+    </unit>
+    <unit id="bm3aRbw" name="0-">
+      <segment>
+        <source>0-</source>
+        <target>0-</target>
+      </segment>
+    </unit>
+    <unit id="Plj1OXB" name="A-">
+      <segment>
+        <source>A-</source>
+        <target>A-</target>
+      </segment>
+    </unit>
+    <unit id="8Dj4XuJ" name="AB-">
+      <segment>
+        <source>AB-</source>
+        <target>AB-</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Mime\MimeTypes;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -488,6 +489,42 @@ class Person
             : $this->getImages()
                 ->first()
                 ->getBildShow();
+    }
+
+    /**
+     * @return ?string
+     */
+    public function getImageSrc(): ?string
+    {
+        if($this->getImages()->isEmpty()) {
+            return 'null';
+        }
+
+        // get file
+        $imgEntity = $this->getImages()->first();
+        $imgFile =  __DIR__.'/../../../media/userimages/'.$imgEntity->getBild();
+
+        // exists?
+        if (!file_exists($imgFile)) {
+            return null;
+        }
+
+        // mime type
+        $mimeTypes = new MimeTypes();
+        $imgMimeType = $mimeTypes->guessMimeType($imgFile);
+
+        // return
+        return join(
+            '',
+            [
+                'data:',
+                $imgMimeType,
+                ';base64,',
+                base64_encode(
+                    file_get_contents($imgFile)
+                )
+            ]
+        );
     }
 
 

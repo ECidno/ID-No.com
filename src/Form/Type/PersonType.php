@@ -241,6 +241,7 @@ class PersonType extends AbstractType
 
             ->add('personImage', FileType::class, [
                 'label' => new TranslatableMessage('person.image.lbl'),
+                'row_attr' => ['class' => 'file mb-3'],
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
@@ -252,7 +253,10 @@ class PersonType extends AbstractType
                             'image/png',
                         ],
                     ])
-                ]
+                ],
+                'attr' => [
+                    'accept' => 'image/gif,image/jpeg,image/png',
+                ],
             ])
             ->add('imageShow', CheckboxType::class, [
                 'label' => new TranslatableMessage('sichtbar'),

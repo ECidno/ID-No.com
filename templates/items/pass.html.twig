@@ -11,11 +11,20 @@
 
         <div class="row py-3 bg-green">
           <div class="col-12">
-            {% if person.images|length > 0 %}
+            {% if person.imageShow == true and person.imageSrc is not empty %}
+              <div class="text-center">
+                <img
+                  src="{{ person.imageSrc }}"
+                  class="rounded-circle"
+                  alt="{{ person.vorname|raw }} {{ person.nachname|raw }}" />
+              </div>
+            {% endif %}
+
+ {#           {% if person.images|length > 0 %}
               {% set image = person.images|first %}
-{#            {% if image.status == 'ok' and image.bildShow == true %}  #}
+            {% if image.status == 'ok' and image.bildShow == true %}  #}
               {# @TODO: bildShow wird nicht berücksichtigt? #}
-              {# @TODO: Bilder von lokalem Pfad! #}
+              {# @TODO: Bilder von lokalem Pfad!
               {% if image.status == 'ok' %}
                 <div class="text-center">
                   <img
@@ -25,6 +34,7 @@
                 </div>
               {% endif %}
             {% endif %}
+            #}
           </div>
         </div>
 
