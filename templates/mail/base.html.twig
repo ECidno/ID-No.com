@@ -1,0 +1,22 @@
+{% trans_default_domain 'messages' %}
+{% apply inline_css %}
+
+  {# header #}
+  {% include 'mail/_header.html.twig' %}
+
+  {# logo #}
+  <p class="body">
+    <img
+      class="logo"
+      src="{{ email.image('@images/id_no_logo_mail.png') }}"
+      alt="ID-No.com" />
+  </p>
+
+  {# content #}
+  <p class="body">
+    {% block content %}{% endblock %}
+  </p>
+
+  {# footer #}
+  {% include 'mail/_footer.html.twig' %}
+{% endapply %}

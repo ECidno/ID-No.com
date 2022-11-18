@@ -54,7 +54,6 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @var array
-     *
      * @Assert\NotBlank
      */
     private $roles = [
@@ -112,33 +111,33 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     private $plainPasswort;
 
     /**
-     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
      */
     private $stempel;
 
     /**
-     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
      */
     private $registriertDatum;
 
     /**
-     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
      */
     private $aktiviertDatum;
 
     /**
+     * @ORM\Column(type="datetime")
      * @Assert\Type("\DateTimeInterface")
      * @Gedmo\Timestampable(on="update")
-     * @ORM\Column(type="datetime")
      */
     private $lastChangeDatum;
 
     /**
-     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
      */
     private $lastLogin;
 
@@ -155,6 +154,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     private $gesperrtAnzahl = 0;
 
     /**
+     * @var int
      * @ORM\Column(type="integer", options={"default":"0"})
      */
     private $gesperrtDatum = 0;

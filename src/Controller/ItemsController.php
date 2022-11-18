@@ -90,6 +90,9 @@ class ItemsController extends AbstractController
                 $nutzer = $this->emNutzer
                     ->getRepository(Nutzer::class)
                     ->findOneById($nutzerId);
+                $person = $this->emNutzer
+                    ->getRepository(Person::class)
+                    ->findOneById($personId);
 
                 // user pass active (sichtbar)
                 if($nutzer->getSichtbar() === false) {
@@ -104,10 +107,22 @@ class ItemsController extends AbstractController
                 $variables = [
                     'idno' => $item,
                     'nutzer' => $nutzer,
-                    'person' => $this->emNutzer
-                        ->getRepository(Person::class)
-                        ->findOneById($personId),
+                    'person' => $person,
                 ];
+
+                // mail
+                $this->mailService->infoMail(
+                    [
+                        'subject' => 'Information - Ihr ID-No.com Produkt wurde genutzt!',
+                        'recipientEmail' => $person->getEmail(),
+                        'recipientName' => $person->getFullName(),
+                        'item' => $item,
+                        'nutzer' => $nutzer,
+                        'person' => $person,
+                        'now' => new \DateTime(),
+                    ],
+                    'itemScanned'
+                );
 
                 // return
                 return $this->renderAndRespond($variables);

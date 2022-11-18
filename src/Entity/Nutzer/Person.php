@@ -54,6 +54,9 @@ class Person
      */
     private $images;
 
+    /**
+     * @var bool
+     */
     private $imageShow;
 
     /**
@@ -83,12 +86,14 @@ class Person
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank
      */
     private $vorname;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank
      */
     private $nachname;
 
@@ -363,6 +368,7 @@ class Person
     private $weitereangabenShow = 1;
 
     /**
+     * @ORM\Column(type="datetime")
      * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
      */
@@ -371,7 +377,6 @@ class Person
     /**
      * @Assert\Type("\DateTimeInterface")
      * @Gedmo\Timestampable(on="update")
-     * @ORM\Column(type="datetime")
      */
     private $lastChangeDatum;
 
@@ -657,6 +662,37 @@ class Person
             ' ',
             array_filter(
                 [
+                    $this->vorname,
+                    $this->nachname,
+                ]
+            )
+        );
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFullAddress(): ?string
+    {
+        // address
+        switch ($this->anrede) {
+            case 'm':
+                $anrede = 'Lieber'; # @TODO translate!
+                break;
+            case 'w':
+                $anrede = 'Liebe'; # @TODO translate!
+                break;
+            default:
+                $anrede = 'Guten Tag'; # @TODO translate!
+                break;
+        }
+
+        // return
+        return join(
+            ' ',
+            array_filter(
+                [
+                    $anrede,
                     $this->vorname,
                     $this->nachname,
                 ]
