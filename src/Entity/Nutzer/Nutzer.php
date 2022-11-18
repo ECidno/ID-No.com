@@ -14,11 +14,15 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Rollerworks\Component\PasswordStrength\Validator\Constraints as RollerworksPassword;
 
 /**
  * Nutzer
  *
  * @ORM\Entity(repositoryClass="App\Repository\NutzerRepository")
+ * @UniqueEntity(fields={"email"}, message="nutzer.email.unique")
+
  */
 class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -83,9 +87,9 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=5)
+     * @ORM\Column(type="string", length=5, options={"default":"nein"})
      */
-    private $freigabe;
+    private $freigabe = "nein";
 
     /**
      * @var string
@@ -98,6 +102,14 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=100)
      */
     private $passwort;
+
+    /**
+     * Plain Password for double Check
+     *
+     * @var string
+     * @RollerworksPassword\PasswordStrength(minLength=8, minStrength=3)
+     */
+    private $plainPasswort;
 
     /**
      * @Assert\Type("\DateTimeInterface")
@@ -132,27 +144,38 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=5)
+     * @ORM\Column(type="string", length=5, options={"default":"nein"})
      */
-    private $gesperrt;
+    private $gesperrt = "nein";
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", options={"default":"0"})
      */
-    private $gesperrtAnzahl;
+    private $gesperrtAnzahl = 0;
 
     /**
-     * @Assert\Type("\DateTimeInterface")
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", options={"default":"0"})
      */
-    private $gesperrtDatum;
+    private $gesperrtDatum = 0;
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", options={"default":"0"})
      */
-    private $loginFehler;
+    private $loginFehler = 0;
+
+    /**
+     * @var int
+     * @ORM\Column(type="integer", options={"default":"1"})
+     */
+    private $source;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @var int
+     */
+    private $sendInformation;
 
 
 
@@ -348,9 +371,9 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return string|null
+     * @return string
      */
-    public function getFreigabe(): ?string
+    public function getFreigabe(): string
     {
         return $this->freigabe;
     }
@@ -393,12 +416,30 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->passwort;
     }
 
-    /**
+     /**
      * @return string|null
      */
     public function getPassword(): ?string
     {
         return $this->passwort;
+    }
+
+    /**
+     * @param string $passwort
+     * @return Nutzer
+     */
+    public function setPlainPasswort(string $passwort): self
+    {
+        $this->plainPasswort = $passwort;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlainPasswort(): string
+    {
+        return $this->plainPasswort;
     }
 
 
@@ -565,19 +606,19 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 
 
     /**
-     * @param \DateTime $gesperrtDatum
+     * @param int $gesperrtDatum
      * @return Nutzer
      */
-    public function setGesperrtDatum(\DateTime $gesperrtDatum): self
+    public function setGesperrtDatum(int $gesperrtDatum): self
     {
         $this->gesperrtDatum = $gesperrtDatum;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return int|null
      */
-    public function getGesperrtDatum(): ?\DateTime
+    public function getGesperrtDatum(): ?int
     {
         return $this->gesperrtDatum;
     }
@@ -599,5 +640,34 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     public function getLoginFehler(): ?int
     {
         return $this->loginFehler;
+    }
+
+    /**
+     * @param integer $source
+     * @return self
+     */
+    public function setSource(int $source): self
+    {
+        $this->source = $source;
+        return $this;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getSource(): int
+    {
+        return $this->source;
+    }
+
+    public function setSendInformation(int $sendInformation): self
+    {
+        $this->sendInformation = $sendInformation;
+        return $this;
+    }
+
+    public function getSendInformation(): ?int
+    {
+        return $this->sendInformation;
     }
 }

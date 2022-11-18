@@ -15,8 +15,77 @@
 
         <div class="row py-3">
           <div class="col-12">
+            {{ form_start(form) }}
 
-            {{ item.idNo }}
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.idno) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.email) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.plainPasswort.first) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.plainPasswort.second) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.anrede) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.vorname) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.nachname) }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-1">
+                  {{ form_row(form.agb) }}
+                </div>
+                <div class="col-11">
+                  {{ 'agb.text'|trans|raw|markdown_to_html }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-1">
+                  {{ form_row(form.sendInformation) }}
+                </div>
+                <div class="col-11">
+                  {{ 'newsletter.text'|trans|raw|markdown_to_html }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary w-100">{{ 'Create Profile'|trans }}</button>
+                </div>
+              </div>
+
+
+            {{ form_end(form) }}
+
           </div>
         </div>
 

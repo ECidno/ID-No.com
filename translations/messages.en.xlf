@@ -3176,5 +3176,47 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
         <target>AB-</target>
       </segment>
     </unit>
+    <unit id="ASHju5p" name="Idno">
+      <segment>
+        <source>Idno</source>
+        <target>Idno</target>
+      </segment>
+    </unit>
+    <unit id="lpzL089" name="Email">
+      <segment>
+        <source>Email</source>
+        <target>Email</target>
+      </segment>
+    </unit>
+    <unit id="mklUC0Y" name="registration.passwort">
+      <segment>
+        <source>registration.passwort</source>
+        <target>Password</target>
+      </segment>
+    </unit>
+    <unit id="pU5CAnR" name="registration.repeatPasswort">
+      <segment>
+        <source>registration.repeatPasswort</source>
+        <target>Password repeat</target>
+      </segment>
+    </unit>
+    <unit id="6cI1jGQ" name="agb.text">
+      <segment>
+        <source>agb.text</source>
+        <target>agb.text</target>
+      </segment>
+    </unit>
+    <unit id="6Mv17nB" name="newsletter.text">
+      <segment>
+        <source>newsletter.text</source>
+        <target>newsletter.text</target>
+      </segment>
+    </unit>
+    <unit id="u3WK.2_" name="Create Profile">
+      <segment>
+        <source>Create Profile</source>
+        <target>Create Profile</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
