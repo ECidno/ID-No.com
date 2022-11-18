@@ -3545,53 +3545,29 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="mklUC0Y" name="registration.passwort">
       <segment>
         <source>registration.passwort</source>
-        <target>registration.passwort</target>
+        <target>Passwort</target>
       </segment>
     </unit>
     <unit id="pU5CAnR" name="registration.repeatPasswort">
       <segment>
         <source>registration.repeatPasswort</source>
-        <target>registration.repeatPasswort</target>
+        <target>Passwort wiederholen</target>
       </segment>
     </unit>
-    <unit id="aU53CAN" name="Strasse show">
+     <unit id="6cI1jGQ" name="agb.text">
       <segment>
-        <source>Strasse show</source>
-        <target>Strasse show</target>
+        <source>agb.text</source>
+        <target>Ich habe die [AGB](/agb) gelesen und bin mit deren Geltung einverstanden. Der [Datenvorhaltung](/datenschutz) meiner im Notfallpass hinterlegten Daten stimme ich zu.</target>
       </segment>
     </unit>
-    <unit id="JuqO0bC" name="Agb">
+    <unit id="6Mv17nB" name="newsletter.text">
       <segment>
-        <source>Agb</source>
-        <target>Agb</target>
-      </segment>
-    </unit>
-    <unit id="vlD0vme" name="Send information">
-      <segment>
-        <source>Send information</source>
-        <target>Send information</target>
-      </segment>
-    </unit>
-    <unit id="6hcqZQ_">
-      <segment>
-        <source>Ich habe die AGB gelesen und bin mit deren Geltung einverstanden. Der Datenvorhaltung meiner im Notfallpass hinterlegten Daten stimme ich zu.
-                </source>
-        <target>Ich habe die AGB gelesen und bin mit deren Geltung einverstanden. Der Datenvorhaltung meiner im Notfallpass hinterlegten Daten stimme ich zu.
-                </target>
-      </segment>
-    </unit>
-    <unit id="eqZgI6b">
-      <segment>
-        <source>Ja, ich möchte per E-Mail* über Verbesserungen des Service informiert werden.
+        <source>newsletter.text</source>
+        <target>Ja, ich möchte per E-Mail* über [Verbesserungen des Service](/datenschutz) informiert werden.
 
-                *ID-No.com nimmt den Schutz Ihrer persönlichen Daten sehr ernst.
-                Wir behandeln Ihre personenbezogenen Daten vertraulich und verwenden sie nicht für Werbezwecke.
-                Die Anmeldung für Ihren Notfall-ID Pass ist kostenfrei.</source>
-        <target>Ja, ich möchte per E-Mail* über Verbesserungen des Service informiert werden.
-
-                *ID-No.com nimmt den Schutz Ihrer persönlichen Daten sehr ernst.
-                Wir behandeln Ihre personenbezogenen Daten vertraulich und verwenden sie nicht für Werbezwecke.
-                Die Anmeldung für Ihren Notfall-ID Pass ist kostenfrei.</target>
+*ID-No.com nimmt den Schutz Ihrer persönlichen Daten sehr ernst.
+Wir behandeln Ihre personenbezogenen Daten vertraulich und verwenden sie nicht für Werbezwecke.
+Die Anmeldung für Ihren Notfall-ID Pass ist kostenfrei.</target>
       </segment>
     </unit>
     <unit id="u3WK.2_" name="Create Profile">

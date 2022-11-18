@@ -20,8 +20,18 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('idno', TextType::class, [
+                'mapped' => false,
+                'attr' => [
+                    'class' => 'idNo',
+                    'placeholder' => new TranslatableMessage('items.idNo.lbl'),
+                    'pattern' => '[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}',
+                    'maxlength' => 9,
+                ],
+                'required' => false
+            ])
             ->add('email', EmailType::class, [
-                'required' => true
+                'required' => true,
             ])
             ->add('anrede', ChoiceType::class, [
                 'label' => new TranslatableMessage('person.geschlecht'),

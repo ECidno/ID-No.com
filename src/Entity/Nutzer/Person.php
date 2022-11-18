@@ -7,9 +7,11 @@ namespace App\Entity\Nutzer;
  *
  **********************************************************************/
 
+use DateTime;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Query\Expr\Func;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Mime\MimeTypes;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -30,10 +32,9 @@ class Person
     private $id;
 
     /**
-     * @var Person
-     * @ORM\ManyToOne(targetEntity="App\Entity\Nutzer\Person")
+     * @var int
      */
-    private $parent = null;
+    private $parentId = 0;
 
     /**
      * @var Nutzer
@@ -159,9 +160,9 @@ class Person
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=6)
+     * @ORM\Column(type="string", length=6, options={"default":"+49"})
      */
-    private $telefonLand;
+    private $telefonLand = '+49';
 
     /**
      * @var string
@@ -189,9 +190,9 @@ class Person
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=6)
+     * @ORM\Column(type="string", length=6, options={"default":"+49"})
      */
-    private $mobileLand;
+    private $mobileLand = '+49';
 
     /**
      * @var string
@@ -213,9 +214,9 @@ class Person
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=5)
+     * @ORM\Column(type="string", length=5, options={"default":"kg"})
      */
-    private $gewichtEinheit;
+    private $gewichtEinheit = 'kg';
 
     /**
      * @var bool
@@ -231,9 +232,9 @@ class Person
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=5)
+     * @ORM\Column(type="string", length=5, options={"default":"cm"})
      */
-    private $groesseEinheit;
+    private $groesseEinheit = 'cm';
 
     /**
      * @var bool
@@ -363,6 +364,12 @@ class Person
 
     /**
      * @Assert\Type("\DateTimeInterface")
+     * @ORM\Column(type="datetime")
+     */
+    private $registriertDatum;
+
+    /**
+     * @Assert\Type("\DateTimeInterface")
      * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime")
      */
@@ -388,22 +395,22 @@ class Person
     }
 
 
-    /**
-     * @param Person $parent
-     * @return Items
-     */
-    public function setParent(Person $parent): self
+     /**
+      * @param integer $parentId
+      * @return self
+      */
+    public function setParentId(int $parentId): self
     {
-        $this->parent = $parent;
+        $this->parentId = $parentId;
         return $this;
     }
 
     /**
-     * @return Person|null
+     * @return int
      */
-    public function getParent(): ?Person
+    public function getParentId(): int
     {
-        return $this->parent;
+        return $this->parentId;
     }
 
 
@@ -1612,6 +1619,16 @@ class Person
             $this->zusatzversicherungShow;
     }
 
+    public function setRegistriertDatum(\DateTime $registriertDatum): self
+    {
+        $this->registriertDatum = $registriertDatum;
+        return $this;
+    }
+
+    public function getRegistriertDatum(): \DateTime
+    {
+        return $this->registriertDatum;
+    }
 
     /**
      * @param \DateTime $lastChangeDatum

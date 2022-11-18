@@ -9,6 +9,7 @@ namespace App\Controller;
 
 use App\Entity\Main\Items;
 use App\Entity\Nutzer\Nutzer;
+use App\Entity\Nutzer\NutzerAuth;
 use App\Entity\Nutzer\Person;
 use App\Form\Type\ItemsAddType;
 use App\Form\Type\ItemsEditType;
@@ -17,6 +18,7 @@ use DateTime;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\ByteString;
 
 /**
  * items controller
@@ -171,6 +173,7 @@ class ItemsController extends AbstractController
 
                 $nutzer = new Nutzer();
                 $form = $this->createForm(RegistrationType::class, $nutzer);
+                $form->get('idno')->setData($idno);
 
                 $form->handleRequest($request);
                 if ($form->isSubmitted() && $form->isValid()) {
@@ -181,6 +184,7 @@ class ItemsController extends AbstractController
                     
                     $nutzer->setStatus('unlogged');
                     $nutzer->setSprache('de');
+                    $nutzer->setLoginFehler(0);
                     $nutzer->setSource($source);
                     $nutzer->setPasswort($pwd);
                     $nutzer->setStempel($dateTime);
@@ -189,6 +193,45 @@ class ItemsController extends AbstractController
 
                     $this->emNutzer->persist($nutzer);
                     $this->emNutzer->flush();
+
+                    $person = new Person();
+                    $person->setNutzer($nutzer);
+                    $person->setStatus('ok');
+                    $person->setSprache('de');
+                    $person->setEmail($nutzer->getEmail());
+                    $person->setAnrede($nutzer->getAnrede());
+                    $person->setVorname($nutzer->getVorname());
+                    $person->setNachname($nutzer->getNachname());
+                    $person->setRegistriertDatum($dateTime);
+                    $person->setLastChangeDatum($dateTime);
+
+                    $this->emNutzer->persist($person);
+                    $this->emNutzer->flush();
+
+                    # @TODO: Validation
+                    $idno = $form->get('idno')->getData();
+                    $item = $this->emDefault
+                        ->getRepository(Items::class)
+                        ->findOneByIdNo($idno);
+
+                    $item->setNoStatus('registriert');
+                    $item->setNutzerId($nutzer->getId());
+                    $item->setPersonId($person->getId());
+                    $item->setAktiviertDatum($dateTime);
+                    $item->setLastChangeDatum($dateTime);
+
+                    $this->emDefault->persist($item);
+                    $this->emNutzer->flush();
+
+                    $nutzerAuth = new NutzerAuth();
+                    $nutzerAuth->setNutzerId($nutzer->getId());
+                    $nutzerAuth->setAuth(ByteString::fromRandom(40)->toString());
+                    $nutzerAuth->setTime(time());
+
+                    $this->emNutzer->persist($nutzerAuth);
+                    $this->emNutzer->flush();
+
+                    return $this->redirectToRoute('app_profile_index');
                 }
 
                 // variables

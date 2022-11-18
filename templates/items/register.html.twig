@@ -17,9 +17,12 @@
           <div class="col-12">
             {{ form_start(form) }}
 
-              {{ form_errors(form) }}
+              <div class="row">
+                <div class="col-12">
+                  {{ form_row(form.idno) }}
+                </div>
+              </div>
 
-              {{ item.idNo }}
               <div class="row">
                 <div class="col-12">
                   {{ form_row(form.email) }}
@@ -61,7 +64,7 @@
                   {{ form_row(form.agb) }}
                 </div>
                 <div class="col-11">
-                  Ich habe die AGB gelesen und bin mit deren Geltung einverstanden. Der Datenvorhaltung meiner im Notfallpass hinterlegten Daten stimme ich zu.
+                  {{ 'agb.text'|trans|raw|markdown_to_html }}
                 </div>
               </div>
 
@@ -70,11 +73,7 @@
                   {{ form_row(form.sendInformation) }}
                 </div>
                 <div class="col-11">
-                  Ja, ich möchte per E-Mail* über Verbesserungen des Service informiert werden.
-
-                *ID-No.com nimmt den Schutz Ihrer persönlichen Daten sehr ernst.
-                Wir behandeln Ihre personenbezogenen Daten vertraulich und verwenden sie nicht für Werbezwecke.
-                Die Anmeldung für Ihren Notfall-ID Pass ist kostenfrei.
+                  {{ 'newsletter.text'|trans|raw|markdown_to_html }}
                 </div>
               </div>
 
