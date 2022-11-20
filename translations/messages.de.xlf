@@ -3521,7 +3521,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="lpzL089" name="Email">
       <segment>
         <source>Email</source>
-        <target>Email</target>
+        <target>E-Mail</target>
       </segment>
     </unit>
     <unit id="hjRN5dU" name="Anrede">
@@ -3554,7 +3554,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>Passwort wiederholen</target>
       </segment>
     </unit>
-     <unit id="6cI1jGQ" name="agb.text">
+    <unit id="6cI1jGQ" name="agb.text">
       <segment>
         <source>agb.text</source>
         <target>Ich habe die [AGB](/agb) gelesen und bin mit deren Geltung einverstanden. Der [Datenvorhaltung](/datenschutz) meiner im Notfallpass hinterlegten Daten stimme ich zu.</target>
@@ -3574,6 +3574,12 @@ Die Anmeldung für Ihren Notfall-ID Pass ist kostenfrei.</target>
       <segment>
         <source>Create Profile</source>
         <target>Create Profile</target>
+      </segment>
+    </unit>
+    <unit id="icXk1wm" name="person.email">
+      <segment>
+        <source>person.email</source>
+        <target>E-Mail</target>
       </segment>
     </unit>
   </file>

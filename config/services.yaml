@@ -36,3 +36,10 @@ services:
     # routing service
     App\Service\RoutingService:
         autoconfigure: true
+
+    # doctrine | onFlush
+    App\EventListener\DoctrineOnFlushListener:
+        tags:
+            - # these are the options required to define the entity listener
+                name: 'doctrine.event_listener'
+                event: 'onFlush'

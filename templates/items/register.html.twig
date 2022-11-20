@@ -11,12 +11,11 @@
     </div>
 
     <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-8 border">
+      <div class="col-12 col-md-10 col-lg-8 borderX">
 
         <div class="row py-3">
           <div class="col-12">
             {{ form_start(form) }}
-
               <div class="row">
                 <div class="col-12">
                   {{ form_row(form.idno) }}
@@ -48,13 +47,10 @@
               </div>
 
               <div class="row">
-                <div class="col-12">
+                <div class="col-12 col-sm-6">
                   {{ form_row(form.vorname) }}
                 </div>
-              </div>
-
-              <div class="row">
-                <div class="col-12">
+                <div class="col-12 col-sm-6">
                   {{ form_row(form.nachname) }}
                 </div>
               </div>
@@ -79,17 +75,14 @@
 
               <div class="row">
                 <div class="col-12">
-                  <button type="submit" class="btn btn-primary w-100">{{ 'Create Profile'|trans }}</button>
+                  <button
+                    type="submit"
+                    class="btn btn-primary text-light w-100">{{ 'Create Profile'|trans }}</button>
                 </div>
               </div>
-
-
             {{ form_end(form) }}
-
           </div>
         </div>
-
-
       </div>
     </div>
   </div>

@@ -22,7 +22,6 @@ use Rollerworks\Component\PasswordStrength\Validator\Constraints as RollerworksP
  *
  * @ORM\Entity(repositoryClass="App\Repository\NutzerRepository")
  * @UniqueEntity(fields={"email"}, message="nutzer.email.unique")
-
  */
 class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -36,7 +35,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="App\Entity\Nutzer\Person", mappedBy="nutzer")
+     * @ORM\OneToMany(targetEntity="App\Entity\Nutzer\Person", mappedBy="nutzer", cascade={"persist"})
      */
     private $persons;
 
@@ -75,12 +74,14 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank
      */
     private $vorname;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank
      */
     private $nachname;
 
@@ -113,12 +114,14 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="datetime")
      * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="create")
      */
     private $stempel;
 
     /**
      * @ORM\Column(type="datetime")
      * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="create")
      */
     private $registriertDatum;
 
@@ -131,6 +134,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="datetime")
      * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="create")
      * @Gedmo\Timestampable(on="update")
      */
     private $lastChangeDatum;
@@ -178,6 +182,14 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     private $sendInformation;
 
 
+    /**
+     * constructor
+     */
+    public function __construct()
+    {
+        $this->persons = new ArrayCollection();
+    }
+
 
     /**
      * @return int|null
@@ -204,6 +216,34 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     public function getPersons(): Collection
     {
         return $this->persons;
+    }
+
+    /**
+     * @param Person $person
+     * @return Nutzer
+     */
+    public function addPerson(Person $person): self
+    {
+        if (!$this->persons->contains($person)) {
+            $this->persons[] = $person;
+            $person->setNutzer($this);
+        }
+        return $this;
+    }
+
+    /**
+     * @param Person $person
+     * @return Nutzer
+     */
+    public function removePerson(Person $person): self
+    {
+        if ($this->persons->contains($person)) {
+            $this->persons->removeElement($person);
+            if ($person->getNutzer() === $this) {
+ #               $person->setNutzer(null);
+            }
+        }
+        return $this;
     }
 
 

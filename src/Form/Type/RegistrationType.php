@@ -1,6 +1,11 @@
 <?php
-
 namespace App\Form\Type;
+
+/***********************************************************************
+ *
+ * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
+ *
+ **********************************************************************/
 
 use App\Entity\Nutzer\Nutzer;
 use Symfony\Component\Form\AbstractType;
@@ -15,12 +20,16 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Translation\TranslatableMessage;
 use Symfony\Component\Validator\Constraints\IsTrue;
 
+/**
+ * person form type
+ */
 class RegistrationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('idno', TextType::class, [
+                'label' => new TranslatableMessage('items.idNo.lbl'),
                 'mapped' => false,
                 'attr' => [
                     'class' => 'idNo',
@@ -28,9 +37,14 @@ class RegistrationType extends AbstractType
                     'pattern' => '[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}',
                     'maxlength' => 9,
                 ],
-                'required' => false
+                'required' => true
             ])
             ->add('email', EmailType::class, [
+                'label' => new TranslatableMessage('person.email'),
+                'attr' => [
+                    'maxlength' => 100,
+                    'autocomplete' => 'off',
+                ],
                 'required' => true,
             ])
             ->add('anrede', ChoiceType::class, [
@@ -48,21 +62,25 @@ class RegistrationType extends AbstractType
             ->add('vorname', TextType::class, [
                 'label' => new TranslatableMessage('person.vorname.lbl'),
                 'attr' => [
-                    'placeholder' => new TranslatableMessage('person.vorname.lbl'),
                     'maxlength' => 100,
+                    'autocomplete' => 'off',
                 ],
                 'required' => true
             ])
             ->add('nachname', TextType::class, [
                 'label' => new TranslatableMessage('person.nachname.lbl'),
                 'attr' => [
-                    'placeholder' => new TranslatableMessage('person.nachname.lbl'),
                     'maxlength' => 100,
+                    'autocomplete' => 'off',
                 ],
                 'required' => true
             ])
             ->add('plainPasswort', RepeatedType::class, [
                 'type' => PasswordType::class,
+                'attr' => [
+                    'maxlength' => 100,
+                    'autocomplete' => 'off',
+                ],
                 'first_options' => [
                     'label' => new TranslatableMessage('registration.passwort')
                 ],
@@ -75,7 +93,8 @@ class RegistrationType extends AbstractType
                 'label' => false,
                 'row_attr' => ['class' => 'form-switch'],
                 'attr' => [
-                    'role' => 'switch'
+                    'role' => 'switch',
+                    'autocomplete' => 'off',
                 ],
                 'constraints' => new IsTrue(),
             ])
@@ -83,7 +102,8 @@ class RegistrationType extends AbstractType
                 'label' => false,
                 'row_attr' => ['class' => 'form-switch'],
                 'attr' => [
-                    'role' => 'switch'
+                    'role' => 'switch',
+                    'autocomplete' => 'off',
                 ],
                 'required' => false
             ])

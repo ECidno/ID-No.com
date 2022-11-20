@@ -7,11 +7,9 @@ namespace App\Entity\Nutzer;
  *
  **********************************************************************/
 
-use DateTime;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Query\Expr\Func;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Mime\MimeTypes;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -32,9 +30,17 @@ class Person
     private $id;
 
     /**
-     * @var int
+     * @var Person
+     * @ORM\ManyToOne(targetEntity="App\Entity\Nutzer\Person")
+     * @ORM\JoinColumn(nullable=false, options={"default":0})
+     private $parent;
      */
-    private $parentId = 0;
+
+    /**
+     * @var int
+     * @ORM\Column(type="integer", nullable=false, options={"default":"0"}))
+     */
+     private $parentId = 0;
 
     /**
      * @var Nutzer
@@ -368,14 +374,16 @@ class Person
     private $weitereangabenShow = 1;
 
     /**
-     * @ORM\Column(type="datetime")
      * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
+     * @Gedmo\Timestampable(on="create")
      */
     private $registriertDatum;
 
     /**
+     * @ORM\Column(type="datetime")
      * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="create")
      * @Gedmo\Timestampable(on="update")
      */
     private $lastChangeDatum;
@@ -400,11 +408,30 @@ class Person
     }
 
 
-     /**
-      * @param integer $parentId
-      * @return self
-      */
-    public function setParentId(int $parentId): self
+    /**
+     * @param ?Person $parent
+     * @return Person
+     */
+    public function setParent(?Person $parent = null): self
+    {
+        $this->parent = $parent;
+        return $this;
+    }
+
+    /**
+     * @return ?Person
+     */
+    public function getParent(): ?Person
+    {
+        return $this->parent;
+    }
+
+
+    /**
+     * @param ?int $parentId
+     * @return self
+     */
+    public function setParentId(?int $parentId = 0): self
     {
         $this->parentId = $parentId;
         return $this;
@@ -1629,8 +1656,6 @@ class Person
     }
 
 
-
-
     /**
      * @return bool
      */
@@ -1655,31 +1680,31 @@ class Person
             $this->zusatzversicherungShow;
     }
 
-    public function setRegistriertDatum(\DateTime $registriertDatum): self
+    public function setRegistriertDatum(\DateTimeInterface $registriertDatum): self
     {
         $this->registriertDatum = $registriertDatum;
         return $this;
     }
 
-    public function getRegistriertDatum(): \DateTime
+    public function getRegistriertDatum(): \DateTimeInterface
     {
         return $this->registriertDatum;
     }
 
     /**
-     * @param \DateTime $lastChangeDatum
+     * @param \DateTimeInterface $lastChangeDatum
      * @return Person
      */
-    public function setLastChangeDatum(\DateTime $lastChangeDatum): self
+    public function setLastChangeDatum(\DateTimeInterface $lastChangeDatum): self
     {
         $this->lastChangeDatum = $lastChangeDatum;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return ?\DateTimeInterface|null
      */
-    public function getLastChangeDatum(): ?\DateTime
+    public function getLastChangeDatum(): ?\DateTimeInterface
     {
         return $this->lastChangeDatum;
     }

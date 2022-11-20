@@ -14,7 +14,6 @@ use App\Entity\Nutzer\Person;
 use App\Form\Type\ItemsAddType;
 use App\Form\Type\ItemsEditType;
 use App\Form\Type\RegistrationType;
-use DateTime;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -34,14 +33,14 @@ class ItemsController extends AbstractController
     /**
      * pass action
      *
-     * @param string $idno
      * @param Request $request
+     * @param string $idno
      *
      * @return Response
      *
      * @Route("/notfallpass/{idno?}", name="pass", methods={"GET", "POST"})
      */
-    public function pass($idno = null, Request $request): Response
+    public function pass(Request $request, $idno = null): Response
     {
         $idno = strtoupper($request->get('p_idno') ?? $idno);
 
@@ -139,15 +138,16 @@ class ItemsController extends AbstractController
     /**
      * register
      *
-     * @param string $idno
      * @param Request $request
+     * @param string $idno
      *
      * @return Response
      *
      * @Route("/registrieren/{idno?}", name="register", methods={"GET", "POST"})
      */
-    public function register($idno = null, Request $request): Response
+    public function register(Request $request, $idno = null): Response
     {
+        $now = new \DateTime();
         $idno = strtoupper($request->get('p_idno') ?? $idno);
 
         // get item
@@ -188,15 +188,69 @@ class ItemsController extends AbstractController
 
                 $nutzer = new Nutzer();
                 $form = $this->createForm(RegistrationType::class, $nutzer);
-                $form->get('idno')->setData($idno);
+                $form
+                    ->get('idno')
+                    ->setData($idno);
 
                 $form->handleRequest($request);
+
+                // form valid
                 if ($form->isSubmitted() && $form->isValid()) {
+
+                    // item
+                    # @TODO: Validation
+                    $idno = $form->get('idno')->getData();
+                    $item = $this->emDefault
+                        ->getRepository(Items::class)
+                        ->findOneByIdNo($idno);
+
                     $pwd = md5(substr($nutzer->getEmail(), 2, 2) . $nutzer->getPlainPasswort());
 
-                    $dateTime = new DateTime();
+                    # @TODO was macht das?
                     $source = isset($_SESSION['source']) ? $_SESSION['source'] : 1;
-                    
+
+                    // person
+                    $person = new Person();
+                    $person
+                        ->setNutzer($nutzer)
+                        ->setParentId(0)
+                        ->setStatus('ok')
+                        ->setSprache('de')
+                        ->setEmail($nutzer->getEmail())
+                        ->setAnrede($nutzer->getAnrede())
+                        ->setVorname($nutzer->getVorname())
+                        ->setNachname($nutzer->getNachname());
+
+                    // nutzer (user)
+                    $nutzer
+                        ->setStatus('unlogged')
+                        ->setSprache('de')
+                        ->setLoginFehler(0)
+                        ->setSource($source)
+                        ->setPasswort($pwd)
+
+                        // add first person (self)
+                        ->addPerson($person);
+
+                    // persist
+                    $this->emNutzer->persist($nutzer);
+                    $this->emNutzer->flush();
+
+                    // update item
+                    $item
+                        ->setNoStatus('registriert')
+                        ->setNutzerId($nutzer->getId())
+                        ->setPersonId($person->getId())
+                        ->setAktiviertDatum($now);
+
+                    // persist
+                    $this->emDefault->persist($item);
+                    $this->emDefault->flush();
+
+                    /*
+                    $dateTime = new \DateTime();
+                    $source = isset($_SESSION['source']) ? $_SESSION['source'] : 1;
+
                     $nutzer->setStatus('unlogged');
                     $nutzer->setSprache('de');
                     $nutzer->setLoginFehler(0);
@@ -246,8 +300,11 @@ class ItemsController extends AbstractController
                     $this->emNutzer->persist($nutzerAuth);
                     $this->emNutzer->flush();
 
+*/
+                    // redirect to profile
                     return $this->redirectToRoute('app_profile_index');
                 }
+
 
                 // variables
                 $variables = [
