@@ -204,9 +204,21 @@ class ItemsController extends AbstractController
                         ->getRepository(Items::class)
                         ->findOneByIdNo($idno);
 
-                    $pwd = md5(substr($nutzer->getEmail(), 2, 2) . $nutzer->getPlainPasswort());
+                    $pwd = md5(
+                            substr(
+                            htmlentities(
+                                $nutzer->getEmail(),
+                                ENT_QUOTES
+                            ),
+                            2,
+                            2
+                            ).htmlentities(
+                                $$nutzer->getPlainPasswort(),
+                                ENT_QUOTES
+                            )
+                        );
 
-                    # @TODO was macht das?
+                    # Code from old backend
                     $source = isset($_SESSION['source']) ? $_SESSION['source'] : 1;
 
                     // person
@@ -232,8 +244,16 @@ class ItemsController extends AbstractController
                         // add first person (self)
                         ->addPerson($person);
 
+                     // hash for email verification
+                    $nutzerAuth = new NutzerAuth();
+                    $nutzerAuth
+                        ->setAuth(ByteString::fromRandom(40)->toString())
+                        ->setTime(time())
+                        ->setNutzer($nutzer);
+
                     // persist
                     $this->emNutzer->persist($nutzer);
+                    $this->emNutzer->persist($nutzerAuth);
                     $this->emNutzer->flush();
 
                     // update item
@@ -247,60 +267,6 @@ class ItemsController extends AbstractController
                     $this->emDefault->persist($item);
                     $this->emDefault->flush();
 
-                    /*
-                    $dateTime = new \DateTime();
-                    $source = isset($_SESSION['source']) ? $_SESSION['source'] : 1;
-
-                    $nutzer->setStatus('unlogged');
-                    $nutzer->setSprache('de');
-                    $nutzer->setLoginFehler(0);
-                    $nutzer->setSource($source);
-                    $nutzer->setPasswort($pwd);
-                    $nutzer->setStempel($dateTime);
-                    $nutzer->setRegistriertDatum($dateTime);
-                    $nutzer->setLastChangeDatum($dateTime);
-
-                    $this->emNutzer->persist($nutzer);
-                    $this->emNutzer->flush();
-
-                    $person = new Person();
-                    $person->setNutzer($nutzer);
-                    $person->setStatus('ok');
-                    $person->setSprache('de');
-                    $person->setEmail($nutzer->getEmail());
-                    $person->setAnrede($nutzer->getAnrede());
-                    $person->setVorname($nutzer->getVorname());
-                    $person->setNachname($nutzer->getNachname());
-                    $person->setRegistriertDatum($dateTime);
-                    $person->setLastChangeDatum($dateTime);
-
-                    $this->emNutzer->persist($person);
-                    $this->emNutzer->flush();
-
-                    # @TODO: Validation
-                    $idno = $form->get('idno')->getData();
-                    $item = $this->emDefault
-                        ->getRepository(Items::class)
-                        ->findOneByIdNo($idno);
-
-                    $item->setNoStatus('registriert');
-                    $item->setNutzerId($nutzer->getId());
-                    $item->setPersonId($person->getId());
-                    $item->setAktiviertDatum($dateTime);
-                    $item->setLastChangeDatum($dateTime);
-
-                    $this->emDefault->persist($item);
-                    $this->emNutzer->flush();
-
-                    $nutzerAuth = new NutzerAuth();
-                    $nutzerAuth->setNutzerId($nutzer->getId());
-                    $nutzerAuth->setAuth(ByteString::fromRandom(40)->toString());
-                    $nutzerAuth->setTime(time());
-
-                    $this->emNutzer->persist($nutzerAuth);
-                    $this->emNutzer->flush();
-
-*/
                     // redirect to profile
                     return $this->redirectToRoute('app_profile_index');
                 }

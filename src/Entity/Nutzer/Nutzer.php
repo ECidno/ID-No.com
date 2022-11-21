@@ -293,12 +293,20 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
         return array_unique($this->roles);
     }
 
+    /**
+     * @param array $roles
+     * @return self
+     */
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;
         return $this;
     }
 
+    /**
+     * @param string $role
+     * @return self
+     */
     public function addRole(string $role): self
     {
         if (!in_array($role, $this->getRoles())) {
@@ -700,12 +708,19 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->source;
     }
 
+    /**
+     * @param integer $sendInformation
+     * @return self
+     */
     public function setSendInformation(int $sendInformation): self
     {
         $this->sendInformation = $sendInformation;
         return $this;
     }
 
+    /**
+     * @return integer|null
+     */
     public function getSendInformation(): ?int
     {
         return $this->sendInformation;
