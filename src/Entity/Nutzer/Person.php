@@ -1680,12 +1680,19 @@ class Person
             $this->zusatzversicherungShow;
     }
 
+    /**
+     * @param \DateTimeInterface $registriertDatum
+     * @return self
+     */
     public function setRegistriertDatum(\DateTimeInterface $registriertDatum): self
     {
         $this->registriertDatum = $registriertDatum;
         return $this;
     }
 
+    /**
+     * @return \DateTimeInterface
+     */
     public function getRegistriertDatum(): \DateTimeInterface
     {
         return $this->registriertDatum;
