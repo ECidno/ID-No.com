@@ -71,14 +71,12 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
      */
     public function __construct(
         ManagerRegistry $registry,
-#        NutzerRepository $userRepository,
         UrlGeneratorInterface $urlGenerator,
         CsrfTokenManagerInterface $csrfTokenManager,
         UserPasswordHasherInterface $passwordEncoder,
         ParameterBagInterface $params
     ) {
         $this->registry = $registry;
- #       $this->userRepository = $userRepository;
         $this->urlGenerator = $urlGenerator;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
@@ -148,11 +146,16 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
             ) === $user->getPasswort()
         ) {
             /*
-             * @TODO set pass to new encoder here and save
+             * set pass to new encoder here and save
              */
+            $newHashedPass = $this->passwordEncoder->hashpassword(
+                $user,
+                $password
+            );
 
-            // reset login errors
+            // reset login errors, set new hashed password
             $user
+                ->setPasswort($newHashedPass)
                 ->setLoginFehler(0)
                 ->setLastLogin(new \DateTime());
             $em->persist($user);
@@ -160,47 +163,6 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
 
             // return
             return new SelfValidatingPassport(new UserBadge($username), []);
-/*
-            return new Passport(
-                new UserBadge(
-                    $username,
-                    function($userIdentifier) {
-                        $user = $this->userRepository->findOneBy(['email' => $userIdentifier]);
-
-                        // user found?
-                        if (!$user || !$user->isAllowedToLogin()) {
-                            // fail authentication with a custom error
-                            throw new CustomUserMessageAuthenticationException('Username could not be found!');
-                        }
-
-                        // return
-                        return $user;
-                    }
-                ),
-
-                new CustomCredentials(
-                    function($credentials, Nutzer $user) {
-                        $oldPassCheck = md5(
-                            substr(
-                                htmlentities(
-                                    $user->getUserIdentifier(),
-                                    ENT_QUOTES
-                                ),
-                                2,
-                                2
-                            )
-                            .htmlentities(
-                                $credentials,
-                                ENT_QUOTES
-                            )
-                        ) === $user->getPasswort();
-
-                        return $oldPassCheck;
-                    },
-                    $password
-                )
-            );
-*/
         }
 
         // pass check | return badge

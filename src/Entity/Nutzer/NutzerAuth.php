@@ -1,6 +1,11 @@
 <?php
-
 namespace App\Entity\Nutzer;
+
+/***********************************************************************
+ *
+ * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
+ *
+ **********************************************************************/
 
 use App\Repository\Nutzer\NutzerAuthRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -40,6 +45,7 @@ class NutzerAuth
      * @ORM\Column(type="string", length=5, options={"default":"neu"})
      */
     private $status = "neu";
+
 
     /**
      * @return integer|null

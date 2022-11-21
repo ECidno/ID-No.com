@@ -7,22 +7,22 @@ namespace App\EventListener;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Person;
+use App\Entity\Nutzer\Nutzer;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
 
 /**
- * Person | onCreated
+ * Nutzer | Created
  */
-class PersonCreated
+class NutzerCreated
 {
     /**
      * postCreate | send mail for email verification
      *
-     * @param Person $person
+     * @param Nutzer $nutzer
      * @param LifecycleEventArgs $event
      * @return void
      */
-    public function postCreate(Person $person, LifecycleEventArgs $event): void
+    public function postCreate(Nutzer $nutzer, LifecycleEventArgs $event): void
     {
 /*
         // mail

@@ -5,7 +5,7 @@ namespace App\Controller;
  *
  * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
  *
- * /*********************************************************************/
+ **********************************************************************/
 
 use App\Entity\Main\Items;
 use App\Entity\Nutzer\Nutzer;
@@ -16,6 +16,7 @@ use App\Form\Type\ItemsEditType;
 use App\Form\Type\RegistrationType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\ByteString;
 
@@ -139,13 +140,14 @@ class ItemsController extends AbstractController
      * register
      *
      * @param Request $request
+     * @param UserPasswordHasherInterface $passwordEncoder
      * @param string $idno
      *
      * @return Response
      *
      * @Route("/registrieren/{idno?}", name="register", methods={"GET", "POST"})
      */
-    public function register(Request $request, $idno = null): Response
+    public function register(Request $request, UserPasswordHasherInterface $passwordEncoder,$idno = null): Response
     {
         $now = new \DateTime();
         $idno = strtoupper($request->get('p_idno') ?? $idno);
@@ -204,19 +206,11 @@ class ItemsController extends AbstractController
                         ->getRepository(Items::class)
                         ->findOneByIdNo($idno);
 
-                    $pwd = md5(
-                            substr(
-                            htmlentities(
-                                $nutzer->getEmail(),
-                                ENT_QUOTES
-                            ),
-                            2,
-                            2
-                            ).htmlentities(
-                                $$nutzer->getPlainPasswort(),
-                                ENT_QUOTES
-                            )
-                        );
+                    // hash pass
+                    $pwd = $passwordEncoder->hashpassword(
+                        $nutzer->getEmail(),
+                        $nutzer->getPlainPasswort(),
+                    );
 
                     # Code from old backend
                     $source = isset($_SESSION['source']) ? $_SESSION['source'] : 1;
@@ -244,10 +238,18 @@ class ItemsController extends AbstractController
                         // add first person (self)
                         ->addPerson($person);
 
-                     // hash for email verification
+                    // hash for email verification
+                    do {
+                        $auth = ByteString::fromRandom(40)->toString();
+                    } while(
+                        $this->emNutzer
+                            ->getRepository(Items::class)
+                            ->findOneByAuth($auth) === null
+                    );
+
                     $nutzerAuth = new NutzerAuth();
                     $nutzerAuth
-                        ->setAuth(ByteString::fromRandom(40)->toString())
+                        ->setAuth($auth)
                         ->setTime(time())
                         ->setNutzer($nutzer);
 

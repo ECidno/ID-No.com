@@ -5,7 +5,7 @@ namespace App\Controller;
  *
  * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
  *
- * /*********************************************************************/
+ **********************************************************************/
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
