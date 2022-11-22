@@ -9,6 +9,7 @@ namespace App\Controller;
 
 use App\Entity\Nutzer\Nutzer;
 use App\Entity\Nutzer\NutzerAuth;
+use DateTime;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -81,10 +82,8 @@ class SecurityController extends AbstractController
      * 
      * @Route("/auth/{auth_code}", name="app_account_authenticate")
      */
-    public function auth(string $auth_code)
+    public function auth(string $auth_code): Response
     {
-        # TODO: check user is not logedin
-
         // check auth_code
         $nutzerAuth = $this->emNutzer
             ->getRepository(NutzerAuth::class)
@@ -92,34 +91,48 @@ class SecurityController extends AbstractController
 
         if (!empty($nutzerAuth)) {
 
-            if ($nutzerAuth->getStatus() != 'neu') {
-                // auth_code nicht gültig bzw. bereits benutzt
-            }
+            $nutzer = $this->emNutzer
+                ->getRepository(Nutzer::class)
+                ->findOneById($nutzerAuth->getNutzer());
+
+            
 
             // check if the auth_code is older than 2 hours
             $now = time();
             $diff = $now - $nutzerAuth->getTime();
             if($diff >= 7200) {
-                // auth_code nicht mehr gültig
-                // create new and send new mail
+                $error = 'code.expired';
             }
 
-            $nutzer = $this->emNutzer
-                ->getRepository(Nutzer::class)
-                ->findOneyById($nutzerAuth->getNutzer());
+            // auth_code already used
+            if ($nutzerAuth->getStatus() != 'neu') {
+                $error = 'code.used';
+            }
 
-            $nutzerAuth->setStatus('ok');
-            $nutzer
-                ->setStatus('ok')
-                ->setAktiviertDatum(date("Y-m-d H:i:s"));
+            // verify nutzer
+            if (empty($error)) {
+                $nutzerAuth->setStatus('ok');
+                $nutzer
+                    ->setStatus('ok')
+                    ->setAktiviertDatum(new DateTime());
 
-            $this->emNutzer->persist($nutzerAuth);
-            $this->emNutzer->persist($nutzer);
-            $this->emNutzer->flush();
+                $this->emNutzer->persist($nutzerAuth);
+                $this->emNutzer->persist($nutzer);
+                $this->emNutzer->flush();
 
+                // return
+                return $this->redirectToRoute('app_login');
+            }
 
         } else {
-            // falscher auth_code
+            // invalid auth_code
+            $error = 'code.invalid';
         }
+
+        $variables = [
+            'error' => $error,
+        ];
+
+        return $this->renderAndRespond($variables);
     }
 }

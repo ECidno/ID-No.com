@@ -25,5 +25,23 @@
         <target>Es wurden keine Anmeldedaten übermittelt!</target>
       </segment>
     </unit>
+    <unit id="Re2boGN" name="code.expired">
+      <segment>
+        <source>code.expired</source>
+        <target>Der Code ist abgelaufen. Bitte fordern sie einen neuen über ihre Account Seite an.</target>
+      </segment>
+    </unit>
+    <unit id="ENjue_N" name="code.used">
+      <segment>
+        <source>code.used</source>
+        <target>Der Code wurde bereits benutzt.</target>
+      </segment>
+    </unit>
+    <unit id="2UO38zy" name="code.invalid">
+      <segment>
+        <source>code.invalid</source>
+        <target>Der Code ist ungültig.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

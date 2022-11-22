@@ -3608,5 +3608,23 @@ Mit besten Grüßen
 Ihr Team von ID-No.com</target>
       </segment>
     </unit>
+    <unit id="tLBvQVM" name="auth.title">
+      <segment>
+        <source>auth.title</source>
+        <target>Authenticate</target>
+      </segment>
+    </unit>
+    <unit id="LOS7_ws" name="auth.header">
+      <segment>
+        <source>auth.header</source>
+        <target>Authenticate</target>
+      </segment>
+    </unit>
+    <unit id="8bhsAO5" name="auth.text">
+      <segment>
+        <source>auth.text</source>
+        <target>auth.text</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

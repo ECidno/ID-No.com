@@ -3218,5 +3218,23 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
         <target>Create Profile</target>
       </segment>
     </unit>
+    <unit id="tLBvQVM" name="auth.title">
+      <segment>
+        <source>auth.title</source>
+        <target>Authenticate</target>
+      </segment>
+    </unit>
+    <unit id="LOS7_ws" name="auth.header">
+      <segment>
+        <source>auth.header</source>
+        <target>Authenticate</target>
+      </segment>
+    </unit>
+    <unit id="8bhsAO5" name="auth.text">
+      <segment>
+        <source>auth.text</source>
+        <target>auth.text</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
