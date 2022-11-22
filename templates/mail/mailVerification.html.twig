@@ -2,5 +2,10 @@
 
 {# content #}
 {% block content %}
-{{ 'mail.mailVerification.text'|trans|raw|markdown_to_html }}
+	{{ 'mail.mailVerification.text'|trans (
+		{
+			'%nutzerAuth_link%': url('app_profile_index'),
+			'%nutzerAuth_auth%': nutzerAuth.auth
+		}
+	)|raw|markdown_to_html }}
 {% endblock %}

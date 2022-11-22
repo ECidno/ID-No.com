@@ -272,7 +272,6 @@ class ItemsController extends AbstractController
                     return $this->redirectToRoute('app_profile_index');
                 }
 
-
                 // variables
                 $variables = [
                     'item' => $item,

@@ -7,8 +7,8 @@ namespace App\Controller;
  *
  * /*********************************************************************/
 
-use App\Entity\Main\Items;
 use App\Entity\Nutzer\Person;
+use App\Entity\Nutzer\NutzerAuth;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,6 +41,24 @@ class ProfileController extends AbstractController
             'user' => $user,
             'person' => $person,
         ];
+/*
+        // get auth code object
+        $nutzerAuth = $this->emNutzer
+            ->getRepository(NutzerAuth::class)
+            ->findOneByNutzer($user);
+
+        // mail for email verification
+        $this->mailService->infoMail(
+            [
+                'subject' => $this->translator->trans('mail.mailVerification.subject'),
+                'recipientEmail' => $user->getEmail(),
+                'recipientName' => $user->getFullName(),
+                'nutzer' => $user,
+                'nutzerAuth' => $nutzerAuth,
+            ],
+            'mailVerification'
+        );
+*/
 
         // return
         return $this->renderAndRespond($variables);
