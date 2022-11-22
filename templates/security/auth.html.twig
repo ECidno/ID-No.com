@@ -34,6 +34,11 @@
           </div>
         {% endif %}
 
+        {% if form %}
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+        {% endif %}
+
       </div>
     </div>
   </div>

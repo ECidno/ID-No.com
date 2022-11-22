@@ -3203,13 +3203,17 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="6cI1jGQ" name="agb.text">
       <segment>
         <source>agb.text</source>
-        <target>agb.text</target>
+        <target><![CDATA[I have read the [Terms & Conditions](/agb) and agree to their validity. I agree to the [data retention](/datenschutz) of my data stored in the emergency passport.]]></target>
       </segment>
     </unit>
     <unit id="6Mv17nB" name="newsletter.text">
       <segment>
         <source>newsletter.text</source>
-        <target>newsletter.text</target>
+        <target>Yes, I would like to be informed by e-mail* about [service improvements](/datenschutz).
+
+*ID-No.com takes the protection of your personal data very seriously.
+We treat your personal data confidentially and do not use it for advertising purposes.
+Registration for your Emergency ID Pass is free of charge.</target>
       </segment>
     </unit>
     <unit id="u3WK.2_" name="Create Profile">
@@ -3234,6 +3238,78 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
       <segment>
         <source>auth.text</source>
         <target>auth.text</target>
+      </segment>
+    </unit>
+    <unit id="4l9PyKE" name="Auth code">
+      <segment>
+        <source>Auth code</source>
+        <target>Auth code</target>
+      </segment>
+    </unit>
+    <unit id="9vRoj.I" name="Send">
+      <segment>
+        <source>Send</source>
+        <target>Send</target>
+      </segment>
+    </unit>
+    <unit id="Jn2wSSS" name="You are verified">
+      <segment>
+        <source>You are verified</source>
+        <target>You are verified</target>
+      </segment>
+    </unit>
+    <unit id="Y6iE2lx" name="mail.mailVerification.subject">
+      <segment>
+        <source>mail.mailVerification.subject</source>
+        <target>mail.mailVerification.subject</target>
+      </segment>
+    </unit>
+    <unit id="m7F_DYR" name="mail.mailVerification.text">
+      <segment>
+        <source>mail.mailVerification.text</source>
+        <target>mail.mailVerification.text</target>
+      </segment>
+    </unit>
+    <unit id="loeWEWU" name="active">
+      <segment>
+        <source>active</source>
+        <target>active</target>
+      </segment>
+    </unit>
+    <unit id="0QImGLm" name="inactive">
+      <segment>
+        <source>inactive</source>
+        <target>inactive</target>
+      </segment>
+    </unit>
+    <unit id="Jtap8tY" name="profile.actions.pass_disable.success">
+      <segment>
+        <source>profile.actions.pass_disable.success</source>
+        <target>profile.actions.pass_disable.success</target>
+      </segment>
+    </unit>
+    <unit id="xgnCQl1" name="profile.actions.pass_enable.success">
+      <segment>
+        <source>profile.actions.pass_enable.success</source>
+        <target>profile.actions.pass_enable.success</target>
+      </segment>
+    </unit>
+    <unit id="1IRSI.n" name="ID-Number not found!">
+      <segment>
+        <source>ID-Number not found!</source>
+        <target>ID-Number not found!</target>
+      </segment>
+    </unit>
+    <unit id="8hd1mx1" name="login.register.text">
+      <segment>
+        <source>login.register.text</source>
+        <target>login.register.text</target>
+      </segment>
+    </unit>
+    <unit id="icXk1wm" name="person.email">
+      <segment>
+        <source>person.email</source>
+        <target>E-Mail</target>
       </segment>
     </unit>
   </file>
