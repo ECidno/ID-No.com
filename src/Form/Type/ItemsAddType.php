@@ -32,7 +32,7 @@ class ItemsAddType extends AbstractType
             ->add('idNo', TextType::class, [
                 'label' => new TranslatableMessage('items.idNo.lbl'),
                 'attr' => [
-                    'placeholder' => new TranslatableMessage('items.idNo.lbl'),
+                    'autocomplete' => 'off',
                     'pattern' => Items::IDNO_PATTERN,
                     'maxlength' => 9,
                 ],
@@ -41,7 +41,7 @@ class ItemsAddType extends AbstractType
             ->add('anbringung', TextType::class, [
                 'label' => new TranslatableMessage('items.anbringung.lbl'),
                 'attr' => [
-                    'placeholder' => new TranslatableMessage('items.anbringung.lbl'),
+                    'autocomplete' => 'off',
                     'maxlength' => 255,
                 ],
                 'required' => true

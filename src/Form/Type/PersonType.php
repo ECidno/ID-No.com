@@ -55,7 +55,7 @@ class PersonType extends AbstractType
             ->add('vorname', TextType::class, [
                 'label' => new TranslatableMessage('person.vorname.lbl'),
                 'attr' => [
-                    'placeholder' => new TranslatableMessage('person.vorname.lbl'),
+                    'autocomplete' => 'off',
                     'maxlength' => 100,
                 ],
                 'required' => true
@@ -63,7 +63,7 @@ class PersonType extends AbstractType
             ->add('nachname', TextType::class, [
                 'label' => new TranslatableMessage('person.nachname.lbl'),
                 'attr' => [
-                    'placeholder' => new TranslatableMessage('person.nachname.lbl'),
+                    'autocomplete' => 'off',
                     'maxlength' => 100,
                 ],
                 'required' => true
@@ -95,7 +95,7 @@ class PersonType extends AbstractType
             ->add('strasse', TextType::class, [
                 'label' => new TranslatableMessage('person.strasse.lbl'),
                 'attr' => [
-                    'placeholder' => new TranslatableMessage('person.strasse.lbl'),
+                    'autocomplete' => 'off',
                     'maxlength' => 100,
                 ],
                 'required' => false
@@ -114,7 +114,7 @@ class PersonType extends AbstractType
             ->add('plz', TextType::class, [
                 'label' => new TranslatableMessage('person.plz.lbl'),
                 'attr' => [
-                    'placeholder' => new TranslatableMessage('person.plz.lbl'),
+                    'autocomplete' => 'off',
                     'maxlength' => 13,
                 ],
                 'required' => false
@@ -122,7 +122,7 @@ class PersonType extends AbstractType
             ->add('ort', TextType::class, [
                 'label' => new TranslatableMessage('person.ort.lbl'),
                 'attr' => [
-                    'placeholder' => new TranslatableMessage('person.ort.lbl'),
+                    'autocomplete' => 'off',
                     'maxlength' => 100,
                 ],
                 'required' => false
@@ -143,6 +143,7 @@ class PersonType extends AbstractType
                 'label' => new TranslatableMessage('person.zusatz.lbl'),
                 'attr' => [
                     'maxlength' => 100,
+                    'autocomplete' => 'off',
                 ],
                 'required' => false
             ])
@@ -173,7 +174,7 @@ class PersonType extends AbstractType
             ->add('telefonLand', TextType::class, [
                 'label' => new TranslatableMessage('person.telefonLand.lbl'),
                 'attr' => [
-                    'placeholder' => '+49',
+                    'autocomplete' => 'off',
                     'maxlenght' => 6
                 ],
                 'required' => false
@@ -182,6 +183,7 @@ class PersonType extends AbstractType
             ->add('telefonVorwahl', TextType::class, [
                 'label' => new TranslatableMessage('person.telefonVorwahl.lbl'),
                 'attr' => [
+                    'autocomplete' => 'off',
                     'maxlength' => 10
                 ],
                 'required' => false
@@ -189,6 +191,7 @@ class PersonType extends AbstractType
             ->add('telefon', TextType::class, [
                 'label' => new TranslatableMessage('person.telefon.lbl'),
                 'attr' => [
+                    'autocomplete' => 'off',
                     'maxlength' => 30
                 ],
                 'required' => false
@@ -208,7 +211,7 @@ class PersonType extends AbstractType
             ->add('mobileLand', TextType::class, [
                 'label' => new TranslatableMessage('person.mobileLand.lbl'),
                 'attr' => [
-                    'placeholder' => '+49',
+                    'autocomplete' => 'off',
                     'maxlength' => 6
                 ],
                 'required' => false
@@ -216,6 +219,7 @@ class PersonType extends AbstractType
             ->add('mobileVorwahl', TextType::class, [
                 'label' => new TranslatableMessage('person.mobileVorwahl.lbl'),
                 'attr' => [
+                    'autocomplete' => 'off',
                     'maxlength' => 10
                 ],
                 'required' => false
@@ -223,6 +227,7 @@ class PersonType extends AbstractType
             ->add('mobile', TextType::class, [
                 'label' => new TranslatableMessage('person.mobile.lbl'),
                 'attr' => [
+                    'autocomplete' => 'off',
                     'maxlength' => 30
                 ],
                 'required' => false
@@ -256,6 +261,7 @@ class PersonType extends AbstractType
                 ],
                 'attr' => [
                     'accept' => 'image/gif,image/jpeg,image/png',
+                    'autocomplete' => 'off',
                 ],
             ])
             ->add('imageShow', CheckboxType::class, [
@@ -309,6 +315,7 @@ class PersonType extends AbstractType
                 'attr' => [
                     'class' => 'h-100',
                     'maxlength' => 16777215,
+                    'autocomplete' => 'off',
                 ],
                 'required' => false,
             ])
@@ -328,6 +335,7 @@ class PersonType extends AbstractType
                 'attr' => [
                     'class' => 'h-100',
                     'maxlength' => 65535,
+                    'autocomplete' => 'off',
                 ],
                 'required' => false
             ])
@@ -347,6 +355,7 @@ class PersonType extends AbstractType
                 'attr' => [
                     'class' => 'h-100',
                     'maxlength' => 65535,
+                    'autocomplete' => 'off',
                 ],
                 'required' => false
             ])
@@ -364,7 +373,8 @@ class PersonType extends AbstractType
             ->add('gewicht', TextType::class, [
                 'label' => new TranslatableMessage('person.gewicht.lbl'),
                 'attr' => [
-                    'maxlenght' => 10
+                    'maxlenght' => 10,
+                    'autocomplete' => 'off',
                 ],
                 'required' => false
             ])
@@ -391,7 +401,8 @@ class PersonType extends AbstractType
             ->add('groesse', TextType::class, [
                 'label' => new TranslatableMessage('person.groesse.lbl'),
                 'attr' => [
-                    'maxlength' => 10
+                    'maxlength' => 10,
+                    'autocomplete' => 'off',
                 ],
                 'required' => false
             ])
@@ -418,7 +429,8 @@ class PersonType extends AbstractType
             ->add('krankenversicherung', TextType::class, [
                 'label' => new TranslatableMessage('person.krankenversicherung.lbl'),
                 'attr' => [
-                    'maxlength' => 100
+                    'maxlength' => 100,
+                    'autocomplete' => 'off',
                 ],
                 'required' => false
             ])
@@ -437,7 +449,8 @@ class PersonType extends AbstractType
             ->add('versicherungsnummer', TextType::class, [
                 'label' => new TranslatableMessage('person.versicherungsnummer.lbl'),
                 'attr' => [
-                    'maxlength' => 100
+                    'maxlength' => 100,
+                    'autocomplete' => 'off',
                 ],
                 'required' => false
             ])
@@ -458,6 +471,7 @@ class PersonType extends AbstractType
                 'attr' => [
                     'class' => 'h-100',
                     'maxlength' => 65535,
+                    'autocomplete' => 'off',
                 ],
                 'required' => false
             ])
@@ -518,6 +532,7 @@ class PersonType extends AbstractType
                 'attr' => [
                     'class' => 'h-100',
                     'maxlength' => 65535,
+                    'autocomplete' => 'off',
                 ],
                 'required' => false
             ])

@@ -62,8 +62,8 @@ window.itemidNoFormatter = (value, row, index) => {
 window.itemStatusFormatter = (value, row, index) => {
   var table = jQuery('#tableItems');
   return row.status === true
-    ? '<span><i class="bi bi-check-circle text-success me-1"></i> ' + table.data('llActive') + '</span>'
-    : '<span><i class="bi bi-exclamation-triangle text-warning me-1"></i>' + table.data('llInactive') + '</span>';
+    ? '<span><i class="bi bi-check-circle text-success me-1"></i><span class="d-none d-md-inline">' + table.data('llActive') + '</span></span>'
+    : '<span><i class="bi bi-exclamation-triangle text-warning me-1"></i><span class="d-none d-md-inline">' + table.data('llInactive') + '</span></span>';
 }
 
 
