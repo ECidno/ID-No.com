@@ -3656,5 +3656,17 @@ Ihr Team von ID-No.com]]></target>
         <target>Sie sind noch nicht registriert? Bitte registrieren Sie sich [hier](%register_url%).</target>
       </segment>
     </unit>
+    <unit id="zUForcg" name="ID-Number already registered!">
+      <segment>
+        <source>ID-Number already registered!</source>
+        <target>ID-Number already registered!</target>
+      </segment>
+    </unit>
+    <unit id="HFCZOwC" name="years">
+      <segment>
+        <source>years</source>
+        <target>Jahre</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

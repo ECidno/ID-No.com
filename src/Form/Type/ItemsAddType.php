@@ -33,7 +33,7 @@ class ItemsAddType extends AbstractType
                 'label' => new TranslatableMessage('items.idNo.lbl'),
                 'attr' => [
                     'placeholder' => new TranslatableMessage('items.idNo.lbl'),
-                    'pattern' => '[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}',
+                    'pattern' => Items::IDNO_PATTERN,
                     'maxlength' => 9,
                 ],
                 'required' => true

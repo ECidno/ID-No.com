@@ -25,6 +25,17 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Items extends AbstractEntity
 {
     /**
+     * @var string IDNO_PATTERN
+     */
+    const IDNO_PATTERN = '[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}';
+
+    /**
+     * @var string IDNO_PATTERN
+     */
+    const IDNO_PATTERN_UPPER = '[A-Z,0-9]{4}-[A-Z,0-9]{4}';
+
+
+    /**
      * @var int
      * @ORM\Id()
      * @ORM\GeneratedValue()

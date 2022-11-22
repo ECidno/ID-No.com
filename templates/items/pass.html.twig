@@ -55,12 +55,14 @@
                     <strong class="text-success">{{ person.vorname|raw }} {{ person.nachname|raw }}</strong>
                   </td>
                 </tr>
-                <tr>
-                  <td colspan="2">
-                    <span class="text-success">* {{ person.dateOfBirth|date('d.m.Y') }} ({{ person.age }})</span>
-                  </td>
-                </tr>
-                {% if person.groesseShow == true %}
+                {% if person.dateOfBirth %}
+                  <tr>
+                    <td colspan="2">
+                      <span class="text-success">* {{ person.dateOfBirth|date('d.m.Y') }} ({{ person.age }} {{ 'years'|trans }})</span>
+                    </td>
+                  </tr>
+                {% endif %}
+                {% if person.groesse and person.groesseShow == true %}
                   <tr>
                     <td>{{ 'person.groesse'|trans }}</td>
                     <td>
@@ -68,7 +70,7 @@
                     </td>
                   </tr>
                 {% endif %}
-                {% if person.gewichtShow == true %}
+                {% if person.gewicht and person.gewichtShow == true %}
                   <tr>
                     <td>{{ 'person.gewicht'|trans }}</td>
                     <td>
@@ -91,11 +93,13 @@
         <div class="container">
           <div class="row mb-3">
             <div class="col-6 text-center">
-              <button
-                class="btn btn-outline-dark text-success px-4 py-2">
-                <i class="bi bi-geo-alt-fill"></i>
-                <span class="ps-1">{{ 'Standort'|trans }}</span>
-              </button>
+              {% if person.ort and person.ortShow == true %}
+                <button
+                  class="btn btn-outline-dark text-success px-4 py-2">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <span class="ps-1">{{ 'Standort'|trans }}</span>
+                </button>
+              {% endif %}
             </div>
             <div class="col-6 text-center">
               <a
@@ -219,26 +223,33 @@
         <div class="row py-3">
           <div class="col-12">
             <div class="container">
-              <div class="mx-1 my-3 p-3 border border-dark">
-                <strong>{{ 'Wohnort'|trans }}</strong>
 
-                {# street #}
-                {% if person.strasseShow == true and person.strasse is not empty %}
-                  <br />{{ person.strasse|raw|nl2br }}
-                {% endif %}
+              {% if
+                 (person.strasse is not empty and person.strasseShow == true) or
+                 (person.zusatz is not empty and person.zusatzShow == true) or
+                 (person.ort is not empty and person.ortShow == true)
+               %}
+                <div class="mx-1 my-3 p-3 border border-dark">
+                  <strong>{{ 'Wohnort'|trans }}</strong>
 
-                {# additional #}
-                {% if person.zusatzShow == true and person.zusatz is not empty %}
-                  <br />{{ person.zusatz|raw|nl2br }}
-                {% endif %}
+                  {# street #}
+                  {% if person.strasseShow == true and person.strasse is not empty %}
+                    <br />{{ person.strasse|raw|nl2br }}
+                  {% endif %}
 
-                {# location #}
-                {% if person.ortShow == true and person.ort is not empty %}
-                  <br />{{ person.plz|raw|nl2br }} {{ person.ort|raw|nl2br }}
-                {% endif %}
+                  {# additional #}
+                  {% if person.zusatzShow == true and person.zusatz is not empty %}
+                    <br />{{ person.zusatz|raw|nl2br }}
+                  {% endif %}
 
-                <br />{{ person.land|raw|nl2br }}
-              </div>
+                  {# location #}
+                  {% if person.ortShow == true and person.ort is not empty %}
+                    <br />{{ person.plz|raw|nl2br }} {{ person.ort|raw|nl2br }}
+                  {% endif %}
+
+                  <br />{{ person.land|raw|nl2br }}
+                </div>
+              {% endif %}
 
               {# telefon #}
               {% if person.telefonShow == true and person.telefon is not empty %}

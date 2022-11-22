@@ -549,10 +549,15 @@ class PersonType extends AbstractType
         ]);
     }
 
-    private function getCountryChoices()
+
+    /**
+     * get country choices
+     *
+     * @return array $countries
+     */
+    private function getCountryChoices(): array
     {
         $countries = Countries::getNames(Locale::getDefault());
-
         return array_flip($countries);
     }
 }

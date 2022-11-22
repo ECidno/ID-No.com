@@ -12,8 +12,9 @@ const toastContainer = document.getElementById('toastContainer') || null;
 const modalContainer = document.getElementById('modalContainer') || null;
 
 const ajaxForms = document.getElementsByClassName('ajax-form') || [];
-const ajaxBtnModal = document.getElementsByClassName('ajax-modal') || [];
-const ajaxBtnAction = document.getElementsByClassName('ajax-action') || [];
+const ajaxModal = document.getElementsByClassName('ajax-modal') || [];
+const ajaxAction = document.getElementsByClassName('ajax-action') || [];
+const ajaxValidate = document.getElementsByClassName('ajax-validate') || [];
 const fldIdNo = document.getElementsByClassName('idNo') || [];
 const fldPassEnable = document.getElementById('fldPassEnable') || null;
 
@@ -191,7 +192,7 @@ document.addEventListener(
      * @param string body
      * @param boolean autohide
      */
-     showModal = (uri, options) => {
+    showModal = (uri, options) => {
       options = options ?? {
         method: 'GET'
       };
@@ -299,7 +300,7 @@ document.addEventListener(
 
       // add listener for modal buttons
       Array
-        .from(ajaxBtnModal)
+        .from(ajaxModal)
         .forEach((el) => {
           let initialized = el.dataset.initialized || false
 
@@ -323,7 +324,7 @@ document.addEventListener(
 
         // add listener for action buttons
         Array
-          .from(ajaxBtnAction)
+          .from(ajaxAction)
           .forEach((el) => {
             let initialized = el.dataset.initialized || false
             let url = el.getAttribute('data-url');
@@ -375,6 +376,67 @@ document.addEventListener(
             // set init
             el.dataset.initialized = true;
           });
+
+
+        // add listener for ajax check fields
+        Array
+          .from(ajaxValidate)
+          .forEach((el) => {
+            let initialized = el.dataset.initialized || false
+            let url = el.getAttribute('data-url');
+            let options = {
+              method: el.getAttribute('data-method') || 'GET'
+            };
+
+            // initalized?
+            if(initialized) {
+              return;
+            }
+
+            // listener
+            el.addEventListener(
+              'blur',
+              e => {
+                let field = e.target;
+                let val = field.value.trim();
+                let finalUrl = url + encodeURIComponent(val);
+
+                ajax(finalUrl, options)
+                  .then(res => {
+
+                    // valid
+                    if(typeof res.valid !== 'undefined') {
+                      if(res.valid === true) {
+                        field.classList.remove('is-invalid');
+                        field.classList.add('is-valid');
+                      } else {
+                        field.classList.remove('is-valid');
+                        field.classList.add('is-invalid');
+                      }
+                    }
+
+                    // message?
+                    if(res.message ?? false) {
+                      showMessage(
+                        res.severity || 0,
+                        null,
+                        res.message
+                      );
+                    }
+                  })
+
+                  // catch
+                  .catch(err => {
+                    field.classList.remove('is-valid');
+                    field.classList.add('is-invalid');
+                  });
+              }
+            );
+
+            // set init
+            el.dataset.initialized = true;
+          });
+
     }
 
 

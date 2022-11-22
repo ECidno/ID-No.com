@@ -13,6 +13,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\ByteString;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * profile api controller
@@ -166,5 +168,50 @@ class ProfileApiController extends AbstractApiController
                     ]
                 );
         }
+    }
+
+
+    /**
+     * validate email
+     *
+     * @param Request $request
+     * @param ValidatorInterface $validator
+     * @param string $email
+     *
+     * @return JsonResponse
+     *
+     * @Route("/validate/email/{email?}", name="validate", methods={"GET"})
+     */
+    public function validate(Request $request, ValidatorInterface $validator, $email): JsonResponse
+    {
+        $user = $this->emNutzer
+            ->getRepository(Nutzer::class)
+            ->findOneByEmail($email);
+
+        // valid?
+        $valid =
+            $user === null &&
+            !empty($email) &&
+            $validator
+                ->validate(
+                    $email,
+                    new Assert\Email()
+                )
+                ->count() === 0;
+
+        // status
+        $status = $valid
+            ? 200
+            : 412;
+
+        // return
+        return (new JsonResponse())
+            ->setStatusCode($status)
+            ->setData(
+                [
+                    'valid' => $valid,
+                    'errors' => ''
+                ]
+            );
     }
 }

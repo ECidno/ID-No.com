@@ -341,19 +341,19 @@ class Person
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
-    private $organspender;
+    private $organspender = false;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
-    private $organspenderShow = 1;
+    private $organspenderShow = true;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
-    private $patientenverf;
+    private $patientenverf = true;
 
     /**
      * @var bool
@@ -1557,7 +1557,7 @@ class Person
      */
     public function getOrganspender(): bool
     {
-        return $this->organspender;
+        return $this->organspender ?? false;
     }
 
 
@@ -1595,7 +1595,7 @@ class Person
      */
     public function getPatientenverf(): bool
     {
-        return $this->patientenverf;
+        return $this->patientenverf ?? false;
     }
 
 

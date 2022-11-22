@@ -25,6 +25,12 @@ use Symfony\Component\Validator\Constraints\IsTrue;
  */
 class RegistrationType extends AbstractType
 {
+    /**
+     * buildForm
+     *
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -32,18 +38,21 @@ class RegistrationType extends AbstractType
                 'label' => new TranslatableMessage('items.idNo.lbl'),
                 'mapped' => false,
                 'attr' => [
-                    'class' => 'idNo',
-                    'placeholder' => new TranslatableMessage('items.idNo.lbl'),
+                    'class' => 'idNo ajax-validate',
                     'pattern' => '[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}',
                     'maxlength' => 9,
+                    'autocomplete' => 'off',
+                    'data-url' => '/api/items/validate/idno/',
                 ],
                 'required' => true
             ])
             ->add('email', EmailType::class, [
                 'label' => new TranslatableMessage('person.email'),
                 'attr' => [
+                    'class' => 'ajax-validate',
                     'maxlength' => 100,
                     'autocomplete' => 'off',
+                    'data-url' => '/api/profile/validate/email/',
                 ],
                 'required' => true,
             ])
@@ -110,6 +119,12 @@ class RegistrationType extends AbstractType
         ;
     }
 
+
+    /**
+     * configureOptions
+     *
+     * @param OptionsResolver $resolver
+     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
