@@ -53,7 +53,7 @@ class ItemsController extends AbstractController
         // not found
         if($item === null) {
             $this->addFlash(
-                'error',
+                'itemError',
                 $this->translator->trans('ID-Number not found!')
             );
             return $this->redirectToRoute('app_standard_index');
@@ -63,7 +63,7 @@ class ItemsController extends AbstractController
         switch ($item->getNoStatus()) {
             case 'deaktiviert':
                 $this->addFlash(
-                    'error',
+                    'itemError',
                     $this->translator->trans('ID-Number locked!')
                 );
                 return $this->redirectToRoute('app_standard_index');
@@ -160,7 +160,7 @@ class ItemsController extends AbstractController
         // not found
         if($item === null) {
             $this->addFlash(
-                'error',
+                'itemError',
                 $this->translator->trans('ID-Number not found!')
             );
             return $this->redirectToRoute('app_standard_index');
@@ -170,7 +170,7 @@ class ItemsController extends AbstractController
         switch ($item->getNoStatus()) {
             case 'deaktiviert':
                 $this->addFlash(
-                    'error',
+                    'itemError',
                     $this->translator->trans('ID-Number locked!')
                 );
                 return $this->redirectToRoute('app_standard_index');
@@ -179,7 +179,7 @@ class ItemsController extends AbstractController
             // active
             case 'registriert':
                 $this->addFlash(
-                    'error',
+                    'itemError',
                     $this->translator->trans('ID-Number already registered!')
                 );
                 return $this->redirectToRoute('app_standard_index');

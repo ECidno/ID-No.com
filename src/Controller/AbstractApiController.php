@@ -9,6 +9,7 @@ namespace App\Controller;
 
 use App\Entity\Main\Items;
 use App\Entity\Nutzer\Person;
+use App\Service\MailService;
 use Doctrine\Persistence\ManagerRegistry;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController as SymfonyAbstractController;
@@ -64,14 +65,19 @@ class AbstractApiController extends SymfonyAbstractController
     protected $emNutzer;
 
     /**
-     * @var TranslatorInterface $translator
-     */
-    protected $translator;
-
-    /**
      * @var LoggerInterface logger
      */
     protected $logger;
+
+    /**
+     * @var MailService mailService
+     */
+    protected $mailService;
+
+    /**
+     * @var TranslatorInterface $translator
+     */
+    protected $translator;
 
     /**
      * @var array settings
@@ -92,21 +98,27 @@ class AbstractApiController extends SymfonyAbstractController
     /**
      * constructor
      *
+     * @param ContainerBagInterface $params
      * @param RequestStack $requestStack
+     * @param ManagerRegistry $registry
+     * @param MailService $mailService
+     * @param TranslatorInterface $translator
+     * @param LoggerInterface $logger
      */
     public function __construct(
         ContainerBagInterface $params,
         RequestStack $requestStack,
         ManagerRegistry $registry,
+        MailService $mailService,
         TranslatorInterface $translator,
         LoggerInterface $logger
     ) {
         $this->now = new \DateTime();
         $this->settings = $params->get('settings');
         $this->registry = $registry;
-
         $this->emDefault = $registry->getManager('default');
         $this->emNutzer = $registry->getManager('nutzer');
+        $this->mailService = $mailService;
         $this->translator = $translator;
         $this->logger = $logger;
     }

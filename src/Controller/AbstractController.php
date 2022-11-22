@@ -126,22 +126,22 @@ class AbstractController extends SymfonyAbstractController
      *
      * @param ContainerBagInterface $params
      * @param Environment $twig
+     * @param FormFactoryInterface $formFactory
+     * @param LoggerInterface $logger
+     * @param MailService $mailService
+     * @param ManagerRegistry $registry
      * @param RequestStack $requestStack
      * @param TranslatorInterface $translator
-     * @param LoggerInterface $logger
-     * @param ManagerRegistry $registry
-     * @param FormFactoryInterface $formFactory
-     * @param MailService $mailService
      */
     public function __construct(
         ContainerBagInterface $params,
         Environment $twig,
-        RequestStack $requestStack,
-        TranslatorInterface $translator,
-        LoggerInterface $logger,
-        ManagerRegistry $registry,
         FormFactoryInterface $formFactory,
-        MailService $mailService
+        LoggerInterface $logger,
+        MailService $mailService,
+        ManagerRegistry $registry,
+        RequestStack $requestStack,
+        TranslatorInterface $translator
     ) {
         $this->now = new \DateTime();
 

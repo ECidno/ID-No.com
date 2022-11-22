@@ -42,24 +42,6 @@ class ProfileController extends AbstractController
             'person' => $person,
         ];
 
-        // get auth code object
-        $nutzerAuth = $this->emNutzer
-            ->getRepository(NutzerAuth::class)
-            ->findOneByNutzer($user);
-
-        // mail for email verification
-        $this->mailService->infoMail(
-            [
-                'subject' => $this->translator->trans('mail.mailVerification.subject'),
-                'recipientEmail' => $user->getEmail(),
-                'recipientName' => $user->getFullName(),
-                'nutzer' => $user,
-                'nutzerAuth' => $nutzerAuth,
-            ],
-            'mailVerification'
-        );
-
-
         // return
         return $this->renderAndRespond($variables);
     }

@@ -184,7 +184,7 @@
 {% if ((idno is not defined) and (item is not defined)) and (app.user is null) %}
 
   {% set fieldErrorMessage = '' %}
-  {% for flashMessage in app.flashes('error') %}
+  {% for flashMessage in app.flashes('itemError') %}
     {% set fieldErrorMessage = flashMessage %}
   {% endfor %}
 

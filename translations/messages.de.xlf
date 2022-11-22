@@ -3626,5 +3626,35 @@ Ihr Team von ID-No.com]]></target>
         <target>auth.text</target>
       </segment>
     </unit>
+    <unit id="ULC08pz" name="meinidno.profile.missingEmailVerfication">
+      <segment>
+        <source>meinidno.profile.missingEmailVerfication</source>
+        <target>Ihre E-Mail-Adresse wurde noch nicht verifiziert.</target>
+      </segment>
+    </unit>
+    <unit id="VUt41og" name="meinidno.profile.missingEmailVerfication.link.lbl">
+      <segment>
+        <source>meinidno.profile.missingEmailVerfication.link.lbl</source>
+        <target>E-Mail-Adresse jetzt überprüfen.</target>
+      </segment>
+    </unit>
+    <unit id="r_0QbU." name="profile.actions.emailauthrequest.success">
+      <segment>
+        <source>profile.actions.emailauthrequest.success</source>
+        <target>Die E-Mail für die Verifikation der E-Mail-Adresse wurde an %email% versendet.</target>
+      </segment>
+    </unit>
+    <unit id="55fNwAg" name="profile.actions.emailauthrequest.error">
+      <segment>
+        <source>profile.actions.emailauthrequest.error</source>
+        <target>Fehler beim Erstellen der Verifikations-E-Mail an %email%!</target>
+      </segment>
+    </unit>
+    <unit id="8hd1mx1" name="login.register.text">
+      <segment>
+        <source>login.register.text</source>
+        <target>Sie sind noch nicht registriert? Bitte registrieren Sie sich [hier](%register_url%).</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

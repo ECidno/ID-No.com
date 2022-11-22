@@ -8,9 +8,11 @@ namespace App\Controller;
  **********************************************************************/
 
 use App\Entity\Nutzer\Nutzer;
+use App\Entity\Nutzer\NutzerAuth;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\ByteString;
 
 /**
  * profile api controller
@@ -83,4 +85,86 @@ class ProfileApiController extends AbstractApiController
     }
 
 
+    /**
+     * email auth request
+     *
+     * @param Request $request
+     * @return JsonResponse
+     *
+     * @Route("/emailauthrequest", name="email_auth_request", methods={"GET"})
+     */
+    public function emailauthrequest(Request $request): JsonResponse
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->getUser();
+        $email = $user->getEmail();
+
+        // hash for email verification
+        do {
+            $auth = ByteString::fromRandom(40)->toString();
+        } while(
+            $this->emNutzer
+                ->getRepository(NutzerAuth::class)
+                ->findOneByAuth($auth) !== null
+        );
+
+        // get auth code object
+        $nutzerAuth = $this->emNutzer
+            ->getRepository(NutzerAuth::class)
+            ->findOneByNutzer($user);
+
+        // proceed
+        if($nutzerAuth) {
+            $nutzerAuth
+                ->setAuth($auth)
+                ->setTime(time())
+                ->setNutzer($user);
+
+            $this->emNutzer->persist($nutzerAuth);
+            $this->emNutzer->flush();
+
+            // mail for email verification
+            $this->mailService->infoMail(
+                [
+                    'subject' => $this->translator->trans('mail.mailVerification.subject'),
+                    'recipientEmail' => $email,
+                    'recipientName' => $user->getFullName(),
+                    'nutzer' => $user,
+                    'nutzerAuth' => $nutzerAuth,
+                ],
+                'mailVerification'
+            );
+
+            // return
+            return (new JsonResponse())
+                ->setStatusCode(200)
+                ->setData(
+                    [
+                        'severity' => 0,
+                        'message' => $this->translator->trans(
+                            'profile.actions.emailauthrequest.success',
+                            [
+                                '%email%' => $email
+                            ]
+                        )
+                    ]
+                );
+
+        // auth | error
+        } else {
+            return (new JsonResponse())
+                ->setStatusCode(412)
+                ->setData(
+                    [
+                        'severity' => 9,
+                        'message' => $this->translator->trans(
+                            'profile.actions.emailauthrequest.error',
+                            [
+                                '%email%' => $email
+                            ]
+                        )
+                    ]
+                );
+        }
+    }
 }

@@ -12,7 +12,8 @@ const toastContainer = document.getElementById('toastContainer') || null;
 const modalContainer = document.getElementById('modalContainer') || null;
 
 const ajaxForms = document.getElementsByClassName('ajax-form') || [];
-const ajaxBtn = document.getElementsByClassName('ajax-modal') || [];
+const ajaxBtnModal = document.getElementsByClassName('ajax-modal') || [];
+const ajaxBtnAction = document.getElementsByClassName('ajax-action') || [];
 const fldIdNo = document.getElementsByClassName('idNo') || [];
 const fldPassEnable = document.getElementById('fldPassEnable') || null;
 
@@ -229,6 +230,8 @@ document.addEventListener(
         .from(ajaxForms)
         .forEach((el) => {
           let initialized = el.dataset.initialized || false
+
+          // initalized?
           if(initialized) {
             return;
           }
@@ -244,44 +247,45 @@ document.addEventListener(
               };
               let table = el.getAttribute('data-table') || null;
 
+              // ajax
               ajax(url, options)
-              .then(res => {
+                .then(res => {
 
-                // close modal if open/advised
-                let modalInstance = Modal.getInstance(modalContainer);
-                if(modalInstance) {
-                  modalInstance.hide();
-                }
+                  // close modal if open/advised
+                  let modalInstance = Modal.getInstance(modalContainer);
+                  if(modalInstance) {
+                    modalInstance.hide();
+                  }
 
-                // message?
-                if(res.message ?? false) {
-                  showMessage(
-                    res.severity || 0,
-                    null,
-                    res.message
-                  );
-                }
-
-                // table refresh?
-                if(table) {
-                  jQuery('#' + table)
-                    .bootstrapTable(
-                      'refresh',
-                      {
-                        silent: true
-                      }
+                  // message?
+                  if(res.message ?? false) {
+                    showMessage(
+                      res.severity || 0,
+                      null,
+                      res.message
                     );
                   }
-              })
 
-              // catch
-              .catch(err => {
-    console.warn(err);
-              });
+                  // table refresh?
+                  if(table) {
+                    jQuery('#' + table)
+                      .bootstrapTable(
+                        'refresh',
+                        {
+                          silent: true
+                        }
+                      );
+                    }
+                })
+
+                // catch
+                .catch(err => {
+                  console.warn(err);
+                });
 
               e.preventDefault();
 
-              // avoid
+              // avoid submit
               return false;
             }, {
               once: true
@@ -293,11 +297,13 @@ document.addEventListener(
         });
 
 
-      // add listener for buttons
+      // add listener for modal buttons
       Array
-        .from(ajaxBtn)
+        .from(ajaxBtnModal)
         .forEach((el) => {
           let initialized = el.dataset.initialized || false
+
+          // initalized?
           if(initialized) {
             return;
           }
@@ -313,6 +319,62 @@ document.addEventListener(
           // set init
           el.dataset.initialized = true;
         });
+
+
+        // add listener for action buttons
+        Array
+          .from(ajaxBtnAction)
+          .forEach((el) => {
+            let initialized = el.dataset.initialized || false
+            let url = el.getAttribute('data-url');
+            let table = el.getAttribute('data-table') ?? false;
+            let options = {
+              method: el.getAttribute('data-method') || 'GET'
+            };
+
+            // initalized?
+            if(initialized) {
+              return;
+            }
+
+            // listener
+            el.addEventListener(
+              'click',
+              e => {
+                ajax(url, options)
+                  .then(res => {
+
+                    // message?
+                    if(res.message ?? false) {
+                      showMessage(
+                        res.severity || 0,
+                        null,
+                        res.message
+                      );
+                    }
+
+                    // table refresh?
+                    if(table) {
+                      jQuery('#' + table)
+                        .bootstrapTable(
+                          'refresh',
+                          {
+                            silent: true
+                          }
+                        );
+                      }
+                  })
+
+                  // catch
+                  .catch(err => {
+                    console.warn(err);
+                  });
+              }
+            );
+
+            // set init
+            el.dataset.initialized = true;
+          });
     }
 
 
