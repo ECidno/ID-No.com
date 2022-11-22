@@ -74,15 +74,16 @@ class SecurityController extends AbstractController
         return $this->renderAndRespond($variables);
     }
 
+
     /**
      * Check User Authentification with auth_code from Mail
      *
-     * @param string $auth_code
+     * @param ?string $auth_code
      * @return void
-     * 
-     * @Route("/auth/{auth_code}", name="app_account_authenticate")
+     *
+     * @Route("/auth/{auth_code?}", name="app_account_authenticate")
      */
-    public function auth(string $auth_code): Response
+    public function auth(string $auth_code = null): Response
     {
         // check auth_code
         $nutzerAuth = $this->emNutzer
@@ -95,7 +96,7 @@ class SecurityController extends AbstractController
                 ->getRepository(Nutzer::class)
                 ->findOneById($nutzerAuth->getNutzer());
 
-            
+
 
             // check if the auth_code is older than 2 hours
             $now = time();
@@ -124,8 +125,8 @@ class SecurityController extends AbstractController
                 return $this->redirectToRoute('app_login');
             }
 
+        // invalid auth_code
         } else {
-            // invalid auth_code
             $error = 'code.invalid';
         }
 
@@ -133,6 +134,7 @@ class SecurityController extends AbstractController
             'error' => $error,
         ];
 
+        // return
         return $this->renderAndRespond($variables);
     }
 }

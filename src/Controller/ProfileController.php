@@ -41,7 +41,7 @@ class ProfileController extends AbstractController
             'user' => $user,
             'person' => $person,
         ];
-/*
+
         // get auth code object
         $nutzerAuth = $this->emNutzer
             ->getRepository(NutzerAuth::class)
@@ -58,7 +58,7 @@ class ProfileController extends AbstractController
             ],
             'mailVerification'
         );
-*/
+
 
         // return
         return $this->renderAndRespond($variables);
