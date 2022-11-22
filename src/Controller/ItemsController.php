@@ -5,16 +5,21 @@ namespace App\Controller;
  *
  * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
  *
- * /*********************************************************************/
+ **********************************************************************/
 
 use App\Entity\Main\Items;
 use App\Entity\Nutzer\Nutzer;
+use App\Entity\Nutzer\NutzerAuth;
 use App\Entity\Nutzer\Person;
 use App\Form\Type\ItemsAddType;
 use App\Form\Type\ItemsEditType;
+use App\Form\Type\RegistrationType;
+use App\Service\ItemsService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\ByteString;
 
 /**
  * items controller
@@ -30,15 +35,83 @@ class ItemsController extends AbstractController
     /**
      * pass action
      *
-     * @param string $idno
      * @param Request $request
+     * @param ItemsService $itemsService
+     * @param string $idno
      *
      * @return Response
      *
      * @Route("/notfallpass/{idno?}", name="pass", methods={"GET", "POST"})
      */
-    public function pass($idno = null, Request $request): Response
+    public function pass(Request $request, ItemsService $itemsService, $idno = null): Response
     {
+        $item = $itemsService->check(
+            $request->get('p_idno') ?? $idno,
+            'itemError',
+            'pass'
+        );
+
+        // redirect to index if item check failed
+        if($item === null) {
+            return $this->redirectToRoute('app_standard_index');
+
+        // item not registered | ready for registration (activation)
+        } elseif($item->getNoStatus() === 'aktiviert') {
+            return $this->redirectToRoute(
+                'app_items_register',
+                [
+                    'idno' => $idno
+                ]
+            );
+
+        // proceed to pass
+        } else {
+            $nutzerId = $item->getNutzerId();
+            $personId = $item->getPersonId();
+
+            // user
+            $nutzer = $this->emNutzer
+                ->getRepository(Nutzer::class)
+                ->findOneById($nutzerId);
+            $person = $this->emNutzer
+                ->getRepository(Person::class)
+                ->findOneById($personId);
+
+            // user pass active (sichtbar)
+            if($nutzer->getSichtbar() === false) {
+                $this->addFlash(
+                    'itemError',
+                    $this->translator->trans('ID-Number locked!')
+                );
+                return $this->redirectToRoute('app_standard_index');
+            }
+
+            // variables
+            $variables = [
+                'idno' => $item,
+                'nutzer' => $nutzer,
+                'person' => $person,
+            ];
+
+            // mail
+            $this->mailService->infoMail(
+                [
+                    'subject' => 'Information - Ihr ID-No.com Produkt wurde genutzt!',
+                    'recipientEmail' => $person->getEmail(),
+                    'recipientName' => $person->getFullName(),
+                    'item' => $item,
+                    'nutzer' => $nutzer,
+                    'person' => $person,
+                    'now' => new \DateTime(),
+                ],
+                'itemScanned'
+            );
+
+            // return
+            return $this->renderAndRespond($variables);
+        }
+
+/*
         $idno = strtoupper($request->get('p_idno') ?? $idno);
 
         // get item
@@ -49,17 +122,17 @@ class ItemsController extends AbstractController
         // not found
         if($item === null) {
             $this->addFlash(
-                'error',
+                'itemError',
                 $this->translator->trans('ID-Number not found!')
             );
             return $this->redirectToRoute('app_standard_index');
         }
 
-        // switch item statis (noStatus)
+        // switch item status (noStatus)
         switch ($item->getNoStatus()) {
             case 'deaktiviert':
                 $this->addFlash(
-                    'error',
+                    'itemError',
                     $this->translator->trans('ID-Number locked!')
                 );
                 return $this->redirectToRoute('app_standard_index');
@@ -86,11 +159,14 @@ class ItemsController extends AbstractController
                 $nutzer = $this->emNutzer
                     ->getRepository(Nutzer::class)
                     ->findOneById($nutzerId);
+                $person = $this->emNutzer
+                    ->getRepository(Person::class)
+                    ->findOneById($personId);
 
                 // user pass active (sichtbar)
                 if($nutzer->getSichtbar() === false) {
-                    $this->session->getFlashBag()->add(
-                        'error',
+                    $this->addFlash(
+                        'itemError',
                         $this->translator->trans('ID-Number locked!')
                     );
                     return $this->redirectToRoute('app_standard_index');
@@ -100,10 +176,22 @@ class ItemsController extends AbstractController
                 $variables = [
                     'idno' => $item,
                     'nutzer' => $nutzer,
-                    'person' => $this->emNutzer
-                        ->getRepository(Person::class)
-                        ->findOneById($personId),
+                    'person' => $person,
                 ];
+
+                // mail
+                $this->mailService->infoMail(
+                    [
+                        'subject' => 'Information - Ihr ID-No.com Produkt wurde genutzt!',
+                        'recipientEmail' => $person->getEmail(),
+                        'recipientName' => $person->getFullName(),
+                        'item' => $item,
+                        'nutzer' => $nutzer,
+                        'person' => $person,
+                        'now' => new \DateTime(),
+                    ],
+                    'itemScanned'
+                );
 
                 // return
                 return $this->renderAndRespond($variables);
@@ -114,23 +202,131 @@ class ItemsController extends AbstractController
                 return $this->redirectToRoute('app_standard_index');
                 break;
         }
+        */
     }
 
 
     /**
      * register
      *
-     * @param string $idno
      * @param Request $request
+     * @param ItemsService $itemsService
+     * @param UserPasswordHasherInterface $passwordEncoder
+     * @param string $idno
      *
      * @return Response
      *
      * @Route("/registrieren/{idno?}", name="register", methods={"GET", "POST"})
      */
-    public function register($idno = null, Request $request): Response
+    public function register(Request $request, ItemsService $itemsService, UserPasswordHasherInterface $passwordEncoder,$idno = null): Response
     {
-        $idno = strtoupper($request->get('p_idno') ?? $idno);
+        $now = new \DateTime();
+        $item = $itemsService->check(
+            $request->get('p_idno') ?? $idno,
+            'itemError',
+            'register'
+        );
 
+        // redirect to index if item check failed
+        if($item === null) {
+            return $this->redirectToRoute('app_standard_index');
+
+        // proceed to registration
+        } else {
+            $nutzer = new Nutzer();
+            $form = $this->createForm(RegistrationType::class, $nutzer);
+            $form
+                ->get('idno')
+                ->setData($idno);
+
+            $form->handleRequest($request);
+
+            // form valid
+            if ($form->isSubmitted() && $form->isValid()) {
+
+                // item
+                # @TODO: Validation
+                $idno = $form->get('idno')->getData();
+                $item = $this->emDefault
+                    ->getRepository(Items::class)
+                    ->findOneByIdNo($idno);
+
+                // Code from old backend
+                $source = isset($_SESSION['source']) ? $_SESSION['source'] : 1;
+
+                // person
+                $person = new Person();
+                $person
+                    ->setNutzer($nutzer)
+                    ->setParentId(0)
+                    ->setStatus('ok')
+                    ->setSprache('de')
+                    ->setEmail($nutzer->getEmail())
+                    ->setAnrede($nutzer->getAnrede())
+                    ->setVorname($nutzer->getVorname())
+                    ->setNachname($nutzer->getNachname());
+
+                // nutzer (user)
+                $nutzer
+                    ->setStatus('unlogged')
+                    ->setSprache('de')
+                    ->setLoginFehler(0)
+                    ->setSource($source)
+                    ->setPasswort(
+                        $passwordEncoder->hashpassword(
+                            $nutzer,
+                            $nutzer->getPlainPasswort(),
+                        )
+                    )
+
+                    // add first person (self)
+                    ->addPerson($person);
+
+                // hash for email verification
+                do {
+                    $auth = ByteString::fromRandom(40)->toString();
+                } while(
+                    $this->emNutzer
+                        ->getRepository(NutzerAuth::class)
+                        ->findOneByAuth($auth) !== null
+                );
+
+                $nutzerAuth = new NutzerAuth();
+                $nutzerAuth
+                    ->setAuth($auth)
+                    ->setTime(time())
+                    ->setNutzer($nutzer);
+
+                // persist
+                $this->emNutzer->persist($nutzer);
+                $this->emNutzer->persist($nutzerAuth);
+                $this->emNutzer->flush();
+
+                // update item
+                $item
+                    ->setNoStatus('registriert')
+                    ->setNutzerId($nutzer->getId())
+                    ->setPersonId($person->getId())
+                    ->setAktiviertDatum($now);
+
+                // persist
+                $this->emDefault->persist($item);
+                $this->emDefault->flush();
+
+                // redirect to profile
+                return $this->redirectToRoute('app_profile_index');
+            }
+
+            // variables
+            $variables = [
+                'item' => $item,
+                'form' => $form->createView()
+            ];
+
+            // return
+            return $this->renderAndRespond($variables);
+        }
+/*
         // get item
         $item = $this->emDefault
             ->getRepository(Items::class)
@@ -139,47 +335,133 @@ class ItemsController extends AbstractController
         // not found
         if($item === null) {
             $this->addFlash(
-                'error',
+                'itemError',
                 $this->translator->trans('ID-Number not found!')
             );
             return $this->redirectToRoute('app_standard_index');
         }
 
-        // switch item statis (noStatus)
+        // switch item status (noStatus)
         switch ($item->getNoStatus()) {
             case 'deaktiviert':
                 $this->addFlash(
-                    'error',
+                    'itemError',
                     $this->translator->trans('ID-Number locked!')
+                );
+                return $this->redirectToRoute('app_standard_index');
+                break;
+
+            // active
+            case 'registriert':
+                $this->addFlash(
+                    'itemError',
+                    $this->translator->trans('ID-Number already registered!')
                 );
                 return $this->redirectToRoute('app_standard_index');
                 break;
 
             // ready for activation
             case 'aktiviert':
+                $nutzer = new Nutzer();
+                $form = $this->createForm(RegistrationType::class, $nutzer);
+                $form
+                    ->get('idno')
+                    ->setData($idno);
+
+                $form->handleRequest($request);
+
+                // form valid
+                if ($form->isSubmitted() && $form->isValid()) {
+
+                    // item
+                    # @TODO: Validation
+                    $idno = $form->get('idno')->getData();
+                    $item = $this->emDefault
+                        ->getRepository(Items::class)
+                        ->findOneByIdNo($idno);
+
+                    // Code from old backend
+                    $source = isset($_SESSION['source']) ? $_SESSION['source'] : 1;
+
+                    // person
+                    $person = new Person();
+                    $person
+                        ->setNutzer($nutzer)
+                        ->setParentId(0)
+                        ->setStatus('ok')
+                        ->setSprache('de')
+                        ->setEmail($nutzer->getEmail())
+                        ->setAnrede($nutzer->getAnrede())
+                        ->setVorname($nutzer->getVorname())
+                        ->setNachname($nutzer->getNachname());
+
+                    // nutzer (user)
+                    $nutzer
+                        ->setStatus('unlogged')
+                        ->setSprache('de')
+                        ->setLoginFehler(0)
+                        ->setSource($source)
+                        ->setPasswort(
+                            $passwordEncoder->hashpassword(
+                                $nutzer,
+                                $nutzer->getPlainPasswort(),
+                            )
+                        )
+
+                        // add first person (self)
+                        ->addPerson($person);
+
+                    // hash for email verification
+                    do {
+                        $auth = ByteString::fromRandom(40)->toString();
+                    } while(
+                        $this->emNutzer
+                            ->getRepository(NutzerAuth::class)
+                            ->findOneByAuth($auth) !== null
+                    );
+
+                    $nutzerAuth = new NutzerAuth();
+                    $nutzerAuth
+                        ->setAuth($auth)
+                        ->setTime(time())
+                        ->setNutzer($nutzer);
+
+                    // persist
+                    $this->emNutzer->persist($nutzer);
+                    $this->emNutzer->persist($nutzerAuth);
+                    $this->emNutzer->flush();
+
+                    // update item
+                    $item
+                        ->setNoStatus('registriert')
+                        ->setNutzerId($nutzer->getId())
+                        ->setPersonId($person->getId())
+                        ->setAktiviertDatum($now);
+
+                    // persist
+                    $this->emDefault->persist($item);
+                    $this->emDefault->flush();
+
+                    // redirect to profile
+                    return $this->redirectToRoute('app_profile_index');
+                }
 
                 // variables
                 $variables = [
-                    'item' => $item
+                    'item' => $item,
+                    'form' => $form->createView()
                 ];
 
                 // return
                 return $this->renderAndRespond($variables);
                 break;
 
-            // active
-            case 'registriert':
-                $this->addFlash(
-                    'error',
-                    $this->translator->trans('ID-Number already registered!')
-                );
-                return $this->redirectToRoute('app_standard_index');
-
             // redirect to index - to be sure
             default:
                 return $this->redirectToRoute('app_standard_index');
                 break;
         }
+        */
     }
 
 

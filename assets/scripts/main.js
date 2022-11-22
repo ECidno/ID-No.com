@@ -12,8 +12,10 @@ const toastContainer = document.getElementById('toastContainer') || null;
 const modalContainer = document.getElementById('modalContainer') || null;
 
 const ajaxForms = document.getElementsByClassName('ajax-form') || [];
-const ajaxBtn = document.getElementsByClassName('ajax-modal') || [];
-const fldIdNo = document.getElementById('fldIdNo') || null;
+const ajaxModal = document.getElementsByClassName('ajax-modal') || [];
+const ajaxAction = document.getElementsByClassName('ajax-action') || [];
+const ajaxValidate = document.getElementsByClassName('ajax-validate') || [];
+const fldIdNo = document.getElementsByClassName('idNo') || [];
 const fldPassEnable = document.getElementById('fldPassEnable') || null;
 
 var showModal;
@@ -51,12 +53,17 @@ window.operateFormatter = (value, row, index) => {
   return operations.join('');
 }
 
+// item idNo formatter
+window.itemidNoFormatter = (value, row, index) => {
+  return '<a href="/' + value + '" target="_blank">' + value + '</a>';
+}
 
 // item status formatter
 window.itemStatusFormatter = (value, row, index) => {
+  var table = jQuery('#tableItems');
   return row.status === true
-    ? '<span><i class="bi bi-check-circle text-success me-1"></i> aktiv</span>'
-    : '<span><i class="bi bi-exclamation-triangle text-warning me-1"></i> inaktiv</span>';
+    ? '<span><i class="bi bi-check-circle text-success me-1"></i><span class="d-none d-md-inline">' + table.data('llActive') + '</span></span>'
+    : '<span><i class="bi bi-exclamation-triangle text-warning me-1"></i><span class="d-none d-md-inline">' + table.data('llInactive') + '</span></span>';
 }
 
 
@@ -185,7 +192,7 @@ document.addEventListener(
      * @param string body
      * @param boolean autohide
      */
-     showModal = (uri, options) => {
+    showModal = (uri, options) => {
       options = options ?? {
         method: 'GET'
       };
@@ -224,6 +231,8 @@ document.addEventListener(
         .from(ajaxForms)
         .forEach((el) => {
           let initialized = el.dataset.initialized || false
+
+          // initalized?
           if(initialized) {
             return;
           }
@@ -239,44 +248,45 @@ document.addEventListener(
               };
               let table = el.getAttribute('data-table') || null;
 
+              // ajax
               ajax(url, options)
-              .then(res => {
+                .then(res => {
 
-                // close modal if open/advised
-                let modalInstance = Modal.getInstance(modalContainer);
-                if(modalInstance) {
-                  modalInstance.hide();
-                }
+                  // close modal if open/advised
+                  let modalInstance = Modal.getInstance(modalContainer);
+                  if(modalInstance) {
+                    modalInstance.hide();
+                  }
 
-                // message?
-                if(res.message ?? false) {
-                  showMessage(
-                    res.severity || 0,
-                    null,
-                    res.message
-                  );
-                }
-
-                // table refresh?
-                if(table) {
-                  jQuery('#' + table)
-                    .bootstrapTable(
-                      'refresh',
-                      {
-                        silent: true
-                      }
+                  // message?
+                  if(res.message ?? false) {
+                    showMessage(
+                      res.severity || 0,
+                      null,
+                      res.message
                     );
                   }
-              })
 
-              // catch
-              .catch(err => {
-    console.warn(err);
-              });
+                  // table refresh?
+                  if(table) {
+                    jQuery('#' + table)
+                      .bootstrapTable(
+                        'refresh',
+                        {
+                          silent: true
+                        }
+                      );
+                    }
+                })
+
+                // catch
+                .catch(err => {
+                  console.warn(err);
+                });
 
               e.preventDefault();
 
-              // avoid
+              // avoid submit
               return false;
             }, {
               once: true
@@ -288,11 +298,13 @@ document.addEventListener(
         });
 
 
-      // add listener for buttons
+      // add listener for modal buttons
       Array
-        .from(ajaxBtn)
+        .from(ajaxModal)
         .forEach((el) => {
           let initialized = el.dataset.initialized || false
+
+          // initalized?
           if(initialized) {
             return;
           }
@@ -308,6 +320,123 @@ document.addEventListener(
           // set init
           el.dataset.initialized = true;
         });
+
+
+        // add listener for action buttons
+        Array
+          .from(ajaxAction)
+          .forEach((el) => {
+            let initialized = el.dataset.initialized || false
+            let url = el.getAttribute('data-url');
+            let table = el.getAttribute('data-table') ?? false;
+            let options = {
+              method: el.getAttribute('data-method') || 'GET'
+            };
+
+            // initalized?
+            if(initialized) {
+              return;
+            }
+
+            // listener
+            el.addEventListener(
+              'click',
+              e => {
+                ajax(url, options)
+                  .then(res => {
+
+                    // message?
+                    if(res.message ?? false) {
+                      showMessage(
+                        res.severity || 0,
+                        null,
+                        res.message
+                      );
+                    }
+
+                    // table refresh?
+                    if(table) {
+                      jQuery('#' + table)
+                        .bootstrapTable(
+                          'refresh',
+                          {
+                            silent: true
+                          }
+                        );
+                      }
+                  })
+
+                  // catch
+                  .catch(err => {
+                    console.warn(err);
+                  });
+              }
+            );
+
+            // set init
+            el.dataset.initialized = true;
+          });
+
+
+        // add listener for ajax check fields
+        Array
+          .from(ajaxValidate)
+          .forEach((el) => {
+            let initialized = el.dataset.initialized || false
+            let url = el.getAttribute('data-url');
+            let options = {
+              method: el.getAttribute('data-method') || 'GET'
+            };
+
+            // initalized?
+            if(initialized) {
+              return;
+            }
+
+            // listener
+            el.addEventListener(
+              'blur',
+              e => {
+                let field = e.target;
+                let val = field.value.trim();
+                let finalUrl = url + encodeURIComponent(val);
+
+                ajax(finalUrl, options)
+                  .then(res => {
+
+                    // valid
+                    if(typeof res.valid !== 'undefined') {
+                      if(res.valid === true) {
+                        field.classList.remove('is-invalid');
+                        field.classList.add('is-valid');
+                      } else {
+                        field.classList.remove('is-valid');
+                        field.classList.add('is-invalid');
+                      }
+                    }
+
+                    // message?
+                    if(res.message ?? false) {
+                      showMessage(
+                        res.severity || 0,
+                        null,
+                        res.message
+                      );
+                    }
+                  })
+
+                  // catch
+                  .catch(err => {
+                    field.classList.remove('is-valid');
+                    field.classList.add('is-invalid');
+                  });
+              }
+            );
+
+            // set init
+            el.dataset.initialized = true;
+          });
+
     }
 
 
@@ -352,21 +481,24 @@ document.addEventListener(
 
 
     // fldIdNo | keyup | input pattern on field idno
-    if(fldIdNo) {
-      fldIdNo.addEventListener(
-        'keyup',
-        e => {
-          if(e.key === 'Backspace' || e.key === 'Delete') {
-            return;
-          }
+    Array
+      .from(fldIdNo)
+      .forEach((el) => {
+        el.addEventListener(
+          'keyup',
+          e => {
+            if(e.key === 'Backspace' || e.key === 'Delete') {
+              return;
+            }
 
-          // pattern xxxx-yyyy
-          if(e.target.value.length === 4) {
-            fldIdNo.value += '-';
+            // pattern xxxx-yyyy
+            if(e.target.value.length === 4) {
+              el.value += '-';
+            }
           }
-        }
-      );
-    }
+        );
+      });
+
 
     // fldPassEnable | change
     if(fldPassEnable) {

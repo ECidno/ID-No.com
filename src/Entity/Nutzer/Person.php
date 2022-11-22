@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Mime\MimeTypes;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -31,8 +32,15 @@ class Person
     /**
      * @var Person
      * @ORM\ManyToOne(targetEntity="App\Entity\Nutzer\Person")
+     * @ORM\JoinColumn(nullable=false, options={"default":0})
+     private $parent;
      */
-    private $parent = null;
+
+    /**
+     * @var int
+     * @ORM\Column(type="integer", nullable=false, options={"default":"0"}))
+     */
+     private $parentId = 0;
 
     /**
      * @var Nutzer
@@ -52,6 +60,9 @@ class Person
      */
     private $images;
 
+    /**
+     * @var bool
+     */
     private $imageShow;
 
     /**
@@ -81,12 +92,14 @@ class Person
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank
      */
     private $vorname;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank
      */
     private $nachname;
 
@@ -158,9 +171,9 @@ class Person
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=6)
+     * @ORM\Column(type="string", length=6, options={"default":"+49"})
      */
-    private $telefonLand;
+    private $telefonLand = '+49';
 
     /**
      * @var string
@@ -188,9 +201,9 @@ class Person
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=6)
+     * @ORM\Column(type="string", length=6, options={"default":"+49"})
      */
-    private $mobileLand;
+    private $mobileLand = '+49';
 
     /**
      * @var string
@@ -212,9 +225,9 @@ class Person
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=5)
+     * @ORM\Column(type="string", length=5, options={"default":"kg"})
      */
-    private $gewichtEinheit;
+    private $gewichtEinheit = 'kg';
 
     /**
      * @var bool
@@ -230,9 +243,9 @@ class Person
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=5)
+     * @ORM\Column(type="string", length=5, options={"default":"cm"})
      */
-    private $groesseEinheit;
+    private $groesseEinheit = 'cm';
 
     /**
      * @var bool
@@ -328,19 +341,19 @@ class Person
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
-    private $organspender;
+    private $organspender = false;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
-    private $organspenderShow = 1;
+    private $organspenderShow = true;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      */
-    private $patientenverf;
+    private $patientenverf = true;
 
     /**
      * @var bool
@@ -362,8 +375,16 @@ class Person
 
     /**
      * @Assert\Type("\DateTimeInterface")
-     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime")
+     * @Gedmo\Timestampable(on="create")
+     */
+    private $registriertDatum;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="create")
+     * @Gedmo\Timestampable(on="update")
      */
     private $lastChangeDatum;
 
@@ -388,21 +409,40 @@ class Person
 
 
     /**
-     * @param Person $parent
-     * @return Items
+     * @param ?Person $parent
+     * @return Person
      */
-    public function setParent(Person $parent): self
+    public function setParent(?Person $parent = null): self
     {
         $this->parent = $parent;
         return $this;
     }
 
     /**
-     * @return Person|null
+     * @return ?Person
      */
     public function getParent(): ?Person
     {
         return $this->parent;
+    }
+
+
+    /**
+     * @param ?int $parentId
+     * @return self
+     */
+    public function setParentId(?int $parentId = 0): self
+    {
+        $this->parentId = $parentId;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getParentId(): int
+    {
+        return $this->parentId;
     }
 
 
@@ -488,6 +528,42 @@ class Person
             : $this->getImages()
                 ->first()
                 ->getBildShow();
+    }
+
+    /**
+     * @return ?string
+     */
+    public function getImageSrc(): ?string
+    {
+        if($this->getImages()->isEmpty()) {
+            return 'null';
+        }
+
+        // get file
+        $imgEntity = $this->getImages()->first();
+        $imgFile =  __DIR__.'/../../../media/userimages/'.$imgEntity->getBild();
+
+        // exists?
+        if (!file_exists($imgFile)) {
+            return null;
+        }
+
+        // mime type
+        $mimeTypes = new MimeTypes();
+        $imgMimeType = $mimeTypes->guessMimeType($imgFile);
+
+        // return
+        return join(
+            '',
+            [
+                'data:',
+                $imgMimeType,
+                ';base64,',
+                base64_encode(
+                    file_get_contents($imgFile)
+                )
+            ]
+        );
     }
 
 
@@ -605,7 +681,7 @@ class Person
     }
 
     /**
-     * @return string|null
+     * @return ?string
      */
     public function getFullName(): ?string
     {
@@ -613,6 +689,37 @@ class Person
             ' ',
             array_filter(
                 [
+                    $this->vorname,
+                    $this->nachname,
+                ]
+            )
+        );
+    }
+
+    /**
+     * @return ?string
+     */
+    public function getFullAddress(): ?string
+    {
+        // address
+        switch ($this->anrede) {
+            case 'm':
+                $anrede = 'Lieber'; # @TODO translate!
+                break;
+            case 'w':
+                $anrede = 'Liebe'; # @TODO translate!
+                break;
+            default:
+                $anrede = 'Guten Tag'; # @TODO translate!
+                break;
+        }
+
+        // return
+        return join(
+            ' ',
+            array_filter(
+                [
+                    $anrede,
                     $this->vorname,
                     $this->nachname,
                 ]
@@ -1450,7 +1557,7 @@ class Person
      */
     public function getOrganspender(): bool
     {
-        return $this->organspender;
+        return $this->organspender ?? false;
     }
 
 
@@ -1488,7 +1595,7 @@ class Person
      */
     public function getPatientenverf(): bool
     {
-        return $this->patientenverf;
+        return $this->patientenverf ?? false;
     }
 
 
@@ -1549,8 +1656,6 @@ class Person
     }
 
 
-
-
     /**
      * @return bool
      */
@@ -1575,21 +1680,38 @@ class Person
             $this->zusatzversicherungShow;
     }
 
+    /**
+     * @param \DateTimeInterface $registriertDatum
+     * @return self
+     */
+    public function setRegistriertDatum(\DateTimeInterface $registriertDatum): self
+    {
+        $this->registriertDatum = $registriertDatum;
+        return $this;
+    }
 
     /**
-     * @param \DateTime $lastChangeDatum
+     * @return \DateTimeInterface
+     */
+    public function getRegistriertDatum(): \DateTimeInterface
+    {
+        return $this->registriertDatum;
+    }
+
+    /**
+     * @param \DateTimeInterface $lastChangeDatum
      * @return Person
      */
-    public function setLastChangeDatum(\DateTime $lastChangeDatum): self
+    public function setLastChangeDatum(\DateTimeInterface $lastChangeDatum): self
     {
         $this->lastChangeDatum = $lastChangeDatum;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return ?\DateTimeInterface|null
      */
-    public function getLastChangeDatum(): ?\DateTime
+    public function getLastChangeDatum(): ?\DateTimeInterface
     {
         return $this->lastChangeDatum;
     }

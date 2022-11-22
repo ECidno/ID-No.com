@@ -14,11 +14,14 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Rollerworks\Component\PasswordStrength\Validator\Constraints as RollerworksPassword;
 
 /**
  * Nutzer
  *
  * @ORM\Entity(repositoryClass="App\Repository\NutzerRepository")
+ * @UniqueEntity(fields={"email"}, message="nutzer.email.unique")
  */
 class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -32,7 +35,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="App\Entity\Nutzer\Person", mappedBy="nutzer")
+     * @ORM\OneToMany(targetEntity="App\Entity\Nutzer\Person", mappedBy="nutzer", cascade={"persist"})
      */
     private $persons;
 
@@ -50,7 +53,6 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @var array
-     *
      * @Assert\NotBlank
      */
     private $roles = [
@@ -72,20 +74,22 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank
      */
     private $vorname;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank
      */
     private $nachname;
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=5)
+     * @ORM\Column(type="string", length=5, options={"default":"nein"})
      */
-    private $freigabe;
+    private $freigabe = "nein";
 
     /**
      * @var string
@@ -100,60 +104,91 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     private $passwort;
 
     /**
-     * @Assert\Type("\DateTimeInterface")
+     * Plain Password for double Check
+     *
+     * @var string
+     * @RollerworksPassword\PasswordStrength(minLength=8, minStrength=3)
+     */
+    private $plainPasswort;
+
+    /**
      * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="create")
      */
     private $stempel;
 
     /**
-     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="create")
      */
     private $registriertDatum;
 
     /**
-     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
      */
     private $aktiviertDatum;
 
     /**
-     * @Assert\Type("\DateTimeInterface")
-     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
+     * @Gedmo\Timestampable(on="create")
+     * @Gedmo\Timestampable(on="update")
      */
     private $lastChangeDatum;
 
     /**
-     * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
      */
     private $lastLogin;
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=5)
+     * @ORM\Column(type="string", length=5, options={"default":"nein"})
      */
-    private $gesperrt;
+    private $gesperrt = "nein";
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", options={"default":"0"})
      */
-    private $gesperrtAnzahl;
-
-    /**
-     * @Assert\Type("\DateTimeInterface")
-     * @ORM\Column(type="integer")
-     */
-    private $gesperrtDatum;
+    private $gesperrtAnzahl = 0;
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", options={"default":"0"})
      */
-    private $loginFehler;
+    private $gesperrtDatum = 0;
 
+    /**
+     * @var int
+     * @ORM\Column(type="integer", options={"default":"0"})
+     */
+    private $loginFehler = 0;
+
+    /**
+     * @var int
+     * @ORM\Column(type="integer", options={"default":"1"})
+     */
+    private $source;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @var int
+     */
+    private $sendInformation;
+
+
+    /**
+     * constructor
+     */
+    public function __construct()
+    {
+        $this->persons = new ArrayCollection();
+    }
 
 
     /**
@@ -181,6 +216,34 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     public function getPersons(): Collection
     {
         return $this->persons;
+    }
+
+    /**
+     * @param Person $person
+     * @return Nutzer
+     */
+    public function addPerson(Person $person): self
+    {
+        if (!$this->persons->contains($person)) {
+            $this->persons[] = $person;
+            $person->setNutzer($this);
+        }
+        return $this;
+    }
+
+    /**
+     * @param Person $person
+     * @return Nutzer
+     */
+    public function removePerson(Person $person): self
+    {
+        if ($this->persons->contains($person)) {
+            $this->persons->removeElement($person);
+            if ($person->getNutzer() === $this) {
+ #               $person->setNutzer(null);
+            }
+        }
+        return $this;
     }
 
 
@@ -230,12 +293,20 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
         return array_unique($this->roles);
     }
 
+    /**
+     * @param array $roles
+     * @return self
+     */
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;
         return $this;
     }
 
+    /**
+     * @param string $role
+     * @return self
+     */
     public function addRole(string $role): self
     {
         if (!in_array($role, $this->getRoles())) {
@@ -336,6 +407,21 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->nachname;
     }
 
+    /**
+     * @return ?string
+     */
+    public function getFullName(): ?string
+    {
+        return join(
+            ' ',
+            array_filter(
+                [
+                    $this->vorname,
+                    $this->nachname,
+                ]
+            )
+        );
+    }
 
     /**
      * @param string $freigabe
@@ -348,9 +434,9 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return string|null
+     * @return string
      */
-    public function getFreigabe(): ?string
+    public function getFreigabe(): string
     {
         return $this->freigabe;
     }
@@ -393,12 +479,30 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->passwort;
     }
 
-    /**
+     /**
      * @return string|null
      */
     public function getPassword(): ?string
     {
         return $this->passwort;
+    }
+
+    /**
+     * @param string $passwort
+     * @return Nutzer
+     */
+    public function setPlainPasswort(string $passwort): self
+    {
+        $this->plainPasswort = $passwort;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlainPasswort(): string
+    {
+        return $this->plainPasswort;
     }
 
 
@@ -502,7 +606,9 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function isAllowedToLogin(): bool
     {
-        return $this->getStatus() === 'ok';
+        return
+            $this->getStatus() === 'ok' ||
+            $this->getStatus() === 'unlogged';
     }
 
 
@@ -565,19 +671,19 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 
 
     /**
-     * @param \DateTime $gesperrtDatum
+     * @param int $gesperrtDatum
      * @return Nutzer
      */
-    public function setGesperrtDatum(\DateTime $gesperrtDatum): self
+    public function setGesperrtDatum(int $gesperrtDatum): self
     {
         $this->gesperrtDatum = $gesperrtDatum;
         return $this;
     }
 
     /**
-     * @return \DateTime|null
+     * @return int|null
      */
-    public function getGesperrtDatum(): ?\DateTime
+    public function getGesperrtDatum(): ?int
     {
         return $this->gesperrtDatum;
     }
@@ -599,5 +705,41 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     public function getLoginFehler(): ?int
     {
         return $this->loginFehler;
+    }
+
+    /**
+     * @param integer $source
+     * @return self
+     */
+    public function setSource(int $source): self
+    {
+        $this->source = $source;
+        return $this;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getSource(): int
+    {
+        return $this->source;
+    }
+
+    /**
+     * @param integer $sendInformation
+     * @return self
+     */
+    public function setSendInformation(int $sendInformation): self
+    {
+        $this->sendInformation = $sendInformation;
+        return $this;
+    }
+
+    /**
+     * @return integer|null
+     */
+    public function getSendInformation(): ?int
+    {
+        return $this->sendInformation;
     }
 }

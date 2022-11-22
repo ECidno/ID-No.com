@@ -10,6 +10,7 @@ namespace App\Controller;
 use App\Entity\Main\Items;
 use App\Form\Type\ItemsAddType;
 use App\Form\Type\ItemsEditType;
+use App\Service\ItemsService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -83,5 +84,41 @@ class ItemsApiController extends AbstractApiController
 
         // return
         return $items;
+    }
+
+
+    /**
+     * validate idno
+     *
+     * @param Request $request
+     * @param ItemsService $itemsService
+     * @param string $idno
+     * @param string $purpose
+     *
+     * @return JsonResponse
+     *
+     * @Route("/validate/idno/{idno<[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}>?}/{purpose?}", name="validate", methods={"GET"})
+     */
+    public function validate(Request $request, ItemsService $itemsService, $idno, $purpose = 'register'): ?JsonResponse
+    {
+        $item = $itemsService->check(
+            $request->get('p_idno') ?? $idno,
+            null,
+            $purpose
+        );
+
+        // status
+        $status = $item === null
+            ? 412
+            : 200;
+
+        // return
+        return (new JsonResponse())
+            ->setStatusCode($status)
+            ->setData(
+                [
+                    'valid' => $item !== null
+                ]
+            );
     }
 }

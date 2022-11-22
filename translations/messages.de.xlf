@@ -3470,5 +3470,203 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
         <target>company.coo.caption</target>
       </segment>
     </unit>
+    <unit id="KB734SJ" name="0+">
+      <segment>
+        <source>0+</source>
+        <target>0+</target>
+      </segment>
+    </unit>
+    <unit id="ruhzbCt" name="A+">
+      <segment>
+        <source>A+</source>
+        <target>A+</target>
+      </segment>
+    </unit>
+    <unit id="nz5XTy9" name="AB+">
+      <segment>
+        <source>AB+</source>
+        <target>AB+</target>
+      </segment>
+    </unit>
+    <unit id="bm3aRbw" name="0-">
+      <segment>
+        <source>0-</source>
+        <target>0-</target>
+      </segment>
+    </unit>
+    <unit id="Plj1OXB" name="A-">
+      <segment>
+        <source>A-</source>
+        <target>A-</target>
+      </segment>
+    </unit>
+    <unit id="8Dj4XuJ" name="AB-">
+      <segment>
+        <source>AB-</source>
+        <target>AB-</target>
+      </segment>
+    </unit>
+    <unit id="loeWEWU" name="active">
+      <segment>
+        <source>active</source>
+        <target>aktiv</target>
+      </segment>
+    </unit>
+    <unit id="0QImGLm" name="inactive">
+      <segment>
+        <source>inactive</source>
+        <target>inaktiv</target>
+      </segment>
+    </unit>
+    <unit id="lpzL089" name="Email">
+      <segment>
+        <source>Email</source>
+        <target>E-Mail</target>
+      </segment>
+    </unit>
+    <unit id="hjRN5dU" name="Anrede">
+      <segment>
+        <source>Anrede</source>
+        <target>Anrede</target>
+      </segment>
+    </unit>
+    <unit id="0td7b.p" name="Vorname">
+      <segment>
+        <source>Vorname</source>
+        <target>Vorname</target>
+      </segment>
+    </unit>
+    <unit id="slNY7dS" name="Nachname">
+      <segment>
+        <source>Nachname</source>
+        <target>Nachname</target>
+      </segment>
+    </unit>
+    <unit id="mklUC0Y" name="registration.passwort">
+      <segment>
+        <source>registration.passwort</source>
+        <target>Passwort</target>
+      </segment>
+    </unit>
+    <unit id="pU5CAnR" name="registration.repeatPasswort">
+      <segment>
+        <source>registration.repeatPasswort</source>
+        <target>Passwort wiederholen</target>
+      </segment>
+    </unit>
+    <unit id="6cI1jGQ" name="agb.text">
+      <segment>
+        <source>agb.text</source>
+        <target>Ich habe die [AGB](/agb) gelesen und bin mit deren Geltung einverstanden. Der [Datenvorhaltung](/datenschutz) meiner im Notfallpass hinterlegten Daten stimme ich zu.</target>
+      </segment>
+    </unit>
+    <unit id="6Mv17nB" name="newsletter.text">
+      <segment>
+        <source>newsletter.text</source>
+        <target>Ja, ich möchte per E-Mail* über [Verbesserungen des Service](/datenschutz) informiert werden.
+
+*ID-No.com nimmt den Schutz Ihrer persönlichen Daten sehr ernst.
+Wir behandeln Ihre personenbezogenen Daten vertraulich und verwenden sie nicht für Werbezwecke.
+Die Anmeldung für Ihren Notfall-ID Pass ist kostenfrei.</target>
+      </segment>
+    </unit>
+    <unit id="u3WK.2_" name="Create Profile">
+      <segment>
+        <source>Create Profile</source>
+        <target>Profil anlegen</target>
+      </segment>
+    </unit>
+    <unit id="icXk1wm" name="person.email">
+      <segment>
+        <source>person.email</source>
+        <target>E-Mail</target>
+      </segment>
+    </unit>
+    <unit id="Y6iE2lx" name="mail.mailVerification.subject">
+      <segment>
+        <source>mail.mailVerification.subject</source>
+        <target>Willkommen bei ID-No.com!</target>
+      </segment>
+    </unit>
+    <unit id="m7F_DYR" name="mail.mailVerification.text">
+      <segment>
+        <source>mail.mailVerification.text</source>
+        <target><![CDATA[Herzlich willkommen bei ID-No.com!  
+  
+Um Ihren Account bei ID-No.com im vollem Umfang nutzen zu können,  
+klicken Sie bitte auf folgenden Freischaltungslink:  
+  
+%nutzerAuth_link%
+  
+**Dieser Link ist 2 Stunden gültig.**  
+  
+Alternativ können Sie die nachfolgende Nummer kopieren und diese in das entsprechende Feld eingeben, um Ihren Account zu einem beliebigen Zeitpunkt freizuschalten. Loggen Sie sich hierzu mit Ihrem Benutzernamen und Passwort ein. Hier können Sie auch jederzeit einen neuen Aktivierungslink anfordern.   
+  
+<pre>%nutzerAuth_auth%</pre>  
+  
+Mit besten Grüßen  
+Ihr Team von ID-No.com]]></target>
+      </segment>
+    </unit>
+    <unit id="tLBvQVM" name="auth.title">
+      <segment>
+        <source>auth.title</source>
+        <target>Authenticate</target>
+      </segment>
+    </unit>
+    <unit id="LOS7_ws" name="auth.header">
+      <segment>
+        <source>auth.header</source>
+        <target>Authenticate</target>
+      </segment>
+    </unit>
+    <unit id="8bhsAO5" name="auth.text">
+      <segment>
+        <source>auth.text</source>
+        <target>auth.text</target>
+      </segment>
+    </unit>
+    <unit id="ULC08pz" name="meinidno.profile.missingEmailVerfication">
+      <segment>
+        <source>meinidno.profile.missingEmailVerfication</source>
+        <target>Ihre E-Mail-Adresse wurde noch nicht verifiziert.</target>
+      </segment>
+    </unit>
+    <unit id="VUt41og" name="meinidno.profile.missingEmailVerfication.link.lbl">
+      <segment>
+        <source>meinidno.profile.missingEmailVerfication.link.lbl</source>
+        <target>E-Mail-Adresse jetzt überprüfen.</target>
+      </segment>
+    </unit>
+    <unit id="r_0QbU." name="profile.actions.emailauthrequest.success">
+      <segment>
+        <source>profile.actions.emailauthrequest.success</source>
+        <target>Die E-Mail für die Verifikation der E-Mail-Adresse wurde an %email% versendet.</target>
+      </segment>
+    </unit>
+    <unit id="55fNwAg" name="profile.actions.emailauthrequest.error">
+      <segment>
+        <source>profile.actions.emailauthrequest.error</source>
+        <target>Fehler beim Erstellen der Verifikations-E-Mail an %email%!</target>
+      </segment>
+    </unit>
+    <unit id="8hd1mx1" name="login.register.text">
+      <segment>
+        <source>login.register.text</source>
+        <target>Sie sind noch nicht registriert? Bitte registrieren Sie sich [hier](%register_url%).</target>
+      </segment>
+    </unit>
+    <unit id="zUForcg" name="ID-Number already registered!">
+      <segment>
+        <source>ID-Number already registered!</source>
+        <target>ID-Number already registered!</target>
+      </segment>
+    </unit>
+    <unit id="HFCZOwC" name="years">
+      <segment>
+        <source>years</source>
+        <target>Jahre</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

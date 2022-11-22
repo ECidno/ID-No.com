@@ -22,15 +22,15 @@ class StandardController extends AbstractController
     /**
      * index action
      *
-     * @param string $idno
      * @param Request $request
+     * @param string $idno
      *
      *
      * @return Response
      *
      * @Route("/{idno<[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}>?}", name="index", priority=100, methods={"GET", "POST"})
      */
-    public function index($idno = null, Request $request): Response
+    public function index(Request $request, $idno = null): Response
     {
         $bannerImages = [];
         $dir = 'media/images/banner';

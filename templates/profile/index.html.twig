@@ -9,9 +9,37 @@
         <h1>{{ 'meinidno.title'|trans }}</h1>
       </div>
     </div>
+
+    {# missing email verification #}
+    {% if user.status == 'unlogged' %}
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <div
+            class="alert alert-warning my-3"
+            role="alert">
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <i class="bi bi-exclamation-triangle px-1"></i>
+              </div>
+              <div class="flex-grow-1 ms-2">
+                {{ 'meinidno.profile.missingEmailVerfication'|trans({
+                  '%nutzerAuth_request%': path('app_api_profile_email_auth_request')
+                }) }}
+                <a
+                  class="alert-link pointer ajax-action"
+                  data-url="{{ path('app_api_profile_email_auth_request') }}">
+                  {{ 'meinidno.profile.missingEmailVerfication.link.lbl'|trans }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8">
-				<h3>{{ 'meinidno.profile.title'|trans }}</h3>
+        <h3>{{ 'meinidno.profile.title'|trans }}</h3>
         <p>{{ 'meinidno.profile.description'|trans }}</p>
 
         <div class="row mt-3">
@@ -25,17 +53,6 @@
               </button>
             </div>
           </div>
-{#}
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="d-grid mb-3">
-              <a
-                class="btn btn-outline-dark"
-                href="{{ path('app_contacts_index') }}">
-                {{ 'contacts.index.lbl'|trans }}
-              </a>
-            </div>
-          </div>
-          #}
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
             <div class="d-grid mb-3">
               <a
@@ -102,9 +119,8 @@
     {# id number #}
     <div class="row my-4">
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-				<h3>{{ 'meinidno.idno.title'|trans }}</h3>
+        <h3>{{ 'meinidno.idno.title'|trans }}</h3>
         <p>{{ 'meinidno.idno.description'|trans }}</p>
-
         <div
           id="toolbarItems"
           class="d-none">
@@ -116,7 +132,6 @@
             {{ 'items.action.new.lbl'|trans }}
           </button>
         </div>
-
         <table
           id="tableItems"
           class="d-none"
@@ -127,10 +142,14 @@
           data-loading-template="loadingTemplate"
           data-buttons-class="outline-dark btn-sm"
           data-show-refresh="false"
-          data-url="{{ path('app_api_items_read', { personId:person.id }) }}">
+          data-url="{{ path('app_api_items_read', { personId:person.id }) }}"
+          data-ll-active="{{ 'active'|trans() }}"
+          data-ll-inactive="{{ 'inactive'|trans() }}">
           <thead class="bg-light">
             <tr>
-              <th data-field="idNo">{{ 'items.table.idNo.lbl'|trans }}</th>
+              <th
+                data-field="idNo"
+                data-formatter="itemidNoFormatter">{{ 'items.table.idNo.lbl'|trans }}</th>
               <th data-field="anbringung">{{ 'items.table.anbringung.lbl'|trans }}</th>
               <th
                 data-field="noStatus"
@@ -152,8 +171,7 @@
     <div class="row my-4">
       <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <h3>{{ 'meinidno.contact.title'|trans }}</h3>
-				<p>{{ 'meinidno.contact.description'|trans }}</p>
-
+        <p>{{ 'meinidno.contact.description'|trans }}</p>
         <div
           id="toolbarContacts"
           class="d-none">
@@ -165,7 +183,6 @@
             {{ 'contacts.action.new.lbl'|trans }}
           </button>
         </div>
-
         <table
           id="tableContacts"
           class="d-none"

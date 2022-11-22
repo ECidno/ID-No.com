@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="en">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="en">
   <file id="security.en">
     <unit id="xM9uX4L" name="Wrong credentials!">
       <segment>
@@ -23,6 +23,24 @@
       <segment>
         <source>Empty credentials!</source>
         <target>Empty credentials!</target>
+      </segment>
+    </unit>
+    <unit id="ENjue_N" name="code.used">
+      <segment>
+        <source>code.used</source>
+        <target>The code was already used.</target>
+      </segment>
+    </unit>
+    <unit id="Re2boGN" name="code.expired">
+      <segment>
+        <source>code.expired</source>
+        <target>The code has expired. Please request a new code from your Account Page.</target>
+      </segment>
+    </unit>
+    <unit id="2UO38zy" name="code.invalid">
+      <segment>
+        <source>code.invalid</source>
+        <target>The code is invalid.</target>
       </segment>
     </unit>
   </file>

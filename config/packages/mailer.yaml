@@ -1,3 +1,25 @@
 framework:
     mailer:
         dsn: '%env(MAILER_DSN)%'
+        envelope:
+            sender: 'service@id-no.com'
+        headers:
+            From: 'ID-No.com | Service <service@id-no.com>'
+
+when@dev:
+    framework:
+        mailer:
+            envelope:
+                sender: 'debug@mp-group.net'
+                recipients: ['fkrueger@mp-group.net']
+            headers:
+                From: 'ID-No.com | Service | DEV <debug@mp-group.net>'
+
+when@staging:
+    framework:
+        mailer:
+            envelope:
+                sender: 'debug@mp-group.net'
+                recipients: ['fkrueger@mp-group.net']
+            headers:
+                From: 'ID-No.com | Service | STAGING <debug@mp-group.net>'

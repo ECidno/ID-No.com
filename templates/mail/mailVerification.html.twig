@@ -1,0 +1,11 @@
+{% extends 'mail/base.html.twig' %}
+
+{# content #}
+{% block content %}
+	{{ 'mail.mailVerification.text'|trans(
+		{
+			'%nutzerAuth_link%': url('app_account_authenticate', { auth_code: nutzerAuth.auth }),
+			'%nutzerAuth_auth%': nutzerAuth.auth
+		}
+	)|raw|markdown_to_html }}
+{% endblock %}

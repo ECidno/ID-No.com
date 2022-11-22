@@ -8,9 +8,13 @@ namespace App\Controller;
  **********************************************************************/
 
 use App\Entity\Nutzer\Nutzer;
+use App\Entity\Nutzer\NutzerAuth;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\ByteString;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * profile api controller
@@ -83,4 +87,131 @@ class ProfileApiController extends AbstractApiController
     }
 
 
+    /**
+     * email auth request
+     *
+     * @param Request $request
+     * @return JsonResponse
+     *
+     * @Route("/emailauthrequest", name="email_auth_request", methods={"GET"})
+     */
+    public function emailauthrequest(Request $request): JsonResponse
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user = $this->getUser();
+        $email = $user->getEmail();
+
+        // hash for email verification
+        do {
+            $auth = ByteString::fromRandom(40)->toString();
+        } while(
+            $this->emNutzer
+                ->getRepository(NutzerAuth::class)
+                ->findOneByAuth($auth) !== null
+        );
+
+        // get auth code object
+        $nutzerAuth = $this->emNutzer
+            ->getRepository(NutzerAuth::class)
+            ->findOneByNutzer($user);
+
+        // proceed
+        if($nutzerAuth) {
+            $nutzerAuth
+                ->setAuth($auth)
+                ->setTime(time())
+                ->setNutzer($user);
+
+            $this->emNutzer->persist($nutzerAuth);
+            $this->emNutzer->flush();
+
+            // mail for email verification
+            $this->mailService->infoMail(
+                [
+                    'subject' => $this->translator->trans('mail.mailVerification.subject'),
+                    'recipientEmail' => $email,
+                    'recipientName' => $user->getFullName(),
+                    'nutzer' => $user,
+                    'nutzerAuth' => $nutzerAuth,
+                ],
+                'mailVerification'
+            );
+
+            // return
+            return (new JsonResponse())
+                ->setStatusCode(200)
+                ->setData(
+                    [
+                        'severity' => 0,
+                        'message' => $this->translator->trans(
+                            'profile.actions.emailauthrequest.success',
+                            [
+                                '%email%' => $email
+                            ]
+                        )
+                    ]
+                );
+
+        // auth | error
+        } else {
+            return (new JsonResponse())
+                ->setStatusCode(412)
+                ->setData(
+                    [
+                        'severity' => 9,
+                        'message' => $this->translator->trans(
+                            'profile.actions.emailauthrequest.error',
+                            [
+                                '%email%' => $email
+                            ]
+                        )
+                    ]
+                );
+        }
+    }
+
+
+    /**
+     * validate email
+     *
+     * @param Request $request
+     * @param ValidatorInterface $validator
+     * @param string $email
+     *
+     * @return JsonResponse
+     *
+     * @Route("/validate/email/{email?}", name="validate", methods={"GET"})
+     */
+    public function validate(Request $request, ValidatorInterface $validator, $email): JsonResponse
+    {
+        $user = $this->emNutzer
+            ->getRepository(Nutzer::class)
+            ->findOneByEmail($email);
+
+        // valid?
+        $valid =
+            $user === null &&
+            !empty($email) &&
+            $validator
+                ->validate(
+                    $email,
+                    new Assert\Email()
+                )
+                ->count() === 0;
+
+        // status
+        $status = $valid
+            ? 200
+            : 412;
+
+        // return
+        return (new JsonResponse())
+            ->setStatusCode($status)
+            ->setData(
+                [
+                    'valid' => $valid,
+                    'errors' => ''
+                ]
+            );
+    }
 }

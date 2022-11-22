@@ -43,7 +43,7 @@ class ItemsEditType extends AbstractType
             ->add('anbringung', TextType::class, [
                 'label' => new TranslatableMessage('items.anbringung.lbl'),
                 'attr' => [
-                    'placeholder' => new TranslatableMessage('items.anbringung.lbl'),
+                    'autocomplete' => 'off',
                     'maxlength' => 255,
                 ],
                 'required' => true

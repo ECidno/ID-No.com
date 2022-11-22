@@ -7,6 +7,7 @@ namespace App\Controller;
  *
  * /*********************************************************************/
 
+use App\Service\MailService;
 use Psr\Log\LoggerInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
@@ -75,6 +76,11 @@ class AbstractController extends SymfonyAbstractController
     protected $formFactory;
 
     /**
+     * @var MailService mailService
+     */
+    protected $mailService;
+
+    /**
      * @var array
      */
     protected $motd = [];
@@ -120,20 +126,22 @@ class AbstractController extends SymfonyAbstractController
      *
      * @param ContainerBagInterface $params
      * @param Environment $twig
+     * @param FormFactoryInterface $formFactory
+     * @param LoggerInterface $logger
+     * @param MailService $mailService
+     * @param ManagerRegistry $registry
      * @param RequestStack $requestStack
      * @param TranslatorInterface $translator
-     * @param LoggerInterface $logger
-     * @param ManagerRegistry $registry
-     * @param FormFactoryInterface $formFactory
      */
     public function __construct(
         ContainerBagInterface $params,
         Environment $twig,
-        RequestStack $requestStack,
-        TranslatorInterface $translator,
+        FormFactoryInterface $formFactory,
         LoggerInterface $logger,
+        MailService $mailService,
         ManagerRegistry $registry,
-        FormFactoryInterface $formFactory
+        RequestStack $requestStack,
+        TranslatorInterface $translator
     ) {
         $this->now = new \DateTime();
 
@@ -146,6 +154,7 @@ class AbstractController extends SymfonyAbstractController
         $this->emDefault = $registry->getManager('default');
         $this->emNutzer = $registry->getManager('nutzer');
         $this->formFactory = $formFactory;
+        $this->mailService = $mailService;
 
         /*
          * request
