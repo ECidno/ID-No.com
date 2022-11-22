@@ -407,6 +407,21 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->nachname;
     }
 
+    /**
+     * @return ?string
+     */
+    public function getFullName(): ?string
+    {
+        return join(
+            ' ',
+            array_filter(
+                [
+                    $this->vorname,
+                    $this->nachname,
+                ]
+            )
+        );
+    }
 
     /**
      * @param string $freigabe
@@ -591,7 +606,9 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function isAllowedToLogin(): bool
     {
-        return $this->getStatus() === 'ok';
+        return
+            $this->getStatus() === 'ok' ||
+            $this->getStatus() === 'unlogged';
     }
 
 

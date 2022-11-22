@@ -206,12 +206,6 @@ class ItemsController extends AbstractController
                         ->getRepository(Items::class)
                         ->findOneByIdNo($idno);
 
-                    // hash pass
-                    $pwd = $passwordEncoder->hashpassword(
-                        $nutzer->getEmail(),
-                        $nutzer->getPlainPasswort(),
-                    );
-
                     # Code from old backend
                     $source = isset($_SESSION['source']) ? $_SESSION['source'] : 1;
 
@@ -233,7 +227,12 @@ class ItemsController extends AbstractController
                         ->setSprache('de')
                         ->setLoginFehler(0)
                         ->setSource($source)
-                        ->setPasswort($pwd)
+                        ->setPasswort(
+                            $passwordEncoder->hashpassword(
+                                $nutzer,
+                                $nutzer->getPlainPasswort(),
+                            )
+                        )
 
                         // add first person (self)
                         ->addPerson($person);
@@ -243,8 +242,8 @@ class ItemsController extends AbstractController
                         $auth = ByteString::fromRandom(40)->toString();
                     } while(
                         $this->emNutzer
-                            ->getRepository(Items::class)
-                            ->findOneByAuth($auth) === null
+                            ->getRepository(NutzerAuth::class)
+                            ->findOneByAuth($auth) !== null
                     );
 
                     $nutzerAuth = new NutzerAuth();

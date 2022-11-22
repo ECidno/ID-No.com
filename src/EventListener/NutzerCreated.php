@@ -8,7 +8,11 @@ namespace App\EventListener;
  **********************************************************************/
 
 use App\Entity\Nutzer\Nutzer;
+use App\Entity\Nutzer\NutzerAuth;
+use App\Service\MailService;
+use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Nutzer | Created
@@ -20,24 +24,35 @@ class NutzerCreated
      *
      * @param Nutzer $nutzer
      * @param LifecycleEventArgs $event
+     * @param ManagerRegistry $registry
+     * @param MailService $mailService
+     * @param TranslatorInterface $translator
      * @return void
      */
-    public function postCreate(Nutzer $nutzer, LifecycleEventArgs $event): void
+    public function postCreate(
+        Nutzer $nutzer,
+        LifecycleEventArgs $event,
+        ManagerRegistry $registry,
+        MailService $mailService,
+        TranslatorInterface $translator
+    ): void
     {
-/*
-        // mail
-        $this->mailService->infoMail(
+        // get auth code object
+        $nutzerAuth = $registry
+            ->getManager('nutzer')
+            ->getRepository(NutzerAuth::class)
+            ->findOneByNutzer($nutzer);
+
+        // mail for email verification
+        $mailService->infoMail(
             [
-                'subject' => 'Information - Ihr ID-No.com Produkt wurde genutzt!',
-                'recipientEmail' => $person->getEmail(),
-                'recipientName' => $person->getFullName(),
-                'person' => $person,
-                'now' => new \DateTime(),
+                'subject' => $translator->trans('mail.mailVerification.subject'),
+                'recipientEmail' => $nutzer->getEmail(),
+                'recipientName' => $nutzer->getFullName(),
+                'nutzer' => $nutzer,
+                'nutzerAuth' => $nutzerAuth,
             ],
-            'itemScanned'
+            'mailVerification'
         );
-*/
-
     }
-
 }

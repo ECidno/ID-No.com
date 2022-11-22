@@ -1,0 +1,6 @@
+{% extends 'mail/base.html.twig' %}
+
+{# content #}
+{% block content %}
+{{ 'mail.mailVerification.text'|trans|raw|markdown_to_html }}
+{% endblock %}

@@ -681,7 +681,7 @@ class Person
     }
 
     /**
-     * @return string|null
+     * @return ?string
      */
     public function getFullName(): ?string
     {
@@ -697,7 +697,7 @@ class Person
     }
 
     /**
-     * @return string|null
+     * @return ?string
      */
     public function getFullAddress(): ?string
     {

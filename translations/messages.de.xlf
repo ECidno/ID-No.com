@@ -3582,5 +3582,31 @@ Die Anmeldung für Ihren Notfall-ID Pass ist kostenfrei.</target>
         <target>E-Mail</target>
       </segment>
     </unit>
+    <unit id="Y6iE2lx" name="mail.mailVerification.subject">
+      <segment>
+        <source>mail.mailVerification.subject</source>
+        <target>Willkommen bei ID-No.com!</target>
+      </segment>
+    </unit>
+    <unit id="m7F_DYR" name="mail.mailVerification.text">
+      <segment>
+        <source>mail.mailVerification.text</source>
+        <target>Herzlich willkommen bei ID-No.com!  
+  
+Um Ihren Account bei ID-No.com im vollem Umfang nutzen zu können,  
+klicken Sie bitte auf folgenden Freischaltungslink:  
+  
+{{ nutzerAuth.auth }}  
+  
+**Dieser Link ist 2 Stunden gültig.**  
+  
+Alternativ können Sie die nachfolgende Nummer kopieren und diese in das entsprechende Feld eingeben, um Ihren Account zu einem beliebigen Zeitpunkt freizuschalten. Loggen Sie sich hierzu mit Ihrem Benutzernamen und Passwort ein. Hier können Sie auch jederzeit einen neuen Aktivierungslink anfordern.   
+  
+{{ nutzerAuth.auth }}  
+  
+Mit besten Grüßen  
+Ihr Team von ID-No.com</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
