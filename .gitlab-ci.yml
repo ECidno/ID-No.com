@@ -87,17 +87,14 @@ staging:
     # yarn
     - yarn
     - yarn encore dev
-
-  # after
-  after_script:
-    - cd /srv/www/symfony.idno/html
-
+    
     # rights
     - sudo chgrp -R www-data var/cache/*
     - sudo chgrp www-data translations/*
 
     # finally, reload php-fpm
-    - sudo systemctl reload php7.4-fpm.service
+    - sudo systemctl reload php8.1-fpm.service
+
 
 # production
 # production:
