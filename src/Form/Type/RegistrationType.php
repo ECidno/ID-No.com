@@ -7,6 +7,7 @@ namespace App\Form\Type;
  *
  **********************************************************************/
 
+use App\Entity\Main\Items;
 use App\Entity\Nutzer\Nutzer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -39,7 +40,7 @@ class RegistrationType extends AbstractType
                 'mapped' => false,
                 'attr' => [
                     'class' => 'idNo ajax-validate',
-                    'pattern' => '[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}',
+                    'pattern' => Items::IDNO_PATTERN,
                     'maxlength' => 9,
                     'autocomplete' => 'off',
                     'data-url' => '/api/items/validate/idno/',

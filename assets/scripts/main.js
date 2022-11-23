@@ -66,7 +66,6 @@ window.itemStatusFormatter = (value, row, index) => {
     : '<span><i class="bi bi-exclamation-triangle text-warning me-1"></i><span class="d-none d-md-inline">' + table.data('llInactive') + '</span></span>';
 }
 
-
 // operate events
 window.operateEvents = {
 
@@ -81,6 +80,22 @@ window.operateEvents = {
   }
 }
 
+
+// show form filed error
+window.showFieldError = (field, message) => {
+  let parent = field.parentNode;
+  let errorContainer =  document.createElement('div');
+
+  Array
+      .from(parent.getElementsByClassName('invalid-feedback') || [])
+      .forEach((el) => {
+        el.remove();
+      });
+
+  errorContainer.className = 'invalid-feedback';
+  errorContainer.innerText = message;
+  parent.append(errorContainer);
+}
 
 
 // document DOM ready
@@ -137,7 +152,7 @@ document.addEventListener(
         return res
           .json()
           .then(err => {
-            throw new Error(err.message)
+            throw new Error(err.message ?? err.error)
           });
       });
     }
@@ -398,6 +413,7 @@ document.addEventListener(
               'blur',
               e => {
                 let field = e.target;
+                let form = field.closest('form');
                 let val = field.value.trim();
                 let finalUrl = url + encodeURIComponent(val);
 
@@ -409,6 +425,8 @@ document.addEventListener(
                       if(res.valid === true) {
                         field.classList.remove('is-invalid');
                         field.classList.add('is-valid');
+
+                      // invalid
                       } else {
                         field.classList.remove('is-valid');
                         field.classList.add('is-invalid');
@@ -429,6 +447,12 @@ document.addEventListener(
                   .catch(err => {
                     field.classList.remove('is-valid');
                     field.classList.add('is-invalid');
+ //                   form.classList.add('was-validation');
+
+                    // error?
+                    if(err.message ?? false) {
+                      showFieldError(field, err.message);
+                    }
                   });
               }
             );
@@ -529,6 +553,5 @@ document.addEventListener(
         }
       )
     }
-
   }
 );

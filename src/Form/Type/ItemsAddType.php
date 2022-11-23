@@ -32,9 +32,11 @@ class ItemsAddType extends AbstractType
             ->add('idNo', TextType::class, [
                 'label' => new TranslatableMessage('items.idNo.lbl'),
                 'attr' => [
-                    'autocomplete' => 'off',
+                    'class' => 'idNo ajax-validate',
                     'pattern' => Items::IDNO_PATTERN,
                     'maxlength' => 9,
+                    'autocomplete' => 'off',
+                    'data-url' => '/api/items/validate/idno/',
                 ],
                 'required' => true
             ])
@@ -44,7 +46,7 @@ class ItemsAddType extends AbstractType
                     'autocomplete' => 'off',
                     'maxlength' => 255,
                 ],
-                'required' => true
+                'required' => false
             ])
             ->add('nutzerId', HiddenType::class)
             ->add('personId', HiddenType::class);
