@@ -8,6 +8,7 @@ namespace App\Controller;
  **********************************************************************/
 
 use App\Entity\Main\Items;
+use App\Entity\Nutzer\Nutzer;
 use App\Form\Type\ItemsAddType;
 use App\Form\Type\ItemsEditType;
 use App\Service\ItemsService;
@@ -35,6 +36,162 @@ class ItemsApiController extends AbstractApiController
      * @var string entityFormEditType
      */
     public static $entityFormEditType = ItemsEditType::class;
+
+
+    /**
+     * create
+     *
+     * @param Request $request
+     * @return JsonResponse
+     *
+     * @Route("/create", name="create", methods={"POST"})
+     */
+    public function create(Request $request): JsonResponse
+    {
+        $now = new \DateTime();
+        $object = new static::$entityClassName();
+        $formType = static::$entityFormAddType;
+
+        // form
+        $form = $this->createForm($formType, $object);
+        $form->handleRequest($request);
+
+        // form valid
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            // voter
+            $this->denyAccessUnlessGranted('create', $object);
+
+            // validate item
+            $idno = $object->getIdNo();
+            $item = $this->itemsService->check(
+                $idno,
+                'itemError',
+                'register'
+            );
+
+            // validation failed
+            if($item === null) {
+                return $this->json(
+                    [
+                        'message' => $this->translator->trans(
+                            $this->getTranslateKey('action.create.error')
+                        ),
+                        'errors' => [],
+                    ],
+                    400
+                );
+            }
+
+            // update item
+            $item
+                ->setNoStatus('registriert')
+                ->setNutzerId($object->getNutzerId())
+                ->setPersonId($object->getPersonId())
+                ->setAnbringung($object->getAnbringung())
+                ->setRegistriertDatum($now);
+
+            // persist
+            $this->emDefault->flush($item);
+
+            // message
+            $message = $this->translator->trans(
+                $this->getTranslateKey('action.create.success')
+            );
+
+        // form invalid
+        } else if (!$form->isValid()) {
+            $errors = $this->collectFormErrors($form);
+            $message = $this->translator->trans(
+                $this->getTranslateKey('action.create.error')
+            );
+
+            // Return status code 400 for validation errors: https://stackoverflow.com/a/3290198
+            return $this->json(
+                [
+                    'message' => $message,
+                    'errors' => $errors,
+                ],
+                400
+            );
+        }
+
+        // return | page
+        return $this->json(
+            [
+                'id' => $object->getId(),
+                'message' => $message,
+                'redirect-url' => '', # @TODO: entiy index route
+            ]
+        );
+    }
+
+
+    /**
+     * delete
+     *
+     * @param int $id
+     * @param Request $request
+     * @return JsonResponse
+     *
+     * @Route("/delete/{id}", name="delete", methods={"POST","DELETE"})
+     */
+    public function delete(int $id, Request $request): JsonResponse
+    {
+        $object = $this->emDefault
+            ->getRepository(static::$entityClassName)
+            ->find($id);
+
+        // voter
+        $this->denyAccessUnlessGranted('delete', $object);
+
+        // csrf
+        if (
+            $this->isCsrfTokenValid(
+                'delete'.$object->getId(),
+                $request->request->get('_token')
+            )
+        ) {
+
+            // update item
+            $object
+                ->setNoStatus('aktiviert')
+                ->setNutzerId(0)
+                ->setPersonId(0)
+                ->setAnbringung(null)
+                ->setRegistriertDatum(null);
+
+            // persist
+            $this->emDefault->flush($object);
+
+            // message
+            $message = $this->translator->trans(
+                $this->getTranslateKey('action.delete.success')
+            );
+
+         // invalid request
+        } else {
+            $message = $this->translator->trans(
+                $this->getTranslateKey('action.delete.error')
+            );
+
+            // return
+            return $this->json(
+                [
+                    'errors' => $message,
+                ],
+                412
+            );
+        }
+
+        // return
+        return $this->json(
+            [
+                'message' => $message,
+                'redirect-url' => '', # @TODO: entiy index route
+            ]
+        );
+    }
 
 
     /**
@@ -97,7 +254,7 @@ class ItemsApiController extends AbstractApiController
      *
      * @return JsonResponse
      *
-     * @Route("/validate/idno/{idno<[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}>?}/{purpose?}", name="validate", methods={"GET"})
+     * @Route("/validate/idno/{idno<[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}>?}/{purpose}", name="validate", methods={"GET"})
      */
     public function validate(Request $request, ItemsService $itemsService, $idno, $purpose = 'register'): ?JsonResponse
     {
@@ -117,7 +274,7 @@ class ItemsApiController extends AbstractApiController
             ->setStatusCode($status)
             ->setData(
                 [
-                    'valid' => $item !== null
+                    'valid' => $item !== null,
                 ]
             );
     }

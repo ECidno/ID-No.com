@@ -3668,5 +3668,17 @@ Ihr Team von ID-No.com]]></target>
         <target>Jahre</target>
       </segment>
     </unit>
+    <unit id="Kdf53sS" name="items.action.delete.success">
+      <segment>
+        <source>items.action.delete.success</source>
+        <target>Die ID-Nummer wurde erfolgreich entfernt.</target>
+      </segment>
+    </unit>
+    <unit id="UPKIz7K" name="items.action.create.success">
+      <segment>
+        <source>items.action.create.success</source>
+        <target>items.action.create.success</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

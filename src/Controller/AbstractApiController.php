@@ -9,6 +9,7 @@ namespace App\Controller;
 
 use App\Entity\Main\Items;
 use App\Entity\Nutzer\Person;
+use App\Service\ItemsService;
 use App\Service\MailService;
 use Doctrine\Persistence\ManagerRegistry;
 use Psr\Log\LoggerInterface;
@@ -99,28 +100,31 @@ class AbstractApiController extends SymfonyAbstractController
      * constructor
      *
      * @param ContainerBagInterface $params
-     * @param RequestStack $requestStack
-     * @param ManagerRegistry $registry
-     * @param MailService $mailService
-     * @param TranslatorInterface $translator
      * @param LoggerInterface $logger
+     * @param ItemsService $itemsService
+     * @param MailService $mailService
+     * @param ManagerRegistry $registry
+     * @param RequestStack $requestStack
+     * @param TranslatorInterface $translator
      */
     public function __construct(
         ContainerBagInterface $params,
-        RequestStack $requestStack,
-        ManagerRegistry $registry,
+        LoggerInterface $logger,
+        ItemsService $itemsService,
         MailService $mailService,
-        TranslatorInterface $translator,
-        LoggerInterface $logger
+        ManagerRegistry $registry,
+        RequestStack $requestStack,
+        TranslatorInterface $translator
     ) {
         $this->now = new \DateTime();
-        $this->settings = $params->get('settings');
-        $this->registry = $registry;
+        $this->logger = $logger;
         $this->emDefault = $registry->getManager('default');
         $this->emNutzer = $registry->getManager('nutzer');
+        $this->itemsService = $itemsService;
         $this->mailService = $mailService;
+        $this->registry = $registry;
+        $this->settings = $params->get('settings');
         $this->translator = $translator;
-        $this->logger = $logger;
     }
 
 
@@ -398,6 +402,7 @@ class AbstractApiController extends SymfonyAbstractController
             $em->remove($object);
             $em->flush($object);
 
+            // message
             $message = $this->translator->trans(
                 $this->getTranslateKey('action.delete.success')
             );

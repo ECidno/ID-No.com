@@ -84,7 +84,7 @@ class ItemsVoter extends Voter
 
             case self::CREATE:
             case self::DELETE:
-                return false; # $this->canC($item, $user);
+                $this->canC($item, $user);
 
             case self::READ:
             case self::EDIT:
@@ -123,8 +123,8 @@ class ItemsVoter extends Voter
         // iterate user's persons
         foreach ($user->getPersons() as $person) {
             if(
-                    $person->getId() === $item->getPersonId() &&
-                    $user->getId() === $item->getNutzerId()
+                $person->getId() === $item->getPersonId() &&
+                $user->getId() === $item->getNutzerId()
             ) {
                 return true;
             }
