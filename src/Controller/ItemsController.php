@@ -43,16 +43,18 @@ class ItemsController extends AbstractController
      *
      * @Route("/notfallpass/{idno?}", name="pass", methods={"GET", "POST"})
      */
-    public function pass(Request $request, ItemsService $itemsService, $idno = null): Response
+    public function pass(Request $request, ItemsService $itemsService, $idno): Response
     {
+        $idno = $request->get('p_idno') ?? $idno;
         $item = $itemsService->check(
-            $request->get('p_idno') ?? $idno,
+            $idno,
             'itemError',
             'pass'
         );
 
         // redirect to index if item check failed
         if($item === null) {
+            $this->session->set('idno', $idno);
             return $this->redirectToRoute('app_standard_index');
 
         // item not registered | ready for registration (activation)
@@ -88,7 +90,8 @@ class ItemsController extends AbstractController
 
             // variables
             $variables = [
-                'idno' => $item,
+                'idno' => $idno,
+                'item' => $item,
                 'nutzer' => $nutzer,
                 'person' => $person,
             ];

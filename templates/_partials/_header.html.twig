@@ -213,18 +213,15 @@
                   name="p_idno"
                   placeholder="{{ 'ID-Nummer checken/aktivieren'|trans }}"
                   maxlength="9"
+                  value="{{ idno ?? '' }}"
                   pattern="[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}"
                   autocomplete="off"
                   aria-label="ID number"
                   required="required" />
+                <label for="fldIdNo">{{ 'ID-Nummer checken/aktivieren'|trans }}</label>
 
                 {% if fieldErrorMessage is defined and fieldErrorMessage is not empty %}
-{#}                  <label for="fldIdNo" class="invalid-feedback">{{ fieldErrorMessage }}</label> #}
-                  <label for="fldIdNo">{{ 'ID-Nummer checken/aktivieren'|trans }}
-                    <span class="invalid-feedback d-inline ">{{ fieldErrorMessage }}</span>
-                  </label>
-                {% else %}
-                  <label for="fldIdNo">{{ 'ID-Nummer checken/aktivieren'|trans }}</label>
+                  <label class="invalid-feedback-inline">{{ fieldErrorMessage }}</label>
                 {% endif %}
               </div>
 

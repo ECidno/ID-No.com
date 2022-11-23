@@ -266,7 +266,7 @@ class ItemsApiController extends AbstractApiController
 
         // status
         $status = $item === null
-            ? 412
+            ? 400
             : 200;
 
         // return
@@ -275,6 +275,9 @@ class ItemsApiController extends AbstractApiController
             ->setData(
                 [
                     'valid' => $item !== null,
+                    'error' => $this->translator->trans(
+                        'item.idno.validate.error'
+                    )
                 ]
             );
     }

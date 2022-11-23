@@ -3680,5 +3680,17 @@ Ihr Team von ID-No.com]]></target>
         <target>items.action.create.success</target>
       </segment>
     </unit>
+    <unit id="MK0s5z_" name="profile.email.validate.error">
+      <segment>
+        <source>profile.email.validate.error</source>
+        <target>E-Mail nicht gültig oder bereits verwendet!</target>
+      </segment>
+    </unit>
+    <unit id="FLQA23K" name="item.idno.validate.error">
+      <segment>
+        <source>item.idno.validate.error</source>
+        <target>ID-Nummer nicht gültig oder bereits verwendet!</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

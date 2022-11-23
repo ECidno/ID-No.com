@@ -65,7 +65,14 @@ a.btn-outline-dark:hover {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	margin-left: 2px;
-	color: #990000;
+	color: $danger;
+}
+
+label.invalid-feedback-inline {
+  position: absolute !important;
+  padding-right: 2rem !important;
+  text-align: right !important;
+  color: $danger;
 }
 
 

@@ -202,7 +202,7 @@ class ProfileApiController extends AbstractApiController
         // status
         $status = $valid
             ? 200
-            : 412;
+            : 400;
 
         // return
         return (new JsonResponse())
@@ -210,7 +210,9 @@ class ProfileApiController extends AbstractApiController
             ->setData(
                 [
                     'valid' => $valid,
-                    'errors' => ''
+                    'error' => $this->translator->trans(
+                        'profile.email.validate.error'
+                    )
                 ]
             );
     }
