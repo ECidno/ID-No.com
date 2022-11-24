@@ -9,11 +9,14 @@ namespace App\Controller;
 
 use App\Entity\Nutzer\Nutzer;
 use App\Entity\Nutzer\NutzerAuth;
+use App\Entity\Nutzer\Person;
+use App\Form\Type\CredentialsChangeType;
 use DateTime;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -58,18 +61,53 @@ class SecurityController extends AbstractController
     * edit action
     *
     * @param Request $request
+    * @param UserPasswordHasherInterface $passwordEncoder
+    *
     * @return Response
     *
-    * @Route("/account/edit", name="app_account_edit", methods={"GET"})
+    * @Route("/account/edit", name="app_account_edit")
     */
-    public function edit(Request $request): Response
+    public function edit(Request $request, UserPasswordHasherInterface $passwordEncoder): Response
     {
         // user authenticated
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
+        /**
+         * @var Nutzer
+         */
+        $nutzer = $this->getUser();
+
+        $form = $this->createForm(CredentialsChangeType::class, $nutzer);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $nutzer->setPasswort(
+                $passwordEncoder->hashpassword(
+                    $nutzer,
+                    $nutzer->getPlainPasswort()
+                )
+            );
+
+            $person = $this->emNutzer
+                            ->getRepository(Person::class)
+                            ->findOneByNutzer($nutzer);
+
+            $person->setEmail($nutzer->getEmail());
+            
+
+            $this->emNutzer->persist($nutzer);
+            $this->emNutzer->persist($person);
+            $this->emNutzer->flush();
+
+            // redirect to profile
+            return $this->redirectToRoute('app_profile_index');
+        }
+
         // vars
         $variables = [
-            'user' => $this->getUser(),
+            'form' => $form->createView(),
         ];
 
         // return

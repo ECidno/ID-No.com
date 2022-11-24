@@ -3692,5 +3692,41 @@ Ihr Team von ID-No.com]]></target>
         <target>ID-Nummer nicht gültig oder bereits verwendet!</target>
       </segment>
     </unit>
+    <unit id="YWQj1Vl" name="credentials.title">
+      <segment>
+        <source>credentials.title</source>
+        <target>Meine Zugangsdaten</target>
+      </segment>
+    </unit>
+    <unit id="XQcIyA3" name="credentials.header">
+      <segment>
+        <source>credentials.header</source>
+        <target>Meine Zugangsdaten</target>
+      </segment>
+    </unit>
+    <unit id="X0hVWAT" name="credentials.text">
+      <segment>
+        <source>credentials.text</source>
+        <target>Hier können Sie Ihre Zugangsdaten ändern. Bitte geben Sie dazu Ihr altes und ein neues Passwort ein.</target>
+      </segment>
+    </unit>
+    <unit id="iYtPIdI" name="credentials.oldPassword">
+      <segment>
+        <source>credentials.oldPassword</source>
+        <target>altes Passwort</target>
+      </segment>
+    </unit>
+    <unit id="pvacjuI" name="credentials.newPassword">
+      <segment>
+        <source>credentials.newPassword</source>
+        <target>neues Passwort</target>
+      </segment>
+    </unit>
+    <unit id="sozEUl1" name="credentials.newRepeatPassword">
+      <segment>
+        <source>credentials.newRepeatPassword</source>
+        <target>neues Passwort wiederholen</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
