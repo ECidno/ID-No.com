@@ -98,6 +98,8 @@ class Items extends AbstractEntity
     /**
      * @Assert\Type("\DateTimeInterface")
      * @ORM\Column(type="datetime", nullable=false)
+     * @Groups({"read"})
+     * @Context({DateTimeNormalizer::FORMAT_KEY = "d.m.Y"})
      */
     private $registriertDatum;
 
