@@ -54,7 +54,7 @@ a.btn-outline-dark:hover {
 /*
  * forms
  */
- label.required::after {
+label.required::after {
 	position: absolute;
 	content: "*";
 	vertical-align: middle;
