@@ -125,18 +125,6 @@ class ProfileApiController extends AbstractApiController
             $this->emNutzer->persist($nutzerAuth);
             $this->emNutzer->flush();
 
-            // mail for email verification
-            $this->mailService->infoMail(
-                [
-                    'subject' => $this->translator->trans('mail.mailVerification.subject'),
-                    'recipientEmail' => $email,
-                    'recipientName' => $user->getFullName(),
-                    'nutzer' => $user,
-                    'nutzerAuth' => $nutzerAuth,
-                ],
-                'mailVerification'
-            );
-
             // return
             return (new JsonResponse())
                 ->setStatusCode(200)
