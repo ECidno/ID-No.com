@@ -175,12 +175,15 @@ class ProfileApiController extends AbstractApiController
         $user = $this->emNutzer
             ->getRepository(Nutzer::class)
             ->findOneByEmail($email);
-
         $nutzer = $this->getUser();
 
         // valid?
         $valid =
-            ($user === null || ($nutzer != null && $nutzer->getEmail() === $email)) &&
+            (
+                $user === null || (
+                    $nutzer != null && $nutzer->getEmail() === $email
+                )
+            ) &&
             !empty($email) &&
             $validator
                 ->validate(

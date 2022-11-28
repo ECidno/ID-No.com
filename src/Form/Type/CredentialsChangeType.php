@@ -1,6 +1,11 @@
 <?php
-
 namespace App\Form\Type;
+
+/***********************************************************************
+ *
+ * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
+ *
+ **********************************************************************/
 
 use App\Entity\Nutzer\Nutzer;
 use Symfony\Component\Form\AbstractType;
@@ -15,6 +20,12 @@ use Symfony\Component\Translation\TranslatableMessage;
 
 class CredentialsChangeType extends AbstractType
 {
+    /**
+     * buildForm
+     *
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -48,10 +59,20 @@ class CredentialsChangeType extends AbstractType
                 ],
                 'required' => true
             ])
-            ->add('save', SubmitType::class)
+            ->add('save', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn-success text-light',
+                ],
+            ])
         ;
     }
 
+
+    /**
+     * configureOptions
+     *
+     * @param OptionsResolver $resolver
+     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

@@ -89,11 +89,8 @@ class SecurityController extends AbstractController
         $nutzer = $this->getUser();
 
         $form = $this->createForm(CredentialsChangeType::class, $nutzer);
-
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-
             $nutzer->setPasswort(
                 $passwordEncoder->hashpassword(
                     $nutzer,
@@ -102,12 +99,11 @@ class SecurityController extends AbstractController
             );
 
             $person = $this->emNutzer
-                            ->getRepository(Person::class)
-                            ->findOneByNutzer($nutzer);
+                ->getRepository(Person::class)
+                ->findOneByNutzer($nutzer)
+                ->setEmail($nutzer->getEmail());
 
-            $person->setEmail($nutzer->getEmail());
-            
-
+            // persist
             $this->emNutzer->persist($nutzer);
             $this->emNutzer->persist($person);
             $this->emNutzer->flush();
@@ -151,7 +147,11 @@ class SecurityController extends AbstractController
                         'maxlength' => 40,
                     ]
                 ])
-                ->add('send', SubmitType::class)
+                ->add('send', SubmitType::class, [
+                    'attr' => [
+                        'class' => 'btn-success text-light',
+                    ],
+                ])
                 ->getForm();
 
             $form->handleRequest($request);
@@ -166,13 +166,13 @@ class SecurityController extends AbstractController
                 'form' => $form->createView(),
                 'error' => null
             ];
-    
+
             // return
             return $this->renderAndRespond($variables);
         }
 
+        // code given
         if (!empty($nutzerAuth)) {
-
             $nutzer = $this->emNutzer
                 ->getRepository(Nutzer::class)
                 ->findOneById($nutzerAuth->getNutzer());
@@ -223,6 +223,7 @@ class SecurityController extends AbstractController
         return $this->renderAndRespond($variables);
     }
 
+
     /**
      * Reset Password
      *
@@ -233,6 +234,7 @@ class SecurityController extends AbstractController
      */
     public function resetPassword(string $code = null, Request $request, UserPasswordHasherInterface $passwordEncoder)
     {
+        // no code
         if (empty($code)) {
             $form = $this->createFormBuilder()
                 ->add('email', EmailType::class, [
@@ -245,18 +247,20 @@ class SecurityController extends AbstractController
                    'required' => true,
                 ])
                 ->add('send', SubmitType::class, [
-                    'label' => new TranslatableMessage('resetPassword.submit')
+                    'label' => new TranslatableMessage('resetPassword.submit'),
+                    'attr' => [
+                        'class' => 'btn-success text-light',
+                    ],
                 ])
                 ->getForm();
 
             $form->handleRequest($request);
-
             if ($form->isSubmitted() && $form->isValid()) {
                 $email = strtolower($form->get('email')->getData());
 
                 $person = $this->emNutzer
-                            ->getRepository(Person::class)
-                            ->findOneByEmail($email);
+                    ->getRepository(Person::class)
+                    ->findOneByEmail($email);
 
                 // code for password reset
                 do {
@@ -275,7 +279,7 @@ class SecurityController extends AbstractController
                 $this->emNutzer->persist($pwdForgot);
                 $this->emNutzer->flush();
 
-                    // mail
+                // mail
                 $this->mailService->infoMail(
                     [
                         'subject' => 'Passworthilfe',
@@ -291,21 +295,20 @@ class SecurityController extends AbstractController
                     'loginInfo',
                     $this->translator->trans('Reset Password Mail was sended')
                 );
-
             }
 
             $variables = [
                 'form' => $form->createView(),
             ];
-    
+
             // return
             return $this->renderAndRespond($variables);
 
+        // code given
         } else {
-
             $email = $this->emNutzer
-                        ->getRepository(PwdVergessen::class)
-                        ->findOneByCode($code);
+                ->getRepository(PwdVergessen::class)
+                ->findOneByCode($code);
 
             if(empty($email)) {
                 $this->addFlash(
@@ -317,8 +320,8 @@ class SecurityController extends AbstractController
             }
 
             $nutzer = $this->emNutzer
-                        ->getRepository(Nutzer::class)
-                        ->findOneByEmail($email->getEmail());
+                ->getRepository(Nutzer::class)
+                ->findOneByEmail($email->getEmail());
 
             $form = $this->createFormBuilder($nutzer)
                 ->add('plainPasswort', RepeatedType::class, [
@@ -335,13 +338,16 @@ class SecurityController extends AbstractController
                     ],
                     'required' => true
                 ])
-                ->add('save', SubmitType::class)
+                ->add('save', SubmitType::class, [
+                    'attr' => [
+                        'class' => 'btn-success text-light',
+                    ],
+                ])
                 ->getForm();
 
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
-
                 $nutzer->setPasswort(
                     $passwordEncoder->hashpassword(
                         $nutzer,
@@ -349,6 +355,7 @@ class SecurityController extends AbstractController
                     )
                 );
 
+                // persist
                 $this->emNutzer->persist($nutzer);
                 $this->emNutzer->flush();
 
@@ -357,16 +364,20 @@ class SecurityController extends AbstractController
                     $this->translator->trans('New Password was set')
                 );
 
+                // redirect to login
                 return $this->redirectToRoute('app_login');
             }
 
+            // vars
             $variables = [
                 'form' => $form->createView(),
             ];
 
+            // return
             return $this->render('security/newPassword.html.twig', $variables);
         }
     }
+
 
     /**
     * delete action
@@ -383,17 +394,20 @@ class SecurityController extends AbstractController
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         $form = $this->createFormBuilder()
-                    ->add('password', PasswordType::class, [
-                        'mapped' => false,
-                        'label' => new TranslatableMessage('registration.passwort'),
-                        'constraints' => new UserPassword(),
-                        'required' => true
-                ])
-                ->add('accountDelete', SubmitType::class)
-                ->getForm();
+            ->add('password', PasswordType::class, [
+                'mapped' => false,
+                'label' => new TranslatableMessage('registration.passwort'),
+                'constraints' => new UserPassword(),
+                'required' => true
+            ])
+            ->add('accountDelete', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn-success text-light',
+                ],
+            ])
+            ->getForm();
 
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
 
             /**
@@ -415,6 +429,7 @@ class SecurityController extends AbstractController
                 $this->emDefault->persist($item);
             }
 
+            // remove
             foreach($nutzer->getPersons() as $person) {
                 foreach($person->getContacts() as $contact) {
                     $this->emNutzer->remove($contact);
@@ -423,11 +438,11 @@ class SecurityController extends AbstractController
             }
             $this->emNutzer->remove($nutzer);
 
-
+            // presist
             $this->emDefault->flush();
             $this->emNutzer->flush();
 
-            
+            // set session to invalid
             $tokenStorage->setToken(null);
             $session->invalidate();
 
