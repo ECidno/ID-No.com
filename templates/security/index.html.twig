@@ -119,5 +119,15 @@
         )|raw|markdown_to_html }}
       </div>
     </div>
+    <div class="row justify-content-center">
+      <div class="col-10 col-lg-8 col-xl-6">
+        {{ 'login.resetPassword.link'|trans(
+          {
+            '%resetPassword_url%': path('app_account_resetPasswort')
+          },
+          'messages'
+        )|raw|markdown_to_html }}
+      </div>
+    </div>
   </div>
 {% endblock %}

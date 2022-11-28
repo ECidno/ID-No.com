@@ -10,8 +10,13 @@ namespace App\Controller;
 use App\Entity\Nutzer\Nutzer;
 use App\Entity\Nutzer\NutzerAuth;
 use App\Entity\Nutzer\Person;
+use App\Entity\Nutzer\PwdVergessen;
 use App\Form\Type\CredentialsChangeType;
+use App\Validator\EmailExists;
 use DateTime;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,6 +24,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\String\ByteString;
+use Symfony\Component\Translation\TranslatableMessage;
 
 /**
  * Security controller
@@ -210,5 +217,150 @@ class SecurityController extends AbstractController
 
         // return
         return $this->renderAndRespond($variables);
+    }
+
+    /**
+     * Reset Password
+     *
+     * @param string $email
+     * @return void
+     *
+     * @Route("/resetPassword/{code?}", name="app_account_resetPasswort")
+     */
+    public function resetPassword(string $code = null, Request $request, UserPasswordHasherInterface $passwordEncoder)
+    {
+        if (empty($code)) {
+            $form = $this->createFormBuilder()
+                ->add('email', EmailType::class, [
+                   'label' => new TranslatableMessage('person.email'),
+                   'attr' => [
+                       'maxlength' => 100,
+                       'autocomplete' => 'off',
+                   ],
+                   'constraints' => new EmailExists(),
+                   'required' => true,
+                ])
+                ->add('send', SubmitType::class, [
+                    'label' => new TranslatableMessage('resetPassword.submit')
+                ])
+                ->getForm();
+
+            $form->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $email = strtolower($form->get('email')->getData());
+
+                $person = $this->emNutzer
+                            ->getRepository(Person::class)
+                            ->findOneByEmail($email);
+
+                // code for password reset
+                do {
+                    $code = ByteString::fromRandom(15)->toString();
+                } while(
+                    $this->emNutzer
+                        ->getRepository(PwdVergessen::class)
+                        ->findOneByCode($code) !== null
+                );
+
+                $pwdForgot = new PwdVergessen();
+                $pwdForgot
+                    ->setEmail($email)
+                    ->setCode($code);
+
+                $this->emNutzer->persist($pwdForgot);
+                $this->emNutzer->flush();
+
+                    // mail
+                $this->mailService->infoMail(
+                    [
+                        'subject' => 'Passworthilfe',
+                        'recipientEmail' => $person->getEmail(),
+                        'recipientName' => $person->getFullName(),
+                        'person' => $person,
+                        'code' => $code
+                    ],
+                    'resetPassword'
+                );
+
+                $this->addFlash(
+                    'loginInfo',
+                    $this->translator->trans('Reset Password Mail was sended')
+                );
+
+            }
+
+            $variables = [
+                'form' => $form->createView(),
+            ];
+    
+            // return
+            return $this->renderAndRespond($variables);
+
+        } else {
+
+            $email = $this->emNutzer
+                        ->getRepository(PwdVergessen::class)
+                        ->findOneByCode($code);
+
+            if(empty($email)) {
+                $this->addFlash(
+                    'loginInfo',
+                    $this->translator->trans('Invalid Code')
+                );
+
+                return $this->redirectToRoute('app_login');
+            }
+
+            $nutzer = $this->emNutzer
+                        ->getRepository(Nutzer::class)
+                        ->findOneByEmail($email->getEmail());
+
+            $form = $this->createFormBuilder($nutzer)
+                ->add('plainPasswort', RepeatedType::class, [
+                    'type' => PasswordType::class,
+                    'attr' => [
+                        'maxlength' => 100,
+                        'autocomplete' => 'off',
+                    ],
+                    'first_options' => [
+                        'label' => new TranslatableMessage('credentials.newPassword')
+                    ],
+                    'second_options' => [
+                        'label' => new TranslatableMessage('credentials.newRepeatPassword')
+                    ],
+                    'required' => true
+                ])
+                ->add('save', SubmitType::class)
+                ->getForm();
+
+            $form->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+
+                $nutzer->setPasswort(
+                    $passwordEncoder->hashpassword(
+                        $nutzer,
+                        $nutzer->getPlainPasswort()
+                    )
+                );
+
+                $this->emNutzer->persist($nutzer);
+                $this->emNutzer->flush();
+
+                $this->addFlash(
+                    'loginInfo',
+                    $this->translator->trans('New Password was set')
+                );
+
+                return $this->redirectToRoute('app_login');
+            }
+
+            $variables = [
+                'form' => $form->createView(),
+            ];
+
+            return $this->render('security/newPassword.html.twig', $variables);
+        }
     }
 }

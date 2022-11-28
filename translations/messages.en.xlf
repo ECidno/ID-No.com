@@ -3348,5 +3348,29 @@ Registration for your Emergency ID Pass is free of charge.</target>
         <target>Confirm new Password </target>
       </segment>
     </unit>
+    <unit id="eu8YCU8" name="resetPassword.title">
+      <segment>
+        <source>resetPassword.title</source>
+        <target>Forgot Password?</target>
+      </segment>
+    </unit>
+    <unit id="AAfuzJS" name="resetPassword.header">
+      <segment>
+        <source>resetPassword.header</source>
+        <target>Forgot Password?</target>
+      </segment>
+    </unit>
+    <unit id="gp63m0l" name="resetPassword.text">
+      <segment>
+        <source>resetPassword.text</source>
+        <target>You will receive a mail after submitting the form, in which we explain how to create your new password.</target>
+      </segment>
+    </unit>
+    <unit id="gH7sEln" name="resetPassword.submit">
+      <segment>
+        <source>resetPassword.submit</source>
+        <target>Request password</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -3728,5 +3728,97 @@ Ihr Team von ID-No.com]]></target>
         <target>neues Passwort wiederholen</target>
       </segment>
     </unit>
+    <unit id="qjMlKMV" name="login.resetPassword.link">
+      <segment>
+        <source>login.resetPassword.link</source>
+        <target>[Passwort vergessen?](%resetPassword_url%)</target>
+      </segment>
+    </unit>
+    <unit id="eu8YCU8" name="resetPassword.title">
+      <segment>
+        <source>resetPassword.title</source>
+        <target>Passwort vergessen?</target>
+      </segment>
+    </unit>
+    <unit id="AAfuzJS" name="resetPassword.header">
+      <segment>
+        <source>resetPassword.header</source>
+        <target>Passwort vergessen?</target>
+      </segment>
+    </unit>
+    <unit id="gp63m0l" name="resetPassword.text">
+      <segment>
+        <source>resetPassword.text</source>
+        <target>Sie erhalten nach Absenden des Formulars eine E-Mail, in der wir Ihnen erläutern, wie Sie Ihr Passwort neu anlegen können.</target>
+      </segment>
+    </unit>
+    <unit id="gH7sEln" name="resetPassword.submit">
+      <segment>
+        <source>resetPassword.submit</source>
+        <target>Passwort anfordern</target>
+      </segment>
+    </unit>
+    <unit id="VOHR.Fx" name="mail.resetPassword.text">
+      <segment>
+        <source>mail.resetPassword.text</source>
+        <target><![CDATA[Viele Grüße von **CODE-No.**com!  
+  
+Wir wurden gebeten, das Kennwort zu dieser E-Mail-Adresse zurückzusetzen. Folgen Sie den Anweisungen unten, wenn diese Anforderung von Ihnen stammt.
+
+Ignorieren Sie diese Mail, wenn die Anforderung zum Zurücksetzen Ihres Kennworts nicht von Ihnen stammt. Machen Sie sich keine Sorgen, Ihr Kundenkonto ist sicher.
+
+Klicken Sie auf den unten stehenden Link, um zu Schritt 3 der Passwortvergabe auf unserem Sicherheitsserver zu gelangen:
+
+%resetPassword_link%
+  
+Falls Klicken des Links nicht funktioniert, können Sie den Link in Ihr Browserfenster kopieren bzw. direkt dort hineinschreiben. Sobald Sie zu <strong>CODE-No.</strong>com zurückgekehrt sind, teilen wir Ihnen mit, wie Sie Ihr Passwort wieder einrichten.
+  
+Sie werden von **CODE-No.**com niemals eine E-Mail erhalten, in der Sie gebeten werden, Ihr **CODE-No.**com-Kennwort, Ihre Kreditkartennummer oder Kontonummer mitzuteilen oder zu bestätigen. Wenn Sie eine verdächtige E-Mail mit einem Link zum Aktualisieren Ihrer Kontoinformationen erhalten, klicken Sie nicht auf den Link, sondern melden Sie diese E-Mail **CODE-No.**com. Wir werden der Sache nachgehen.
+  
+Vielen Dank für Ihren Besuch bei **CODE-No.**com.]]></target>
+      </segment>
+    </unit>
+    <unit id="Qv3ATqn" name="newPassword.title">
+      <segment>
+        <source>newPassword.title</source>
+        <target>newPassword.title</target>
+      </segment>
+    </unit>
+    <unit id="Ff3Re6r" name="newPassword.header">
+      <segment>
+        <source>newPassword.header</source>
+        <target>newPassword.header</target>
+      </segment>
+    </unit>
+    <unit id="a6VCVHL" name="newPassword.text">
+      <segment>
+        <source>newPassword.text</source>
+        <target>newPassword.text</target>
+      </segment>
+    </unit>
+    <unit id="7TJGKov" name="We dont find any User with this email.">
+      <segment>
+        <source>We dont find any User with this email.</source>
+        <target>We dont find any User with this email.</target>
+      </segment>
+    </unit>
+    <unit id="mxNoIPC" name="Reset Password Mail was sended">
+      <segment>
+        <source>Reset Password Mail was sended</source>
+        <target>Reset Password Mail was sended</target>
+      </segment>
+    </unit>
+    <unit id="j7ZwrcB" name="New Password was set">
+      <segment>
+        <source>New Password was set</source>
+        <target>New Password was set</target>
+      </segment>
+    </unit>
+    <unit id="0.tEuxq" name="Invalid Code">
+      <segment>
+        <source>Invalid Code</source>
+        <target>Invalid Code</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
