@@ -7,6 +7,7 @@ namespace App\Controller;
  *
  **********************************************************************/
 
+use App\Entity\Main\Items;
 use App\Entity\Nutzer\Nutzer;
 use App\Entity\Nutzer\NutzerAuth;
 use App\Entity\Nutzer\Person;
@@ -21,8 +22,11 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\String\ByteString;
 use Symfony\Component\Translation\TranslatableMessage;
@@ -362,5 +366,81 @@ class SecurityController extends AbstractController
 
             return $this->render('security/newPassword.html.twig', $variables);
         }
+    }
+
+    /**
+    * delete action
+    *
+    * @param Request $request
+    *
+    * @return Response
+    *
+    * @Route("/account/delete", name="app_account_delete")
+    */
+    public function delete(Request $request, SessionInterface $session, TokenStorageInterface $tokenStorage): Response
+    {
+        // user authenticated
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        $form = $this->createFormBuilder()
+                    ->add('password', PasswordType::class, [
+                        'mapped' => false,
+                        'label' => new TranslatableMessage('registration.passwort'),
+                        'constraints' => new UserPassword(),
+                        'required' => true
+                ])
+                ->add('accountDelete', SubmitType::class)
+                ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            /**
+             * @var Nutzer
+             */
+            $nutzer = $this->getUser();
+
+            $items = $this->emDefault
+                        ->getRepository(Items::class)
+                        ->findByNutzerId($nutzer->getId());
+
+            foreach($items as $item) {
+                $item
+                    ->setNoStatus('aktiviert')
+                    ->setNutzerId(0)
+                    ->setPersonId(0)
+                    ->setAnbringung('');
+
+                $this->emDefault->persist($item);
+            }
+
+            foreach($nutzer->getPersons() as $person) {
+                foreach($person->getContacts() as $contact) {
+                    $this->emNutzer->remove($contact);
+                }
+                $this->emNutzer->remove($person);
+            }
+            $this->emNutzer->remove($nutzer);
+
+
+            $this->emDefault->flush();
+            $this->emNutzer->flush();
+
+            
+            $tokenStorage->setToken(null);
+            $session->invalidate();
+
+            // logout
+            return $this->redirectToRoute('app_logout');
+        }
+
+        // vars
+        $variables = [
+            'form' => $form->createView(),
+        ];
+
+        // return
+        return $this->renderAndRespond($variables);
     }
 }
