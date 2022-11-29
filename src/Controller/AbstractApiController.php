@@ -247,7 +247,6 @@ class AbstractApiController extends SymfonyAbstractController
             [
                 'id' => $object->getId(),
                 'message' => $message,
-                'redirect-url' => '', # @TODO: entiy index route
             ]
         );
     }
@@ -365,7 +364,6 @@ class AbstractApiController extends SymfonyAbstractController
             [
                 'id' => $object->getId(),
                 'message' => $message,
-                'redirect-url' => '', # @TODO: entiy index route
             ]
         );
     }
@@ -426,7 +424,6 @@ class AbstractApiController extends SymfonyAbstractController
         return $this->json(
             [
                 'message' => $message,
-                'redirect-url' => '', # @TODO: entiy index route
             ]
         );
     }

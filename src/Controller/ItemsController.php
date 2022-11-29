@@ -46,6 +46,7 @@ class ItemsController extends AbstractController
     public function pass(Request $request, ItemsService $itemsService, $idno): Response
     {
         $idno = $request->get('p_idno') ?? $idno;
+        $user = $this->getUser();
         $item = $itemsService->check(
             $idno,
             'itemError',
@@ -96,19 +97,21 @@ class ItemsController extends AbstractController
                 'person' => $person,
             ];
 
-            // mail
-            $this->mailService->infoMail(
-                [
-                    'subject' => 'Information - Ihr ID-No.com Produkt wurde genutzt!',
-                    'recipientEmail' => $person->getEmail(),
-                    'recipientName' => $person->getFullName(),
-                    'item' => $item,
-                    'nutzer' => $nutzer,
-                    'person' => $person,
-                    'now' => new \DateTime(),
-                ],
-                'itemScanned'
-            );
+            // mail (if not user' pass is shown)
+            if($user === null || $user->getId() !== $nutzerId) {
+                $this->mailService->infoMail(
+                    [
+                        'subject' => 'Information - Ihr ID-No.com Produkt wurde genutzt!',
+                        'recipientEmail' => $person->getEmail(),
+                        'recipientName' => $person->getFullName(),
+                        'item' => $item,
+                        'nutzer' => $nutzer,
+                        'person' => $person,
+                        'now' => new \DateTime(),
+                    ],
+                    'itemScanned'
+                );
+            }
 
             // return
             return $this->renderAndRespond($variables);

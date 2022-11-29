@@ -4,12 +4,15 @@ import { Modal, Toast } from 'bootstrap';
 import jQuery from 'jquery';
 import bootstrapTable from 'bootstrap-table';
 import bootstrapTableLocaleAll from 'bootstrap-table/dist/bootstrap-table-locale-all';
+import { control, latLng, map, tileLayer, Browser } from 'leaflet';
 
 // const's
 const btnToTop = document.getElementById('toTop') || null;
+const btnShowMap = document.getElementById('mapShow') || null;
 
 const toastContainer = document.getElementById('toastContainer') || null;
 const modalContainer = document.getElementById('modalContainer') || null;
+const mapContainer = document.getElementById('mapContainer') || null;
 
 const ajaxForms = document.getElementsByClassName('ajax-form') || [];
 const ajaxModal = document.getElementsByClassName('ajax-modal') || [];
@@ -87,10 +90,10 @@ window.showFieldError = (field, message) => {
   let errorContainer =  document.createElement('div');
 
   Array
-      .from(parent.getElementsByClassName('invalid-feedback') || [])
-      .forEach((el) => {
-        el.remove();
-      });
+    .from(parent.getElementsByClassName('invalid-feedback') || [])
+    .forEach((el) => {
+      el.remove();
+    });
 
   errorContainer.className = 'invalid-feedback';
   errorContainer.innerText = message;
@@ -236,6 +239,28 @@ document.addEventListener(
         });
     }
 
+
+
+    function handleLocationError(error) {
+      let errorStr;
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          errorStr = 'User denied the request for Geolocation.';
+          break;
+        case error.POSITION_UNAVAILABLE:
+          errorStr = 'Location information is unavailable.';
+          break;
+        case error.TIMEOUT:
+          errorStr = 'The request to get user location timed out.';
+          break;
+        case error.UNKNOWN_ERROR:
+          errorStr = 'An unknown error occurred.';
+          break;
+        default:
+          errorStr = 'An unknown error occurred.';
+      }
+      console.error('Error occurred: ' + errorStr);
+    }
 
 
     // init ajax event listener
@@ -503,6 +528,72 @@ document.addEventListener(
       );
     }
 
+    // button | show map
+    if(btnShowMap && mapContainer) {
+      let lat = mapContainer.dataset.lat;
+      let lon = mapContainer.dataset.lon;
+
+      // event | click
+      btnShowMap.addEventListener(
+        'click',
+        e => {
+          mapContainer.style.display = 'block';
+
+          // get position
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+              (pos) => {
+                lat = pos.coords.latitude;
+                lon = pos.coords.longitude;
+              },
+              handleLocationError,
+              {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+              }
+            );
+
+          // device does not support geolocation
+          } else {
+            console.error("Geolocation is not supported by this browser.");
+          }
+
+          // create a map
+          const map = L
+            .map(mapContainer.id)
+            .setView(
+              [
+                mapContainer.dataset.lat,
+                mapContainer.dataset.lon
+              ],
+              mapContainer.dataset.zoom
+            );
+
+          // Retina displays require different mat tiles quality
+          const isRetina = L.Browser.retina;
+          const baseUrl = mapContainer.dataset.baseUrl;
+          const retinaUrl = mapContainer.dataset.retinaUrl;
+
+          // Add map tiles layer. Set 20 as the maximal zoom and provide map data attribution.
+          L
+            .tileLayer(
+              isRetina
+                ? retinaUrl
+                : baseUrl,
+              {
+                attribution: 'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap</a>',
+                apiKey: mapContainer.dataset.apiKey,
+                maxZoom: 20,
+                id: mapContainer.dataset.type,
+              }
+            )
+            .addTo(map);
+        }, {
+          once: true
+        }
+      );
+    }
 
     // fldIdNo | keyup | input pattern on field idno
     Array

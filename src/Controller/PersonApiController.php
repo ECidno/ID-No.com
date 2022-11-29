@@ -165,12 +165,12 @@ class PersonApiController extends AbstractApiController
                 } else {
                     $height = ($width / $orig_width) * $orig_height;
                 }
-                
+
                 $imagine = new Imagine;
                 $photo = $imagine->open($filepath);
                 $photo->resize(new Box($width, $height))->save($filepath);
 
-                
+
 
                 if (!$image) {
                     $image = new PersonImages;
@@ -229,7 +229,6 @@ class PersonApiController extends AbstractApiController
             [
                 'id' => $object->getId(),
                 'message' => $message,
-                'redirect-url' => '', # @TODO: entiy index route
             ]
         );
     }
@@ -279,7 +278,7 @@ class PersonApiController extends AbstractApiController
                 }
                 $em->remove($image);
             }
-            
+
             $em->remove($object);
             $em->flush($object);
 
@@ -306,7 +305,6 @@ class PersonApiController extends AbstractApiController
         return $this->json(
             [
                 'message' => $message,
-                'redirect-url' => '', # @TODO: entiy index route
             ]
         );
     }

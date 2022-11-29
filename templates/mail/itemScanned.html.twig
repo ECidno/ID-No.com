@@ -2,6 +2,15 @@
 
 {# content #}
 {% block content %}
+
+{{ 'mail.mailScanned.text'|trans(
+  {
+    '%date%': now|date('H:i'),
+    '%idNo%': item.idNo
+  }
+)|raw|markdown_to_html }}
+
+
 <p class="body">{{ person.fullAddress|raw }},<br />
   <br />
   Sie erhalten diese Nachricht, weil Ihr ID-No.com Produkt mit der Nummer<br />
@@ -18,7 +27,11 @@
 </p>
 
 <p class="box">
-  {# @TODO: CTA here #}
+  {# @TODO:
+    - CTA here?
+    - Missing function: disable profile pass
+
+    #}
   Sollte es sich bei dem Auslesen Ihrer Notfall ID-Nummer um eine unbefugte Nutzung handeln, können Sie Ihr Profil aus Sicherheitsgründen vorübergehend deaktivieren:<br />
   <br />
   Der Schutz Ihrer sensiblen Daten steht für uns an erster Stelle. Aus diesem Grund gehen wir missbräuchlicher Nutzung nach. Um uns über unbefugten Zugriff zu informieren, klicken Sie bitte hier.
