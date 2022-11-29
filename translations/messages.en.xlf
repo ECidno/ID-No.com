@@ -3396,5 +3396,17 @@ Registration for your Emergency ID Pass is free of charge.</target>
         <target>Delete profile</target>
       </segment>
     </unit>
+    <unit id="a7pjLjW" name="nutzer.action.edit.error">
+      <segment>
+        <source>nutzer.action.edit.error</source>
+        <target>The access data coudnt save properly</target>
+      </segment>
+    </unit>
+    <unit id="W5wfpnm" name="nutzer.action.edit.success">
+      <segment>
+        <source>nutzer.action.edit.success</source>
+        <target>The access data could save properly</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

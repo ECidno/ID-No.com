@@ -58,13 +58,7 @@ class CredentialsChangeType extends AbstractType
                     'label' => new TranslatableMessage('credentials.newRepeatPassword')
                 ],
                 'required' => true
-            ])
-            ->add('save', SubmitType::class, [
-                'attr' => [
-                    'class' => 'btn-success text-light',
-                ],
-            ])
-        ;
+            ]);
     }
 
 

@@ -3844,5 +3844,17 @@ Vielen Dank für Ihren Besuch bei **CODE-No.**com.]]></target>
         <target>Profil löschen</target>
       </segment>
     </unit>
+    <unit id="a7pjLjW" name="nutzer.action.edit.error">
+      <segment>
+        <source>nutzer.action.edit.error</source>
+        <target>Die Zugangsdaten konnten nicht erfolgreich gespeichert werden</target>
+      </segment>
+    </unit>
+    <unit id="W5wfpnm" name="nutzer.action.edit.success">
+      <segment>
+        <source>nutzer.action.edit.success</source>
+        <target>Die Zugangsdaten wurden erfolgreich gespeichert</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

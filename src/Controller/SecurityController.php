@@ -88,29 +88,18 @@ class SecurityController extends AbstractController
          */
         $nutzer = $this->getUser();
 
-        $form = $this->createForm(CredentialsChangeType::class, $nutzer);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $nutzer->setPasswort(
-                $passwordEncoder->hashpassword(
-                    $nutzer,
-                    $nutzer->getPlainPasswort()
-                )
-            );
-
-            $person = $this->emNutzer
-                ->getRepository(Person::class)
-                ->findOneByNutzer($nutzer)
-                ->setEmail($nutzer->getEmail());
-
-            // persist
-            $this->emNutzer->persist($nutzer);
-            $this->emNutzer->persist($person);
-            $this->emNutzer->flush();
-
-            // redirect to profile
-            return $this->redirectToRoute('app_profile_index');
-        }
+        $form = $this->formFactory->createBuilder(
+            CredentialsChangeType::class,
+            $nutzer,
+            [
+                'action' => $this->generateUrl(
+                    'app_api_profile_changeCredentials',
+                    [
+                        'id' => $nutzer->getId()
+                    ]
+                ),
+            ]
+        )->getForm();
 
         // vars
         $variables = [
@@ -118,7 +107,7 @@ class SecurityController extends AbstractController
         ];
 
         // return
-        return $this->renderAndRespond($variables);
+        return $this->renderAndRespond($variables, true);
     }
 
 
