@@ -55,18 +55,19 @@
           </div>
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
             <div class="d-grid mb-3">
-              <a
-                class="btn btn-outline-dark"
-                href="{{ path('app_account_edit') }}">
+              <button
+                type="button"
+                class="btn btn-outline-dark ajax-modal"
+                data-url="{{ path('app_account_edit') }}">
                 {{ 'account.edit.lbl'|trans }}
-              </a>
+              </button>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
             <div class="d-grid mb-3">
               <a
                 class="btn btn-outline-dark"
-                href="{{ path('app_profile_delete') }}">
+                href="{{ path('app_account_delete') }}">
                 {{ 'profile.delete.lbl'|trans }}
               </a>
             </div>
@@ -154,7 +155,7 @@
               <th
                 data-field="noStatus"
                 data-formatter="itemStatusFormatter">{{ 'items.table.noStatus.lbl'|trans }}</th>
-              <th data-field="aktiviertDatum">{{ 'items.table.aktiviertDatum.lbl'|trans }}</th>
+              <th data-field="registriertDatum">{{ 'items.table.aktiviertDatum.lbl'|trans }}</th>
               <th
                 data-width="100"
                 data-align="right"

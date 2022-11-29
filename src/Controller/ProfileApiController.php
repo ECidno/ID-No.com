@@ -9,8 +9,11 @@ namespace App\Controller;
 
 use App\Entity\Nutzer\Nutzer;
 use App\Entity\Nutzer\NutzerAuth;
+use App\Entity\Nutzer\Person;
+use App\Form\Type\CredentialsChangeType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\ByteString;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -125,18 +128,6 @@ class ProfileApiController extends AbstractApiController
             $this->emNutzer->persist($nutzerAuth);
             $this->emNutzer->flush();
 
-            // mail for email verification
-            $this->mailService->infoMail(
-                [
-                    'subject' => $this->translator->trans('mail.mailVerification.subject'),
-                    'recipientEmail' => $email,
-                    'recipientName' => $user->getFullName(),
-                    'nutzer' => $user,
-                    'nutzerAuth' => $nutzerAuth,
-                ],
-                'mailVerification'
-            );
-
             // return
             return (new JsonResponse())
                 ->setStatusCode(200)
@@ -187,10 +178,15 @@ class ProfileApiController extends AbstractApiController
         $user = $this->emNutzer
             ->getRepository(Nutzer::class)
             ->findOneByEmail($email);
+        $nutzer = $this->getUser();
 
         // valid?
         $valid =
-            $user === null &&
+            (
+                $user === null || (
+                    $nutzer != null && $nutzer->getEmail() === $email
+                )
+            ) &&
             !empty($email) &&
             $validator
                 ->validate(
@@ -216,4 +212,81 @@ class ProfileApiController extends AbstractApiController
                 ]
             );
     }
+
+     /**
+     * changeCredentials
+     * @param int $id
+     * @param Request $request
+     * 
+     * @return JsonResponse
+     * 
+     * @Route("/changeCredentials/{id}", name="changeCredentials", methods={"POST"})
+     */
+    public function changeCredentials(int $id, Request $request, UserPasswordHasherInterface $passwordEncoder): JsonResponse
+    {
+        $nutzer = $this->emNutzer
+                    ->getRepository(Nutzer::class)
+                    ->findOneById($id);
+
+        $form = $this->createForm(
+            CredentialsChangeType::class,
+            $nutzer
+        );
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $nutzer->setPasswort(
+                $passwordEncoder->hashpassword(
+                    $nutzer,
+                    $nutzer->getPlainPasswort()
+                )
+            );
+
+            $person = $this->emNutzer
+                ->getRepository(Person::class)
+                ->findOneByNutzer($nutzer)
+                ->setEmail($nutzer->getEmail());
+
+            // persist
+            $this->emNutzer->persist($nutzer);
+            $this->emNutzer->persist($person);
+            $this->emNutzer->flush();
+
+            // message
+            $message = $this->translator->trans(
+                $this->getTranslateKey('action.edit.success')
+            );
+
+        // form invalid
+        } else if ($form->isSubmitted() && !$form->isValid()) {
+            $errors = $this->collectFormErrors($form);
+            $message = $this->translator->trans(
+                $this->getTranslateKey('action.edit.error')
+            );
+
+            // Return status code 400 for validation errors: https://stackoverflow.com/a/3290198
+            return $this->json(
+                [
+                    'message' => $message,
+                    'errors' => $errors,
+                ],
+                400
+            );
+
+        } else {
+            $message = $this->translator->trans(
+                $this->getTranslateKey('action.edit.error')
+            );
+        }
+
+        // return
+        return $this->json(
+            [
+                'id' => $nutzer->getId(),
+                'message' => $message,
+            ]
+        );
+    }
+
 }

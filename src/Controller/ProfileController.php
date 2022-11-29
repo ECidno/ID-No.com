@@ -60,7 +60,7 @@ class ProfileController extends AbstractController
         // user authenticated
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = $this->getUser();
-
+# @TODO: To Modal!
         // objects
         $persons = $user->getPersons();
         $person = $persons->first() ?? new Person();
@@ -80,8 +80,6 @@ class ProfileController extends AbstractController
             $this->template,
             $variables
         );
-
-       #return $this->renderAndRespond($variables);
    }
 
 

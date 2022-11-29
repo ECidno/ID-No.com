@@ -19,22 +19,6 @@
                   alt="{{ person.vorname|raw }} {{ person.nachname|raw }}" />
               </div>
             {% endif %}
-
- {#           {% if person.images|length > 0 %}
-              {% set image = person.images|first %}
-            {% if image.status == 'ok' and image.bildShow == true %}  #}
-              {# @TODO: bildShow wird nicht berücksichtigt? #}
-              {# @TODO: Bilder von lokalem Pfad!
-              {% if image.status == 'ok' %}
-                <div class="text-center">
-                  <img
-                    src="https://id-no.com/userimages/{{ image.bild }}"
-                    class="rounded-circle"
-                    alt="{{ image.bild }}" />
-                </div>
-              {% endif %}
-            {% endif %}
-            #}
           </div>
         </div>
 
@@ -95,6 +79,7 @@
             <div class="col-6 text-center">
               {% if person.ort and person.ortShow == true %}
                 <button
+                  id="mapShow"
                   class="btn btn-outline-dark text-success px-4 py-2">
                   <i class="bi bi-geo-alt-fill"></i>
                   <span class="ps-1">{{ 'Standort'|trans }}</span>
@@ -112,7 +97,25 @@
           </div>
         </div>
 
-        {# map @TODO #}
+        {# map #}
+        <div class="container">
+          <div class="row mb-3">
+            <div class="col">
+              <div
+                id="mapContainer"
+                data-api-key="{{ settings.api.map.key }}"
+                data-lat="{{ settings.api.map.lat }}"
+                data-lon="{{ settings.api.map.lon }}"
+                data-zoom="{{ settings.api.map.zoom }}"
+                data-type="{{ settings.api.map.type }}"
+                data-base-url="{{ settings.api.map.baseUrl }}{{ settings.api.map.key }}"
+                data-retina-url="{{ settings.api.map.retinaUrl }}{{ settings.api.map.key }}"
+                data-geocode-key="{{ settings.api.geocode.key }}"
+                data-geocode-url="{{ settings.api.geocode.url }}">
+              </div>
+            </div>
+          </div>
+        </div>
 
         {# infos #}
         {% if person.medicalShow == true %}

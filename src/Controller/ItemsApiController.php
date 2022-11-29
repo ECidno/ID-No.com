@@ -121,7 +121,6 @@ class ItemsApiController extends AbstractApiController
             [
                 'id' => $object->getId(),
                 'message' => $message,
-                'redirect-url' => '', # @TODO: entiy index route
             ]
         );
     }
@@ -188,7 +187,6 @@ class ItemsApiController extends AbstractApiController
         return $this->json(
             [
                 'message' => $message,
-                'redirect-url' => '', # @TODO: entiy index route
             ]
         );
     }

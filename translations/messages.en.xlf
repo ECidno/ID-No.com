@@ -3312,5 +3312,101 @@ Registration for your Emergency ID Pass is free of charge.</target>
         <target>E-Mail</target>
       </segment>
     </unit>
+    <unit id="YWQj1Vl" name="credentials.title">
+      <segment>
+        <source>credentials.title</source>
+        <target>My access data</target>
+      </segment>
+    </unit>
+    <unit id="XQcIyA3" name="credentials.header">
+      <segment>
+        <source>credentials.header</source>
+        <target>My access data</target>
+      </segment>
+    </unit>
+    <unit id="X0hVWAT" name="credentials.text">
+      <segment>
+        <source>credentials.text</source>
+        <target>Here you can change your access data. Please enter your old and a new password.</target>
+      </segment>
+    </unit>
+    <unit id="iYtPIdI" name="credentials.oldPassword">
+      <segment>
+        <source>credentials.oldPassword</source>
+        <target>Old password</target>
+      </segment>
+    </unit>
+    <unit id="pvacjuI" name="credentials.newPassword">
+      <segment>
+        <source>credentials.newPassword</source>
+        <target>New Password</target>
+      </segment>
+    </unit>
+    <unit id="sozEUl1" name="credentials.newRepeatPassword">
+      <segment>
+        <source>credentials.newRepeatPassword</source>
+        <target>Confirm new Password </target>
+      </segment>
+    </unit>
+    <unit id="eu8YCU8" name="resetPassword.title">
+      <segment>
+        <source>resetPassword.title</source>
+        <target>Forgot Password?</target>
+      </segment>
+    </unit>
+    <unit id="AAfuzJS" name="resetPassword.header">
+      <segment>
+        <source>resetPassword.header</source>
+        <target>Forgot Password?</target>
+      </segment>
+    </unit>
+    <unit id="gp63m0l" name="resetPassword.text">
+      <segment>
+        <source>resetPassword.text</source>
+        <target>You will receive a mail after submitting the form, in which we explain how to create your new password.</target>
+      </segment>
+    </unit>
+    <unit id="gH7sEln" name="resetPassword.submit">
+      <segment>
+        <source>resetPassword.submit</source>
+        <target>Request password</target>
+      </segment>
+    </unit>
+    <unit id="iRG9m5f" name="accountDelete.title">
+      <segment>
+        <source>accountDelete.title</source>
+        <target>Delete my profile</target>
+      </segment>
+    </unit>
+    <unit id="4pxkEgQ" name="accountDelete.header">
+      <segment>
+        <source>accountDelete.header</source>
+        <target>Delete my profile</target>
+      </segment>
+    </unit>
+    <unit id="p.SuSgi" name="accountDelete.text">
+      <segment>
+        <source>accountDelete.text</source>
+        <target>You can delete your emergency ID passport here. Please enter your password and click on the delete profile button.</target>
+      </segment>
+    </unit>
+    <unit id="cOIl904" name="Account delete">
+      <segment>
+        <source>Account delete</source>
+        <target>Delete profile</target>
+      </segment>
+    </unit>
+    <unit id="a7pjLjW" name="nutzer.action.edit.error">
+      <segment>
+        <source>nutzer.action.edit.error</source>
+        <target>The access data coudnt save properly</target>
+      </segment>
+    </unit>
+    <unit id="W5wfpnm" name="nutzer.action.edit.success">
+      <segment>
+        <source>nutzer.action.edit.success</source>
+        <target>The access data could save properly</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

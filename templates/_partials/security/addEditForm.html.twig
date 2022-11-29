@@ -1,0 +1,27 @@
+{{ form_errors(form) }}
+
+{{ 'credentials.text'|trans|raw|markdown_to_html }}
+
+<div class="row">
+  <div class="col-8 offset-2">
+    {{ form_row(form.email) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    {{ form_row(form.oldPassword) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    {{ form_row(form.plainPasswort.first) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    {{ form_row(form.plainPasswort.second) }}
+  </div>
+</div>

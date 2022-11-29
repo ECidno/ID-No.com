@@ -27,8 +27,27 @@ parameters:
       edit: 'bi bi-pencil-square'
       delete: 'bi bi-trash'
 
+    # form
     form:
       type: floating
+
+    # api
+    api:
+
+      # map
+      map:
+        key: 613451bbf3874acc89fbb3e57e8403cf
+        lat: 50.1310743
+        lon: 8.7568056
+        zoom: 17
+        type: osm-bright
+        baseUrl: https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=
+        retinaUrl: https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=
+
+      # geocode
+      geocode:
+        key: 613451bbf3874acc89fbb3e57e8403cf
+        url: https://api.geoapify.com/v1/geocode/reverse?
 
 
     # pages
