@@ -168,3 +168,11 @@ img.socialmedia_icon {
   border: 1px solid $dark;
   border-radius: 8px;
 }
+
+body.modal-open .background-container{
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+}
