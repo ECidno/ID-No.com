@@ -3408,5 +3408,35 @@ Registration for your Emergency ID Pass is free of charge.</target>
         <target>The access data could save properly</target>
       </segment>
     </unit>
+    <unit id="HFCZOwC" name="years">
+      <segment>
+        <source>years</source>
+        <target>years</target>
+      </segment>
+    </unit>
+    <unit id="cZh.0zu" name="User denied the request for Geolocation.">
+      <segment>
+        <source>User denied the request for Geolocation.</source>
+        <target>User denied the request for Geolocation.</target>
+      </segment>
+    </unit>
+    <unit id="XKtoYEx" name="Location information is unavailable.">
+      <segment>
+        <source>Location information is unavailable.</source>
+        <target>Location information is unavailable.</target>
+      </segment>
+    </unit>
+    <unit id="fvuPo_C" name="The request to get user location timed out.">
+      <segment>
+        <source>The request to get user location timed out.</source>
+        <target>The request to get user location timed out.</target>
+      </segment>
+    </unit>
+    <unit id="MKppsp2" name="An unknown error occurred.">
+      <segment>
+        <source>An unknown error occurred.</source>
+        <target>An unknown error occurred.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
