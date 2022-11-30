@@ -102,6 +102,9 @@
           <div class="row mb-3">
             <div class="col">
               <div
+                id="mapErrorContainer"
+                class="alert alert-danger d-none"></div>
+              <div
                 id="mapContainer"
                 data-api-key="{{ settings.api.map.key }}"
                 data-lat="{{ settings.api.map.lat }}"
@@ -111,7 +114,11 @@
                 data-base-url="{{ settings.api.map.baseUrl }}{{ settings.api.map.key }}"
                 data-retina-url="{{ settings.api.map.retinaUrl }}{{ settings.api.map.key }}"
                 data-geocode-key="{{ settings.api.geocode.key }}"
-                data-geocode-url="{{ settings.api.geocode.url }}">
+                data-geocode-url="{{ settings.api.geocode.url }}"
+                data-error-denied="{{ 'User denied the request for Geolocation.'|trans }}"
+                data-error-unavailable="{{ 'Location information is unavailable.'|trans }}"
+                data-error-timeout="{{ 'The request to get user location timed out.'|trans }}"
+                data-error-unknown="{{ 'An unknown error occurred.'|trans }}">
               </div>
             </div>
           </div>

@@ -252,7 +252,7 @@ class ItemsApiController extends AbstractApiController
      *
      * @return JsonResponse
      *
-     * @Route("/validate/idno/{idno<[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}>?}/{purpose}", name="validate", methods={"GET"})
+     * @Route("/validate/idno/{idno?}/{purpose}", name="validate", methods={"GET"})
      */
     public function validate(Request $request, ItemsService $itemsService, $idno, $purpose = 'register'): ?JsonResponse
     {
