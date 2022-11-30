@@ -3862,6 +3862,30 @@ Vielen Dank für Ihren Besuch bei **CODE-No.**com.]]></target>
         <target>Die Zugangsdaten wurden erfolgreich gespeichert</target>
       </segment>
     </unit>
+    <unit id="cZh.0zu" name="User denied the request for Geolocation.">
+      <segment>
+        <source>User denied the request for Geolocation.</source>
+        <target>Die Berechtigung für die Standortermittlung wurde nicht erteilt.</target>
+      </segment>
+    </unit>
+    <unit id="XKtoYEx" name="Location information is unavailable.">
+      <segment>
+        <source>Location information is unavailable.</source>
+        <target>Die Standortinformationen konnten nicht ermittelt werden.</target>
+      </segment>
+    </unit>
+    <unit id="fvuPo_C" name="The request to get user location timed out.">
+      <segment>
+        <source>The request to get user location timed out.</source>
+        <target>The request to get user location timed out.</target>
+      </segment>
+    </unit>
+    <unit id="MKppsp2" name="An unknown error occurred.">
+      <segment>
+        <source>An unknown error occurred.</source>
+        <target>Es ist ein Fehler aufgetreten.</target>
+      </segment>
+    </unit>
     <unit id="4Hh9Jyp" name="attention">
       <segment>
         <source>attention</source>

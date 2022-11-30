@@ -13,6 +13,7 @@ const btnShowMap = document.getElementById('mapShow') || null;
 const toastContainer = document.getElementById('toastContainer') || null;
 const modalContainer = document.getElementById('modalContainer') || null;
 const mapContainer = document.getElementById('mapContainer') || null;
+const mapErrorContainer = document.getElementById('mapErrorContainer') || null;
 
 const ajaxForms = document.getElementsByClassName('ajax-form') || [];
 const ajaxModal = document.getElementsByClassName('ajax-modal') || [];
@@ -350,21 +351,25 @@ document.addEventListener(
       let errorStr;
       switch (error.code) {
         case error.PERMISSION_DENIED:
-          errorStr = 'User denied the request for Geolocation.';
+          errorStr = mapContainer.dataset.errorDenied;
           break;
         case error.POSITION_UNAVAILABLE:
-          errorStr = 'Location information is unavailable.';
+          errorStr = mapContainer.dataset.errorUnavailable;
           break;
         case error.TIMEOUT:
-          errorStr = 'The request to get user location timed out.';
+          errorStr = mapContainer.dataset.errorTimeout;
           break;
         case error.UNKNOWN_ERROR:
-          errorStr = 'An unknown error occurred.';
+          errorStr = mapContainer.dataset.errorUnknown;
           break;
         default:
-          errorStr = 'An unknown error occurred.';
+          errorStr = mapContainer.dataset.errorUnknown;
       }
       console.error('Error occurred: ' + errorStr);
+
+      // show error
+      mapErrorContainer.innerHTML = errorStr;
+      mapErrorContainer.classList.remove('d-none');
     }
 
     var url = window.location.href;
@@ -411,7 +416,7 @@ document.addEventListener(
                 method: el.getAttribute('method') || 'POST',
                 body: new FormData(el)
               };
-              let table = el.getAttribute('data-table') || null;
+              let table = el.dataset.table || null;
 
               // ajax
               ajax(url, options)
@@ -492,10 +497,10 @@ document.addEventListener(
           .from(ajaxAction)
           .forEach((el) => {
             let initialized = el.dataset.initialized || false
-            let url = el.getAttribute('data-url');
-            let table = el.getAttribute('data-table') ?? false;
+            let url = el.dataset.url;
+            let table = el.dataset.table ?? false;
             let options = {
-              method: el.getAttribute('data-method') || 'GET'
+              method: el.dataset.method || 'GET'
             };
 
             // initalized?
@@ -548,9 +553,9 @@ document.addEventListener(
           .from(ajaxValidate)
           .forEach((el) => {
             let initialized = el.dataset.initialized || false
-            let url = el.getAttribute('data-url');
+            let url = el.dataset.url;
             let options = {
-              method: el.getAttribute('data-method') || 'GET'
+              method: el.dataset.method || 'GET'
             };
 
             // initalized?
@@ -597,7 +602,6 @@ document.addEventListener(
                   .catch(err => {
                     field.classList.remove('is-valid');
                     field.classList.add('is-invalid');
- //                   form.classList.add('was-validation');
 
                     // error?
                     if(err.message ?? false) {
@@ -662,6 +666,10 @@ document.addEventListener(
       btnShowMap.addEventListener(
         'click',
         e => {
+
+          // empty and hide error
+          mapErrorContainer.classList.add('d-none');
+          mapErrorContainer.innerHTML = '';
 
           // get position
           if (navigator.geolocation) {
