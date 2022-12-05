@@ -8,7 +8,7 @@
                         type="button"
                         class="btn-close"
                         aria-label="Close"
-                        onClick="showNextModal();"></button>
+                        onclick="showNextModal();"></button>
                 </div>
                 <div class="modal-body">
                     <div>{{ 'saveAnonymousData1'|trans }}</div>
@@ -36,19 +36,19 @@
                         type="button"
                         class="btn-close"
                         aria-label="Close"
-                        onClick="route2StartPage('{{ path('app_standard_index') }}');"></button>
+                        onclick="route2StartPage('{{ path('app_standard_index') }}');"></button>
                 </div>
                 <div class="modal-body">{{ 'saveAnonymousData3'|trans }}</div>
                 <div class="modal-footer">
                     <button
                         type="button"
-                        class="btn btn-primary"
+                        class="btn btn-primary text-light"
                         data-bs-dismiss="modal">{{ 'Yes'|trans }}</button>
                     <button
                         type="button"
-                        class="btn btn-primary"
+                        class="btn btn-primary text-light"
                         data-bs-dismiss="modal"
-                        onClick="route2StartPage('{{ path('app_standard_index') }}');">{{ 'No'|trans }}</button>
+                        onclick="route2StartPage('{{ path('app_standard_index') }}');">{{ 'No'|trans }}</button>
                 </div>
             </div>
         </div>
