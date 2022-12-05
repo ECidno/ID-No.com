@@ -3895,7 +3895,7 @@ Vielen Dank für Ihren Besuch bei **CODE-No.**com.]]></target>
     <unit id="bV5rZ.S" name="saveAnonymousData1">
       <segment>
         <source>saveAnonymousData1</source>
-        <target>Zum Schutz der DAten unserer Anwender wird Ihr Zugriff mittels Cookies erfasst. Wollen Sie fortfahren?</target>
+        <target>Zum Schutz der Daten unserer Anwender wird Ihr Zugriff mittels Cookies erfasst. Wollen Sie fortfahren?</target>
       </segment>
     </unit>
     <unit id="ESgRm_L" name="saveAnonymousData2">
@@ -3907,7 +3907,7 @@ Vielen Dank für Ihren Besuch bei **CODE-No.**com.]]></target>
     <unit id="JZBrox0" name="saveAnonymousData3">
       <segment>
         <source>saveAnonymousData3</source>
-        <target>Sie haben der Erfassung Ihres Zugriffs nicht zugestimmt. Deshalb können wir zum Schutz der Daten unserer Anwender den NOtfallpass nicht anzeigen. Stimmen Sie der Erfassung Ihres Zugriffs zu?</target>
+        <target>Sie haben der Erfassung Ihres Zugriffs nicht zugestimmt. Deshalb können wir zum Schutz der Daten unserer Anwender den Notfallpass nicht anzeigen. Stimmen Sie der Erfassung Ihres Zugriffs zu?</target>
       </segment>
     </unit>
     <unit id="MfvvFiW" name="Continue">
