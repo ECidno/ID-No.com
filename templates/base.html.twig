@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ language }}">
   <head>
-    {# ccm19 | needs to be the very first script on page! #}
+
     {% if app.environment|lower == 'prod' %}
+    {# ccm19 | needs to be the very first script on page! #}
       <script src="https://ccm.mp-group.net/public/app.js?apiKey=d7fdcc2471aeb1033cf0e51d4f48140ba1679d72607eb9b6&amp;domain=7bf67dd" referrerpolicy="origin"></script>
     {% endif %}
 
@@ -19,6 +20,18 @@
     {% block javascripts %}
       {{ encore_entry_script_tags('app') }}
     {% endblock %}
+
+    {% if app.environment|lower == 'prod' %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132712802-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-132712802-1', { 'anonymize_ip': true });
+      </script>
+    {% endif %}
+
+
   </head>
   <body>
     {% apply spaceless %}

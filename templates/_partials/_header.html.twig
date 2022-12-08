@@ -133,22 +133,31 @@
 
         {# right #}
         <ul class="navbar-nav mb-2 ms-auto">
+
           {% if app.user is not empty %}
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a
                 class="nav-link"
                 href="{{ path(settings.pages.meinidno.route) }}">
                 <i class="bi bi-person-circle fs-2"></i>
               </a>
-            </li>
+            </li>-->
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-link dropdown-toggle pt-0"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 href="#">
-                {{ 'meinidno.title'|trans }}
+                {% if person.imageShow == true and person.imageSrc is not empty %}
+                  <div class="text-center userIconCenter userIconCenterSmall">
+                    <div class="userIcon userIconSmall" style="background-image: url('{{ person.imageSrc }}');" alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
+                    </div>
+                  </div>
+                {% else %}
+                  <i class="bi bi-person-circle fs-3 pe-1 align-middle"></i>
+                {% endif %}
+                <span class="align-middle">{{ 'meinidno.title'|trans }}</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
                 {% for key, item in settings.menu.header.user %}
