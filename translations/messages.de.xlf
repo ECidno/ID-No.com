@@ -3443,7 +3443,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="mVElgW5" name="meinidno.contact.description">
       <segment>
         <source>meinidno.contact.description</source>
-        <target>Im Folgenden finden Sie eine Übersicht Ihrer NOtfall-Kontakte</target>
+        <target>Im Folgenden finden Sie eine Übersicht Ihrer Notfall-Kontakte</target>
       </segment>
     </unit>
     <unit id="mD32oKh" name="person.image.lbl">
