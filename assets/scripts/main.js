@@ -680,7 +680,6 @@ document.addEventListener(
 
                 mapContainer.style.display = 'block';
                 showMap(lat, lon);
-
               },
               handleLocationError,
               {

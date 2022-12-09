@@ -3847,7 +3847,19 @@ Vielen Dank für Ihren Besuch bei **CODE-No.**com.]]></target>
     <unit id="VmQbIa6" name="mail.mailScanned.text">
       <segment>
         <source>mail.mailScanned.text</source>
-        <target>mail.mailScanned.text</target>
+        <target>%address%,  
+  
+Sie erhalten diese Nachricht, weil Ihr ID-No.com Produkt mit der Nummer  
+
+**%idNo% heute um %time% Uhr ausgelesen** wurde.  
+  
+Sie haben Ihre Notfall-Daten hinterlegt, damit Ersthelfer Ihnen schnell und verlässlich helfen können.  
+  
+Sollte es sich um eine unbefugte Nutzung handeln, können Sie diese ID-Nummer oder Ihren Notfallpass vorübergehend deaktivieren. Informationen dazu finden Sie unten.  
+  
+Herzliche Grüße aus Frankfurt,  
+  
+Ihr ID-No.com Team</target>
       </segment>
     </unit>
     <unit id="a7pjLjW" name="nutzer.action.edit.error">
@@ -3914,6 +3926,21 @@ Vielen Dank für Ihren Besuch bei **CODE-No.**com.]]></target>
       <segment>
         <source>Continue</source>
         <target>Weiter</target>
+      </segment>
+    </unit>
+    <unit id="2GAi_1u" name="mail.mailScanned.box">
+      <segment>
+        <source>mail.mailScanned.box</source>
+        <target>Sollte es sich bei dem Auslesen Ihrer Notfall ID-Nummer um eine unbefugte Nutzung handeln, können Sie diese ID-Nummer oder Ihren Notfallfpass aus Sicherheitsgründen vorübergehend deaktivieren.  
+
+Zur **[Anmeldung](%login_link%)**  
+</target>
+      </segment>
+    </unit>
+    <unit id="oymjImO" name="Anmelden">
+      <segment>
+        <source>Anmelden</source>
+        <target>Anmelden</target>
       </segment>
     </unit>
   </file>
