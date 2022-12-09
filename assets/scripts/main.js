@@ -372,6 +372,26 @@ document.addEventListener(
       mapErrorContainer.classList.remove('d-none');
     }
 
+    var url = window.location.href;
+    if (url.includes("notfallpass")) {
+      new Modal("#annotation_modal", {
+        backdrop: 'static',
+        keyboard: false
+      }).show();
+    }
+
+    window.showNextModal = () => {
+      jQuery(".modal-backdrop").css("display", "none");
+      jQuery("#annotation_modal").addClass("modal is-hidden is-visuallyHidden").removeClass("fade in").css("display", "none");
+      new Modal("#further_annotation_modal", {
+        backdrop: 'static',
+        keyboard: false
+      }).show();
+    }
+
+    window.route2StartPage = (url) => {
+      window.location = url;
+    }
 
     // init ajax event listener
     var initAjax = () => {

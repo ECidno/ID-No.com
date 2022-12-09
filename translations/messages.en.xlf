@@ -3438,5 +3438,53 @@ Registration for your Emergency ID Pass is free of charge.</target>
         <target>An unknown error occurred.</target>
       </segment>
     </unit>
+    <unit id="HFCZOwC" name="years">
+      <segment>
+        <source>years</source>
+        <target>years</target>
+      </segment>
+    </unit>
+    <unit id="4Hh9Jyp" name="attention">
+      <segment>
+        <source>attention</source>
+        <target>Attention!</target>
+      </segment>
+    </unit>
+    <unit id="bV5rZ.S" name="saveAnonymousData1">
+      <segment>
+        <source>saveAnonymousData1</source>
+        <target>In order to protect the data of our users your access will be registered vie cookies. Do you want to continue?</target>
+      </segment>
+    </unit>
+    <unit id="ESgRm_L" name="saveAnonymousData2">
+      <segment>
+        <source>saveAnonymousData2</source>
+        <target>Your consent can be withdrawn any time at www.ID-No.com.</target>
+      </segment>
+    </unit>
+    <unit id="MfvvFiW" name="Continue">
+      <segment>
+        <source>Continue</source>
+        <target>Continue</target>
+      </segment>
+    </unit>
+    <unit id="JZBrox0" name="saveAnonymousData3">
+      <segment>
+        <source>saveAnonymousData3</source>
+        <target>You have not agreed in the process of recording your access. In order to protect our users' data we can not display the Emergency Pass. Do you agree to the registration of your access?</target>
+      </segment>
+    </unit>
+    <unit id="haOas0X" name="Yes">
+      <segment>
+        <source>Yes</source>
+        <target>Yes</target>
+      </segment>
+    </unit>
+    <unit id="HqRCoTS" name="No">
+      <segment>
+        <source>No</source>
+        <target>No</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -13,9 +13,7 @@
 
 /* background greeen */
 .bg-green {
-  background-color: $green;
-  opacity: .6 !important;
-  --bs-bg-opacity: .6 !important;
+  background-color: rgba($green,.6);
 }
 
 h1, h2, h3, h4, h5 {
@@ -167,4 +165,44 @@ img.socialmedia_icon {
   padding:0;
   border: 1px solid $dark;
   border-radius: 8px;
+}
+
+body.modal-open .background-container{
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+}
+
+.userIconCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userIcon {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 7rem;
+  height: 7rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.userIconCenterSmall {
+  display: inline-block;
+  top: 13px;
+  position: relative;
+  margin-right: 4px;
+  .userIconSmall{
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.modal-fullscreen-lg-down {
+	width: 100vw;
+	max-width: none;
+	height: 100%;
+	margin: 0;
 }

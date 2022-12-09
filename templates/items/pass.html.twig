@@ -5,18 +5,21 @@
 {% block content %}
 
   {# Intro #}
-  <div class="container">
+  <div class="container background-container">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8 border">
 
         <div class="row py-3 bg-green">
           <div class="col-12">
             {% if person.imageShow == true and person.imageSrc is not empty %}
-              <div class="text-center">
-                <img
+              <div class="text-center userIconCenter">
+                <div class="userIcon" style="background-image: url('{{ person.imageSrc }}');" alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
+                </div>
+
+                <!--<img
                   src="{{ person.imageSrc }}"
                   class="rounded-circle"
-                  alt="{{ person.vorname|raw }} {{ person.nachname|raw }}" />
+                  alt="{{ person.vorname|raw }} {{ person.nachname|raw }}" />-->
               </div>
             {% endif %}
           </div>
@@ -76,7 +79,7 @@
         {# actions #}
         <div class="container">
           <div class="row mb-3">
-            <div class="col-6 text-center">
+            <div class="col-6 text-start">
               {% if person.ort and person.ortShow == true %}
                 <button
                   id="mapShow"
@@ -86,7 +89,7 @@
                 </button>
               {% endif %}
             </div>
-            <div class="col-6 text-center">
+            <div class="col-6 text-end">
               <a
                 class="btn btn-outline-dark text-success px-4 py-2"
                 href="tel:112">
@@ -306,4 +309,14 @@
       </div>
     </div>
   </div>
+
+  {# show cookie warning modal if not own pass #}
+  {% if
+    app.user is null or
+    nutzer is not defined or (
+      nutzer is defined and app.user.id != nutzer.id
+    )
+  %}
+    {% include '_partials/items/_passModals.html.twig' %}
+  {% endif %}
 {% endblock %}

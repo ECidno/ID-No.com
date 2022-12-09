@@ -3443,7 +3443,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="mVElgW5" name="meinidno.contact.description">
       <segment>
         <source>meinidno.contact.description</source>
-        <target>Im Folgenden finden Sie eine Übersicht Ihrer NOtfall-Kontakte</target>
+        <target>Im Folgenden finden Sie eine Übersicht Ihrer Notfall-Kontakte</target>
       </segment>
     </unit>
     <unit id="mD32oKh" name="person.image.lbl">
@@ -3884,6 +3884,36 @@ Vielen Dank für Ihren Besuch bei **CODE-No.**com.]]></target>
       <segment>
         <source>An unknown error occurred.</source>
         <target>Es ist ein Fehler aufgetreten.</target>
+      </segment>
+    </unit>
+    <unit id="4Hh9Jyp" name="attention">
+      <segment>
+        <source>attention</source>
+        <target>Achtung!</target>
+      </segment>
+    </unit>
+    <unit id="bV5rZ.S" name="saveAnonymousData1">
+      <segment>
+        <source>saveAnonymousData1</source>
+        <target>Zum Schutz der Daten unserer Anwender wird Ihr Zugriff mittels Cookies erfasst. Wollen Sie fortfahren?</target>
+      </segment>
+    </unit>
+    <unit id="ESgRm_L" name="saveAnonymousData2">
+      <segment>
+        <source>saveAnonymousData2</source>
+        <target>IIhre Einwilligung kann jederzeit auf www.ID-No.com widerrufen werden.</target>
+      </segment>
+    </unit>
+    <unit id="JZBrox0" name="saveAnonymousData3">
+      <segment>
+        <source>saveAnonymousData3</source>
+        <target>Sie haben der Erfassung Ihres Zugriffs nicht zugestimmt. Deshalb können wir zum Schutz der Daten unserer Anwender den Notfallpass nicht anzeigen. Stimmen Sie der Erfassung Ihres Zugriffs zu?</target>
+      </segment>
+    </unit>
+    <unit id="MfvvFiW" name="Continue">
+      <segment>
+        <source>Continue</source>
+        <target>Weiter</target>
       </segment>
     </unit>
   </file>
