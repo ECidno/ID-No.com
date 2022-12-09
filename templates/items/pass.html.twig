@@ -310,5 +310,13 @@
     </div>
   </div>
 
-  {% include '_partials/items/_passModals.html.twig' %}
+  {# show cookie warning modal if not own pass #}
+  {% if
+    app.user is null or
+    nutzer is not defined or (
+      nutzer is defined and app.user.id != nutzer.id
+    )
+  %}
+    {% include '_partials/items/_passModals.html.twig' %}
+  {% endif %}
 {% endblock %}
