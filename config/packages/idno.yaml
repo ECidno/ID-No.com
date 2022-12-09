@@ -120,8 +120,6 @@ parameters:
         user:
           meinidno:
             page: meinidno
-          # profile:
-          #   page: profile
           logout:
             page: logout
 

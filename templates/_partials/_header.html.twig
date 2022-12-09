@@ -1,4 +1,3 @@
-
 <header>
   {# nav #}
   <nav class="navbar navbar-dark navbar-expand-lg bg-dark border-bottom">
@@ -149,9 +148,15 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 href="#">
-                {% if person.imageShow == true and person.imageSrc is not empty %}
+                {% if person is not defined %}
+                  {% set person = app.user.persons.0 %}
+                {% endif %}
+
+                {% if person is defined and person.imageShow == true and person.imageSrc is not empty %}
                   <div class="text-center userIconCenter userIconCenterSmall">
-                    <div class="userIcon userIconSmall" style="background-image: url('{{ person.imageSrc }}');" alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
+                    <div
+                      class="userIcon userIconSmall"
+                      style="background-image: url('{{ person.imageSrc }}');" alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
                     </div>
                   </div>
                 {% else %}
@@ -179,7 +184,7 @@
                 class="nav-link"
                 href="{{ path(settings.pages.login.route) }}">
                 <i class="bi bi-person-circle fs-3 pe-1 align-middle"></i>
-                <span class="align-middle">Anmelden</span>
+                <span class="align-middle">{{ 'Anmelden'|trans }}</span>
               </a>
             </li>
           {% endif %}

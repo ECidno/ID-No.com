@@ -2,39 +2,22 @@
 
 {# content #}
 {% block content %}
+  <div class="body">
+  {{ 'mail.mailScanned.text'|trans(
+    {
+      '%address%': person.fullAddress|raw,
+      '%time%': now|date('H:i'),
+      '%idNo%': item.idNo,
+      '%login_link%': url('app_login'),
+    }
+  )|raw|markdown_to_html }}
+  </p>
 
-{{ 'mail.mailScanned.text'|trans(
-  {
-    '%date%': now|date('H:i'),
-    '%idNo%': item.idNo
-  }
-)|raw|markdown_to_html }}
-
-
-<p class="body">{{ person.fullAddress|raw }},<br />
-  <br />
-  Sie erhalten diese Nachricht, weil Ihr ID-No.com Produkt mit der Nummer<br />
-  <br />
-  <strong>{{ item.idNo }} heute um {{ now|date('H:i') }} Uhr ausgelesen</strong> wurde.<br />
-  <br />
-  Sie haben Ihre Notfall-Daten hinterlegt, damit Ersthelfer Ihnen schnell und verlässlich helfen können.<br />
-  <br />
-  Sollte es sich um eine unbefugte Nutzung handeln, können Sie Ihr Profil vorübergehend deaktivieren. Informationen dazu finden Sie unten.<br />
-  <br />
-  Herzliche Grüße aus Frankfurt,<br />
-  <br />
-  Ihr <strong>ID-No</strong>.com Team
-</p>
-
-<p class="box">
-  {# @TODO:
-    - CTA here?
-    - Missing function: disable profile pass
-
-    #}
-  Sollte es sich bei dem Auslesen Ihrer Notfall ID-Nummer um eine unbefugte Nutzung handeln, können Sie Ihr Profil aus Sicherheitsgründen vorübergehend deaktivieren:<br />
-  <br />
-  Der Schutz Ihrer sensiblen Daten steht für uns an erster Stelle. Aus diesem Grund gehen wir missbräuchlicher Nutzung nach. Um uns über unbefugten Zugriff zu informieren, klicken Sie bitte hier.
-
-</p>
+  <div class="box">
+    {{ 'mail.mailScanned.box'|trans(
+      {
+        '%login_link%': url('app_login'),
+      }
+    )|raw|markdown_to_html }}
+  </div>
 {% endblock %}
