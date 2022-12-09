@@ -11,7 +11,7 @@ when@dev:
         mailer:
             envelope:
                 sender: 'debug@mp-group.net'
-                recipients: ['fkrueger@mp-group.net', 'tworofsky@mp-group.net']
+                recipients: ['fkrueger@mp-group.net']
             headers:
                 From: 'ID-No.com | Service | DEV <debug@mp-group.net>'
 
@@ -20,6 +20,6 @@ when@staging:
         mailer:
             envelope:
                 sender: 'debug@mp-group.net'
-                recipients: ['fkrueger@mp-group.net', 'tworofsky@mp-group.net']
+                recipients: ['fkrueger@mp-group.net']
             headers:
                 From: 'ID-No.com | Service | STAGING <debug@mp-group.net>'
