@@ -199,10 +199,11 @@ body.modal-open .background-container{
     height: 2rem;
   }
 }
-
-.modal-fullscreen-lg-down {
-	width: 100vw;
-	max-width: none;
-	height: 100%;
-	margin: 0;
+@media (max-width: 991.98px) {
+  .modal-fullscreen-lg-down {
+    width: 100vw;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+  }
 }
