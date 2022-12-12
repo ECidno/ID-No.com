@@ -8,10 +8,8 @@ namespace App\Form\Type;
  **********************************************************************/
 
 use App\Entity\Nutzer\Person;
-use App\Entity\Nutzer\PersonImages;
 use App\Form\Type\EntityHiddenType;
 use Locale;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
