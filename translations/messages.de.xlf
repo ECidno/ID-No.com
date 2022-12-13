@@ -3943,5 +3943,29 @@ Zur **[Anmeldung](%login_link%)**
         <target>Anmelden</target>
       </segment>
     </unit>
+    <unit id="Fu2RsS8" name="person.sprache.text">
+      <segment>
+        <source>person.sprache.text</source>
+        <target>Bitte geben Sie an, in welcher Sprache Sie ihre Angaben machen.</target>
+      </segment>
+    </unit>
+    <unit id="w.AKh0h" name="person.sprache.de">
+      <segment>
+        <source>person.sprache.de</source>
+        <target>Deutsch</target>
+      </segment>
+    </unit>
+    <unit id="fmxJomh" name="person.sprache.en">
+      <segment>
+        <source>person.sprache.en</source>
+        <target>Englisch</target>
+      </segment>
+    </unit>
+    <unit id="CCSYFpJ" name="person.sprache">
+      <segment>
+        <source>person.sprache</source>
+        <target>Sprache</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

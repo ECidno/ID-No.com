@@ -1,5 +1,15 @@
 {{ form_errors(form) }}
 
+<div class="row">
+  <div class="col-9 col-sm-4">
+    {{ form_row(form.sprache) }}
+  </div>
+  <div class="col-9 col-sm-5">
+    {{ 'person.sprache.text'|trans }}
+  </div>
+</div>
+<hr />
+
 <h2 class="mb-3">{{ 'person.personalDetails.lbl'|trans }}</h2>
 
 <div class="row">

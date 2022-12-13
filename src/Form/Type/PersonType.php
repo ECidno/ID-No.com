@@ -38,6 +38,17 @@ class PersonType extends AbstractType
     {
         $builder
             ->add('nutzer', EntityHiddenType::class)
+            ->add('sprache', ChoiceType::class, [
+                'label' => new TranslatableMessage('person.sprache'),
+                'choices' => [
+                    'de' => 'de',
+                    'en' => 'en',
+                ],
+                'choice_label' => function($choice, $key, $value) {
+                    return new TranslatableMessage('person.sprache.'.$key);
+                },
+                'required' => true
+            ])
             ->add('anrede', ChoiceType::class, [
                 'label' => new TranslatableMessage('person.geschlecht'),
                 'choices' => [

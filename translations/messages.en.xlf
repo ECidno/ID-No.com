@@ -1337,7 +1337,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="jz_EKfa" name="person.telefonLand.lbl">
       <segment>
         <source>person.telefonLand.lbl</source>
-        <target></target>
+        <target>Prefix</target>
       </segment>
     </unit>
     <unit id="sA6e0z0" name="person.telefonVorwahl.lbl">
@@ -1433,7 +1433,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="CcjFcL8" name="person.gewichtEinheit.lbl">
       <segment>
         <source>person.gewichtEinheit.lbl</source>
-        <target></target>
+        <target>Unit</target>
       </segment>
     </unit>
     <unit id="ekMryqc" name="person.groesse.lbl">
@@ -1457,7 +1457,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="qhMFe_A" name="person.groesseEinheit.lbl">
       <segment>
         <source>person.groesseEinheit.lbl</source>
-        <target></target>
+        <target>Unit</target>
       </segment>
     </unit>
     <unit id="8NNQs.D" name="person.krankenversicherungDetails.lbl">
@@ -3285,13 +3285,13 @@ Registration for your Emergency ID Pass is free of charge.</target>
     <unit id="Jtap8tY" name="profile.actions.pass_disable.success">
       <segment>
         <source>profile.actions.pass_disable.success</source>
-        <target>profile.actions.pass_disable.success</target>
+        <target>Your emergency pass was disabled!</target>
       </segment>
     </unit>
     <unit id="xgnCQl1" name="profile.actions.pass_enable.success">
       <segment>
         <source>profile.actions.pass_enable.success</source>
-        <target>profile.actions.pass_enable.success</target>
+        <target>Your emergency pass was enabled successfully.</target>
       </segment>
     </unit>
     <unit id="1IRSI.n" name="ID-Number not found!">
@@ -3399,13 +3399,13 @@ Registration for your Emergency ID Pass is free of charge.</target>
     <unit id="a7pjLjW" name="nutzer.action.edit.error">
       <segment>
         <source>nutzer.action.edit.error</source>
-        <target>The access data coudnt save properly</target>
+        <target>The access data coudn't save properly.</target>
       </segment>
     </unit>
     <unit id="W5wfpnm" name="nutzer.action.edit.success">
       <segment>
         <source>nutzer.action.edit.success</source>
-        <target>The access data could save properly</target>
+        <target>The access data was updated properly.</target>
       </segment>
     </unit>
     <unit id="HFCZOwC" name="years">
@@ -3502,6 +3502,36 @@ Registration for your Emergency ID Pass is free of charge.</target>
       <segment>
         <source>Anmelden</source>
         <target>Login</target>
+      </segment>
+    </unit>
+    <unit id="w.AKh0h" name="person.sprache.de">
+      <segment>
+        <source>person.sprache.de</source>
+        <target>German</target>
+      </segment>
+    </unit>
+    <unit id="fmxJomh" name="person.sprache.en">
+      <segment>
+        <source>person.sprache.en</source>
+        <target>English</target>
+      </segment>
+    </unit>
+    <unit id="CCSYFpJ" name="person.sprache">
+      <segment>
+        <source>person.sprache</source>
+        <target>Language</target>
+      </segment>
+    </unit>
+    <unit id="Fu2RsS8" name="person.sprache.text">
+      <segment>
+        <source>person.sprache.text</source>
+        <target>Please indicate the language in which you provide your information.</target>
+      </segment>
+    </unit>
+    <unit id="YcVR3nU" name="person.action.edit.success">
+      <segment>
+        <source>person.action.edit.success</source>
+        <target>The profile data was updated properly.</target>
       </segment>
     </unit>
   </file>
