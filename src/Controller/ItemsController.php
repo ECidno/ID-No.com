@@ -86,7 +86,20 @@ class ItemsController extends AbstractController
                     'itemError',
                     $this->translator->trans('ID-Number locked!')
                 );
+
+                // redirect to index
                 return $this->redirectToRoute('app_standard_index');
+            }
+
+            // finally, redirect to user's locale if not match with current
+            if($request->getLocale() != $person->getSprache()) {
+                return $this->redirectToRoute(
+                    'app_items_pass',
+                    [
+                        '_locale' => $person->getSprache(),
+                        'idno' => $idno,
+                    ]
+                );
             }
 
             // variables

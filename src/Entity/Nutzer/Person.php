@@ -658,7 +658,7 @@ class Person
      */
     public function getVorname(): ?string
     {
-        return $this->vorname;
+        return html_entity_decode($this->vorname);
     }
 
 
@@ -677,7 +677,7 @@ class Person
      */
     public function getNachname(): ?string
     {
-        return $this->nachname;
+        return html_entity_decode($this->nachname);
     }
 
     /**
@@ -689,8 +689,8 @@ class Person
             ' ',
             array_filter(
                 [
-                    $this->vorname,
-                    $this->nachname,
+                    html_entity_decode($this->vorname),
+                    html_entity_decode($this->nachname),
                 ]
             )
         );
@@ -720,8 +720,7 @@ class Person
             array_filter(
                 [
                     $anrede,
-                    $this->vorname,
-                    $this->nachname,
+                    $this->getFullName()
                 ]
             )
         );
@@ -743,7 +742,7 @@ class Person
      */
     public function getStrasse(): ?string
     {
-        return $this->strasse;
+        return html_entity_decode($this->strasse);
     }
 
 
@@ -800,7 +799,7 @@ class Person
      */
     public function getOrt(): ?string
     {
-        return $this->ort;
+        return html_entity_decode($this->ort);
     }
 
 
@@ -838,7 +837,7 @@ class Person
      */
     public function getZusatz(): ?string
     {
-        return $this->zusatz;
+        return html_entity_decode($this->zusatz);
     }
 
 
@@ -1291,7 +1290,7 @@ class Person
      */
     public function getKrankenversicherung(): ?string
     {
-        return $this->krankenversicherung;
+        return html_entity_decode($this->krankenversicherung);
     }
 
 
@@ -1367,7 +1366,7 @@ class Person
      */
     public function getZusatzversicherung(): ?string
     {
-        return $this->zusatzversicherung;
+        return html_entity_decode($this->zusatzversicherung);
     }
 
 
@@ -1443,7 +1442,7 @@ class Person
      */
     public function getErkrankungen(): ?string
     {
-        return $this->erkrankungen;
+        return html_entity_decode($this->erkrankungen);
     }
 
 
@@ -1481,7 +1480,7 @@ class Person
      */
     public function getMedikamente(): ?string
     {
-        return $this->medikamente;
+        return html_entity_decode($this->medikamente);
     }
 
 
@@ -1519,7 +1518,7 @@ class Person
      */
     public function getAllergieen(): ?string
     {
-        return $this->allergieen;
+        return html_entity_decode($this->allergieen);
     }
 
 
@@ -1633,7 +1632,7 @@ class Person
      */
     public function getWeitereangaben(): ?string
     {
-        return $this->weitereangaben;
+        return html_entity_decode($this->weitereangaben);
     }
 
 

@@ -88,12 +88,12 @@
                     name="sichtbar"
                     value="0" />
                   <label
-                    class="form-check-label text-dark"
+                    class="form-check-label text-dark pointer"
                     for="fldPassEnable">{{ 'meinidno.profile.check'|trans }}
-                    {{ user.sichtbar == true
+                    <span class="icon">{{ user.sichtbar == true
                       ? '<i class="bi bi-check-circle text-success ps-1"></i>'
                       : '<i class="bi bi-exclamation-triangle text-warning ps-1"></i>'
-                    }}
+                    }}</span>
                   </label>
                   <input
                     type="checkbox"
@@ -103,6 +103,8 @@
                     value="1"
                     role="switch"
                     {{ user.sichtbar == true ? 'checked="checked"' }}
+                    data-icon-on="bi bi-check-circle text-success ps-1"
+                    data-icon-off="bi bi-exclamation-triangle text-warning ps-1"
                     autocomplete="off" />
                   <input
                     type="hidden"
@@ -110,7 +112,6 @@
                     value="{{ csrf_token('pass_enable') }}"/>
                 </div>
               </form>
-
             </div>
           </div>
         </div>

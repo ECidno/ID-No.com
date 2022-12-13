@@ -723,6 +723,8 @@ document.addEventListener(
         'change',
         e => {
           let el = e.target;
+          let container = el.closest('div');
+          let iconContainer = container.querySelector('span.icon i');
           let form = el.closest('form');
           let url = form.getAttribute('action');
           let options = {
@@ -730,10 +732,21 @@ document.addEventListener(
             body: new FormData(form)
           };
 
+          // disable
+          el.disabled = true;
+
           // ajax
           ajax(url, options)
           .then(
             res => {
+
+              // icon
+              iconContainer.classList = el.checked
+                ? el.dataset.iconOn
+                : el.dataset.iconOff;
+
+              // enable
+              el.disabled = false;
 
               // show message
               showMessage(

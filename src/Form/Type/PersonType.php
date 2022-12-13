@@ -8,10 +8,8 @@ namespace App\Form\Type;
  **********************************************************************/
 
 use App\Entity\Nutzer\Person;
-use App\Entity\Nutzer\PersonImages;
 use App\Form\Type\EntityHiddenType;
 use Locale;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -40,6 +38,17 @@ class PersonType extends AbstractType
     {
         $builder
             ->add('nutzer', EntityHiddenType::class)
+            ->add('sprache', ChoiceType::class, [
+                'label' => new TranslatableMessage('person.sprache'),
+                'choices' => [
+                    'de' => 'de',
+                    'en' => 'en',
+                ],
+                'choice_label' => function($choice, $key, $value) {
+                    return new TranslatableMessage('person.sprache.'.$key);
+                },
+                'required' => true
+            ])
             ->add('anrede', ChoiceType::class, [
                 'label' => new TranslatableMessage('person.geschlecht'),
                 'choices' => [

@@ -36,7 +36,7 @@ class StandardController extends AbstractController
         $dir = 'media/images/banner';
         $idno = strtoupper($request->get('p_idno') ?? $idno);
         $submittedToken = $request->request->get('token');
-#$submittedToken = 'abc"';
+
         // dir exists?
         if (file_exists($dir)) {
             $finder = new Finder();
@@ -71,7 +71,7 @@ class StandardController extends AbstractController
         }
 
         // redirect to pass
-        // @TODO store id in session and remove from path (parameter)
+        // @TODO store id in session and remove from path (parameter)?
         if(!empty($idno)) {
             return $this->redirectToRoute(
                 'app_items_pass',
