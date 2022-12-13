@@ -385,7 +385,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getVorname(): ?string
     {
-        return $this->vorname;
+        return html_entity_decode($this->vorname);
     }
 
 
@@ -404,7 +404,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getNachname(): ?string
     {
-        return $this->nachname;
+        return html_entity_decode($this->nachname);
     }
 
     /**
@@ -416,8 +416,8 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
             ' ',
             array_filter(
                 [
-                    $this->vorname,
-                    $this->nachname,
+                    $this->getVorname(),
+                    $this->getNachname(),
                 ]
             )
         );
