@@ -45,6 +45,9 @@ a.btn-outline-dark:hover {
   color: $success;
   text-decoration: none;
 }
+button.btn-primary {
+  color: $light;
+}
 
 .pointer {
   cursor: pointer;
@@ -73,13 +76,6 @@ label.invalid-feedback-inline {
   text-align: right !important;
   color: $danger;
 }
-
-
-/*
-.form-control:focus{
-  border:1px solid $green;
-}
-*/
 
 /* navbar */
 header nav {
@@ -121,6 +117,9 @@ img.ref-logo:hover {
   height: 100%;
   padding: 0;
   margin: 0;
+}
+div.card-view {
+  padding: 3px 0px;
 }
 
 

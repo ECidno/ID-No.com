@@ -4,6 +4,8 @@ import { Modal, Toast } from 'bootstrap';
 import jQuery from 'jquery';
 import bootstrapTable from 'bootstrap-table';
 import bootstrapTableLocaleAll from 'bootstrap-table/dist/bootstrap-table-locale-all';
+import 'bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js';
+
 import { control, latLng, map, tileLayer, Browser } from 'leaflet';
 
 // const's
@@ -43,13 +45,13 @@ window.operateFormatter = (value, row, index) => {
   let operations = [];
   Object
     .keys(row.operations)
-    .forEach((key) => {
+    .forEach((key, idx) => {
       let val = row.operations[key];
       operations.push(
         [
           '<button',
           'type="button"',
-          'class="btn btn-sm btn-outline-dark ms-2 ' + key + '"',
+          'class="btn btn-sm btn-outline-dark' + (idx == 0 ? ' me-2 ' : ' ') + key + '"',
           'data-url="' + val.uri + '">',
           '<i class="' + val.icon + '"></i>',
           '</button>'
