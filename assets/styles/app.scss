@@ -207,3 +207,7 @@ body.modal-open .background-container{
     margin: 0;
   }
 }
+
+.toast{
+  --bs-toast-bg: rgba(255, 255, 255,1);
+}

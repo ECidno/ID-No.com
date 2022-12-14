@@ -39,10 +39,11 @@
     {% endapply %}
 
     {# toast | success #}
+
     <div
       aria-live="polite"
       aria-atomic="true"
-      class="toast-container position-absolute top-0 start-50 translate-middle-x p-3 mt-5">
+      class="toast-container position-fixed top-0 end-0 pt-md-5 pe-md-5 mt-md-5 pt-1 pe-1 mt-1">
       <div
         id="toastContainer"
         class="toast"
@@ -51,7 +52,7 @@
         data-warning-header="{{ 'Warning'|trans }}"
         data-danger-header="{{ 'Error'|trans }}">
         <div class="toast-header">
-          <span class="me-auto text-dark fw-bold"></span>
+          <span class="me-auto text-light fw-bold"></span>
           <small></small>
           <button
             type="button"
