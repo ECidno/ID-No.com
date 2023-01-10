@@ -45,6 +45,9 @@ class ProfileApiController extends AbstractApiController
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
+        /**
+         * @var Nutzer
+         */
         $object = $this->getUser();
         $enable = ((bool) $request->get('sichtbar')) ?? null;
 
@@ -101,6 +104,10 @@ class ProfileApiController extends AbstractApiController
     public function emailauthrequest(Request $request): JsonResponse
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        /**
+         * @var Nutzer
+         */
         $user = $this->getUser();
         $email = $user->getEmail();
 
@@ -178,6 +185,10 @@ class ProfileApiController extends AbstractApiController
         $user = $this->emNutzer
             ->getRepository(Nutzer::class)
             ->findOneByEmail($email);
+
+        /**
+         * @var Nutzer
+         */
         $nutzer = $this->getUser();
 
         // valid?
@@ -213,26 +224,29 @@ class ProfileApiController extends AbstractApiController
             );
     }
 
+
      /**
      * changeCredentials
      * @param int $id
      * @param Request $request
-     * 
+     *
      * @return JsonResponse
-     * 
+     *
      * @Route("/changeCredentials/{id}", name="changeCredentials", methods={"POST"})
      */
     public function changeCredentials(int $id, Request $request, UserPasswordHasherInterface $passwordEncoder): JsonResponse
     {
         $nutzer = $this->emNutzer
-                    ->getRepository(Nutzer::class)
-                    ->findOneById($id);
+            ->getRepository(Nutzer::class)
+            ->findOneById($id);
 
+        // form
         $form = $this->createForm(
             CredentialsChangeType::class,
             $nutzer
         );
 
+        // handle request
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -288,5 +302,4 @@ class ProfileApiController extends AbstractApiController
             ]
         );
     }
-
 }

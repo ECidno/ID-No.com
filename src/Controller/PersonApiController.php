@@ -91,6 +91,7 @@ class PersonApiController extends AbstractApiController
         return $items;
     }
 
+
     /**
      * update
      *
@@ -134,6 +135,7 @@ class PersonApiController extends AbstractApiController
                 ->getRepository(PersonImages::class)
                 ->findBy(['person' => $id]);
 
+            // image?
             if ($image) {
                 $image = $image[0];
                 $image->setBildShow($imageShow);
@@ -141,12 +143,10 @@ class PersonApiController extends AbstractApiController
                 $em->flush($image);
             }
 
+            // person image
             if ($personImage) {
-
                 $filename = uniqid().'.'.$personImage->guessExtension();
-
                 $personImage->move($this->getParameter('userimages_directory'), $filename);
-
                 $filepath = $this->getParameter('userimages_directory').'/'.$filename;
 
                 list($orig_width, $orig_height) = getimagesize($filepath);
@@ -170,8 +170,6 @@ class PersonApiController extends AbstractApiController
                 $photo = $imagine->open($filepath);
                 $photo->resize(new Box($width, $height))->save($filepath);
 
-
-
                 if (!$image) {
                     $image = new PersonImages;
                 } else {
@@ -182,19 +180,19 @@ class PersonApiController extends AbstractApiController
                     }
                 }
 
-
-                $image->setPerson($object);
-                $image->setStatus('ok');
-                $image->setBild($filename);
-                $image->setBildShow($imageShow);
-                $image->setHeight($height);
-                $image->setWidth($width);
-                $image->setIp($_SERVER['REMOTE_ADDR']);
-                $image->setCreated(new DateTime());
+                // set image properties
+                $image
+                    ->setPerson($object)
+                    ->setStatus('ok')
+                    ->setBild($filename)
+                    ->setBildShow($imageShow)
+                    ->setHeight($height)
+                    ->setWidth($width)
+                    ->setIp($_SERVER['REMOTE_ADDR'])
+                    ->setCreated(new DateTime());
 
                 $em->persist($image);
                 $em->flush($image);
-
             }
 
             // message
@@ -233,7 +231,8 @@ class PersonApiController extends AbstractApiController
         );
     }
 
-     /**
+
+    /**
      * delete
      *
      * @param int $id
@@ -263,8 +262,8 @@ class PersonApiController extends AbstractApiController
         ) {
 
             /**
-            * @var PersonImages $image
-            */
+             * @var PersonImages $image
+             */
             $image = $em
                 ->getRepository(PersonImages::class)
                 ->findBy(['person' => $id]);

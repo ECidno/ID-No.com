@@ -7,8 +7,6 @@ namespace App\Entity\Nutzer;
  *
  **********************************************************************/
 
-use Doctrine\Common\Collections\Collection;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -141,6 +139,7 @@ class PersonImages
         return $this->bild;
     }
 
+
     /**
      * @param bool $bildShow
      * @return PersonImages
@@ -197,6 +196,7 @@ class PersonImages
         return $this->height;
     }
 
+
     /**
      * @param string $ip
      * @return PersonImages
@@ -214,6 +214,7 @@ class PersonImages
     {
         return $this->ip;
     }
+
 
     /**
      * @param \DateTimeInterface $created
