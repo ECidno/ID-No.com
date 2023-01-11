@@ -181,10 +181,11 @@ parameters:
           mobile: slider/slider_mobile_7.jpg
         textStyle: 'position:absolute; left:25%; top:30%; text-shadow: black 1px 1px 1px;'
 
-      covid:
-        image:
-          desktop: slider/ID_No_CovidTeaser_2620x650_V1.png
-          mobile: slider/ID_No_CovidTeaser_1208x750_V1.png
+      # gem. E-Mail Herr Seidel dd. 11.01.2023
+      # covid:
+      #   image:
+      #     desktop: slider/ID_No_CovidTeaser_2620x650_V1.png
+      #     mobile: slider/ID_No_CovidTeaser_1208x750_V1.png
 
 
     # cards
