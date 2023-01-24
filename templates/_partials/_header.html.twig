@@ -53,16 +53,6 @@
             </ul>
           </li>
 
-          {# user logged in
-          {% if app.user is not empty %}
-            <li>
-              <a
-                class="nav-link"
-                href="https://www.code-no.shop/sos-id-chip/"
-                target="_blank">Mein ID-No.com</a>
-            </li>
-          {% endif %}
-#}
           {# shop #}
           <li>
             <a
@@ -71,22 +61,6 @@
               target="_blank">Shop</a>
           </li>
 
-          {# user logged in
-          {% if app.user is not empty %}
-            <li class="border rounded">
-              <a
-                class="nav-link"
-                href="https://www.code-no.shop/sos-id-chip/"
-                target="_blank">Abmelden</a>
-            </li>
-          {% else %}
-            <li class="border rounded">
-              <a
-                class="nav-link"
-                href="#">Login</a>
-            </li>
-          {% endif %}
- #}
           {# language #}
           {% set currentRoute = app.request.attributes.get('_route') %}
           {% set currentRouteParams = app.request.attributes.get('_route_params') ?? {} %}

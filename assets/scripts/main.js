@@ -91,7 +91,7 @@ window.operateEvents = {
 }
 
 
-// show form filed error
+// show form field error
 window.showFieldError = (field, message) => {
   let parent = field.parentNode;
   let errorContainer =  document.createElement('div');

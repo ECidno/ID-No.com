@@ -20,7 +20,8 @@ class FormTypeExtension extends AbstractTypeExtension
     /**
     * @var array settings
     */
-   protected $settings = [];
+    protected $settings = [];
+
 
     /**
      * constructor

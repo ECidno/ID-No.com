@@ -39,11 +39,6 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
     private $registry;
 
     /**
-     * @var NutzerRepository $userRepository
-     */
-    private $userRepository;
-
-    /**
      * @var UrlGeneratorInterface $urlGenerator
      */
     private $urlGenerator;
@@ -117,7 +112,6 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
         }
 
         // get user
-#        $user = $this->userRepository->findOneBy(['email' => $username]);
         $user = $em
             ->getRepository(Nutzer::class)
             ->findOneBy(['email' => $username]);
