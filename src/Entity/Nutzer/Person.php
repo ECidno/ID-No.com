@@ -408,23 +408,25 @@ class Person
     }
 
 
-    /**
+    /*
      * @param ?Person $parent
      * @return Person
-     */
+
     public function setParent(?Person $parent = null): self
     {
         $this->parent = $parent;
         return $this;
     }
+    */
 
-    /**
+    /*
      * @return ?Person
-     */
+
     public function getParent(): ?Person
     {
         return $this->parent;
     }
+    */
 
 
     /**

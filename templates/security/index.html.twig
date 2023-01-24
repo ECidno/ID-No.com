@@ -76,7 +76,7 @@
               value="{{ last_username }}"
               name="_username"
               placeholder="E-Mail" />
-            <label for="username">E-Mail</label>
+            <label for="username">{{ 'E-Mail'|trans }}</label>
           </div>
           <div class="form-floating">
             <input
@@ -85,7 +85,7 @@
               class="form-control"
               name="_password"
               placeholder="Passwort">
-            <label for="password">Passwort</label>
+            <label for="password">{{ 'Passwort'|trans }}</label>
           </div>
 
           {# If you want to control the URL the user is redirected to on success #}
@@ -93,40 +93,38 @@
             type="hidden"
             name="_target_path"
             value="{{ path('app_profile_index') }}" />
-
           <input
             type="hidden"
             name="_csrf_token"
             value="{{ csrf_token('authenticate') }}" />
 
+          <div class="float-start">
+            <a
+              href="{{ path('app_account_resetPasswort') }}"
+              class="btn btn-outline-success my-3 px-3 py-2 text-decoration-none">
+              {{ 'login.resetPassword.link'|trans }}
+            </a>
+          </div>
           <div class="float-end">
             <button
               type="submit"
-              class="btn btn-success text-light my-3 px-3 py-2">Einloggen</button>
+              class="btn btn-success text-light my-3 px-3 py-2">{{ 'Einloggen'|trans }}</button>
           </div>
         </form>
       </div>
     </div>
 
-
+    {# register #}
     <div class="row justify-content-center">
       <div class="col-10 col-lg-8 col-xl-6">
-        {{ 'login.register.text'|trans(
-          {
-            '%register_url%': path('app_items_register')
-          },
-          'messages'
-        )|raw|markdown_to_html }}
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-10 col-lg-8 col-xl-6">
-        {{ 'login.resetPassword.link'|trans(
-          {
-            '%resetPassword_url%': path('app_account_resetPasswort')
-          },
-          'messages'
-        )|raw|markdown_to_html }}
+        <hr />
+        <p class="float-start">{{ 'login.register.text'|trans }}<br />
+          <a
+            href="{{ path('app_items_register') }}"
+            class="btn btn-success text-light my-3 px-3 py-2">
+            {{ 'login.register.linktext'|trans }}
+          </a>
+        </p>
       </div>
     </div>
   </div>

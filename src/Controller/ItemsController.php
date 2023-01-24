@@ -46,6 +46,10 @@ class ItemsController extends AbstractController
     public function pass(Request $request, ItemsService $itemsService, $idno): Response
     {
         $idno = $request->get('p_idno') ?? $idno;
+
+        /**
+         * @var Nutzer
+         */
         $user = $this->getUser();
         $item = $itemsService->check(
             $idno,
@@ -275,6 +279,9 @@ class ItemsController extends AbstractController
      */
     public function new(int $personId, Request $request): Response
     {
+        /**
+         * @var Nutzer
+         */
         $user = $this->getUser();
         $person = $this->emNutzer
             ->getRepository(Person::class)

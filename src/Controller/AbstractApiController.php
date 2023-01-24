@@ -31,49 +31,59 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class AbstractApiController extends SymfonyAbstractController
 {
     /**
-     * @var string entityClassName
+     * @var string $entityClassName
      */
     public static $entityClassName = null;
 
      /**
-     * @var string entityFormAddType
+     * @var string $entityFormAddType
      */
     public static $entityFormAddType = null;
 
     /**
-     * @var string entityFormEditType
+     * @var string $entityFormEditType
      */
     public static $entityFormEditType = null;
 
     /**
-     * @var ManagerRegistry registry
+     * @var ManagerRegistry $registry
      */
     protected $registry;
 
     /**
-     * @var EntitiyManager em
+     * @var EntitiyManager $em
      */
     protected $em;
 
     /**
-     * @var EntitiyManager emDefault
+     * @var EntitiyManager $emDefault
      */
     protected $emDefault;
 
     /**
-     * @var EntitiyManager emNutzer
+     * @var EntitiyManager $emNutzer
      */
     protected $emNutzer;
 
     /**
-     * @var LoggerInterface logger
+     * @var LoggerInterface $logger
      */
     protected $logger;
 
     /**
-     * @var MailService mailService
+     * @var ItemsService $itemsService
+     */
+    protected $itemsService;
+
+    /**
+     * @var MailService $mailService
      */
     protected $mailService;
+
+    /**
+     * @var \DateTimeImmutable $now
+     */
+    protected $now;
 
     /**
      * @var TranslatorInterface $translator
@@ -81,17 +91,17 @@ class AbstractApiController extends SymfonyAbstractController
     protected $translator;
 
     /**
-     * @var array settings
+     * @var array $settings
      */
     protected $settings = [];
 
     /**
-     * @var object session
+     * @var object $session
      */
     protected $session = null;
 
     /**
-     * @var int HTTP status code - 200 (OK) by default
+     * @var int $statusCode HTTP status code - 200 (OK) by default
      */
     protected $statusCode = 200;
 

@@ -3653,7 +3653,7 @@ Ihr Team von ID-No.com]]></target>
     <unit id="8hd1mx1" name="login.register.text">
       <segment>
         <source>login.register.text</source>
-        <target>Sie sind noch nicht registriert? Bitte registrieren Sie sich [hier](%register_url%).</target>
+        <target>Sie sind noch nicht registriert? Bitte registrieren Sie sich hier:</target>
       </segment>
     </unit>
     <unit id="zUForcg" name="ID-Number already registered!">
@@ -3731,7 +3731,7 @@ Ihr Team von ID-No.com]]></target>
     <unit id="qjMlKMV" name="login.resetPassword.link">
       <segment>
         <source>login.resetPassword.link</source>
-        <target>[Passwort vergessen?](%resetPassword_url%)</target>
+        <target>Passwort vergessen?</target>
       </segment>
     </unit>
     <unit id="eu8YCU8" name="resetPassword.title">
@@ -3965,6 +3965,30 @@ Zur **[Anmeldung](%login_link%)**
       <segment>
         <source>person.sprache</source>
         <target>Sprache</target>
+      </segment>
+    </unit>
+    <unit id="kTHLCAW" name="Einloggen">
+      <segment>
+        <source>Einloggen</source>
+        <target>Einloggen</target>
+      </segment>
+    </unit>
+    <unit id="RzVXE99" name="login.register.linktext">
+      <segment>
+        <source>login.register.linktext</source>
+        <target>Registrieren</target>
+      </segment>
+    </unit>
+    <unit id="L65vsws" name="E-Mail">
+      <segment>
+        <source>E-Mail</source>
+        <target>E-Mail</target>
+      </segment>
+    </unit>
+    <unit id="o2wQFXD" name="Passwort">
+      <segment>
+        <source>Passwort</source>
+        <target>Passwort</target>
       </segment>
     </unit>
   </file>
