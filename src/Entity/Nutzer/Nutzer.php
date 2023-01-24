@@ -112,6 +112,16 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     private $plainPasswort;
 
     /**
+     * @var string
+     */
+    private $plainPassword;
+
+    /**
+     * @var string
+     */
+    private $repeatPassword;
+
+    /**
      * @ORM\Column(type="datetime")
      * @Assert\Type("\DateTimeInterface")
      * @Gedmo\Timestampable(on="create")

@@ -3303,7 +3303,8 @@ Registration for your Emergency ID Pass is free of charge.</target>
     <unit id="8hd1mx1" name="login.register.text">
       <segment>
         <source>login.register.text</source>
-        <target>login.register.text</target>
+        <target>You are a new customer and don't have an ID-No.com account yet?  
+Register here:</target>
       </segment>
     </unit>
     <unit id="icXk1wm" name="person.email">
@@ -3489,7 +3490,7 @@ Registration for your Emergency ID Pass is free of charge.</target>
     <unit id="qjMlKMV" name="login.resetPassword.link">
       <segment>
         <source>login.resetPassword.link</source>
-        <target>login.resetPassword.link</target>
+        <target>Forgot password?</target>
       </segment>
     </unit>
     <unit id="2GAi_1u" name="mail.mailScanned.box">
@@ -3532,6 +3533,30 @@ Registration for your Emergency ID Pass is free of charge.</target>
       <segment>
         <source>person.action.edit.success</source>
         <target>The profile data was updated properly.</target>
+      </segment>
+    </unit>
+    <unit id="kTHLCAW" name="Einloggen">
+      <segment>
+        <source>Einloggen</source>
+        <target>Login</target>
+      </segment>
+    </unit>
+    <unit id="RzVXE99" name="login.register.linktext">
+      <segment>
+        <source>login.register.linktext</source>
+        <target>Register</target>
+      </segment>
+    </unit>
+    <unit id="L65vsws" name="E-Mail">
+      <segment>
+        <source>E-Mail</source>
+        <target>Email</target>
+      </segment>
+    </unit>
+    <unit id="o2wQFXD" name="Passwort">
+      <segment>
+        <source>Passwort</source>
+        <target>Password</target>
       </segment>
     </unit>
   </file>
