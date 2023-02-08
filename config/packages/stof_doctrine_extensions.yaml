@@ -5,5 +5,7 @@ stof_doctrine_extensions:
     orm:
         default:
             timestampable: true
+            loggable: true
         nutzer:
             timestampable: true
+            loggable: true
