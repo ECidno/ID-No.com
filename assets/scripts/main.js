@@ -94,7 +94,7 @@ window.operateEvents = {
 // show form field error
 window.showFieldError = (field, message) => {
   let parent = field.parentNode;
-  let errorContainer =  document.createElement('div');
+  let errorContainer = document.createElement('div');
 
   Array
     .from(parent.getElementsByClassName('invalid-feedback') || [])

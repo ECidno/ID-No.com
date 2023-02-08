@@ -236,9 +236,15 @@ class ProfileApiController extends AbstractApiController
      */
     public function changeCredentials(int $id, Request $request, UserPasswordHasherInterface $passwordEncoder): JsonResponse
     {
-        $nutzer = $this->emNutzer
-            ->getRepository(Nutzer::class)
-            ->findOneById($id);
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        /**
+         * @var Nutzer
+         */
+        $nutzer = $this->getUser();
+        // $nutzer = $this->emNutzer
+        //     ->getRepository(Nutzer::class)
+        //     ->findOneById($id);
 
         // form
         $form = $this->createForm(
@@ -248,7 +254,6 @@ class ProfileApiController extends AbstractApiController
 
         // handle request
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $nutzer->setPasswort(
                 $passwordEncoder->hashpassword(
