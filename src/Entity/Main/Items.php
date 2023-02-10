@@ -21,6 +21,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Items
  * @ORM\Table(name="items")
  * @ORM\Entity(repositoryClass="App\Repository\ItemsRepository")
+ * Gedmo\Loggable
  */
 class Items extends AbstractEntity
 {
@@ -84,6 +85,7 @@ class Items extends AbstractEntity
     /**
      * @var string
      * @ORM\Column(type="text", length=65535, nullable=false)
+     * Gedmo\Versioned
      * @Groups({"read"})
      */
     private $anbringung;

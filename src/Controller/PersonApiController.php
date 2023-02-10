@@ -10,7 +10,6 @@ namespace App\Controller;
 use App\Entity\Nutzer\Person;
 use App\Entity\Nutzer\PersonImages;
 use App\Form\Type\PersonType;
-use DateTime;
 use Imagine\Gd\Imagine;
 use Imagine\Image\Box;
 use Symfony\Component\Filesystem\Filesystem;
@@ -123,7 +122,7 @@ class PersonApiController extends AbstractApiController
 
             // voter
             $this->denyAccessUnlessGranted('update', $object);
-            $em->flush($object);
+            $em->flush();
 
             $personImage = $form->get('personImage')->getData();
             $imageShow = $form->get('imageShow')->getData();
@@ -189,7 +188,7 @@ class PersonApiController extends AbstractApiController
                     ->setHeight($height)
                     ->setWidth($width)
                     ->setIp($_SERVER['REMOTE_ADDR'])
-                    ->setCreated(new DateTime());
+                    ->setCreated(new \DateTime());
 
                 $em->persist($image);
                 $em->flush($image);

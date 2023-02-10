@@ -22,6 +22,7 @@ use Rollerworks\Component\PasswordStrength\Validator\Constraints as RollerworksP
  *
  * @ORM\Entity(repositoryClass="App\Repository\NutzerRepository")
  * @UniqueEntity(fields={"email"}, message="nutzer.email.unique")
+ * Gedmo\Loggable
  */
 class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 {

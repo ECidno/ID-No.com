@@ -3,18 +3,18 @@ namespace App\Repository;
 
 /***********************************************************************
  *
- * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
+ * (c) 2020 Frank Krüger <fkrueger@mp-group.net>, mp group GmbH
  *
- **********************************************************************/
+ /*********************************************************************/
 
-use App\Entity\Nutzer\Contact;
+use App\Entity\Main\LogEntry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * Contact repository
+ * Log entry repository
  */
-class ContactRepository extends ServiceEntityRepository
+class LogEntryRepository extends ServiceEntityRepository
 {
     /**
      * constructor
@@ -23,6 +23,6 @@ class ContactRepository extends ServiceEntityRepository
      */
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Contact::class);
+        parent::__construct($registry, LogEntry::class);
     }
 }

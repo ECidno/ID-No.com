@@ -1,6 +1,11 @@
 <?php
-
 namespace App\Validator;
+
+/***********************************************************************
+ *
+ * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
+ *
+ **********************************************************************/
 
 use Symfony\Component\Validator\Constraint;
 

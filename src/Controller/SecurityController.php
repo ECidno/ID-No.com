@@ -88,6 +88,7 @@ class SecurityController extends AbstractController
          */
         $nutzer = $this->getUser();
 
+        // form
         $form = $this->formFactory->createBuilder(
             CredentialsChangeType::class,
             $nutzer,
@@ -237,6 +238,9 @@ class SecurityController extends AbstractController
                 ])
                 ->add('send', SubmitType::class, [
                     'label' => new TranslatableMessage('resetPassword.submit'),
+                    'row_attr' => [
+                        'class' => 'text-end'
+                    ],
                     'attr' => [
                         'class' => 'btn-success text-light',
                     ],

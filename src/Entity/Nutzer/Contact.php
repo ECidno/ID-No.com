@@ -9,12 +9,14 @@ namespace App\Entity\Nutzer;
 
 use App\Entity\AbstractEntity;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Contact
  *
  * @ORM\Entity(repositoryClass="App\Repository\ContactRepository")
+ * Gedmo\Loggable
  */
 class Contact extends AbstractEntity
 {
@@ -37,18 +39,21 @@ class Contact extends AbstractEntity
      * @var string
      * @ORM\Column(type="string", length=100, nullable=true)
      * @Groups({"read"})
+     * Gedmo\Versioned
      */
     private $contactname;
 
     /**
      * @var string
      * @ORM\Column(type="boolean", options={"default":"1"}))
+     * Gedmo\Versioned
      */
     private $contactnameShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100, nullable=false)
+     * Gedmo\Versioned
      * @Groups({"read"})
      */
     private $telefon = '';
@@ -56,12 +61,14 @@ class Contact extends AbstractEntity
     /**
      * @var string
      * @ORM\Column(type="boolean", options={"default":"1"}))
+     * Gedmo\Versioned
      */
     private $telefonShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100, nullable=false)
+     * Gedmo\Versioned
      * @Groups({"read"})
      */
     private $beziehung = '';
@@ -69,6 +76,7 @@ class Contact extends AbstractEntity
     /**
      * @var string
      * @ORM\Column(type="boolean", options={"default":"1"}))
+     * Gedmo\Versioned
      */
     private $beziehungShow = 1;
 
