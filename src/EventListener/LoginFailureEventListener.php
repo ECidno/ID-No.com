@@ -61,7 +61,7 @@ final class LoginFailureEventListener
         ]);
 
         // persist to database
-        $this->emDefault->persist($logEntry);
-        $this->emDefault->flush();
+#        $this->emDefault->persist($logEntry);
+#        $this->emDefault->flush();
     }
 }
