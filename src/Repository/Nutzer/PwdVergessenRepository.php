@@ -16,11 +16,23 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class PwdVergessenRepository extends ServiceEntityRepository
 {
+    /**
+     * constructor
+     *
+     * @param ManagerRegistry $registry
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, PwdVergessen::class);
     }
 
+
+    /**
+     * add
+     *
+     * @param NutzerAuth $entity
+     * @param bool $flush
+     */
     public function add(PwdVergessen $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
@@ -30,6 +42,13 @@ class PwdVergessenRepository extends ServiceEntityRepository
         }
     }
 
+
+    /**
+     * remove
+     *
+     * @param NutzerAuth $entity
+     * @param bool $flush
+     */
     public function remove(PwdVergessen $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
