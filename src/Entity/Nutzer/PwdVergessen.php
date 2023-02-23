@@ -1,6 +1,11 @@
 <?php
-
 namespace App\Entity\Nutzer;
+
+/***********************************************************************
+ *
+ * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
+ *
+ **********************************************************************/
 
 use App\Repository\Nutzer\PwdVergessenRepository;
 use DateTime;
@@ -33,8 +38,8 @@ class PwdVergessen
      */
     private $code;
 
-     /**
-      * @var DateTime
+    /**
+     * @var \DateTime
      * @ORM\Column(type="datetime")
      * @Assert\Type("\DateTimeInterface")
      * @Gedmo\Timestampable(on="create")
