@@ -7,7 +7,7 @@ namespace App\Controller;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Person;
+use App\Entity\Person;
 use App\Form\Type\PersonType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -70,7 +70,7 @@ class PersonController extends AbstractController
     public function edit(int $id, Request $request): Response
     {
         // person
-        $person = $this->emNutzer
+        $person = $this->emDefault
             ->getRepository(Person::class)
             ->find($id);
 
@@ -118,7 +118,7 @@ class PersonController extends AbstractController
     public function delete(int $id, Request $request): Response
     {
         // person
-        $person = $this->emNutzer
+        $person = $this->emDefault
             ->getRepository(Person::class)
             ->find($id);
 

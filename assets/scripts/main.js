@@ -1,34 +1,29 @@
 'use strict';
 
-import { Modal, Toast } from 'bootstrap';
 import jQuery from 'jquery';
 import bootstrapTable from 'bootstrap-table';
 import bootstrapTableLocaleAll from 'bootstrap-table/dist/bootstrap-table-locale-all';
 import 'bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js';
 
-import { control, latLng, map, tileLayer, Browser } from 'leaflet';
+import { cbAction } from './modules/cbAction';
+import { cbAjax } from './modules/cbAjax';
+import { cbForm } from './modules/cbForm';
+import { cbMap, cbMapLocationError } from './modules/cbMap';
+import { cbMessage } from './modules/cbMessage';
+import { cbModal, cbModalButton } from './modules/cbModal';
+import { cbOffcanvas, cbOffcanvasButton } from './modules/cbOffcanvas';
 
 // const's
 const btnToTop = document.getElementById('toTop') || null;
 const btnShowMap = document.getElementById('mapShow') || null;
-
-const toastContainer = document.getElementById('toastContainer') || null;
-const modalContainer = document.getElementById('modalContainer') || null;
 const mapContainer = document.getElementById('mapContainer') || null;
-const mapErrorContainer = document.getElementById('mapErrorContainer') || null;
 
 const ajaxForms = document.getElementsByClassName('ajax-form') || [];
 const ajaxModal = document.getElementsByClassName('ajax-modal') || [];
 const ajaxAction = document.getElementsByClassName('ajax-action') || [];
-const ajaxValidate = document.getElementsByClassName('ajax-validate') || [];
 const fldIdNo = document.getElementsByClassName('idNo') || [];
 const fldPassEnable = document.getElementById('fldPassEnable') || null;
-
-var showModal;
-var positionMap;
-var positionLatLng;
-var positionMarker;
-var positionPopup;
+const mapErrorContainer = document.getElementById('mapErrorContainer') || null;
 
 
 /*
@@ -43,68 +38,65 @@ window.loadingTemplate = (loadingMessage) => {
 // operate formatter
 window.operateFormatter = (value, row, index) => {
   let operations = [];
+  let btnCount = Object.keys(row.operations).length;
+
   Object
     .keys(row.operations)
     .forEach((key, idx) => {
-      let val = row.operations[key];
-      operations.push(
-        [
-          '<button',
-          'type="button"',
-          'class="btn btn-sm btn-outline-dark' + (idx == 0 ? ' me-2 ' : ' ') + key + '"',
-          'data-url="' + val.uri + '">',
-          '<i class="' + val.icon + '"></i>',
-          '</button>'
-        ].join(' ')
-      );
+      let operation = row.operations[key];
+      let target = operation.target || '';
+      let wrapper = operation.wrapper || 'modal';
+
+      // dbl click
+      if(key === 'dbl-click-row') {
+
+      } else {
+
+        // switch target
+        switch (wrapper) {
+          case 'page':
+            if(typeof operation.hide === 'undefined' || operation.hide === false) {
+              operations.push(
+                [
+                  '<a',
+                  'class="btn btn-sm btn-outline-dark' + (idx < (btnCount - 1)? ' me-2 ' : ' ') + key + 'Page"',
+                  (operation.title ? 'title="' + operation.title + '"' : ''),
+                  (target ? 'target="' + operation.target + '"' : ''),
+                  (operation.disabled === true ? 'disabled="disabled"' : ''),
+                  'href="' + operation.uri + '">',
+                  '<i class="' + operation.icon + '"></i>',
+                  '</a>'
+                ].join(' ')
+              );
+            }
+            break;
+
+          // modal
+          case 'modal':
+          case 'offcanvas':
+              if(typeof operation.hide === 'undefined' || operation.hide === false) {
+              operations.push(
+                [
+                  '<button',
+                  'type="button"',
+                  'class="btn btn-sm btn-outline-dark' + (idx < (btnCount - 1)? ' me-2 ' : ' ') + key + 'Operation"',
+                  (operation.title ? 'title="' + operation.title + '"' : ''),
+                  (operation.disabled === true ? 'disabled="disabled"' : ''),
+                  'data-operation="' + key + '"',
+                  'data-wrapper="' + wrapper + '"',
+                  'data-url="' + operation.uri + '">',
+                  '<i class="' + operation.icon + '"></i>',
+                  '</button>'
+                ].join(' ')
+              );
+            }
+            break;
+        }
+      }
   });
 
   // return
   return operations.join('');
-}
-
-// item idNo formatter
-window.itemidNoFormatter = (value, row, index) => {
-  return '<a href="/' + value + '" target="_blank">' + value + '</a>';
-}
-
-// item status formatter
-window.itemStatusFormatter = (value, row, index) => {
-  var table = jQuery('#tableItems');
-  return row.status === true
-    ? '<span><i class="bi bi-check-circle text-success me-1"></i><span class="d-none d-md-inline">' + table.data('llActive') + '</span></span>'
-    : '<span><i class="bi bi-exclamation-triangle text-warning me-1"></i><span class="d-none d-md-inline">' + table.data('llInactive') + '</span></span>';
-}
-
-// operate events
-window.operateEvents = {
-
-  // edit
-  'click .edit': (e, value, row, index) => {
-    showModal(row.operations.edit.uri);
-  },
-
-  // delete
-  'click .delete': (e, value, row, index) => {
-    showModal(row.operations.delete.uri);
-  }
-}
-
-
-// show form field error
-window.showFieldError = (field, message) => {
-  let parent = field.parentNode;
-  let errorContainer = document.createElement('div');
-
-  Array
-    .from(parent.getElementsByClassName('invalid-feedback') || [])
-    .forEach((el) => {
-      el.remove();
-    });
-
-  errorContainer.className = 'invalid-feedback';
-  errorContainer.innerText = message;
-  parent.append(errorContainer);
 }
 
 
@@ -116,512 +108,132 @@ document.addEventListener(
     /*
      * bootstrap tables
      */
-    jQuery('table[data-toggle="table"]').on(
-      'post-header.bs.table',
-      function() {
-        let table = jQuery(this);
-        let toolbar = jQuery(table.data('toolbar'));
+    jQuery.extend(
+      jQuery.fn.bootstrapTable.defaults,
+      {
 
-        if (toolbar.hasClass('d-none')) {
-          toolbar
-            .hide()
-            .removeClass('d-none')
-            .fadeIn(400);
-        }
-        if (table.hasClass('d-none')) {
-          table
-            .hide()
-            .removeClass('d-none')
-            .fadeIn(500);
+        // response handler
+        responseHandler: function (res) {
+          return res;
         }
       }
     );
 
+    // post header
+    jQuery('table[data-toggle="table"]')
+      .on(
+        'post-header.bs.table',
+        function() {
+          let table = jQuery(this);
+          let toolbar = jQuery(table.data('toolbar'));
 
-    /**
-     * ajax
-     *
-     * @param string uri
-     * @param object options
-     *
-     * @return Promise
-     */
-    var ajax = (uri, options) => {
-
-      // return promise
-      return fetch(
-        uri,
-        options
-      )
-      .then(res => {
-        if(res.ok) {
-          return res.json();
+          if (toolbar.hasClass('d-none')) {
+            toolbar
+              .hide()
+              .removeClass('d-none')
+              .fadeIn(400);
+          }
+          if (table.hasClass('d-none')) {
+            table
+              .hide()
+              .removeClass('d-none')
+              .fadeIn(500);
+          }
         }
+      )
 
-        // err
-        return res
-          .json()
-          .then(err => {
-            throw new Error(err.message ?? err.error)
-          });
+      // post body
+      .on(
+        'post-body.bs.table',
+        function() {
+
+          // add listener for modal buttons
+          Array
+            .from(ajaxModal)
+            .forEach((el) => {
+              if((el.dataset.renderMode || 'modal') === 'modal') {
+                cbModalButton(el);
+              } else {
+                cbOffcanvasButton(el);
+              }
+            });
+        }
+      )
+      // dbl click row
+      .on(
+        'dbl-click-row.bs.table',
+        function(e, row, $el, field) {
+          if(row.operations['dbl-click-row']) {
+            const btnSelector = 'button.' + row.operations['dbl-click-row'] + 'Operation';
+            const aSelector = 'a.' + row.operations['dbl-click-row'] + 'Page';
+            const btn = jQuery($el).find(btnSelector);
+            const a = jQuery($el).find(aSelector);
+
+            if(btn && btn.length > 0) {
+              btn.trigger('click');
+            }
+            if(a && a.length > 0) {
+              a.get(0).click();
+            }
+          }
+        }
+      );
+
+
+    // add listener for modal buttons
+    Array
+      .from(ajaxModal)
+      .forEach((el) => {
+        if((el.dataset.renderMode || 'modal') === 'modal') {
+          cbModalButton(el);
+        } else {
+          cbOffcanvasButton(el);
+        }
       });
-    }
+
+    // add listener for action buttons
+    Array
+      .from(ajaxAction)
+      .forEach((el) => {
+        cbAction(el);
+      });
+
+    // add listener for forms
+    Array
+      .from(ajaxForms)
+      .forEach((el) => {
+        let form = cbForm(el);
+      });
 
 
-    /**
-     * showMessage
-     *
-     * @param int severity
-     * @param string header
-     * @param string body
-     * @param boolean autohide
+    /*
+     * window event listener
      */
-     var showMessage = (severity, header, body, autohide) => {
-      let el = toastContainer.cloneNode(true);
-      let headerEl = el.querySelector('div.toast-header');
-      let headerText = headerEl.querySelector('span');
-      let bodyEl = el.querySelector('div.toast-body');
-      let type = severity === 0
-        ? 'success'
-        : (
-          severity === 1
-            ? 'warning'
-            : 'danger'
-        );
+    window
+      .addEventListener(
+        'cb-modal.open',
+        (e) => {
 
-      // change content and styles
-      headerEl.classList.add('bg-' + type);
-      headerText.textContent = header || el.getAttribute('data-' + type + '-header');
-      bodyEl.innerHTML = body;
-
-      // add
-      toastContainer.after(el);
-
-      // show
-      new Toast(
-        el,
-        {
-          autohide: (typeof(autohide) === 'undefined'
-            ? true
-            : autohide)
-        }
-      )
-      .show();
-    }
-
-
-    /**
-     * showModal
-     *
-     * @param string uri
-     * @param string body
-     * @param boolean autohide
-     */
-    showModal = (uri, options) => {
-      options = options ?? {
-        method: 'GET'
-      };
-
-      // ajax
-      ajax(uri, options)
-        .then(res => {
-          modalContainer.innerHTML = res.html;
-          new Modal(
-            modalContainer,
-            {
-              backdrop:'static'
-            }
-          )
-          .show();
-
-          // init ajax
-          initAjax();
-        })
-        .catch((err) => {
-          showMessage(
-            err.severity || 9,
-            null,
-            err.message
-          );
-        });
-    }
-
-    // show map
-    function showMap(lat, lon) {
-      let latitude = lat || mapContainer.dataset.lat;
-      let longitude = lon || mapContainer.dataset.lon;
-      let geocodeUrl = [
-        mapContainer.dataset.geocodeUrl,
-        'lat=' + latitude,
-        'lon=' + longitude,
-        'apiKey=' + mapContainer.dataset.geocodeKey
-      ].join('&');
-
-      // move to position
-      if(positionMap) {
-        positionLatLng = L.latLng(
-          latitude,
-          longitude
-        );
-
-        // position marker
-        positionMarker.setLatLng(positionLatLng);
-
-        // position map
-        positionMap.flyTo(
-          positionLatLng,
-          mapContainer.dataset.zoom
-        );
-
-      // create map
-      } else {
-        positionLatLng = L.latLng(
-          latitude,
-          longitude
-        );
-
-        // position map
-        positionMap = L
-          .map(mapContainer.id)
-          .setView(
-            [
-              latitude,
-              longitude
-            ],
-            mapContainer.dataset.zoom
-          );
-
-        // Retina displays require different mat tiles quality
-        const isRetina = L.Browser.retina;
-        const baseUrl = mapContainer.dataset.baseUrl;
-        const retinaUrl = mapContainer.dataset.retinaUrl;
-
-        // Add map tiles layer. Set 20 as the maximal zoom and provide map data attribution.
-        L
-          .tileLayer(
-            isRetina
-              ? retinaUrl
-              : baseUrl,
-            {
-              attribution: 'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap</a>',
-              apiKey: mapContainer.dataset.apiKey,
-              maxZoom: 20,
-              id: mapContainer.dataset.type,
-            }
-          )
-          .addTo(positionMap);
-
-        // position marker
-        positionMarker = L.marker(
-          positionLatLng,
-          {
-            icon: L.divIcon({
-              html: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#91B54D" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>',
-              iconSize: [1, 1],
-              iconAnchor: [16, 0],
-            })
-          }
-        )
-        .addTo(positionMap);
-
-        // geocode
-        let geocodeRes = fetch(
-          geocodeUrl,
-          {
-            method: 'GET',
-          }
-        )
-        .then(response => response.json())
-        .then(result => {
-
-          if(result.features[0].properties.formatted || false) {
-            positionPopup = L
-              .popup()
-              .setContent('<p>' + result.features[0].properties.formatted + '</p>')
-
-            positionMarker
-              .bindPopup(positionPopup)
-              .openPopup();
-          }
-        })
-        .catch(error => console.log('error', error));
-      }
-    }
-
-    // handle map location error
-    function handleLocationError(error) {
-      let errorStr;
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          errorStr = mapContainer.dataset.errorDenied;
-          break;
-        case error.POSITION_UNAVAILABLE:
-          errorStr = mapContainer.dataset.errorUnavailable;
-          break;
-        case error.TIMEOUT:
-          errorStr = mapContainer.dataset.errorTimeout;
-          break;
-        case error.UNKNOWN_ERROR:
-          errorStr = mapContainer.dataset.errorUnknown;
-          break;
-        default:
-          errorStr = mapContainer.dataset.errorUnknown;
-      }
-      console.error('Error occurred: ' + errorStr);
-
-      // show error
-      mapErrorContainer.innerHTML = errorStr;
-      mapErrorContainer.classList.remove('d-none');
-    }
-
-    var url = window.location.href;
-    if (url.includes("notfallpass")) {
-      new Modal("#annotation_modal", {
-        backdrop: 'static',
-        keyboard: false
-      }).show();
-    }
-
-    window.showNextModal = () => {
-      jQuery(".modal-backdrop").css("display", "none");
-      jQuery("#annotation_modal").addClass("modal is-hidden is-visuallyHidden").removeClass("fade in").css("display", "none");
-      new Modal("#further_annotation_modal", {
-        backdrop: 'static',
-        keyboard: false
-      }).show();
-    }
-
-    window.route2StartPage = (url) => {
-      window.location = url;
-    }
-
-    // init ajax event listener
-    var initAjax = () => {
-
-      // add listener for forms
-      Array
-        .from(ajaxForms)
-        .forEach((el) => {
-          let initialized = el.dataset.initialized || false
-
-          // initalized?
-          if(initialized) {
-            return;
-          }
-
-          // add listener
-          el.addEventListener(
-            'submit',
-            e => {
-              let url = el.getAttribute('action');
-              let options = {
-                method: el.getAttribute('method') || 'POST',
-                body: new FormData(el)
-              };
-              let table = el.dataset.table || null;
-
-              // ajax
-              ajax(url, options)
-                .then(res => {
-
-                  // close modal if open/advised
-                  let modalInstance = Modal.getInstance(modalContainer);
-                  if(modalInstance) {
-                    modalInstance.hide();
-                  }
-
-                  // message?
-                  if(res.message ?? false) {
-                    showMessage(
-                      res.severity || 0,
-                      null,
-                      res.message
-                    );
-                  }
-
-                  // table refresh?
-                  if(table) {
-                    jQuery('#' + table)
-                      .bootstrapTable(
-                        'refresh',
-                        {
-                          silent: true
-                        }
-                      );
-                    }
-                })
-
-                // catch
-                .catch(err => {
-                  console.warn(err);
-                });
-
-              e.preventDefault();
-
-              // avoid submit
-              return false;
-            }, {
-              once: true
-            }
-          );
-
-          // set init
-          el.dataset.initialized = true;
-        });
-
-
-      // add listener for modal buttons
-      Array
-        .from(ajaxModal)
-        .forEach((el) => {
-          let initialized = el.dataset.initialized || false
-
-          // initalized?
-          if(initialized) {
-            return;
-          }
-
-          // listener
-          el.addEventListener(
-            'click',
-            e => {
-              showModal(el.dataset.url);
-            }
-          );
-
-          // set init
-          el.dataset.initialized = true;
-        });
-
-
-        // add listener for action buttons
-        Array
-          .from(ajaxAction)
-          .forEach((el) => {
-            let initialized = el.dataset.initialized || false
-            let url = el.dataset.url;
-            let table = el.dataset.table ?? false;
-            let options = {
-              method: el.dataset.method || 'GET'
-            };
-
-            // initalized?
-            if(initialized) {
-              return;
-            }
-
-            // listener
-            el.addEventListener(
-              'click',
-              e => {
-                ajax(url, options)
-                  .then(res => {
-
-                    // message?
-                    if(res.message ?? false) {
-                      showMessage(
-                        res.severity || 0,
-                        null,
-                        res.message
-                      );
-                    }
-
-                    // table refresh?
-                    if(table) {
-                      jQuery('#' + table)
-                        .bootstrapTable(
-                          'refresh',
-                          {
-                            silent: true
-                          }
-                        );
-                      }
-                  })
-
-                  // catch
-                  .catch(err => {
-                    console.warn(err);
-                  });
+          // add listener for modal buttons
+          Array
+            .from(ajaxModal)
+            .forEach((el) => {
+              if((el.dataset.renderMode || 'modal') === 'modal') {
+                cbModalButton(el);
+              } else {
+                cbOffcanvasButton(el);
               }
-            );
+            });
 
-            // set init
-            el.dataset.initialized = true;
-          });
-
-
-        // add listener for ajax check fields
-        Array
-          .from(ajaxValidate)
-          .forEach((el) => {
-            let initialized = el.dataset.initialized || false
-            let url = el.dataset.url;
-            let options = {
-              method: el.dataset.method || 'GET'
-            };
-
-            // initalized?
-            if(initialized) {
-              return;
-            }
-
-            // listener
-            el.addEventListener(
-              'blur',
-              e => {
-                let field = e.target;
-                let form = field.closest('form');
-                let val = field.value.trim();
-                let finalUrl = url + encodeURIComponent(val);
-
-                ajax(finalUrl, options)
-                  .then(res => {
-
-                    // valid
-                    if(typeof res.valid !== 'undefined') {
-                      if(res.valid === true) {
-                        field.classList.remove('is-invalid');
-                        field.classList.add('is-valid');
-
-                      // invalid
-                      } else {
-                        field.classList.remove('is-valid');
-                        field.classList.add('is-invalid');
-                      }
-                    }
-
-                    // message?
-                    if(res.message ?? false) {
-                      showMessage(
-                        res.severity || 0,
-                        null,
-                        res.message
-                      );
-                    }
-                  })
-
-                  // catch
-                  .catch(err => {
-                    field.classList.remove('is-valid');
-                    field.classList.add('is-invalid');
-
-                    // error?
-                    if(err.message ?? false) {
-                      showFieldError(field, err.message);
-                    }
-                  });
-              }
-            );
-
-            // set init
-            el.dataset.initialized = true;
-          });
-
-    }
-
-
-    // init ajax event listener
-    initAjax();
+          // add listener for forms
+          Array
+            .from(ajaxForms)
+            .forEach((el) => {
+              let form = cbForm(el);
+            });
+        },
+        false
+      );
 
 
     /*
@@ -659,10 +271,14 @@ document.addEventListener(
       );
     }
 
+
     // button | show map
     if(btnShowMap && mapContainer) {
       let lat = mapContainer.dataset.lat;
       let lon = mapContainer.dataset.lon;
+
+      mapContainer.style.display = 'block';
+      cbMap(lat, lon);
 
       // event | click
       btnShowMap.addEventListener(
@@ -681,9 +297,9 @@ document.addEventListener(
                 lon = pos.coords.longitude;
 
                 mapContainer.style.display = 'block';
-                showMap(lat, lon);
+                cbMap(lat, lon);
               },
-              handleLocationError,
+              cbMapLocationError,
               {
                 enableHighAccuracy: true,
                 timeout: 5000,
@@ -697,7 +313,7 @@ document.addEventListener(
           }
         }
       );
-    }
+    };
 
     // fldIdNo | keyup | input pattern on field idno
     Array
@@ -738,7 +354,7 @@ document.addEventListener(
           el.disabled = true;
 
           // ajax
-          ajax(url, options)
+          cbAjax(url, options)
           .then(
             res => {
 
@@ -751,7 +367,7 @@ document.addEventListener(
               el.disabled = false;
 
               // show message
-              showMessage(
+              cbMessage(
                 res.severity || 0,
                 null,
                 res.message

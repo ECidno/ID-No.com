@@ -9,7 +9,7 @@ namespace App\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use App\Entity\Nutzer\Person;
+use App\Entity\Person;
 
 /**
  * Person repository

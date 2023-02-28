@@ -65,11 +65,6 @@ class AbstractController extends SymfonyAbstractController
     protected $emDefault;
 
     /**
-     * @var EntityManagerInterface emNutzer
-     */
-    protected $emNutzer;
-
-    /**
      * @var FormFactoryInterface formFactory
      */
     protected $formFactory;
@@ -151,7 +146,6 @@ class AbstractController extends SymfonyAbstractController
         $this->translator = $translator;
         $this->logger = $logger;
         $this->emDefault = $registry->getManager('default');
-        $this->emNutzer = $registry->getManager('nutzer');
         $this->formFactory = $formFactory;
         $this->mailService = $mailService;
 

@@ -8,7 +8,7 @@ namespace App\EventListener;
  ***********************************************************************/
 
 use App\Controller\SecurityController;
-use App\Entity\Main\LogEntry;
+use App\Entity\LogEntry;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
@@ -61,7 +61,7 @@ final class LoginFailureEventListener
         ]);
 
         // persist to database
-#        $this->emDefault->persist($logEntry);
-#        $this->emDefault->flush();
+        $this->emDefault->persist($logEntry);
+        $this->emDefault->flush();
     }
 }

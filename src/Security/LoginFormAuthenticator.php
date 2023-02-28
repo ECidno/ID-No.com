@@ -7,7 +7,7 @@ namespace App\Security;
  *
  /*********************************************************************/
 
-use App\Entity\Nutzer\Nutzer;
+use App\Entity\Nutzer;
 use App\Repository\NutzerRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
@@ -94,7 +94,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator implements A
         $username = $credentials['username'];
         $password = $credentials['password'];
 
-        $em = $this->registry->getManager('nutzer');
+        $em = $this->registry->getManager('default');
 
         // credentials?
         if (

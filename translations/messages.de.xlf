@@ -3413,7 +3413,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="k7IqGnH" name="meinidno.profile.description">
       <segment>
         <source>meinidno.profile.description</source>
-        <target>Hier können Sie Ihare Notfall-Daten verwalten.</target>
+        <target>Hier können Sie Ihre Notfall-Daten verwalten.</target>
       </segment>
     </unit>
     <unit id="De.BaGl" name="meinidno.profile.check">

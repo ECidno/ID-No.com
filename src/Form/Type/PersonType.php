@@ -7,7 +7,7 @@ namespace App\Form\Type;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Person;
+use App\Entity\Person;
 use App\Form\Type\EntityHiddenType;
 use Locale;
 use Symfony\Component\Form\AbstractType;

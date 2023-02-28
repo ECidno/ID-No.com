@@ -7,8 +7,8 @@ namespace App\Controller;
  *
  **********************************************************************/
 
-use App\Entity\Main\Items;
-use App\Entity\Nutzer\Nutzer;
+use App\Entity\Items;
+use App\Entity\Nutzer;
 use App\Form\Type\ItemsAddType;
 use App\Form\Type\ItemsEditType;
 use App\Service\ItemsService;
