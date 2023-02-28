@@ -7,8 +7,8 @@ namespace App\Controller;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Contact;
-use App\Entity\Nutzer\Person;
+use App\Entity\Contact;
+use App\Entity\Person;
 use App\Form\Type\ContactType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,7 +32,7 @@ class ContactsController extends AbstractController
      */
     public function new(int $personId, Request $request): Response
     {
-        $person = $this->emNutzer
+        $person = $this->emDefault
             ->getRepository(Person::class)
             ->findOneBy([
                 'id' => $personId,
@@ -81,7 +81,7 @@ class ContactsController extends AbstractController
     public function edit(int $id, Request $request): Response
     {
         // contact
-        $contact = $this->emNutzer
+        $contact = $this->emDefault
             ->getRepository(Contact::class)
             ->find($id);
 
@@ -129,7 +129,7 @@ class ContactsController extends AbstractController
     public function delete(int $id, Request $request): Response
     {
         // contact
-        $contact = $this->emNutzer
+        $contact = $this->emDefault
             ->getRepository(Contact::class)
             ->find($id);
 

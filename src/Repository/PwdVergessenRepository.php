@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository\Nutzer;
+namespace App\Repository;
 
-use App\Entity\Nutzer\PwdVergessen;
+use App\Entity\PwdVergessen;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

@@ -53,11 +53,11 @@ class EntityHiddenType extends HiddenType implements DataTransformerInterface
     {
         // Set class, eg: App\Entity\RuleSet
         $this->entityClassName = sprintf(
-            'App\Entity\Nutzer\%s',
+            'App\Entity\%s',
             ucfirst($builder->getName())
         );
 
-        $this->em = $this->registry->getManager('nutzer');
+        $this->em = $this->registry->getManager('default');
         $builder->addModelTransformer($this);
     }
 

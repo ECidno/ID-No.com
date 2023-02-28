@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity\Main;
+namespace App\Entity;
 
 /***********************************************************************
  *
@@ -7,9 +7,6 @@ namespace App\Entity\Main;
  *
  **********************************************************************/
 
-use App\Entity\AbstractEntity;
-use App\Entity\Nutzer\Nutzer;
-use App\Entity\Nutzer\Person;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Serializer\Annotation\Context;
@@ -21,7 +18,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Items
  * @ORM\Table(name="items")
  * @ORM\Entity(repositoryClass="App\Repository\ItemsRepository")
- * Gedmo\Loggable
+ * @Gedmo\Loggable
  */
 class Items extends AbstractEntity
 {
@@ -61,8 +58,8 @@ class Items extends AbstractEntity
     /**
      * @var Nutzer
      * @ORM\ManyToOne(targetEntity="Nutzer")
-     private $nutzer = null;
      */
+     private $nutzer = null;
 
     /**
      * @var int
@@ -73,8 +70,8 @@ class Items extends AbstractEntity
     /**
      * @var Person
      * @ORM\ManyToOne(targetEntity="Person")
-     private $person = null;
      */
+     private $person = null;
 
     /**
      * @var int
@@ -85,7 +82,7 @@ class Items extends AbstractEntity
     /**
      * @var string
      * @ORM\Column(type="text", length=65535, nullable=false)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      * @Groups({"read"})
      */
     private $anbringung;
@@ -172,21 +169,21 @@ class Items extends AbstractEntity
     /**
      * @param Nutzer $nutzer
      * @return Items
+     */
      public function setNutzer(Nutzer $nutzer): self
      {
          $this->nutzer = $nutzer;
          return $this;
-        }
-     /
+    }
+
 
     /**
      * @return Nutzer|null
-
+     */
     public function getNutzer(): ?Nutzer
     {
         return $this->nutzer;
     }
-    */
 
 
     /**
@@ -211,22 +208,21 @@ class Items extends AbstractEntity
     /**
      * @param Person $person
      * @return Items
-
+     */
     public function setPerson(Person $person): self
     {
         $this->person = $person;
         return $this;
     }
-     */
+
 
     /**
      * @return Person|null
-
+     */
     public function getPerson(): ?Person
     {
         return $this->person;
     }
-     */
 
 
     /**

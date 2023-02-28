@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity\Nutzer;
+namespace App\Entity;
 
 /***********************************************************************
  *

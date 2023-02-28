@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity\Nutzer;
+namespace App\Entity;
 
 /***********************************************************************
  *
@@ -7,8 +7,7 @@ namespace App\Entity\Nutzer;
  *
  **********************************************************************/
 
-use App\Repository\Nutzer\PwdVergessenRepository;
-use DateTime;
+use App\Repository\PwdVergessenRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;

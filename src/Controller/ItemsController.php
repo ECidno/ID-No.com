@@ -7,10 +7,10 @@ namespace App\Controller;
  *
  **********************************************************************/
 
-use App\Entity\Main\Items;
-use App\Entity\Nutzer\Nutzer;
-use App\Entity\Nutzer\NutzerAuth;
-use App\Entity\Nutzer\Person;
+use App\Entity\Items;
+use App\Entity\Nutzer;
+use App\Entity\NutzerAuth;
+use App\Entity\Person;
 use App\Form\Type\ItemsAddType;
 use App\Form\Type\ItemsEditType;
 use App\Form\Type\RegistrationType;
@@ -51,6 +51,10 @@ class ItemsController extends AbstractController
          * @var Nutzer
          */
         $user = $this->getUser();
+
+        /**
+         * @var Items
+         */
         $item = $itemsService->check(
             $idno,
             'itemError',
@@ -77,12 +81,15 @@ class ItemsController extends AbstractController
             $personId = $item->getPersonId();
 
             // user
-            $nutzer = $this->emNutzer
-                ->getRepository(Nutzer::class)
-                ->findOneById($nutzerId);
-            $person = $this->emNutzer
-                ->getRepository(Person::class)
-                ->findOneById($personId);
+            // $nutzer = $this->emDefault
+            //     ->getRepository(Nutzer::class)
+            //     ->findOneById($nutzerId);
+            // $person = $this->emDefault
+            //     ->getRepository(Person::class)
+            //     ->findOneById($personId);
+            $nutzer = $item->getNutzer();
+            $person = $item->getPerson();
+
 
             // user pass active (sichtbar)
             if($nutzer->getSichtbar() === false) {
@@ -225,7 +232,7 @@ class ItemsController extends AbstractController
             do {
                 $auth = ByteString::fromRandom(40)->toString();
             } while(
-                $this->emNutzer
+                $this->emDefault
                     ->getRepository(NutzerAuth::class)
                     ->findOneByAuth($auth) !== null
             );
@@ -238,9 +245,9 @@ class ItemsController extends AbstractController
                 ->setNutzer($nutzer);
 
             // persist
-            $this->emNutzer->persist($nutzer);
-            $this->emNutzer->persist($nutzerAuth);
-            $this->emNutzer->flush();
+            $this->emDefault->persist($nutzer);
+            $this->emDefault->persist($nutzerAuth);
+            $this->emDefault->flush();
 
             // update item
             $item
@@ -283,7 +290,7 @@ class ItemsController extends AbstractController
          * @var Nutzer
          */
         $user = $this->getUser();
-        $person = $this->emNutzer
+        $person = $this->emDefault
             ->getRepository(Person::class)
             ->findOneBy([
                 'id' => $personId,

@@ -7,7 +7,7 @@ namespace App\Service;
  *
  ***********************************************************************/
 
-use App\Entity\Main\Items;
+use App\Entity\Items;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;

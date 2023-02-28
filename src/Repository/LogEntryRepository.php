@@ -7,7 +7,7 @@ namespace App\Repository;
  *
  /*********************************************************************/
 
-use App\Entity\Main\LogEntry;
+use App\Entity\LogEntry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

@@ -7,8 +7,8 @@ namespace App\Controller;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Person;
-use App\Entity\Nutzer\PersonImages;
+use App\Entity\Person;
+use App\Entity\PersonImages;
 use App\Form\Type\PersonType;
 use Imagine\Gd\Imagine;
 use Imagine\Image\Box;
@@ -104,9 +104,7 @@ class PersonApiController extends AbstractApiController
     public function update(int $id, Request $request): JsonResponse
     {
         $formType = static::$entityFormEditType;
-        $em = static::$entityClassName === Items::class
-            ? $this->emDefault
-            : $this->emNutzer;
+        $em = $this->emDefault;
 
         // get object
         $object = $em
@@ -242,9 +240,7 @@ class PersonApiController extends AbstractApiController
      */
     public function delete(int $id, Request $request): JsonResponse
     {
-        $em = static::$entityClassName === Items::class
-            ? $this->emDefault
-            : $this->emNutzer;
+        $em = $this->emDefault;
         $object = $em
             ->getRepository(static::$entityClassName)
             ->find($id);

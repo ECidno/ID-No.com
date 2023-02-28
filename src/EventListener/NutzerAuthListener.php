@@ -7,8 +7,8 @@ namespace App\EventListener;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Nutzer;
-use App\Entity\Nutzer\NutzerAuth;
+use App\Entity\Nutzer;
+use App\Entity\NutzerAuth;
 use App\Service\MailService;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\Persistence\ManagerRegistry;
@@ -64,9 +64,9 @@ class NutzerAuthListener
      */
     public function preUpdate(NutzerAuth $nutzerAuth, PreUpdateEventArgs $event): void
     {
-        
+
         if ($event->hasChangedField('auth')) {
-            
+
             // get nutzer
             $nutzer = $nutzerAuth->getNutzer();
 

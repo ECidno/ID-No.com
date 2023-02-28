@@ -152,18 +152,18 @@
             <tr>
               <th
                 data-field="idNo"
-                data-formatter="itemidNoFormatter">{{ 'items.table.idNo.lbl'|trans }}</th>
+                data-formatter="window.formatter.item.idno">{{ 'items.table.idNo.lbl'|trans }}</th>
               <th data-field="anbringung">{{ 'items.table.anbringung.lbl'|trans }}</th>
               <th
                 data-field="noStatus"
-                data-formatter="itemStatusFormatter">{{ 'items.table.noStatus.lbl'|trans }}</th>
+                data-formatter="window.formatter.item.status">{{ 'items.table.noStatus.lbl'|trans }}</th>
               <th data-field="registriertDatum">{{ 'items.table.aktiviertDatum.lbl'|trans }}</th>
               <th
                 data-width="100"
                 data-align="right"
                 data-field="operate"
                 data-formatter="operateFormatter"
-                data-events="operateEvents">{{ 'Aktion'|trans }}</th>
+                data-events="window.table.events.default">{{ 'Aktion'|trans }}</th>
             </tr>
           </thead>
         </table>
@@ -208,7 +208,7 @@
                 data-align="right"
                 data-field="operate"
                 data-formatter="operateFormatter"
-                data-events="operateEvents">{{ 'Aktion'|trans }}</th>
+                data-events="window.table.events.default">{{ 'Aktion'|trans }}</th>
             </tr>
           </thead>
         </table>

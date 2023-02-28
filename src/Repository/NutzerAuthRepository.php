@@ -1,5 +1,5 @@
 <?php
-namespace App\Repository\Nutzer;
+namespace App\Repository;
 
 /***********************************************************************
  *
@@ -7,7 +7,7 @@ namespace App\Repository\Nutzer;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\NutzerAuth;
+use App\Entity\NutzerAuth;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

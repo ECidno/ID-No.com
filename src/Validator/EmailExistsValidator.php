@@ -7,8 +7,7 @@ namespace App\Validator;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Nutzer;
-use Doctrine\ORM\EntityManager;
+use App\Entity\Nutzer;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\Validator\Constraint;
@@ -24,7 +23,7 @@ class EmailExistsValidator extends ConstraintValidator
     /**
      * @var ManagerRegistry
      */
-    private $emNutzer;
+    private $emDefault;
 
     /**
      * @var TranslatorInterface
@@ -40,7 +39,7 @@ class EmailExistsValidator extends ConstraintValidator
      */
     public function __construct(ManagerRegistry $registry, TranslatorInterface $translator)
     {
-        $this->emNutzer = $registry->getManager('nutzer');
+        $this->emDefault = $registry->getManager('default');
         $this->translator = $translator;
     }
 
@@ -72,7 +71,7 @@ class EmailExistsValidator extends ConstraintValidator
         }
 
         // get user
-        $nutzer = $this->emNutzer
+        $nutzer = $this->emDefault
             ->getRepository(Nutzer::class)
             ->findOneByEmail($value);
 

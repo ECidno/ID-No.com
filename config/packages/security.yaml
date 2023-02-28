@@ -10,9 +10,8 @@ security:
         #users_in_memory: { memory: null }
         app_user_provider:
             entity:
-                class: App\Entity\Nutzer\Nutzer
+                class: App\Entity\Nutzer
                 property: email
-                manager_name: nutzer
 
     firewalls:
         dev:
