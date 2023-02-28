@@ -7,7 +7,7 @@ namespace App\Repository;
  *
  **********************************************************************/
 
-use App\Entity\Main\Items;
+use App\Entity\Items;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

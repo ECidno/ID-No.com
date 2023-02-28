@@ -7,8 +7,8 @@ namespace App\EventListener;
  *
  ***********************************************************************/
 
-use App\Entity\Main\LogEntry;
-use App\Entity\Nutzer\Nutzer;
+use App\Entity\LogEntry;
+use App\Entity\Nutzer;
 use App\Controller\SecurityController;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
@@ -61,8 +61,8 @@ final class LoginSuccessEventListener
         );
 
          // persist to database
-#        $this->emDefault->persist($user);
-#        $this->emDefault->persist($logEntry);
-#        $this->emDefault->flush();
+        $this->emDefault->persist($user);
+        $this->emDefault->persist($logEntry);
+        $this->emDefault->flush();
     }
 }

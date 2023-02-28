@@ -7,8 +7,8 @@ namespace App\Controller;
  *
  **********************************************************************/
 
-use App\Entity\Main\Items;
-use App\Entity\Nutzer\Person;
+use App\Entity\Items;
+use App\Entity\Person;
 use App\Service\ItemsService;
 use App\Service\MailService;
 use Doctrine\Persistence\ManagerRegistry;
@@ -59,11 +59,6 @@ class AbstractApiController extends SymfonyAbstractController
      * @var EntitiyManager $emDefault
      */
     protected $emDefault;
-
-    /**
-     * @var EntitiyManager $emNutzer
-     */
-    protected $emNutzer;
 
     /**
      * @var LoggerInterface $logger
@@ -129,7 +124,6 @@ class AbstractApiController extends SymfonyAbstractController
         $this->now = new \DateTime();
         $this->logger = $logger;
         $this->emDefault = $registry->getManager('default');
-        $this->emNutzer = $registry->getManager('nutzer');
         $this->itemsService = $itemsService;
         $this->mailService = $mailService;
         $this->registry = $registry;
@@ -213,9 +207,7 @@ class AbstractApiController extends SymfonyAbstractController
     {
         $object = new static::$entityClassName();
         $formType = static::$entityFormAddType;
-        $em = static::$entityClassName === Items::class
-            ? $this->emDefault
-            : $this->emNutzer;
+        $em = $this->emDefault;
 
         // form
         $form = $this->createForm($formType, $object);
@@ -275,7 +267,7 @@ class AbstractApiController extends SymfonyAbstractController
      */
     public function read(int $personId, Request $request, SerializerInterface $serializer): JsonResponse
     {
-        $person = $this->emNutzer
+        $person = $this->emDefault
             ->getRepository(Person::class)
             ->findOneBy([
                 'id' => $personId,
@@ -291,7 +283,7 @@ class AbstractApiController extends SymfonyAbstractController
                 ->getRepository(static::$entityClassName)
                 ->findByPersonId($person->getId());
         } else {
-            $objects = $this->emNutzer
+            $objects = $this->emDefault
                 ->getRepository(static::$entityClassName)
                 ->findByPerson($person);
         }
@@ -322,9 +314,7 @@ class AbstractApiController extends SymfonyAbstractController
     public function update(int $id, Request $request): JsonResponse
     {
         $formType = static::$entityFormEditType;
-        $em = static::$entityClassName === Items::class
-            ? $this->emDefault
-            : $this->emNutzer;
+        $em = $this->emDefault;
 
         // get object
         $object = $em
@@ -390,9 +380,7 @@ class AbstractApiController extends SymfonyAbstractController
      */
     public function delete(int $id, Request $request): JsonResponse
     {
-        $em = static::$entityClassName === Items::class
-            ? $this->emDefault
-            : $this->emNutzer;
+        $em = $this->emDefault;
         $object = $em
             ->getRepository(static::$entityClassName)
             ->find($id);

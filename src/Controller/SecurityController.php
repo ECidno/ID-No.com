@@ -7,11 +7,11 @@ namespace App\Controller;
  *
  **********************************************************************/
 
-use App\Entity\Main\Items;
-use App\Entity\Nutzer\Nutzer;
-use App\Entity\Nutzer\NutzerAuth;
-use App\Entity\Nutzer\Person;
-use App\Entity\Nutzer\PwdVergessen;
+use App\Entity\Items;
+use App\Entity\Nutzer;
+use App\Entity\NutzerAuth;
+use App\Entity\Person;
+use App\Entity\PwdVergessen;
 use App\Form\Type\CredentialsChangeType;
 use App\Validator\EmailExists;
 use DateTime;
@@ -123,7 +123,7 @@ class SecurityController extends AbstractController
     public function auth(string $auth_code = null, Request $request): Response
     {
         // check auth_code
-        $nutzerAuth = $this->emNutzer
+        $nutzerAuth = $this->emDefault
             ->getRepository(NutzerAuth::class)
             ->findOneByAuth($auth_code);
 
@@ -163,7 +163,7 @@ class SecurityController extends AbstractController
 
         // code given
         if (!empty($nutzerAuth)) {
-            $nutzer = $this->emNutzer
+            $nutzer = $this->emDefault
                 ->getRepository(Nutzer::class)
                 ->findOneById($nutzerAuth->getNutzer());
 
@@ -186,9 +186,9 @@ class SecurityController extends AbstractController
                     ->setStatus('ok')
                     ->setAktiviertDatum(new DateTime());
 
-                $this->emNutzer->persist($nutzerAuth);
-                $this->emNutzer->persist($nutzer);
-                $this->emNutzer->flush();
+                $this->emDefault->persist($nutzerAuth);
+                $this->emDefault->persist($nutzer);
+                $this->emDefault->flush();
 
                 $this->addFlash(
                     'loginInfo',
@@ -251,7 +251,7 @@ class SecurityController extends AbstractController
             if ($form->isSubmitted() && $form->isValid()) {
                 $email = strtolower($form->get('email')->getData());
 
-                $person = $this->emNutzer
+                $person = $this->emDefault
                     ->getRepository(Person::class)
                     ->findOneByEmail($email);
 
@@ -259,7 +259,7 @@ class SecurityController extends AbstractController
                 do {
                     $code = ByteString::fromRandom(15)->toString();
                 } while(
-                    $this->emNutzer
+                    $this->emDefault
                         ->getRepository(PwdVergessen::class)
                         ->findOneByCode($code) !== null
                 );
@@ -269,8 +269,8 @@ class SecurityController extends AbstractController
                     ->setEmail($email)
                     ->setCode($code);
 
-                $this->emNutzer->persist($pwdForgot);
-                $this->emNutzer->flush();
+                $this->emDefault->persist($pwdForgot);
+                $this->emDefault->flush();
 
                 // mail
                 $this->mailService->infoMail(
@@ -299,7 +299,7 @@ class SecurityController extends AbstractController
 
         // code given
         } else {
-            $email = $this->emNutzer
+            $email = $this->emDefault
                 ->getRepository(PwdVergessen::class)
                 ->findOneByCode($code);
 
@@ -312,7 +312,7 @@ class SecurityController extends AbstractController
                 return $this->redirectToRoute('app_login');
             }
 
-            $nutzer = $this->emNutzer
+            $nutzer = $this->emDefault
                 ->getRepository(Nutzer::class)
                 ->findOneByEmail($email->getEmail());
 
@@ -338,8 +338,8 @@ class SecurityController extends AbstractController
                 ])
                 ->getForm();
 
+            // handle request
             $form->handleRequest($request);
-
             if ($form->isSubmitted() && $form->isValid()) {
                 $nutzer->setPasswort(
                     $passwordEncoder->hashpassword(
@@ -349,8 +349,8 @@ class SecurityController extends AbstractController
                 );
 
                 // persist
-                $this->emNutzer->persist($nutzer);
-                $this->emNutzer->flush();
+                $this->emDefault->persist($nutzer);
+                $this->emDefault->flush();
 
                 $this->addFlash(
                     'loginInfo',
@@ -425,15 +425,14 @@ class SecurityController extends AbstractController
             // remove
             foreach($nutzer->getPersons() as $person) {
                 foreach($person->getContacts() as $contact) {
-                    $this->emNutzer->remove($contact);
+                    $this->emDefault->remove($contact);
                 }
-                $this->emNutzer->remove($person);
+                $this->emDefault->remove($person);
             }
-            $this->emNutzer->remove($nutzer);
+            $this->emDefault->remove($nutzer);
 
             // presist
             $this->emDefault->flush();
-            $this->emNutzer->flush();
 
             // set session to invalid
             $tokenStorage->setToken(null);

@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity\Main;
+namespace App\Entity;
 
 /***********************************************************************
  *
@@ -7,7 +7,6 @@ namespace App\Entity\Main;
  *
  /*********************************************************************/
 
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Loggable\Entity\MappedSuperclass\AbstractLogEntry;
 use Symfony\Component\Serializer\Annotation\Context;
@@ -26,7 +25,6 @@ use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
  *    }
  * )
  * @ORM\Entity(repositoryClass="App\Repository\LogEntryRepository")
- *
  */
 class LogEntry extends AbstractLogEntry
 {

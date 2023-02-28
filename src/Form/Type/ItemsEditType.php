@@ -7,7 +7,7 @@ namespace App\Form\Type;
  *
  **********************************************************************/
 
-use App\Entity\Main\Items;
+use App\Entity\Items;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;

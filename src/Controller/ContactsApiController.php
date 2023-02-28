@@ -7,7 +7,7 @@ namespace App\Controller;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Contact;
+use App\Entity\Contact;
 use App\Form\Type\ContactType;
 use Symfony\Component\Routing\Annotation\Route;
 

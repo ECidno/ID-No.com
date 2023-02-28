@@ -7,7 +7,7 @@ namespace App\Form\Type;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Contact;
+use App\Entity\Contact;
 use App\Form\Type\EntityHiddenType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;

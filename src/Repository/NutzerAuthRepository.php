@@ -1,8 +1,13 @@
 <?php
+namespace App\Repository;
 
-namespace App\Repository\Nutzer;
+/***********************************************************************
+ *
+ * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
+ *
+ **********************************************************************/
 
-use App\Entity\Nutzer\NutzerAuth;
+use App\Entity\NutzerAuth;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -16,11 +21,23 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class NutzerAuthRepository extends ServiceEntityRepository
 {
+    /**
+     * constructor
+     *
+     * @param ManagerRegistry $registry
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, NutzerAuth::class);
     }
 
+
+    /**
+     * add
+     *
+     * @param NutzerAuth $entity
+     * @param bool $flush
+     */
     public function add(NutzerAuth $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
@@ -30,6 +47,13 @@ class NutzerAuthRepository extends ServiceEntityRepository
         }
     }
 
+
+    /**
+     * remove
+     *
+     * @param NutzerAuth $entity
+     * @param bool $flush
+     */
     public function remove(NutzerAuth $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
@@ -38,29 +62,4 @@ class NutzerAuthRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-
-//    /**
-//     * @return NutzerAuth[] Returns an array of NutzerAuth objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('n')
-//            ->andWhere('n.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('n.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?NutzerAuth
-//    {
-//        return $this->createQueryBuilder('n')
-//            ->andWhere('n.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
 }

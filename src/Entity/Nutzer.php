@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity\Nutzer;
+namespace App\Entity;
 
 /***********************************************************************
  *
@@ -22,7 +22,7 @@ use Rollerworks\Component\PasswordStrength\Validator\Constraints as RollerworksP
  *
  * @ORM\Entity(repositoryClass="App\Repository\NutzerRepository")
  * @UniqueEntity(fields={"email"}, message="nutzer.email.unique")
- * Gedmo\Loggable
+ * @Gedmo\Loggable
  */
 class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -36,7 +36,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="App\Entity\Nutzer\Person", mappedBy="nutzer", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="App\Entity\Person", mappedBy="nutzer", cascade={"persist"})
      */
     private $persons;
 

@@ -7,8 +7,8 @@ namespace App\Security;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Nutzer;
-use App\Entity\Nutzer\Person;
+use App\Entity\Nutzer;
+use App\Entity\Person;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 

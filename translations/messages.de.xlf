@@ -537,8 +537,8 @@ ID-No.com, gelauncht im Mai 2017 in Frankfurt am Main (Deutschland), wurde gemei
 
 Seit 2020 kooperiert ID-No.com mit ZOLL, dem Weltmarktführer für digitale Gesundheitslösungen, und wird in die Rescue-Pad-Systeme im Rettungswesen in Europa integriert. Dies führt zu einer schnellen und nahtlosen Notfalldatenübertragung vom Rettungsdienst bis ins Krankenhaus.
 
-Info-Videos finden Sie hier:
-<a href="/infovideo" target="_blank">ID-No.com/infovideo</a>
+Info-Videos finden Sie hier:  
+<a href="/infovideo" target="_blank">ID-No.com/infovideo</a>  
 <a href="/pad" target="_blank">ID-No.com/pad</a>  ]]></target>
       </segment>
     </unit>
@@ -559,7 +559,7 @@ Krechting ist Autor zahlreicher Veröffentlichung. Darüber hinaus wirkte Krecht
     <unit id="IaFPsYm" name="Advisory board">
       <segment>
         <source>Advisory board</source>
-        <target>Advisory board</target>
+        <target>Beirat</target>
       </segment>
     </unit>
     <unit id="kddzrsu" name="company.advisory.text">
@@ -962,9 +962,9 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
 Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Ware in Besitz genommen haben bzw. hat.
 Um Ihr Widerrufsrecht auszuüben, müssten Sie uns
 
-**ID-No**.com - Ein Mitglied der **CODE-No.com** Gruppe
-Cassellastr. 30-32
-60386 Frankfurt
+**ID-No**.com GmbH  
+Cassellastr. 30-32  
+60386 Frankfurt  
 E-Mail: info@ID-No.com
 
 bitte mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.
@@ -1064,7 +1064,7 @@ Der Nutzer entscheidet, welche der Angaben im Notfall-ID Pass sichtbar sind. Die
 Wir verwenden geeignete technische und organisatorische Sicherheitsmaßnahmen, um Ihre Daten gegen eine zufällige oder vorsätzliche Manipulationen, einen teilweise oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu schützen.
 
 **Datenweitergabe zur Vertragserfüllung**  
-Eine Weitergabe Ihrer Daten erfolgt an das mit der Lieferung beauftragte Versandunternehmen, soweit dies zur Lieferung der Waren notwendig ist. Zur Abwicklung von Zahlungen geben wir Ihre Zahlungsdaten an das mit der Zahlung beauftragte Kreditinstitut Heidelpay weiter.
+Eine Weitergabe Ihrer Daten erfolgt an das mit der Lieferung beauftragte Versandunternehmen, soweit dies zur Lieferung der Waren notwendig ist. Zur Abwicklung von Zahlungen geben wir Ihre Zahlungsdaten an das mit der Zahlung beauftragte Kreditinstitut Mollie n.V. weiter.
 
 Zum Teil erheben die ausgewählten Zahlungsdienstleister diese Daten auch selbst, soweit Sie dort ein Konto anlegen. In diesem Fall müssen Sie sich im Bestellprozess mit Ihren Zugangsdaten bei dem Zahlungsdienstleister anmelden. Es gilt insoweit die Datenschutzerklärung des jeweiligen Zahlungsdienstleisters.
 
@@ -1099,7 +1099,7 @@ Cassellastraße 30-32
 60386 Frankfurt am Main
 
 **Datensicherheit**  
-Ihre personenbezogenen Daten werden im Bestellprozess verschlüsselt mittels des SSL-Verfahrens (Secure-Socket-Layer) über das Internet übertragen. Kreditkartendaten werden nicht gespeichert, sondern direkt von unserem Payment-Dienstleister "Heidelpay" erhoben und verarbeitet. Wir sichern unsere Website und sonstigen Systeme durch technische und organisatorische Maßnahmen gegen Verlust, Zerstörung, Zugriff, Veränderung oder Verbreitung Ihrer Daten durch unbefugte Personen.
+Ihre personenbezogenen Daten werden im Bestellprozess verschlüsselt mittels des SSL-Verfahrens (Secure-Socket-Layer) über das Internet übertragen. Kreditkartendaten werden nicht gespeichert, sondern direkt von unserem Payment-Dienstleister "Mollie n.V." erhoben und verarbeitet. Wir sichern unsere Website und sonstigen Systeme durch technische und organisatorische Maßnahmen gegen Verlust, Zerstörung, Zugriff, Veränderung oder Verbreitung Ihrer Daten durch unbefugte Personen.
 
 Der Zugang zu Ihrem Kundenkonto ist nur nach Eingabe Ihres persönlichen Passwortes möglich. Sie sollten Ihre Zugangsinformationen stets vertraulich behandeln und das Browserfenster schließen, wenn Sie die Kommunikation mit uns beendet haben, insbesondere wenn Sie den Computer gemeinsam mit anderen nutzen.
 
@@ -1131,7 +1131,7 @@ Die Bonitätsauskunft kann Wahrscheinlichkeitswerte (Score-Werte) beinhalten, di
     <unit id="JR7p9yq" name="imprint.text">
       <segment>
         <source>imprint.text</source>
-        <target>#### ID-No.com GmbH  
+        <target>#### ID-No.com GmbH  - medical aid
 Cassellastraße 30-32  
 D-60386 Frankfurt am Main  
 
@@ -3413,7 +3413,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="k7IqGnH" name="meinidno.profile.description">
       <segment>
         <source>meinidno.profile.description</source>
-        <target>Hier können Sie Ihare Notfall-Daten verwalten.</target>
+        <target>Hier können Sie Ihre Notfall-Daten verwalten.</target>
       </segment>
     </unit>
     <unit id="De.BaGl" name="meinidno.profile.check">

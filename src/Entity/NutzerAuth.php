@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity\Nutzer;
+namespace App\Entity;
 
 /***********************************************************************
  *
@@ -7,7 +7,7 @@ namespace App\Entity\Nutzer;
  *
  **********************************************************************/
 
-use App\Repository\Nutzer\NutzerAuthRepository;
+use App\Repository\NutzerAuthRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,7 +24,7 @@ class NutzerAuth
 
     /**
      * @var Nutzer
-     * @ORM\OneToOne(targetEntity="App\Entity\Nutzer\Nutzer")
+     * @ORM\OneToOne(targetEntity="App\Entity\Nutzer")
      */
     private $nutzer;
 

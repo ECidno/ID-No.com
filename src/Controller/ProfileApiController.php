@@ -7,9 +7,9 @@ namespace App\Controller;
  *
  **********************************************************************/
 
-use App\Entity\Nutzer\Nutzer;
-use App\Entity\Nutzer\NutzerAuth;
-use App\Entity\Nutzer\Person;
+use App\Entity\Nutzer;
+use App\Entity\NutzerAuth;
+use App\Entity\Person;
 use App\Form\Type\CredentialsChangeType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -60,7 +60,7 @@ class ProfileApiController extends AbstractApiController
             )
         ) {
             $object->setSichtbar($enable);
-            $this->emNutzer->flush();
+            $this->emDefault->flush();
 
             // message, severity
             $message = $this->translator->trans(
@@ -115,13 +115,13 @@ class ProfileApiController extends AbstractApiController
         do {
             $auth = ByteString::fromRandom(40)->toString();
         } while(
-            $this->emNutzer
+            $this->emDefault
                 ->getRepository(NutzerAuth::class)
                 ->findOneByAuth($auth) !== null
         );
 
         // get auth code object
-        $nutzerAuth = $this->emNutzer
+        $nutzerAuth = $this->emDefault
             ->getRepository(NutzerAuth::class)
             ->findOneByNutzer($user);
 
@@ -132,8 +132,8 @@ class ProfileApiController extends AbstractApiController
                 ->setTime(time())
                 ->setNutzer($user);
 
-            $this->emNutzer->persist($nutzerAuth);
-            $this->emNutzer->flush();
+            $this->emDefault->persist($nutzerAuth);
+            $this->emDefault->flush();
 
             // return
             return (new JsonResponse())
@@ -182,7 +182,7 @@ class ProfileApiController extends AbstractApiController
      */
     public function validate(Request $request, ValidatorInterface $validator, $email): JsonResponse
     {
-        $user = $this->emNutzer
+        $user = $this->emDefault
             ->getRepository(Nutzer::class)
             ->findOneByEmail($email);
 
@@ -242,7 +242,7 @@ class ProfileApiController extends AbstractApiController
          * @var Nutzer
          */
         $nutzer = $this->getUser();
-        // $nutzer = $this->emNutzer
+        // $nutzer = $this->emDefault
         //     ->getRepository(Nutzer::class)
         //     ->findOneById($id);
 
@@ -262,15 +262,15 @@ class ProfileApiController extends AbstractApiController
                 )
             );
 
-            $person = $this->emNutzer
+            $person = $this->emDefault
                 ->getRepository(Person::class)
                 ->findOneByNutzer($nutzer)
                 ->setEmail($nutzer->getEmail());
 
             // persist
-            $this->emNutzer->persist($nutzer);
-            $this->emNutzer->persist($person);
-            $this->emNutzer->flush();
+            $this->emDefault->persist($nutzer);
+            $this->emDefault->persist($person);
+            $this->emDefault->flush();
 
             // message
             $message = $this->translator->trans(

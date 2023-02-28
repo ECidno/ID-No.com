@@ -1,9 +1,13 @@
 <?php
+namespace App\Entity;
 
-namespace App\Entity\Nutzer;
+/***********************************************************************
+ *
+ * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
+ *
+ **********************************************************************/
 
-use App\Repository\Nutzer\PwdVergessenRepository;
-use DateTime;
+use App\Repository\PwdVergessenRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -33,8 +37,8 @@ class PwdVergessen
      */
     private $code;
 
-     /**
-      * @var DateTime
+    /**
+     * @var \DateTime
      * @ORM\Column(type="datetime")
      * @Assert\Type("\DateTimeInterface")
      * @Gedmo\Timestampable(on="create")

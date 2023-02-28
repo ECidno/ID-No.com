@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity\Nutzer;
+namespace App\Entity;
 
 /***********************************************************************
  *
@@ -18,7 +18,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Person
  *
  * @ORM\Entity(repositoryClass="App\Repository\PersonRepository")
- * Gedmo\Loggable
+ * @Gedmo\Loggable
  */
 class Person
 {
@@ -32,10 +32,10 @@ class Person
 
     /**
      * @var Person
-     * @ORM\ManyToOne(targetEntity="App\Entity\Nutzer\Person")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Person")
      * @ORM\JoinColumn(nullable=false, options={"default":0})
-     private $parent;
      */
+     private $parent;
 
     /**
      * @var int
@@ -45,19 +45,19 @@ class Person
 
     /**
      * @var Nutzer
-     * @ORM\ManyToOne(targetEntity="App\Entity\Nutzer\Nutzer", inversedBy="persons")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Nutzer", inversedBy="persons")
      */
     private $nutzer = null;
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="App\Entity\Nutzer\Contact", mappedBy="person")
+     * @ORM\OneToMany(targetEntity="App\Entity\Contact", mappedBy="person")
      */
     private $contacts;
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="App\Entity\Nutzer\PersonImages", mappedBy="person")
+     * @ORM\OneToMany(targetEntity="App\Entity\PersonImages", mappedBy="person")
      */
     private $images;
 
@@ -69,7 +69,7 @@ class Person
     /**
      * @var string
      * @ORM\Column(type="string", length=25)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $status;
 
@@ -82,21 +82,21 @@ class Person
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $email;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=5)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $anrede;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      * @Assert\NotBlank
      */
     private $vorname;
@@ -104,7 +104,7 @@ class Person
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      * @Assert\NotBlank
      */
     private $nachname;
@@ -112,315 +112,315 @@ class Person
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $strasse;
 
     /**
      * @var string
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $strasseShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=13)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $plz;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $ort;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $ortShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $zusatz;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $zusatzShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $land;
 
     /**
      * @var int
      * @ORM\Column(type="integer")
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $geburtsdatumTag;
 
     /**
      * @var int
      * @ORM\Column(type="integer")
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $geburtsdatumMonat;
 
     /**
      * @var int
      * @ORM\Column(type="integer")
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $geburtsdatumJahr;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=6, options={"default":"+49"})
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $telefonLand = '+49';
 
     /**
      * @var string
      * @ORM\Column(type="string", length=10)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $telefonVorwahl;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=30)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $telefon;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $telefonShow = 1;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $mobileShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=6, options={"default":"+49"})
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $mobileLand = '+49';
 
     /**
      * @var string
      * @ORM\Column(type="string", length=10)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $mobileVorwahl;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=30)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $mobile;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=10)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $gewicht;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=5, options={"default":"kg"})
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $gewichtEinheit = 'kg';
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $gewichtShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=10)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $groesse;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=5, options={"default":"cm"})
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $groesseEinheit = 'cm';
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $groesseShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $krankenversicherung;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $krankenversicherungShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=100)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $versicherungsnummer;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $versicherungsnummerShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="text", length=65535, nullable=true)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $zusatzversicherung;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $zusatzversicherungShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=30)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $blutgruppe;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $blutgruppeShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="text", length=16777215, nullable=true)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $erkrankungen;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $erkrankungenShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="text", length=65535, nullable=true)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $medikamente;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $medikamenteShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="text", length=65535, nullable=true)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $allergieen;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $allergieenShow = 1;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $organspender = false;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $organspenderShow = true;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $patientenverf = true;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $patientenverfShow = 1;
 
     /**
      * @var string
      * @ORM\Column(type="text", length=65535, nullable=true)
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $weitereangaben;
 
     /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
-     * Gedmo\Versioned
+     * @Gedmo\Versioned
      */
     private $weitereangabenShow = 1;
 
@@ -462,22 +462,22 @@ class Person
     /*
      * @param ?Person $parent
      * @return Person
-
+     */
     public function setParent(?Person $parent = null): self
     {
         $this->parent = $parent;
         return $this;
     }
-    */
+
 
     /*
      * @return ?Person
-
+     */
     public function getParent(): ?Person
     {
         return $this->parent;
     }
-    */
+
 
 
     /**
