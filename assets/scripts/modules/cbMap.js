@@ -2,6 +2,11 @@ import { control, latLng, map, tileLayer, Browser } from 'leaflet';
 
 export const name = 'cbMap';
 
+var positionMap;
+var positionLatLng;
+var positionMarker;
+var positionPopup;
+
 /**
  * cloudbase | map
  *
@@ -10,12 +15,6 @@ export const name = 'cbMap';
  */
 const cbMap = (lat, lon) => {
   const mapContainer = document.getElementById('mapContainer') || null;
-
-  var bounds = [];
-  var positionMap;
-  var positionLatLng;
-  var positionMarker;
-  var positionPopup;
 
   let latitude = lat || mapContainer.dataset.lat;
   let longitude = lon || mapContainer.dataset.lon;
@@ -35,6 +34,7 @@ const cbMap = (lat, lon) => {
 
     // position marker
     positionMarker.setLatLng(positionLatLng);
+    positionPopup.setContent('<small>Mein Standort</small>');
 
     // position map
     positionMap.flyTo(
@@ -102,7 +102,6 @@ const cbMap = (lat, lon) => {
     )
     .then(response => response.json())
     .then(result => {
-
       if(result.features[0].properties.formatted || false) {
         positionPopup = L
           .popup()
@@ -111,6 +110,8 @@ const cbMap = (lat, lon) => {
         positionMarker
           .bindPopup(positionPopup)
           .openPopup();
+      } else {
+        positionPopup.setContent('<small>Mein Standort</small>');
       }
     })
     .catch(error => console.log('error', error));
