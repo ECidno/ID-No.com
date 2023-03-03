@@ -236,3 +236,40 @@ body.modal-open .background-container{
 .toast{
   --bs-toast-bg: rgba(255, 255, 255,1);
 }
+
+
+
+.header-form{
+  .form-floating{
+    input{
+      &:focus{
+        +label {
+          color: #900 !important;
+          transform: translateY(-0.8rem);
+        }
+      }
+
+    }
+  }
+}
+.bg-light-white{
+  background: #ffffff;
+}
+/* reference-partner */
+.reference-partner-col{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img{
+    max-height: 90px;
+  }
+}
+
+.references-col{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    max-height: 120px;
+  }
+}
