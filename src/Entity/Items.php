@@ -155,10 +155,10 @@ class Items extends AbstractEntity
 
 
     /**
-     * @param Nutzer $nutzer
+     * @param ?Nutzer $nutzer
      * @return Items
      */
-     public function setNutzer(Nutzer $nutzer): self
+     public function setNutzer(?Nutzer $nutzer): self
      {
          $this->nutzer = $nutzer;
          return $this;
@@ -175,10 +175,10 @@ class Items extends AbstractEntity
 
 
     /**
-     * @param Person $person
+     * @param ?Person $person
      * @return Items
      */
-    public function setPerson(Person $person): self
+    public function setPerson(?Person $person): self
     {
         $this->person = $person;
         return $this;
@@ -186,7 +186,7 @@ class Items extends AbstractEntity
 
 
     /**
-     * @return Person|null
+     * @return ?Person
      */
     public function getPerson(): ?Person
     {
