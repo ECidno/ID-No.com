@@ -38,12 +38,6 @@ class Person
      private $parent;
 
     /**
-     * @var int
-     * @ORM\Column(type="integer", nullable=false, options={"default":"0"}))
-     */
-     private $parentId = 0;
-
-    /**
      * @var Nutzer
      * @ORM\ManyToOne(targetEntity="App\Entity\Nutzer", inversedBy="persons")
      */
@@ -476,26 +470,6 @@ class Person
     public function getParent(): ?Person
     {
         return $this->parent;
-    }
-
-
-
-    /**
-     * @param ?int $parentId
-     * @return self
-     */
-    public function setParentId(?int $parentId = 0): self
-    {
-        $this->parentId = $parentId;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getParentId(): int
-    {
-        return $this->parentId;
     }
 
 
