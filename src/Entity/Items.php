@@ -62,22 +62,10 @@ class Items extends AbstractEntity
      private $nutzer = null;
 
     /**
-     * @var int
-     * @ORM\Column(type="integer")
-     */
-    private $nutzerId;
-
-    /**
      * @var Person
      * @ORM\ManyToOne(targetEntity="Person")
      */
      private $person = null;
-
-    /**
-     * @var int
-     * @ORM\Column(type="integer")
-     */
-    private $personId;
 
     /**
      * @var string
@@ -187,25 +175,6 @@ class Items extends AbstractEntity
 
 
     /**
-     * @param ?int $nutzerId
-     * @return Items
-     */
-    public function setNutzerId(?int $nutzerId): self
-    {
-        $this->nutzerId = $nutzerId;
-        return $this;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getNutzerId(): ?int
-    {
-        return $this->nutzerId;
-    }
-
-
-    /**
      * @param Person $person
      * @return Items
      */
@@ -222,25 +191,6 @@ class Items extends AbstractEntity
     public function getPerson(): ?Person
     {
         return $this->person;
-    }
-
-
-    /**
-     * @param ?int $personId
-     * @return Items
-     */
-    public function setPersonId(?int $personId): self
-    {
-        $this->personId = $personId;
-        return $this;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getPersonId(): ?int
-    {
-        return $this->personId;
     }
 
 

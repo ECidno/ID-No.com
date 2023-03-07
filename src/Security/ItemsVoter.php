@@ -123,8 +123,8 @@ class ItemsVoter extends Voter
         // iterate user's persons
         foreach ($user->getPersons() as $person) {
             if(
-                $person->getId() === $item->getPersonId() &&
-                $user->getId() === $item->getNutzerId()
+                $person->getId() === $item->getPerson()->getId() &&
+                $user->getId() === $item->getNutzer()->getId()
             ) {
                 return true;
             }
