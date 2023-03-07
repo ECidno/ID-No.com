@@ -86,8 +86,8 @@ class ItemsApiController extends AbstractApiController
             // update item
             $item
                 ->setNoStatus('registriert')
-                ->setNutzerId($object->getNutzerId())
-                ->setPersonId($object->getPersonId())
+                ->setNutzer($object->getNutzer())
+                ->setPerson($object->getPerson())
                 ->setAnbringung($object->getAnbringung())
                 ->setRegistriertDatum($now);
 
@@ -155,8 +155,8 @@ class ItemsApiController extends AbstractApiController
             // update item
             $object
                 ->setNoStatus('aktiviert')
-                ->setNutzerId(0)
-                ->setPersonId(0)
+                ->setNutzer(null)
+                ->setPerson(null)
                 ->setAnbringung(null)
                 ->setRegistriertDatum(null);
 

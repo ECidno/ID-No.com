@@ -48,8 +48,8 @@ class ItemsEditType extends AbstractType
                 ],
                 'required' => false
             ])
-            ->add('nutzerId', HiddenType::class)
-            ->add('personId', HiddenType::class);
+            ->add('nutzer', HiddenType::class)
+            ->add('person', HiddenType::class);
     }
 
 

@@ -278,15 +278,9 @@ class AbstractApiController extends SymfonyAbstractController
         $this->denyAccessUnlessGranted('read', $person);
 
         // get
-        if(static::$entityClassName === Items::class) {
-            $objects = $this->emDefault
-                ->getRepository(static::$entityClassName)
-                ->findByPersonId($person->getId());
-        } else {
-            $objects = $this->emDefault
-                ->getRepository(static::$entityClassName)
-                ->findByPerson($person);
-        }
+        $objects = $this->emDefault
+            ->getRepository(static::$entityClassName)
+            ->findByPerson($person);
 
         // map
         $items = $this->mapOperations($objects);

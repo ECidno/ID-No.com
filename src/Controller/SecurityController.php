@@ -409,16 +409,18 @@ class SecurityController extends AbstractController
             $nutzer = $this->getUser();
 
             $items = $this->emDefault
-                        ->getRepository(Items::class)
-                        ->findByNutzerId($nutzer->getId());
+                ->getRepository(Items::class)
+                ->findByNutzer($nutzer);
 
+            // release all items
             foreach($items as $item) {
                 $item
                     ->setNoStatus('aktiviert')
-                    ->setNutzerId(0)
-                    ->setPersonId(0)
+                    ->setNutzer(null)
+                    ->setPerson(null)
                     ->setAnbringung('');
 
+                // persist
                 $this->emDefault->persist($item);
             }
 

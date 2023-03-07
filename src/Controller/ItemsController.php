@@ -77,19 +77,8 @@ class ItemsController extends AbstractController
 
         // proceed to pass
         } else {
-            $nutzerId = $item->getNutzerId();
-            $personId = $item->getPersonId();
-
-            // user
-            // $nutzer = $this->emDefault
-            //     ->getRepository(Nutzer::class)
-            //     ->findOneById($nutzerId);
-            // $person = $this->emDefault
-            //     ->getRepository(Person::class)
-            //     ->findOneById($personId);
             $nutzer = $item->getNutzer();
             $person = $item->getPerson();
-
 
             // user pass active (sichtbar)
             if($nutzer->getSichtbar() === false) {
@@ -122,7 +111,7 @@ class ItemsController extends AbstractController
             ];
 
             // mail (if not user' pass is shown)
-            if($user === null || $user->getId() !== $nutzerId) {
+            if($user === null || $user->getId() !== $nutzer->getId()) {
                 $this->mailService->infoMail(
                     [
                         'subject' => 'Information - Ihr ID-No.com Produkt wurde genutzt!',
@@ -302,8 +291,8 @@ class ItemsController extends AbstractController
         // new item
         $item = new Items();
         $item
-            ->setNutzerId($user->getId())
-            ->setPersonId($person->getId());
+            ->setNutzer($user)
+            ->setPerson($person);
 
         // form
         $form = $this->formFactory->createBuilder(
