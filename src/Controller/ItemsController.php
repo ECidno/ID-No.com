@@ -204,7 +204,6 @@ class ItemsController extends AbstractController
             $person = new Person();
             $person
                 ->setNutzer($nutzer)
-                ->setParentId(0)
                 ->setStatus('ok')
                 ->setSprache('de')
                 ->setEmail($nutzer->getEmail())
@@ -252,8 +251,8 @@ class ItemsController extends AbstractController
             // update item
             $item
                 ->setNoStatus('registriert')
-                ->setNutzerId($nutzer->getId())
-                ->setPersonId($person->getId())
+                ->setNutzer($nutzer)
+                ->setPerson($person)
                 ->setRegistriertDatum($now);
 
             // persist
