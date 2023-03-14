@@ -3600,7 +3600,7 @@ klicken Sie bitte auf folgenden Freischaltungslink:
 
 **Dieser Link ist 2 Stunden gültig.**
 
-Alternativ können Sie die nachfolgende Nummer kopieren und diese in das entsprechende Feld eingeben, um Ihren Account zu einem beliebigen Zeitpunkt freizuschalten. Loggen Sie sich hierzu mit Ihrem Benutzernamen und Passwort ein. Hier können Sie auch jederzeit einen neuen Aktivierungslink anfordern.
+Alternativ können Sie die nachfolgende Nummer kopieren und diese in das entsprechende Feld unter %nutzerAuth_path% eingeben, um Ihren Account zu einem beliebigen Zeitpunkt freizuschalten. Loggen Sie sich hierzu mit Ihrem Benutzernamen und Passwort ein. Hier können Sie auch jederzeit einen neuen Aktivierungslink anfordern.
 
 <pre>%nutzerAuth_auth%</pre>
 
@@ -3617,13 +3617,13 @@ Ihr Team von ID-No.com]]></target>
     <unit id="LOS7_ws" name="auth.header">
       <segment>
         <source>auth.header</source>
-        <target>Authenticate</target>
+        <target>Konto bestätigen</target>
       </segment>
     </unit>
     <unit id="8bhsAO5" name="auth.text">
       <segment>
         <source>auth.text</source>
-        <target>auth.text</target>
+        <target>Hier können Sie den Freischaltcode aus der Bestätigunsmail eingeben, um Ihren Account freizuschalten.</target>
       </segment>
     </unit>
     <unit id="ULC08pz" name="meinidno.profile.missingEmailVerfication">
@@ -3989,6 +3989,12 @@ Zur **[Anmeldung](%login_link%)**
       <segment>
         <source>Passwort</source>
         <target>Passwort</target>
+      </segment>
+    </unit>
+    <unit id="wVCFRjs" name="auth.code.lbl">
+      <segment>
+        <source>auth.code.lbl</source>
+        <target>Authentifikationscode</target>
       </segment>
     </unit>
   </file>

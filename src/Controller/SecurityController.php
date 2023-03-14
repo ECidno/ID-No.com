@@ -132,6 +132,7 @@ class SecurityController extends AbstractController
 
             $form = $this->createFormBuilder()
                 ->add('auth_code', TextType::class, [
+                    'label' =>  new TranslatableMessage('auth.code.lbl'),
                     'attr' => [
                         'minlength' => 40,
                         'maxlength' => 40,
