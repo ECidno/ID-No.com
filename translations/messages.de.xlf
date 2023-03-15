@@ -3997,5 +3997,11 @@ Zur **[Anmeldung](%login_link%)**
         <target>Authentifikationscode</target>
       </segment>
     </unit>
+    <unit id="hC.LXmC" name="press">
+      <segment>
+        <source>press</source>
+        <target>Presse</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

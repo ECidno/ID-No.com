@@ -3565,5 +3565,11 @@ Register here:</target>
         <target>Verification code</target>
       </segment>
     </unit>
+    <unit id="hC.LXmC" name="press">
+      <segment>
+        <source>press</source>
+        <target>Press</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
