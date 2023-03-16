@@ -42,3 +42,9 @@ services:
         tags:
             - { name: 'doctrine.orm.entity_listener', event: 'postPersist', entity: 'App\Entity\NutzerAuth' }
             - { name: 'doctrine.orm.entity_listener', event: 'preUpdate', entity: 'App\Entity\NutzerAuth' }
+
+    # file uploader
+    App\Service\FileUploader:
+        arguments:
+#            $targetDirectory: '%brochures_directory%'
+            $targetDirectory: '%kernel.project_dir%/uploads'

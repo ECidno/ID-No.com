@@ -4003,5 +4003,35 @@ Zur **[Anmeldung](%login_link%)**
         <target>Presse</target>
       </segment>
     </unit>
+    <unit id="LOFv5uv" name="Upload a photo or take a selfie">
+      <segment>
+        <source>Upload a photo or take a selfie</source>
+        <target>Upload a photo or take a selfie</target>
+      </segment>
+    </unit>
+    <unit id="CSN8DUX" name="Wrong file type, please use JPG-files only!">
+      <segment>
+        <source>Wrong file type, please use JPG-files only!</source>
+        <target>Wrong file type, please use JPG-files only!</target>
+      </segment>
+    </unit>
+    <unit id="XxrhRfR" name="File to large!">
+      <segment>
+        <source>File to large!</source>
+        <target>File to large!</target>
+      </segment>
+    </unit>
+    <unit id="N9Od4Mt" name="person.action.upload.error.noFileReceived">
+      <segment>
+        <source>person.action.upload.error.noFileReceived</source>
+        <target>Es wurde keine Datei empfangen.</target>
+      </segment>
+    </unit>
+    <unit id="xQun2Vv" name="person.action.upload.error.nofilereceived">
+      <segment>
+        <source>person.action.upload.error.nofilereceived</source>
+        <target>person.action.upload.error.nofilereceived</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

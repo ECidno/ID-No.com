@@ -24,7 +24,7 @@ class PersonVoter extends Voter
     const UPDATE = 'update';
     const EDIT = 'edit';
     const DELETE = 'delete';
-
+    const UPLOAD = 'upload';
 
     /**
      * supports
@@ -47,6 +47,7 @@ class PersonVoter extends Voter
                     self::UPDATE,
                     self::EDIT,
                     self::DELETE,
+                    self::UPLOAD,
                 ]
             )
         ) {
@@ -85,6 +86,7 @@ class PersonVoter extends Voter
             case self::EDIT:
             case self::UPDATE:
             case self::DELETE:
+            case self::UPLOAD:
                 return $this->canRud($person, $user);
         }
 
@@ -102,6 +104,6 @@ class PersonVoter extends Voter
      */
     private function canRud(Person $person, Nutzer $user): bool
     {
-				return $user->getPersons()->contains($person);
+        return $user->getPersons()->contains($person);
     }
 }

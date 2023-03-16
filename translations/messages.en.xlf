@@ -3571,5 +3571,17 @@ Register here:</target>
         <target>Press</target>
       </segment>
     </unit>
+    <unit id="N9Od4Mt" name="person.action.upload.error.noFileReceived">
+      <segment>
+        <source>person.action.upload.error.noFileReceived</source>
+        <target>No file received!</target>
+      </segment>
+    </unit>
+    <unit id="QTliobL" name="person.action.upload.success">
+      <segment>
+        <source>person.action.upload.success</source>
+        <target>Die Datei wurde erfolgreich hochgeladen.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

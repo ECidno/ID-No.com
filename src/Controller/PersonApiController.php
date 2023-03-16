@@ -10,9 +10,13 @@ namespace App\Controller;
 use App\Entity\Person;
 use App\Entity\PersonImages;
 use App\Form\Type\PersonType;
+use App\Service\FileUploader;
 use Imagine\Gd\Imagine;
 use Imagine\Image\Box;
+//use Symfony\Component\BrowserKit\Response;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -300,6 +304,61 @@ class PersonApiController extends AbstractApiController
             [
                 'message' => $message,
             ]
+        );
+    }
+
+
+    /**
+     * upload
+     *
+     * @param int $id
+     * @param Request $request
+     * @param FileUploader $fileUploader
+     *
+     * @return JsonResponse
+     *
+     * @Route("/upload/{id}", name="upload", methods={"POST"})
+     */
+    public function upload(int $id, Request $request, FileUploader $fileUploader): JsonResponse
+    {
+        // person
+        $person = $this->emDefault
+            ->getRepository(Person::class)
+            ->find($id);
+
+        // voter
+        $this->denyAccessUnlessGranted('upload', $person);
+
+        /** @var UploadedFile $uploadedFile */
+        $uploadedFile = $request->files->get('file');
+
+        // file?
+        if($uploadedFile === null) {
+            return $this->json(
+                [
+                    'message' => $this->translator->trans(
+                        $this->getTranslateKey('action.upload.error.noFileReceived')
+                    ),
+                ],
+                Response::HTTP_BAD_REQUEST
+            );
+        }
+
+        // filename, message
+        $result = $fileUploader->upload($uploadedFile);
+        $message = $result['status'] === Response::HTTP_OK
+            ? $this->translator->trans(
+                $this->getTranslateKey('action.upload.success')
+            )
+            : $result['message'];
+
+        // return
+        return $this->json(
+            [
+                'message' => $message,
+                'filename' => $result['filename'] ?? null,
+            ],
+            $result['status']
         );
     }
 }

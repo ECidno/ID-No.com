@@ -29,3 +29,5 @@ yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 
 composer.lock
+
+/uploads
