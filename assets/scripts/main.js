@@ -12,17 +12,19 @@ import { cbMap, cbMapLocationError } from './modules/cbMap';
 import { cbMessage } from './modules/cbMessage';
 import { cbModal, cbModalButton } from './modules/cbModal';
 import { cbOffcanvas, cbOffcanvasButton } from './modules/cbOffcanvas';
+import { cbUpload } from './modules/cbUpload';
 
 // const's
-const btnToTop = document.getElementById('toTop') || null;
-const btnShowMap = document.getElementById('mapShow') || null;
-const mapContainer = document.getElementById('mapContainer') || null;
-
+const ajaxAction = document.getElementsByClassName('ajax-action') || [];
 const ajaxForms = document.getElementsByClassName('ajax-form') || [];
 const ajaxModal = document.getElementsByClassName('ajax-modal') || [];
-const ajaxAction = document.getElementsByClassName('ajax-action') || [];
+const ajaxUpload = document.getElementsByClassName('ajax-upload') || [];
+
+const btnToTop = document.getElementById('toTop') || null;
+const btnShowMap = document.getElementById('mapShow') || null;
 const fldIdNo = document.getElementsByClassName('idNo') || [];
 const fldPassEnable = document.getElementById('fldPassEnable') || null;
+const mapContainer = document.getElementById('mapContainer') || null;
 const mapErrorContainer = document.getElementById('mapErrorContainer') || null;
 
 
@@ -202,7 +204,63 @@ document.addEventListener(
     Array
       .from(ajaxForms)
       .forEach((el) => {
-        let form = cbForm(el);
+        cbForm(el);
+      });
+
+    // add listener for uploads
+    Array
+      .from(ajaxUpload)
+      .forEach((el) => {
+        el
+          .addEventListener(
+            'change',
+            (e) => {
+              const me = e.target;
+              const file = me.files[0];
+              const mimeTypes = [
+                'image/gif',
+                'image/jpg',
+                'image/jpeg',
+                'image/png',
+              ];
+
+              const myUpload = new cbUpload(
+                file,
+                me.closest('form'),
+                // done
+                (res) => {
+                  if(res.message ?? false) {
+                    cbMessage(
+                      res.severity || 0,
+                      null,
+                      res.message
+                    );
+                  }
+                }
+              );
+
+              // check size | 2MB
+              if(myUpload.getSize() > 2097152) {
+                cbMessage(
+                  1,
+                  null,
+                  'Die Datei darf nicht größer als 2MB sein.'
+                );
+
+              // check type
+              } else if(mimeTypes.indexOf(myUpload.getType()) === -1) {
+                cbMessage(
+                  1,
+                  null,
+                  'Bitte wählen Sie eine Bilddatei (GIF, JPG oder PNG).'
+                );
+
+              // execute upload
+              } else {
+                myUpload.doUpload();
+              }
+            }
+          );
       });
 
 

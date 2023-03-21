@@ -10,6 +10,53 @@
       </div>
     </div>
 
+{#
+    <form
+      method="post"
+      class="ajax-upload"
+      name="upload"
+      action="{{ path('app_api_person_upload', { id:person.id })}}"
+      enctype="multipart/form-data"
+      data-progress-container="upload-progress">
+
+
+      <div class="upload-container text-center">
+        <div>
+          <label
+            for="photo-upload-file"
+            class="photo-upload">
+            <i class="bi bi-person-bounding-box"></i>
+          </label>
+          <span class="d-block">{{ 'Upload a photo or take a selfie'|trans }}</span>
+        </div>
+
+        <input
+          id="photo-upload-file"
+          style="display:none;"
+          type="file"
+          name="file"
+          accept="image/jpeg, image/png, image/gif"
+          data-error-header="{{ 'Error'|trans }}"
+          data-error-wrong-type="{{ 'Wrong file type, please use JPG-files only!'|trans }}"
+          data-error-to-big="{{ 'File to large!'|trans }}"
+          data-file-mode="insert" />
+      </div>
+      <div
+        id="upload-progress"
+        class="progress photocommerce-photo-progress-container"
+        style="display: none">
+        <div
+          class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+          role="progressbar"
+          aria-valuenow="0"
+          aria-valuemin="0"
+          aria-valuemax="100">
+          <span class="status">0%</span>
+        </div>
+      </div>
+    </form>
+#}
+
     {# missing email verification #}
     {% if user.status == 'unlogged' %}
       <div class="row justify-content-center">
