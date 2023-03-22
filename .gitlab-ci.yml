@@ -61,7 +61,7 @@ staging:
 
   # limit build to staging
   rules:
-    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^staging/
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == /^staging/
 
   # before
   before_script:
@@ -104,7 +104,7 @@ production:
 
   # limit build to main
   rules:
-    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^main/
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == /^main/
 
   # before
   before_script:
