@@ -122,12 +122,12 @@ production:
     - git pull origin main
 
     # composer
-    - composer install --optimize-autoloader
-    - composer dump-env prod
+    - /usr/bin/php8.1 /usr/local/bin/composer install --optimize-autoloader
+    - /usr/bin/php8.1 /usr/local/bin/composer dump-env prod
 
     # cache
-    - "php bin/console cache:clear"
-    - "php bin/console cache:warmup"
+    - "/usr/bin/php8.1 bin/console cache:clear"
+    - "/usr/bin/php8.1 bin/console cache:warmup"
 
     # yarn
     - yarn
