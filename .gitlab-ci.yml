@@ -103,12 +103,15 @@ staging:
 production:
   stage: production
   tags:
-    - symfony
+    - symfony-prod
 
   # limit build to main
   only:
     - main
-  
+  except:
+    - staging
+    - development
+
   # before
   before_script:
     - cd /srv/www/id-no.com/html
