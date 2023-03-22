@@ -51,7 +51,7 @@ stages:
   # - build
   # - test
   - staging
-  #- production
+  - production
 
 # frontend
 staging:
@@ -87,7 +87,7 @@ staging:
     # yarn
     - yarn
     - yarn encore dev
-    
+
     # rights
     - sudo chgrp -R www-data var/cache/*
     - sudo chgrp www-data translations/*
@@ -97,45 +97,45 @@ staging:
 
 
 # production
-# production:
-#   stage: production
-#   tags:
-#     - symfony
+production:
+  stage: production
+  tags:
+    - symfony
 
-#   # limit build to main
-#   only:
-#     - main
+  # limit build to main
+  only:
+    - main
 
-#   # before
-#   before_script:
-#     - cd /var/www/www.finisherpix.com
-#     - yarn config set cache-folder .yarn
+  # before
+  before_script:
+    - cd /srv/www/id-no.com/html
+    - yarn config set cache-folder .yarn
 
-#   # the script itself
-#   script:
-#     - cd /var/www/www.finisherpix.com
+  # the script itself
+  script:
+    - cd /srv/www/id-no.com/html
 
-#     - git checkout master
-#     - git pull origin master
+    - git checkout main
+    - git pull origin main
 
-#     # composer
-#     - composer install --optimize-autoloader
-#     - composer dump-env prod
+    # composer
+    - composer install --optimize-autoloader
+    - composer dump-env prod
 
-#     # cache
-#     - "php bin/console cache:clear"
-#     - "php bin/console cache:warmup"
+    # cache
+    - "php bin/console cache:clear"
+    - "php bin/console cache:warmup"
 
-#     # yarn
-#     - yarn
-#     - yarn encore production --progress
+    # yarn
+    - yarn
+    - yarn encore production --progress
 
-#   # after
-#   after_script:
-#     - cd /var/www/www.finisherpix.com
+  # after
+  after_script:
+    - cd /srv/www/id-no.com/html
 
-#     # rights
-#     - sudo chgrp -R www-data var/cache/*
+    # rights
+    - sudo chgrp -R www-data var/cache/*
 
 #     # finally, reload php-fpm
 #     - sudo systemctl reload php7.4-fpm.service
