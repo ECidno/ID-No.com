@@ -60,9 +60,10 @@ staging:
     - symfony
 
   # limit build to staging
-  when: on_success
+  #when: on_success
   rules:
-    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "staging"
+    #- if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "staging"'
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "staging"
 
   # before
   before_script:
@@ -104,9 +105,9 @@ production:
     - symfony
 
   # limit build to main
-  when: on_success
   rules:
-    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+    #- if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "staging"
 
   # before
   before_script:
