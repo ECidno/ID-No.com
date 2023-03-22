@@ -103,7 +103,7 @@ staging:
 production:
   stage: production
   tags:
-    - symfony
+    - symfony-prod
 
   # limit build to main
   only:
