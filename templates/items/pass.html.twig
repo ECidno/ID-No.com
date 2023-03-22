@@ -1,0 +1,322 @@
+{% extends 'default.html.twig' %}
+{% block title %}{{ 'Notfall-ID Pass'|trans }}{% endblock %}
+
+{# Content #}
+{% block content %}
+
+  {# Intro #}
+  <div class="container background-container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8 border">
+
+        <div class="row py-3 bg-green">
+          <div class="col-12">
+            {% if person.imageShow == true and person.imageSrc is not empty %}
+              <div class="text-center userIconCenter">
+                <div class="userIcon" style="background-image: url('{{ person.imageSrc }}');" alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
+                </div>
+
+                <!--<img
+                  src="{{ person.imageSrc }}"
+                  class="rounded-circle"
+                  alt="{{ person.vorname|raw }} {{ person.nachname|raw }}" />-->
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+        {# last change #}
+        <div class="row py-3 bg-dark">
+          <div class="col-12 text-center text-light">
+            <span>{{ 'person.last_change_datum'|trans }}: {{ person.lastChangeDatum|date('d.m.Y') }}</span>
+          </div>
+        </div>
+
+        {# name #}
+        <div class="container">
+          <div class="row py-3">
+            <div class="col-12">
+              <table class="table table-sm">
+                <tr>
+                  <td colspan="2">
+                    <strong class="text-success">{{ person.vorname|raw }} {{ person.nachname|raw }}</strong>
+                  </td>
+                </tr>
+                {% if person.dateOfBirth %}
+                  <tr>
+                    <td colspan="2">
+                      <span class="text-success">* {{ person.dateOfBirth|date('d.m.Y') }} ({{ person.age }} {{ 'years'|trans }})</span>
+                    </td>
+                  </tr>
+                {% endif %}
+                {% if person.groesse and person.groesseShow == true %}
+                  <tr>
+                    <td>{{ 'person.groesse'|trans }}</td>
+                    <td>
+                      <span>{{ person.groesse }}{{ person.groesseEinheit }}</span>
+                    </td>
+                  </tr>
+                {% endif %}
+                {% if person.gewicht and person.gewichtShow == true %}
+                  <tr>
+                    <td>{{ 'person.gewicht'|trans }}</td>
+                    <td>
+                      <span>{{ person.gewicht }}{{ person.gewichtEinheit }}</span>
+                    </td>
+                  </tr>
+                {% endif %}
+                <tr>
+                  <td class="col-4">{{ 'person.geschlecht'|trans }}</td>
+                  <td>
+                    <span>{{ ('person.geschlecht.' ~ person.anrede)|trans }}</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        {# actions #}
+        <div class="container">
+          <div class="row mb-3">
+            <div class="col-6 text-start">
+              {% if person.ort and person.ortShow == true %}
+                <button
+                  id="mapShow"
+                  class="btn btn-outline-dark text-success px-4 py-2">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <span class="ps-1">{{ 'Standort'|trans }}</span>
+                </button>
+              {% endif %}
+            </div>
+            <div class="col-6 text-end">
+              <a
+                class="btn btn-outline-dark text-success px-4 py-2"
+                href="tel:112">
+                <i class="bi bi-telephone-fill"></i>
+                <span class="ps-1">{{ 'Notruf'|trans }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {# map #}
+        <div class="container">
+          <div class="row mb-3">
+            <div class="col">
+              <div
+                id="mapErrorContainer"
+                class="alert alert-danger d-none"></div>
+              <div
+                id="mapContainer"
+                data-api-key="{{ settings.api.map.key }}"
+                data-lat="{{ settings.api.map.lat }}"
+                data-lon="{{ settings.api.map.lon }}"
+                data-zoom="{{ settings.api.map.zoom }}"
+                data-type="{{ settings.api.map.type }}"
+                data-base-url="{{ settings.api.map.baseUrl }}{{ settings.api.map.key }}"
+                data-retina-url="{{ settings.api.map.retinaUrl }}{{ settings.api.map.key }}"
+                data-geocode-key="{{ settings.api.geocode.key }}"
+                data-geocode-url="{{ settings.api.geocode.url }}"
+                data-error-denied="{{ 'User denied the request for Geolocation.'|trans }}"
+                data-error-unavailable="{{ 'Location information is unavailable.'|trans }}"
+                data-error-timeout="{{ 'The request to get user location timed out.'|trans }}"
+                data-error-unknown="{{ 'An unknown error occurred.'|trans }}">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {# infos #}
+        {% if person.medicalShow == true %}
+          <div class="row py-3 bg-dark">
+            <div class="col-12 text-light">
+              <div class="container">
+
+                {# blood type #}
+                {% if person.blutgruppeShow == true and person.blutgruppe is not empty %}
+                  <div class="mx-1 my-3 p-3 border border-light">
+                    <strong>{{ 'Blutgruppe'|trans }}</strong><br />
+                    {{ person.blutgruppe }}
+                  </div>
+                {% endif %}
+
+                {# diseases #}
+                {% if person.erkrankungenShow == true and person.erkrankungen is not empty %}
+                  <div class="mx-1 my-3 p-3 border border-light">
+                    <strong>{{ 'Erkrankungen'|trans }}</strong><br />
+                    {{ person.erkrankungen|raw|nl2br }}
+                  </div>
+                {% endif %}
+
+                {# medicines #}
+                {% if person.medikamenteShow == true and person.medikamente is not empty %}
+                  <div class="mx-1 my-3 p-3 border border-light">
+                    <strong>{{ 'Medikamente'|trans }}</strong><br />
+                    {{ person.medikamente|raw|nl2br }}
+                  </div>
+                {% endif %}
+
+                {# allergys #}
+                {% if person.allergieenShow == true and person.allergieen is not empty %}
+                  <div class="mx-1 my-3 p-3 border border-light">
+                    <strong>{{ 'Allergieen'|trans }}</strong><br />
+                    {{ person.allergieen|raw|nl2br }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {# contacts #}
+        {% if person.contacts|length > 0 %}
+        <div class="container">
+          <div class="row">
+            <div class="col-12 p-3">
+
+              {% for contact in person.contacts %}
+                <div class="row py-3{% if not loop.last %} border-bottom{% endif %}">
+                  <div class="col-6">
+                    {{ contact.entry|join('<br />')|raw }}
+                  </div>
+
+                  {% if contact.entry.phone is defined and contact.entry.phone is not empty %}
+                    <div class="col-6 text-end">
+                      <a
+                        class="btn btn-outline-dark text-success px-4 py-2"
+                        href="tel:{{ contact.entry.phone }}">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span class="ps-1">{{ 'Anrufen'|trans }}</span>
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        {# insurance #}
+        {% if person.insuranceShow == true %}
+          <div class="row py-3 bg-dark">
+            <div class="col-12 text-light">
+              <div class="container">
+
+                {# health insurance #}
+                {% if person.krankenversicherungShow == true and person.krankenversicherung is not empty %}
+                  <div class="mx-1 my-3 p-3 border border-light">
+                    <strong>{{ 'Krankenversicherung'|trans }}</strong><br />
+                    {{ person.krankenversicherung|raw|nl2br }}
+                  </div>
+                {% endif %}
+
+                {# insurance number #}
+                {% if person.versicherungsnummerShow == true and person.versicherungsnummer is not empty %}
+                  <div class="mx-1 my-3 p-3 border border-light">
+                    <strong>{{ 'Versicherungs-Nr.'|trans }}</strong><br />
+                    {{ person.versicherungsnummer|raw|nl2br }}
+                  </div>
+                {% endif %}
+
+                {# additional insurance #}
+                {% if person.zusatzversicherungShow == true and person.zusatzversicherung is not empty %}
+                  <div class="mx-1 my-3 p-3 border border-light">
+                    <strong>{{ 'Zusatzversicherung'|trans }}</strong><br />
+                    {{ person.zusatzversicherung|raw|nl2br }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {# address #}
+        <div class="row py-3">
+          <div class="col-12">
+            <div class="container">
+
+              {% if
+                 (person.strasse is not empty and person.strasseShow == true) or
+                 (person.zusatz is not empty and person.zusatzShow == true) or
+                 (person.ort is not empty and person.ortShow == true)
+               %}
+                <div class="mx-1 my-3 p-3 border border-dark">
+                  <strong>{{ 'Wohnort'|trans }}</strong>
+
+                  {# street #}
+                  {% if person.strasseShow == true and person.strasse is not empty %}
+                    <br />{{ person.strasse|raw|nl2br }}
+                  {% endif %}
+
+                  {# additional #}
+                  {% if person.zusatzShow == true and person.zusatz is not empty %}
+                    <br />{{ person.zusatz|raw|nl2br }}
+                  {% endif %}
+
+                  {# location #}
+                  {% if person.ortShow == true and person.ort is not empty %}
+                    <br />{{ person.plz|raw|nl2br }} {{ person.ort|raw|nl2br }}
+                  {% endif %}
+
+                  <br />{{ person.land|raw|nl2br }}
+                </div>
+              {% endif %}
+
+              {# telefon #}
+              {% if person.telefonShow == true and person.telefon is not empty %}
+                <div class="mx-1 my-3 p-3 border border-dark">
+                  <strong>{{ 'Telefon'|trans }}</strong><br />
+                  {{ person.telefonDisplay }}
+                </div>
+              {% endif %}
+
+              {# mobile #}
+              {% if person.mobileShow == true and person.mobile is not empty %}
+                <div class="mx-1 my-3 p-3 border border-dark">
+                  <strong>{{ 'Mobile'|trans }}</strong><br />
+                  {{ person.mobileDisplay }}
+                </div>
+              {% endif %}
+
+              {# organ donor card #}
+              {% if person.organspenderShow == true and person.organspender is not empty %}
+                <div class="mx-1 my-3 p-3 border border-dark">
+                  <strong>{{ 'Organspendeausweis'|trans }}</strong><br />
+                  {{ person.organspender ? 'ja'|trans : 'nein'|trans }}
+                </div>
+              {% endif %}
+
+              {# advance directive #}
+              {% if person.patientenverfShow == true and person.patientenverf is not empty %}
+                <div class="mx-1 my-3 p-3 border border-dark">
+                  <strong>{{ 'Patienten­verfügung'|trans }}</strong><br />
+                  {{ person.patientenverf ? 'ja'|trans : 'nein'|trans }}
+                </div>
+              {% endif %}
+
+              {# additional remarks #}
+              {% if person.weitereangabenShow == true and person.weitereangaben is not empty %}
+                <div class="mx-1 my-3 p-3 border border-dark">
+                  <strong>{{ 'Weitere Angaben'|trans }}</strong><br />
+                  {{ person.weitereangaben|raw|nl2br }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# show cookie warning modal if not own pass #}
+  {% if
+    app.user is null or
+    nutzer is not defined or (
+      nutzer is defined and app.user.id != nutzer.id
+    )
+  %}
+    {% include '_partials/items/_passModals.html.twig' %}
+  {% endif %}
+{% endblock %}

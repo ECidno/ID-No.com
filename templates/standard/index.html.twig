@@ -1,0 +1,367 @@
+{% extends 'default.html.twig' %}
+{% block title %}{{ 'Start'|trans }}{% endblock %}
+
+{# preloads #}
+{% block preloads %}
+  {% apply spaceless %}
+
+  {# banner_images | preload #}
+  {% for item in settings.carousel %}
+    <link
+      rel="preload"
+      href="{{ asset(item.image.mobile, 'media') }}"
+      as="image" />
+		<link
+      rel="preload"
+      href="{{ asset(item.image.desktop, 'media') }}"
+      as="image" />
+  {% endfor %}
+
+  {% endapply %}
+{% endblock %}
+
+{# Content #}
+{% block content %}
+
+	{# Carousel #}
+	<div
+		id="carousel-index"
+		class="carousel slide"
+		data-bs-ride="true">
+		<div class="carousel-indicators">
+			{% for item in settings.carousel %}
+				<button
+					type="button"
+					data-bs-target="#carousel-index"
+					data-bs-slide-to="{{ loop.index0 }}"
+					class="d-none d-lg-block{{ loop.index0 == 0 ? ' active' : '' }}"
+					aria-current="{{ loop.index0 == 0 ? 'true' : 'false' }}"
+					aria-label="Slide {{ loop.index }}"></button>
+			{% endfor %}
+		</div>
+		<div class="carousel-inner">
+			{% for key, item in settings.carousel %}
+				{% set text = 'index.carousel.slide.' ~ key ~ '.text' %}
+				{% set caption = 'index.carousel.slide.' ~ key ~ '.caption' %}
+				{% set textStyle = item.textStyle is defined ? item.textStyle : 'position:absolute;' %}
+				{% set textStyleProperty = 'style="' ~ textStyle ~ '"' %}
+				<div class="carousel-item{{ loop.index0 == 0 ? ' active' : '' }}">
+					<img
+						src="{{ asset(item.image.desktop, 'media') }}"
+						class="d-none d-lg-block w-100"
+						alt="{{ caption|trans }}" />
+					<div class="d-none d-lg-block text-white" {{ textStyleProperty|raw }}>
+						<h2 class="h1 text-light" >{{ text|trans|raw|markdown_to_html }}</h2>
+					</div>
+					<img
+						src="{{ asset(item.image.mobile, 'media') }}"
+						class="d-lg-none w-100"
+						alt="{{ caption |trans}}" />
+					<div class="carousel-caption pb-0 d-lg-none">
+						<span class="align-bottom">{{ caption|trans }}</span>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<button
+			class="carousel-control-prev"
+			type="button"
+			data-bs-target="#carousel-index"
+			data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">{{ 'Vorherige'|trans }}</span>
+		</button>
+		<button
+			class="carousel-control-next"
+			type="button"
+			data-bs-target="#carousel-index"
+			data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">{{ 'Nächste'|trans }}</span>
+		</button>
+	</div>
+
+	{# Intro #}
+	<div class="container">
+		<div class="row mt-3">
+			<div class="col-md-12">
+				<h1 class="text-center">SOS-ID-Chip</h1>
+				<h5 class="text-center">{{ 'index.introduction.header2'|trans }}</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-lg-10 offset-lg-1 text-center">
+				<p class="">{{ 'index.introduction1'|trans|raw|markdown_to_html }}</p>
+			</div>
+		</div>
+	</div>
+
+	{# Box row 1 #}
+	<div class="container">
+		<div class="row mt-3 row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+			{% for key, card in settings.cards.row1 %}
+				{% set labelHeader = 'index.boxrow1.' ~ key ~ '.header' %}
+				{% set labelText = 'index.boxrow1.' ~ key ~ '.text' %}
+				{% set href = card.page is not defined or card.page is empty
+					? card.href ?? '#'
+					: path(settings.pages[card.page].route, {'_fragment': card.anchor ?? null}) %}
+				<div class="col">
+					<div class="card text-center h-100">
+						<div class="py-3">
+							<a
+								href="{{ href }}"
+								target="{{ card.target ?? '_top' }}">
+								<img
+									src="{{ asset(card.image, 'media') }}"
+									height="80"
+									alt="{{ labelHeader|trans|raw }}" />
+							</a>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title text-center text-success">{{ labelHeader|trans|raw }}</h5>
+							<p class="card-text">{{ labelText|trans|raw|markdown_to_html }}</p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	{# Box row 2 #}
+	<div class="bg-green">
+		<div class="container">
+			<div class="row mt-3 py-4 g-3">
+				{% for key, card in settings.cards.row2 %}
+					{% set labelHeader = 'index.boxrow2.' ~ key ~ '.header' %}
+					<div class="col-12 col-md-6 col-xl-3">
+						<div class="text-center">
+							<h6 class="text-center text-light">{{ labelHeader|trans }}</h6>
+							<div class="py-3">
+								<img
+									src="{{ asset(card.image, 'media') }}"
+									class="img-fluid border border-dark"
+									alt="{{ labelHeader|trans }}" />
+							</div>
+
+							{% if key == 'pass' %}
+								<a
+									class="btn btn-sm btn-outline-light bg-success text-light me-2"
+									href="/infovideo"
+									target="_blank">
+									<i class="bi bi-play-circle me-1"></i>
+									<span class="text-uppercase">Info-Video</span>
+								</a>
+								<a
+									class="btn btn-sm btn-outline-light bg-success text-light"
+									href="{{ path( 'app_standard_index', {idno: 'N10D-BE2N'}) }}"
+									target="_blank">
+									<i class="bi bi-plus-circle me-1"></i>
+									<span class="text-uppercase">Demo-Pass</span>
+								</a>
+							{% endif %}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	{# about #}
+	<a class="anchor" name="{{ settings.menu.header.idno.about.anchor }}"></a>
+	<div class="container">
+		<div class="row mt-3 gy-3">
+			<div class="col-lg-1">
+				<img
+					src="{{ asset(settings.cards.row1.about.image, 'media') }}"
+					class="img-fluid"
+					width="85"
+					alt="{{ 'index.boxrow1.about.header'|trans }}" />
+			</div>
+			<div class="col-lg-2 text-lg-end">
+				<h5>{{ 'index.boxrow1.about.header'|trans|raw }}</h5>
+			</div>
+			<div class="col-lg-9">
+				{{ 'index.about.text'|trans|raw|markdown_to_html }}
+			</div>
+		</div>
+	</div>
+
+	{# features #}
+	<div class="bg-green py-3">
+		<div class="container">
+			<a class="anchor" name="features"></a>
+			<div class="row mt-3 my-3 gy-3">
+				<div class="col-lg-1">
+					<img
+						src="{{ asset('images/vorteile_2b.png', 'media') }}"
+						class="img-fluid"
+						width="85"
+						alt="{{ 'index.features.header'|trans }}" />
+				</div>
+				<div class="col-lg-2 text-lg-end">
+					<h5 class="text-light">{{ 'index.features.header'|trans }}</h5>
+				</div>
+				<div class="col-lg-9">
+					{% for i in 1..6 %}
+						<div class="d-flex align-items-center mb-3">
+							<div class="flex-shrink-0">
+								<img
+									src="{{ asset('images/vorteil_pic.png', 'media') }}"
+									class="img-fluid"
+									alt="{{ 'index.features.header'|trans }}" />
+							</div>
+							<div class="flex-grow-1 ms-3">
+								<strong>{{ ('index.feature.' ~ loop.index ~ '.lbl')|trans }}</strong>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# works #}
+	<a class="anchor" name="{{ settings.menu.header.idno.works.anchor }}"></a>
+	<div class="container">
+		<div class="row mt-3 gy-3">
+			<div class="col-lg-1">
+				<img
+					src="{{ asset(settings.cards.row1.works.image, 'media') }}"
+					class="img-fluid"
+					width="85"
+					alt="{{ 'index.works.header'|trans }}" />
+			</div>
+			<div class="col-lg-2 text-lg-end">
+				<h5 class="text-success">{{ 'index.works.header'|trans|raw }}</h5>
+			</div>
+			<div class="col-lg-9">
+				<div class="row row-cols-1 row-cols-md-3 g-3">
+					{% for i in 1..3 %}
+						{% set labelHeader = 'index.work.step' ~ i ~ '.header' %}
+						{% set labelText = 'index.work.step' ~ i ~ '.text' %}
+						<div class="col">
+							<div class="card h-100">
+								<div class="card-body">
+									<h5 class="card-title">{{ labelHeader|trans }}</h5>
+									<p class="card-text">{{ labelText|trans|raw|markdown_to_html }}</p>
+								</div>
+								<img
+									src="{{ asset('images/so_funktionierts_' ~ i ~ '.jpg', 'media') }}"
+									class="card-img-bottom img-fluid border-dark"
+									alt="{{ labelHeader|trans }}" />
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# references #}
+	<a class="anchor" name="{{ settings.menu.header.idno.references.anchor }}"></a>
+	<div class="bg-green mt-3 pt-3 pb-5">
+		<div class="container">
+			<div class="row mt-3 gy-3">
+				<div class="col-lg-1">
+					<img
+						src="{{ asset('images/icon_referenzen_white.png', 'media') }}"
+						class="img-fluid"
+						width="85"
+						alt="{{ 'index.references.header'|trans }}" />
+				</div>
+				<div class="col-lg-2 text-lg-end">
+					<h5 class="text-light">{{ 'index.references.header'|trans|raw }}</h5>
+				</div>
+				<div class="col-md-9"></div>
+			</div>
+			<div class="row">
+				<div class="col-10 offset-1 col-lg-9 offset-lg-1 bg-light-white">
+					<div class="row justify-content-center">
+						{% for key, ref in settings.references %}
+							<div class="col-12 col-md-6 col-lg-4 p-2 references-col">
+								<img
+									src="{{ asset(ref.logo, 'media') }}"
+									class="img-fluid p-3 ref-logo"
+									alt="{{ key }}" />
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# testimonials #}
+	<a class="anchor" name="{{ settings.menu.header.idno.testimonials.anchor }}"></a>
+	<div class="container">
+		<div class="row mt-3 gy-3">
+			<div class="col-lg-1">
+				<img
+					src="{{ asset('images/icon_testimonials.png', 'media') }}"
+					class="img-fluid"
+					width="85"
+					alt="{{ 'index.testimonials.header'|trans }}" />
+			</div>
+			<div class="col-lg-11">
+				<h5 class="text-success">{{ 'index.testimonials.header'|trans|raw }}</h5>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-10 offset-md-1 col-lg-9 offset-lg-1">
+				{% for i in 1..3 %}
+					{% set image = 'images/index_testimonial_' ~ i ~ '.jpg' %}
+					{% set text = 'index.testimonials.' ~ i ~ '.text' %}
+					{% set person = 'index.testimonials.' ~ i ~ '.person' %}
+					{% set location = 'index.testimonials.' ~ i ~ '.location' %}
+					<div class="row py-2">
+						<div class="col-lg-2 col-md-4 col-6">
+							<img
+								src="{{ asset(image, 'media') }}"
+								class="img-fluid"
+								alt="{{ person|trans|markdown_to_html }}" />
+						</div>
+						<div class="col-md-6 offset-md-2 col-lg-6 offset-lg-4 text-end">
+							<p>{{ text|trans|raw|markdown_to_html }}</p>
+							<h5 class="text-success">{{ person|trans|markdown_to_html }}</h5>
+							<h6 class="text-success">{{ location|trans }}</h6>
+						</div>
+					</div>
+					{% if i < 3 %}<hr />{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	{# reference-partner #}
+	<div class="bg-green pt-3 pb-5">
+		<div class="container">
+			<div class="row mt-3 gy-3">
+				<div class="col-lg-1">
+					<img
+						src="{{ asset('images/icon_referenzen_white.png', 'media') }}"
+						class="img-fluid"
+						width="85"
+						alt="{{ 'index.references_partners.header'|trans }}" />
+				</div>
+				<div class="col-lg-10">
+					<h5 class="text-light">{{ 'index.references_partners.header'|trans|raw }}</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-10 offset-1 col-lg-9 offset-lg-1 bg-light-white">
+					<div class="row justify-content-center">
+						{% for key, ref in settings.references_partners %}
+							<div class="col-12 col-md-6 col-lg-4 p-4 reference-partner-col">
+								<img
+									src="{{ asset(ref.logo, 'media') }}"
+									class="img-fluid ref-logo"
+									alt="{{ key }}" />
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

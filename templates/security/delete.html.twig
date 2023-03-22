@@ -1,0 +1,33 @@
+{% extends 'default.html.twig' %}
+{% block title %}{{ 'accountDelete.title'|trans }}{% endblock %}
+
+{# Content #}
+{% block content %}
+  <div class="container-fluid">
+    <div class="row my-3 justify-content-center">
+      <div class="col-10 col-lg-8 col-xl-6">
+        <h1>{{ 'accountDelete.header'|trans }}</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-10 col-lg-8 col-xl-6">
+        {{ 'accountDelete.text'|trans|raw|markdown_to_html }}
+        {{ form_start(form) }}
+          {{ form_row( form.password) }}
+          <div class="row">
+            <div class="col-6">
+              <a
+                class="btn btn-outline-dark"
+                href="{{ path('app_profile_index') }}">
+                {{ 'meinidno.title'|trans }}
+              </a>
+            </div>
+            <div class="col-6 text-end">
+              {{ form_row( form.accountDelete) }}
+            </div>
+          </div>
+        {{ form_end(form) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

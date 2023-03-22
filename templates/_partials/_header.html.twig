@@ -1,0 +1,228 @@
+<header>
+  {# nav #}
+  <nav class="navbar navbar-dark navbar-expand-lg bg-dark border-bottom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a
+          class="navbar-brand col-md-1"
+          href="{{ path('app_standard_index') }}">
+          <img
+            src="{{ asset('images/id_no_logo.png', 'media') }}"
+            alt="ID-No Logo" /></a>
+        </a>
+      </div>
+
+      <button class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse"
+        id="navbarText">
+        {# center #}
+        <ul class="navbar-nav mb-2 ms-auto me-auto">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle active"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              href="#">ID-No.com</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              {% for key, item in settings.menu.header.idno %}
+                {% set title = 'header.menu.idno.' ~ key ~ '.lbl' %}
+                {% set href = item.page is not defined or item.page is empty
+                  ? item.href ?? '#'
+                  : path(settings.pages[item.page].route, {'_fragment': item.anchor ?? null}) %}
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{{ href }}">{{ title|trans }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+
+          {# shop #}
+          <li>
+            <a
+              class="nav-link"
+              href="https://www.code-no.shop/sos-id-chip/"
+              target="_blank">Shop</a>
+          </li>
+
+          {# language #}
+          {% set currentRoute = app.request.attributes.get('_route') %}
+          {% set currentRouteParams = app.request.attributes.get('_route_params') ?? {} %}
+          <li class="nav-item">
+            {% if language == 'de' %}
+              <a
+                class="nav-link"
+                href="{{ path(currentRoute, currentRouteParams|merge({_locale: 'en'})) }}">English</a>
+            {% else %}
+              <a
+                class="nav-link"
+                href="{{ path(currentRoute, currentRouteParams|merge({_locale: 'de'})) }}">Deutsch</a>
+            {% endif %}
+          </li>
+
+        	{# development environment #}
+	        {% if app.environment|lower == 'dev' %}
+            <li class="nav-item dropdown border border-warning rounded text-warning">
+              <a
+                class="nav-link dropdown-toggle small"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                href="#">{{ app.environment }}</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <h6 class="dropdown-header small">
+                    Environment: <span class="badge text-bg-warning">{{ app.environment }}</span><br />
+                    Language: <span class="badge text-bg-warning">{{ language }}</span>
+                  </h6>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{{ path('translation_webui') }}"
+                    target="_blank">Translator</a>
+                </li>
+              </ul>
+            </li>
+          {% endif %}
+        </ul>
+
+        {# right #}
+        <ul class="navbar-nav mb-2 ms-auto">
+
+          {% if app.user is not empty %}
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle pt-0"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                href="#">
+                {% if person is not defined %}
+                  {% set person = app.user.persons.0 %}
+                {% endif %}
+
+                {% if person is defined and person.imageShow == true and person.imageSrc is not empty %}
+                  <div class="text-center userIconCenter userIconCenterSmall">
+                    <div
+                      class="userIcon userIconSmall"
+                      style="background-image: url('{{ person.imageSrc }}');" alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
+                    </div>
+                  </div>
+                {% else %}
+                  <i class="bi bi-person-circle fs-3 pe-1 align-middle"></i>
+                {% endif %}
+                <span class="align-middle">{{ 'meinidno.title'|trans }}</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                {% for key, item in settings.menu.header.user %}
+                  {% set title = 'header.menu.user.' ~ key ~ '.lbl' %}
+                  {% set href = item.page is not defined or item.page is empty
+                    ? item.href ?? '#'
+                    : path(settings.pages[item.page].route, {'_fragment': item.anchor ?? null}) %}
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{{ href }}">{{ title|trans }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="{{ path(settings.pages.login.route) }}">
+                <i class="bi bi-person-circle fs-3 pe-1 align-middle"></i>
+                <span class="align-middle">{{ 'Anmelden'|trans }}</span>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+{# form #}
+{% if ((idno is not defined) and (item is not defined)) and (app.user is null) %}
+
+  {% set fieldErrorMessage = '' %}
+  {% for flashMessage in app.flashes('itemError') %}
+    {% set fieldErrorMessage = flashMessage %}
+  {% endfor %}
+
+  {% set fieldErrorClass = fieldErrorMessage is defined and fieldErrorMessage is not empty
+    ? ' is-invalid'
+    : '' %}
+
+  <nav class="header-form sticky-top bg-dark py-4">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-8 col-xl-6">
+          <form
+            role="form"
+            action="{{ path('app_standard_index') }}"
+            method="post"
+            id="idno_form"
+            class="form-floating">
+            <div class="input-group">
+              <div class="form-floating{{ fieldErrorClass }}">
+                <input
+                  type="text"
+                  id="fldIdNo"
+                  class="form-control text-center{{ fieldErrorClass }} idNo"
+                  name="p_idno"
+                  placeholder="{{ 'ID-Nummer checken/aktivieren'|trans }}"
+                  maxlength="9"
+                  value="{{ idno ?? '' }}"
+                  pattern="[a-z,A-Z,0-9]{4}-[a-z,A-Z,0-9]{4}"
+                  autocomplete="off"
+                  aria-label="ID number"
+                  required="required" />
+                <label id="lblIdNo" for="fldIdNo">{{ 'ID-Nummer checken/aktivieren'|trans }}</label>
+
+                {% if fieldErrorMessage is defined and fieldErrorMessage is not empty %}
+                  <label class="invalid-feedback-inline">{{ fieldErrorMessage }}</label>
+                {% endif %}
+              </div>
+
+              <button
+                class="btn btn-success"
+                type="submit">GO !</button>
+            </div>
+
+            {# csrf #}
+            <input
+              type="hidden"
+              name="token"
+              value="{{ csrf_token('idno') }}"/>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+{% endif %}
+
+{# to top #}
+<button
+  type="button"
+  id="toTop"
+  class="position-fixed bottom-0 end-0 bg-dark m-3 px-3 py-2 btn btn-dark btn-lg"
+  title="to top"
+  style="z-index:12000;">
+  <i class="bi bi-arrow-up"></i>
+</button>

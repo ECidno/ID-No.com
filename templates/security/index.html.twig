@@ -1,0 +1,131 @@
+{% extends 'default.html.twig' %}
+{% block title %}{{ 'login.title'|trans }}{% endblock %}
+
+{# Content #}
+{% block content %}
+  <div class="container-fluid">
+    <div class="row my-3 justify-content-center">
+      <div class="col-10 col-lg-8 col-xl-6">
+        <h1>{{ 'login.header'|trans }}</h1>
+      </div>
+    </div>
+
+    {# flash messages | info #}
+    {% set flashInfo = '' %}
+    {% for flashMessage in app.flashes('loginInfo') %}
+      {% set flashInfo = flashMessage %}
+    {% endfor %}
+    {% if flashInfo is defined and flashInfo is not empty %}
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-8 col-xl-6">
+          <div
+            class="alert alert-info alert-dismissible my-3"
+            role="alert">
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <i class="bi bi-info-circle px-1"></i>
+              </div>
+              <div class="flex-grow-1 ms-2">
+                {{ flashInfo }}
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="row justify-content-center">
+      <div class="col-10 col-lg-8 col-xl-6">
+        {{ 'login.text'|trans|raw|markdown_to_html }}
+
+        {# error? #}
+        {% if error %}
+          <div
+            class="alert alert-danger alert-dismissible fade show my-3"
+            role="alert">
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <i class="bi bi-exclamation-triangle px-1"></i>
+              </div>
+              <div class="flex-grow-1 ms-2">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"></button>
+          </div>
+        {% endif %}
+
+        {# form #}
+        <form
+          action="{{ path('app_login') }}"
+          method="post">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="username"
+              value="{{ last_username }}"
+              name="_username"
+              placeholder="E-Mail" />
+            <label for="username">{{ 'E-Mail'|trans }}</label>
+          </div>
+          <div class="form-floating">
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              name="_password"
+              placeholder="Passwort">
+            <label for="password">{{ 'Passwort'|trans }}</label>
+          </div>
+
+          {# If you want to control the URL the user is redirected to on success #}
+          <input
+            type="hidden"
+            name="_target_path"
+            value="{{ path('app_profile_index') }}" />
+          <input
+            type="hidden"
+            name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}" />
+
+          <div class="float-start">
+            <a
+              href="{{ path('app_account_resetPasswort') }}"
+              class="btn btn-outline-success my-3 px-3 py-2 text-decoration-none">
+              {{ 'login.resetPassword.link'|trans }}
+            </a>
+          </div>
+          <div class="float-end">
+            <button
+              type="submit"
+              class="btn btn-success text-light my-3 px-3 py-2">{{ 'Einloggen'|trans }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    {# register #}
+    <div class="row justify-content-center">
+      <div class="col-10 col-lg-8 col-xl-6">
+        <hr />
+        <p class="float-start">{{ 'login.register.text'|trans }}<br />
+          <a
+            href="{{ path('app_items_register') }}"
+            class="btn btn-success text-light my-3 px-3 py-2">
+            {{ 'login.register.linktext'|trans }}
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

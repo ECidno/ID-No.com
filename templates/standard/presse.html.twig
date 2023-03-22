@@ -1,0 +1,65 @@
+{% extends 'default.html.twig' %}
+{% block title %}{{ 'Presse'|trans }}{% endblock %}
+
+{# Content #}
+{% block content %}
+  <div class="container">
+    <div class="row my-3">
+      <div class="col-12">
+        <h1>{{ 'press'|trans }}</h1>
+      </div>
+    </div>
+
+    {# teaser #}
+    <div class="row py-3 border-bottom align-content-center">
+      <div class="col-6 col-lg-4 offset-lg-2">
+        <a href="#press17">
+          <img
+            src="{{ asset('press/Computerbild-presse-teaser.jpg', 'media') }}"
+            class=" img-thumbnail rounded"
+            alt="Computerbild"
+            rel="preload" />
+        </a>
+      </div>
+      <div class="col-6 col-lg-4">
+        <a href="#press16">
+          <img
+            src="{{ asset('press/TikTok-presse-teaser.jpg', 'media') }}"
+            class="col img-thumbnail rounded"
+            alt="TikTok"
+            rel="preload" />
+        </a>
+      </div>
+    </div>
+
+    {# iterate press articles #}
+    {% for item in settings.press|sort((a, b) => a.date < b.date) %}
+      <a class="anchor" name="press{{ item.id }}"></a>
+      <div class="row py-3{% if not loop.last %} border-bottom{% endif %}">
+        <div class="col-12 col-md-8 col-lg-9">
+          <p class="fw-light">
+            {{ item.location }}, {{ item.date|date('d.m.Y') }}
+          </p>
+          {{ ('press.' ~ item.id ~ '.text')|trans|raw|markdown_to_html }}
+          {# doc #}
+          {% if item.doc is defined and item.doc is not empty %}
+            <div class="float-end">
+              <a
+                href="{{ asset('press/docs/' ~ item.doc, 'media') }}"
+                target="_blsnk">
+                <i class="bi bi-filetype-pdf"></i>
+                PDF herunterladen
+              </a>
+            </div>
+          {% endif %}
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+          <img
+            src="{{ asset('press/' ~ item.image, 'media') }}"
+            class="img-fluid"
+            alt="{{ item.location }}, {{ item.date|date('d.m.Y') }}" />
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

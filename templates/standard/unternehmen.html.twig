@@ -1,0 +1,77 @@
+{% extends 'default.html.twig' %}
+{% block title %}{{ 'Unternehmen'|trans }}{% endblock %}
+
+{# Content #}
+{% block content %}
+
+  {# Intro #}
+  <div class="container">
+    <div class="row my-3">
+      <div class="col">
+        <img
+          src="{{ asset('images/header_loft.jpg', 'media') }}"
+          class="img-fluid"
+          alt="Headerbild" />
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12">
+        <h1>{{ 'company'|trans }}</h1>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12 col-lg-9 col-sm-8">
+        {{ 'company.introduction'|trans|raw|markdown_to_html }}
+      </div>
+      <div class="col-12 col-lg-3 col-sm-4">
+        <img
+          src="{{ asset('images/Team_Office.jpg', 'media') }}"
+          class="img-fluid"
+          alt="{{ 'company'|trans }}" />
+      </div>
+    </div>
+
+    {# CEO #}
+    <div class="row mt-3">
+      <div class="col-12">
+        <h2>{{ 'management'|trans }}</h2>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-lg-3 col-sm-4 col-6 text-center">
+        <img
+          src="{{ asset('images/Markus.jpg', 'media') }}"
+          class="img-fluid"
+          alt="{{ 'company.ceo.caption'|trans }}" />
+        <span class="small">{{ 'company.ceo.caption'|trans }}</span>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-lg-9 col-sm-12">
+        {{ 'company.ceo.text'|trans|raw|markdown_to_html }}
+      </div>
+    </div>
+
+    {# Advisory board #}
+    <div class="row mt-3">
+      <div class="col-12">
+        <h2>{{ 'Advisory board'|trans }}</h2>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-lg-3 col-sm-4 col-6 text-center">
+        <img
+          src="{{ asset('images/Beirat.jpg', 'media') }}"
+          class="img-fluid"
+          alt="{{ 'Advisory board'|trans }}" />
+          <span class="small">{{ 'company.advisory.caption'|trans|raw|markdown_to_html }}</span>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-lg-9 col-sm-8">
+        {{ 'company.advisory.text'|trans|raw|markdown_to_html }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

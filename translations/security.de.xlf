@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="de">
+  <file id="security.de">
+    <unit id="xM9uX4L" name="Wrong credentials!">
+      <segment>
+        <source>Wrong credentials!</source>
+        <target>Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.</target>
+      </segment>
+    </unit>
+    <unit id="pMAY23j" name="Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.">
+      <segment>
+        <source>Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.</source>
+        <target>Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.</target>
+      </segment>
+    </unit>
+    <unit id="uVKKMcJ" name="Username could not be found!">
+      <segment>
+        <source>Username could not be found!</source>
+        <target>Die Kombination aus Benutzernamen und Passwort ist nicht im System hinterlegt.</target>
+      </segment>
+    </unit>
+    <unit id="U4boV4W" name="Empty credentials!">
+      <segment>
+        <source>Empty credentials!</source>
+        <target>Es wurden keine Anmeldedaten übermittelt!</target>
+      </segment>
+    </unit>
+    <unit id="Re2boGN" name="code.expired">
+      <segment>
+        <source>code.expired</source>
+        <target>Der Code ist abgelaufen. Bitte fordern sie einen neuen über ihre Account Seite an.</target>
+      </segment>
+    </unit>
+    <unit id="ENjue_N" name="code.used">
+      <segment>
+        <source>code.used</source>
+        <target>Der Code wurde bereits benutzt.</target>
+      </segment>
+    </unit>
+    <unit id="2UO38zy" name="code.invalid">
+      <segment>
+        <source>code.invalid</source>
+        <target>Der Code ist ungültig.</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

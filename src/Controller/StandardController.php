@@ -1,0 +1,136 @@
+<?php
+namespace App\Controller;
+
+/***********************************************************************
+ *
+ * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
+ *
+ * /*********************************************************************/
+
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+/**
+ * Standard controller
+ *
+ * @Route("/", name="app_standard_")
+ */
+class StandardController extends AbstractController
+{
+    /**
+     * index action
+     *
+     * @param Request $request
+     * @param string $idno
+     *
+     *
+     * @return Response
+     *
+     * @Route("/{idno<[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}>?}", name="index", priority=100, methods={"GET", "POST"})
+     */
+    public function index(Request $request, $idno = null): Response
+    {
+        $bannerImages = [];
+        $dir = 'media/images/banner';
+        $idno = strtoupper($request->get('p_idno') ?? $idno);
+        $submittedToken = $request->request->get('token');
+
+        // dir exists?
+        if (file_exists($dir)) {
+            $finder = new Finder();
+
+            // get banner images form asset path
+            $finder
+                ->ignoreUnreadableDirs()
+                ->files()
+                ->in($dir);
+            if ($finder->hasResults()) {
+                foreach ($finder as $file) {
+                    $bannerImages[] = $file->getRelativePathname();
+                }
+                asort($bannerImages);
+            }
+        }
+
+        // variables
+        $variables = [
+            'banner_images' => $bannerImages,
+        ];
+
+        // header form csrf
+        if (
+            !empty($request->get('p_idno')) &&
+            !$this->isCsrfTokenValid('idno', $submittedToken)
+        ) {
+            $variables['formError'] = 'CSRF failure';
+
+            // return
+            return $this->renderAndRespond($variables);
+        }
+
+        // redirect to pass
+        // @TODO store id in session and remove from path (parameter)?
+        if(!empty($idno)) {
+            return $this->redirectToRoute(
+                'app_items_pass',
+                [
+                    'idno' => $idno,
+                ]
+            );
+        }
+
+        // return
+        return $this->renderAndRespond($variables);
+    }
+
+
+    /**
+     * content action
+     *
+     * @param string $slug
+     *
+     * @return Response
+     *
+     * Route("/{slug}", name="content", priority=10, methods={"GET"})
+     */
+    public function content($slug): Response
+    {
+        // set template name for controller/action
+        $this->template = join(
+            '/',
+            [
+                strtolower($this->controllerName),
+                strtolower($slug).'.html.twig',
+            ]
+        );
+
+        // variables
+        $variables = [
+            'slug' => $this->settings['pages'][$slug] ?? $slug,
+        ];
+
+        // return
+        return $this->renderAndRespond($variables);
+    }
+
+
+    /**
+     * example action
+     *
+     * @param Request $request
+     *
+     * @Route("/example", name="example", methods={"GET"})
+     *
+     * @return Response
+     */
+    public function example(): Response
+    {
+        // variables
+        $variables = [];
+
+        // return
+        return $this->renderAndRespond($variables);
+    }
+}

@@ -1,0 +1,23 @@
+{% extends 'mail/base.html.twig' %}
+
+{# content #}
+{% block content %}
+  <div class="body">
+  {{ 'mail.mailScanned.text'|trans(
+    {
+      '%address%': person.fullAddress|raw,
+      '%time%': now|date('H:i'),
+      '%idNo%': item.idNo,
+      '%login_link%': url('app_login'),
+    }
+  )|raw|markdown_to_html }}
+  </p>
+
+  <div class="box">
+    {{ 'mail.mailScanned.box'|trans(
+      {
+        '%login_link%': url('app_login'),
+      }
+    )|raw|markdown_to_html }}
+  </div>
+{% endblock %}

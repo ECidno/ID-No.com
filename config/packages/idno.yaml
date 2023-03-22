@@ -1,0 +1,334 @@
+parameters:
+
+  # preset env vars for case not set in .env.* files
+  env(BASE_HREF): ""
+
+
+  # settings
+  settings:
+
+    # baseHref
+    baseHref: '%env(resolve:BASE_HREF)%'
+
+    # languages
+    languages:
+      de:
+        title: Deutsch
+        locale: de_DE
+      en:
+        title: English
+        locale: en_US
+
+
+    # buttons
+    buttons:
+      add: 'bi bi-plus-square'
+      new: 'bi bi-plus-square'
+      edit: 'bi bi-pencil-square'
+      delete: 'bi bi-trash'
+
+    # form
+    form:
+      type: floating
+
+    # api
+    api:
+
+      # map
+      map:
+        key: 613451bbf3874acc89fbb3e57e8403cf
+        lat: 50.1310743
+        lon: 8.7568056
+        zoom: 17
+        type: osm-bright
+        baseUrl: https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=
+        retinaUrl: https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=
+
+      # geocode
+      geocode:
+        key: 613451bbf3874acc89fbb3e57e8403cf
+        url: https://api.geoapify.com/v1/geocode/reverse?
+
+
+    # pages
+    pages:
+      index:
+        route: app_standard_index
+        slug:
+      company:
+        route: idno_content_unternehmen
+        slug: unternehmen
+      press:
+        route: idno_content_presse
+        slug: presse
+      terms:
+        route: idno_content_agb
+        slug: agb
+      privacy:
+        route: idno_content_datenschutz
+        slug: datenschutz
+      security:
+        route: idno_content_datensicherheit
+        slug: datensicherheit
+      imprint:
+        route: idno_content_impressum
+        slug: impressum
+
+      login:
+        route: app_login
+        slug: login
+      logout:
+        route: app_logout
+        slug: logout
+      meinidno:
+        route: app_profile_index
+        slug: meinidno
+      account:
+        route: app_account_edit
+        slug: profil/edit
+      contacts:
+        route: app_contacts_index
+        slug: profil/edit
+
+    # menu
+    menu:
+      header:
+        idno:
+          about:
+            page: index
+            anchor: ueber_idno
+          works:
+            page: index
+            anchor: so_funktionierts
+          testimonials:
+            page: index
+            anchor: testimonials
+          company:
+            page: company
+          press:
+            page: press
+          references:
+            page: index
+            anchor: referenzen
+          bussiness_clients:
+             href: 'https://www.code-no.shop/sie-sind-firmenkunde'
+
+        # user
+        user:
+          meinidno:
+            page: meinidno
+          logout:
+            page: logout
+
+
+      # footer menu
+      footer:
+        company:
+          page: company
+        presse:
+          page: press
+        agb:
+          page: terms
+        privacy:
+          page: privacy
+        imprint:
+          page: imprint
+
+
+    # carousel
+    carousel:
+      sos_chip_shoe:
+        image:
+          desktop: slider/slider_desktop_1.jpg
+          mobile: slider/slider_mobile_1.jpg
+        textStyle: 'position:absolute; left:25%; top:25%; margin-left:-70px; text-shadow: black 1px 1px 1px;'
+
+      quick_sos_data:
+        image:
+          desktop: slider/Slider_2_desktop_080621.jpg
+          mobile: slider/slider_mobile_2.jpg
+        textStyle: 'position:absolute; left:25%; top:37%;  margin-left:-294px; text-shadow: black 1px 1px 1px;'
+
+      best_practice_barmer:
+        image:
+          desktop: slider/slider_desktop_3.jpg
+          mobile: slider/slider_mobile_3.jpg
+        textStyle: 'position:absolute; left:25%; top:28%; margin-left:-128px; text-shadow: black 1px 1px 1px;'
+
+      sos_clip_bike:
+        image:
+          desktop: slider/slider_desktop_4.jpg
+          mobile: slider/slider_mobile_4.jpg
+        textStyle: 'position:absolute; left:56%; top:35%; text-shadow: black 1px 1px 1px;'
+
+      sos_clip_motorcycle:
+        image:
+          desktop: slider/slider_desktop_5.jpg
+          mobile: slider/slider_mobile_5.jpg
+        textStyle: 'position:absolute; left:56%; top:35%; text-shadow: black 1px 1px 1px;'
+
+      best_practice_harley_davidson:
+        image:
+          desktop: slider/slider_desktop_6.jpg
+          mobile: slider/slider_mobile_6.jpg
+
+      sos_clip_senior:
+        image:
+          desktop: slider/slider_desktop_7.jpg
+          mobile: slider/slider_mobile_7.jpg
+        textStyle: 'position:absolute; left:25%; top:30%; text-shadow: black 1px 1px 1px;'
+
+      # gem. E-Mail Herr Seidel dd. 11.01.2023
+      # covid:
+      #   image:
+      #     desktop: slider/ID_No_CovidTeaser_2620x650_V1.png
+      #     mobile: slider/ID_No_CovidTeaser_1208x750_V1.png
+
+
+    # cards
+    cards:
+
+      # row 1
+      row1:
+        about:
+          image: images/cross.png
+          page: index
+          anchor: ueber_idno
+        works:
+          image: images/info_2b.png
+          page: index
+          anchor: so_funktionierts
+        shop:
+          image: images/shopbutton_1.png
+          href: 'https://www.code-no.shop/sos-id-chip/'
+          target: _blank
+        datasecurity:
+          image: images/safebutton_1.png
+          page: security
+
+      # row 2
+      row2:
+        chip:
+          image: images/galerie-pic_1.jpg
+        bracelet:
+          image: images/galerie-pic_2.jpg
+        infos:
+          image: images/galerie-pic_3.jpg
+        pass:
+          image: images/galerie-pic_4.jpg
+          buttons:
+            video:
+              href: https://youtu.be/3obkTbR6tg0
+              target: _blank
+            demo:
+              href: /N10D-BE2N
+              target: _blank
+
+
+    # references
+    references:
+      barmer:
+        logo: references/barmer.png
+        logo_bw: references/barmer_sw.png
+      ergo:
+        logo: references/ergo.png
+        logo_bw: references/ergo_sw.png
+      abus:
+        logo: references/abus.png
+        logo_bw: references/abus_sw.png
+      arag:
+        logo: references/arag.png
+        logo_bw: references/arag_sw.png
+      Allianz:
+        logo: references/allianz.png
+        logo_bw: references/allianz_sw.png
+      DRK:
+        logo: references/drk.svg
+        logo_bw: references/drk_sw.png
+      SportScheck:
+        logo: references/sportscheck.png
+        logo_bw: references/sportscheck_sw.png
+      Harley-Davidson:
+        logo: references/hdis.png
+        logo_bw: references/hdis_sw.png
+      AOK:
+        logo: references/aok.png
+        logo_bw: references/aok_sw.png
+
+
+    # references
+    references_partners:
+      computer-bild:
+        logo: references/computer-bild.jpg
+      spobi:
+        logo: references/spobi.png
+        logo_bw: references/spobi_sw.png
+      reif:
+        logo: references/reif.jpg
+        logo_bw: references/reif_sw.jpg
+
+
+    # social
+    social:
+      instagram:
+        title: Instagram
+        icon: images/instagram.png
+        href: https://www.instagram.com/idno_com/
+
+      facebook:
+        title: Facebook
+        icon: images/facebook.png
+        href: https://m.facebook.com/idnocom/
+
+      tiktok:
+        title: TikTok
+        icon: images/tiktok.png
+        href: 'https://www.tiktok.com/@id_no.com'
+
+
+    # press
+    press:
+      -
+        id: 17
+        date: 2021-09-10
+        location: Frankfurt
+        image: Computerbild-presse.jpg
+      -
+        id: 16
+        date: 2021-09-10
+        location: Frankfurt
+        image: TikTok-presse.jpg
+      -
+        id: 15
+        date: 2021-09-08
+        location: Frankfurt
+        image: ZOLL-AmbulancePad-presse.jpg
+        doc: Pressemitteilung-ZOLL-AmbulancePad.pdf
+      -
+        id: 14
+        date: 2021-06-09
+        location: Frankfurt
+        image: Sportbild-presse.jpg
+      -
+        id: 13
+        date: 2021-06-11
+        location: Frankfurt
+        image: Reif-presse.jpg
+      -
+        id: 12
+        date: 2019-04-25
+        location: Frankfurt
+        image: arbeitssicherheit_presse.jpg
+        doc: Pressemeldung_Mehr_Sicherheit_im_Arbeitsschutz.pdf
+      -
+        id: 11
+        date: 2019-02-11
+        location: Frankfurt
+        image: TagDesNotrufs.jpg
+        doc: Pressemeldung_Tag_des_Notrufs.pdf
+      -
+        id: 10
+        date: 2018-05-18
+        location: Frankfurt
+        image: Notfallpass.jpg
+        doc: Pressemeldung_Da_es_im_Notfall_schnell_gehen_muss.pdf

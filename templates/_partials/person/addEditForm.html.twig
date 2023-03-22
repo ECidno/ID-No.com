@@ -1,0 +1,240 @@
+{{ form_errors(form) }}
+
+<div class="row">
+  <div class="col-9 col-sm-4">
+    {{ form_row(form.sprache) }}
+  </div>
+  <div class="col-9 col-sm-5">
+    {{ 'person.sprache.text'|trans }}
+  </div>
+</div>
+<hr />
+
+<h2 class="mb-3">{{ 'person.personalDetails.lbl'|trans }}</h2>
+
+<div class="row">
+  <div class="col-9 col-sm-4">
+    {{ form_row(form.anrede) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-9 col-sm-4">
+    {{ form_row(form.vorname) }}
+  </div>
+  <div class="col-9 col-sm-5">
+    {{ form_row(form.nachname) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-md-3 mb-1">
+    {{ 'person.geburtsdatum.lbl'|trans }}
+  </div>
+  <div class="col-3 col-md-2">
+    {{ form_row(form.geburtsdatumTag) }}
+  </div>
+  <div class="col-3 col-md-2">
+    {{ form_row(form.geburtsdatumMonat) }}
+  </div>
+  <div class="col-3 col-md-2">
+    {{ form_row(form.geburtsdatumJahr) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-9">
+    {{ form_row(form.strasse) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.strasseShow) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    {{ form_row(form.plz) }}
+  </div>
+  <div class="col-6">
+    {{ form_row(form.ort) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.ortShow) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-9">
+    {{ form_row(form.zusatz) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.zusatzShow) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-9">
+    {{ form_row(form.land) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-2">
+    {{ form_row(form.telefonLand) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.telefonVorwahl) }}
+  </div>
+  <div class="col-4">
+    {{ form_row(form.telefon) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.telefonShow) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-2">
+    {{ form_row(form.mobileLand) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.mobileVorwahl) }}
+  </div>
+  <div class="col-4">
+    {{ form_row(form.mobile) }}
+  </div>
+  <div class="col-3">
+    {{ form_row(form.mobileShow) }}
+  </div>
+</div>
+
+<div class="row border border-default rounded mb-3">
+  <div class="col-9">
+    {{ form_row(form.personImage) }}
+  </div>
+  <div class="col-3">
+    <p>&nbsp;</p>
+    {{ form_row(form.imageShow) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col bg-dark rounded">
+    <h4 class="text-light my-3">{{ 'person.medicalDetails.lbl'|trans }}</h4>
+    <div class="row">
+      <div class="col-9">
+        {{ form_row(form.blutgruppe) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.blutgruppeShow) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        {{ form_row(form.erkrankungen) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.erkrankungenShow) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        {{ form_row(form.medikamente) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.medikamenteShow) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        {{ form_row(form.allergieen) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.allergieenShow) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        {{ form_row(form.gewicht) }}
+      </div>
+      <div class="col-3">
+        {{ form_row(form.gewichtEinheit) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.gewichtShow) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        {{ form_row(form.groesse) }}
+      </div>
+      <div class="col-3">
+        {{ form_row(form.groesseEinheit) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.groesseShow) }}
+      </div>
+    </div>
+
+    <h4 class="text-light my-3">{{ 'person.krankenversicherungDetails.lbl'|trans }}</h4>
+    <div class="row">
+      <div class="col-9">
+        {{ form_row(form.krankenversicherung) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.krankenversicherungShow) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        {{ form_row(form.versicherungsnummer) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.versicherungsnummerShow) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        {{ form_row(form.zusatzversicherung) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.zusatzversicherungShow) }}
+      </div>
+    </div>
+
+    <h4 class="text-light my-3">{{ 'person.morePatientDetails.lbl'|trans }}</h4>
+    <div class="row mb-3">
+      <div class="col-9 text-light">
+        {{ form_row(form.organspender) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.organspenderShow) }}
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-9 text-light">
+        {{ form_row(form.patientenverf) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.patientenverfShow) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        {{ form_row(form.weitereangaben) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.weitereangabenShow) }}
+      </div>
+    </div>
+  </div>
+</div>

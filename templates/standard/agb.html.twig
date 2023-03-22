@@ -1,0 +1,31 @@
+{% extends 'default.html.twig' %}
+{% block title %}{{ 'AGB'|trans }}{% endblock %}
+
+{# Content #}
+{% block content %}
+  <div class="container">
+    <div class="row my-3">
+      <div class="col">
+        <img
+          src="{{ asset('images/header_loft.jpg', 'media') }}"
+          class="img-fluid"
+          alt="Headerbild" />
+      </div>
+    </div>
+
+    <div class="row my-3">
+      <div class="col-12 col-md-10 col-lg-8">
+        <h1>{{ 'terms.title'|trans }}</h1>
+        <h4 > ID-No.com GmbH  - medical aid</h4>
+      </div>
+    </div>
+    <div class="row py-3">
+      <div class="col-12 col-md-10 col-lg-8">
+        <p class="fw-light">
+          {{ 'terms.version'|trans }}
+        </p>
+        {{ 'terms.text'|trans|raw|markdown_to_html }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

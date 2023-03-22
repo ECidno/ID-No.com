@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="de">
+  <file id="validators.de">
+    <unit id="UZBWrJw" name="nutzer.email.unique">
+      <segment>
+        <source>nutzer.email.unique</source>
+        <target>Diese E-Mail ist bereits registriert</target>
+      </segment>
+    </unit>
+    <unit id="7TJGKov" name="We dont find any User with this email.">
+      <segment>
+        <source>We dont find any User with this email.</source>
+        <target>Wir konnten keinen User mit dieser E-Mail Adresse finden.</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

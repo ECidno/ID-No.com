@@ -1,3 +1,58 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+
+# controllers
+controllers:
+    resource: '../src/Controller'
+    type: annotation
+    prefix:
+        de: ''
+        en: 'en'
+
+
+# translator
+translation_webui:
+    path: /admin/_trans
+
+
+# static routes from pages
+app_static_routes:
+    resource: App\Service\RoutingService
+    type: service
+    prefix:
+        de: ''
+        en: 'en'
+
+
+# static external redirects
+redirect_infovideo:
+    path: /infovideo
+    methods: GET
+    defaults:
+        priority: 50
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+        path: 'https://youtu.be/3obkTbR6tg0'
+        keepQueryParams: false
+        keepRequestMethod: true
+
+redirect_pad:
+    path: '/pad'
+    methods: GET
+    defaults:
+        priority: 50
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+        path: 'https://youtu.be/oo_JCWIkCqE'
+        keepQueryParams: false
+        keepRequestMethod: true
+
+redirect_zoll:
+    path: '/zoll'
+    methods: GET
+    defaults:
+        priority: 50
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+        path: 'https://youtu.be/oo_JCWIkCqE'
+        keepQueryParams: false
+        keepRequestMethod: true

@@ -1,0 +1,4037 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="de">
+  <file id="messages.de">
+    <unit id="5LufHs6" name="Start">
+      <segment>
+        <source>Start</source>
+        <target>Start</target>
+      </segment>
+    </unit>
+    <unit id="RBvZMsS" name="index.introduction1">
+      <segment>
+        <source>index.introduction1</source>
+        <target>Wussten Sie, dass jährlich über 29 Millionen Menschen ärztliche Hilfe nach einem Unfall benötigen?
+Auch für Ihre Gesundheit - schnell und verlässlich: Tritt ein Notfall ein oder kommt es zu einem Unfall
+hilft ID-No.com den Einsatzkräften relevante persönliche Notfall-Informationen des Patienten zu erhalten.
+Das spart Zeit und kann im Ernstfall Leben retten.</target>
+      </segment>
+    </unit>
+    <unit id="VtIkqeC" name="index.introduction.header2">
+      <segment>
+        <source>index.introduction.header2</source>
+        <target>Mit lebensrettenden Notfalldaten</target>
+      </segment>
+    </unit>
+    <unit id="AB0XdUp" name="index.boxrow1.about.header">
+      <segment>
+        <source>index.boxrow1.about.header</source>
+        <target><![CDATA[Über <nobr>ID-No.com</nobr>]]></target>
+      </segment>
+    </unit>
+    <unit id="mX38078" name="index.boxrow1.about.text">
+      <segment>
+        <source>index.boxrow1.about.text</source>
+        <target>Mit ID-No.com kann rund um die Uhr weltweit auf hinterlegte Notfallinformationen zugegriffen werden. [Über ID-No.com](#ueber_idno)</target>
+      </segment>
+    </unit>
+    <unit id="3Vb_85h" name="index.boxrow1.works.header">
+      <segment>
+        <source>index.boxrow1.works.header</source>
+        <target>So funktioniert's</target>
+      </segment>
+    </unit>
+    <unit id="bTXdzec" name="index.boxrow1.works.text">
+      <segment>
+        <source>index.boxrow1.works.text</source>
+        <target>Über die ID-Nummer auf Ihrem SOS-ID-Chip hinterlegen Sie ganz einfach Ihren abrufbaren Notfall-ID Pass. [So funktioniert's](#so_funktionierts)</target>
+      </segment>
+    </unit>
+    <unit id="pnFTPhU" name="index.boxrow1.shop.header">
+      <segment>
+        <source>index.boxrow1.shop.header</source>
+        <target>Shop</target>
+      </segment>
+    </unit>
+    <unit id="7cX4FXm" name="index.boxrow1.shop.text">
+      <segment>
+        <source>index.boxrow1.shop.text</source>
+        <target>Unsere SOS-ID Produkte finden Sie ab einem UVP
+von 9,95 € hier im [Shop](https://www.code-no.shop/sos-id-chip/)</target>
+      </segment>
+    </unit>
+    <unit id="DqhitoI" name="index.boxrow1.datasecurity.header">
+      <segment>
+        <source>index.boxrow1.datasecurity.header</source>
+        <target>Datensicherheit</target>
+      </segment>
+    </unit>
+    <unit id=".6H1ZoO" name="index.boxrow1.datasecurity.text">
+      <segment>
+        <source>index.boxrow1.datasecurity.text</source>
+        <target>Wir schützen Ihre Daten! Geprüfte und zertifizierte [Datensicherheit](datensicherheit)</target>
+      </segment>
+    </unit>
+    <unit id="EpMvAOe" name="index.boxrow2.chip.header">
+      <segment>
+        <source>index.boxrow2.chip.header</source>
+        <target>SOS-ID-Chip</target>
+      </segment>
+    </unit>
+    <unit id="y8ZMWfS" name="index.boxrow2.bracelet.header">
+      <segment>
+        <source>index.boxrow2.bracelet.header</source>
+        <target>SOS-ID Armband</target>
+      </segment>
+    </unit>
+    <unit id="Dipbo0N" name="index.boxrow2.infos.header">
+      <segment>
+        <source>index.boxrow2.infos.header</source>
+        <target>Notfall-Infos abrufen</target>
+      </segment>
+    </unit>
+    <unit id="irMlJPi" name="index.boxrow2.pass.header">
+      <segment>
+        <source>index.boxrow2.pass.header</source>
+        <target>Notfall-ID Pass</target>
+      </segment>
+    </unit>
+    <unit id="_KdSYTr" name="Vorherige">
+      <segment>
+        <source>Vorherige</source>
+        <target>Vorherige</target>
+      </segment>
+    </unit>
+    <unit id="W13vMmV" name="Nächste">
+      <segment>
+        <source>Nächste</source>
+        <target>Nächste</target>
+      </segment>
+    </unit>
+    <unit id="8vOTifc" name="index.carousel.slide.sos_chip_shoe.caption">
+      <segment>
+        <source>index.carousel.slide.sos_chip_shoe.caption</source>
+        <target>SOS-ID-Chip am Schuh</target>
+      </segment>
+    </unit>
+    <unit id="bFD_QYh" name="index.carousel.slide.quick_sos_data.caption">
+      <segment>
+        <source>index.carousel.slide.quick_sos_data.caption</source>
+        <target>Schnell digitale SOS-Daten</target>
+      </segment>
+    </unit>
+    <unit id="DXhdVnO" name="index.carousel.slide.best_practice_barmer.caption">
+      <segment>
+        <source>index.carousel.slide.best_practice_barmer.caption</source>
+        <target>Best Practice: BARMER</target>
+      </segment>
+    </unit>
+    <unit id="Cp.xpr2" name="index.carousel.slide.sos_clip_bike.caption">
+      <segment>
+        <source>index.carousel.slide.sos_clip_bike.caption</source>
+        <target>SOS-ID Clip am Bike-Helm</target>
+      </segment>
+    </unit>
+    <unit id="8HWn53f" name="index.carousel.slide.sos_clip_motorcycle.caption">
+      <segment>
+        <source>index.carousel.slide.sos_clip_motorcycle.caption</source>
+        <target>SOS-ID Clip
+am Motorrad-Helm</target>
+      </segment>
+    </unit>
+    <unit id="UnDc50D" name="index.carousel.slide.best_practice_harley_davidson.caption">
+      <segment>
+        <source>index.carousel.slide.best_practice_harley_davidson.caption</source>
+        <target>Best Practice: Harley Davidson</target>
+      </segment>
+    </unit>
+    <unit id="lvarSw8" name="index.carousel.slide.sos_clip_senior.caption">
+      <segment>
+        <source>index.carousel.slide.sos_clip_senior.caption</source>
+        <target>SOS-ID-Chip für Senioren</target>
+      </segment>
+    </unit>
+    <unit id="TlrNx8P" name="index.carousel.slide.sos_chip_shoe.text">
+      <segment>
+        <source>index.carousel.slide.sos_chip_shoe.text</source>
+        <target>SOS-ID-Chip
+am Schuh</target>
+      </segment>
+    </unit>
+    <unit id="YDwfe9A" name="index.carousel.slide.quick_sos_data.text">
+      <segment>
+        <source>index.carousel.slide.quick_sos_data.text</source>
+        <target>
+Schnell zu
+digitalen Notfalldaten</target>
+      </segment>
+    </unit>
+    <unit id="MjBGaKz" name="index.carousel.slide.best_practice_barmer.text">
+      <segment>
+        <source>index.carousel.slide.best_practice_barmer.text</source>
+        <target>Best Practice</target>
+      </segment>
+    </unit>
+    <unit id="qzjpFEM" name="index.carousel.slide.sos_clip_bike.text">
+      <segment>
+        <source>index.carousel.slide.sos_clip_bike.text</source>
+        <target>SOS-ID-Clip
+am Bike-Helm
+</target>
+      </segment>
+    </unit>
+    <unit id="NWx1KBW" name="index.carousel.slide.sos_clip_motorcycle.text">
+      <segment>
+        <source>index.carousel.slide.sos_clip_motorcycle.text</source>
+        <target>
+SOS-ID-Clip
+am Motorrad-Helm</target>
+      </segment>
+    </unit>
+    <unit id="HCE4ffC" name="index.carousel.slide.best_practice_harley_davidson.text">
+      <segment>
+        <source>index.carousel.slide.best_practice_harley_davidson.text</source>
+        <target>Best Practice: Harley Davidson</target>
+      </segment>
+    </unit>
+    <unit id="vzAGp5f" name="index.carousel.slide.sos_clip_senior.text">
+      <segment>
+        <source>index.carousel.slide.sos_clip_senior.text</source>
+        <target>SOS-ID-Chip
+für Senioren</target>
+      </segment>
+    </unit>
+    <unit id="XEC976m" name="index.carousel.slide.covid.caption">
+      <segment>
+        <source>index.carousel.slide.covid.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="_lKLA0O" name="index.carousel.slide.covid.text">
+      <segment>
+        <source>index.carousel.slide.covid.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="cKgdBlx" name="member_of">
+      <segment>
+        <source>member_of</source>
+        <target>Mitglied der CODE-No.com Gruppe</target>
+      </segment>
+    </unit>
+    <unit id="jf28LvQ" name="Social Media">
+      <segment>
+        <source>Social Media</source>
+        <target>Social Media</target>
+      </segment>
+    </unit>
+    <unit id="Ml7s_dM" name="Kontakt">
+      <segment>
+        <source>Kontakt</source>
+        <target>Kontakt</target>
+      </segment>
+    </unit>
+    <unit id="dpO64G0" name="footer.menu.company.lbl">
+      <segment>
+        <source>footer.menu.company.lbl</source>
+        <target>Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="aZiriDJ" name="footer.menu.presse.lbl">
+      <segment>
+        <source>footer.menu.presse.lbl</source>
+        <target>Presse</target>
+      </segment>
+    </unit>
+    <unit id="MvrDYPi" name="footer.menu.agb.lbl">
+      <segment>
+        <source>footer.menu.agb.lbl</source>
+        <target>AGB</target>
+      </segment>
+    </unit>
+    <unit id="UO4k47g" name="footer.menu.privacy.lbl">
+      <segment>
+        <source>footer.menu.privacy.lbl</source>
+        <target> Datenschutz</target>
+      </segment>
+    </unit>
+    <unit id="zMJliAS" name="footer.menu.imprint.lbl">
+      <segment>
+        <source>footer.menu.imprint.lbl</source>
+        <target>Impressum</target>
+      </segment>
+    </unit>
+    <unit id="IKxeNV5" name="footer.menu.cookie.lbl">
+      <segment>
+        <source>footer.menu.cookie.lbl</source>
+        <target>Cookie-Einstellungen</target>
+      </segment>
+    </unit>
+    <unit id="1iQrU_D" name="index.about.text">
+      <segment>
+        <source>index.about.text</source>
+        <target><![CDATA[**ID-No.com - Sicherheit weltweit rund um die Uhr**
+Mehr als 29 Millionen Menschen benötigen allein in Deutschland ärztliche Hilfe nach einem Notfall. Unfallgefahren gibt es überall: Im Beruf, im Haushalt, im Straßenverkehr, bei Sport und Freizeitaktivitäten. Zwei Drittel aller Unfällen sind Freizeitunfälle.
+
+Notfallrelevante Informationen wie Krankheiten, Medikationen, Allergien liegen den Ersthelfern sehr häufig nicht vor.
+
+Selbst Menschen mit gutem Gedächtnis haben in einem Notfall nicht immer alle lebenswichtigen Gesundheitsdetails von sich oder von Dritten parat oder stehen teilweise unter „Schock“.
+
+
+**Zentrale Speicherung von persönlichen Notfall-Informationen**
+Mit ID-No.com kann rund um die Uhr und weltweit auf hinterlegte Notfallinformationen zugegriffen werden. Medizinische Einsatzkräfte erhalten einen Überblick zu Krankheiten, Medikationen, Allergien, Diabetes, Blutgruppe und bekommen Kontaktpersonen angezeigt, die im Falle eines medizinischen Notfalls oder plötzlichen Unfalls angerufen werden sollen.
+
+<img class="ms-3 mt-3 float-end align-bottom" src="/build/media/images/ID_Award_IM_2018.png.jpg" width="150" alt="INNOVATIONSPREIS-IT: BEST OF 2018" />
+
+**ID-No**.com ist Mitglied der **CODE-No**.com Gruppe und dient dem Schutz von Personen. **CODE-No**.com ist ein seit 2007 etabliertes System mit 10 Mio. Nummern im Markt.
+
+**ID-No.com** ist als Gebrauchsmuster geschützt sowie zum europäischen Patent angemeldet.
+
+**ID-No.com** wurde mit dem INNOVATIONSPREIS-IT "BEST OF 2018" der Initiative Mittelstand in der Kategorie "E-Health" ausgezeichnet.
+Der INNOVATIONSPREIS-IT steht unter der Schirmherrschaft des Bundesministeriums für Wirtschaft und Technologie.]]></target>
+      </segment>
+    </unit>
+    <unit id="vF0wkNl" name="header.menu.idno.about.lbl">
+      <segment>
+        <source>header.menu.idno.about.lbl</source>
+        <target>Über ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="PJdnZyr" name="header.menu.idno.works.lbl">
+      <segment>
+        <source>header.menu.idno.works.lbl</source>
+        <target>So funktioniert's</target>
+      </segment>
+    </unit>
+    <unit id="pOhZC7A" name="header.menu.idno.testimonials.lbl">
+      <segment>
+        <source>header.menu.idno.testimonials.lbl</source>
+        <target>Testimonials</target>
+      </segment>
+    </unit>
+    <unit id="vZUn30y" name="header.menu.idno.company.lbl">
+      <segment>
+        <source>header.menu.idno.company.lbl</source>
+        <target>Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="LzzzDam" name="header.menu.idno.group.lbl">
+      <segment>
+        <source>header.menu.idno.group.lbl</source>
+        <target>Group</target>
+      </segment>
+    </unit>
+    <unit id="x970SQq" name="header.menu.idno.press.lbl">
+      <segment>
+        <source>header.menu.idno.press.lbl</source>
+        <target>Presse</target>
+      </segment>
+    </unit>
+    <unit id="VPVogKi" name="header.menu.idno.references.lbl">
+      <segment>
+        <source>header.menu.idno.references.lbl</source>
+        <target>Referenzen</target>
+      </segment>
+    </unit>
+    <unit id="S.AtI.g" name="header.menu.idno.bussiness_clients.lbl">
+      <segment>
+        <source>header.menu.idno.bussiness_clients.lbl</source>
+        <target>Firmenkunden</target>
+      </segment>
+    </unit>
+    <unit id="QIQZDqB" name="index.features.header">
+      <segment>
+        <source>index.features.header</source>
+        <target>Schnell. Sicher. Verlässlich.</target>
+      </segment>
+    </unit>
+    <unit id="Q7VAK41" name="index.feature.1.lbl">
+      <segment>
+        <source>index.feature.1.lbl</source>
+        <target>Einfache Nutzung im Alltag, im Job sowie bei Sport- und Freizeitaktivitäten.</target>
+      </segment>
+    </unit>
+    <unit id="SsHHWWa" name="index.feature.2.lbl">
+      <segment>
+        <source>index.feature.2.lbl</source>
+        <target>Gut sichtbarer Hinweis auf digital abrufbare persönliche Notfall-Informationen.</target>
+      </segment>
+    </unit>
+    <unit id="mylgHlJ" name="index.feature.3.lbl">
+      <segment>
+        <source>index.feature.3.lbl</source>
+        <target>Notfallinformationen per Smartphone, QR-Code oder telefonisch über die Rettungsleitstelle via Online-Abfrage abrufbar.</target>
+      </segment>
+    </unit>
+    <unit id="vJUjqx4" name="index.feature.4.lbl">
+      <segment>
+        <source>index.feature.4.lbl</source>
+        <target>Sofortiger Zugriff über die ID-Nummer für Ersthelfern, Rettungsdienst, Arzt, Klinik.</target>
+      </segment>
+    </unit>
+    <unit id="CgUtLXN" name="index.feature.5.lbl">
+      <segment>
+        <source>index.feature.5.lbl</source>
+        <target>Einzelne Daten im Notfall-ID Pass können nach Belieben aktiv / passiv geschaltet werden.</target>
+      </segment>
+    </unit>
+    <unit id="ewwzPGE" name="index.feature.6.lbl">
+      <segment>
+        <source>index.feature.6.lbl</source>
+        <target>Auf Datensicherheit wird größter Wert gelegt.</target>
+      </segment>
+    </unit>
+    <unit id="jmpD903" name="index.works.header">
+      <segment>
+        <source>index.works.header</source>
+        <target>..und so funktioniert der ID-Chip</target>
+      </segment>
+    </unit>
+    <unit id="oOqkcJx" name="index.work.step1.header">
+      <segment>
+        <source>index.work.step1.header</source>
+        <target>Step 01</target>
+      </segment>
+    </unit>
+    <unit id="1cmJpQ_" name="index.work.step1.text">
+      <segment>
+        <source>index.work.step1.text</source>
+        <target>**SOS-ID-Chip befestigen** an z.B. Schuh, Rucksack, Jacke oder Armband.</target>
+      </segment>
+    </unit>
+    <unit id="F45r6to" name="index.work.step2.header">
+      <segment>
+        <source>index.work.step2.header</source>
+        <target>Step 02</target>
+      </segment>
+    </unit>
+    <unit id="RaOup.G" name="index.work.step2.text">
+      <segment>
+        <source>index.work.step2.text</source>
+        <target>**Aktivieren Sie Ihre persönliche ID-Nummer** auf www.ID-No.com und  **hinterlegen Sie Ihre individuellen Notfall-Informationen**.</target>
+      </segment>
+    </unit>
+    <unit id="3F0hygL" name="index.work.step3.header">
+      <segment>
+        <source>index.work.step3.header</source>
+        <target>Step 03</target>
+      </segment>
+    </unit>
+    <unit id="sFyAZuI" name="index.work.step3.text">
+      <segment>
+        <source>index.work.step3.text</source>
+        <target>**Fertig!** Den Ihnen zugesandten Freischaltungslink bestätigen und Ihr
+**Notfall-ID Pass ist digital abrufbar**.</target>
+      </segment>
+    </unit>
+    <unit id="9V2Rdsu" name="index.references.header">
+      <segment>
+        <source>index.references.header</source>
+        <target>Referenzen</target>
+      </segment>
+    </unit>
+    <unit id="65PuaAo" name="index.testimonials.header">
+      <segment>
+        <source>index.testimonials.header</source>
+        <target>Das sagen die Profis</target>
+      </segment>
+    </unit>
+    <unit id="bYnEruo" name="index.testimonials.1.person">
+      <segment>
+        <source>index.testimonials.1.person</source>
+        <target>Dr. med. Alexander Burkhard</target>
+      </segment>
+    </unit>
+    <unit id="O.OdL_F" name="index.testimonials.2.person">
+      <segment>
+        <source>index.testimonials.2.person</source>
+        <target>Pia Rebhorn,
+Rettungssanitäterin</target>
+      </segment>
+    </unit>
+    <unit id="I.upU3X" name="index.testimonials.3.person">
+      <segment>
+        <source>index.testimonials.3.person</source>
+        <target>Anne Waterstradt,
+DRK Truppführerin
+Katastrophenschutz</target>
+      </segment>
+    </unit>
+    <unit id="OJMVJl." name="index.testimonials.1.text">
+      <segment>
+        <source>index.testimonials.1.text</source>
+        <target>„Der Ersthelfer weiß im Notfall sofort, wer die Person ist, ob Krankheiten, Allergien, Diabetes, Medikationen vorliegen und welche Kontaktpersonen im Notfall benachrichtigt werden sollen.“</target>
+      </segment>
+    </unit>
+    <unit id="fbCFoVU" name="index.testimonials.1.location">
+      <segment>
+        <source>index.testimonials.1.location</source>
+        <target>Darmstadt</target>
+      </segment>
+    </unit>
+    <unit id="_mhgh8X" name="index.testimonials.2.text">
+      <segment>
+        <source>index.testimonials.2.text</source>
+        <target>„Ein deutlicher Hinweis an der Unfallperson auf seinen digitalen Notfall-Pass ist für mich als Rettungssanitäterin sehr hilfreich, um schnell wesentliche medizinische Informationen zu erhalten.“</target>
+      </segment>
+    </unit>
+    <unit id="a7SC6WD" name="index.testimonials.2.location">
+      <segment>
+        <source>index.testimonials.2.location</source>
+        <target>Stuttgart</target>
+      </segment>
+    </unit>
+    <unit id="nlGECEu" name="index.testimonials.3.text">
+      <segment>
+        <source>index.testimonials.3.text</source>
+        <target>„Der schnelle Zugriff auf die Daten des SOS-ID-Chips **schafft Verlässlichkeit** und **gibt uns Zeit** für die Patientenversorgung.“</target>
+      </segment>
+    </unit>
+    <unit id="X2cK9UT" name="index.testimonials.3.location">
+      <segment>
+        <source>index.testimonials.3.location</source>
+        <target>Neubrandenburg</target>
+      </segment>
+    </unit>
+    <unit id="zv0pN5F" name="index_testimonials.1.person">
+      <segment>
+        <source>index_testimonials.1.person</source>
+        <target>index_testimonials.1.person</target>
+      </segment>
+    </unit>
+    <unit id="gy6dpnt" name="index_testimonials.2.person">
+      <segment>
+        <source>index_testimonials.2.person</source>
+        <target>index_testimonials.2.person</target>
+      </segment>
+    </unit>
+    <unit id="9JPnDBb" name="index_testimonials.3.person">
+      <segment>
+        <source>index_testimonials.3.person</source>
+        <target>index_testimonials.3.person</target>
+      </segment>
+    </unit>
+    <unit id="uTE8BNL" name="index.references_partners.header">
+      <segment>
+        <source>index.references_partners.header</source>
+        <target>Bekannt aus den Medien</target>
+      </segment>
+    </unit>
+    <unit id="brD5STe" name="Unternehmen">
+      <segment>
+        <source>Unternehmen</source>
+        <target>Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="8WjM3ZF" name="company">
+      <segment>
+        <source>company</source>
+        <target>Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="VDR5HhO" name="company.introduction">
+      <segment>
+        <source>company.introduction</source>
+        <target><![CDATA[In Notfallsituationen sind verlässliche Informationen und Zeit von lebenswichtiger Bedeutung. Mit ID-No.com können medizinische Einsatzkräfte sofort auf digital hinterlegte individuelle Notfallinformationen wie Medikationen, Krankheiten, Allergien, Diabetes, Kontaktpersonen zugreifen. Das spart im Ernstfall Zeit und kann Leben retten!
+
+ID-No.com, gelauncht im Mai 2017 in Frankfurt am Main (Deutschland), wurde gemeinsam mit Rettungsprofis entwickelt und in der Kategorie "E-Health" mit dem INNOVATIONSPREIS-IT "BEST OF 2018" der Initiative Mittelstand ausgezeichnet. Zu den namhafte Kunden zählen seither Unternehmen wie unter anderem AOK, BARMER, KKH, ERGO, ABUS, Harley Davidson und Sport Scheck.
+
+Seit 2020 kooperiert ID-No.com mit ZOLL, dem Weltmarktführer für digitale Gesundheitslösungen, und wird in die Rescue-Pad-Systeme im Rettungswesen in Europa integriert. Dies führt zu einer schnellen und nahtlosen Notfalldatenübertragung vom Rettungsdienst bis ins Krankenhaus.
+
+Info-Videos finden Sie hier:  
+<a href="/infovideo" target="_blank">ID-No.com/infovideo</a>  
+<a href="/pad" target="_blank">ID-No.com/pad</a>  ]]></target>
+      </segment>
+    </unit>
+    <unit id="KIllofL" name="management">
+      <segment>
+        <source>management</source>
+        <target>Geschäftsleitung</target>
+      </segment>
+    </unit>
+    <unit id="JVCoYRg" name="company.ceo.text">
+      <segment>
+        <source>company.ceo.text</source>
+        <target>Dr. Markus J. Krechting, geb. 1965, studierte Betriebswirtschaft an der Universität Münster mit Schwerpunkt Marketing bei Herrn Prof. Dr. Dr. h.c. mult. Meffert. Seine Promotion erfolgte an der Universität Hamburg. Krechting arbeitete sechs Jahre für den Otto Konzern, u. a. verantwortete er dort den Markteinstieg in Indien. Danach leitete er als Unternehmensberater den Geschäftsbereich "Internationalisierung" der TellSell Consulting GmbH, Frankfurt. Danach war Krechting u.a. CEO der Neckermann AG, St. Gallen, Schweiz.
+
+Krechting ist Autor zahlreicher Veröffentlichung. Darüber hinaus wirkte Krechting als Jury-Mitglied namhafter Multi-Channel-Veranstaltungen mit, u. a. Deutschen Multimedia Award, Berlin, und Online-Star Award, München.</target>
+      </segment>
+    </unit>
+    <unit id="IaFPsYm" name="Advisory board">
+      <segment>
+        <source>Advisory board</source>
+        <target>Beirat</target>
+      </segment>
+    </unit>
+    <unit id="kddzrsu" name="company.advisory.text">
+      <segment>
+        <source>company.advisory.text</source>
+        <target><![CDATA[**Klaus Artmann (Beiratsvorsitzender)**
+**CEO holding ‹one› GmbH**
+Klaus Artmann befasst sich seit über 15 Jahren mit Entwicklungen im Internet und Online Marketing. Schwerpunkte seiner Arbeit sind die strategische Kundenberatung, eRelations und Realisierung von kundenspezifischen Businessmodellen.
+
+**Helmut von der Lieck (stellvertretender Beiratsvorsitzender)**
+**Geschäftsführender Gesellschafter gemeinsam&anders gmbh**
+Helmut von der Lieck ist Experte für Vertrieb, Kundenservice und -marketing. Er hat in verschiedenen deutschen Finanz- und Medienunternehmen aus DAX und MDAX über 20 Jahre Berufserfahrung gesammelt.
+
+**Prof. Dr. Ingo Kett , Beirat,**
+**Geschäftsführer Viaticum GmbH**
+Ingo Kett leitete die Sapient Consulting in Deutschland. Zuvor verantwortete er bei IBM das Europageschäft für Energieversorger und war Executive Partner bei Accenture. Er ist Gründer der Viaticum, Venture Capital, und wurde als „Business Angel des Jahres“ ausgezeichnet.]]></target>
+      </segment>
+    </unit>
+    <unit id="dgXhF6w" name="company.ceo.caption">
+      <segment>
+        <source>company.ceo.caption</source>
+        <target>Dr. Markus J. Krechting, CEO</target>
+      </segment>
+    </unit>
+    <unit id="Bc1KxF_" name="company.advisory.caption">
+      <segment>
+        <source>company.advisory.caption</source>
+        <target>Von links:
+Helmut von der Lieck (stellv. Beiratsvorsitzender),
+Prof. Dr. Ingo Kett (Beirat),
+Klaus Artmann (Beiratsvorsitzender)</target>
+      </segment>
+    </unit>
+    <unit id="u8KAyIN" name="Notfall-ID Pass">
+      <segment>
+        <source>Notfall-ID Pass</source>
+        <target>Notfall-ID Pass</target>
+      </segment>
+    </unit>
+    <unit id="4eCwpxs" name="person.last_change_datum">
+      <segment>
+        <source>person.last_change_datum</source>
+        <target>Letzte Änderung</target>
+      </segment>
+    </unit>
+    <unit id="41WERFZ" name="person.groesse">
+      <segment>
+        <source>person.groesse</source>
+        <target>Größe</target>
+      </segment>
+    </unit>
+    <unit id="grdjQzd" name="person.gewicht">
+      <segment>
+        <source>person.gewicht</source>
+        <target>Gewicht</target>
+      </segment>
+    </unit>
+    <unit id="htifoBR" name="person.geschlecht">
+      <segment>
+        <source>person.geschlecht</source>
+        <target>Geschlecht</target>
+      </segment>
+    </unit>
+    <unit id="n3k4yG5" name="person.geschlecht.w">
+      <segment>
+        <source>person.geschlecht.w</source>
+        <target>weiblich</target>
+      </segment>
+    </unit>
+    <unit id="7PNMyJI" name="Standort">
+      <segment>
+        <source>Standort</source>
+        <target>Standort</target>
+      </segment>
+    </unit>
+    <unit id="r_z_E60" name="Notruf">
+      <segment>
+        <source>Notruf</source>
+        <target>Notruf</target>
+      </segment>
+    </unit>
+    <unit id="VzYFJUZ" name="Blutgruppe">
+      <segment>
+        <source>Blutgruppe</source>
+        <target>Blutgruppe</target>
+      </segment>
+    </unit>
+    <unit id="AmfYaGh" name="Erkrankungen">
+      <segment>
+        <source>Erkrankungen</source>
+        <target>Erkrankungen</target>
+      </segment>
+    </unit>
+    <unit id="D4G5IGp" name="Medikamente">
+      <segment>
+        <source>Medikamente</source>
+        <target>Medikamente</target>
+      </segment>
+    </unit>
+    <unit id="gbjZnSl" name="Allergieen">
+      <segment>
+        <source>Allergieen</source>
+        <target>Allergieen</target>
+      </segment>
+    </unit>
+    <unit id="dPNXEiI" name="Anrufen">
+      <segment>
+        <source>Anrufen</source>
+        <target>Anrufen</target>
+      </segment>
+    </unit>
+    <unit id="U4wHbEk" name="person.geschlecht.m">
+      <segment>
+        <source>person.geschlecht.m</source>
+        <target>männlich</target>
+      </segment>
+    </unit>
+    <unit id="MM4P3i3" name="ID-Nummer checken/aktivieren">
+      <segment>
+        <source>ID-Nummer checken/aktivieren</source>
+        <target>ID-Nummer checken/aktivieren</target>
+      </segment>
+    </unit>
+    <unit id="cpJYWuS" name="Krankenversicherung">
+      <segment>
+        <source>Krankenversicherung</source>
+        <target>Krankenversicherung</target>
+      </segment>
+    </unit>
+    <unit id="VW8l8Fs" name="Versicherungs-Nr.">
+      <segment>
+        <source>Versicherungs-Nr.</source>
+        <target>Versicherungs-Nr.</target>
+      </segment>
+    </unit>
+    <unit id="WMKwySr" name="Wohnort">
+      <segment>
+        <source>Wohnort</source>
+        <target>Wohnort</target>
+      </segment>
+    </unit>
+    <unit id="nkoAp7D" name="Zusatzversicherung">
+      <segment>
+        <source>Zusatzversicherung</source>
+        <target>Zusatzversicherung</target>
+      </segment>
+    </unit>
+    <unit id="_mkG127" name="Telefon">
+      <segment>
+        <source>Telefon</source>
+        <target>Telefon</target>
+      </segment>
+    </unit>
+    <unit id="y6rTz0p" name="Mobile">
+      <segment>
+        <source>Mobile</source>
+        <target>Mobile</target>
+      </segment>
+    </unit>
+    <unit id="qLx0SWS" name="Organspendeausweis">
+      <segment>
+        <source>Organspendeausweis</source>
+        <target>Organspendeausweis</target>
+      </segment>
+    </unit>
+    <unit id="NwL8GGZ" name="ja">
+      <segment>
+        <source>ja</source>
+        <target>ja</target>
+      </segment>
+    </unit>
+    <unit id="WdYzR4S" name="Patienten­verfügung">
+      <segment>
+        <source>Patienten­verfügung</source>
+        <target>Patienten­verfügung</target>
+      </segment>
+    </unit>
+    <unit id="HtgsP5c" name="weitere Angaben">
+      <segment>
+        <source>weitere Angaben</source>
+        <target>weitere Angaben</target>
+      </segment>
+    </unit>
+    <unit id="ZvsVmzp" name="Weitere Angaben">
+      <segment>
+        <source>Weitere Angaben</source>
+        <target>Weitere Angaben</target>
+      </segment>
+    </unit>
+    <unit id="zpEnaGA" name="Presse">
+      <segment>
+        <source>Presse</source>
+        <target>Presse</target>
+      </segment>
+    </unit>
+    <unit id="sI9K3Hq" name="press.16.text">
+      <segment>
+        <source>press.16.text</source>
+        <target><![CDATA[#### ID-No.com auf TikTok
+
+Der Rettungssanitäter und Social Media Influencer Luis Teichmann alias „5_Sprechwunsch“ postet im September 2021 SOS-ID-Produkte von ID-No.com auf TikTok.
+
+In einem seiner erfolgreichen Videos, in denen er aus dem Alltag eines Rettungssanitäters berichtet, stellt er den SOS-ID-CHIP und das SOS-ID-Armband vor.
+
+Luis Teichmann arbeitet als Rettungssanitäter und erlebt bei seinen Einsätzen immer wieder, dass gesundheitsrelevante Daten im entscheidenden Moment Leben retten können. Deswegen ist es ihm ein Anliegen, diese Möglichkeit, Notfalldaten zu übermitteln, einer breiteren Öffentlichkeit bekannt zu machen.
+
+Sein Video: [https://www.tiktok.com/@5_sprechwunsch/video/7006322334122396934](https://www.tiktok.com/@5_sprechwunsch/video/7006322334122396934?is_copy_url=0&is_from_webapp=v1&sender_device=pc&sender_web_id=7011431012048635398)
+
+Über 125.000 Follower haben das Video bereits gesehen; danach haben es über 30.000 Menschen geliked.]]></target>
+      </segment>
+    </unit>
+    <unit id="2ZQT5ah" name="press.17.text">
+      <segment>
+        <source>press.17.text</source>
+        <target>#### Gratis: Dieser Chip kann Leben retten
+###### Mit dem SOS-ID-Label von Ergo erleichtern Sie im Ernstfall Rettern die Arbeit.
+
+Egal, ob beim Sport, im Straßenverkehr oder auf Reisen: Dass sich die meisten Unfälle in der Freizeit ereignen, ist kein Geheimnis.
+
+Gut, wenn im Ernstfall ein umsichtiger Passant den Notruf wählt und die Rettungskräfte schnell zur Stelle sind.
+
+Noch besser, wenn diese gleich alle relevanten Daten zu Hand haben.
+
+Auch wenn die meisten Menschen sich bereits Gedanken darüber gemacht haben, welche nahestehende Person im Notfall benachrichtigt werden soll, stellt sich die Frage: Wer händigt die Kontaktdaten Ersthelfern und Krankenhauspersonal aus, wenn der Verunfallte nicht mehr an sprechbar sein sollte? Gleiches gilt für medizinische Daten, die nicht nur bei Allergikern für eine erfolgreiche Behandlung entscheidend sein können. Die Lösung heißt Ergo SOS-ID-Label und klebt auf der Titelseite Ihrer COMPUTER BILD. Für Sie ist der Lebensretter, der sonst 9,95 Euro kostet, somit komplett kostenlos.
+
+###### Kleiner Chip, große Wirkung
+
+Der kleine Chip hat es in sich: Er enthält alle Informationen, die für eine Notfallversorgung nötig sind. Somit spart das SOS-ID-Label Ihren Rettern im Ernstfall kostbare Zeit. Wer den Chip am Schuh, Helm, oder Rucksack anbringt, hat alle Informationen jederzeit dabei und ist bestens gerüstet.
+
+Sie müssen nur einmal die Notfallinformationen auf der Website www.ID-No.com unter der persönlichen ID-Nummer des Labels hinterlegen, schon ist der Lebensretter aktiviert. Neben Alter, Blutgruppe und einem Notfallkontakt sind dies beispielsweise Angaben zu Vorerkrankungen, Allergien und einer eventuellen Medikation.
+
+Besonders beruhigend: die Daten sind weltweit rund um die Uhr abrufbar und haben bereits zahlreichen Patienten das Leben gerettet. Die komplette Anleitung zum cleveren Notfallpass von Ergo und ID-No.com erhalten Sie auf [ID-No.com/infovideo](infovideo) als Video. Mehr Informationen über das SOS-ID-Label erhalten Sie auf www.ID-No.com oder über den unten stehenden QR-Code. Wer noch eine passende Versicherung sucht, findet unter [www.ergo.de/unfall](https://www.ergo.de/unfall) Infos zu der neuen Ergo Unfallversicherung.</target>
+      </segment>
+    </unit>
+    <unit id="5KHZhPj" name="press.15.text">
+      <segment>
+        <source>press.15.text</source>
+        <target>#### ZOLL AmbulancePad ist kompatibel zu ID-No.com
+
+Mehr als 29 Millionen Menschen benötigen allein in Deutschland ärztliche Hilfe nach einem Notfall. Unfallgefahren gibt es überall: Im Beruf, im Haushalt, im Straßenverkehr, bei Sport und Freizeitaktivitäten.
+
+Zwei Drittel aller Unfälle sind Freizeitunfälle. Notfallrelevante Informationen wie Krankheiten, Medikationen, Allergien liegen den Ersthelfern sehr häufig nicht vor.
+
+Selbst Menschen mit gutem Gedächtnis haben in einem Notfall nicht immer alle lebenswichtigen Gesundheitsdetails von sich oder von Dritten parat oder stehen teilweise unter „Schock“.
+
+Mit ID-No.com kann rund um die Uhr und weltweit auf hinterlegte Notfallinformationen zugegriffen werden. Medizinische Einsatzkräfte erhalten einen Überblick zu Krankheiten, Medikationen, Allergien, Diabetes, Blutgruppe und bekommen Kontaktpersonen angezeigt, die im Falle eines medizinischen Notfalls oder plötzlichen Unfalls angerufen werden sollen.
+
+ZOLL entwickelt und vertreibt Medizinprodukte und Softwarelösungen, die Fortschritt in der Notfallversorgung bedeuten und Leben retten, während die klinische und operative Effizienz gesteigert wird. Die digitale Einsatzdokumentation ZOLL AmbulancePad unterstützt den Rettungsdienst bei der Dokumentation der Einsätze und stellt durchgängig Daten von der Einsatzannahme bis zum Abschluss bereit. Anwender des AmbulancePad können ID-No.com Labels und Tags nun auslesen und direkt auf wichtige Patientendaten zugreifen.
+
+Damit wollen ZOLL und ID-No.com den Rettungsdienst unterstützen und schnelle, effiziente Hilfe gewährleisten.
+
+Info-Video: [ID-No.com/zoll](/zoll)</target>
+      </segment>
+    </unit>
+    <unit id="q65PbU0" name="press.13.text">
+      <segment>
+        <source>press.13.text</source>
+        <target>#### SOS-ID-Label in „REIF ist LIVE“ passend zum EM Start am 11.06.2021
+
+Passend zum EM Start am 11.06.2021 präsentiert die Redaktion des beliebten Podcast „**REIF ist LIVE**“ mit Sport-Kommentator-Legende Marcel Reif das SOS-ID-Label von ID-No.com in der SPORT BILD.
+
+In der Ausgabe 23/2021 stellt SPORT BILD den **Kleinen Lebensretter** ausführlich vor. Leser der SPORT BILD erhalten in Kooperation mit ERGO das SOS-ID-Label GRATIS auf der Titelseite.
+
+Wie das Notfall-ID-Label funktioniert, erfahren Sie unter ID-No.com oder im Erklärvideo: [ID-No.com/infovideo](/infovideo)</target>
+      </segment>
+    </unit>
+    <unit id="sxc9MuN" name="press.14.text">
+      <segment>
+        <source>press.14.text</source>
+        <target>#### Kleiner Lebensretter – gratis für Sie!
+
+Egal ob ein Schwächeanfall beim Joggen oder ein heftiger Unfall mit dem Auto. Schon ein kurzer Moment der Unachtsamkeit genügt, und es kann zu einem Unglück kommen.
+
+**Das Problem**: Nicht immer sind die betroffenen Personen mit einem Bekannten oder einem Familienmitglied unterwegs, wodurch den Rettungskräften notfallrelevante Informationen wie Krankheiten, Medikationen, Blutgruppe sowie Ansprechpartner nicht vorliegen. Hier hilft das ERGO Notfall-ID-Label von ID-No.com, welches im Normalfall 9,95 Euro kostet, für die Leser dieser SPORT BILD-Ausgabe jedoch GRATIS ist (siehe Titelseite, bei Abonnenten Seite 3).
+
+**Der Clou**: Das Notfall-Label kann ganz einfach an Schuh, Rucksack, Mütze oder Helm angebracht werden. Unter ID-No.com hinterlegt man dann unter der persönlichen ID-Nummer des Labels alle relevanten Notfallinformationen. Einmal aktiviert, können diese dann weltweit und rund um die Uhr von Ersthelfern und Krankenhauspersonal eingesehen werden. So wie bei Horst S. aus Gelsenkirchen. „Nachdem ich aus dem Koma erwacht war, sagte mir der behandelnde Arzt, dass der SOS-ID-Chip mir wegen meiner vielen Allergien gegen Stoffe und Medikamente mein Leben gerettet hat.“
+
+Wie genau das Notfall-ID-Label von ERGO und ID-No.com funktioniert, erfahren Sie unter ID-No.com oder in einem Erklär-Video, welches Sie mit einer QR-Scan-App Ihres Smartphones oder unter [ID-No.com/infovideo](/infovideo) sehen können. Infos zur neuen ERGO Unfallschutz-Versicherung finden Sie unter [www.ergo.de/unfall](https://www.ergo.de/unfall).</target>
+      </segment>
+    </unit>
+    <unit id=".Pd89Iw" name="press.12.text">
+      <segment>
+        <source>press.12.text</source>
+        <target>#### Mehr Sicherheit im Berufsalltag mit ID-No.com
+###### Bei Unfall am Arbeitsplatz sofort Notfall-Informationen abrufen
+
+**Der Notfall-ID Chip spart Zeit und kann Leben retten**
+
+Laut DEKRA Arbeitsschutzreport gibt es jedes Jahr etwa 950.000 Arbeitsunfälle in Deutschland. Die Ursachen dafür sind unterschiedlich und werden am 28. April zum Welttag für Sicherheit und Gesundheit am Arbeitsplatz angesprochen.
+
+**Welttag für Arbeitssicherheit**
+
+Das Thema Arbeitssicherheit spielt in Betrieb und Büro eine wichtige Rolle.
+
+Der Aktionstag am 28. April soll daher auf die Arbeitsplatzsituation sowohl in Industrie- als auch in Schwellenländern aufmerksam machen. Vor allem die Verbesserung von Sicherheitsrichtlinien, die Anpassung von unternehmensinternen Kommunikationsstrukturen und das Schaffen eines angenehmen Arbeitsklimas spielen hierbei eine Rolle. Verfolgt wird damit das übergeordnete Ziel, weltweit sichere, gesunde und menschenwürdige Arbeitsbedingungen durchzusetzen.
+
+**Richtige Behandlung dank ID-No.com**
+
+Selbst mit entsprechenden Sicherheitsstandards lässt sich nicht jeder Unfall am Arbeitsplatz vermeiden. Und dann zählt oft jede Sekunde. Meistens wissen die Helfer vor Ort allerdings nicht, ob der verunfallte Mitarbeiter chronisch krank ist, Medikamente einnimmt oder Allergien bestehen. Diese Informationen sind für die Rettung aber von zentraler Bedeutung.
+
+Mit Hilfe des Notfall-ID Chips von ID-No.com, einer Marke der CODE-No.com Gruppe mit Sitz in Frankfurt, können medizinische Ersthelfer sofort mit jedem Smartphone Notfall-Informationen abrufen, die im Ernstfall das Leben des Arbeitnehmers retten können. Dazu gehören nicht nur Informationen zu Allergien, Medikamente oder Krankheiten, sondern unter anderem auch die zu kontaktierenden Familienangehörigen.
+
+**So funktioniert der Notfall-ID Chip**
+
+Der Notfall-ID Chip wird gut erkennbar, zum Beispiel am Schuh, angebracht oder als Armband am Handgelenk getragen. Vorab müssen Anwender lediglich ihre individuelle ID-Nummer registrieren und ihren digitalen Notfall-Pass unter ID-No.com einrichten. Die Datenhoheit liegt also allein beim Mitarbeiter, der den Notfall-Pass in seinem passwortgeschützten Account selbst anlegt und verwaltet. Er ist somit weder inhaltlich noch technisch mit dem Arbeitgeber verbunden.
+
+Im Falle eines Unfalls, bei dem medizinische Hilfe benötigt wird, können die Einsatzkräfte die ID-Nummer auf www.ID-No.com eingeben oder noch schneller den QR-Code scannen und erhalten sofort alle relevanten Notfall-Informationen zum Patienten, um schnell und verlässlich handeln zu können. Dank entsprechender Zeitstempel im Notfall-Pass sowie regelmäßige Aktualisierungserinnerungen können die Helfer dabei sicher sein, dass die gespeicherten Daten des Mitarbeiters aktuell und verlässlich sind.
+
+**Schutz vor Missbrauch**
+
+Durch die verdeckte Rückseite der Notfall-ID Produkte kann der persönliche Notfall-Pass nicht einfach im Vorbeigehen von Dritten ausgelesen werden. Zudem sendet das ID-No.com System unter anderem eine automatische Benachrichtigungsfunktion an den Nutzer, wenn sein Notfall-ID Pass ausgelesen wurde, um ggf. Missbrauch sofort ermitteln zu können.
+
+Der Notfall-ID Chip ist damit eine sichere und praktische Lösung, die im Ernstfall Leben retten kann. Informationen: ID-No.com. </target>
+      </segment>
+    </unit>
+    <unit id="qBXUi7W" name="press.11.text">
+      <segment>
+        <source>press.11.text</source>
+        <target>#### Zum europäischen Tag des „Notrufs 112“
+######Die schnelle Notfallkette mit ID-No.com spart Zeit und kann Leben retten!
+
+Über 10 Millionen Notfalleinsätze pro Jahr in Deutschland. Situationen in denen es vor allem um Schnelligkeit geht. Nach Studien des Deutschen Roten Kreuzes könnten zehn Prozent der Unfalltoten noch leben, wenn schnelle Hilfe vor Ort gewesen wäre.
+
+Im Jahr 1973 wurde die Notrufnummer 112 bundesweit eingeführt und seit 1991 ist diese Nummer europaweit gültig. Um die Bekanntheit der 112 zu steigern, hat die Europäische Kommission vor 10 Jahren den 11. Februar als jährlichen europäischen Tag des Notrufs ausgerufen. Denn je mehr Bürger die richtige Notfallnummer wählen, desto schneller können die Einsatzkräfte vor Ort sein und helfen.
+
+**ID-No.com verbessert die Arbeitsbedingungen der Einsatzkräfte vor Ort um eine weitere lebenswichtige Komponente – schneller und verlässlicher Zugriff auf notfallrelevante Gesundheitsdaten.**
+
+Dazu stellt ID-No.com eine Auswahl an Produkten (u.a. einen Notfall-ID Chip zu Anbringung am Schuh oder einen Notfall-ID Clip für Helme) sowie einen digitalen Notfall-Pass zur Verfügung. Nutzer können nach der Registrierung Ihre gesundheitsrelevanten Daten einfach und sicher hinterlegen. Damit haben Einsatzkräfte im Ernstfall auf alle wichtigen Informationen wie z.B. Medikation, Allergien, Kontaktpersonen und Operationen Zugriff. Lediglich ein internetfähiges Endgerät wird zum Auslesen der Daten benötigt.
+
+ID-No.com macht den Zugriff auf Notfalldaten sicher und verlässlich. Dadurch wird die Arbeit der Einsatzkräfte entlang der Notfallkette maßgeblich verbessert. Im Infovideo unter [ID-No.com/infovideo](/infovideo) wird die Funktionsweise kurz und verständlich gezeigt.
+
+Die Notrufnummer 112 sorgt für schnelle Hilfe am Unfallort, ID-No.com stellt sicher das am Unfallort alle notfallrelevanten Informationen vorliegen - **112 und ID-No.com – ein starkes Team im Notfall**.</target>
+      </segment>
+    </unit>
+    <unit id="GVz.9wW" name="press.10.text">
+      <segment>
+        <source>press.10.text</source>
+        <target>#### Da es im Notfall schnell gehen muss: Persönliche Notfall-Informationen sofort verfügbar - dank ID-No.com
+###### ID-No.com hilft, die Verfügbarkeit von relevanten Notfall-Informationen in Deutschland und weltweit zu verbessern
+
+Jedes Jahr gibt es allein in Deutschland 29 Millionen Notfallsituationen, bei denen Informationen über den Patienten benötigt werden. Die aktuelle Notfalldatenlage sorgt jedoch dafür, dass eine bestmögliche Versorgung nicht immer gewährleistet werden kann. Das kann in einigen Situationen ernste Folgen haben. Stellen Sie sich vor, einem Patienten muss aufgrund einer akuten Notsituation schnell geholfen werden. Die Information, dass er regelmäßig Blutverdünner, bspw. Marcumar einnehmen muss, lag zum Zeitpunkt der Notfallbehandlung jedoch nicht vor. Der Notfall-ID Chip schafft hier nun Abhilfe.
+
+ID-No.com wurde mit dem INNOVATIONSPREIS-IT „BEST OF 2018“ der Initiative Mittelstand in der Kategorie „E-Health“ ausgezeichnet. Der INNOVATIONSPREIS-IT steht unter der Schirmherrschaft des Bundesministeriums für Wirtschaft und Technologie.
+
+**Ersthelfern fehlen häufig lebenswichtige Notfall-Informationen**
+
+Ob im Beruf, im Haushalt oder beim Sport - Unfallgefahren lauern überall. Ist der Unfall erst mal passiert und es wird medizinische Hilfe benötigt, stehen Ersthelfer wie beispielswiese Rettungssanitäter oder Ärzte häufig vor einem Problem: Ihnen liegen die notfallrelevanten Informationen wie Vorerkrankungen, notwendige Medikationen oder Allergien nicht vor, die für eine optimale medizinische Versorgung benötigt werden.
+
+Ist der Patient beim Eintreffen der Ersthelfer bewusstlos, kann er nicht selbst befragt werden. Aber auch Menschen mit einem guten Gedächtnis kennen in einer Notfallsituation nicht immer alle lebenswichtigen Gesundheitsdetails. ID-No.com löst dieses Problem. Seit dem Start im April 2017 wurden bereits über 1 Million Notfall-ID Chips im Markt platziert.
+
+**So funktioniert ID-No.com**
+
+Über den Notfall-ID Chip können medizinische Ersthelfer rund um die Uhr und weltweit auf die hinterlegten Notfall-Informationen zugreifen. Im Notfall erhalten sie so einen Überblick über alle behandlungsrelevanten Daten wie beispielsweise Informationen zu Vorerkrankungen, Medikation oder Allergien. Daneben werden im digitalen Notfall-ID Pass Kontaktpersonen angezeigt, die bei einem medizinischen Notfall oder plötzlichen Unfall angerufen werden sollen. Im Infovideo unter www.ID-No.com/infovideo wird die Funktionsweise kurz und verständlich gezeigt.
+
+ID-No.com gibt es sowohl als Chip wie auch als Armband, welche einfach am Schuh, Rucksack oder Jacke angebracht beziehungsweise am Handgelenk getragen werden. Damit der digitale Notfall-ID Pass im Ernstfall auch funktioniert, müssen Nutzer lediglich ihre persönliche ID-Nummer auf www.ID-No.com aktivieren und ihre individuellen Notfall-Informationen hinterlegen. Nach Freischaltung ist der Notfall-ID Pass digital abrufbar – und das jederzeit, schnell, verlässlich und weltweit.
+
+Tritt nun ein Notfall ein oder kommt es zu einem Unfall, bei dem medizinische Hilfe benötigt wird, können Ersthelfer die ID-Nummer auf dem Chip per QR Code scannen oder diese auf www.ID-No.com eingeben. Anschließend erhalten sie sofort die relevanten Notfall-Informationen zum Patienten, um richtig handeln zu können.
+
+**Datenschutz wird großgeschrieben**
+
+Gerade bei sensiblen Themen wie der Gesundheitshistorie einer Person wird der Datenschutz großgeschrieben. Die ID-Nummer und der QR Code sind daher an der verdeckten Unterseite des Chips beziehungsweise Armbands angebracht. Diese können also nicht einfach im Vorbeigehen gescannt werden, sondern sind sicher verborgen. Anwender können darüber hinaus individuell entscheiden, welche Felder im digitalen Notfall-ID Pass aktiv oder passiv geschaltet sind.
+
+Die Sicherheit der Daten auf deutschen Hochleistungsservern wird regelmäßig durch die renommierte SySS GmbH geprüft und zertifiziert.
+
+**Ersthelfer und Patienten profitieren**
+
+Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine einfache, sichere und bewährte Lösung entwickelt, die im Ernstfall Leben retten kann und die Arbeit professioneller Ersthelfer maßgeblich erleichtert.</target>
+      </segment>
+    </unit>
+    <unit id="7w.oc7t" name="AGB">
+      <segment>
+        <source>AGB</source>
+        <target>AGB</target>
+      </segment>
+    </unit>
+    <unit id="5p.z.wp" name="terms.title">
+      <segment>
+        <source>terms.title</source>
+        <target>Allgemeine Geschäftsbedingungen</target>
+      </segment>
+    </unit>
+    <unit id="ak75LZR" name="terms.version">
+      <segment>
+        <source>terms.version</source>
+        <target>Stand: Mai 2021</target>
+      </segment>
+    </unit>
+    <unit id="UwG9Hvp" name="terms.text">
+      <segment>
+        <source>terms.text</source>
+        <target>**§ 1 Geltungsbereich; Vertragsschluss**
+(1) Für die Geschäftsbeziehung zwischen uns und dem Besteller gelten ausschließlich die nachfolgenden Allgemeinen Geschäftsbedingungen. Abweichende und ergänzende Bedingungen des Bestellers erkennen wir nicht an, es sei denn, wir hätten ihrer Geltung ausdrücklich schriftlich zugestimmt.
+
+(2) Für Kunden, die unsere SOS-ID-Chips von Dritten bezogen haben (nachfolgend ebenfalls als Besteller bezeichnet), gelten diese Allgemeinen Geschäftsbedingungen mit Ausnahme der Bestimmungen, die unsere Pflichten zur Lieferung der SOS-ID-Chips und die Pflichten des Kunden zur Vergütung dieser Leistungen betreffen.
+
+(3) Die Darstellung der Produkte im Online- Shop stellt kein rechtlich bindendes Angebot, sondern einen unverbindlichen Online-Katalog dar. Durch Anklicken des Buttons „Bestellung Absenden“ geben Sie eine verbindliche Bestellung der im Warenkorb enthaltenen Waren ab. Die Bestätigung des Eingangs Ihrer Bestellung erfolgt zusammen mit der Annahme der Bestellung unmittelbar nach dem Absenden durch automatisierte Email. Mit dieser E-Mail-Bestätigung ist der Kaufvertrag zustande gekommen.
+
+**§ 2 Widerrufsrecht des Verbrauchers**
+**Widerrufsrecht**
+Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Ware in Besitz genommen haben bzw. hat.
+Um Ihr Widerrufsrecht auszuüben, müssten Sie uns
+
+**ID-No**.com GmbH  
+Cassellastr. 30-32  
+60386 Frankfurt  
+E-Mail: info@ID-No.com
+
+bitte mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.
+
+**Folgen des Widerrufs**
+Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet. Wir können die Rückzahlung verweigern, bis wir die Waren wieder zurückerhalten haben oder bis Sie den Nachweis erbracht haben, dass Sie die Waren zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist. Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem Sie uns über den Widerruf dieses Vertrags unterrichten, an
+
+**ID-No**.com GmbH
+Cassellastraße 30-32
+D-60386 Frankfurt am Main
+
+zurückzusenden oder zu übergeben.
+Die Frist ist gewahrt, wenn Sie die Waren vor Ablauf der Frist von vierzehn Tagen absenden. Sie tragen die unmittelbaren Kosten der Rücksendung der Waren. Ende der Widerrufsbelehrung.
+
+**§ 3 Kostentragungsvereinbarung**
+Machen Sie von Ihrem Widerrufsrecht Gebrauch, haben Sie die regelmäßigen Kosten der Rücksendungen zu tragen, wenn die gelieferte Ware der bestellten entspricht und wenn der Preis der zurückzusendenden Sache einen Betrag von 40 Euro nicht übersteigt oder wenn Sie bei einem höheren Preis der Sache zum Zeitpunkt des Widerrufs noch nicht die Gegenleistung oder eine vertraglich vereinbarte Teilzahlung erbracht haben. Anderenfalls ist die Rücksendung für Sie kostenfrei.
+
+**§ 4 Leistungsbeschreibung**
+(1) Wir stellen dem Besteller SOS-ID-Chips zur Hinterlegung persönlicher Notfalldaten in einem sogenannten Notfall-ID Pass zur Verfügung. Die bestellte Anzahl von SOS-ID-Chips versehen wir mit einer individuellen Identifikationsnummer (der sog. ID-Nummer) und liefern sie an den Besteller. Wir versenden die Chips 3-4 Tage nach Vertragsschluss. Jeder SOS-ID-Chip berechtigt nur zur einmaligen Verwendung. Die Nutzung ist auf die Dauer von 2 Jahren beschränkt und für Sie gratis. Die Laufzeit verlängert sich nicht automatisch. Eine schriftliche Kündigung ist daher nicht notwendig. Wir verpflichten uns, Sie rechtzeitig, d.h. mindestens 6 Wochen vor Ablauf der Laufzeit über die Möglichkeit Ihrer Serviceverlängerung (zu €4,95 pro Jahr) zu informieren.
+
+(2) Die im Notfall-ID Pass hinterlegten Notfalldaten zur Person können online durch Ersthelfer im Notfall abgerufen werden. Die Eingabe der ID-Nummer, die nach außen nicht sichtbar ist und sich geschützt auf der Rückseite des SOS-ID-Chips befindet, berechtigt zur Einsicht des Notfall-ID Passes. In einem mit Benutzername und Passwort gesicherten Kundenbereich hinterlegt der Eigentümer des SOS-ID-Chips seine Notfalldaten.
+
+(3) Der Nutzer entscheidet welche der Angaben im Notfall-ID Pass sichtbar sind. Die Einstellungen und Angaben zu seinen persönlichen Daten können nur im Rahmen einer vollen Zugriffsberechtigung bestehend aus Benutzername und Passwort hinterlegt werden. Persönliche Daten können nur über die vom Nutzer individuell eingerichtete Zugriffsberechtigung geändert werden.
+
+(4) Mit dem Kauf, der Bestellung/Registrierung und Aktivierung dieser Leistung, stimmt der Nutzer dieser AGB automatisch zu und akzeptiert diese als Vertragsgrundlage. Des Weiteren stimmt der Nutzer der Datenvorhaltung seiner im Notfallpass hinterlegten Daten zu und erklärt hiermit ebenso sein Einverständnis, seinen Notfallpass mittels Eingabe der ID-Nummer öffentlich zur Verfügung zu stellen, um diese im Internet einzusehen.
+
+(5) Die Rechte an den persönlichen Daten bleiben ausschließlich beim Nutzer. Der Anbieter hat nur Zugriff auf die persönlichen Nutzerdaten (Name, Anschrift, Telefon usw.) im Rahmen des Kundenservice bzw. der Nutzerverwaltung.
+
+(6) Der Anbieter stellt zu keiner Zeit einen Beratungsdienst zur Verfügung und stellt ausdrücklich klar, dass die Verwendung der durch ihn erbrachten Leistungen keine Garantie auf Vollständigkeit bzw. Korrektheit darstellt.
+
+(7) Im Falle fehlerhafter Einträge sind die Nutzer für eventuelle persönliche Schäden selbst haftend. Der Nutzer ist verpflichtet, seine online hinterlegten Informationen selbst zu kontrollieren oder kontrollieren zu lassen.
+
+**§ 5 Preise; Bezahlung**
+(1) Die Erbringung unserer Leistungen erfolgt zu den am Tag des Vertragsschlusses gültigen, in der Website angegebenen, mit dem Besteller vereinbarten Preisen. Der Preis setzt sich zusammen aus dem Auftragswert und den Versandkosten inkl. aller Steuern, beim Versand in Länder außerhalb der Europäischen Union etwaig anfallenden Zöllen und sonstiger Preisbestandteile. Sämtliche Preise verstehen sich in Euro. Alle Preise enthalten die gesetzliche Mehrwertsteuer.
+
+(2) Der Besteller hat uns zur Bezahlung unserer Leistungen zu berechtigen, die von ihm geschuldete Vergütung von seinem Konto einzuziehen und er hat dazu eine entsprechende Einziehungsermächtigung zu erteilen oder er hat per Kreditkarte zu bezahlen. Zahlungen per PayPal sind ebenfalls möglich. Die Zahlung ist fällig binnen 5 Tagen nach Erhalt der Labels bzw. Anhänger und Zugang einer prüffähigen Rechnung beim Besteller.
+
+(3) Verkäufe bzw. Warenlieferungen in die Schweiz werden laut Rechnungsstellung netto (ohne deutsche Mehrwertsteuer) fakturiert und werden gesetzlich konform von unserem Logistikpartner ausgeführt und in die Schweiz eingeführt. Die dabei entstehende Zollabwicklungskostenpauschale, eventuelle Zölle oder die Schweizer Einfuhrumsatzsteuer (Schweizer MwSt.) sowie sämtliche Nebenkosten trägt der Käufer.
+
+**§ 6 Obliegenheiten des Bestellers**
+Der Besteller eines mit einer ID-Nummer gekennzeichneten Produkts ist bei der Registrierung auf ID-No.com verpflichtet wahrheitsgemäße Angaben zu machen.
+
+**§ 7 Gewährleistung**
+Es gelten die gesetzlichen Gewährleistungsbestimmungen. Garantien werden nicht gegeben.
+
+**§ 8 Haftungsausschluss**
+Der Betreiber der Webseite ID-No.com leistet keinerlei Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der Daten und schließt jegliche Haftung aus. Der Haftungsausschluss beinhaltet, dass Haftungsansprüche gegenüber dem Betreiber der Webseite, die sich auf Schäden gesundheitlicher, medizinischer, ideeller oder materieller Art beziehen, die durch eine Nutzung oder Nichtnutzung der dargebotenen Informationen oder auch fehlerhafte und unvollständige Informationen verursacht wurden, ausgeschlossen sind.
+
+Bei Zweifel an den Daten zum eigenen Gesundheitszustand oder zu weiteren medizinischen Angaben empfiehlt ID-No.com GmbH ausdrücklich, vor Eingabe der Daten auf der Website www.ID-No.com den Arzt zu konsultieren.
+
+**§ 9 Rechtswahl**
+Bei Rechtsstreitigkeiten im Zusammenhang mit dieser Geschäftsbeziehung gilt ausschließlich deutsches Recht unter Ausschluss des UN-Kaufrechts.
+
+**Allgemeines**
+Der Vertragstext wird von uns nicht gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="9iT88Ny" name="Datenschutz">
+      <segment>
+        <source>Datenschutz</source>
+        <target>Datenschutz</target>
+      </segment>
+    </unit>
+    <unit id="2SrCPL4" name="privacy.title">
+      <segment>
+        <source>privacy.title</source>
+        <target>Datenschutzerklärung</target>
+      </segment>
+    </unit>
+    <unit id="QSuBkxQ" name="privacy.version">
+      <segment>
+        <source>privacy.version</source>
+        <target>Stand: 16. Mai 2018</target>
+      </segment>
+    </unit>
+    <unit id="b1r_dDe" name="privacy.text">
+      <segment>
+        <source>privacy.text</source>
+        <target>Die nachfolgende Datenschutzerklärung entspricht den Anforderungen der zum 25. Mai in Kraft tretenden Datenschutz Grundverordnung (DSGVO).
+
+**Datenschutzhinweis**  
+Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer Privatsphäre ist für uns sehr wichtig. Nachstehend informieren wir Sie ausführlich über den Umgang mit Ihren Daten.
+
+**Erhebung, Verarbeitung und Nutzung personenbezogener Daten**  
+Sie können unsere Seite besuchen, ohne Angaben zu Ihrer Person zu machen. Wir speichern lediglich Zugriffsdaten ohne Personenbezug wie z.B. den Namen Ihres Internet Service Providers, die Seite, von der aus Sie uns besuchen oder den Namen der angeforderten Datei. Diese Daten werden ausschließlich zur Verbesserung unseres Angebotes ausgewertet und erlauben keinen Rückschluss auf Ihre Person.
+
+Personenbezogene Daten werden nur erhoben, wenn Sie uns diese im Rahmen Ihrer Warenbestellung, bei Eröffnung eines Kundenkontos oder Registrierung für unseren Newsletter freiwillig mitteilen. Welche Daten erhoben werden, ist aus den jeweiligen Eingabeformularen ersichtlich.
+
+Wir verwenden die von ihnen mitgeteilten Daten ohne Ihre gesonderte Einwilligung ausschließlich zur Vertragsabwicklung und Bearbeitung Ihrer Anfragen.
+
+Mit vollständiger Abwicklung des Vertrages und vollständiger Kaufpreiszahlung werden Ihre Daten für die weitere Verwendung gesperrt und nach Ablauf der steuer- und handelsrechtlichen Aufbewahrungsfristen gelöscht, sofern Sie nicht ausdrücklich in die weitere Nutzung Ihrer Daten eingewilligt haben. Die Löschung Ihres Kundenkontos ist jederzeit möglich und kann entweder durch eine Nachricht an die unten beschriebene Kontaktmöglichkeit oder über eine dafür vorgesehene Funktion im Kundenkonto erfolgen.
+
+Wir stellen dem Nutzer SOS-ID-Chips zur Hinterlegung persönlicher Notfalldaten in einem sogenannten Notfall-ID Pass zur Verfügung. Die im Notfall-ID Pass hinterlegten Notfalldaten zur Person können online durch Ersthelfer im Notfall abgerufen werden. Die Eingabe der ID-Nummer, die nach außen nicht sichtbar ist und sich geschützt auf der Rückseite des SOS-ID-Chips befindet, berechtigt zur Einsicht des Notfall-ID Passes. In einem mit Benutzername und Passwort gesicherten Kundenbereich hinterlegt der Eigentümer des SOS-ID-Chips seine Notfalldaten. Der Eigentümer ist berechtigt, unsere Webseiten zu Vertragszwecken gemäß den genannten Nutzungsbedingungen zu nutzen.
+
+Der Nutzer entscheidet, welche der Angaben im Notfall-ID Pass sichtbar sind. Die Einstellungen und Angaben zu seinen persönlichen Daten können nur im Rahmen einer vollen Zugriffsberechtigung bestehend aus Benutzername und Passwort hinterlegt werden. Persönliche Daten können nur über die vom Nutzer individuell eingerichtete Zugriffsberechtigung geändert werden.
+
+Wir verwenden geeignete technische und organisatorische Sicherheitsmaßnahmen, um Ihre Daten gegen eine zufällige oder vorsätzliche Manipulationen, einen teilweise oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu schützen.
+
+**Datenweitergabe zur Vertragserfüllung**  
+Eine Weitergabe Ihrer Daten erfolgt an das mit der Lieferung beauftragte Versandunternehmen, soweit dies zur Lieferung der Waren notwendig ist. Zur Abwicklung von Zahlungen geben wir Ihre Zahlungsdaten an das mit der Zahlung beauftragte Kreditinstitut Mollie n.V. weiter.
+
+Zum Teil erheben die ausgewählten Zahlungsdienstleister diese Daten auch selbst, soweit Sie dort ein Konto anlegen. In diesem Fall müssen Sie sich im Bestellprozess mit Ihren Zugangsdaten bei dem Zahlungsdienstleister anmelden. Es gilt insoweit die Datenschutzerklärung des jeweiligen Zahlungsdienstleisters.
+
+**Datenverwendung bei Anmeldung zum E-Mail-Newsletter**  
+Wenn Sie sich zu unserem Newsletter anmelden, verwenden wir die hierfür erforderlichen oder gesondert von Ihnen mitgeteilten Daten, um Ihnen regelmäßig unseren E-Mail-Newsletter entsprechend Ihrer Einwilligung zuzusenden. Die Abmeldung vom Newsletter ist jederzeit möglich und kann entweder durch eine Nachricht an die unten beschriebene Kontaktmöglichkeit oder über einen dafür vorgesehenen Link im Newsletter erfolgen.
+
+**Verwendung von Cookies**  
+Auf verschiedenen Seiten verwenden wir Cookies, um den Besuch unserer Website attraktiv zu gestalten und die Nutzung bestimmter Funktionen zu ermöglichen. Hierbei handelt es sich um kleine Textdateien, die auf Ihrem Rechner abgelegt werden. Die meisten der von uns verwendeten Cookies werden nach Ende der Browser-Sitzung wieder von Ihrer Festplatte gelöscht (sog. Sitzungs-Cookies).
+
+Andere Cookies verbleiben auf Ihrem Rechner und ermöglichen uns, Ihren Rechner bei Ihrem nächsten Besuch wieder zu erkennen (sog. dauerhafte Cookies). Diese Cookies dienen der Begrüßung mit Ihrem Benutzernamen und erübrigen Ihnen bei Folgebestellungen die erneute Eingabe Ihres Passwortes oder das Ausfüllen von Formularen mit Ihren Daten. Unseren Partnerunternehmen ist es nicht gestattet, über unsere Website personenbezogene Daten mittels Cookies zu erheben, zu verarbeiten oder zu nutzen.
+
+**Einsatz von Google (Universal) Analytics zur Webanalyse**
+Diese Website benutzt Google (Universal) Analytics, einen Webanalysedienst der Google Inc. (www.google.de). Google (Universal) Analytics verwendet Methoden, die eine Analyse der Benutzung der Website durch Sie ermöglichen, wie zum Beispiel sog. „Cookies“, Textdateien, die auf Ihrem Computer gespeichert werden. Die erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Durch die Aktivierung der IP-Anonymisierung auf dieser Webseite wird dabei die IP-Adresse vor der Übermittlung innerhalb der Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Die im Rahmen von Google Analytics von Ihrem Browser übermittelte anonymisierte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt.
+
+Sie können die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren:
+
+[Browser-Plugin](http://tools.google.com/dlpage/gaoptout?hl=de)
+
+Alternativ zum Browser-Plugin können Sie diesen Link klicken, um die Erfassung durch Google Analytics auf dieser Website zukünftig zu verhindern. Dabei wird ein Opt-Out-Cookie auf Ihrem Endgerät abgelegt. Löschen Sie Ihre Cookies, müssen Sie den Link erneut klicken.
+
+**Auskunftsrecht und Kontaktmöglichkeit**  
+Sie haben ein Recht auf unentgeltliche Auskunft über die bei uns zu Ihrer Person gespeicherten Daten sowie ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten, bei Auskünften, Berichtigung, Sperrung oder Löschung von Daten sowie Widerruf ggf. erteilter Einwilligungen oder Widerspruch gegen eine bestimmte Datenverwendung wenden Sie sich bitte an:
+
+[Datenschutz@ID-No.com](mailto:Datenschutz@ID-No.com)  
+069-941 43 88 -0
+
+oder per Brief an die
+
+**ID-No**.com GmbH  
+Frau Birgit Krechting  
+Cassellastraße 30-32  
+60386 Frankfurt am Main
+
+**Datensicherheit**  
+Ihre personenbezogenen Daten werden im Bestellprozess verschlüsselt mittels des SSL-Verfahrens (Secure-Socket-Layer) über das Internet übertragen. Kreditkartendaten werden nicht gespeichert, sondern direkt von unserem Payment-Dienstleister "Mollie n.V." erhoben und verarbeitet. Wir sichern unsere Website und sonstigen Systeme durch technische und organisatorische Maßnahmen gegen Verlust, Zerstörung, Zugriff, Veränderung oder Verbreitung Ihrer Daten durch unbefugte Personen.
+
+Der Zugang zu Ihrem Kundenkonto ist nur nach Eingabe Ihres persönlichen Passwortes möglich. Sie sollten Ihre Zugangsinformationen stets vertraulich behandeln und das Browserfenster schließen, wenn Sie die Kommunikation mit uns beendet haben, insbesondere wenn Sie den Computer gemeinsam mit anderen nutzen.
+
+**Geprüfte Sicherheit**  
+**ID-No**.com wurde von dem international anerkannten Unternehmen, der SySS GmbH in Tübingen, die sich auf Sicherheit im Umgang mit vertraulichen Daten im Internet spezialisiert hat, intensiv geprüft und mit dem Zertifikat „Geprüfte Sicherheit“ ausgezeichnet. Die Zertifizierung unterstreicht unseren hohen Anspruch an die Sicherheit und Qualität beim Umgang mit Ihren Daten und der Abwicklung Ihrer Bestellung.
+
+Für Sie als Nutzer bedeutet das:  
+Geprüfte Sicherheit und Qualität auf ID-No.com, insbesondere beim Umgang mit personenbezogenen Daten.
+
+**Wiederholung von Einwilligungserklärungen**  
+Die nachstehende(n) Einwilligung(en) haben Sie uns ggf. ausdrücklich erteilt und wir haben Ihre Einwilligung protokolliert. Nach dem Telemediengesetz sind wir verpflichtet, den Inhalt von Einwilligungen jederzeit zum Abruf bereit zu halten. Sie können Ihre Einwilligung(en) jederzeit mit Wirkung für die Zukunft widerrufen.
+
+a) Erlaubnis zur E-Mail-Werbung Bei Anmeldung zum Newsletter wird Ihre E-Mail-Adresse für eigene Werbezwecke genutzt, bis Sie sich vom Newsletter abmelden. Die Abmeldung ist jederzeit möglich.
+
+b) Registrierung Ich möchte mich für künftige Bestellungen registrieren und bitte um Aufnahme meiner Daten in Ihre Kundendatenbank. Mit der Registrierung können Sie die Vorteile von **ID-No**.com kostenfrei nutzen.
+
+**Bonitätsprüfung und Scoring**  
+Sofern wir in Vorleistung treten, z. B. bei einem Kauf auf Rechnung, holen wir zur Wahrung unserer berechtigten Interessen ggf. eine Bonitätsauskunft auf der Basis mathematisch statistischer Verfahren bei der SCHUFA Holding AG, Kormoranweg 5, 65201 Wiesbaden ein. Hierzu übermitteln wir die zu einer Bonitätsprüfung benötigten personenbezogenen Daten an die SCHUFA Holding AG und verwenden die erhaltenen Informationen über die statistische Wahrscheinlichkeiteines Zahlungsausfalls für eine abgewogene Entscheidung über die Begründung, Durchführung oder Beendigung des Vertragsverhältnisses.
+
+Die Bonitätsauskunft kann Wahrscheinlichkeitswerte (Score-Werte) beinhalten, die auf Basis wissenschaftlich anerkannter mathematisch-statistischer Verfahren berechnet werden und in deren Berechnung unter anderem Anschriftendaten einfließen. Ihre schutzwürdigen Belange werden gemäß den gesetzlichen Bestimmungen berücksichtigt.</target>
+      </segment>
+    </unit>
+    <unit id="SEE3tBg" name="imprint.title">
+      <segment>
+        <source>imprint.title</source>
+        <target>Impressum</target>
+      </segment>
+    </unit>
+    <unit id="JR7p9yq" name="imprint.text">
+      <segment>
+        <source>imprint.text</source>
+        <target>#### ID-No.com GmbH  - medical aid
+Cassellastraße 30-32  
+D-60386 Frankfurt am Main  
+
+E-Mail: info@ID-No.com  
+Telefon: +49 (0)69 - 941 43 88 -22  
+Telefax: +49 (0)69 - 941 43 88 -29  
+
+Verantwortlich für den Inhalt ist die ID-No.com GmbH.
+
+**Geschäftsführer**  
+Dr. Markus J. Krechting
+
+**Handelsregister**  
+Amtsgericht Frankfurt am Main, HRB 115072
+
+**Steuer-Nummer**  
+St-Nr. 045 236 030 38
+Ust-ID-Nr. DE 312 100 382
+
+**Bankverbindung**  
+Bank: Commerzbank AG
+IBAN DE21 5004 0000 0337 5847 00
+BIC: COBADEFFXXX
+
+**Urheberschaft**  
+Copyright @ ID-No.com GmbH. Alle Rechte vorbehalten. Sämtliche Daten, Texte und Bilder sind Eigentum der ID-No.com GmbH. Die Verwendung zu gewerblichen Zwecken ist untersagt. Gewährleistung Die Gewährleistungsbedingungen entnehmen Sie bitte unseren Allgemeinen Geschäftsbedingungen.
+
+**Haftung**  
+Alle externen Links wurden vor der Aufnahme sorgfältig geprüft; trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir jedoch keine Haftung für deren Inhalte. Für den Inhalt der Seiten ist ausschließlich deren Betreiber verantwortlich.</target>
+      </segment>
+    </unit>
+    <unit id="VKiCT0f" name="security.title">
+      <segment>
+        <source>security.title</source>
+        <target>Datensicherheit</target>
+      </segment>
+    </unit>
+    <unit id="r2cZxXH" name="security.text">
+      <segment>
+        <source>security.text</source>
+        <target>#### Zertifizierte Datensicherheit
+
+ID-No.com GmbH, eine Marke der CODE-No.com Gruppe, hat seinen Sitz in Frankfurt am Main, Deutschland. ID-No.com wird regelmäßig von dem international anerkannten Unternehmen SySS GmbH in Tübingen geprüft, das sich auf Sicherheit im Umgang mit vertraulichen Daten im Internet spezialisiert hat, und mit dem Zertifikat „Geprüfte Sicherheit“ ausgezeichnet. Website und Systeme sind technisch und organisatorisch gesichert und obliegen hohen Sicherheitsstandards in Zutritt-, Zugangs- und Zugriffskontrollen. Die Server laufen aus Sicherheitsgründen über redundante Systeme in zwei hochgesicherten Rechenzentren (ISO-Norm) in Bayern und Hessen.
+
+Hier finden Sie die ID-No.com Datenschutzerklärung: [ID-No.com/datenschutz](/datenschutz)
+
+####Datenschutz (DSGVO konform)
+
+Der Nutzer entscheidet selbst, welche der Angaben im Notfall-ID Pass sichtbar sein sollen und kann diese gesondert aktiv/passiv schalten. Die Einstellungen und Angaben zu seinen persönlichen Daten können nur im Rahmen einer vollen Zugriffsberechtigung bestehend aus Benutzername und Passwort hinterlegt werden. Persönliche Daten können nur über die vom Nutzer individuell eingerichtete Zugriffsberechtigung geändert werden.
+
+#### Missbrauchsschutz
+
+- Die individuelle ID-Nummer steht auf der verdeckten Rückseite der SOS-ID Produkte.
+Dies schützt vor unberechtigtem Auslesen durch Dritte.
+
+- Der Nutzer erhält umgehend eine Benachrichtigung über jeden Abruf seines Notfall-Passes. Zum Beispiel bei Verlust des SOS-ID-Chips kann der Nutzer direkt reagieren und seinen ganzen Account oder einzelne Angaben im Notfall-Pass vorübergehend deaktivieren.
+
+- Bei jedem Scan gibt uns der Anwender die Einwilligung, dass wir seine IP-Adresse aus Sicherheitsgründen auslesen. Im Fall eines Missbrauchs können wir eingreifen, den User identifizieren und ggf. an Ermittlungsbehörden übergeben.
+
+#### Aktualität und Verlässlichkeit der Notfallinformationen
+
+Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktualisierungserinnerungen haben die Helfer die Sicherheit, dass die gespeicherten Daten des Nutzers aktuell und verlässlich sind.</target>
+      </segment>
+    </unit>
+    <unit id="Kd99AFq" name="login.title">
+      <segment>
+        <source>login.title</source>
+        <target>Anmeldung</target>
+      </segment>
+    </unit>
+    <unit id="bEf896l" name="login.header">
+      <segment>
+        <source>login.header</source>
+        <target>Mein ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="XGTJLIG" name="login.text">
+      <segment>
+        <source>login.text</source>
+        <target>Bitte melden Sie sich hier mit Benutzernamen und Passwort an. Im Anschluss können Sie Ihre Notfall-Daten aktualisieren oder Ihre ID-Nummer aktivieren. </target>
+      </segment>
+    </unit>
+    <unit id="Y7eqvgE" name="meinidno.title">
+      <segment>
+        <source>meinidno.title</source>
+        <target>Mein ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="nZDkroM" name="header.menu.user.meinidno.lbl">
+      <segment>
+        <source>header.menu.user.meinidno.lbl</source>
+        <target>Mein ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="snIaWey" name="header.menu.user.logout.lbl">
+      <segment>
+        <source>header.menu.user.logout.lbl</source>
+        <target>Abmelden</target>
+      </segment>
+    </unit>
+    <unit id="AJQgdhc" name="header.menu.user.profile.lbl">
+      <segment>
+        <source>header.menu.user.profile.lbl</source>
+        <target>Profil bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="1_wnK76" name="profile.title">
+      <segment>
+        <source>profile.title</source>
+        <target>Profil</target>
+      </segment>
+    </unit>
+    <unit id="D_WugSp" name="profile.header">
+      <segment>
+        <source>profile.header</source>
+        <target>Meine Notfall-Daten</target>
+      </segment>
+    </unit>
+    <unit id="Hfl.SdK" name="profile.personal.header">
+      <segment>
+        <source>profile.personal.header</source>
+        <target>Persönliche Angaben</target>
+      </segment>
+    </unit>
+    <unit id="kut5zCU" name="profile.edit.lbl">
+      <segment>
+        <source>profile.edit.lbl</source>
+        <target>Profil bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="VIK05IR" name="contacts.index.lbl">
+      <segment>
+        <source>contacts.index.lbl</source>
+        <target>Kontakte bearbeiten</target>
+      </segment>
+    </unit>
+    <unit id="hoXcfP0" name="profile.delete.lbl">
+      <segment>
+        <source>profile.delete.lbl</source>
+        <target>Profil löschen</target>
+      </segment>
+    </unit>
+    <unit id="LNtZqBU" name="account.edit.lbl">
+      <segment>
+        <source>account.edit.lbl</source>
+        <target>Zugangsdaten ändern</target>
+      </segment>
+    </unit>
+    <unit id="xgnCQl1" name="profile.actions.pass_enable.success">
+      <segment>
+        <source>profile.actions.pass_enable.success</source>
+        <target>Der Notfall-ID Pass wurde erfolgreich aktiviert.</target>
+      </segment>
+    </unit>
+    <unit id="Jtap8tY" name="profile.actions.pass_disable.success">
+      <segment>
+        <source>profile.actions.pass_disable.success</source>
+        <target>Der Notfall-ID Pass wurde deaktiviert!</target>
+      </segment>
+    </unit>
+    <unit id="yIoLkHQ" name="Success">
+      <segment>
+        <source>Success</source>
+        <target>Erfolgreich</target>
+      </segment>
+    </unit>
+    <unit id="fZ63rLE" name="Close">
+      <segment>
+        <source>Close</source>
+        <target>Close</target>
+      </segment>
+    </unit>
+    <unit id="S9PESaF" name="profile.actions.pass_enable_disable.error">
+      <segment>
+        <source>profile.actions.pass_enable_disable.error</source>
+        <target>Fehler beim Speichern des Notfall-ID Pass Status!</target>
+      </segment>
+    </unit>
+    <unit id="6YHdrkX" name="Warning">
+      <segment>
+        <source>Warning</source>
+        <target>Warnung</target>
+      </segment>
+    </unit>
+    <unit id="VKDowX6" name="Error">
+      <segment>
+        <source>Error</source>
+        <target>Fehler</target>
+      </segment>
+    </unit>
+    <unit id="nobaam5" name="Contactname">
+      <segment>
+        <source>Contactname</source>
+        <target>Contactname</target>
+      </segment>
+    </unit>
+    <unit id="Xn._JAF" name="Contactname show">
+      <segment>
+        <source>Contactname show</source>
+        <target>Contactname show</target>
+      </segment>
+    </unit>
+    <unit id="tS1JLaN" name="Beziehung">
+      <segment>
+        <source>Beziehung</source>
+        <target>Beziehung</target>
+      </segment>
+    </unit>
+    <unit id="zLTV0_h" name="Beziehung show">
+      <segment>
+        <source>Beziehung show</source>
+        <target>Beziehung show</target>
+      </segment>
+    </unit>
+    <unit id="GXZu1sy" name="Cancel">
+      <segment>
+        <source>Cancel</source>
+        <target>Abbrechen</target>
+      </segment>
+    </unit>
+    <unit id="FQn1YfJ" name="Save">
+      <segment>
+        <source>Save</source>
+        <target>Speichern</target>
+      </segment>
+    </unit>
+    <unit id="Cal6RGy" name="Telefon show">
+      <segment>
+        <source>Telefon show</source>
+        <target>Telefon show</target>
+      </segment>
+    </unit>
+    <unit id="MsGoHo_" name="sichtbar">
+      <segment>
+        <source>sichtbar</source>
+        <target>sichtbar</target>
+      </segment>
+    </unit>
+    <unit id="vgHgRUK" name="contact.contactname.lbl">
+      <segment>
+        <source>contact.contactname.lbl</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="KyXj8jF" name="contact.beziehung.lbl">
+      <segment>
+        <source>contact.beziehung.lbl</source>
+        <target>Beziehung (z.B. Ehefrau, Hausarzt)</target>
+      </segment>
+    </unit>
+    <unit id="CB3t2Xb" name="contact.telefon.lbl">
+      <segment>
+        <source>contact.telefon.lbl</source>
+        <target>Telefonnummer</target>
+      </segment>
+    </unit>
+    <unit id="znwucS3" name="contacts.action.new.header">
+      <segment>
+        <source>contacts.action.new.header</source>
+        <target>Neuer Kontakt</target>
+      </segment>
+    </unit>
+    <unit id="OPNQtnB" name="contact.table.contactname.lbl">
+      <segment>
+        <source>contact.table.contactname.lbl</source>
+        <target>Name</target>
+      </segment>
+    </unit>
+    <unit id="jTaFKJ5" name="contact.table.telefon.lbl">
+      <segment>
+        <source>contact.table.telefon.lbl</source>
+        <target>Telefon</target>
+      </segment>
+    </unit>
+    <unit id="2HQxS3." name="contact.table.beziehung.lbl">
+      <segment>
+        <source>contact.table.beziehung.lbl</source>
+        <target>Beziehung</target>
+      </segment>
+    </unit>
+    <unit id="jm4dwPc" name="contact.action.edit.success">
+      <segment>
+        <source>contact.action.edit.success</source>
+        <target>Der Kontakt wurde erfolgreich gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="O8xCtc0" name="contacts.action.err.not_allowed">
+      <segment>
+        <source>contacts.action.err.not_allowed</source>
+        <target>Zugriff verweigert!</target>
+      </segment>
+    </unit>
+    <unit id="nsprlXv" name="action.err.not_allowed">
+      <segment>
+        <source>action.err.not_allowed</source>
+        <target>Zugriff verweigert!</target>
+      </segment>
+    </unit>
+    <unit id="AUvDNdU" name="contact.action.edit.error">
+      <segment>
+        <source>contact.action.edit.error</source>
+        <target>Fehler beim Speichern des Kontakts!</target>
+      </segment>
+    </unit>
+    <unit id="GtO_gRt" name="contacts.action.new.lbl">
+      <segment>
+        <source>contacts.action.new.lbl</source>
+        <target>Neuer Kontakt</target>
+      </segment>
+    </unit>
+    <unit id="pK0lnnH" name="Aktion">
+      <segment>
+        <source>Aktion</source>
+        <target>Aktion</target>
+      </segment>
+    </unit>
+    <unit id="IdjDkS_" name="contact.lbl">
+      <segment>
+        <source>contact.lbl</source>
+        <target>Kontakt</target>
+      </segment>
+    </unit>
+    <unit id="sek9koZ" name="contact.action.delete.header">
+      <segment>
+        <source>contact.action.delete.header</source>
+        <target>Kontakt entfernen?</target>
+      </segment>
+    </unit>
+    <unit id="N7BS7vS" name="contact.action.delete.text">
+      <segment>
+        <source>contact.action.delete.text</source>
+        <target>Möchten Sie den Kontakt "%contactname%" wirklich entfernen?</target>
+      </segment>
+    </unit>
+    <unit id="HqRCoTS" name="No">
+      <segment>
+        <source>No</source>
+        <target>Nein</target>
+      </segment>
+    </unit>
+    <unit id="haOas0X" name="Yes">
+      <segment>
+        <source>Yes</source>
+        <target>Ja</target>
+      </segment>
+    </unit>
+    <unit id="224ln89" name="contact.action.create.success">
+      <segment>
+        <source>contact.action.create.success</source>
+        <target>Der Kontakt wurde erfolgreich gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="Uvc.jio" name="contact.action.delete.success">
+      <segment>
+        <source>contact.action.delete.success</source>
+        <target>Der Kontakt wurde erfolgreich entfernt.</target>
+      </segment>
+    </unit>
+    <unit id="w.DLp.L" name="items.action.new.lbl">
+      <segment>
+        <source>items.action.new.lbl</source>
+        <target>Neue ID-Nummer aktivieren</target>
+      </segment>
+    </unit>
+    <unit id="aCDEdDE" name="items.table.idNo.lbl">
+      <segment>
+        <source>items.table.idNo.lbl</source>
+        <target>ID-Nummer</target>
+      </segment>
+    </unit>
+    <unit id="kDmm7gm" name="items.table.anbringung.lbl">
+      <segment>
+        <source>items.table.anbringung.lbl</source>
+        <target>Anbringung</target>
+      </segment>
+    </unit>
+    <unit id="vmH8Qp8" name="items.table.aktiviertDatum.lbl">
+      <segment>
+        <source>items.table.aktiviertDatum.lbl</source>
+        <target>Aktivierung</target>
+      </segment>
+    </unit>
+    <unit id="RLlT90S" name="item.lbl">
+      <segment>
+        <source>item.lbl</source>
+        <target>ID-Nummer</target>
+      </segment>
+    </unit>
+    <unit id="gmsAMFu" name="items.anbringung.lbl">
+      <segment>
+        <source>items.anbringung.lbl</source>
+        <target>Anbringung</target>
+      </segment>
+    </unit>
+    <unit id="dhETYUw" name="items.action.edit.error">
+      <segment>
+        <source>items.action.edit.error</source>
+        <target>Fehler beim Seichern!</target>
+      </segment>
+    </unit>
+    <unit id="KcpsvQI" name="items.action.new.header">
+      <segment>
+        <source>items.action.new.header</source>
+        <target>ID-Nummer aktivieren</target>
+      </segment>
+    </unit>
+    <unit id="pFzFHf8" name="items.idNo.lbl">
+      <segment>
+        <source>items.idNo.lbl</source>
+        <target>ID-Nummer</target>
+      </segment>
+    </unit>
+    <unit id="iN8764q" name="items.action.edit.success">
+      <segment>
+        <source>items.action.edit.success</source>
+        <target>Die ID-Nummer wurde erfolgreich gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="sDJSAg0" name="item.action.delete.header">
+      <segment>
+        <source>item.action.delete.header</source>
+        <target>ID-Nummer entfernen?</target>
+      </segment>
+    </unit>
+    <unit id="IA5y3yw" name="item.action.delete.text">
+      <segment>
+        <source>item.action.delete.text</source>
+        <target>Möchten Sie die ID-Nummer  "%idNo%" wirklich entfernen? </target>
+      </segment>
+    </unit>
+    <unit id="3Amepzd" name="person.lbl">
+      <segment>
+        <source>person.lbl</source>
+        <target>Person</target>
+      </segment>
+    </unit>
+    <unit id="LXEWQrc" name="x">
+      <segment>
+        <source>x</source>
+        <target>x</target>
+      </segment>
+    </unit>
+    <unit id="81WNFXE" name="person.vorname.lbl">
+      <segment>
+        <source>person.vorname.lbl</source>
+        <target>Vorname</target>
+      </segment>
+    </unit>
+    <unit id="xhD40lC" name="person.nachname.lbl">
+      <segment>
+        <source>person.nachname.lbl</source>
+        <target>Nachname</target>
+      </segment>
+    </unit>
+    <unit id="kc9GJeS" name="person.strasse.lbl">
+      <segment>
+        <source>person.strasse.lbl</source>
+        <target>Straße</target>
+      </segment>
+    </unit>
+    <unit id="UFVHSnR" name="person.plz.lbl">
+      <segment>
+        <source>person.plz.lbl</source>
+        <target>PLZ</target>
+      </segment>
+    </unit>
+    <unit id="09.yEQd" name="person.ort.lbl">
+      <segment>
+        <source>person.ort.lbl</source>
+        <target>Wohnort</target>
+      </segment>
+    </unit>
+    <unit id="YcVR3nU" name="person.action.edit.success">
+      <segment>
+        <source>person.action.edit.success</source>
+        <target>Die Kontaktdaten wurden erfolgreich gespeichert.</target>
+      </segment>
+    </unit>
+    <unit id="Mrt1WB9" name="person.geschlecht.x">
+      <segment>
+        <source>person.geschlecht.x</source>
+        <target>divers</target>
+      </segment>
+    </unit>
+    <unit id="ETC5b4d" name="person.personalDetails.lbl">
+      <segment>
+        <source>person.personalDetails.lbl</source>
+        <target>Persönliche Angaben</target>
+      </segment>
+    </unit>
+    <unit id="HEPQHqC" name="person.geburtsdatum.lbl">
+      <segment>
+        <source>person.geburtsdatum.lbl</source>
+        <target>Geburtsdatum</target>
+      </segment>
+    </unit>
+    <unit id="NlkhDdJ" name="person.geburtsdatumTag.lbl">
+      <segment>
+        <source>person.geburtsdatumTag.lbl</source>
+        <target>Tag</target>
+      </segment>
+    </unit>
+    <unit id="8OrWCMF" name="person.geburtsdatumMonat.lbl">
+      <segment>
+        <source>person.geburtsdatumMonat.lbl</source>
+        <target>Monat</target>
+      </segment>
+    </unit>
+    <unit id="k4Ak4q9" name="person.geburtsdatumJahr.lbl">
+      <segment>
+        <source>person.geburtsdatumJahr.lbl</source>
+        <target>Jahr</target>
+      </segment>
+    </unit>
+    <unit id="92IadfQ" name="person.zusatz.lbl">
+      <segment>
+        <source>person.zusatz.lbl</source>
+        <target>weitere Angaben</target>
+      </segment>
+    </unit>
+    <unit id="GXZVMss" name="person.land.lbl">
+      <segment>
+        <source>person.land.lbl</source>
+        <target>Land</target>
+      </segment>
+    </unit>
+    <unit id="J1zKgeK" name="+49">
+      <segment>
+        <source>+49</source>
+        <target>+49</target>
+      </segment>
+    </unit>
+    <unit id="NI1gN58" name="Telefon land">
+      <segment>
+        <source>Telefon land</source>
+        <target>Telefon land</target>
+      </segment>
+    </unit>
+    <unit id="meKsSMp" name="Telefon vorwahl">
+      <segment>
+        <source>Telefon vorwahl</source>
+        <target>Telefon vorwahl</target>
+      </segment>
+    </unit>
+    <unit id="DgtXwmv" name="Mobile land">
+      <segment>
+        <source>Mobile land</source>
+        <target>Mobile land</target>
+      </segment>
+    </unit>
+    <unit id="5Rl61kn" name="Mobile vorwahl">
+      <segment>
+        <source>Mobile vorwahl</source>
+        <target>Mobile vorwahl</target>
+      </segment>
+    </unit>
+    <unit id="pCYoZcZ" name="person.medicalDetails.lbl">
+      <segment>
+        <source>person.medicalDetails.lbl</source>
+        <target>Medizinische Informationen</target>
+      </segment>
+    </unit>
+    <unit id="QhHyzI4" name="B+">
+      <segment>
+        <source>B+</source>
+        <target>B+</target>
+      </segment>
+    </unit>
+    <unit id="dNIb.z1" name="B-">
+      <segment>
+        <source>B-</source>
+        <target>B-</target>
+      </segment>
+    </unit>
+    <unit id="i2wE6hf" name="person.blutgruppe.lbl">
+      <segment>
+        <source>person.blutgruppe.lbl</source>
+        <target>Blutgruppe</target>
+      </segment>
+    </unit>
+    <unit id="ibdotsG" name="person.erkrankungen.lbl">
+      <segment>
+        <source>person.erkrankungen.lbl</source>
+        <target>Erkrankungen</target>
+      </segment>
+    </unit>
+    <unit id="AP2GP5d" name="person.medikamente.lbl">
+      <segment>
+        <source>person.medikamente.lbl</source>
+        <target>Medikation</target>
+      </segment>
+    </unit>
+    <unit id="ICC_8GP" name="person.allergieen.lbl">
+      <segment>
+        <source>person.allergieen.lbl</source>
+        <target>Allergien</target>
+      </segment>
+    </unit>
+    <unit id="vvwEE68" name="person.gewicht.lbl">
+      <segment>
+        <source>person.gewicht.lbl</source>
+        <target>Gewicht</target>
+      </segment>
+    </unit>
+    <unit id="Ex7XNCk" name="kg">
+      <segment>
+        <source>kg</source>
+        <target>kg</target>
+      </segment>
+    </unit>
+    <unit id="Voz.TnC" name="lbs">
+      <segment>
+        <source>lbs</source>
+        <target>lbs</target>
+      </segment>
+    </unit>
+    <unit id="CcjFcL8" name="person.gewichtEinheit.lbl">
+      <segment>
+        <source>person.gewichtEinheit.lbl</source>
+        <target>Einheit</target>
+      </segment>
+    </unit>
+    <unit id="ekMryqc" name="person.groesse.lbl">
+      <segment>
+        <source>person.groesse.lbl</source>
+        <target>Größe</target>
+      </segment>
+    </unit>
+    <unit id="tQOcMl1" name="cm">
+      <segment>
+        <source>cm</source>
+        <target>cm</target>
+      </segment>
+    </unit>
+    <unit id="HPbnKjt" name="inch">
+      <segment>
+        <source>inch</source>
+        <target>inch</target>
+      </segment>
+    </unit>
+    <unit id="qhMFe_A" name="person.groesseEinheit.lbl">
+      <segment>
+        <source>person.groesseEinheit.lbl</source>
+        <target>Einheit</target>
+      </segment>
+    </unit>
+    <unit id="8NNQs.D" name="person.krankenversicherungDetails.lbl">
+      <segment>
+        <source>person.krankenversicherungDetails.lbl</source>
+        <target>Krankenversicherung</target>
+      </segment>
+    </unit>
+    <unit id="DrzbMfV" name="person.krankenversicherung.lbl">
+      <segment>
+        <source>person.krankenversicherung.lbl</source>
+        <target>Krankenversicherung</target>
+      </segment>
+    </unit>
+    <unit id="S6uHNHe" name="person.versicherungsnummer.lbl">
+      <segment>
+        <source>person.versicherungsnummer.lbl</source>
+        <target>Versicherungs-Nr.</target>
+      </segment>
+    </unit>
+    <unit id="7EGqC16" name="person.zusatzversicherung.lbl">
+      <segment>
+        <source>person.zusatzversicherung.lbl</source>
+        <target>Zusatzversicherung</target>
+      </segment>
+    </unit>
+    <unit id="wJQUGJJ" name="person.morePatientDetails.lbl">
+      <segment>
+        <source>person.morePatientDetails.lbl</source>
+        <target>Weitere Patientenangaben</target>
+      </segment>
+    </unit>
+    <unit id="E7XFQ93" name="person.organspender.lbl">
+      <segment>
+        <source>person.organspender.lbl</source>
+        <target>Organspender</target>
+      </segment>
+    </unit>
+    <unit id="cSp0aWO" name="person.patientenverf.lbl">
+      <segment>
+        <source>person.patientenverf.lbl</source>
+        <target>Patienten­verfügung</target>
+      </segment>
+    </unit>
+    <unit id="uSf25t8" name="person.weitereangaben.lbl">
+      <segment>
+        <source>person.weitereangaben.lbl</source>
+        <target>weitere Angaben</target>
+      </segment>
+    </unit>
+    <unit id="sND_BfY" name="Gewicht einheit">
+      <segment>
+        <source>Gewicht einheit</source>
+        <target>Gewicht einheit</target>
+      </segment>
+    </unit>
+    <unit id="ShhJz71" name="Groesse einheit">
+      <segment>
+        <source>Groesse einheit</source>
+        <target>Groesse einheit</target>
+      </segment>
+    </unit>
+    <unit id="jz_EKfa" name="person.telefonLand.lbl">
+      <segment>
+        <source>person.telefonLand.lbl</source>
+        <target>Ländervorwahl</target>
+      </segment>
+    </unit>
+    <unit id="sA6e0z0" name="person.telefonVorwahl.lbl">
+      <segment>
+        <source>person.telefonVorwahl.lbl</source>
+        <target>Vorwahl</target>
+      </segment>
+    </unit>
+    <unit id="WAqW5FP" name="person.telefon.lbl">
+      <segment>
+        <source>person.telefon.lbl</source>
+        <target>Festnetznummer</target>
+      </segment>
+    </unit>
+    <unit id="lUlVJJV" name="person.mobileLand.lbl">
+      <segment>
+        <source>person.mobileLand.lbl</source>
+        <target>Ländervorwahl</target>
+      </segment>
+    </unit>
+    <unit id="YNUN52S" name="person.mobileVorwahl.lbl">
+      <segment>
+        <source>person.mobileVorwahl.lbl</source>
+        <target>Vorwahl</target>
+      </segment>
+    </unit>
+    <unit id="z_VuPWK" name="person.mobile.lbl">
+      <segment>
+        <source>person.mobile.lbl</source>
+        <target>Mobilnummer</target>
+      </segment>
+    </unit>
+    <unit id="F81R_cb" name="person.blutgruppe.choose.lbl">
+      <segment>
+        <source>person.blutgruppe.choose.lbl</source>
+        <target>-- Bitte wählen Sie ihre Blutgruppe --</target>
+      </segment>
+    </unit>
+    <unit id="8QBTTol" name="items.table.noStatus.lbl">
+      <segment>
+        <source>items.table.noStatus.lbl</source>
+        <target>Status</target>
+      </segment>
+    </unit>
+    <unit id="c69XQyB" name="items.noStatus.lbl">
+      <segment>
+        <source>items.noStatus.lbl</source>
+        <target>ID-Nummer aktiv</target>
+      </segment>
+    </unit>
+    <unit id="Xb3fkR_" name="Afghanistan">
+      <segment>
+        <source>Afghanistan</source>
+        <target>Afghanistan</target>
+      </segment>
+    </unit>
+    <unit id="VWZVm8T" name="Ägypten">
+      <segment>
+        <source>Ägypten</source>
+        <target>Ägypten</target>
+      </segment>
+    </unit>
+    <unit id="LIKPRmh" name="Ålandinseln">
+      <segment>
+        <source>Ålandinseln</source>
+        <target>Ålandinseln</target>
+      </segment>
+    </unit>
+    <unit id="PRJ0gnv" name="Albanien">
+      <segment>
+        <source>Albanien</source>
+        <target>Albanien</target>
+      </segment>
+    </unit>
+    <unit id=".5HL8Zp" name="Algerien">
+      <segment>
+        <source>Algerien</source>
+        <target>Algerien</target>
+      </segment>
+    </unit>
+    <unit id="yCoPM7j" name="Amerikanisch-Samoa">
+      <segment>
+        <source>Amerikanisch-Samoa</source>
+        <target>Amerikanisch-Samoa</target>
+      </segment>
+    </unit>
+    <unit id="kulG1pp" name="Amerikanische Jungferninseln">
+      <segment>
+        <source>Amerikanische Jungferninseln</source>
+        <target>Amerikanische Jungferninseln</target>
+      </segment>
+    </unit>
+    <unit id="hCyqmnI" name="Amerikanische Überseeinseln">
+      <segment>
+        <source>Amerikanische Überseeinseln</source>
+        <target>Amerikanische Überseeinseln</target>
+      </segment>
+    </unit>
+    <unit id="PjQL5N4" name="Andorra">
+      <segment>
+        <source>Andorra</source>
+        <target>Andorra</target>
+      </segment>
+    </unit>
+    <unit id="IrllMoF" name="Angola">
+      <segment>
+        <source>Angola</source>
+        <target>Angola</target>
+      </segment>
+    </unit>
+    <unit id="pKDH57d" name="Anguilla">
+      <segment>
+        <source>Anguilla</source>
+        <target>Anguilla</target>
+      </segment>
+    </unit>
+    <unit id="AmAjdUQ" name="Antarktis">
+      <segment>
+        <source>Antarktis</source>
+        <target>Antarktis</target>
+      </segment>
+    </unit>
+    <unit id="oV.CKJw" name="Antigua und Barbuda">
+      <segment>
+        <source>Antigua und Barbuda</source>
+        <target>Antigua und Barbuda</target>
+      </segment>
+    </unit>
+    <unit id="R9XKEja" name="Äquatorialguinea">
+      <segment>
+        <source>Äquatorialguinea</source>
+        <target>Äquatorialguinea</target>
+      </segment>
+    </unit>
+    <unit id="XNuttCD" name="Argentinien">
+      <segment>
+        <source>Argentinien</source>
+        <target>Argentinien</target>
+      </segment>
+    </unit>
+    <unit id="9uGcjnj" name="Armenien">
+      <segment>
+        <source>Armenien</source>
+        <target>Armenien</target>
+      </segment>
+    </unit>
+    <unit id="tWYlXrB" name="Aruba">
+      <segment>
+        <source>Aruba</source>
+        <target>Aruba</target>
+      </segment>
+    </unit>
+    <unit id="kxAiS2U" name="Aserbaidschan">
+      <segment>
+        <source>Aserbaidschan</source>
+        <target>Aserbaidschan</target>
+      </segment>
+    </unit>
+    <unit id="64KbJJC" name="Äthiopien">
+      <segment>
+        <source>Äthiopien</source>
+        <target>Äthiopien</target>
+      </segment>
+    </unit>
+    <unit id="fsSM74y" name="Australien">
+      <segment>
+        <source>Australien</source>
+        <target>Australien</target>
+      </segment>
+    </unit>
+    <unit id="WPkaKu." name="Bahamas">
+      <segment>
+        <source>Bahamas</source>
+        <target>Bahamas</target>
+      </segment>
+    </unit>
+    <unit id="lLKFm5E" name="Bahrain">
+      <segment>
+        <source>Bahrain</source>
+        <target>Bahrain</target>
+      </segment>
+    </unit>
+    <unit id="IcOXEiW" name="Bangladesch">
+      <segment>
+        <source>Bangladesch</source>
+        <target>Bangladesch</target>
+      </segment>
+    </unit>
+    <unit id="jo366bd" name="Barbados">
+      <segment>
+        <source>Barbados</source>
+        <target>Barbados</target>
+      </segment>
+    </unit>
+    <unit id="S_8W3xd" name="Belarus">
+      <segment>
+        <source>Belarus</source>
+        <target>Belarus</target>
+      </segment>
+    </unit>
+    <unit id="qz1A2q9" name="Belgien">
+      <segment>
+        <source>Belgien</source>
+        <target>Belgien</target>
+      </segment>
+    </unit>
+    <unit id="cdyB8Tw" name="Belize">
+      <segment>
+        <source>Belize</source>
+        <target>Belize</target>
+      </segment>
+    </unit>
+    <unit id="adCnuEz" name="Benin">
+      <segment>
+        <source>Benin</source>
+        <target>Benin</target>
+      </segment>
+    </unit>
+    <unit id="ecif1Ff" name="Bermuda">
+      <segment>
+        <source>Bermuda</source>
+        <target>Bermuda</target>
+      </segment>
+    </unit>
+    <unit id="2IniFyo" name="Bhutan">
+      <segment>
+        <source>Bhutan</source>
+        <target>Bhutan</target>
+      </segment>
+    </unit>
+    <unit id="BW9WymV" name="Bolivien">
+      <segment>
+        <source>Bolivien</source>
+        <target>Bolivien</target>
+      </segment>
+    </unit>
+    <unit id="lYTM_5w" name="Bosnien und Herzegowina">
+      <segment>
+        <source>Bosnien und Herzegowina</source>
+        <target>Bosnien und Herzegowina</target>
+      </segment>
+    </unit>
+    <unit id="jJ7zZFe" name="Botsuana">
+      <segment>
+        <source>Botsuana</source>
+        <target>Botsuana</target>
+      </segment>
+    </unit>
+    <unit id="N1Q0wlC" name="Bouvetinsel">
+      <segment>
+        <source>Bouvetinsel</source>
+        <target>Bouvetinsel</target>
+      </segment>
+    </unit>
+    <unit id="HavFnGt" name="Brasilien">
+      <segment>
+        <source>Brasilien</source>
+        <target>Brasilien</target>
+      </segment>
+    </unit>
+    <unit id="F3pKFfk" name="Britische Jungferninseln">
+      <segment>
+        <source>Britische Jungferninseln</source>
+        <target>Britische Jungferninseln</target>
+      </segment>
+    </unit>
+    <unit id="yhli7fB" name="Britisches Territorium im Indischen Ozean">
+      <segment>
+        <source>Britisches Territorium im Indischen Ozean</source>
+        <target>Britisches Territorium im Indischen Ozean</target>
+      </segment>
+    </unit>
+    <unit id="8ZblXvF" name="Brunei Darussalam">
+      <segment>
+        <source>Brunei Darussalam</source>
+        <target>Brunei Darussalam</target>
+      </segment>
+    </unit>
+    <unit id="vatUak4" name="Bulgarien">
+      <segment>
+        <source>Bulgarien</source>
+        <target>Bulgarien</target>
+      </segment>
+    </unit>
+    <unit id="pWQ3GsD" name="Burkina Faso">
+      <segment>
+        <source>Burkina Faso</source>
+        <target>Burkina Faso</target>
+      </segment>
+    </unit>
+    <unit id="yDW9HEV" name="Burundi">
+      <segment>
+        <source>Burundi</source>
+        <target>Burundi</target>
+      </segment>
+    </unit>
+    <unit id="iB9.zC5" name="Cabo Verde">
+      <segment>
+        <source>Cabo Verde</source>
+        <target>Cabo Verde</target>
+      </segment>
+    </unit>
+    <unit id="9Sc_I21" name="Chile">
+      <segment>
+        <source>Chile</source>
+        <target>Chile</target>
+      </segment>
+    </unit>
+    <unit id="EENoKQM" name="China">
+      <segment>
+        <source>China</source>
+        <target>China</target>
+      </segment>
+    </unit>
+    <unit id="_eKWnqp" name="Cookinseln">
+      <segment>
+        <source>Cookinseln</source>
+        <target>Cookinseln</target>
+      </segment>
+    </unit>
+    <unit id="4mdC183" name="Costa Rica">
+      <segment>
+        <source>Costa Rica</source>
+        <target>Costa Rica</target>
+      </segment>
+    </unit>
+    <unit id="uch3uX." name="Côte d’Ivoire">
+      <segment>
+        <source>Côte d’Ivoire</source>
+        <target>Côte d’Ivoire</target>
+      </segment>
+    </unit>
+    <unit id="mx2Ts8v" name="Curaçao">
+      <segment>
+        <source>Curaçao</source>
+        <target>Curaçao</target>
+      </segment>
+    </unit>
+    <unit id="ZgicBdp" name="Dänemark">
+      <segment>
+        <source>Dänemark</source>
+        <target>Dänemark</target>
+      </segment>
+    </unit>
+    <unit id="r25Wqs2" name="Deutschland">
+      <segment>
+        <source>Deutschland</source>
+        <target>Deutschland</target>
+      </segment>
+    </unit>
+    <unit id="vip.VoT" name="Dominica">
+      <segment>
+        <source>Dominica</source>
+        <target>Dominica</target>
+      </segment>
+    </unit>
+    <unit id="iGQnrhA" name="Dominikanische Republik">
+      <segment>
+        <source>Dominikanische Republik</source>
+        <target>Dominikanische Republik</target>
+      </segment>
+    </unit>
+    <unit id="zQSYLN9" name="Dschibuti">
+      <segment>
+        <source>Dschibuti</source>
+        <target>Dschibuti</target>
+      </segment>
+    </unit>
+    <unit id="LKJsYP4" name="Ecuador">
+      <segment>
+        <source>Ecuador</source>
+        <target>Ecuador</target>
+      </segment>
+    </unit>
+    <unit id="xAjSbB7" name="El Salvador">
+      <segment>
+        <source>El Salvador</source>
+        <target>El Salvador</target>
+      </segment>
+    </unit>
+    <unit id="AbxACTk" name="Eritrea">
+      <segment>
+        <source>Eritrea</source>
+        <target>Eritrea</target>
+      </segment>
+    </unit>
+    <unit id="nt96Oav" name="Estland">
+      <segment>
+        <source>Estland</source>
+        <target>Estland</target>
+      </segment>
+    </unit>
+    <unit id="4FaOTOn" name="Eswatini">
+      <segment>
+        <source>Eswatini</source>
+        <target>Eswatini</target>
+      </segment>
+    </unit>
+    <unit id="hM_nCcR" name="Falklandinseln">
+      <segment>
+        <source>Falklandinseln</source>
+        <target>Falklandinseln</target>
+      </segment>
+    </unit>
+    <unit id="X6iR0Sd" name="Färöer">
+      <segment>
+        <source>Färöer</source>
+        <target>Färöer</target>
+      </segment>
+    </unit>
+    <unit id="AHtTyXc" name="Fidschi">
+      <segment>
+        <source>Fidschi</source>
+        <target>Fidschi</target>
+      </segment>
+    </unit>
+    <unit id="LTXBdAL" name="Finnland">
+      <segment>
+        <source>Finnland</source>
+        <target>Finnland</target>
+      </segment>
+    </unit>
+    <unit id="Y2V2CuG" name="Frankreich">
+      <segment>
+        <source>Frankreich</source>
+        <target>Frankreich</target>
+      </segment>
+    </unit>
+    <unit id="ohO86FJ" name="Französisch-Guayana">
+      <segment>
+        <source>Französisch-Guayana</source>
+        <target>Französisch-Guayana</target>
+      </segment>
+    </unit>
+    <unit id="4H5dHGD" name="Französisch-Polynesien">
+      <segment>
+        <source>Französisch-Polynesien</source>
+        <target>Französisch-Polynesien</target>
+      </segment>
+    </unit>
+    <unit id=".Ot9DC6" name="Französische Süd- und Antarktisgebiete">
+      <segment>
+        <source>Französische Süd- und Antarktisgebiete</source>
+        <target>Französische Süd- und Antarktisgebiete</target>
+      </segment>
+    </unit>
+    <unit id="PtjXyKt" name="Gabun">
+      <segment>
+        <source>Gabun</source>
+        <target>Gabun</target>
+      </segment>
+    </unit>
+    <unit id="xuaBsZa" name="Gambia">
+      <segment>
+        <source>Gambia</source>
+        <target>Gambia</target>
+      </segment>
+    </unit>
+    <unit id="a0Z1fM2" name="Georgien">
+      <segment>
+        <source>Georgien</source>
+        <target>Georgien</target>
+      </segment>
+    </unit>
+    <unit id="WDIBwe_" name="Ghana">
+      <segment>
+        <source>Ghana</source>
+        <target>Ghana</target>
+      </segment>
+    </unit>
+    <unit id="CXztWC8" name="Gibraltar">
+      <segment>
+        <source>Gibraltar</source>
+        <target>Gibraltar</target>
+      </segment>
+    </unit>
+    <unit id="BZOqDI7" name="Grenada">
+      <segment>
+        <source>Grenada</source>
+        <target>Grenada</target>
+      </segment>
+    </unit>
+    <unit id="gb.uaZ3" name="Griechenland">
+      <segment>
+        <source>Griechenland</source>
+        <target>Griechenland</target>
+      </segment>
+    </unit>
+    <unit id="sEvN67C" name="Grönland">
+      <segment>
+        <source>Grönland</source>
+        <target>Grönland</target>
+      </segment>
+    </unit>
+    <unit id="NcnePGO" name="Guadeloupe">
+      <segment>
+        <source>Guadeloupe</source>
+        <target>Guadeloupe</target>
+      </segment>
+    </unit>
+    <unit id="XEsyHst" name="Guam">
+      <segment>
+        <source>Guam</source>
+        <target>Guam</target>
+      </segment>
+    </unit>
+    <unit id="RaFaJHD" name="Guatemala">
+      <segment>
+        <source>Guatemala</source>
+        <target>Guatemala</target>
+      </segment>
+    </unit>
+    <unit id="ucSMsf6" name="Guernsey">
+      <segment>
+        <source>Guernsey</source>
+        <target>Guernsey</target>
+      </segment>
+    </unit>
+    <unit id="3Vkdd_p" name="Guinea">
+      <segment>
+        <source>Guinea</source>
+        <target>Guinea</target>
+      </segment>
+    </unit>
+    <unit id="dej0Yvn" name="Guinea-Bissau">
+      <segment>
+        <source>Guinea-Bissau</source>
+        <target>Guinea-Bissau</target>
+      </segment>
+    </unit>
+    <unit id="6jv8Jvp" name="Guyana">
+      <segment>
+        <source>Guyana</source>
+        <target>Guyana</target>
+      </segment>
+    </unit>
+    <unit id="0JC4fko" name="Haiti">
+      <segment>
+        <source>Haiti</source>
+        <target>Haiti</target>
+      </segment>
+    </unit>
+    <unit id="5fZfXtb" name="Heard und McDonaldinseln">
+      <segment>
+        <source>Heard und McDonaldinseln</source>
+        <target>Heard und McDonaldinseln</target>
+      </segment>
+    </unit>
+    <unit id="t5tfl7x" name="Honduras">
+      <segment>
+        <source>Honduras</source>
+        <target>Honduras</target>
+      </segment>
+    </unit>
+    <unit id="XdzMOJD" name="Indien">
+      <segment>
+        <source>Indien</source>
+        <target>Indien</target>
+      </segment>
+    </unit>
+    <unit id="Ga3NRg2" name="Indonesien">
+      <segment>
+        <source>Indonesien</source>
+        <target>Indonesien</target>
+      </segment>
+    </unit>
+    <unit id="sMfRVgg" name="Irak">
+      <segment>
+        <source>Irak</source>
+        <target>Irak</target>
+      </segment>
+    </unit>
+    <unit id="GNThcHZ" name="Iran">
+      <segment>
+        <source>Iran</source>
+        <target>Iran</target>
+      </segment>
+    </unit>
+    <unit id="SqiZYJD" name="Irland">
+      <segment>
+        <source>Irland</source>
+        <target>Irland</target>
+      </segment>
+    </unit>
+    <unit id="cw9QF6R" name="Island">
+      <segment>
+        <source>Island</source>
+        <target>Island</target>
+      </segment>
+    </unit>
+    <unit id="NAlvlva" name="Isle of Man">
+      <segment>
+        <source>Isle of Man</source>
+        <target>Isle of Man</target>
+      </segment>
+    </unit>
+    <unit id="NVKsDAM" name="Israel">
+      <segment>
+        <source>Israel</source>
+        <target>Israel</target>
+      </segment>
+    </unit>
+    <unit id="4jm.lvr" name="Italien">
+      <segment>
+        <source>Italien</source>
+        <target>Italien</target>
+      </segment>
+    </unit>
+    <unit id="cvI44AH" name="Jamaika">
+      <segment>
+        <source>Jamaika</source>
+        <target>Jamaika</target>
+      </segment>
+    </unit>
+    <unit id="ZHKUODs" name="Japan">
+      <segment>
+        <source>Japan</source>
+        <target>Japan</target>
+      </segment>
+    </unit>
+    <unit id="h0fiP.3" name="Jemen">
+      <segment>
+        <source>Jemen</source>
+        <target>Jemen</target>
+      </segment>
+    </unit>
+    <unit id="dkqMBK1" name="Jersey">
+      <segment>
+        <source>Jersey</source>
+        <target>Jersey</target>
+      </segment>
+    </unit>
+    <unit id="qbiE74x" name="Jordanien">
+      <segment>
+        <source>Jordanien</source>
+        <target>Jordanien</target>
+      </segment>
+    </unit>
+    <unit id="K2u2oDz" name="Kaimaninseln">
+      <segment>
+        <source>Kaimaninseln</source>
+        <target>Kaimaninseln</target>
+      </segment>
+    </unit>
+    <unit id="ce_MRCR" name="Kambodscha">
+      <segment>
+        <source>Kambodscha</source>
+        <target>Kambodscha</target>
+      </segment>
+    </unit>
+    <unit id="smcP_gL" name="Kamerun">
+      <segment>
+        <source>Kamerun</source>
+        <target>Kamerun</target>
+      </segment>
+    </unit>
+    <unit id="z4.cOOe" name="Kanada">
+      <segment>
+        <source>Kanada</source>
+        <target>Kanada</target>
+      </segment>
+    </unit>
+    <unit id="nwEZBOn" name="Karibische Niederlande">
+      <segment>
+        <source>Karibische Niederlande</source>
+        <target>Karibische Niederlande</target>
+      </segment>
+    </unit>
+    <unit id="lA7ZWe6" name="Kasachstan">
+      <segment>
+        <source>Kasachstan</source>
+        <target>Kasachstan</target>
+      </segment>
+    </unit>
+    <unit id="yHLFWJS" name="Katar">
+      <segment>
+        <source>Katar</source>
+        <target>Katar</target>
+      </segment>
+    </unit>
+    <unit id="yEHc9ao" name="Kenia">
+      <segment>
+        <source>Kenia</source>
+        <target>Kenia</target>
+      </segment>
+    </unit>
+    <unit id=".ID30hq" name="Kirgisistan">
+      <segment>
+        <source>Kirgisistan</source>
+        <target>Kirgisistan</target>
+      </segment>
+    </unit>
+    <unit id="gZEjFGw" name="Kiribati">
+      <segment>
+        <source>Kiribati</source>
+        <target>Kiribati</target>
+      </segment>
+    </unit>
+    <unit id="qKW_4fG" name="Kokosinseln">
+      <segment>
+        <source>Kokosinseln</source>
+        <target>Kokosinseln</target>
+      </segment>
+    </unit>
+    <unit id="cJXR9pH" name="Kolumbien">
+      <segment>
+        <source>Kolumbien</source>
+        <target>Kolumbien</target>
+      </segment>
+    </unit>
+    <unit id="ZhnusjY" name="Komoren">
+      <segment>
+        <source>Komoren</source>
+        <target>Komoren</target>
+      </segment>
+    </unit>
+    <unit id="85OFvd2" name="Kongo-Brazzaville">
+      <segment>
+        <source>Kongo-Brazzaville</source>
+        <target>Kongo-Brazzaville</target>
+      </segment>
+    </unit>
+    <unit id="wbUuyI7" name="Kongo-Kinshasa">
+      <segment>
+        <source>Kongo-Kinshasa</source>
+        <target>Kongo-Kinshasa</target>
+      </segment>
+    </unit>
+    <unit id="5WKd0Al" name="Kroatien">
+      <segment>
+        <source>Kroatien</source>
+        <target>Kroatien</target>
+      </segment>
+    </unit>
+    <unit id="rIKA1RT" name="Kuba">
+      <segment>
+        <source>Kuba</source>
+        <target>Kuba</target>
+      </segment>
+    </unit>
+    <unit id="EMPC4u3" name="Kuwait">
+      <segment>
+        <source>Kuwait</source>
+        <target>Kuwait</target>
+      </segment>
+    </unit>
+    <unit id="mOGPRmh" name="Laos">
+      <segment>
+        <source>Laos</source>
+        <target>Laos</target>
+      </segment>
+    </unit>
+    <unit id="XC5HRcY" name="Lesotho">
+      <segment>
+        <source>Lesotho</source>
+        <target>Lesotho</target>
+      </segment>
+    </unit>
+    <unit id="PqDfjCW" name="Lettland">
+      <segment>
+        <source>Lettland</source>
+        <target>Lettland</target>
+      </segment>
+    </unit>
+    <unit id="6izj_IS" name="Libanon">
+      <segment>
+        <source>Libanon</source>
+        <target>Libanon</target>
+      </segment>
+    </unit>
+    <unit id="ydJgTdU" name="Liberia">
+      <segment>
+        <source>Liberia</source>
+        <target>Liberia</target>
+      </segment>
+    </unit>
+    <unit id="_Hp28RU" name="Libyen">
+      <segment>
+        <source>Libyen</source>
+        <target>Libyen</target>
+      </segment>
+    </unit>
+    <unit id="b.CAwHi" name="Liechtenstein">
+      <segment>
+        <source>Liechtenstein</source>
+        <target>Liechtenstein</target>
+      </segment>
+    </unit>
+    <unit id="tRuoULk" name="Litauen">
+      <segment>
+        <source>Litauen</source>
+        <target>Litauen</target>
+      </segment>
+    </unit>
+    <unit id="2OX2ncs" name="Luxemburg">
+      <segment>
+        <source>Luxemburg</source>
+        <target>Luxemburg</target>
+      </segment>
+    </unit>
+    <unit id="_0BmyVH" name="Madagaskar">
+      <segment>
+        <source>Madagaskar</source>
+        <target>Madagaskar</target>
+      </segment>
+    </unit>
+    <unit id="YRAlzd4" name="Malawi">
+      <segment>
+        <source>Malawi</source>
+        <target>Malawi</target>
+      </segment>
+    </unit>
+    <unit id="CEUEFls" name="Malaysia">
+      <segment>
+        <source>Malaysia</source>
+        <target>Malaysia</target>
+      </segment>
+    </unit>
+    <unit id="l8s5psZ" name="Malediven">
+      <segment>
+        <source>Malediven</source>
+        <target>Malediven</target>
+      </segment>
+    </unit>
+    <unit id="7lchpaY" name="Mali">
+      <segment>
+        <source>Mali</source>
+        <target>Mali</target>
+      </segment>
+    </unit>
+    <unit id="cenrEHV" name="Malta">
+      <segment>
+        <source>Malta</source>
+        <target>Malta</target>
+      </segment>
+    </unit>
+    <unit id="TljQ5Ur" name="Marokko">
+      <segment>
+        <source>Marokko</source>
+        <target>Marokko</target>
+      </segment>
+    </unit>
+    <unit id="jZ5Ci_O" name="Marshallinseln">
+      <segment>
+        <source>Marshallinseln</source>
+        <target>Marshallinseln</target>
+      </segment>
+    </unit>
+    <unit id="xlkG3Hz" name="Martinique">
+      <segment>
+        <source>Martinique</source>
+        <target>Martinique</target>
+      </segment>
+    </unit>
+    <unit id="dfDb03K" name="Mauretanien">
+      <segment>
+        <source>Mauretanien</source>
+        <target>Mauretanien</target>
+      </segment>
+    </unit>
+    <unit id="qoBX7LQ" name="Mauritius">
+      <segment>
+        <source>Mauritius</source>
+        <target>Mauritius</target>
+      </segment>
+    </unit>
+    <unit id="0ItKDw3" name="Mayotte">
+      <segment>
+        <source>Mayotte</source>
+        <target>Mayotte</target>
+      </segment>
+    </unit>
+    <unit id="s0kQ4Gg" name="Mexiko">
+      <segment>
+        <source>Mexiko</source>
+        <target>Mexiko</target>
+      </segment>
+    </unit>
+    <unit id="CK5PT.X" name="Mikronesien">
+      <segment>
+        <source>Mikronesien</source>
+        <target>Mikronesien</target>
+      </segment>
+    </unit>
+    <unit id="k1AYzEF" name="Monaco">
+      <segment>
+        <source>Monaco</source>
+        <target>Monaco</target>
+      </segment>
+    </unit>
+    <unit id="hs.lKzK" name="Mongolei">
+      <segment>
+        <source>Mongolei</source>
+        <target>Mongolei</target>
+      </segment>
+    </unit>
+    <unit id="erWX4bX" name="Montenegro">
+      <segment>
+        <source>Montenegro</source>
+        <target>Montenegro</target>
+      </segment>
+    </unit>
+    <unit id="EnvP6XZ" name="Montserrat">
+      <segment>
+        <source>Montserrat</source>
+        <target>Montserrat</target>
+      </segment>
+    </unit>
+    <unit id="xpQ9uvt" name="Mosambik">
+      <segment>
+        <source>Mosambik</source>
+        <target>Mosambik</target>
+      </segment>
+    </unit>
+    <unit id="uiA5pM9" name="Myanmar">
+      <segment>
+        <source>Myanmar</source>
+        <target>Myanmar</target>
+      </segment>
+    </unit>
+    <unit id="6lvTmEj" name="Namibia">
+      <segment>
+        <source>Namibia</source>
+        <target>Namibia</target>
+      </segment>
+    </unit>
+    <unit id="V_kAiF1" name="Nauru">
+      <segment>
+        <source>Nauru</source>
+        <target>Nauru</target>
+      </segment>
+    </unit>
+    <unit id="4VoYqty" name="Nepal">
+      <segment>
+        <source>Nepal</source>
+        <target>Nepal</target>
+      </segment>
+    </unit>
+    <unit id="GpnjpR9" name="Neukaledonien">
+      <segment>
+        <source>Neukaledonien</source>
+        <target>Neukaledonien</target>
+      </segment>
+    </unit>
+    <unit id="A7L8Nwx" name="Neuseeland">
+      <segment>
+        <source>Neuseeland</source>
+        <target>Neuseeland</target>
+      </segment>
+    </unit>
+    <unit id="lOa9V0t" name="Nicaragua">
+      <segment>
+        <source>Nicaragua</source>
+        <target>Nicaragua</target>
+      </segment>
+    </unit>
+    <unit id="8S008u7" name="Niederlande">
+      <segment>
+        <source>Niederlande</source>
+        <target>Niederlande</target>
+      </segment>
+    </unit>
+    <unit id="LL68VB_" name="Niger">
+      <segment>
+        <source>Niger</source>
+        <target>Niger</target>
+      </segment>
+    </unit>
+    <unit id="BJUqD5h" name="Nigeria">
+      <segment>
+        <source>Nigeria</source>
+        <target>Nigeria</target>
+      </segment>
+    </unit>
+    <unit id="SVbCCQ." name="Niue">
+      <segment>
+        <source>Niue</source>
+        <target>Niue</target>
+      </segment>
+    </unit>
+    <unit id="91vU.mu" name="Nordkorea">
+      <segment>
+        <source>Nordkorea</source>
+        <target>Nordkorea</target>
+      </segment>
+    </unit>
+    <unit id="Eq0mRxs" name="Nördliche Marianen">
+      <segment>
+        <source>Nördliche Marianen</source>
+        <target>Nördliche Marianen</target>
+      </segment>
+    </unit>
+    <unit id="42AjX9_" name="Nordmazedonien">
+      <segment>
+        <source>Nordmazedonien</source>
+        <target>Nordmazedonien</target>
+      </segment>
+    </unit>
+    <unit id="J2Bkkhg" name="Norfolkinsel">
+      <segment>
+        <source>Norfolkinsel</source>
+        <target>Norfolkinsel</target>
+      </segment>
+    </unit>
+    <unit id="hDJHzlv" name="Norwegen">
+      <segment>
+        <source>Norwegen</source>
+        <target>Norwegen</target>
+      </segment>
+    </unit>
+    <unit id="w85L_I2" name="Oman">
+      <segment>
+        <source>Oman</source>
+        <target>Oman</target>
+      </segment>
+    </unit>
+    <unit id="sbdjhg1" name="Österreich">
+      <segment>
+        <source>Österreich</source>
+        <target>Österreich</target>
+      </segment>
+    </unit>
+    <unit id="4lZzEux" name="Pakistan">
+      <segment>
+        <source>Pakistan</source>
+        <target>Pakistan</target>
+      </segment>
+    </unit>
+    <unit id="k9RgJen" name="Palästinensische Autonomiegebiete">
+      <segment>
+        <source>Palästinensische Autonomiegebiete</source>
+        <target>Palästinensische Autonomiegebiete</target>
+      </segment>
+    </unit>
+    <unit id="f6ZHc9z" name="Palau">
+      <segment>
+        <source>Palau</source>
+        <target>Palau</target>
+      </segment>
+    </unit>
+    <unit id="w2aPWBK" name="Panama">
+      <segment>
+        <source>Panama</source>
+        <target>Panama</target>
+      </segment>
+    </unit>
+    <unit id="xkSHE3f" name="Papua-Neuguinea">
+      <segment>
+        <source>Papua-Neuguinea</source>
+        <target>Papua-Neuguinea</target>
+      </segment>
+    </unit>
+    <unit id="f7TReex" name="Paraguay">
+      <segment>
+        <source>Paraguay</source>
+        <target>Paraguay</target>
+      </segment>
+    </unit>
+    <unit id="UIcxo8X" name="Peru">
+      <segment>
+        <source>Peru</source>
+        <target>Peru</target>
+      </segment>
+    </unit>
+    <unit id="hLiYKzm" name="Philippinen">
+      <segment>
+        <source>Philippinen</source>
+        <target>Philippinen</target>
+      </segment>
+    </unit>
+    <unit id="sK5COea" name="Pitcairninseln">
+      <segment>
+        <source>Pitcairninseln</source>
+        <target>Pitcairninseln</target>
+      </segment>
+    </unit>
+    <unit id="k89Mk5_" name="Polen">
+      <segment>
+        <source>Polen</source>
+        <target>Polen</target>
+      </segment>
+    </unit>
+    <unit id="TH3iw9p" name="Portugal">
+      <segment>
+        <source>Portugal</source>
+        <target>Portugal</target>
+      </segment>
+    </unit>
+    <unit id="2apD6tX" name="Puerto Rico">
+      <segment>
+        <source>Puerto Rico</source>
+        <target>Puerto Rico</target>
+      </segment>
+    </unit>
+    <unit id="nrVEcS." name="Republik Moldau">
+      <segment>
+        <source>Republik Moldau</source>
+        <target>Republik Moldau</target>
+      </segment>
+    </unit>
+    <unit id="fN9XOwy" name="Réunion">
+      <segment>
+        <source>Réunion</source>
+        <target>Réunion</target>
+      </segment>
+    </unit>
+    <unit id="zoTAoDy" name="Ruanda">
+      <segment>
+        <source>Ruanda</source>
+        <target>Ruanda</target>
+      </segment>
+    </unit>
+    <unit id="xu.Uczr" name="Rumänien">
+      <segment>
+        <source>Rumänien</source>
+        <target>Rumänien</target>
+      </segment>
+    </unit>
+    <unit id="Jz6.dG7" name="Russland">
+      <segment>
+        <source>Russland</source>
+        <target>Russland</target>
+      </segment>
+    </unit>
+    <unit id="Xu1nB9w" name="Salomonen">
+      <segment>
+        <source>Salomonen</source>
+        <target>Salomonen</target>
+      </segment>
+    </unit>
+    <unit id="wYifaK9" name="Sambia">
+      <segment>
+        <source>Sambia</source>
+        <target>Sambia</target>
+      </segment>
+    </unit>
+    <unit id="DqeBzUK" name="Samoa">
+      <segment>
+        <source>Samoa</source>
+        <target>Samoa</target>
+      </segment>
+    </unit>
+    <unit id="IwRQokm" name="San Marino">
+      <segment>
+        <source>San Marino</source>
+        <target>San Marino</target>
+      </segment>
+    </unit>
+    <unit id="7g0cw9H" name="São Tomé und Príncipe">
+      <segment>
+        <source>São Tomé und Príncipe</source>
+        <target>São Tomé und Príncipe</target>
+      </segment>
+    </unit>
+    <unit id="GnKAVtS" name="Saudi-Arabien">
+      <segment>
+        <source>Saudi-Arabien</source>
+        <target>Saudi-Arabien</target>
+      </segment>
+    </unit>
+    <unit id="mA5JC1W" name="Schweden">
+      <segment>
+        <source>Schweden</source>
+        <target>Schweden</target>
+      </segment>
+    </unit>
+    <unit id="EqPIaK6" name="Schweiz">
+      <segment>
+        <source>Schweiz</source>
+        <target>Schweiz</target>
+      </segment>
+    </unit>
+    <unit id="Nk5fZSX" name="Senegal">
+      <segment>
+        <source>Senegal</source>
+        <target>Senegal</target>
+      </segment>
+    </unit>
+    <unit id="JYCiJ31" name="Serbien">
+      <segment>
+        <source>Serbien</source>
+        <target>Serbien</target>
+      </segment>
+    </unit>
+    <unit id="s5o8VYW" name="Seychellen">
+      <segment>
+        <source>Seychellen</source>
+        <target>Seychellen</target>
+      </segment>
+    </unit>
+    <unit id="9AW5jV." name="Sierra Leone">
+      <segment>
+        <source>Sierra Leone</source>
+        <target>Sierra Leone</target>
+      </segment>
+    </unit>
+    <unit id="RSPJ432" name="Simbabwe">
+      <segment>
+        <source>Simbabwe</source>
+        <target>Simbabwe</target>
+      </segment>
+    </unit>
+    <unit id="iw_HUeA" name="Singapur">
+      <segment>
+        <source>Singapur</source>
+        <target>Singapur</target>
+      </segment>
+    </unit>
+    <unit id="u6KLCDB" name="Sint Maarten">
+      <segment>
+        <source>Sint Maarten</source>
+        <target>Sint Maarten</target>
+      </segment>
+    </unit>
+    <unit id="mER0rT5" name="Slowakei">
+      <segment>
+        <source>Slowakei</source>
+        <target>Slowakei</target>
+      </segment>
+    </unit>
+    <unit id="1XL8TMt" name="Slowenien">
+      <segment>
+        <source>Slowenien</source>
+        <target>Slowenien</target>
+      </segment>
+    </unit>
+    <unit id="vQXTJNi" name="Somalia">
+      <segment>
+        <source>Somalia</source>
+        <target>Somalia</target>
+      </segment>
+    </unit>
+    <unit id="aoKkDrA" name="Sonderverwaltungsregion Hongkong">
+      <segment>
+        <source>Sonderverwaltungsregion Hongkong</source>
+        <target>Sonderverwaltungsregion Hongkong</target>
+      </segment>
+    </unit>
+    <unit id="4P4c7z9" name="Sonderverwaltungsregion Macau">
+      <segment>
+        <source>Sonderverwaltungsregion Macau</source>
+        <target>Sonderverwaltungsregion Macau</target>
+      </segment>
+    </unit>
+    <unit id="aXfVesz" name="Spanien">
+      <segment>
+        <source>Spanien</source>
+        <target>Spanien</target>
+      </segment>
+    </unit>
+    <unit id="859bpU6" name="Spitzbergen und Jan Mayen">
+      <segment>
+        <source>Spitzbergen und Jan Mayen</source>
+        <target>Spitzbergen und Jan Mayen</target>
+      </segment>
+    </unit>
+    <unit id="B.jRFEo" name="Sri Lanka">
+      <segment>
+        <source>Sri Lanka</source>
+        <target>Sri Lanka</target>
+      </segment>
+    </unit>
+    <unit id="ozyw8QK" name="St. Barthélemy">
+      <segment>
+        <source>St. Barthélemy</source>
+        <target>St. Barthélemy</target>
+      </segment>
+    </unit>
+    <unit id="2jBT9c_" name="St. Helena">
+      <segment>
+        <source>St. Helena</source>
+        <target>St. Helena</target>
+      </segment>
+    </unit>
+    <unit id="Nyp0ZZb" name="St. Kitts und Nevis">
+      <segment>
+        <source>St. Kitts und Nevis</source>
+        <target>St. Kitts und Nevis</target>
+      </segment>
+    </unit>
+    <unit id="LSc9h5c" name="St. Lucia">
+      <segment>
+        <source>St. Lucia</source>
+        <target>St. Lucia</target>
+      </segment>
+    </unit>
+    <unit id="UKp0VQS" name="St. Martin">
+      <segment>
+        <source>St. Martin</source>
+        <target>St. Martin</target>
+      </segment>
+    </unit>
+    <unit id="dW8SzI3" name="St. Pierre und Miquelon">
+      <segment>
+        <source>St. Pierre und Miquelon</source>
+        <target>St. Pierre und Miquelon</target>
+      </segment>
+    </unit>
+    <unit id="zsRJsHT" name="St. Vincent und die Grenadinen">
+      <segment>
+        <source>St. Vincent und die Grenadinen</source>
+        <target>St. Vincent und die Grenadinen</target>
+      </segment>
+    </unit>
+    <unit id="V87mhA4" name="Südafrika">
+      <segment>
+        <source>Südafrika</source>
+        <target>Südafrika</target>
+      </segment>
+    </unit>
+    <unit id="7WjU3vG" name="Sudan">
+      <segment>
+        <source>Sudan</source>
+        <target>Sudan</target>
+      </segment>
+    </unit>
+    <unit id="N1fe9sq" name="Südgeorgien und die Südlichen Sandwichinseln">
+      <segment>
+        <source>Südgeorgien und die Südlichen Sandwichinseln</source>
+        <target>Südgeorgien und die Südlichen Sandwichinseln</target>
+      </segment>
+    </unit>
+    <unit id="1RhKEBO" name="Südkorea">
+      <segment>
+        <source>Südkorea</source>
+        <target>Südkorea</target>
+      </segment>
+    </unit>
+    <unit id="kdG4hV8" name="Südsudan">
+      <segment>
+        <source>Südsudan</source>
+        <target>Südsudan</target>
+      </segment>
+    </unit>
+    <unit id="scuOrFs" name="Suriname">
+      <segment>
+        <source>Suriname</source>
+        <target>Suriname</target>
+      </segment>
+    </unit>
+    <unit id="WaBFtYP" name="Syrien">
+      <segment>
+        <source>Syrien</source>
+        <target>Syrien</target>
+      </segment>
+    </unit>
+    <unit id="lBIbXbx" name="Tadschikistan">
+      <segment>
+        <source>Tadschikistan</source>
+        <target>Tadschikistan</target>
+      </segment>
+    </unit>
+    <unit id="3XavGW4" name="Taiwan">
+      <segment>
+        <source>Taiwan</source>
+        <target>Taiwan</target>
+      </segment>
+    </unit>
+    <unit id="Vv_dLl9" name="Tansania">
+      <segment>
+        <source>Tansania</source>
+        <target>Tansania</target>
+      </segment>
+    </unit>
+    <unit id="bknmUIG" name="Thailand">
+      <segment>
+        <source>Thailand</source>
+        <target>Thailand</target>
+      </segment>
+    </unit>
+    <unit id="YwPoRxg" name="Timor-Leste">
+      <segment>
+        <source>Timor-Leste</source>
+        <target>Timor-Leste</target>
+      </segment>
+    </unit>
+    <unit id="QIA0PuD" name="Togo">
+      <segment>
+        <source>Togo</source>
+        <target>Togo</target>
+      </segment>
+    </unit>
+    <unit id="OfwVA6d" name="Tokelau">
+      <segment>
+        <source>Tokelau</source>
+        <target>Tokelau</target>
+      </segment>
+    </unit>
+    <unit id="MQvDJQl" name="Tonga">
+      <segment>
+        <source>Tonga</source>
+        <target>Tonga</target>
+      </segment>
+    </unit>
+    <unit id="adndF2p" name="Trinidad und Tobago">
+      <segment>
+        <source>Trinidad und Tobago</source>
+        <target>Trinidad und Tobago</target>
+      </segment>
+    </unit>
+    <unit id="uSWUExW" name="Tschad">
+      <segment>
+        <source>Tschad</source>
+        <target>Tschad</target>
+      </segment>
+    </unit>
+    <unit id="SXC1dPa" name="Tschechien">
+      <segment>
+        <source>Tschechien</source>
+        <target>Tschechien</target>
+      </segment>
+    </unit>
+    <unit id="bpN19VU" name="Tunesien">
+      <segment>
+        <source>Tunesien</source>
+        <target>Tunesien</target>
+      </segment>
+    </unit>
+    <unit id="1I7PjXT" name="Türkei">
+      <segment>
+        <source>Türkei</source>
+        <target>Türkei</target>
+      </segment>
+    </unit>
+    <unit id="s9.IUF1" name="Turkmenistan">
+      <segment>
+        <source>Turkmenistan</source>
+        <target>Turkmenistan</target>
+      </segment>
+    </unit>
+    <unit id=".VIdTTE" name="Turks- und Caicosinseln">
+      <segment>
+        <source>Turks- und Caicosinseln</source>
+        <target>Turks- und Caicosinseln</target>
+      </segment>
+    </unit>
+    <unit id="MLH.mu7" name="Tuvalu">
+      <segment>
+        <source>Tuvalu</source>
+        <target>Tuvalu</target>
+      </segment>
+    </unit>
+    <unit id="iT1ThWO" name="Uganda">
+      <segment>
+        <source>Uganda</source>
+        <target>Uganda</target>
+      </segment>
+    </unit>
+    <unit id="WA7txmn" name="Ukraine">
+      <segment>
+        <source>Ukraine</source>
+        <target>Ukraine</target>
+      </segment>
+    </unit>
+    <unit id="PYvRsMv" name="Ungarn">
+      <segment>
+        <source>Ungarn</source>
+        <target>Ungarn</target>
+      </segment>
+    </unit>
+    <unit id=".iQD8l6" name="Uruguay">
+      <segment>
+        <source>Uruguay</source>
+        <target>Uruguay</target>
+      </segment>
+    </unit>
+    <unit id="s3rrxxA" name="Usbekistan">
+      <segment>
+        <source>Usbekistan</source>
+        <target>Usbekistan</target>
+      </segment>
+    </unit>
+    <unit id="xbKm3p1" name="Vanuatu">
+      <segment>
+        <source>Vanuatu</source>
+        <target>Vanuatu</target>
+      </segment>
+    </unit>
+    <unit id="NIiKPuW" name="Vatikanstadt">
+      <segment>
+        <source>Vatikanstadt</source>
+        <target>Vatikanstadt</target>
+      </segment>
+    </unit>
+    <unit id="Ag5Di6." name="Venezuela">
+      <segment>
+        <source>Venezuela</source>
+        <target>Venezuela</target>
+      </segment>
+    </unit>
+    <unit id="ihEmuy0" name="Vereinigte Arabische Emirate">
+      <segment>
+        <source>Vereinigte Arabische Emirate</source>
+        <target>Vereinigte Arabische Emirate</target>
+      </segment>
+    </unit>
+    <unit id="tTQRmBr" name="Vereinigte Staaten">
+      <segment>
+        <source>Vereinigte Staaten</source>
+        <target>Vereinigte Staaten</target>
+      </segment>
+    </unit>
+    <unit id="ukH7Hnk" name="Vereinigtes Königreich">
+      <segment>
+        <source>Vereinigtes Königreich</source>
+        <target>Vereinigtes Königreich</target>
+      </segment>
+    </unit>
+    <unit id="Ll6BBmo" name="Vietnam">
+      <segment>
+        <source>Vietnam</source>
+        <target>Vietnam</target>
+      </segment>
+    </unit>
+    <unit id="hUJpGw0" name="Wallis und Futuna">
+      <segment>
+        <source>Wallis und Futuna</source>
+        <target>Wallis und Futuna</target>
+      </segment>
+    </unit>
+    <unit id="rYnSuoK" name="Weihnachtsinsel">
+      <segment>
+        <source>Weihnachtsinsel</source>
+        <target>Weihnachtsinsel</target>
+      </segment>
+    </unit>
+    <unit id="9hMlfXB" name="Westsahara">
+      <segment>
+        <source>Westsahara</source>
+        <target>Westsahara</target>
+      </segment>
+    </unit>
+    <unit id="8BRNd4X" name="Zentralafrikanische Republik">
+      <segment>
+        <source>Zentralafrikanische Republik</source>
+        <target>Zentralafrikanische Republik</target>
+      </segment>
+    </unit>
+    <unit id="8WweJLM" name="Zypern">
+      <segment>
+        <source>Zypern</source>
+        <target>Zypern</target>
+      </segment>
+    </unit>
+    <unit id="HcgVLC7" name="person.land.choose.lbl">
+      <segment>
+        <source>person.land.choose.lbl</source>
+        <target>-- Bitte wählen Sie ihr Land --</target>
+      </segment>
+    </unit>
+    <unit id="ysrE5hH" name="ID-Number locked!">
+      <segment>
+        <source>ID-Number locked!</source>
+        <target>ID-Nummer gesperrt!</target>
+      </segment>
+    </unit>
+    <unit id="1IRSI.n" name="ID-Number not found!">
+      <segment>
+        <source>ID-Number not found!</source>
+        <target>ID-Nummer nicht gefunden!</target>
+      </segment>
+    </unit>
+    <unit id="K3PKIb6" name="meinidno.profile.title">
+      <segment>
+        <source>meinidno.profile.title</source>
+        <target>Profil / Notfall-Daten</target>
+      </segment>
+    </unit>
+    <unit id="k7IqGnH" name="meinidno.profile.description">
+      <segment>
+        <source>meinidno.profile.description</source>
+        <target>Hier können Sie Ihre Notfall-Daten verwalten.</target>
+      </segment>
+    </unit>
+    <unit id="De.BaGl" name="meinidno.profile.check">
+      <segment>
+        <source>meinidno.profile.check</source>
+        <target>Notfall-ID Pass aktiv</target>
+      </segment>
+    </unit>
+    <unit id="lbhUQQO" name="meinidno.idno.title">
+      <segment>
+        <source>meinidno.idno.title</source>
+        <target>Übersicht: ID-Nummern</target>
+      </segment>
+    </unit>
+    <unit id="q5AtHiT" name="meinidno.idno.description">
+      <segment>
+        <source>meinidno.idno.description</source>
+        <target>Hier können Sie weitere ID-Nummern aktivieren und Ihre bereits registrierten ID-Nummern einsehen und verwalten.</target>
+      </segment>
+    </unit>
+    <unit id="sC3Y1zj" name="meinidno.contact.title">
+      <segment>
+        <source>meinidno.contact.title</source>
+        <target>Meine Kontakte</target>
+      </segment>
+    </unit>
+    <unit id="mVElgW5" name="meinidno.contact.description">
+      <segment>
+        <source>meinidno.contact.description</source>
+        <target>Im Folgenden finden Sie eine Übersicht Ihrer Notfall-Kontakte</target>
+      </segment>
+    </unit>
+    <unit id="mD32oKh" name="person.image.lbl">
+      <segment>
+        <source>person.image.lbl</source>
+        <target>Mein Foto</target>
+      </segment>
+    </unit>
+    <unit id="W7wpO.H" name="person.action.edit.error">
+      <segment>
+        <source>person.action.edit.error</source>
+        <target>Die Kontaktdaten konnten nicht erfolgreich gespeichert werden.</target>
+      </segment>
+    </unit>
+    <unit id="WCA8n5w" name="company.coo.text">
+      <segment>
+        <source>company.coo.text</source>
+        <target>company.coo.text</target>
+      </segment>
+    </unit>
+    <unit id="60op8LH" name="company.coo.caption">
+      <segment>
+        <source>company.coo.caption</source>
+        <target>company.coo.caption</target>
+      </segment>
+    </unit>
+    <unit id="KB734SJ" name="0+">
+      <segment>
+        <source>0+</source>
+        <target>0+</target>
+      </segment>
+    </unit>
+    <unit id="ruhzbCt" name="A+">
+      <segment>
+        <source>A+</source>
+        <target>A+</target>
+      </segment>
+    </unit>
+    <unit id="nz5XTy9" name="AB+">
+      <segment>
+        <source>AB+</source>
+        <target>AB+</target>
+      </segment>
+    </unit>
+    <unit id="bm3aRbw" name="0-">
+      <segment>
+        <source>0-</source>
+        <target>0-</target>
+      </segment>
+    </unit>
+    <unit id="Plj1OXB" name="A-">
+      <segment>
+        <source>A-</source>
+        <target>A-</target>
+      </segment>
+    </unit>
+    <unit id="8Dj4XuJ" name="AB-">
+      <segment>
+        <source>AB-</source>
+        <target>AB-</target>
+      </segment>
+    </unit>
+    <unit id="loeWEWU" name="active">
+      <segment>
+        <source>active</source>
+        <target>aktiv</target>
+      </segment>
+    </unit>
+    <unit id="0QImGLm" name="inactive">
+      <segment>
+        <source>inactive</source>
+        <target>inaktiv</target>
+      </segment>
+    </unit>
+    <unit id="lpzL089" name="Email">
+      <segment>
+        <source>Email</source>
+        <target>E-Mail</target>
+      </segment>
+    </unit>
+    <unit id="hjRN5dU" name="Anrede">
+      <segment>
+        <source>Anrede</source>
+        <target>Anrede</target>
+      </segment>
+    </unit>
+    <unit id="0td7b.p" name="Vorname">
+      <segment>
+        <source>Vorname</source>
+        <target>Vorname</target>
+      </segment>
+    </unit>
+    <unit id="slNY7dS" name="Nachname">
+      <segment>
+        <source>Nachname</source>
+        <target>Nachname</target>
+      </segment>
+    </unit>
+    <unit id="mklUC0Y" name="registration.passwort">
+      <segment>
+        <source>registration.passwort</source>
+        <target>Passwort</target>
+      </segment>
+    </unit>
+    <unit id="pU5CAnR" name="registration.repeatPasswort">
+      <segment>
+        <source>registration.repeatPasswort</source>
+        <target>Passwort wiederholen</target>
+      </segment>
+    </unit>
+    <unit id="6cI1jGQ" name="agb.text">
+      <segment>
+        <source>agb.text</source>
+        <target>Ich habe die [AGB](/agb) gelesen und bin mit deren Geltung einverstanden. Der [Datenvorhaltung](/datenschutz) meiner im Notfallpass hinterlegten Daten stimme ich zu.</target>
+      </segment>
+    </unit>
+    <unit id="6Mv17nB" name="newsletter.text">
+      <segment>
+        <source>newsletter.text</source>
+        <target>Ja, ich möchte per E-Mail* über [Verbesserungen des Service](/datenschutz) informiert werden.
+
+*ID-No.com nimmt den Schutz Ihrer persönlichen Daten sehr ernst.
+Wir behandeln Ihre personenbezogenen Daten vertraulich und verwenden sie nicht für Werbezwecke.
+Die Anmeldung für Ihren Notfall-ID Pass ist kostenfrei.</target>
+      </segment>
+    </unit>
+    <unit id="u3WK.2_" name="Create Profile">
+      <segment>
+        <source>Create Profile</source>
+        <target>Profil anlegen</target>
+      </segment>
+    </unit>
+    <unit id="icXk1wm" name="person.email">
+      <segment>
+        <source>person.email</source>
+        <target>E-Mail</target>
+      </segment>
+    </unit>
+    <unit id="Y6iE2lx" name="mail.mailVerification.subject">
+      <segment>
+        <source>mail.mailVerification.subject</source>
+        <target>Willkommen bei ID-No.com!</target>
+      </segment>
+    </unit>
+    <unit id="m7F_DYR" name="mail.mailVerification.text">
+      <segment>
+        <source>mail.mailVerification.text</source>
+        <target><![CDATA[Herzlich willkommen bei ID-No.com!
+
+Um Ihren Account bei ID-No.com im vollem Umfang nutzen zu können,
+klicken Sie bitte auf folgenden Freischaltungslink:
+
+%nutzerAuth_link%
+
+**Dieser Link ist 2 Stunden gültig.**
+
+Alternativ können Sie die nachfolgende Nummer kopieren und diese in das entsprechende Feld unter %nutzerAuth_path% eingeben, um Ihren Account zu einem beliebigen Zeitpunkt freizuschalten. Loggen Sie sich hierzu mit Ihrem Benutzernamen und Passwort ein. Hier können Sie auch jederzeit einen neuen Aktivierungslink anfordern.
+
+<pre>%nutzerAuth_auth%</pre>
+
+Mit besten Grüßen
+Ihr Team von ID-No.com]]></target>
+      </segment>
+    </unit>
+    <unit id="tLBvQVM" name="auth.title">
+      <segment>
+        <source>auth.title</source>
+        <target>Authenticate</target>
+      </segment>
+    </unit>
+    <unit id="LOS7_ws" name="auth.header">
+      <segment>
+        <source>auth.header</source>
+        <target>Konto bestätigen</target>
+      </segment>
+    </unit>
+    <unit id="8bhsAO5" name="auth.text">
+      <segment>
+        <source>auth.text</source>
+        <target>Hier können Sie den Freischaltcode aus der Bestätigunsmail eingeben, um Ihren Account freizuschalten.</target>
+      </segment>
+    </unit>
+    <unit id="ULC08pz" name="meinidno.profile.missingEmailVerfication">
+      <segment>
+        <source>meinidno.profile.missingEmailVerfication</source>
+        <target>Ihre E-Mail-Adresse wurde noch nicht verifiziert.</target>
+      </segment>
+    </unit>
+    <unit id="VUt41og" name="meinidno.profile.missingEmailVerfication.link.lbl">
+      <segment>
+        <source>meinidno.profile.missingEmailVerfication.link.lbl</source>
+        <target>E-Mail-Adresse jetzt überprüfen.</target>
+      </segment>
+    </unit>
+    <unit id="r_0QbU." name="profile.actions.emailauthrequest.success">
+      <segment>
+        <source>profile.actions.emailauthrequest.success</source>
+        <target>Die E-Mail für die Verifikation der E-Mail-Adresse wurde an %email% versendet.</target>
+      </segment>
+    </unit>
+    <unit id="55fNwAg" name="profile.actions.emailauthrequest.error">
+      <segment>
+        <source>profile.actions.emailauthrequest.error</source>
+        <target>Fehler beim Erstellen der Verifikations-E-Mail an %email%!</target>
+      </segment>
+    </unit>
+    <unit id="8hd1mx1" name="login.register.text">
+      <segment>
+        <source>login.register.text</source>
+        <target>Sie sind noch nicht registriert? Bitte registrieren Sie sich hier:</target>
+      </segment>
+    </unit>
+    <unit id="zUForcg" name="ID-Number already registered!">
+      <segment>
+        <source>ID-Number already registered!</source>
+        <target>ID-Number already registered!</target>
+      </segment>
+    </unit>
+    <unit id="HFCZOwC" name="years">
+      <segment>
+        <source>years</source>
+        <target>Jahre</target>
+      </segment>
+    </unit>
+    <unit id="Kdf53sS" name="items.action.delete.success">
+      <segment>
+        <source>items.action.delete.success</source>
+        <target>Die ID-Nummer wurde erfolgreich entfernt.</target>
+      </segment>
+    </unit>
+    <unit id="UPKIz7K" name="items.action.create.success">
+      <segment>
+        <source>items.action.create.success</source>
+        <target>items.action.create.success</target>
+      </segment>
+    </unit>
+    <unit id="MK0s5z_" name="profile.email.validate.error">
+      <segment>
+        <source>profile.email.validate.error</source>
+        <target>E-Mail nicht gültig oder bereits verwendet!</target>
+      </segment>
+    </unit>
+    <unit id="FLQA23K" name="item.idno.validate.error">
+      <segment>
+        <source>item.idno.validate.error</source>
+        <target>ID-Nummer nicht gültig oder bereits verwendet!</target>
+      </segment>
+    </unit>
+    <unit id="YWQj1Vl" name="credentials.title">
+      <segment>
+        <source>credentials.title</source>
+        <target>Meine Zugangsdaten</target>
+      </segment>
+    </unit>
+    <unit id="XQcIyA3" name="credentials.header">
+      <segment>
+        <source>credentials.header</source>
+        <target>Meine Zugangsdaten</target>
+      </segment>
+    </unit>
+    <unit id="X0hVWAT" name="credentials.text">
+      <segment>
+        <source>credentials.text</source>
+        <target>Hier können Sie Ihre Zugangsdaten ändern. Bitte geben Sie dazu Ihr altes und ein neues Passwort ein.</target>
+      </segment>
+    </unit>
+    <unit id="iYtPIdI" name="credentials.oldPassword">
+      <segment>
+        <source>credentials.oldPassword</source>
+        <target>altes Passwort</target>
+      </segment>
+    </unit>
+    <unit id="pvacjuI" name="credentials.newPassword">
+      <segment>
+        <source>credentials.newPassword</source>
+        <target>neues Passwort</target>
+      </segment>
+    </unit>
+    <unit id="sozEUl1" name="credentials.newRepeatPassword">
+      <segment>
+        <source>credentials.newRepeatPassword</source>
+        <target>neues Passwort wiederholen</target>
+      </segment>
+    </unit>
+    <unit id="qjMlKMV" name="login.resetPassword.link">
+      <segment>
+        <source>login.resetPassword.link</source>
+        <target>Passwort vergessen?</target>
+      </segment>
+    </unit>
+    <unit id="eu8YCU8" name="resetPassword.title">
+      <segment>
+        <source>resetPassword.title</source>
+        <target>Passwort vergessen?</target>
+      </segment>
+    </unit>
+    <unit id="AAfuzJS" name="resetPassword.header">
+      <segment>
+        <source>resetPassword.header</source>
+        <target>Passwort vergessen?</target>
+      </segment>
+    </unit>
+    <unit id="gp63m0l" name="resetPassword.text">
+      <segment>
+        <source>resetPassword.text</source>
+        <target>Sie erhalten nach Absenden des Formulars eine E-Mail, in der wir Ihnen erläutern, wie Sie Ihr Passwort neu anlegen können.</target>
+      </segment>
+    </unit>
+    <unit id="gH7sEln" name="resetPassword.submit">
+      <segment>
+        <source>resetPassword.submit</source>
+        <target>Passwort anfordern</target>
+      </segment>
+    </unit>
+    <unit id="VOHR.Fx" name="mail.resetPassword.text">
+      <segment>
+        <source>mail.resetPassword.text</source>
+        <target><![CDATA[Viele Grüße von **CODE-No.**com!
+
+Wir wurden gebeten, das Kennwort zu dieser E-Mail-Adresse zurückzusetzen. Folgen Sie den Anweisungen unten, wenn diese Anforderung von Ihnen stammt.
+
+Ignorieren Sie diese Mail, wenn die Anforderung zum Zurücksetzen Ihres Kennworts nicht von Ihnen stammt. Machen Sie sich keine Sorgen, Ihr Kundenkonto ist sicher.
+
+Klicken Sie auf den unten stehenden Link, um zu Schritt 3 der Passwortvergabe auf unserem Sicherheitsserver zu gelangen:
+
+%resetPassword_link%
+
+Falls Klicken des Links nicht funktioniert, können Sie den Link in Ihr Browserfenster kopieren bzw. direkt dort hineinschreiben. Sobald Sie zu <strong>CODE-No.</strong>com zurückgekehrt sind, teilen wir Ihnen mit, wie Sie Ihr Passwort wieder einrichten.
+
+Sie werden von **CODE-No.**com niemals eine E-Mail erhalten, in der Sie gebeten werden, Ihr **CODE-No.**com-Kennwort, Ihre Kreditkartennummer oder Kontonummer mitzuteilen oder zu bestätigen. Wenn Sie eine verdächtige E-Mail mit einem Link zum Aktualisieren Ihrer Kontoinformationen erhalten, klicken Sie nicht auf den Link, sondern melden Sie diese E-Mail **CODE-No.**com. Wir werden der Sache nachgehen.
+
+Vielen Dank für Ihren Besuch bei **CODE-No.**com.]]></target>
+      </segment>
+    </unit>
+    <unit id="Qv3ATqn" name="newPassword.title">
+      <segment>
+        <source>newPassword.title</source>
+        <target>newPassword.title</target>
+      </segment>
+    </unit>
+    <unit id="Ff3Re6r" name="newPassword.header">
+      <segment>
+        <source>newPassword.header</source>
+        <target>newPassword.header</target>
+      </segment>
+    </unit>
+    <unit id="a6VCVHL" name="newPassword.text">
+      <segment>
+        <source>newPassword.text</source>
+        <target>newPassword.text</target>
+      </segment>
+    </unit>
+    <unit id="7TJGKov" name="We dont find any User with this email.">
+      <segment>
+        <source>We dont find any User with this email.</source>
+        <target>We dont find any User with this email.</target>
+      </segment>
+    </unit>
+    <unit id="mxNoIPC" name="Reset Password Mail was sended">
+      <segment>
+        <source>Reset Password Mail was sended</source>
+        <target>Reset Password Mail was sended</target>
+      </segment>
+    </unit>
+    <unit id="j7ZwrcB" name="New Password was set">
+      <segment>
+        <source>New Password was set</source>
+        <target>New Password was set</target>
+      </segment>
+    </unit>
+    <unit id="0.tEuxq" name="Invalid Code">
+      <segment>
+        <source>Invalid Code</source>
+        <target>Invalid Code</target>
+      </segment>
+    </unit>
+    <unit id="iRG9m5f" name="accountDelete.title">
+      <segment>
+        <source>accountDelete.title</source>
+        <target>Mein Profil löschen</target>
+      </segment>
+    </unit>
+    <unit id="4pxkEgQ" name="accountDelete.header">
+      <segment>
+        <source>accountDelete.header</source>
+        <target>Mein Profil löschen</target>
+      </segment>
+    </unit>
+    <unit id="p.SuSgi" name="accountDelete.text">
+      <segment>
+        <source>accountDelete.text</source>
+        <target>Hier können Sie ihren Notfall-ID Pass löschen. Bitte geben Sie dazu ihr Passwort ein und klicken auf den Button Profil löschen.</target>
+      </segment>
+    </unit>
+    <unit id="cOIl904" name="Account delete">
+      <segment>
+        <source>Account delete</source>
+        <target>Profil löschen</target>
+      </segment>
+    </unit>
+    <unit id="VmQbIa6" name="mail.mailScanned.text">
+      <segment>
+        <source>mail.mailScanned.text</source>
+        <target>%address%,  
+  
+Sie erhalten diese Nachricht, weil Ihr ID-No.com Produkt mit der Nummer  
+
+**%idNo% heute um %time% Uhr ausgelesen** wurde.  
+  
+Sie haben Ihre Notfall-Daten hinterlegt, damit Ersthelfer Ihnen schnell und verlässlich helfen können.  
+  
+Sollte es sich um eine unbefugte Nutzung handeln, können Sie diese ID-Nummer oder Ihren Notfallpass vorübergehend deaktivieren. Informationen dazu finden Sie unten.  
+  
+Herzliche Grüße aus Frankfurt,  
+  
+Ihr ID-No.com Team</target>
+      </segment>
+    </unit>
+    <unit id="a7pjLjW" name="nutzer.action.edit.error">
+      <segment>
+        <source>nutzer.action.edit.error</source>
+        <target>Die Zugangsdaten konnten nicht erfolgreich gespeichert werden</target>
+      </segment>
+    </unit>
+    <unit id="W5wfpnm" name="nutzer.action.edit.success">
+      <segment>
+        <source>nutzer.action.edit.success</source>
+        <target>Die Zugangsdaten wurden erfolgreich gespeichert</target>
+      </segment>
+    </unit>
+    <unit id="cZh.0zu" name="User denied the request for Geolocation.">
+      <segment>
+        <source>User denied the request for Geolocation.</source>
+        <target>Die Berechtigung für die Standortermittlung wurde nicht erteilt.</target>
+      </segment>
+    </unit>
+    <unit id="XKtoYEx" name="Location information is unavailable.">
+      <segment>
+        <source>Location information is unavailable.</source>
+        <target>Die Standortinformationen konnten nicht ermittelt werden.</target>
+      </segment>
+    </unit>
+    <unit id="fvuPo_C" name="The request to get user location timed out.">
+      <segment>
+        <source>The request to get user location timed out.</source>
+        <target>The request to get user location timed out.</target>
+      </segment>
+    </unit>
+    <unit id="MKppsp2" name="An unknown error occurred.">
+      <segment>
+        <source>An unknown error occurred.</source>
+        <target>Es ist ein Fehler aufgetreten.</target>
+      </segment>
+    </unit>
+    <unit id="4Hh9Jyp" name="attention">
+      <segment>
+        <source>attention</source>
+        <target>Achtung!</target>
+      </segment>
+    </unit>
+    <unit id="bV5rZ.S" name="saveAnonymousData1">
+      <segment>
+        <source>saveAnonymousData1</source>
+        <target>Zum Schutz der Daten unserer Anwender wird Ihr Zugriff mittels Cookies erfasst. Wollen Sie fortfahren?</target>
+      </segment>
+    </unit>
+    <unit id="ESgRm_L" name="saveAnonymousData2">
+      <segment>
+        <source>saveAnonymousData2</source>
+        <target>IIhre Einwilligung kann jederzeit auf www.ID-No.com widerrufen werden.</target>
+      </segment>
+    </unit>
+    <unit id="JZBrox0" name="saveAnonymousData3">
+      <segment>
+        <source>saveAnonymousData3</source>
+        <target>Sie haben der Erfassung Ihres Zugriffs nicht zugestimmt. Deshalb können wir zum Schutz der Daten unserer Anwender den Notfallpass nicht anzeigen. Stimmen Sie der Erfassung Ihres Zugriffs zu?</target>
+      </segment>
+    </unit>
+    <unit id="MfvvFiW" name="Continue">
+      <segment>
+        <source>Continue</source>
+        <target>Weiter</target>
+      </segment>
+    </unit>
+    <unit id="2GAi_1u" name="mail.mailScanned.box">
+      <segment>
+        <source>mail.mailScanned.box</source>
+        <target>Sollte es sich bei dem Auslesen Ihrer Notfall ID-Nummer um eine unbefugte Nutzung handeln, können Sie diese ID-Nummer oder Ihren Notfallfpass aus Sicherheitsgründen vorübergehend deaktivieren.  
+
+Zur **[Anmeldung](%login_link%)**  
+</target>
+      </segment>
+    </unit>
+    <unit id="oymjImO" name="Anmelden">
+      <segment>
+        <source>Anmelden</source>
+        <target>Anmelden</target>
+      </segment>
+    </unit>
+    <unit id="Fu2RsS8" name="person.sprache.text">
+      <segment>
+        <source>person.sprache.text</source>
+        <target>Bitte geben Sie an, in welcher Sprache Sie ihre Angaben machen.</target>
+      </segment>
+    </unit>
+    <unit id="w.AKh0h" name="person.sprache.de">
+      <segment>
+        <source>person.sprache.de</source>
+        <target>Deutsch</target>
+      </segment>
+    </unit>
+    <unit id="fmxJomh" name="person.sprache.en">
+      <segment>
+        <source>person.sprache.en</source>
+        <target>Englisch</target>
+      </segment>
+    </unit>
+    <unit id="CCSYFpJ" name="person.sprache">
+      <segment>
+        <source>person.sprache</source>
+        <target>Sprache</target>
+      </segment>
+    </unit>
+    <unit id="kTHLCAW" name="Einloggen">
+      <segment>
+        <source>Einloggen</source>
+        <target>Einloggen</target>
+      </segment>
+    </unit>
+    <unit id="RzVXE99" name="login.register.linktext">
+      <segment>
+        <source>login.register.linktext</source>
+        <target>Registrieren</target>
+      </segment>
+    </unit>
+    <unit id="L65vsws" name="E-Mail">
+      <segment>
+        <source>E-Mail</source>
+        <target>E-Mail</target>
+      </segment>
+    </unit>
+    <unit id="o2wQFXD" name="Passwort">
+      <segment>
+        <source>Passwort</source>
+        <target>Passwort</target>
+      </segment>
+    </unit>
+    <unit id="wVCFRjs" name="auth.code.lbl">
+      <segment>
+        <source>auth.code.lbl</source>
+        <target>Authentifikationscode</target>
+      </segment>
+    </unit>
+    <unit id="hC.LXmC" name="press">
+      <segment>
+        <source>press</source>
+        <target>Presse</target>
+      </segment>
+    </unit>
+    <unit id="LOFv5uv" name="Upload a photo or take a selfie">
+      <segment>
+        <source>Upload a photo or take a selfie</source>
+        <target>Upload a photo or take a selfie</target>
+      </segment>
+    </unit>
+    <unit id="CSN8DUX" name="Wrong file type, please use JPG-files only!">
+      <segment>
+        <source>Wrong file type, please use JPG-files only!</source>
+        <target>Wrong file type, please use JPG-files only!</target>
+      </segment>
+    </unit>
+    <unit id="XxrhRfR" name="File to large!">
+      <segment>
+        <source>File to large!</source>
+        <target>File to large!</target>
+      </segment>
+    </unit>
+    <unit id="N9Od4Mt" name="person.action.upload.error.noFileReceived">
+      <segment>
+        <source>person.action.upload.error.noFileReceived</source>
+        <target>Es wurde keine Datei empfangen.</target>
+      </segment>
+    </unit>
+    <unit id="xQun2Vv" name="person.action.upload.error.nofilereceived">
+      <segment>
+        <source>person.action.upload.error.nofilereceived</source>
+        <target>person.action.upload.error.nofilereceived</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

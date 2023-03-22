@@ -1,0 +1,56 @@
+<div class="mask">
+    <div class="modal fade" id="annotation_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-muted">
+                <div class="modal-header">
+                    <h4 class="modal-title">{{ 'attention'|trans }}</h4>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        aria-label="Close"
+                        onclick="showNextModal();"></button>
+                </div>
+                <div class="modal-body">
+                    <div>{{ 'saveAnonymousData1'|trans }}</div>
+                    <br /><br />
+                    <div>{{ 'saveAnonymousData2'|trans }}</div>
+                </div>
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-dismiss="modal">{{ 'Continue'|trans }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mask">
+    <div class="modal fade" id="further_annotation_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-muted">
+                <div class="modal-header">
+                    <h4 class="modal-title">{{ 'attention'|trans }}</h4>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        aria-label="Close"
+                        onclick="route2StartPage('{{ path('app_standard_index') }}');"></button>
+                </div>
+                <div class="modal-body">{{ 'saveAnonymousData3'|trans }}</div>
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-dismiss="modal">{{ 'Yes'|trans }}</button>
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-dismiss="modal"
+                        onclick="route2StartPage('{{ path('app_standard_index') }}');">{{ 'No'|trans }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
