@@ -60,11 +60,11 @@ staging:
     - symfony
 
   # limit build to staging
-  #when: on_success
-  rules:
-    #- if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "staging"'
-    #- if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "staging"
-    - if: $CI_COMMIT_BRANCH == "development" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "staging"
+  only: 
+    - staging
+  except:
+    - main
+    - development
 
   # before
   before_script:
@@ -106,11 +106,9 @@ production:
     - symfony
 
   # limit build to main
-  rules:
-    #- if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
-    #- if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "staging"
-    - if: $CI_COMMIT_BRANCH == "main" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
-
+  only:
+    - main
+  
   # before
   before_script:
     - cd /srv/www/id-no.com/html
