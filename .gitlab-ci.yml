@@ -53,15 +53,18 @@ stages:
   - staging
   - production
 
-# frontend
+# staging
 staging:
   stage: staging
   tags:
     - symfony
 
   # limit build to staging
-  only:
+  only: 
     - staging
+  except:
+    - main
+    - development
 
   # before
   before_script:
@@ -105,7 +108,7 @@ production:
   # limit build to main
   only:
     - main
-
+  
   # before
   before_script:
     - cd /srv/www/id-no.com/html
