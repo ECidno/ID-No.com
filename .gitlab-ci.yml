@@ -53,15 +53,15 @@ stages:
   - staging
   - production
 
-# frontend
+# staging
 staging:
   stage: staging
   tags:
     - symfony
 
   # limit build to staging
-  only:
-    - staging
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^staging/
 
   # before
   before_script:
@@ -103,8 +103,8 @@ production:
     - symfony
 
   # limit build to main
-  only:
-    - main
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^main/
 
   # before
   before_script:
