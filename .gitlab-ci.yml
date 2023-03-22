@@ -60,8 +60,9 @@ staging:
     - symfony
 
   # limit build to staging
+  when: manual
   rules:
-    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^staging/
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "staging"
 
   # before
   before_script:
@@ -103,8 +104,9 @@ production:
     - symfony
 
   # limit build to main
+  when: manual
   rules:
-    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == /^main/
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
 
   # before
   before_script:
