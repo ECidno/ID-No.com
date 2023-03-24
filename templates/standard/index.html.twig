@@ -45,6 +45,12 @@
 				{% set caption = 'index.carousel.slide.' ~ key ~ '.caption' %}
 				{% set textStyle = item.textStyle is defined ? item.textStyle : 'position:absolute;' %}
 				{% set textStyleProperty = 'style="' ~ textStyle ~ '"' %}
+
+				{% if item.link is defined and item.link is not empty %}
+				<a
+					href="{{ item.link.href }}"
+					target="{{ item.link.target ?? '_blank' }}">
+				{% endif %}
 				<div class="carousel-item{{ loop.index0 == 0 ? ' active' : '' }}">
 					<img
 						src="{{ asset(item.image.desktop, 'media') }}"
@@ -61,6 +67,9 @@
 						<span class="align-bottom">{{ caption|trans }}</span>
 					</div>
 				</div>
+				{% if item.link is defined and item.link is not empty %}
+				</a>
+				{% endif %}
 			{% endfor %}
 		</div>
 		<button
