@@ -27,7 +27,7 @@
 	<div
 		id="carousel-index"
 		class="carousel slide"
-		data-bs-ride="true">
+		data-bs-ride="carousel">
 		<div class="carousel-indicators">
 			{% for item in settings.carousel %}
 				<button
@@ -45,13 +45,12 @@
 				{% set caption = 'index.carousel.slide.' ~ key ~ '.caption' %}
 				{% set textStyle = item.textStyle is defined ? item.textStyle : 'position:absolute;' %}
 				{% set textStyleProperty = 'style="' ~ textStyle ~ '"' %}
-
-				{% if item.link is defined and item.link is not empty %}
-				<a
-					href="{{ item.link.href }}"
-					target="{{ item.link.target ?? '_blank' }}">
-				{% endif %}
 				<div class="carousel-item{{ loop.index0 == 0 ? ' active' : '' }}">
+					{% if item.link is defined and item.link is not empty %}
+					<a
+						href="{{ item.link.href }}"
+						target="{{ item.link.target ?? '_blank' }}">
+					{% endif %}
 					<img
 						src="{{ asset(item.image.desktop, 'media') }}"
 						class="d-none d-lg-block w-100"
@@ -66,10 +65,10 @@
 					<div class="carousel-caption pb-0 d-lg-none">
 						<span class="align-bottom">{{ caption|trans }}</span>
 					</div>
+					{% if item.link is defined and item.link is not empty %}
+					</a>
+					{% endif %}
 				</div>
-				{% if item.link is defined and item.link is not empty %}
-				</a>
-				{% endif %}
 			{% endfor %}
 		</div>
 		<button
