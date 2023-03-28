@@ -252,7 +252,7 @@ class PersonType extends AbstractType
                 ],
                 'required' => false
             ])
-
+/*
             ->add('personImage', FileType::class, [
                 'label' => new TranslatableMessage('person.image.lbl'),
                 'row_attr' => ['class' => 'file mb-3'],
@@ -273,6 +273,7 @@ class PersonType extends AbstractType
                     'autocomplete' => 'off',
                 ],
             ])
+            */
             ->add('imageShow', CheckboxType::class, [
                 'label' => new TranslatableMessage('sichtbar'),
                 'label_attr' => [

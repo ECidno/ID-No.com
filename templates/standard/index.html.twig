@@ -5,17 +5,17 @@
 {% block preloads %}
   {% apply spaceless %}
 
-  {# banner_images | preload #}
-  {% for item in settings.carousel %}
-    <link
-      rel="preload"
-      href="{{ asset(item.image.mobile, 'media') }}"
-      as="image" />
-    <link
-      rel="preload"
-      href="{{ asset(item.image.desktop, 'media') }}"
-      as="image" />
-  {% endfor %}
+    {# banner_images | preload #}
+    {% for item in settings.carousel %}
+      <link
+        rel="preload"
+        href="{{ asset(item.image.mobile, 'media') }}"
+        as="image" />
+      <link
+        rel="preload"
+        href="{{ asset(item.image.desktop, 'media') }}"
+        as="image" />
+    {% endfor %}
   {% endapply %}
 {% endblock %}
 

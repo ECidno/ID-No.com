@@ -13,12 +13,12 @@ use App\Form\Type\PersonType;
 use App\Service\FileUploader;
 use Imagine\Gd\Imagine;
 use Imagine\Image\Box;
-//use Symfony\Component\BrowserKit\Response;
 use Symfony\Component\Filesystem\Filesystem;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mime\MimeTypes;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -126,7 +126,7 @@ class PersonApiController extends AbstractApiController
             $this->denyAccessUnlessGranted('update', $object);
             $em->flush();
 
-            $personImage = $form->get('personImage')->getData();
+            $personImage = null; #$form->get('personImage')->getData();
             $imageShow = $form->get('imageShow')->getData();
 
             /**
@@ -214,7 +214,7 @@ class PersonApiController extends AbstractApiController
                     'message' => $message,
                     'errors' => $errors,
                 ],
-                400
+                Response::HTTP_BAD_REQUEST
             );
 
         } else {
@@ -295,7 +295,7 @@ class PersonApiController extends AbstractApiController
                 [
                     'errors' => $message,
                 ],
-                412
+                Response::HTTP_PRECONDITION_FAILED
             );
         }
 
@@ -331,6 +331,8 @@ class PersonApiController extends AbstractApiController
 
         /** @var UploadedFile $uploadedFile */
         $uploadedFile = $request->files->get('file');
+        $imageShow = true;
+        $imageSrc = null;
 
         // file?
         if($uploadedFile === null) {
@@ -352,11 +354,98 @@ class PersonApiController extends AbstractApiController
             )
             : $result['message'];
 
+        // save image
+        if ($result['status'] === Response::HTTP_OK) {
+            $em = $this->emDefault;
+            $imgFile = $this->getParameter('userimages_directory').'/'.$result['filename'];
+
+            /**
+             * @var PersonImages $image
+             */
+            $image = $em
+                ->getRepository(PersonImages::class)
+                ->findBy(['person' => $id]);
+
+            // image?
+            if ($image) {
+                $image = $image[0];
+                $image->setBildShow($imageShow);
+                $em->persist($image);
+                $em->flush($image);
+            }
+
+
+            list($orig_width, $orig_height) = getimagesize($imgFile);
+
+            if ($orig_width > 190) {
+                $faktor = $orig_width / 190;
+                $height = $orig_height / $faktor;
+                $width = $orig_width / $faktor;
+            } else {
+                $height = $orig_height;
+                $width = $orig_width;
+            }
+
+            if ($width && ($orig_width < $orig_height)) {
+                $width = ($height / $orig_height) * $orig_width;
+            } else {
+                $height = ($width / $orig_width) * $orig_height;
+            }
+
+            $imagine = new Imagine;
+            $photo = $imagine->open($imgFile);
+            $photo->resize(new Box($width, $height))->save($imgFile);
+
+            if (!$image) {
+                $image = new PersonImages;
+            } else {
+                $oldImagePath = $this->getParameter('userimages_directory').'/'.$image->getBild();
+                $filesystem = new Filesystem();
+                if ($filesystem->exists($oldImagePath)) {
+                    $filesystem->remove($oldImagePath);
+                }
+            }
+
+            // set image properties
+            $image
+                ->setPerson($person)
+                ->setStatus('ok')
+                ->setBild($result['filename'])
+                ->setBildShow($imageShow)
+                ->setHeight($height)
+                ->setWidth($width)
+                ->setIp($_SERVER['REMOTE_ADDR'])
+                ->setCreated(new \DateTime());
+
+            // persist
+            $em->persist($image);
+            $em->flush($image);
+
+            // mime type, image src
+            $mimeTypes = new MimeTypes();
+            $imgMimeType = $mimeTypes->guessMimeType($imgFile);
+            $imageSrc = join(
+                '',
+                [
+                    'data:',
+                    $imgMimeType,
+                    ';base64,',
+                    base64_encode(
+                        file_get_contents($imgFile)
+                    )
+                ]
+            );
+
+        }
+
         // return
         return $this->json(
             [
                 'message' => $message,
-                'filename' => $result['filename'] ?? null,
+                'filename' => $result['filename']
+                    ? $result['filename']
+                    : null,
+                'imageSrc' => $imageSrc,
             ],
             $result['status']
         );

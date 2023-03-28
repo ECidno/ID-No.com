@@ -568,11 +568,11 @@ class Person
 
         // get file
         $imgEntity = $this->getImages()->first();
-        $imgFile =  __DIR__.'/../../../media/userimages/'.$imgEntity->getBild();
+        $imgFile =  __DIR__.'/../../media/userimages/'.$imgEntity->getBild();
 
         // exists?
         if (!file_exists($imgFile)) {
-            return null;
+            return  null;
         }
 
         // mime type
