@@ -46,4 +46,4 @@ services:
     # file uploader
     App\Service\FileUploader:
         arguments:
-            $targetDirectory: '%kernel.project_dir%/uploads'
+            $targetDirectory: '%kernel.project_dir%/media/userimages'

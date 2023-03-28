@@ -1,5 +1,6 @@
 'use strict';
 
+import { Alert } from 'bootstrap';
 import { cbAjax } from './cbAjax';
 import { cbMessage } from './cbMessage';
 
@@ -14,18 +15,20 @@ class cbUpload {
    * cconstructor
    *
    * @param object file
-   * @param element form
+   * @param element el
    * @param function done
    * @param function fail
    * @param function always
    */
-  constructor(file, form, done, fail, always) {
+  constructor(file, el, done, fail, always) {
     this.file = file;
-    this.form = form;
+    this.el = el;
 
     this.done = done;
     this.fail = fail;
     this.always = always;
+
+    this.progressContainer = document.getElementById(el.dataset.progressContainer) || false;
   }
 };
 
@@ -44,17 +47,96 @@ cbUpload.prototype.getName = function () {
   return this.file.name;
 };
 
+
+// progress
+cbUpload.prototype.showProgressItem = function () {
+  let progressItem = null;
+
+  if(this.progressContainer) {
+    const progressTemplate = this.progressContainer.querySelector('progressItem');
+    progressItem = progressTemplate.cloneNode(true);
+
+    const fileIcon = progressItem.querySelector('.fileicon');
+    const fileName = this.getName();
+    const fileExtension = fileName
+      .slice((Math.max(0, fileName.lastIndexOf(".")) || Infinity) + 1)
+      .toLowerCase()
+      .replace('jpeg', 'jpg');
+    const fileTypes = [
+      'aac',
+      'ai',
+      'bmp',
+      'cs',
+      'css',
+      'csv',
+      'doc',
+      'docx',
+      'exe',
+      'gif',
+      'heic',
+      'html',
+      'java',
+      'jpg',
+      'js',
+      'json',
+      'jsx',
+      'key',
+      'm4p',
+      'md',
+      'mdx',
+      'mov',
+      'mp3',
+      'mp4',
+      'otf',
+      'pdf',
+      'php',
+      'png',
+      'ppt',
+      'pptx',
+      'psd',
+      'py',
+      'raw',
+      'rb',
+      'sass',
+      'scss',
+      'sh',
+      'sql',
+      'svg',
+      'tiff',
+      'tsx',
+      'ttf',
+    ];
+
+    if(fileTypes.indexOf(fileExtension) > -1) {
+      fileIcon.classList.remove('bi-file-earmark');
+      fileIcon.classList.add('bi-filetype-' + fileExtension);
+    }
+
+    progressItem.querySelector('.filename').innerText = fileName;
+    progressItem.classList.remove('d-none');
+    progressItem.style.display = 'block';
+
+    // append
+    this.progressContainer.append(progressItem);
+  }
+
+  // return
+  return progressItem;
+};
+
+
 // do upload
 cbUpload.prototype.doUpload = function () {
   const self = this;
-  const form = self.form;
-  const field = form.querySelector('input[type="file"]');
+  const el = self.el;
+  const field = el.querySelector('input[type="file"]');
   const done = self.done;
   const fail = self.fail;
   const always = self.always;
-  const url = form.getAttribute('action');
+  const url = el.dataset.action || null;
   const formData = new FormData();
-  const progressContainer = document.getElementById(form.dataset.progressContainer) || false;
+  const progressContainer = document.getElementById(el.dataset.progressContainer) || false;
+  let progressItem = null;
 
   // add assoc key values, this will be posts values
   formData.append('file', self.file, this.getName());
@@ -62,7 +144,7 @@ cbUpload.prototype.doUpload = function () {
 
   // add form fields
   Array
-    .from(form.querySelectorAll('input:not(input[type="file"])'))
+    .from(el.querySelectorAll('input:not(input[type="file"])'))
     .forEach((el) => {
 
       // append
@@ -84,7 +166,9 @@ cbUpload.prototype.doUpload = function () {
       },
       progressContainer
     );
-    progressContainer.style.display = 'block';
+
+    // progress
+    progressItem = self.showProgressItem();
   }
 
 
@@ -117,9 +201,16 @@ cbUpload.prototype.doUpload = function () {
       // done
       done(res);
 
-      // hide progress
-      if (progressContainer) {
-        progressContainer.style.display = 'none';
+      // progress
+      if (progressItem) {
+        self.progressHandling(
+          {
+            loaded: self.getSize(),
+            total: self.getSize()
+          },
+          progressItem,
+          false
+        )
       }
 
       // enable file field
@@ -140,9 +231,17 @@ cbUpload.prototype.doUpload = function () {
       // default
       } else {
 
-        // hide progress
+        // progress
         if (progressContainer) {
-          progressContainer.style.display = 'none';
+          self.progressHandling(
+            {
+              loaded: self.getSize(),
+              total: self.getSize()
+            },
+            progressItem,
+            error
+          )
+  //        progressContainer.style.display = 'none';
         }
 
         // enable file field
@@ -161,15 +260,19 @@ cbUpload.prototype.doUpload = function () {
 };
 
 // process handling
-cbUpload.prototype.progressHandling = (ev, container) => {
-  let percent = 0;
-  let position = ev.loaded || ev.position;
-  let total = ev.total;
-  let bar = container.querySelector('.progress-bar') || null;
-  let status = container.querySelector('.status') || null;
+cbUpload.prototype.progressHandling = (ev, container, error) => {
+  const item = container.querySelector('div.alert')
+  const alert = Alert.getOrCreateInstance(item);
+  const position = ev.loaded || ev.position;
+  const total = ev.total;
+  const bar = item.querySelector('.progress-bar') || null;
+  const status = item.querySelector('.status') || null;
+  const percent = Math.ceil(position / total * 100);
 
-  if (ev.lengthComputable) {
-    percent = Math.ceil(position / total * 100);
+  // upload finished | success
+  if(percent === 100 && bar && !error) {
+    bar.classList.remove('progress-bar-striped', 'progress-bar-animated');
+    window.setTimeout(() => { alert.close(); }, 2000);
   }
 
   // update progressbars classes so it fits your code
@@ -177,7 +280,17 @@ cbUpload.prototype.progressHandling = (ev, container) => {
     bar.style.width = percent + '%';
   }
   if (status) {
-    status.style.innerText = percent + '%';
+    status.innerText = percent + '%';
+  }
+
+  // upload finished | error
+  if(error) {
+    item.classList.remove('border-success');
+    item.classList.add('border-danger');
+
+    bar.classList.remove('bg-success', 'progress-bar-striped', 'progress-bar-animated');
+    bar.classList.add('bg-danger');
+    status.innerText = error;
   }
 };
 

@@ -14,6 +14,7 @@ use App\Form\Type\ItemsEditType;
 use App\Service\ItemsService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -79,7 +80,7 @@ class ItemsApiController extends AbstractApiController
                         ),
                         'errors' => [],
                     ],
-                    400
+                    Response::HTTP_BAD_REQUEST
                 );
             }
 
@@ -112,7 +113,7 @@ class ItemsApiController extends AbstractApiController
                     'message' => $message,
                     'errors' => $errors,
                 ],
-                400
+                Response::HTTP_BAD_REQUEST
             );
         }
 
@@ -179,7 +180,7 @@ class ItemsApiController extends AbstractApiController
                 [
                     'errors' => $message,
                 ],
-                412
+                Response::HTTP_PRECONDITION_FAILED
             );
         }
 
@@ -264,8 +265,8 @@ class ItemsApiController extends AbstractApiController
 
         // status
         $status = $item === null
-            ? 400
-            : 200;
+            ? Response::HTTP_BAD_REQUEST
+            : Response::HTTP_OK;
 
         // return
         return (new JsonResponse())

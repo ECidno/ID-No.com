@@ -41,6 +41,7 @@ class FileUploader
     {
         $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
         $safeFilename = $this->slugger->slug($originalFilename);
+        $safeFilename = substr($safeFilename, 0, 32);
         $fileName = $safeFilename.'-'.uniqid().'.'.$file->guessExtension();
 
         try {

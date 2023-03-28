@@ -250,7 +250,7 @@ parameters:
         logo: references/allianz.png
         logo_bw: references/allianz_sw.png
       DRK:
-        logo: references/drk.svg
+        logo: references/drk.png
         logo_bw: references/drk_sw.png
       SportScheck:
         logo: references/sportscheck.png
