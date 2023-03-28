@@ -337,11 +337,11 @@ document.addEventListener(
                       );
 
                       // check size | 2MB
-                      if(myUpload.getSize() > 2097152) {
+                      if(myUpload.getSize() > 8388608) {
                         cbMessage(
                           1,
                           null,
-                          'Die Datei darf nicht größer als 2MB sein.'
+                          'Die Datei darf nicht größer als 8MB sein.'
                         );
 
                       // check type
