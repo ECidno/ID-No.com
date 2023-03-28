@@ -9,7 +9,7 @@ namespace App\Service;
 
 use App\Entity\Items;
 use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
@@ -28,6 +28,11 @@ class ItemsService
     protected $flashBag;
 
     /**
+     * @var RequestStack requestStack
+     */
+    protected $requestStack;
+
+    /**
      * @var TranslatorInterface $translator
      */
     protected $translator;
@@ -37,16 +42,16 @@ class ItemsService
      * constructor
      *
      * @param ManagerRegistry $registry
-     * @param SessionInterface $session
+     * @param RequestStack $requestStack
      * @param TranslatorInterface $translator
      */
     public function __construct(
         ManagerRegistry $registry,
-        SessionInterface $session,
+        RequestStack $requestStack,
         TranslatorInterface $translator
     ) {
         $this->emDefault = $registry->getManager('default');
-        $this->flashBag = $session->getFlashBag();
+        $this->flashBag = $requestStack->getSession()->getFlashBag();
         $this->translator = $translator;
     }
 
