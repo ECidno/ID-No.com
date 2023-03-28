@@ -18,6 +18,7 @@ use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -240,7 +241,7 @@ class AbstractApiController extends SymfonyAbstractController
                     'message' => $message,
                     'errors' => $errors,
                 ],
-                400
+                Response::HTTP_BAD_REQUEST
             );
         }
 
@@ -288,7 +289,7 @@ class AbstractApiController extends SymfonyAbstractController
         // return
         return $this->json(
             $items,
-            200,
+            Response::HTTP_OK,
             [],
             ['groups' => 'read']
         );
@@ -344,7 +345,7 @@ class AbstractApiController extends SymfonyAbstractController
                     'message' => $message,
                     'errors' => $errors,
                 ],
-                400
+                Response::HTTP_BAD_REQUEST
             );
 
         } else {
@@ -408,7 +409,7 @@ class AbstractApiController extends SymfonyAbstractController
                 [
                     'errors' => $message,
                 ],
-                412
+                Response::HTTP_PRECONDITION_FAILED
             );
         }
 
@@ -431,8 +432,6 @@ class AbstractApiController extends SymfonyAbstractController
     {
         $errors = [];
         foreach ($form->getErrors() as $error) {
-
-      #      var_dump($error)        ;
             $errors[] = $error->getMessage();
         }
 

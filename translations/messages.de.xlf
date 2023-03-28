@@ -4033,5 +4033,17 @@ Zur **[Anmeldung](%login_link%)**
         <target>person.action.upload.error.nofilereceived</target>
       </segment>
     </unit>
+    <unit id="6mi12mu" name="index.carousel.slide.safty_first.caption">
+      <segment>
+        <source>index.carousel.slide.safty_first.caption</source>
+        <target>Safety First!</target>
+      </segment>
+    </unit>
+    <unit id="xSzIdzk" name="index.carousel.slide.safty_first.text">
+      <segment>
+        <source>index.carousel.slide.safty_first.text</source>
+        <target>index.carousel.slide.safty_first.text</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

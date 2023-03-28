@@ -13,6 +13,7 @@ use App\Entity\Person;
 use App\Form\Type\CredentialsChangeType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\ByteString;
@@ -82,7 +83,7 @@ class ProfileApiController extends AbstractApiController
 
         // return
         return (new JsonResponse())
-            ->setStatusCode(200)
+            ->setStatusCode(Response::HTTP_OK)
             ->setData(
                 [
                     'id' => $object->getId(),
@@ -137,7 +138,7 @@ class ProfileApiController extends AbstractApiController
 
             // return
             return (new JsonResponse())
-                ->setStatusCode(200)
+                ->setStatusCode(Response::HTTP_OK)
                 ->setData(
                     [
                         'severity' => 0,
@@ -153,7 +154,7 @@ class ProfileApiController extends AbstractApiController
         // auth | error
         } else {
             return (new JsonResponse())
-                ->setStatusCode(412)
+                ->setStatusCode(Response::HTTP_PRECONDITION_FAILED)
                 ->setData(
                     [
                         'severity' => 9,
@@ -208,8 +209,8 @@ class ProfileApiController extends AbstractApiController
 
         // status
         $status = $valid
-            ? 200
-            : 400;
+            ? Response::HTTP_OK
+            : Response::HTTP_BAD_REQUEST;
 
         // return
         return (new JsonResponse())
@@ -290,7 +291,7 @@ class ProfileApiController extends AbstractApiController
                     'message' => $message,
                     'errors' => $errors,
                 ],
-                400
+                Response::HTTP_BAD_REQUEST
             );
 
         } else {

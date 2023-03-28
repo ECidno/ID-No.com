@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ language }}">
   <head>
-
     {% if app.environment|lower == 'prod' %}
     {# ccm19 | needs to be the very first script on page! #}
-      <script src="https://ccm.mp-group.net/public/app.js?apiKey=d7fdcc2471aeb1033cf0e51d4f48140ba1679d72607eb9b6&amp;domain=7bf67dd" referrerpolicy="origin"></script>
+      <script src="https://ccm.mp-group.cloud/public/app.js?apiKey=d7fdcc2471aeb1033cf0e51d4f48140ba1679d72607eb9b6&amp;domain=7bf67dd" referrerpolicy="origin"></script>
     {% endif %}
 
     <meta charset="UTF-8">
@@ -13,6 +12,8 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block preloads %}{% endblock %}
+
     {% block stylesheets %}
       {{ encore_entry_link_tags('app') }}
     {% endblock %}
@@ -30,8 +31,6 @@
         gtag('config', 'UA-132712802-1', { 'anonymize_ip': true });
       </script>
     {% endif %}
-
-
   </head>
   <body>
     {% apply spaceless %}
@@ -39,7 +38,6 @@
     {% endapply %}
 
     {# toast | success #}
-
     <div
       aria-live="polite"
       aria-atomic="true"

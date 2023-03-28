@@ -226,7 +226,8 @@ document.addEventListener(
 
               const myUpload = new cbUpload(
                 file,
-                me.closest('form'),
+                me.closest('div.ajax-upload'),
+
                 // done
                 (res) => {
                   if(res.message ?? false) {
@@ -287,8 +288,81 @@ document.addEventListener(
           Array
             .from(ajaxForms)
             .forEach((el) => {
-              let form = cbForm(el);
+              cbForm(el);
             });
+
+          // add listener for uploads
+          Array
+            .from(ajaxUpload)
+            .forEach((el) => {
+              const initialized = el.dataset.init || false;
+
+              if(initialized === false) {
+                el
+                  .addEventListener(
+                    'change',
+                    (e) => {
+                      const me = e.target;
+                      const file = me.files[0];
+                      const mimeTypes = [
+                        'image/gif',
+                        'image/jpg',
+                        'image/jpeg',
+                        'image/png',
+                      ];
+
+                      const myUpload = new cbUpload(
+                        file,
+                        me.closest('div.ajax-upload'),
+
+                        // done
+                        (res) => {
+
+                          // preview
+                          const iconContainer = me
+                            .closest('div.row')
+                            .querySelector('div.userIconContainer');
+
+                          iconContainer.innerHTML = '<div class="userIcon m-2" style="background-image:url(' + res.imageSrc + ');"></div>';
+
+                          // message
+                          if(res.message ?? false) {
+                            cbMessage(
+                              res.severity || 0,
+                              null,
+                              res.message
+                            );
+                          }
+                        }
+                      );
+
+                      // check size | 2MB
+                      if(myUpload.getSize() > 8388608) {
+                        cbMessage(
+                          1,
+                          null,
+                          'Die Datei darf nicht größer als 8MB sein.'
+                        );
+
+                      // check type
+                      } else if(mimeTypes.indexOf(myUpload.getType()) === -1) {
+                        cbMessage(
+                          1,
+                          null,
+                          'Bitte wählen Sie eine Bilddatei (GIF, JPG oder PNG).'
+                        );
+
+                      // execute upload
+                      } else {
+                        myUpload.doUpload();
+                      }
+                    }
+                  );
+              }
+
+              el.dataset.init = true;
+            });
+
         },
         false
       );

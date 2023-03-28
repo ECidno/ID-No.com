@@ -109,12 +109,74 @@
 </div>
 
 <div class="row border border-default rounded mb-3">
-  <div class="col-9">
-    {{ form_row(form.personImage) }}
+  <div class="col-3 col-lg-2 userIconContainer">
+    {% if person is defined and person.imageSrc is not empty %}
+      <div
+        class="userIcon m-2"
+        style="background-image: url('{{ person.imageSrc }}');" alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
+      </div>
+    {% else %}
+      <i class="bi bi-person-circle fs-1 p-2 align-middle"></i>
+    {% endif %}
+  </div>
+
+  <div class="col-6 col-lg-7">
+    <div
+      class="ajax-upload text-center alert"
+      data-action="{{ path('app_api_person_upload', { id:person.id })}}"
+      data-progress-container="upload-progress">
+      <div>
+        <label
+          for="photo-upload-file"
+          class="photo-upload pointer">
+          <span class="d-block">
+            <i class="bi bi-upload pe-1"></i>
+            {{ 'Laden Sie ein Foto hoch oder machen Sie ein Selfie.'|trans }}</span>
+        </label>
+      </div>
+
+      <input
+        id="photo-upload-file"
+        style="display:none;"
+        type="file"
+        name="file"
+        accept="image/jpeg, image/png, image/gif"
+        data-error-header="{{ 'Error'|trans }}"
+        data-error-wrong-type="{{ 'Wrong file type, please use JPG-files only!'|trans }}"
+        data-error-to-big="{{ 'File to large!'|trans }}"
+        data-file-mode="insert" />
+    </div>
+
+    <div id="upload-progress">
+      <progressItem class="d-none">
+        <div
+          class="alert border-success alert-dismissible fade show d-flex align-items-center"
+          role="alert">
+          <i class="bi bi-file-earmark fs-2 fileicon"></i>
+          <div class="w-100 ps-2">
+            <div class="pb-1">
+              <span class="filename text-truncate"></span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success progress-bar-striped progress-bar-animated overflow-visible" style="width:0%;">
+                <span class="status small">0%</span>
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"></button>
+        </div>
+      </progressItem>
+    </div>
+    {#{ form_row(form.personImage) }#}
   </div>
   <div class="col-3">
-    <p>&nbsp;</p>
-    {{ form_row(form.imageShow) }}
+    <div class="pt-3">
+      {{ form_row(form.imageShow) }}
+    </div>
   </div>
 </div>
 
