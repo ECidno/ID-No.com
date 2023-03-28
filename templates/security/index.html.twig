@@ -5,7 +5,7 @@
 {% block content %}
   <div class="container-fluid">
     <div class="row my-3 justify-content-center">
-      <div class="col-10 col-lg-8 col-xl-6">
+      <div class="col-12 col-lg-8 col-xl-6">
         <h1>{{ 'login.header'|trans }}</h1>
       </div>
     </div>
@@ -40,7 +40,7 @@
     {% endif %}
 
     <div class="row justify-content-center">
-      <div class="col-10 col-lg-8 col-xl-6">
+      <div class="col-12 col-lg-8 col-xl-6">
         {{ 'login.text'|trans|raw|markdown_to_html }}
 
         {# error? #}
@@ -116,7 +116,7 @@
 
     {# register #}
     <div class="row justify-content-center">
-      <div class="col-10 col-lg-8 col-xl-6">
+      <div class="col-12 col-lg-8 col-xl-6">
         <hr />
         <p class="float-start">{{ 'login.register.text'|trans }}<br />
           <a
