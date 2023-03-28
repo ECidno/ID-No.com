@@ -323,7 +323,7 @@ document.addEventListener(
                             .closest('div.row')
                             .querySelector('div.userIconContainer');
 
-                          iconContainer.innerHTML = '<div class="m-2 userIcon" style="background-image:url(' + res.imageSrc + ');"></div>';
+                          iconContainer.innerHTML = '<div class="userIcon m-2" style="background-image:url(' + res.imageSrc + ');"></div>';
 
                           // message
                           if(res.message ?? false) {
