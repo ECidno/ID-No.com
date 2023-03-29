@@ -60,7 +60,7 @@ staging:
     - symfony
 
   # limit build to staging
-  only: 
+  only:
     - staging
   except:
     - main
@@ -141,7 +141,8 @@ production:
     - cd /srv/www/id-no.com/html
 
     # rights
-    - sudo chgrp -R www-data var/cache/*
+    - sudo chgrp -R www-data var/cache/
+    - sudo chmod -R g+w var/cache/*
 
 #     # finally, reload php-fpm
 #     - sudo systemctl reload php7.4-fpm.service
