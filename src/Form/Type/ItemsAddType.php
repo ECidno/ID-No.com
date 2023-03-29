@@ -47,9 +47,7 @@ class ItemsAddType extends AbstractType
                     'maxlength' => 255,
                 ],
                 'required' => false
-            ])
-            ->add('nutzer', HiddenType::class)
-            ->add('person', HiddenType::class);
+            ]);
         }
 
 
