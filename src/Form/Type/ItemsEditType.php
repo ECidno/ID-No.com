@@ -47,9 +47,7 @@ class ItemsEditType extends AbstractType
                     'autocomplete' => 'off',
                 ],
                 'required' => false
-            ])
-            ->add('nutzer', HiddenType::class)
-            ->add('person', HiddenType::class);
+            ]);
     }
 
 
