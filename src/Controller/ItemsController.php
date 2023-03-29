@@ -8,6 +8,7 @@ namespace App\Controller;
  **********************************************************************/
 
 use App\Entity\Items;
+use App\Entity\LogEntry;
 use App\Entity\Nutzer;
 use App\Entity\NutzerAuth;
 use App\Entity\Person;
@@ -125,6 +126,25 @@ class ItemsController extends AbstractController
                     'itemScanned'
                 );
             }
+
+            // log
+            $logEntry = new LogEntry(
+                ItemsController::class,
+                $item->getId(),
+                'pass',
+                $person->getEmail(),
+                LogEntry::SEVERITY_INFO
+            );
+
+            // details
+            $logEntry->setDetails([
+                'ID-No.' => $idno,
+                'IP' => $request->getClientIp(),
+            ]);
+
+            // persist to database
+            $this->emDefault->persist($logEntry);
+            $this->emDefault->flush();
 
             // return
             return $this->renderAndRespond($variables);
