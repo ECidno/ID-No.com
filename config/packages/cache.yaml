@@ -19,13 +19,13 @@ framework:
             #my.dedicated.cache: null
 
 
-# when@prod:
-#     framework:
-#         cache:
-#             default_memcached_provider: 'memcached://localhost:11211'
-#             app: cache.adapter.memcached
-#             system: cache.adapter.memcached
-#             pools:
-#                 cloudbase_structure.cache:
-#                     adapter: cache.adapter.memcached
-#                     default_lifetime: 3600
+when@prod:
+    framework:
+        cache:
+            default_memcached_provider: 'memcached://localhost:11211'
+            app: cache.adapter.memcached
+            system: cache.adapter.memcached
+            pools:
+                cloudbase_structure.cache:
+                    adapter: cache.adapter.memcached
+                    default_lifetime: 3600
