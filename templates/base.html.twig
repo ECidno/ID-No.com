@@ -6,12 +6,13 @@
       <script src="https://ccm.mp-group.cloud/public/app.js?apiKey=d7fdcc2471aeb1033cf0e51d4f48140ba1679d72607eb9b6&amp;domain=7bf67dd" referrerpolicy="origin"></script>
     {% endif %}
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
     <title>{% block title %}Welcome!{% endblock %}</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    <link rel="shortcut icon" href="{{ asset('icon/favicon.png', 'media') }}" />
+    <link rel="icon" href="{{ asset('icon/favicon.png', 'media') }}" />
     {% block preloads %}{% endblock %}
 
     {% block stylesheets %}
