@@ -134,7 +134,7 @@
               <div class="container">
 
                 {# blood type #}
-                {% if person.blutgruppeShow == true and person.blutgruppe is not empty %}
+                {% if person.blutgruppeShow == true and person.blutgruppe is not empty and person.blutgruppe != -1 %}
                   <div class="mx-1 my-3 p-3 border border-light">
                     <strong>{{ 'Blutgruppe'|trans }}</strong><br />
                     {{ person.blutgruppe }}

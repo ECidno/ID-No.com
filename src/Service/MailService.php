@@ -104,13 +104,11 @@ class MailService
 
         // mail
         $email = (new TemplatedEmail())
-            ->to(new Address(self::DEBUG_RECIPIENT))
-#            @TODO: enable on production!
-#           ->to(new Address(
-#                $data['recipientEmail'],
-#                $data['recipientName']
-#               )
-#            )
+           ->to(new Address(
+                $data['recipientEmail'],
+                $data['recipientName']
+               )
+            )
             ->subject($subject)
 
             ->htmlTemplate('mail/'.$template.'.html.twig')

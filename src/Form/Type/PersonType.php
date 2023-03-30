@@ -80,24 +80,24 @@ class PersonType extends AbstractType
             ->add('geburtsdatumTag', IntegerType::class, [
                 'label' => new TranslatableMessage('person.geburtsdatumTag.lbl'),
                 'attr' => [
-                    'minValue' => 1,
-                    'maxValue' => 31
+                    'min' => 1,
+                    'max' => 31
                 ],
                 'required' => false
             ])
             ->add('geburtsdatumMonat', IntegerType::class, [
                 'label' => new TranslatableMessage('person.geburtsdatumMonat.lbl'),
                 'attr' => [
-                    'minValue' => 1,
-                    'maxVal' => 12
+                    'min' => 1,
+                    'max' => 12
                 ],
                 'required' => false
             ])
             ->add('geburtsdatumJahr', IntegerType::class, [
                 'label' => new TranslatableMessage('person.geburtsdatumJahr.lbl'),
                 'attr' => [
-                    'minValue' => 1900,
-                    'maxValue' => date('Y')
+                    'min' => 1900,
+                    'max' => date('Y')
                 ],
                 'required' => false
             ])

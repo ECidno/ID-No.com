@@ -1148,12 +1148,12 @@ Dr. Markus J. Krechting
 Amtsgericht Frankfurt am Main, HRB 115072
 
 **Steuer-Nummer**  
-St-Nr. 045 236 030 38
+St-Nr. 045 236 030 38  
 Ust-ID-Nr. DE 312 100 382
 
 **Bankverbindung**  
-Bank: Commerzbank AG
-IBAN DE21 5004 0000 0337 5847 00
+Bank: Commerzbank AG  
+IBAN DE21 5004 0000 0337 5847 00  
 BIC: COBADEFFXXX
 
 **Urheberschaft**  
@@ -4043,6 +4043,12 @@ Zur **[Anmeldung](%login_link%)**
       <segment>
         <source>index.carousel.slide.safty_first.text</source>
         <target>index.carousel.slide.safty_first.text</target>
+      </segment>
+    </unit>
+    <unit id="qIXbZfH" name="Laden Sie ein Foto hoch oder machen Sie ein Selfie.">
+      <segment>
+        <source>Laden Sie ein Foto hoch oder machen Sie ein Selfie.</source>
+        <target>Laden Sie ein Foto hoch oder machen Sie ein Selfie.</target>
       </segment>
     </unit>
   </file>

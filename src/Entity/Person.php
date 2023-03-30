@@ -967,8 +967,7 @@ class Person
      */
     public function getDateOfBirth(): ?\DateTimeImmutable
     {
-        $dob = \DateTimeImmutable::createFromFormat(
-            'Y-m-d H:i:s',
+        $dob = new \DateTimeImmutable(
             join(
                 '-',
                 [
@@ -976,7 +975,8 @@ class Person
                     $this->geburtsdatumMonat,
                     $this->geburtsdatumTag,
                 ]
-            ).'00:00:00'
+            ),
+            new \DateTimeZone('UTC')
         );
 
         // return
