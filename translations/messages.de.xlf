@@ -4045,5 +4045,11 @@ Zur **[Anmeldung](%login_link%)**
         <target>index.carousel.slide.safty_first.text</target>
       </segment>
     </unit>
+    <unit id="qIXbZfH" name="Laden Sie ein Foto hoch oder machen Sie ein Selfie.">
+      <segment>
+        <source>Laden Sie ein Foto hoch oder machen Sie ein Selfie.</source>
+        <target>Laden Sie ein Foto hoch oder machen Sie ein Selfie.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
