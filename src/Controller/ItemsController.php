@@ -262,7 +262,7 @@ class ItemsController extends AbstractController
                 ->setNoStatus('registriert')
                 ->setNutzer($nutzer)
                 ->setPerson($person)
-                ->setRegistriertDatum($now);
+                ->setAktiviertDatum($now);
 
             // persist
             $this->emDefault->persist($item);
