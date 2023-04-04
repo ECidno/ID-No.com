@@ -29,6 +29,7 @@ class ItemsAddType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('person', EntityHiddenType::class)
             ->add('idNo', TextType::class, [
                 'label' => new TranslatableMessage('items.idNo.lbl'),
                 'attr' => [

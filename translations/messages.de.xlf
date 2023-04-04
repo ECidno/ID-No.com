@@ -3677,7 +3677,7 @@ Ihr Team von ID-No.com]]></target>
     <unit id="UPKIz7K" name="items.action.create.success">
       <segment>
         <source>items.action.create.success</source>
-        <target>items.action.create.success</target>
+        <target>Die ID-Nummer wurde erfolgreich aktiviert.</target>
       </segment>
     </unit>
     <unit id="MK0s5z_" name="profile.email.validate.error">
@@ -4049,6 +4049,12 @@ Zur **[Anmeldung](%login_link%)**
       <segment>
         <source>Laden Sie ein Foto hoch oder machen Sie ein Selfie.</source>
         <target>Laden Sie ein Foto hoch oder machen Sie ein Selfie.</target>
+      </segment>
+    </unit>
+    <unit id="gjnBfId" name="items.action.create.error">
+      <segment>
+        <source>items.action.create.error</source>
+        <target>Fehler beim Aktivieren der ID-Nummer.</target>
       </segment>
     </unit>
   </file>
