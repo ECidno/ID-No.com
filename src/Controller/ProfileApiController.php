@@ -179,7 +179,7 @@ class ProfileApiController extends AbstractApiController
      *
      * @return JsonResponse
      *
-     * @Route("/validate/email/{email?}", name="validate", methods={"GET"})
+     * @Route("/validate/email/{id?}/{email?}", name="validate", methods={"GET"})
      */
     public function validate(Request $request, ValidatorInterface $validator, $email): JsonResponse
     {
