@@ -4051,5 +4051,11 @@ Zur **[Anmeldung](%login_link%)**
         <target>Laden Sie ein Foto hoch oder machen Sie ein Selfie.</target>
       </segment>
     </unit>
+    <unit id="gjnBfId" name="items.action.create.error">
+      <segment>
+        <source>items.action.create.error</source>
+        <target>Fehler beim Aktivieren der ID-Nummer.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
