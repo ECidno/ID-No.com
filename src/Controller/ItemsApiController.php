@@ -49,6 +49,7 @@ class ItemsApiController extends AbstractApiController
      */
     public function create(Request $request): JsonResponse
     {
+        $nutzer = $this->getUser();
         $now = new \DateTime();
         $object = new static::$entityClassName();
         $formType = static::$entityFormAddType;
@@ -87,10 +88,10 @@ class ItemsApiController extends AbstractApiController
             // update item
             $item
                 ->setNoStatus('registriert')
-                ->setNutzer($object->getNutzer())
+                ->setNutzer($nutzer)
                 ->setPerson($object->getPerson())
                 ->setAnbringung($object->getAnbringung())
-                ->setRegistriertDatum($now);
+                ->setAktiviertDatum($now);
 
             // persist
             $this->emDefault->flush($item);
@@ -253,7 +254,7 @@ class ItemsApiController extends AbstractApiController
      *
      * @return JsonResponse
      *
-     * @Route("/validate/idno/{idno?}/{purpose}", name="validate", methods={"GET"})
+     * @Route("/validate/idno/{id?}/{idno?}/{purpose}", name="validate", methods={"GET"})
      */
     public function validate(Request $request, ItemsService $itemsService, $idno, $purpose = 'register'): ?JsonResponse
     {
