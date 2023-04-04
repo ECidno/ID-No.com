@@ -158,8 +158,8 @@ class ItemsApiController extends AbstractApiController
                 ->setNoStatus('aktiviert')
                 ->setNutzer(null)
                 ->setPerson(null)
-                ->setAnbringung(null)
-                ->setRegistriertDatum(null);
+                ->setAnbringung('');
+                //->setRegistriertDatum( new \DateTime() );
 
             // persist
             $this->emDefault->flush($object);
