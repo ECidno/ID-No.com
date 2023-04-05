@@ -3484,7 +3484,19 @@ Register here:</target>
     <unit id="VmQbIa6" name="mail.mailScanned.text">
       <segment>
         <source>mail.mailScanned.text</source>
-        <target>mail.mailScanned.text</target>
+        <target>%address%,  
+  
+Sie erhalten diese Nachricht, weil Ihr ID-No.com Produkt mit der Nummer  
+
+**%idNo% heute um %time% Uhr ausgelesen** wurde.  
+  
+Sie haben Ihre Notfall-Daten hinterlegt, damit Ersthelfer Ihnen schnell und verlässlich helfen können.  
+  
+Sollte es sich um eine unbefugte Nutzung handeln, können Sie diese ID-Nummer oder Ihren Notfallpass vorübergehend deaktivieren. Informationen dazu finden Sie unten.  
+  
+Herzliche Grüße aus Frankfurt,  
+  
+Ihr ID-No.com Team</target>
       </segment>
     </unit>
     <unit id="qjMlKMV" name="login.resetPassword.link">
@@ -3496,7 +3508,9 @@ Register here:</target>
     <unit id="2GAi_1u" name="mail.mailScanned.box">
       <segment>
         <source>mail.mailScanned.box</source>
-        <target>mail.mailScanned.box</target>
+        <target>Sollte es sich bei dem Auslesen Ihrer Notfall ID-Nummer um eine unbefugte Nutzung handeln, können Sie diese ID-Nummer oder Ihren Notfallfpass aus Sicherheitsgründen vorübergehend deaktivieren.  
+
+Zur **[Anmeldung](%login_link%)**  </target>
       </segment>
     </unit>
     <unit id="oymjImO" name="Anmelden">
@@ -3581,6 +3595,24 @@ Register here:</target>
       <segment>
         <source>person.action.upload.success</source>
         <target>Die Datei wurde erfolgreich hochgeladen.</target>
+      </segment>
+    </unit>
+    <unit id="6mi12mu" name="index.carousel.slide.safty_first.caption">
+      <segment>
+        <source>index.carousel.slide.safty_first.caption</source>
+        <target>Safety First!</target>
+      </segment>
+    </unit>
+    <unit id="xSzIdzk" name="index.carousel.slide.safty_first.text">
+      <segment>
+        <source>index.carousel.slide.safty_first.text</source>
+        <target>index.carousel.slide.safty_first.text</target>
+      </segment>
+    </unit>
+    <unit id="nkoAp7D" name="Zusatzversicherung">
+      <segment>
+        <source>Zusatzversicherung</source>
+        <target>Zusatzversicherung</target>
       </segment>
     </unit>
   </file>
