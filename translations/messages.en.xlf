@@ -3119,7 +3119,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="RLlT90S" name="item.lbl">
       <segment>
         <source>item.lbl</source>
-        <target>item.lbl</target>
+        <target>ID number</target>
       </segment>
     </unit>
     <unit id="c69XQyB" name="items.noStatus.lbl">
@@ -3131,7 +3131,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="iN8764q" name="items.action.edit.success">
       <segment>
         <source>items.action.edit.success</source>
-        <target>items.action.edit.success</target>
+        <target>The ID number has been saved.</target>
       </segment>
     </unit>
     <unit id="mD32oKh" name="person.image.lbl">
@@ -3639,6 +3639,12 @@ Zur **[Anmeldung](%login_link%)**  </target>
       <segment>
         <source>Zusatzversicherung</source>
         <target>Zusatzversicherung</target>
+      </segment>
+    </unit>
+    <unit id="r_0QbU." name="profile.actions.emailauthrequest.success">
+      <segment>
+        <source>profile.actions.emailauthrequest.success</source>
+        <target>A verification e-mail has been sent to %email%</target>
       </segment>
     </unit>
   </file>
