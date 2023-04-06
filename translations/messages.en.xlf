@@ -3284,6 +3284,18 @@ Mit besten Grüßen
 Ihr Team von ID-No.com]]></target>
       </segment>
     </unit>
+    <unit id="ULC08pz" name="meinidno.profile.missingEmailVerfication">
+      <segment>
+        <source>meinidno.profile.missingEmailVerfication</source>
+        <target>Your e-mail address has not been verified yet.</target>
+      </segment>
+    </unit>
+    <unit id="VUt41og" name="meinidno.profile.missingEmailVerfication.link.lbl">
+      <segment>
+        <source>meinidno.profile.missingEmailVerfication.link.lbl</source>
+        <target>Verify your e-mail address now.</target>
+      </segment>
+    </unit>
     <unit id="loeWEWU" name="active">
       <segment>
         <source>active</source>
