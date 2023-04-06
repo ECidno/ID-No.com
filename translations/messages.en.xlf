@@ -3261,13 +3261,27 @@ Registration for your Emergency ID Pass is free of charge.</target>
     <unit id="Y6iE2lx" name="mail.mailVerification.subject">
       <segment>
         <source>mail.mailVerification.subject</source>
-        <target>mail.mailVerification.subject</target>
+        <target>Welcome to ID-No.com!</target>
       </segment>
     </unit>
     <unit id="m7F_DYR" name="mail.mailVerification.text">
       <segment>
         <source>mail.mailVerification.text</source>
-        <target>mail.mailVerification.text</target>
+        <target><![CDATA[Herzlich willkommen bei ID-No.com!
+
+Um Ihren Account bei ID-No.com im vollem Umfang nutzen zu können,
+klicken Sie bitte auf folgenden Freischaltungslink:
+
+%nutzerAuth_link%
+
+**Dieser Link ist 2 Stunden gültig.**
+
+Alternativ können Sie die nachfolgende Nummer kopieren und diese in das entsprechende Feld unter %nutzerAuth_path% eingeben, um Ihren Account zu einem beliebigen Zeitpunkt freizuschalten. Loggen Sie sich hierzu mit Ihrem Benutzernamen und Passwort ein. Hier können Sie auch jederzeit einen neuen Aktivierungslink anfordern.
+
+<pre>%nutzerAuth_auth%</pre>
+
+Mit besten Grüßen
+Ihr Team von ID-No.com]]></target>
       </segment>
     </unit>
     <unit id="loeWEWU" name="active">

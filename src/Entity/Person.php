@@ -655,7 +655,7 @@ class Person
      * @param string $anrede
      * @return Person
      */
-    public function setAnrede(string $anrede): self
+    public function setAnrede(?string $anrede): self
     {
         $this->anrede = $anrede;
         return $this;
@@ -758,7 +758,7 @@ class Person
      * @param string $strasse
      * @return Person
      */
-    public function setStrasse(string $strasse): self
+    public function setStrasse(?string $strasse): self
     {
         $this->strasse = $strasse;
         return $this;
@@ -796,7 +796,7 @@ class Person
      * @param string $plz
      * @return Person
      */
-    public function setPlz(string $plz): self
+    public function setPlz(?string $plz): self
     {
         $this->plz = $plz;
         return $this;
@@ -910,7 +910,7 @@ class Person
      * @param int $geburtsdatumTag
      * @return Person
      */
-    public function setGeburtsdatumTag(int $geburtsdatumTag): self
+    public function setGeburtsdatumTag(?int $geburtsdatumTag): self
     {
         $this->geburtsdatumTag = $geburtsdatumTag;
         return $this;
@@ -929,7 +929,7 @@ class Person
      * @param int $geburtsdatumMonat
      * @return Person
      */
-    public function setGeburtsdatumMonat(int $geburtsdatumMonat): self
+    public function setGeburtsdatumMonat(?int $geburtsdatumMonat): self
     {
         $this->geburtsdatumMonat = $geburtsdatumMonat;
         return $this;
@@ -948,7 +948,7 @@ class Person
      * @param int $geburtsdatumJahr
      * @return Person
      */
-    public function setGeburtsdatumJahr(int $geburtsdatumJahr): self
+    public function setGeburtsdatumJahr(?int $geburtsdatumJahr): self
     {
         $this->geburtsdatumJahr = $geburtsdatumJahr;
         return $this;
