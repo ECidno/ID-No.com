@@ -200,7 +200,7 @@ class Items extends AbstractEntity
      */
     public function setAnbringung(?string $anbringung): self
     {
-        $this->anbringung = $anbringung;
+        $this->anbringung = $anbringung ?? '';
         return $this;
     }
 
