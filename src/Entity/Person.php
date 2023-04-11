@@ -967,6 +967,10 @@ class Person
      */
     public function getDateOfBirth(): ?\DateTimeImmutable
     {
+        if (is_null($this->geburtsdatumJahr) || is_null($this->geburtsdatumMonat) || is_null($this->geburtsdatumTag)) {
+            return null;
+        }
+
         $dob = new \DateTimeImmutable(
             join(
                 '-',
