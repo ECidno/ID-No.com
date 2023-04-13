@@ -3647,5 +3647,57 @@ Zur **[Anmeldung](%login_link%)**  </target>
         <target>A verification e-mail has been sent to %email%</target>
       </segment>
     </unit>
+    <unit id="UPKIz7K" name="items.action.create.success">
+      <segment>
+        <source>items.action.create.success</source>
+        <target>the ID number has been activated.</target>
+      </segment>
+    </unit>
+    <unit id="VOHR.Fx" name="mail.resetPassword.text">
+      <segment>
+        <source>mail.resetPassword.text</source>
+        <target>Greetings from ID-No.com!
+
+We have been asked to reset the password for this email address.
+If you are the source of this request, then please follow the instructions below.
+
+If the request to reset your password did not come from you, then please ignore this email.
+
+Please click on the link below in order to access step 3 of the password creation on our security server:
+
+%resetPassword_link%
+
+If clicking on the link does not function, you can copy the link into your browser window or enter it directly there. Once you have returned to ID-No.com, we will inform you of how to create your password again. You will never receive an email from ID-No.com asking you to reveal or confirm your ID-No.com password, your credit card number or account number. If you receive a suspicious mail asking you to update your account information, do not click on the given link, rather inform ID-No.com by email.
+
+Thank you for visiting ID-No.com.
+
+Kind regards,
+Your ID-No.com Team</target>
+      </segment>
+    </unit>
+    <unit id="mxNoIPC" name="Reset Password Mail was sended">
+      <segment>
+        <source>Reset Password Mail was sended</source>
+        <target>Reset Password Mail was sent</target>
+      </segment>
+    </unit>
+    <unit id="Qv3ATqn" name="newPassword.title">
+      <segment>
+        <source>newPassword.title</source>
+        <target>New Password</target>
+      </segment>
+    </unit>
+    <unit id="Ff3Re6r" name="newPassword.header">
+      <segment>
+        <source>newPassword.header</source>
+        <target>New Password</target>
+      </segment>
+    </unit>
+    <unit id="a6VCVHL" name="newPassword.text">
+      <segment>
+        <source>newPassword.text</source>
+        <target>Set your new password</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
