@@ -1211,7 +1211,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="XGTJLIG" name="login.text">
       <segment>
         <source>login.text</source>
-        <target>Bitte melden Sie sich hier mit Benutzernamen und Passwort an. Im Anschluss können Sie Ihre Notfall-Daten aktualisieren oder Ihre ID-Nummer aktivieren. </target>
+        <target>Bitte melden Sie sich hier mit E-Mail-Adresse und Passwort an. Im Anschluss können Sie Ihre Notfall-Daten aktualisieren oder Ihre ID-Nummer aktivieren. </target>
       </segment>
     </unit>
     <unit id="Y7eqvgE" name="meinidno.title">
