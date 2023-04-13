@@ -3761,7 +3761,7 @@ Ihr Team von ID-No.com]]></target>
     <unit id="VOHR.Fx" name="mail.resetPassword.text">
       <segment>
         <source>mail.resetPassword.text</source>
-        <target><![CDATA[Viele Grüße von **CODE-No.**com!
+        <target><![CDATA[Viele Grüße von **ID-No.**com!
 
 Wir wurden gebeten, das Kennwort zu dieser E-Mail-Adresse zurückzusetzen. Folgen Sie den Anweisungen unten, wenn diese Anforderung von Ihnen stammt.
 
@@ -3771,29 +3771,29 @@ Klicken Sie auf den unten stehenden Link, um zu Schritt 3 der Passwortvergabe au
 
 %resetPassword_link%
 
-Falls Klicken des Links nicht funktioniert, können Sie den Link in Ihr Browserfenster kopieren bzw. direkt dort hineinschreiben. Sobald Sie zu <strong>CODE-No.</strong>com zurückgekehrt sind, teilen wir Ihnen mit, wie Sie Ihr Passwort wieder einrichten.
+Falls Klicken des Links nicht funktioniert, können Sie den Link in Ihr Browserfenster kopieren bzw. direkt dort hineinschreiben. Sobald Sie zu <strong>ID-No.</strong>com zurückgekehrt sind, teilen wir Ihnen mit, wie Sie Ihr Passwort wieder einrichten.
 
-Sie werden von **CODE-No.**com niemals eine E-Mail erhalten, in der Sie gebeten werden, Ihr **CODE-No.**com-Kennwort, Ihre Kreditkartennummer oder Kontonummer mitzuteilen oder zu bestätigen. Wenn Sie eine verdächtige E-Mail mit einem Link zum Aktualisieren Ihrer Kontoinformationen erhalten, klicken Sie nicht auf den Link, sondern melden Sie diese E-Mail **CODE-No.**com. Wir werden der Sache nachgehen.
+Sie werden von **ID-No.**com niemals eine E-Mail erhalten, in der Sie gebeten werden, Ihr **ID-No.**com-Kennwort, Ihre Kreditkartennummer oder Kontonummer mitzuteilen oder zu bestätigen. Wenn Sie eine verdächtige E-Mail mit einem Link zum Aktualisieren Ihrer Kontoinformationen erhalten, klicken Sie nicht auf den Link, sondern melden Sie diese E-Mail **ID-No.**com. Wir werden der Sache nachgehen.
 
-Vielen Dank für Ihren Besuch bei **CODE-No.**com.]]></target>
+Vielen Dank für Ihren Besuch bei **ID-No.**com.]]></target>
       </segment>
     </unit>
     <unit id="Qv3ATqn" name="newPassword.title">
       <segment>
         <source>newPassword.title</source>
-        <target>newPassword.title</target>
+        <target>Neues Passwort</target>
       </segment>
     </unit>
     <unit id="Ff3Re6r" name="newPassword.header">
       <segment>
         <source>newPassword.header</source>
-        <target>newPassword.header</target>
+        <target>Neues Passwort</target>
       </segment>
     </unit>
     <unit id="a6VCVHL" name="newPassword.text">
       <segment>
         <source>newPassword.text</source>
-        <target>newPassword.text</target>
+        <target>Geben Sie ihr neues Passwort ein</target>
       </segment>
     </unit>
     <unit id="7TJGKov" name="We dont find any User with this email.">
@@ -3805,13 +3805,13 @@ Vielen Dank für Ihren Besuch bei **CODE-No.**com.]]></target>
     <unit id="mxNoIPC" name="Reset Password Mail was sended">
       <segment>
         <source>Reset Password Mail was sended</source>
-        <target>Reset Password Mail was sended</target>
+        <target>E-Mail zum Passwort zurücksetzen wurde verschickt</target>
       </segment>
     </unit>
     <unit id="j7ZwrcB" name="New Password was set">
       <segment>
         <source>New Password was set</source>
-        <target>New Password was set</target>
+        <target>Das Passwort wurde geändert</target>
       </segment>
     </unit>
     <unit id="0.tEuxq" name="Invalid Code">
