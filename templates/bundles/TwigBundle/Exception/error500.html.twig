@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="" />
+        <title>{% block title %}Wartungsarbeiten{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('icon/favicon.png', 'media') }}" />
+        <link rel="icon" href="{{ asset('icon/favicon.png', 'media') }}" />
+    </head>
+
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.1rem;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            text-align: center;
+        }
+        .logo {
+            max-width: 20rem;
+            margin-left: -1rem;
+        }
+    </style>
+
+    <body>
+        {% block body %}
+
+            <p>
+                <img src="/build/media/images/id_no_logo_black.png" class="logo">
+            </p>
+
+            <h1>Wir sind bald wieder da!</h1>
+
+            <p>Wir aktualisieren gerade die Webseite.</p>
+            <p>Die Seite ist in Kürze wieder verfügbar.</p>
+
+            <p>Herzliche Grüße<br/>
+            Ihr ID-No.com Team</p>
+
+            <hr>
+
+            <h2>We'll be back soon!</h2>
+
+            <p>We are currently updating the website.</p>
+            <p>The page will shortly be available again.</p>
+
+            <p>Kind regards,<br/>
+            Your ID-No.com Team</p>
+        {% endblock %}
+    </body>
+</html>
