@@ -93,15 +93,15 @@ class ItemsController extends AbstractController
             }
 
             // finally, redirect to user's locale if not match with current
-            if($request->getLocale() != $person->getSprache()) {
-                return $this->redirectToRoute(
-                    'app_items_pass',
-                    [
-                        '_locale' => $person->getSprache(),
-                        'idno' => $idno,
-                    ]
-                );
-            }
+            // if($request->getLocale() != $person->getSprache()) {
+            //     return $this->redirectToRoute(
+            //         'app_items_pass',
+            //         [
+            //             '_locale' => $person->getSprache(),
+            //             'idno' => $idno,
+            //         ]
+            //     );
+            // }
 
             // variables
             $variables = [
@@ -262,7 +262,7 @@ class ItemsController extends AbstractController
                 ->setNoStatus('registriert')
                 ->setNutzer($nutzer)
                 ->setPerson($person)
-                ->setRegistriertDatum($now);
+                ->setAktiviertDatum($now);
 
             // persist
             $this->emDefault->persist($item);

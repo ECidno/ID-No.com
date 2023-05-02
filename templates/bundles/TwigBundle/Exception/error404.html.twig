@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="" />
+        <title>{% block title %}404{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('icon/favicon.png', 'media') }}" />
+        <link rel="icon" href="{{ asset('icon/favicon.png', 'media') }}" />
+    </head>
+
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.1rem;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            text-align: center;
+        }
+        .logo {
+            max-width: 20rem;
+            margin-left: -1rem;
+        }
+    </style>
+
+    <body>
+        {% block body %}
+            <p>
+                <img src="/build/media/images/id_no_logo_black.png" class="logo">
+            </p>
+
+            <h1>Inhalt nicht gefunden</h1>
+
+            <p>
+                Die angeforderte Seite konnte nicht gefunden werden. Überprüfen Sie die URL oder gehen Sie <a href="/">zurück zur Homepage</a>.
+            </p>
+
+            <hr>
+
+            <h1>Page not found</h1>
+
+            <p>
+                The requested page couldn't be located. Checkout for any URL
+                misspelling or <a href="/en">return to the homepage</a>.
+            </p>
+        {% endblock %}
+    </body>
+</html>

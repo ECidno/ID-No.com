@@ -1133,7 +1133,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="XGTJLIG" name="login.text">
       <segment>
         <source>login.text</source>
-        <target>Please log in here with your user name and password. Afterwards you can update your emergency data or activate your ID number.</target>
+        <target>Please log in here with your email address and password. Afterwards you can update your emergency data or activate your ID number.</target>
       </segment>
     </unit>
     <unit id="U4wHbEk" name="person.geschlecht.m">
@@ -3119,7 +3119,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="RLlT90S" name="item.lbl">
       <segment>
         <source>item.lbl</source>
-        <target>item.lbl</target>
+        <target>ID number</target>
       </segment>
     </unit>
     <unit id="c69XQyB" name="items.noStatus.lbl">
@@ -3131,7 +3131,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="iN8764q" name="items.action.edit.success">
       <segment>
         <source>items.action.edit.success</source>
-        <target>items.action.edit.success</target>
+        <target>The ID number has been saved.</target>
       </segment>
     </unit>
     <unit id="mD32oKh" name="person.image.lbl">
@@ -3261,13 +3261,39 @@ Registration for your Emergency ID Pass is free of charge.</target>
     <unit id="Y6iE2lx" name="mail.mailVerification.subject">
       <segment>
         <source>mail.mailVerification.subject</source>
-        <target>mail.mailVerification.subject</target>
+        <target>Welcome to ID-No.com!</target>
       </segment>
     </unit>
     <unit id="m7F_DYR" name="mail.mailVerification.text">
       <segment>
         <source>mail.mailVerification.text</source>
-        <target>mail.mailVerification.text</target>
+        <target><![CDATA[Herzlich willkommen bei ID-No.com!
+
+Um Ihren Account bei ID-No.com im vollem Umfang nutzen zu können,
+klicken Sie bitte auf folgenden Freischaltungslink:
+
+%nutzerAuth_link%
+
+**Dieser Link ist 2 Stunden gültig.**
+
+Alternativ können Sie die nachfolgende Nummer kopieren und diese in das entsprechende Feld unter %nutzerAuth_path% eingeben, um Ihren Account zu einem beliebigen Zeitpunkt freizuschalten. Loggen Sie sich hierzu mit Ihrem Benutzernamen und Passwort ein. Hier können Sie auch jederzeit einen neuen Aktivierungslink anfordern.
+
+<pre>%nutzerAuth_auth%</pre>
+
+Mit besten Grüßen
+Ihr Team von ID-No.com]]></target>
+      </segment>
+    </unit>
+    <unit id="ULC08pz" name="meinidno.profile.missingEmailVerfication">
+      <segment>
+        <source>meinidno.profile.missingEmailVerfication</source>
+        <target>Your e-mail address has not been verified yet.</target>
+      </segment>
+    </unit>
+    <unit id="VUt41og" name="meinidno.profile.missingEmailVerfication.link.lbl">
+      <segment>
+        <source>meinidno.profile.missingEmailVerfication.link.lbl</source>
+        <target>Verify your e-mail address now.</target>
       </segment>
     </unit>
     <unit id="loeWEWU" name="active">
@@ -3484,7 +3510,19 @@ Register here:</target>
     <unit id="VmQbIa6" name="mail.mailScanned.text">
       <segment>
         <source>mail.mailScanned.text</source>
-        <target>mail.mailScanned.text</target>
+        <target>%address%,  
+  
+Sie erhalten diese Nachricht, weil Ihr ID-No.com Produkt mit der Nummer  
+
+**%idNo% heute um %time% Uhr ausgelesen** wurde.  
+  
+Sie haben Ihre Notfall-Daten hinterlegt, damit Ersthelfer Ihnen schnell und verlässlich helfen können.  
+  
+Sollte es sich um eine unbefugte Nutzung handeln, können Sie diese ID-Nummer oder Ihren Notfallpass vorübergehend deaktivieren. Informationen dazu finden Sie unten.  
+  
+Herzliche Grüße aus Frankfurt,  
+  
+Ihr ID-No.com Team</target>
       </segment>
     </unit>
     <unit id="qjMlKMV" name="login.resetPassword.link">
@@ -3496,7 +3534,9 @@ Register here:</target>
     <unit id="2GAi_1u" name="mail.mailScanned.box">
       <segment>
         <source>mail.mailScanned.box</source>
-        <target>mail.mailScanned.box</target>
+        <target>Sollte es sich bei dem Auslesen Ihrer Notfall ID-Nummer um eine unbefugte Nutzung handeln, können Sie diese ID-Nummer oder Ihren Notfallfpass aus Sicherheitsgründen vorübergehend deaktivieren.  
+
+Zur **[Anmeldung](%login_link%)**  </target>
       </segment>
     </unit>
     <unit id="oymjImO" name="Anmelden">
@@ -3581,6 +3621,82 @@ Register here:</target>
       <segment>
         <source>person.action.upload.success</source>
         <target>Die Datei wurde erfolgreich hochgeladen.</target>
+      </segment>
+    </unit>
+    <unit id="6mi12mu" name="index.carousel.slide.safty_first.caption">
+      <segment>
+        <source>index.carousel.slide.safty_first.caption</source>
+        <target>Safety First!</target>
+      </segment>
+    </unit>
+    <unit id="xSzIdzk" name="index.carousel.slide.safty_first.text">
+      <segment>
+        <source>index.carousel.slide.safty_first.text</source>
+        <target>index.carousel.slide.safty_first.text</target>
+      </segment>
+    </unit>
+    <unit id="nkoAp7D" name="Zusatzversicherung">
+      <segment>
+        <source>Zusatzversicherung</source>
+        <target>Zusatzversicherung</target>
+      </segment>
+    </unit>
+    <unit id="r_0QbU." name="profile.actions.emailauthrequest.success">
+      <segment>
+        <source>profile.actions.emailauthrequest.success</source>
+        <target>A verification e-mail has been sent to %email%</target>
+      </segment>
+    </unit>
+    <unit id="UPKIz7K" name="items.action.create.success">
+      <segment>
+        <source>items.action.create.success</source>
+        <target>the ID number has been activated.</target>
+      </segment>
+    </unit>
+    <unit id="VOHR.Fx" name="mail.resetPassword.text">
+      <segment>
+        <source>mail.resetPassword.text</source>
+        <target>Greetings from ID-No.com!
+
+We have been asked to reset the password for this email address.
+If you are the source of this request, then please follow the instructions below.
+
+If the request to reset your password did not come from you, then please ignore this email.
+
+Please click on the link below in order to access step 3 of the password creation on our security server:
+
+%resetPassword_link%
+
+If clicking on the link does not function, you can copy the link into your browser window or enter it directly there. Once you have returned to ID-No.com, we will inform you of how to create your password again. You will never receive an email from ID-No.com asking you to reveal or confirm your ID-No.com password, your credit card number or account number. If you receive a suspicious mail asking you to update your account information, do not click on the given link, rather inform ID-No.com by email.
+
+Thank you for visiting ID-No.com.
+
+Kind regards,
+Your ID-No.com Team</target>
+      </segment>
+    </unit>
+    <unit id="mxNoIPC" name="Reset Password Mail was sended">
+      <segment>
+        <source>Reset Password Mail was sended</source>
+        <target>Reset Password Mail was sent</target>
+      </segment>
+    </unit>
+    <unit id="Qv3ATqn" name="newPassword.title">
+      <segment>
+        <source>newPassword.title</source>
+        <target>New Password</target>
+      </segment>
+    </unit>
+    <unit id="Ff3Re6r" name="newPassword.header">
+      <segment>
+        <source>newPassword.header</source>
+        <target>New Password</target>
+      </segment>
+    </unit>
+    <unit id="a6VCVHL" name="newPassword.text">
+      <segment>
+        <source>newPassword.text</source>
+        <target>Set your new password</target>
       </segment>
     </unit>
   </file>

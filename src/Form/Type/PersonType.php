@@ -184,7 +184,7 @@ class PersonType extends AbstractType
                 'label' => new TranslatableMessage('person.telefonLand.lbl'),
                 'attr' => [
                     'autocomplete' => 'off',
-                    'maxlenght' => 6
+                    'maxlength' => 6
                 ],
                 'required' => false
             ])
@@ -383,7 +383,7 @@ class PersonType extends AbstractType
             ->add('gewicht', TextType::class, [
                 'label' => new TranslatableMessage('person.gewicht.lbl'),
                 'attr' => [
-                    'maxlenght' => 10,
+                    'maxlength' => 10,
                     'autocomplete' => 'off',
                 ],
                 'required' => false
