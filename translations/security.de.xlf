@@ -43,5 +43,11 @@
         <target>Der Code ist ungültig.</target>
       </segment>
     </unit>
+    <unit id="Ff3Re6r" name="newPassword.header">
+      <segment>
+        <source>newPassword.header</source>
+        <target>Neues Passwort erstellen</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
