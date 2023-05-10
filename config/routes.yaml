@@ -56,3 +56,13 @@ redirect_zoll:
         path: 'https://youtu.be/oo_JCWIkCqE'
         keepQueryParams: false
         keepRequestMethod: true
+
+redirect_viral:
+    path: '/viral'
+    methods: GET
+    defaults:
+        priority: 50
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+        path: 'https://www.tiktok.com/@5_sprechwunsch/video/7226754299190136070'
+        keepQueryParams: false
+        keepRequestMethod: true
