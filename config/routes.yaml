@@ -67,7 +67,7 @@ redirect_viral:
         keepQueryParams: false
         keepRequestMethod: true
 
-redirect_viral:
+redirect_iViral:
     path: '/iViral'
     methods: GET
     defaults:
@@ -77,7 +77,7 @@ redirect_viral:
         keepQueryParams: false
         keepRequestMethod: true
 
-redirect_viral:
+redirect_iWeite:
     path: '/iWeite'
     methods: GET
     defaults:
