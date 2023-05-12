@@ -66,3 +66,23 @@ redirect_viral:
         path: 'https://www.tiktok.com/@5_sprechwunsch/video/7226754299190136070'
         keepQueryParams: false
         keepRequestMethod: true
+
+redirect_iViral:
+    path: '/iViral'
+    methods: GET
+    defaults:
+        priority: 50
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+        path: 'https://bit.ly/42HGz2V'
+        keepQueryParams: false
+        keepRequestMethod: true
+
+redirect_iWeite:
+    path: '/iWeite'
+    methods: GET
+    defaults:
+        priority: 50
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+        path: 'https://bit.ly/3VK4M6e'
+        keepQueryParams: false
+        keepRequestMethod: true
