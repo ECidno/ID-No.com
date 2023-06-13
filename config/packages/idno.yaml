@@ -137,13 +137,6 @@ parameters:
 
     # carousel, slider
     carousel:
-      safty_first:
-        image:
-          desktop: slider/slider_desktop_safty_first.jpg
-          mobile: slider/slider_mobile_safty_first.jpg
-        link:
-          href: 'https://www.code-no.shop/sos-id-chip/'
-
       sos_chip_shoe:
         image:
           desktop: slider/slider_desktop_1.jpg
