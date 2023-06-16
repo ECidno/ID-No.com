@@ -428,7 +428,6 @@ class Person
     /**
      * @ORM\Column(type="datetime")
      * @Assert\Type("\DateTimeInterface")
-     * @Gedmo\Timestampable(on="create")
      * @Gedmo\Timestampable(on="update")
      */
     private $lastChangeDatum;
