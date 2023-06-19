@@ -13,13 +13,10 @@
           <div class="col-12">
             {% if person.imageShow == true and person.imageSrc is not empty %}
               <div class="text-center userIconCenter">
-                <div class="userIcon" style="background-image: url('{{ person.imageSrc }}');" alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
+                <div
+                  lass="userIcon" style="background-image: url('{{ person.imageSrc }}');"
+                  alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
                 </div>
-
-                <!--<img
-                  src="{{ person.imageSrc }}"
-                  class="rounded-circle"
-                  alt="{{ person.vorname|raw }} {{ person.nachname|raw }}" />-->
               </div>
             {% endif %}
           </div>

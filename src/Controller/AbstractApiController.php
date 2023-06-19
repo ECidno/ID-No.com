@@ -309,10 +309,9 @@ class AbstractApiController extends SymfonyAbstractController
     public function update(int $id, Request $request): JsonResponse
     {
         $formType = static::$entityFormEditType;
-        $em = $this->emDefault;
 
         // get object
-        $object = $em
+        $object = $this->emDefault
             ->getRepository(static::$entityClassName)
             ->find($id);
 
@@ -325,7 +324,7 @@ class AbstractApiController extends SymfonyAbstractController
 
             // voter
             $this->denyAccessUnlessGranted('update', $object);
-            $em->flush($object);
+            $this->emDefault->flush($object);
 
             // message
             $message = $this->translator->trans(
