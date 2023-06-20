@@ -4012,7 +4012,7 @@ Zur **[Anmeldung](%login_link%)**
     <unit id="CSN8DUX" name="Wrong file type, please use JPG-files only!">
       <segment>
         <source>Wrong file type, please use JPG-files only!</source>
-        <target>Wrong file type, please use JPG-files only!</target>
+        <target>Ungültiger Dateityp!</target>
       </segment>
     </unit>
     <unit id="XxrhRfR" name="File to large!">
@@ -4055,6 +4055,12 @@ Zur **[Anmeldung](%login_link%)**
       <segment>
         <source>items.action.create.error</source>
         <target>Fehler beim Aktivieren der ID-Nummer.</target>
+      </segment>
+    </unit>
+    <unit id="U9uUgj9" name="Wrong ID-Number format!">
+      <segment>
+        <source>Wrong ID-Number format!</source>
+        <target>Falsches ID-Nummer-Format</target>
       </segment>
     </unit>
   </file>
