@@ -60,6 +60,11 @@
           {# language #}
           {% set currentRoute = app.request.attributes.get('_route') %}
           {% set currentRouteParams = app.request.attributes.get('_route_params') ?? {} %}
+
+          {% if currentRoute == 'app_items_pass' %}
+            {% set currentRouteParams = { idno:idno } %}
+          {% endif %}
+
           <li class="nav-item">
             {% if language == 'de' %}
               <a

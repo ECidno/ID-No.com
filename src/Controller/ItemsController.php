@@ -46,7 +46,7 @@ class ItemsController extends AbstractController
      */
     public function pass(Request $request, ItemsService $itemsService, $idno): Response
     {
-        $idno = $request->get('p_idno')
+        $idNo = $request->get('p_idno')
             ?? $request
                 ->getSession()
                 ->get('id-no')
@@ -61,7 +61,7 @@ class ItemsController extends AbstractController
          * @var Items
          */
         $item = $itemsService->check(
-            $idno,
+            $idNo,
             'itemError',
             'pass'
         );
@@ -75,9 +75,20 @@ class ItemsController extends AbstractController
             return $this->redirectToRoute(
                 'app_items_register',
                 [
-                    'idno' => $idno
+                    'idno' => $idNo
                 ]
             );
+
+        // idno given in path, store in session and redirect w/o number
+        } elseif(!empty($idno)) {
+
+            // store id in session and remove from path
+            $request
+                ->getSession()
+                ->set('id-no', $idno);
+
+            // return
+            return $this->redirectToRoute('app_items_pass');
 
         // proceed to pass
         } else {
@@ -101,14 +112,14 @@ class ItemsController extends AbstractController
             //         'app_items_pass',
             //         [
             //             '_locale' => $person->getSprache(),
-            //             'idno' => $idno,
+            //             'idno' => $idNo,
             //         ]
             //     );
             // }
 
             // variables
             $variables = [
-                'idno' => $idno,
+                'idno' => $idNo,
                 'item' => $item,
                 'nutzer' => $nutzer,
                 'person' => $person,
@@ -141,7 +152,7 @@ class ItemsController extends AbstractController
 
             // details
             $logEntry->setDetails([
-                'ID-No.' => $idno,
+                'ID-No.' => $idNo,
                 'IP' => $request->getClientIp(),
             ]);
 
@@ -149,7 +160,7 @@ class ItemsController extends AbstractController
             $this->emDefault->persist($logEntry);
             $this->emDefault->flush();
 
-            // remove id no from session
+            // remove id-no from session
             $request
                 ->getSession()
                 ->set('id-no', null);

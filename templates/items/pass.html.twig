@@ -14,7 +14,8 @@
             {% if person.imageShow == true and person.imageSrc is not empty %}
               <div class="text-center userIconCenter">
                 <div
-                  lass="userIcon" style="background-image: url('{{ person.imageSrc }}');"
+                  class="userIcon"
+                  style="background-image: url('{{ person.imageSrc }}');"
                   alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
                 </div>
               </div>
@@ -132,7 +133,7 @@
 
                 {# blood type #}
                 {% if person.blutgruppeShow == true and person.blutgruppe is not empty and person.blutgruppe != -1 %}
-                  <div class="mx-1 my-3 p-3 border border-light">
+                  <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Blutgruppe'|trans }}</strong><br />
                     {{ person.blutgruppe }}
                   </div>
@@ -140,7 +141,7 @@
 
                 {# diseases #}
                 {% if person.erkrankungenShow == true and person.erkrankungen is not empty %}
-                  <div class="mx-1 my-3 p-3 border border-light">
+                  <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Erkrankungen'|trans }}</strong><br />
                     {{ person.erkrankungen|raw|nl2br }}
                   </div>
@@ -148,7 +149,7 @@
 
                 {# medicines #}
                 {% if person.medikamenteShow == true and person.medikamente is not empty %}
-                  <div class="mx-1 my-3 p-3 border border-light">
+                  <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Medikamente'|trans }}</strong><br />
                     {{ person.medikamente|raw|nl2br }}
                   </div>
@@ -156,7 +157,7 @@
 
                 {# allergys #}
                 {% if person.allergieenShow == true and person.allergieen is not empty %}
-                  <div class="mx-1 my-3 p-3 border border-light">
+                  <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Allergieen'|trans }}</strong><br />
                     {{ person.allergieen|raw|nl2br }}
                   </div>
@@ -203,7 +204,7 @@
 
                 {# health insurance #}
                 {% if person.krankenversicherungShow == true and person.krankenversicherung is not empty %}
-                  <div class="mx-1 my-3 p-3 border border-light">
+                  <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Krankenversicherung'|trans }}</strong><br />
                     {{ person.krankenversicherung|raw|nl2br }}
                   </div>
@@ -211,7 +212,7 @@
 
                 {# insurance number #}
                 {% if person.versicherungsnummerShow == true and person.versicherungsnummer is not empty %}
-                  <div class="mx-1 my-3 p-3 border border-light">
+                  <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Versicherungs-Nr.'|trans }}</strong><br />
                     {{ person.versicherungsnummer|raw|nl2br }}
                   </div>
@@ -219,7 +220,7 @@
 
                 {# additional insurance #}
                 {% if person.zusatzversicherungShow == true and person.zusatzversicherung is not empty %}
-                  <div class="mx-1 my-3 p-3 border border-light">
+                  <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Zusatzversicherung'|trans }}</strong><br />
                     {{ person.zusatzversicherung|raw|nl2br }}
                   </div>
@@ -233,13 +234,12 @@
         <div class="row py-3">
           <div class="col-12">
             <div class="container">
-
               {% if
                  (person.strasse is not empty and person.strasseShow == true) or
                  (person.zusatz is not empty and person.zusatzShow == true) or
                  (person.ort is not empty and person.ortShow == true)
                %}
-                <div class="mx-1 my-3 p-3 border border-dark">
+                <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'Wohnort'|trans }}</strong>
 
                   {# street #}
@@ -252,7 +252,7 @@
                     <br />{{ person.zusatz|raw|nl2br }}
                   {% endif %}
 
-                  {# location #}
+                  {# residence #}
                   {% if person.ortShow == true and person.ort is not empty %}
                     <br />{{ person.plz|raw|nl2br }} {{ person.ort|raw|nl2br }}
                   {% endif %}
@@ -263,7 +263,7 @@
 
               {# telefon #}
               {% if person.telefonShow == true and person.telefon is not empty %}
-                <div class="mx-1 my-3 p-3 border border-dark">
+                <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'Telefon'|trans }}</strong><br />
                   {{ person.telefonDisplay }}
                 </div>
@@ -271,7 +271,7 @@
 
               {# mobile #}
               {% if person.mobileShow == true and person.mobile is not empty %}
-                <div class="mx-1 my-3 p-3 border border-dark">
+                <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'Mobile'|trans }}</strong><br />
                   {{ person.mobileDisplay }}
                 </div>
@@ -279,7 +279,7 @@
 
               {# organ donor card #}
               {% if person.organspenderShow == true and person.organspender is not empty %}
-                <div class="mx-1 my-3 p-3 border border-dark">
+                <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'Organspendeausweis'|trans }}</strong><br />
                   {{ person.organspender ? 'ja'|trans : 'nein'|trans }}
                 </div>
@@ -287,7 +287,7 @@
 
               {# advance directive #}
               {% if person.patientenverfShow == true and person.patientenverf is not empty %}
-                <div class="mx-1 my-3 p-3 border border-dark">
+                <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'Patienten­verfügung'|trans }}</strong><br />
                   {{ person.patientenverf ? 'ja'|trans : 'nein'|trans }}
                 </div>
@@ -295,7 +295,7 @@
 
               {# additional remarks #}
               {% if person.weitereangabenShow == true and person.weitereangaben is not empty %}
-                <div class="mx-1 my-3 p-3 border border-dark">
+                <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'Weitere Angaben'|trans }}</strong><br />
                   {{ person.weitereangaben|raw|nl2br }}
                 </div>
