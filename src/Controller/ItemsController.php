@@ -46,7 +46,11 @@ class ItemsController extends AbstractController
      */
     public function pass(Request $request, ItemsService $itemsService, $idno): Response
     {
-        $idno = $request->get('p_idno') ?? $idno;
+        $idno = $request->get('p_idno')
+            ?? $request
+                ->getSession()
+                ->get('id-no')
+            ?? $idno;
 
         /**
          * @var Nutzer
@@ -64,7 +68,6 @@ class ItemsController extends AbstractController
 
         // redirect to index if item check failed
         if($item === null) {
-            $this->session->set('idno', $idno);
             return $this->redirectToRoute('app_standard_index');
 
         // item not registered | ready for registration (activation)
@@ -145,6 +148,11 @@ class ItemsController extends AbstractController
             // persist to database
             $this->emDefault->persist($logEntry);
             $this->emDefault->flush();
+
+            // remove id no from session
+            $request
+                ->getSession()
+                ->set('id-no', null);
 
             // return
             return $this->renderAndRespond($variables);

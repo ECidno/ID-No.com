@@ -25,7 +25,6 @@ class StandardController extends AbstractController
      * @param Request $request
      * @param string $idno
      *
-     *
      * @return Response
      *
      * @Route("/{idno<[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}>?}", name="index", priority=100, methods={"GET", "POST"})
@@ -71,14 +70,21 @@ class StandardController extends AbstractController
         }
 
         // redirect to pass
-        // @TODO store id in session and remove from path (parameter)?
         if(!empty($idno)) {
-            return $this->redirectToRoute(
-                'app_items_pass',
-                [
-                    'idno' => $idno,
-                ]
-            );
+
+            // store id in session and remove from path (parameter)?
+            $request
+                ->getSession()
+                ->set('id-no', $idno);
+
+            // return
+            return $this->redirectToRoute('app_items_pass');
+            // return $this->redirectToRoute(
+            //     'app_items_pass',
+            //     [
+            //         'idno' => $idno,
+            //     ]
+            // );
         }
 
         // return
