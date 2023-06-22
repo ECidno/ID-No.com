@@ -1079,7 +1079,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="WMKwySr" name="Wohnort">
       <segment>
         <source>Wohnort</source>
-        <target>Location</target>
+        <target>Residence</target>
       </segment>
     </unit>
     <unit id="_mkG127" name="Telefon">
