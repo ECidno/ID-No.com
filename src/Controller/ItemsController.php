@@ -107,15 +107,25 @@ class ItemsController extends AbstractController
             }
 
             // finally, redirect to user's locale if not match with current
-            // if($request->getLocale() != $person->getSprache()) {
-            //     return $this->redirectToRoute(
-            //         'app_items_pass',
-            //         [
-            //             '_locale' => $person->getSprache(),
-            //             'idno' => $idNo,
-            //         ]
-            //     );
-            // }
+            if(
+                !empty($person->getSprache()) &&
+                in_array(
+                    $request->getLocale(),
+                    [
+                        'de',
+                        'en',
+                    ]
+                ) &&
+                $request->getLocale() != $person->getSprache()
+            ) {
+                return $this->redirectToRoute(
+                    'app_items_pass',
+                    [
+                        '_locale' => $person->getSprache(),
+                        'idno' => $idNo,
+                    ]
+                );
+            }
 
             // variables
             $variables = [
