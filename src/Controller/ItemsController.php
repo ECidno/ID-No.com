@@ -88,7 +88,9 @@ class ItemsController extends AbstractController
                 ->set('id-no', $idno);
 
             // return
-            return $this->redirectToRoute('app_items_pass');
+            return $this->redirectToRoute('app_items_pass',
+        [],
+    Response::HTTP_TEMPORARY_REDIRECT);
 
         // proceed to pass
         } else {
