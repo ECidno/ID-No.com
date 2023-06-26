@@ -29,10 +29,10 @@ framework:
                 base_path: '/build/media'
 #               base_urls: 'https://assets.id-no.com/'
 
-when@staging:
-    framework:
-        session:
-            cookie_samesite: lax
+# when@staging:
+#     framework:
+#         session:
+#             cookie_samesite: lax
 
 
 when@test:
