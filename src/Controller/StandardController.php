@@ -72,13 +72,13 @@ class StandardController extends AbstractController
         // redirect to pass
         if(!empty($idno)) {
 
-            // store id in session and remove from path
-            $request
-                ->getSession()
-                ->set('id-no', $idno);
-
             // return
-            return $this->redirectToRoute('app_items_pass');
+            return $this->redirectToRoute(
+                'app_items_pass',
+                [
+                    'idno' => $idno
+                ]
+            );
         }
 
         // return

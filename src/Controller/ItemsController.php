@@ -83,9 +83,7 @@ class ItemsController extends AbstractController
         } elseif(!empty($idno)) {
 
             // store id in session and remove from path
-            $request
-                ->getSession()
-                ->set('id-no', $idno);
+            $this->session->set('id-no', $idno);
 
             // return
             return $this->redirectToRoute('app_items_pass');
@@ -171,9 +169,7 @@ class ItemsController extends AbstractController
             $this->emDefault->flush();
 
             // remove id-no from session
-            $request
-                ->getSession()
-                ->set('id-no', null);
+            $this->session->set('id-no', null);
 
             // return
             return $this->renderAndRespond($variables);
