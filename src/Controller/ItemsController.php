@@ -83,14 +83,13 @@ class ItemsController extends AbstractController
         } elseif(!empty($idno)) {
 
             // store id in session and remove from path
-            $request
-                ->getSession()
-                ->set('id-no', $idno);
+            // $request
+            //     ->getSession()
+            //     ->set('id-no', $idno);
+            $this->session->set('id-no', $idno);
 
             // return
-            return $this->redirectToRoute('app_items_pass',
-        [],
-    Response::HTTP_TEMPORARY_REDIRECT);
+            return $this->redirectToRoute('app_items_pass');
 
         // proceed to pass
         } else {
