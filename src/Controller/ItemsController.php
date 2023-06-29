@@ -47,6 +47,8 @@ class ItemsController extends AbstractController
     public function pass(Request $request, ItemsService $itemsService, $idno): Response
     {
         /* CNBID22-63, revert CNBID22-51
+        $session = $request->getSession();
+
         $idNo = $request->get('p_idno')
             ?? $request
                 ->getSession()
@@ -87,7 +89,7 @@ class ItemsController extends AbstractController
         } elseif(!empty($idno)) {
 
             // store id in session and remove from path
-            $this->session->set('id-no', $idno);
+            $session->set('id-no', $idno);
 
             // return
             return $this->redirectToRoute('app_items_pass');
@@ -175,7 +177,7 @@ class ItemsController extends AbstractController
 
             /* CNBID22-63, revert CNBID22-51
             // remove id-no from session
-            $this->session->set('id-no', null);
+            $session->set('id-no', null);
             */
 
             // return
