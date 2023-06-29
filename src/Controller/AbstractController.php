@@ -40,11 +40,6 @@ class AbstractController extends SymfonyAbstractController
     protected $settings = [];
 
     /**
-     * @var object session
-     */
-    protected $session = null;
-
-    /**
      * @var string language
      */
     protected $language = 'de';
@@ -157,9 +152,8 @@ class AbstractController extends SymfonyAbstractController
         $currentRequest = $this->requestStack->getCurrentRequest();
 
         /*
-         * session, language, locale
+         * language, locale
          */
-        $this->session = $currentRequest->getSession();
         $this->language = $currentRequest->getLocale();
 
         /*
