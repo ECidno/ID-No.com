@@ -20,8 +20,8 @@ framework:
         log: true
 
     # language
-    set_locale_from_accept_language: true
-    set_content_language_from_locale: true
+    set_locale_from_accept_language: false
+    set_content_language_from_locale: false
     enabled_locales: ['de', 'en']
 
     # assets
