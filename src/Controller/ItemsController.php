@@ -121,15 +121,16 @@ class ItemsController extends AbstractController
                         'en',
                     ]
                 ) &&
-                $request->getLocale() != $person->getSprache()
+                $request->getLocale() !== $person->getSprache()
             ) {
-                return $this->redirectToRoute(
-                    'app_items_pass',
-                    [
-                        '_locale' => $person->getSprache(),
-                        'idno' => $idNo,
-                    ]
-                );
+                // return $this->redirectToRoute(
+                //     'app_items_pass',
+                //     [
+                //         '_locale' => $person->getSprache(),
+                //         'idno' => $idNo,
+                //     ]
+                // );
+                $request->setLocale($person->getSprache());
             }
 
             // variables
