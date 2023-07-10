@@ -4063,5 +4063,25 @@ Zur **[Anmeldung](%login_link%)**
         <target>Falsches ID-Nummer-Format</target>
       </segment>
     </unit>
+    <unit id="ry.VT2Q" name="tv.introduction.txt">
+      <segment>
+        <source>tv.introduction.txt</source>
+        <target>Die innovative Notfalldaten-Lösung von ID-No.com.  
+Vorgestellt von Rettungssanitäter und Autor Luis Teichmann.  
+Schauen Sie gerne rein.</target>
+      </segment>
+    </unit>
+    <unit id="KAtyCx_" name="tv.paramedics.txt">
+      <segment>
+        <source>tv.paramedics.txt</source>
+        <target>Rettungskräfte kennen ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="NJSVpRT" name="tv.insta.txt">
+      <segment>
+        <source>tv.insta.txt</source>
+        <target>Folgen Sie uns gerne auf Instagram: idno_com</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

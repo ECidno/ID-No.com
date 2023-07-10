@@ -184,6 +184,9 @@ parameters:
       #     desktop: slider/ID_No_CovidTeaser_2620x650_V1.png
       #     mobile: slider/ID_No_CovidTeaser_1208x750_V1.png
 
+    # topnews | tv
+    topnews:
+      tstampTo: 1697364000 # 2022-10-15 12:00:00
 
     # cards
     cards:
