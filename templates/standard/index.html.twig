@@ -59,7 +59,7 @@
             class="d-none d-lg-block w-100"
             alt="{{ caption|trans }}" />
           <div class="d-none d-lg-block text-white" {{ textStyleProperty|raw }}>
-            <h2 class="h1 text-light" >{{ text|trans|raw|markdown_to_html }}</h2>
+            <h2 class="h1 text-light">{{ text|trans|raw|nl2br }}</h2>
           </div>
           <img
             src="{{ asset(item.image.mobile, 'media') }}"
@@ -118,7 +118,7 @@
           <div class="d-block d-lg-none my-3">&nbsp;</div>
         </div>
         <div class="col-12 col-lg-8">
-          <div class="">
+          <div>
             <a
               href="https://www.ardmediathek.de/embed/Y3JpZDovL2Rhc2Vyc3RlLmRlL2xpdmUgbmFjaCBuZXVuLzY5Zjg0NzczLWViYzMtNDA1YS05MDczLTUyYTgwZDJjZjM2Ng?startTime=1020.00&amp;endTime=1336.00"
               target="_blank">
@@ -158,7 +158,7 @@
     </div>
     <div class="row">
       <div class="col-12 col-lg-10 offset-lg-1 text-center">
-        <p>{{ 'index.introduction1'|trans|raw|markdown_to_html }}</p>
+        {{ 'index.introduction1'|trans|raw|markdown_to_html }}
       </div>
     </div>
   </div>
@@ -186,7 +186,7 @@
             </div>
             <div class="card-body">
               <h5 class="card-title text-center text-success">{{ labelHeader|trans|raw }}</h5>
-              <p class="card-text">{{ labelText|trans|raw|markdown_to_html }}</p>
+              <div class="card-text">{{ labelText|trans|raw|markdown_to_html }}</div>
             </div>
           </div>
         </div>
@@ -209,7 +209,6 @@
                   class="img-fluid border border-dark"
                   alt="{{ labelHeader|trans }}" />
               </div>
-
               {% if key == 'pass' %}
                 <a
                   class="btn btn-sm btn-outline-light bg-success text-light me-2"
@@ -315,7 +314,7 @@
               <div class="card h-100">
                 <div class="card-body">
                   <h5 class="card-title">{{ labelHeader|trans }}</h5>
-                  <p class="card-text">{{ labelText|trans|raw|markdown_to_html }}</p>
+                  <div class="card-text">{{ labelText|trans|raw|markdown_to_html }}</div>
                 </div>
                 <img
                   src="{{ asset('images/so_funktionierts_' ~ i ~ '.jpg', 'media') }}"
@@ -394,8 +393,8 @@
                 alt="{{ person|trans|markdown_to_html }}" />
             </div>
             <div class="col-md-6 offset-md-2 col-lg-6 offset-lg-4 text-end">
-              <p>{{ text|trans|raw|markdown_to_html }}</p>
-              <h5 class="text-success">{{ person|trans|markdown_to_html }}</h5>
+              {{ text|trans|raw|markdown_to_html }}
+              <h5 class="text-success">{{ person|trans|nl2br }}</h5>
               <h6 class="text-success">{{ location|trans }}</h6>
             </div>
           </div>
