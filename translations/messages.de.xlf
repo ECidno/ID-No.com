@@ -4083,5 +4083,11 @@ Schauen Sie gerne rein.</target>
         <target>Folgen Sie uns gerne auf Instagram: idno_com</target>
       </segment>
     </unit>
+    <unit id="iJ._jgF" name="tv.header.lbl">
+      <segment>
+        <source>tv.header.lbl</source>
+        <target>ID-No.com im TV</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
