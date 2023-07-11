@@ -244,8 +244,13 @@
           width="85"
           alt="{{ 'index.boxrow1.about.header'|trans }}" />
       </div>
-      <div class="col-lg-2 text-lg-end">
+      <div class="col-6 col-lg-2 text-lg-end">
         <h5>{{ 'index.boxrow1.about.header'|trans|raw }}</h5>
+        <img
+          src="{{ asset('images/id_no_logo_black_no_padding.png', 'media') }}"
+          alt="ID-No Logo"
+          title="ID-No.com GmbH - medical aid"
+          class="img-fluid" />
       </div>
       <div class="col-lg-9">
         {{ 'index.about.text'|trans|raw|markdown_to_html }}

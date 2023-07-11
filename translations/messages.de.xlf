@@ -25,7 +25,7 @@ Das spart Zeit und kann im Ernstfall Leben retten.</target>
     <unit id="AB0XdUp" name="index.boxrow1.about.header">
       <segment>
         <source>index.boxrow1.about.header</source>
-        <target><![CDATA[Über <nobr>ID-No.com</nobr>]]></target>
+        <target>Über</target>
       </segment>
     </unit>
     <unit id="mX38078" name="index.boxrow1.about.text">
@@ -269,7 +269,7 @@ für Senioren</target>
     <unit id="1iQrU_D" name="index.about.text">
       <segment>
         <source>index.about.text</source>
-        <target><![CDATA[**ID-No.com - Sicherheit weltweit rund um die Uhr**
+        <target><![CDATA[**ID-No.com - medical aid - Sicherheit weltweit rund um die Uhr**
 Mehr als 29 Millionen Menschen benötigen allein in Deutschland ärztliche Hilfe nach einem Notfall. Unfallgefahren gibt es überall: Im Beruf, im Haushalt, im Straßenverkehr, bei Sport und Freizeitaktivitäten. Zwei Drittel aller Unfällen sind Freizeitunfälle.
 
 Notfallrelevante Informationen wie Krankheiten, Medikationen, Allergien liegen den Ersthelfern sehr häufig nicht vor.
@@ -280,11 +280,9 @@ Selbst Menschen mit gutem Gedächtnis haben in einem Notfall nicht immer alle le
 **Zentrale Speicherung von persönlichen Notfall-Informationen**
 Mit ID-No.com kann rund um die Uhr und weltweit auf hinterlegte Notfallinformationen zugegriffen werden. Medizinische Einsatzkräfte erhalten einen Überblick zu Krankheiten, Medikationen, Allergien, Diabetes, Blutgruppe und bekommen Kontaktpersonen angezeigt, die im Falle eines medizinischen Notfalls oder plötzlichen Unfalls angerufen werden sollen.
 
-<img class="ms-3 mt-3 float-end align-bottom" src="/build/media/images/ID_Award_IM_2018.png.jpg" width="150" alt="INNOVATIONSPREIS-IT: BEST OF 2018" />
+<img class="ms-3 mt-3 mb-3 float-end align-bottom" src="/build/media/images/ID_Award_IM_2018.png.jpg" width="150" alt="INNOVATIONSPREIS-IT: BEST OF 2018" />
 
-**ID-No**.com ist Mitglied der **CODE-No**.com Gruppe und dient dem Schutz von Personen. **CODE-No**.com ist ein seit 2007 etabliertes System mit 10 Mio. Nummern im Markt.
-
-**ID-No.com** ist als Gebrauchsmuster geschützt sowie zum europäischen Patent angemeldet.
+**ID-No.com** ist als europäisches Patent geschützt. Zusätzlich sind die SOS-ID-Produkte als Gebrauchsmuster geschützt.
 
 **ID-No.com** wurde mit dem INNOVATIONSPREIS-IT "BEST OF 2018" der Initiative Mittelstand in der Kategorie "E-Health" ausgezeichnet.
 Der INNOVATIONSPREIS-IT steht unter der Schirmherrschaft des Bundesministeriums für Wirtschaft und Technologie.]]></target>
