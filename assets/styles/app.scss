@@ -11,14 +11,17 @@
  * general
  */
 
-/* background greeen */
-.bg-green {
-  background-color: rgba($green,.6);
-}
-
 h1, h2, h3, h4, h5 {
   color: $green;
 }
+
+/*
+body {
+  opacity: 0;
+  transition:opacity 1s;
+  -webkit-transition: opacity 1s;
+}
+*/
 
 /* a */
 a,
@@ -151,7 +154,6 @@ img.socialmedia_icon {
  * ids
  */
 
-
 #lblIdNo {
   text-align: center;
   color: $primary;
@@ -192,12 +194,18 @@ img.socialmedia_icon {
   border-radius: 8px;
 }
 
-body.modal-open .background-container{
+body.modal-open .background-container {
   -webkit-filter: blur(4px);
   -moz-filter: blur(4px);
   -o-filter: blur(4px);
   -ms-filter: blur(4px);
   filter: blur(4px);
+}
+
+
+/* background greeen */
+.bg-green {
+  background-color: rgba($green,.6);
 }
 
 .userIconCenter{
@@ -236,8 +244,6 @@ body.modal-open .background-container{
 .toast{
   --bs-toast-bg: rgba(255, 255, 255,1);
 }
-
-
 
 .header-form{
   .form-floating{
