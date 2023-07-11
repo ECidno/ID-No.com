@@ -15,11 +15,11 @@
         rel="preload"
         href="{{ asset(item.image.desktop, 'media') }}"
         as="image" />
-      <link
-        rel="preload"
-        href="{{ asset('images/TV-preview.png', 'media') }}"
-        as="image" />
     {% endfor %}
+    <link
+      rel="preload"
+      href="{{ asset('images/TV-preview.png', 'media') }}"
+      as="image" />
   {% endapply %}
 {% endblock %}
 
@@ -108,7 +108,7 @@
             class="text-black"
             width="240"
             alt="Das Erste | Logo" />
-          <p>{{ 'tv.introduction.txt'|trans|raw|markdown_to_html }}</p>
+          {{ 'tv.introduction.txt'|trans|raw|markdown_to_html }}
           <a
             href="https://www.ID-No.com/iWeite"
             class="text-black"
@@ -233,7 +233,7 @@
   </div>
 
   {# about #}
-  <a class="anchor" name="{{ settings.menu.header.idno.about.anchor }}"></a>
+  <a class="anchor" id="{{ settings.menu.header.idno.about.anchor }}"></a>
   <div class="container">
     <div class="row mt-3 gy-3">
       <div class="col-lg-1">
@@ -260,7 +260,7 @@
   {# features #}
   <div class="bg-green py-3">
     <div class="container">
-      <a class="anchor" name="features"></a>
+      <a class="anchor" id="features"></a>
       <div class="row mt-3 my-3 gy-3">
         <div class="col-lg-1">
           <img
@@ -292,7 +292,7 @@
   </div>
 
   {# works #}
-  <a class="anchor" name="{{ settings.menu.header.idno.works.anchor }}"></a>
+  <a class="anchor" id="{{ settings.menu.header.idno.works.anchor }}"></a>
   <div class="container">
     <div class="row mt-3 gy-3">
       <div class="col-lg-1">
@@ -329,7 +329,7 @@
   </div>
 
   {# references #}
-  <a class="anchor" name="{{ settings.menu.header.idno.references.anchor }}"></a>
+  <a class="anchor" id="{{ settings.menu.header.idno.references.anchor }}"></a>
   <div class="bg-green mt-3 pt-3 pb-5">
     <div class="container">
       <div class="row mt-3 gy-3">
@@ -363,7 +363,7 @@
   </div>
 
   {# testimonials #}
-  <a class="anchor" name="{{ settings.menu.header.idno.testimonials.anchor }}"></a>
+  <a class="anchor" id="{{ settings.menu.header.idno.testimonials.anchor }}"></a>
   <div class="container">
     <div class="row mt-3 gy-3">
       <div class="col-lg-1">
