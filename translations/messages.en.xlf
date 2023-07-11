@@ -3699,5 +3699,31 @@ Your ID-No.com Team</target>
         <target>Set your new password</target>
       </segment>
     </unit>
+    <unit id="ry.VT2Q" name="tv.introduction.txt">
+      <segment>
+        <source>tv.introduction.txt</source>
+        <target>The innovative emergency data solution from ID-No.com.  
+Presented by paramedic and author Luis Teichmann.  
+Feel free to take a look.</target>
+      </segment>
+    </unit>
+    <unit id="KAtyCx_" name="tv.paramedics.txt">
+      <segment>
+        <source>tv.paramedics.txt</source>
+        <target>Rescue workers know ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="NJSVpRT" name="tv.insta.txt">
+      <segment>
+        <source>tv.insta.txt</source>
+        <target>follow us on Instagram: idno_com</target>
+      </segment>
+    </unit>
+    <unit id="iJ._jgF" name="tv.header.lbl">
+      <segment>
+        <source>tv.header.lbl</source>
+        <target>ID-No.com on TV</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
