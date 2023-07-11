@@ -301,7 +301,7 @@ for seniors</target>
     <unit id="AB0XdUp" name="index.boxrow1.about.header">
       <segment>
         <source>index.boxrow1.about.header</source>
-        <target><![CDATA[About <nobr>ID-No.com</nobr>]]></target>
+        <target>About</target>
       </segment>
     </unit>
     <unit id="mX38078" name="index.boxrow1.about.text">
@@ -381,12 +381,14 @@ During an emergency first aiders often lack of relevant information such as medi
 In extreme situations even people with excellent memory can‘t remember all vital details of themselves or third parties. They might also be in shock.
 
 
-**Central storage of individual emergency –information.**  
+**Central storage of individual emergency-information.**  
 ID-No.com provides worldwide and around the clock access to emergency information. Medical first responders receive an overview of illnesses, medications, allergies, diabetes, blood types and contact persons who should be called in case of a medical emergency or sudden accident.
 
-<img class="ms-3 mt-3 float-end align-bottom" src="/build/media/images/ID_Award_IM_2018.png.jpg" width="150" alt="INNOVATIONSPREIS-IT: BEST OF 2018" />**ID-No**.com is a trademark of **CODE-No**.com GmbH and serves to protect people. **CODE-No**.com is a system established since 2007 with 9 million numbers in the market.
+<img class="ms-3 mt-3 mb-3 float-end align-bottom" src="/build/media/images/ID_Award_IM_2018.png.jpg" width="150" alt="INNOVATIONSPREIS-IT: BEST OF 2018" />
 
-**ID-No**.com are protected as utility models and registered for european patent.
+**ID-No**.com is protected as a European patent.
+In addition, the SOS-ID products are protected
+as utility models.
 
 **ID-No**.com was awarded the innovation prize "Best of 2018" of Initiative Mittelstand in the category "E-Health". The IT Innovation Award is under the patronage of the Federal Presidency for Economics and Technology.]]></target>
       </segment>
