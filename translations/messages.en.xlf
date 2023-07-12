@@ -301,7 +301,7 @@ for seniors</target>
     <unit id="AB0XdUp" name="index.boxrow1.about.header">
       <segment>
         <source>index.boxrow1.about.header</source>
-        <target><![CDATA[About <nobr>ID-No.com</nobr>]]></target>
+        <target>About</target>
       </segment>
     </unit>
     <unit id="mX38078" name="index.boxrow1.about.text">
@@ -381,12 +381,14 @@ During an emergency first aiders often lack of relevant information such as medi
 In extreme situations even people with excellent memory can‘t remember all vital details of themselves or third parties. They might also be in shock.
 
 
-**Central storage of individual emergency –information.**  
+**Central storage of individual emergency-information.**  
 ID-No.com provides worldwide and around the clock access to emergency information. Medical first responders receive an overview of illnesses, medications, allergies, diabetes, blood types and contact persons who should be called in case of a medical emergency or sudden accident.
 
-<img class="ms-3 mt-3 float-end align-bottom" src="/build/media/images/ID_Award_IM_2018.png.jpg" width="150" alt="INNOVATIONSPREIS-IT: BEST OF 2018" />**ID-No**.com is a trademark of **CODE-No**.com GmbH and serves to protect people. **CODE-No**.com is a system established since 2007 with 9 million numbers in the market.
+<img class="ms-3 mt-3 mb-3 float-end align-bottom" src="/build/media/images/ID_Award_IM_2018.png.jpg" width="150" alt="INNOVATIONSPREIS-IT: BEST OF 2018" />
 
-**ID-No**.com are protected as utility models and registered for european patent.
+**ID-No**.com is protected as a European patent.
+In addition, the SOS-ID products are protected
+as utility models.
 
 **ID-No**.com was awarded the innovation prize "Best of 2018" of Initiative Mittelstand in the category "E-Health". The IT Innovation Award is under the patronage of the Federal Presidency for Economics and Technology.]]></target>
       </segment>
@@ -3697,6 +3699,32 @@ Your ID-No.com Team</target>
       <segment>
         <source>newPassword.text</source>
         <target>Set your new password</target>
+      </segment>
+    </unit>
+    <unit id="ry.VT2Q" name="tv.introduction.txt">
+      <segment>
+        <source>tv.introduction.txt</source>
+        <target>The innovative emergency data solution from ID-No.com.  
+Presented by paramedic and author Luis Teichmann.  
+Feel free to take a look.</target>
+      </segment>
+    </unit>
+    <unit id="KAtyCx_" name="tv.paramedics.txt">
+      <segment>
+        <source>tv.paramedics.txt</source>
+        <target>Rescue workers know ID-No.com</target>
+      </segment>
+    </unit>
+    <unit id="NJSVpRT" name="tv.insta.txt">
+      <segment>
+        <source>tv.insta.txt</source>
+        <target>follow us on Instagram: idno_com</target>
+      </segment>
+    </unit>
+    <unit id="iJ._jgF" name="tv.header.lbl">
+      <segment>
+        <source>tv.header.lbl</source>
+        <target>ID-No.com on TV</target>
       </segment>
     </unit>
   </file>

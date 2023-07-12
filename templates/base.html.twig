@@ -4,7 +4,7 @@
     {% if app.environment|lower == 'prod' %}
     {# ccm19 | needs to be the very first script on page! #}
       <script src="https://ccm.mp-group.cloud/public/app.js?apiKey=d7fdcc2471aeb1033cf0e51d4f48140ba1679d72607eb9b6&amp;domain=7bf67dd" referrerpolicy="origin"></script>
-    {% endif %}
+    {%- endif -%}
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,15 +13,10 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
     <link rel="shortcut icon" href="{{ asset('icon/favicon.png', 'media') }}" />
     <link rel="icon" href="{{ asset('icon/favicon.png', 'media') }}" />
+
+    {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
+    {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
     {% block preloads %}{% endblock %}
-
-    {% block stylesheets %}
-      {{ encore_entry_link_tags('app') }}
-    {% endblock %}
-
-    {% block javascripts %}
-      {{ encore_entry_script_tags('app') }}
-    {% endblock %}
 
     {% if app.environment|lower == 'prod' %}
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132712802-1"></script>
@@ -34,6 +29,7 @@
     {% endif %}
   </head>
   <body>
+    <script>0</script>
     {% apply spaceless %}
       {% block body %}{% endblock %}
     {% endapply %}
@@ -70,12 +66,8 @@
       class="modal fade"
       tabindex="-1">
     </div>
-  </body>
 
-  {% block stylesheets_footer %}
-  {{ encore_entry_link_tags('footer') }}
-  {% endblock %}
-  {% block javascripts_footer %}
-    {{ encore_entry_script_tags('footer') }}
-  {% endblock %}
+    {% block stylesheets_footer %}{{ encore_entry_link_tags('footer') }}{% endblock %}
+    {% block javascripts_footer %}{{ encore_entry_script_tags('footer') }}{% endblock %}
+  </body>
 </html>

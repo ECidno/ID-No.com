@@ -16,6 +16,10 @@
         href="{{ asset(item.image.desktop, 'media') }}"
         as="image" />
     {% endfor %}
+    <link
+      rel="preload"
+      href="{{ asset('images/TV-preview.png', 'media') }}"
+      as="image" />
   {% endapply %}
 {% endblock %}
 
@@ -55,7 +59,7 @@
             class="d-none d-lg-block w-100"
             alt="{{ caption|trans }}" />
           <div class="d-none d-lg-block text-white" {{ textStyleProperty|raw }}>
-            <h2 class="h1 text-light" >{{ text|trans|raw|markdown_to_html }}</h2>
+            <h2 class="h1 text-light">{{ text|trans|raw|nl2br }}</h2>
           </div>
           <img
             src="{{ asset(item.image.mobile, 'media') }}"
@@ -88,6 +92,62 @@
     </button>
   </div>
 
+  {# TV #}
+  {% if  "now"|date('U') < settings.topnews.tstampTo %}
+    <div class="container">
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <h1 class="text-center">{{ 'tv.header.lbl'|trans }}</h1>
+        </div>
+      </div>
+
+      <div class="row mt-3 pt-5 pb-3 px-4 bg-green">
+        <div class="col-12 col-lg-4">
+          <img
+            src="{{ asset('icon/Das_Erste_Logo.svg', 'media') }}"
+            class="text-black"
+            width="240"
+            alt="Das Erste | Logo" />
+          {{ 'tv.introduction.txt'|trans|raw|markdown_to_html }}
+          <a
+            href="https://www.ID-No.com/iWeite"
+            class="text-black"
+            target="_blank">
+            <p><i class="bi bi-box-arrow-up-right me-2"></i><u>{{ 'tv.paramedics.txt'|trans }}</u></p>
+          </a>
+          <div class="d-block d-lg-none my-3">&nbsp;</div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div>
+            <a
+              href="https://www.ardmediathek.de/embed/Y3JpZDovL2Rhc2Vyc3RlLmRlL2xpdmUgbmFjaCBuZXVuLzY5Zjg0NzczLWViYzMtNDA1YS05MDczLTUyYTgwZDJjZjM2Ng?startTime=1020.00&amp;endTime=1336.00"
+              target="_blank">
+              <img
+                src="{{ asset('images/TV-preview.png', 'media') }}"
+                class="img-fluid"
+                alt="Das Erste | livenachn9un" />
+            </a>
+          </div>
+          <p class="mt-3">
+            <a
+              href="https://www.instagram.com/idno_com/?hl=de"
+              class="text-black"
+              target="_blank">
+              <img
+                src="{{ asset('icon/Insta_Icon.svg', 'media') }}"
+                height="35"
+                class="me-2"
+                alt="Instagram | Logo" />
+              <span class="align-baseline">{{ 'tv.insta.txt'|trans }}</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-5"><hr /></div>
+  {% endif %}
+
   {# Intro #}
   <div class="container">
     <div class="row mt-3">
@@ -98,7 +158,7 @@
     </div>
     <div class="row">
       <div class="col-12 col-lg-10 offset-lg-1 text-center">
-        <p class="">{{ 'index.introduction1'|trans|raw|markdown_to_html }}</p>
+        {{ 'index.introduction1'|trans|raw|markdown_to_html }}
       </div>
     </div>
   </div>
@@ -126,7 +186,7 @@
             </div>
             <div class="card-body">
               <h5 class="card-title text-center text-success">{{ labelHeader|trans|raw }}</h5>
-              <p class="card-text">{{ labelText|trans|raw|markdown_to_html }}</p>
+              <div class="card-text">{{ labelText|trans|raw|markdown_to_html }}</div>
             </div>
           </div>
         </div>
@@ -149,7 +209,6 @@
                   class="img-fluid border border-dark"
                   alt="{{ labelHeader|trans }}" />
               </div>
-
               {% if key == 'pass' %}
                 <a
                   class="btn btn-sm btn-outline-light bg-success text-light me-2"
@@ -174,7 +233,7 @@
   </div>
 
   {# about #}
-  <a class="anchor" name="{{ settings.menu.header.idno.about.anchor }}"></a>
+  <a class="anchor" id="{{ settings.menu.header.idno.about.anchor }}"></a>
   <div class="container">
     <div class="row mt-3 gy-3">
       <div class="col-lg-1">
@@ -184,8 +243,13 @@
           width="85"
           alt="{{ 'index.boxrow1.about.header'|trans }}" />
       </div>
-      <div class="col-lg-2 text-lg-end">
+      <div class="col-6 col-lg-2 text-lg-end">
         <h5>{{ 'index.boxrow1.about.header'|trans|raw }}</h5>
+        <img
+          src="{{ asset('images/id_no_logo_black_no_padding.png', 'media') }}"
+          alt="ID-No Logo"
+          title="ID-No.com GmbH - medical aid"
+          class="img-fluid" />
       </div>
       <div class="col-lg-9">
         {{ 'index.about.text'|trans|raw|markdown_to_html }}
@@ -196,7 +260,7 @@
   {# features #}
   <div class="bg-green py-3">
     <div class="container">
-      <a class="anchor" name="features"></a>
+      <a class="anchor" id="features"></a>
       <div class="row mt-3 my-3 gy-3">
         <div class="col-lg-1">
           <img
@@ -228,7 +292,7 @@
   </div>
 
   {# works #}
-  <a class="anchor" name="{{ settings.menu.header.idno.works.anchor }}"></a>
+  <a class="anchor" id="{{ settings.menu.header.idno.works.anchor }}"></a>
   <div class="container">
     <div class="row mt-3 gy-3">
       <div class="col-lg-1">
@@ -250,7 +314,7 @@
               <div class="card h-100">
                 <div class="card-body">
                   <h5 class="card-title">{{ labelHeader|trans }}</h5>
-                  <p class="card-text">{{ labelText|trans|raw|markdown_to_html }}</p>
+                  <div class="card-text">{{ labelText|trans|raw|markdown_to_html }}</div>
                 </div>
                 <img
                   src="{{ asset('images/so_funktionierts_' ~ i ~ '.jpg', 'media') }}"
@@ -265,7 +329,7 @@
   </div>
 
   {# references #}
-  <a class="anchor" name="{{ settings.menu.header.idno.references.anchor }}"></a>
+  <a class="anchor" id="{{ settings.menu.header.idno.references.anchor }}"></a>
   <div class="bg-green mt-3 pt-3 pb-5">
     <div class="container">
       <div class="row mt-3 gy-3">
@@ -299,7 +363,7 @@
   </div>
 
   {# testimonials #}
-  <a class="anchor" name="{{ settings.menu.header.idno.testimonials.anchor }}"></a>
+  <a class="anchor" id="{{ settings.menu.header.idno.testimonials.anchor }}"></a>
   <div class="container">
     <div class="row mt-3 gy-3">
       <div class="col-lg-1">
@@ -329,8 +393,8 @@
                 alt="{{ person|trans|markdown_to_html }}" />
             </div>
             <div class="col-md-6 offset-md-2 col-lg-6 offset-lg-4 text-end">
-              <p>{{ text|trans|raw|markdown_to_html }}</p>
-              <h5 class="text-success">{{ person|trans|markdown_to_html }}</h5>
+              {{ text|trans|raw|markdown_to_html }}
+              <h5 class="text-success">{{ person|trans|nl2br }}</h5>
               <h6 class="text-success">{{ location|trans }}</h6>
             </div>
           </div>
