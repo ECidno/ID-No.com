@@ -3,21 +3,7 @@
 	<div class="mt-3 py-3 bg-green text-light">
 		<div class="container">
 			<div class="row my-3">
-				<div class="col-5 text-center">
-					{% for key, item in settings.social %}
-						<a
-							href="{{ item.href }}"
-							target="_blank">
-							<img
-								class="socialmedia_icon"
-								src="{{ asset(item.icon, 'media') }}"
-								alt="{{ item.title }}" />
-						</a>
-						<br class="d-md-none" />
-					{% endfor %}
-				</div>
-
-				<div class="col-7 col-lg-6">
+				<div class="col-7 col-lg-6 offset-5">
 					<p class="text-end">
 						<img
 							src="{{ asset('images/id_no_logo_black_no_padding.png', 'media') }}"

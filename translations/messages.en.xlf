@@ -547,7 +547,7 @@ Red Cross squad leader civil protection</target>
     <unit id="uTE8BNL" name="index.references_partners.header">
       <segment>
         <source>index.references_partners.header</source>
-        <target>Well known from the press</target>
+        <target>Well known from both classic media...</target>
       </segment>
     </unit>
     <unit id="MM4P3i3" name="ID-Nummer checken/aktivieren">
@@ -3725,6 +3725,12 @@ Feel free to take a look.</target>
       <segment>
         <source>tv.header.lbl</source>
         <target>ID-No.com on TV</target>
+      </segment>
+    </unit>
+    <unit id="bvKLHp." name="index.social_media.header">
+      <segment>
+        <source>index.social_media.header</source>
+        <target>...and social media</target>
       </segment>
     </unit>
   </file>

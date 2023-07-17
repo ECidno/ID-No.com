@@ -511,7 +511,7 @@ Katastrophenschutz</target>
     <unit id="uTE8BNL" name="index.references_partners.header">
       <segment>
         <source>index.references_partners.header</source>
-        <target>Bekannt aus den Medien</target>
+        <target>Bekannt sowohl aus den klassischen Medien...</target>
       </segment>
     </unit>
     <unit id="brD5STe" name="Unternehmen">
@@ -4085,6 +4085,12 @@ Schauen Sie gerne rein.</target>
       <segment>
         <source>tv.header.lbl</source>
         <target>ID-No.com im TV</target>
+      </segment>
+    </unit>
+    <unit id="bvKLHp." name="index.social_media.header">
+      <segment>
+        <source>index.social_media.header</source>
+        <target>...als auch aus Social Media</target>
       </segment>
     </unit>
   </file>
