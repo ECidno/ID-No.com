@@ -280,6 +280,20 @@ class Person
 
     /**
      * @var string
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     * @Gedmo\Versioned
+     */
+    private $operations;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private $operationsShow = 1;
+
+    /**
+     * @var string
      * @ORM\Column(type="string", length=100)
      * @Gedmo\Versioned
      */
@@ -1302,6 +1316,43 @@ class Person
     public function getGroesseShow(): bool
     {
         return $this->groesseShow;
+    }
+
+
+    /**
+     * @param string $operations
+     * @return Person
+     */
+    public function setOperations(?string $operations): self
+    {
+        $this->operations = $operations ?? null;
+        return $this;
+    }
+
+    /**
+     * @return ?string
+     */
+    public function getOperations(): ?string
+    {
+        return html_entity_decode($this->operations);
+    }
+
+    /**
+     * @param bool $operationsShow
+     * @return Person
+     */
+    public function setOperationsShow(bool $operationsShow): self
+    {
+        $this->operationsShow = $operationsShow;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getOperationsShow(): bool
+    {
+        return $this->operationsShow;
     }
 
 

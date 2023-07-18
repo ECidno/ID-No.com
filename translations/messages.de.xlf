@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="de">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
   <file id="messages.de">
     <unit id="5LufHs6" name="Start">
       <segment>
@@ -4092,6 +4092,18 @@ Schauen Sie gerne rein.</target>
       <segment>
         <source>index.social_media.header</source>
         <target>...als auch aus Social Media</target>
+      </segment>
+    </unit>
+    <unit id="ZgEYCtw" name="person.operations.lbl">
+      <segment>
+        <source>person.operations.lbl</source>
+        <target>Operationen (Operation, Datum, Ort)</target>
+      </segment>
+    </unit>
+    <unit id="dC15BRX" name="Operationen">
+      <segment>
+        <source>Operationen</source>
+        <target>Operationen</target>
       </segment>
     </unit>
   </file>

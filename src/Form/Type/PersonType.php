@@ -252,28 +252,7 @@ class PersonType extends AbstractType
                 ],
                 'required' => false
             ])
-/*
-            ->add('personImage', FileType::class, [
-                'label' => new TranslatableMessage('person.image.lbl'),
-                'row_attr' => ['class' => 'file mb-3'],
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '2048k',
-                        'mimeTypes' => [
-                            'image/gif',
-                            'image/jpeg',
-                            'image/png',
-                        ],
-                    ])
-                ],
-                'attr' => [
-                    'accept' => 'image/gif,image/jpeg,image/png',
-                    'autocomplete' => 'off',
-                ],
-            ])
-            */
+
             ->add('imageShow', CheckboxType::class, [
                 'label' => new TranslatableMessage('sichtbar'),
                 'label_attr' => [
@@ -285,6 +264,8 @@ class PersonType extends AbstractType
                 ],
                 'required' => false
             ])
+
+            // medical
 
             ->add('blutgruppe', ChoiceType::class, [
                 'label' => new TranslatableMessage('person.blutgruppe.lbl'),
@@ -435,6 +416,28 @@ class PersonType extends AbstractType
                 ],
                 'required' => false
             ])
+
+            ->add('operations', TextareaType::class, [
+                'label' => new TranslatableMessage('person.operations.lbl'),
+                'attr' => [
+                    'class' => 'h-100',
+                    'maxlength' => 65535,
+                    'autocomplete' => 'off',
+                ],
+                'required' => false
+            ])
+            ->add('operationsShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch'],
+                'attr' => [
+                    'role' => 'switch'],
+                'required' => false
+            ])
+
+            // insurance
 
             ->add('krankenversicherung', TextType::class, [
                 'label' => new TranslatableMessage('person.krankenversicherung.lbl'),
