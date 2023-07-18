@@ -180,11 +180,19 @@
                   </div>
                 {% endif %}
 
-                {# allergys #}
+                {# allergies #}
                 {% if person.allergieenShow == true and person.allergieen is not empty %}
                   <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Allergieen'|trans }}</strong><br />
                     {{ person.allergieen|raw|nl2br }}
+                  </div>
+                {% endif %}
+
+                {# operations #}
+                {% if person.operationsShow == true and person.operations is not empty %}
+                  <div class="my-3 p-3 border border-light">
+                    <strong>{{ 'Operationen'|trans }}</strong><br />
+                    {{ person.operations|raw|nl2br }}
                   </div>
                 {% endif %}
               </div>
