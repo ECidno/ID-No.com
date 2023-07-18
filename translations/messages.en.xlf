@@ -3734,5 +3734,41 @@ Feel free to take a look.</target>
         <target>...and social media</target>
       </segment>
     </unit>
+    <unit id="dC15BRX" name="Operationen">
+      <segment>
+        <source>Operationen</source>
+        <target>Operations/surgeries</target>
+      </segment>
+    </unit>
+    <unit id="0VshRUI" name="Türkiye">
+      <segment>
+        <source>Türkiye</source>
+        <target>Türkiye</target>
+      </segment>
+    </unit>
+    <unit id="qIXbZfH" name="Laden Sie ein Foto hoch oder machen Sie ein Selfie.">
+      <segment>
+        <source>Laden Sie ein Foto hoch oder machen Sie ein Selfie.</source>
+        <target>Laden Sie ein Foto hoch oder machen Sie ein Selfie.</target>
+      </segment>
+    </unit>
+    <unit id="CSN8DUX" name="Wrong file type, please use JPG-files only!">
+      <segment>
+        <source>Wrong file type, please use JPG-files only!</source>
+        <target>Wrong file type, please use JPG-files only!</target>
+      </segment>
+    </unit>
+    <unit id="XxrhRfR" name="File to large!">
+      <segment>
+        <source>File to large!</source>
+        <target>File to large!</target>
+      </segment>
+    </unit>
+    <unit id="ZgEYCtw" name="person.operations.lbl">
+      <segment>
+        <source>person.operations.lbl</source>
+        <target>Operations/surgeries (inkl. date and location)</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
