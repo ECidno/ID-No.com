@@ -3767,7 +3767,7 @@ Feel free to take a look.</target>
     <unit id="ZgEYCtw" name="person.operations.lbl">
       <segment>
         <source>person.operations.lbl</source>
-        <target>Operations/surgeries (inkl. date and location)</target>
+        <target>Operations/surgeries (incl. date and location)</target>
       </segment>
     </unit>
   </file>
