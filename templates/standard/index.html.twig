@@ -101,20 +101,14 @@
         </div>
       </div>
 
-      <div class="row mt-3 pt-5 pb-3 px-4 bg-green">
+      <div class="row mt-3 pt-5 pb-3 px-5 bg-green">
         <div class="col-12 col-lg-4">
           <img
             src="{{ asset('icon/Das_Erste_Logo.svg', 'media') }}"
-            class="text-black"
+            class="text-black mb-3"
             width="240"
             alt="Das Erste | Logo" />
           {{ 'tv.introduction.txt'|trans|raw|markdown_to_html }}
-          <a
-            href="https://www.ID-No.com/iWeite"
-            class="text-black"
-            target="_blank">
-            <p><i class="bi bi-box-arrow-up-right me-2"></i><u>{{ 'tv.paramedics.txt'|trans }}</u></p>
-          </a>
           <div class="d-block d-lg-none my-3">&nbsp;</div>
         </div>
         <div class="col-12 col-lg-8">
@@ -128,19 +122,38 @@
                 alt="Das Erste | livenachn9un" />
             </a>
           </div>
-          <p class="mt-3">
-            <a
-              href="https://www.instagram.com/idno_com/?hl=de"
-              class="text-black"
-              target="_blank">
-              <img
-                src="{{ asset('icon/Insta_Icon.svg', 'media') }}"
-                height="35"
-                class="me-2"
-                alt="Instagram | Logo" />
-              <span class="align-baseline">{{ 'tv.insta.txt'|trans }}</span>
-            </a>
-          </p>
+          <div class="row mt-3">
+            <div class="col-12 col-xl-6">
+              <p>
+                <a
+                  href="https://www.instagram.com/idno_com/?hl=de"
+                  class="text-black"
+                  target="_blank">
+                  <img
+                    src="{{ asset('icon/Insta_Icon.svg', 'media') }}"
+                    height="35"
+                    class="me-2"
+                    alt="Instagram | Logo" />
+                  <span class="align-baseline"><u>{{ 'tv.insta.txt'|trans }}</u></span>
+                </a>
+              </p>
+            </div>
+            <div class="col-12 col-xl-6 text-xl-end">
+              <p>
+                <a
+                  href="https://www.ID-No.com/iWeite"
+                  class="text-black"
+                  target="_blank">
+                  <img
+                    src="{{ asset('icon/Insta_Icon.svg', 'media') }}"
+                    height="35"
+                    class="me-2"
+                    alt="Instagram | Logo" />
+                  <span class="align-baseline"><u>{{ 'tv.paramedics.txt'|trans }}</u></span>
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -428,6 +441,31 @@
                   src="{{ asset(ref.logo, 'media') }}"
                   class="img-fluid ref-logo"
                   alt="{{ key }}" />
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        </div>
+
+      <div class="row mt-3 gy-3">
+        <div class="col-lg-10 offset-lg-1">
+          <h5 class="text-light">{{ 'index.social_media.header'|trans|raw }}</h5>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-10 offset-1 col-lg-9 offset-lg-1 bg-light-white">
+          <div class="row justify-content-center">
+            {% for key, item in settings.social %}
+              <div class="col-12 col-md-6 col-lg-4 p-4 reference-partner-col">
+                <a
+                  href="{{ item.href }}"
+                  target="_blank">
+                  <img
+                    class="socialmedia_icon_row"
+                    src="{{ asset(item.icon, 'media') }}"
+                    alt="{{ item.title }}" />
+                </a>
               </div>
             {% endfor %}
           </div>

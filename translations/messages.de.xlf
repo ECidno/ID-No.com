@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="de">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
   <file id="messages.de">
     <unit id="5LufHs6" name="Start">
       <segment>
@@ -511,7 +511,7 @@ Katastrophenschutz</target>
     <unit id="uTE8BNL" name="index.references_partners.header">
       <segment>
         <source>index.references_partners.header</source>
-        <target>Bekannt aus den Medien</target>
+        <target>Bekannt sowohl aus den klassischen Medien...</target>
       </segment>
     </unit>
     <unit id="brD5STe" name="Unternehmen">
@@ -4066,6 +4066,7 @@ Zur **[Anmeldung](%login_link%)**
         <source>tv.introduction.txt</source>
         <target>Die innovative Notfalldaten-Lösung von ID-No.com.  
 Vorgestellt von Rettungssanitäter und Autor Luis Teichmann.  
+  
 Schauen Sie gerne rein.</target>
       </segment>
     </unit>
@@ -4085,6 +4086,24 @@ Schauen Sie gerne rein.</target>
       <segment>
         <source>tv.header.lbl</source>
         <target>ID-No.com im TV</target>
+      </segment>
+    </unit>
+    <unit id="bvKLHp." name="index.social_media.header">
+      <segment>
+        <source>index.social_media.header</source>
+        <target>...als auch aus Social Media</target>
+      </segment>
+    </unit>
+    <unit id="ZgEYCtw" name="person.operations.lbl">
+      <segment>
+        <source>person.operations.lbl</source>
+        <target>Operationen (Operation, Datum, Ort)</target>
+      </segment>
+    </unit>
+    <unit id="dC15BRX" name="Operationen">
+      <segment>
+        <source>Operationen</source>
+        <target>Operationen</target>
       </segment>
     </unit>
   </file>
