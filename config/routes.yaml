@@ -37,6 +37,16 @@ redirect_infovideo:
         keepQueryParams: false
         keepRequestMethod: true
 
+redirect_infovideo2:
+    path: /Infovideo
+    methods: GET
+    defaults:
+        priority: 50
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+        path: 'https://youtu.be/3obkTbR6tg0'
+        keepQueryParams: false
+        keepRequestMethod: true
+
 redirect_pad:
     path: '/pad'
     methods: GET
