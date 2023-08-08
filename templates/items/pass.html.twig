@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-8 border">
 
-        {# languages | CNBID22-58 #}
+        {# languages | CNBID22-58
         {% if app.environment|lower != 'prod' %}
         <div class="row py-3">
           <div class="col-12 text-center">
@@ -33,6 +33,7 @@
           </div>
         </div>
         {% endif %}
+        #}
 
         <div class="row py-3 bg-green">
           <div class="col-12">
@@ -54,6 +55,23 @@
             <span>{{ 'person.last_change_datum'|trans }}: {{ person.lastChangeDatum|date('d.m.Y') }}</span>
           </div>
         </div>
+
+        {# mail sent | CNBID22-51 #}
+        {% if app.environment|lower != 'prod' %}
+          {% if mailSent == true %}
+            <div class="row p-3">
+              <div class="alert alert-warning text-center" role="alert">
+                Die E-Mail mit der information zur Passansicht wurde versendet.
+              </div>
+            </div>
+          {% else %}
+            <div class="row p-3">
+              <div class="alert alert-success text-center" role="alert">
+                Die E-Mail mit der information zur Passansicht wurde <strong>nicht</strong> versendet.
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
 
         {# name #}
         <div class="container">
