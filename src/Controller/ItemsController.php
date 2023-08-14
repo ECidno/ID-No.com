@@ -38,13 +38,14 @@ class ItemsController extends AbstractController
      *
      * @param Request $request
      * @param ItemsService $itemsService
-     * @param string $idno
+     * @param ?string $idno
+     * @param ?int $t
      *
      * @return Response
      *
-     * @Route("/notfallpass/{idno?}", name="pass", methods={"GET", "POST"})
+     * @Route("/notfallpass/{idno?}/{t}", name="pass", requirements={"t"="\d+"}, methods={"GET", "POST"})
      */
-    public function pass(Request $request, ItemsService $itemsService, $idno): Response
+    public function pass(Request $request, ItemsService $itemsService, string $idno, int $t = 0): Response
     {
         /* CNBID22-63, revert CNBID22-51
         $session = $request->getSession();
@@ -55,7 +56,10 @@ class ItemsController extends AbstractController
                 ->get('id-no')
             ?? $idno;
         */
+
+        $mailSent = false;
         $idNo = $request->get('p_idno') ?? $idno;
+        $t = (int) ($request->get('t') ?? $t);
 
         /**
          * @var Nutzer
@@ -133,16 +137,15 @@ class ItemsController extends AbstractController
                 $request->setLocale($person->getSprache());
             }
 
-            // variables
-            $variables = [
-                'idno' => $idNo,
-                'item' => $item,
-                'nutzer' => $nutzer,
-                'person' => $person,
-            ];
-
             // mail (if not user' pass is shown)
-            if($user === null || $user->getId() !== $nutzer->getId()) {
+
+            if(
+                (
+                    $user === null || $user->getId() !== $nutzer->getId()
+                ) && (
+                    $t === 0 || ($t > 0 && $this->now->format('U') - $t < 60)
+                )
+            ) {
                 $this->mailService->infoMail(
                     [
                         'subject' => 'Information - Ihr ID-No.com Produkt wurde genutzt!',
@@ -155,7 +158,19 @@ class ItemsController extends AbstractController
                     ],
                     'itemScanned'
                 );
+                $mailSent = true;
             }
+
+            // variables
+            $variables = [
+                'idno' => $idNo,
+                'item' => $item,
+                'nutzer' => $nutzer,
+                'person' => $person,
+                'mailSent' => $mailSent,
+                't' => $t,
+                'now' => $this->now->format('U'),
+            ];
 
             // log
             $logEntry = new LogEntry(

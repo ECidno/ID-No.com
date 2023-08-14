@@ -76,7 +76,8 @@ class StandardController extends AbstractController
             return $this->redirectToRoute(
                 'app_items_pass',
                 [
-                    'idno' => $idno
+                    'idno' => $idno,
+                    't' => $this->now->format('U'),
                 ]
             );
         }
