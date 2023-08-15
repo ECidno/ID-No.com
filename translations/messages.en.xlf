@@ -523,7 +523,7 @@ known from SPIEGEL TV and as @notruf.frankfurt</target>
     <unit id="a7SC6WD" name="index.testimonials.2.location">
       <segment>
         <source>index.testimonials.2.location</source>
-        <target>Stuttgart</target>
+        <target></target>
       </segment>
     </unit>
     <unit id="I.upU3X" name="index.testimonials.3.person">
