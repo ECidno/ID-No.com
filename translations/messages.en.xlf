@@ -492,7 +492,7 @@ as utility models.
     <unit id="bYnEruo" name="index.testimonials.1.person">
       <segment>
         <source>index.testimonials.1.person</source>
-        <target>Dr. med. Alexander Burkhard</target>
+        <target>Peter Cartes, Helicopter emergency doctor, senior emergency doctor in the Böblingen district</target>
       </segment>
     </unit>
     <unit id="OJMVJl." name="index.testimonials.1.text">
@@ -504,19 +504,20 @@ as utility models.
     <unit id="fbCFoVU" name="index.testimonials.1.location">
       <segment>
         <source>index.testimonials.1.location</source>
-        <target>Darmstadt</target>
+        <target><![CDATA[Co-founder of <a href="https://www.akademie-15-min.de/" target="_blank">AKADEMIE 15 Minuten fürs Überleben</a>]]></target>
       </segment>
     </unit>
     <unit id="O.OdL_F" name="index.testimonials.2.person">
       <segment>
         <source>index.testimonials.2.person</source>
-        <target>Pia Rebhorn, paramedic</target>
+        <target>Christoph Grüne, paramedic
+known from SPIEGEL TV and as @notruf.frankfurt</target>
       </segment>
     </unit>
     <unit id="_mhgh8X" name="index.testimonials.2.text">
       <segment>
         <source>index.testimonials.2.text</source>
-        <target>„For me as a paramedic a clear reference at the accident victim informing about a digital Emergency-Pass is very useful to get immediate access to vital medical information.“</target>
+        <target>„The SOS-ID chip gives us the most important information in a flash: allergies, previous illnesses and long-term medication. It can become your lifesaver.“</target>
       </segment>
     </unit>
     <unit id="a7SC6WD" name="index.testimonials.2.location">
