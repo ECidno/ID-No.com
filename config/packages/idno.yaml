@@ -186,7 +186,7 @@ parameters:
 
     # topnews | tv
     topnews:
-      tstampTo: 1697364000 # 2022-10-15 12:00:00
+      tstampTo: 1715724000 # 2024-05-15 00:00:00
 
     # cards
     cards:
