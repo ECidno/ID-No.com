@@ -121,7 +121,7 @@
         <div class="container">
           <div class="row mb-3">
             <div class="col-6 text-start">
-              {% if person.ort and person.ortShow == true %}
+              {% if person.ort and person.ortShow == true and false %}
                 <button
                   id="mapShow"
                   class="btn btn-outline-dark text-success px-4 py-2">
@@ -141,7 +141,8 @@
           </div>
         </div>
 
-        {# map #}
+        {# map disabled #}
+        {% if false %}
         <div class="container">
           <div class="row mb-3">
             <div class="col">
@@ -167,6 +168,7 @@
             </div>
           </div>
         </div>
+        {% endif %}
 
         {# infos #}
         {% if person.medicalShow == true %}
