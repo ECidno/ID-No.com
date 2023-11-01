@@ -1035,7 +1035,7 @@ Der Vertragstext wird von uns nicht gespeichert.</target>
     <unit id="QSuBkxQ" name="privacy.version">
       <segment>
         <source>privacy.version</source>
-        <target>Stand: 16. Mai 2018</target>
+        <target>Stand: 01. November 2023</target>
       </segment>
     </unit>
     <unit id="b1r_dDe" name="privacy.text">
@@ -1095,6 +1095,15 @@ oder per Brief an die
 Frau Birgit Krechting  
 Cassellastraße 30-32  
 60386 Frankfurt am Main
+
+**Kontaktdaten des Datenschutzbeauftragten:**  
+PROLIANCE GmbH  
+[http://www.datenschutzexperte.de](http://www.datenschutzexperte.de)  
+Leopoldstr. 21  
+80802 München  
+[datenschutzbeauftragter@datenschutzexperte.de](mailto:datenschutzbeauftragter@datenschutzexperte.de)  
+
+Bitte nennen Sie bei der Kontaktaufnahme mit dem Datenschutzbeauftragten das Unternehmen, auf welches sich Ihre Anfrage bezieht. Bitte sehen Sie davon ab, Ihrer Anfrage sensible Informationen wie z. B. eine Ausweiskopie beizufügen.
 
 **Datensicherheit**  
 Ihre personenbezogenen Daten werden im Bestellprozess verschlüsselt mittels des SSL-Verfahrens (Secure-Socket-Layer) über das Internet übertragen. Kreditkartendaten werden nicht gespeichert, sondern direkt von unserem Payment-Dienstleister "Mollie n.V." erhoben und verarbeitet. Wir sichern unsere Website und sonstigen Systeme durch technische und organisatorische Maßnahmen gegen Verlust, Zerstörung, Zugriff, Veränderung oder Verbreitung Ihrer Daten durch unbefugte Personen.
