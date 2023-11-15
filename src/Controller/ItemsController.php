@@ -16,6 +16,7 @@ use App\Form\Type\ItemsAddType;
 use App\Form\Type\ItemsEditType;
 use App\Form\Type\RegistrationType;
 use App\Service\ItemsService;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -38,6 +39,7 @@ class ItemsController extends AbstractController
      *
      * @param Request $request
      * @param ItemsService $itemsService
+     * @param LoggerInterface $logger
      * @param ?string $idno
      * @param ?int $t
      *
@@ -45,7 +47,7 @@ class ItemsController extends AbstractController
      *
      * @Route("/notfallpass/{idno?}/{t}", name="pass", requirements={"t"="\d+"}, methods={"GET", "POST"})
      */
-    public function pass(Request $request, ItemsService $itemsService, string $idno, int $t = 0): Response
+    public function pass(Request $request, ItemsService $itemsService, LoggerInterface $idnoLogger, string $idno, int $t = 0): Response
     {
         /* CNBID22-63, revert CNBID22-51
         $session = $request->getSession();
@@ -77,6 +79,17 @@ class ItemsController extends AbstractController
 
         // redirect to index if item check failed
         if($item === null) {
+
+            // error logger for fail2ban | WEBCN-75
+            $idnoLogger->error(
+                $idNo.' not found, IP: '.$request->getClientIp(),
+                [
+                    'ip' => $request->getClientIp(),
+                    'context' => 'id-no',
+                ]
+            );
+
+            // return rediirect
             return $this->redirectToRoute('app_standard_index');
 
         // item not registered | ready for registration (activation)
