@@ -47,6 +47,23 @@ when@test:
                 path: "%kernel.logs_dir%/%kernel.environment%.log"
                 level: debug
 
+# staging
+when@staging:
+    monolog:
+        handlers:
+            main:
+                type: stream
+                path: "%kernel.logs_dir%/%kernel.environment%.log"
+                level: debug
+                channels: ["!event"]
+
+            # WEBCN-75
+            idno:
+                level:    error
+                type:     rotating_file
+                path:     '%kernel.logs_dir%/idno.log'
+                channels: [idno]
+
 # prod
 when@prod:
     monolog:
