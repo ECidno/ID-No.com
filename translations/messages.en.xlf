@@ -3770,5 +3770,29 @@ Feel free to take a look.</target>
         <target>Operations/surgeries (incl. date and location)</target>
       </segment>
     </unit>
+    <unit id="TnXrVv3" name="index.carousel.slide.xmas_1.caption">
+      <segment>
+        <source>index.carousel.slide.xmas_1.caption</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="nmbHQkD" name="index.carousel.slide.xmas_1.text">
+      <segment>
+        <source>index.carousel.slide.xmas_1.text</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="kkriE2e" name="index.carousel.slide.xmas_2.caption">
+      <segment>
+        <source>index.carousel.slide.xmas_2.caption</source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="cVFrYxH" name="index.carousel.slide.xmas_2.text">
+      <segment>
+        <source>index.carousel.slide.xmas_2.text</source>
+        <target></target>
+      </segment>
+    </unit>
   </file>
 </xliff>
