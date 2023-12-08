@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="de">
   <file id="messages.de">
     <unit id="5LufHs6" name="Start">
       <segment>
@@ -3422,7 +3422,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="lbhUQQO" name="meinidno.idno.title">
       <segment>
         <source>meinidno.idno.title</source>
-        <target>Übersicht: ID-Nummern</target>
+        <target>Meine ID-Nummern</target>
       </segment>
     </unit>
     <unit id="q5AtHiT" name="meinidno.idno.description">
