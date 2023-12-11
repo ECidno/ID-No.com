@@ -1,0 +1,42 @@
+{% extends 'default.html.twig' %}
+{% block title %}{{ 'meinidno.title'|trans }}{% endblock %}
+
+{# content #}
+{% block content %}
+  <div class="container-fluid">
+    <div class="row my-3 justify-content-center">
+      <div id="myIdNoHeader" class="col-12 col-md-10 col-lg-8">
+        <h1>{{ 'meinidno.title'|trans }}</h1>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <h3>{{ 'meinidno.profiles.title'|trans }}</h3>
+        <p>{{ 'meinidno.profiles.description'|trans }}</p>
+
+        {% for person in persons %}
+        <div class="d-flex">
+          <div class="flex-shrink-0">
+            <div class="text-center userIconCenter">
+              <div
+                class="userIcon"
+                style="background-image: url('{{ person.imageSrc }}');"
+                alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
+              </div>
+            </div>
+          </div>
+          <div class="flex-grow-1 ms-3">
+            <div><h5>{{ person.fullName }}</h5></div>
+
+
+          </div>
+        </div>
+
+
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

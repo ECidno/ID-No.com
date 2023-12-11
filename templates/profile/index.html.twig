@@ -53,23 +53,43 @@
               </button>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="d-grid mb-3">
-              <button
-                type="button"
-                class="btn btn-outline-dark ajax-modal"
-                data-url="{{ path('app_account_edit') }}">
-                {{ 'account.edit.lbl'|trans }}
-              </button>
-            </div>
-          </div>
+
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
             <div class="d-grid mb-3">
               <a
                 class="btn btn-outline-dark"
-                href="{{ path('app_account_delete') }}">
-                {{ 'profile.delete.lbl'|trans }}
+                href="{{ path('app_profile_list') }}">
+                {{ 'profile.list.lbl'|trans }}
               </a>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="d-grid mb-3">
+              <button
+                type="button"
+                class="btn btn-outline-dark dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                {{ 'account.settings.lbl'|trans }}
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item text-dark ajax-modal pointer"
+                    data-url="{{ path('app_account_edit') }}">
+                    {{ 'account.edit.lbl'|trans }}
+                  </a>
+                </li>
+                <li>
+                 <a
+                    href="{{ path('app_account_delete') }}"
+                    class="dropdown-item text-dark"
+                    data-url="{{ path('app_account_delete') }}">
+                    {{ 'account.delete.lbl'|trans }}
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
 

@@ -4129,5 +4129,41 @@ Schauen Sie gerne rein.</target>
         <target></target>
       </segment>
     </unit>
+    <unit id="NpVIEan" name="profile.list.lbl">
+      <segment>
+        <source>profile.list.lbl</source>
+        <target>Family-Account / Profile</target>
+      </segment>
+    </unit>
+    <unit id="WQWUSQH" name="account.settings.lbl">
+      <segment>
+        <source>account.settings.lbl</source>
+        <target>Account-Einstellungen</target>
+      </segment>
+    </unit>
+    <unit id="yBoThbD" name="account.delete.lbl">
+      <segment>
+        <source>account.delete.lbl</source>
+        <target>Account löschen</target>
+      </segment>
+    </unit>
+    <unit id="P2UjJJ3" name="btn.cancel.lbl">
+      <segment>
+        <source>btn.cancel.lbl</source>
+        <target>Abbrechen</target>
+      </segment>
+    </unit>
+    <unit id="2JPQ4Iw" name="meinidno.profiles.title">
+      <segment>
+        <source>meinidno.profiles.title</source>
+        <target>Profile</target>
+      </segment>
+    </unit>
+    <unit id="b1aDvjQ" name="meinidno.profiles.description">
+      <segment>
+        <source>meinidno.profiles.description</source>
+        <target>Hier können Sie Ihre Profile verwalten.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

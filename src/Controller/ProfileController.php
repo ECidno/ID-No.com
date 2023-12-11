@@ -43,6 +43,39 @@ class ProfileController extends AbstractController
         $variables = [
             'user' => $user,
             'person' => $person,
+            'persons' => $persons,
+        ];
+
+        // return
+        return $this->renderAndRespond($variables);
+    }
+
+
+    /**
+     * list action
+     *
+     * @param Request $request
+     * @return Response
+     *
+     * @Route("/profile", name="app_profile_list", methods={"GET"})
+     */
+    public function list(Request $request): Response
+    {
+        // user authenticated
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        /**
+         * @var Nutzer
+         */
+        $user = $this->getUser();
+
+        // objects
+        $persons = $user->getPersons();
+
+        // vars
+        $variables = [
+            'user' => $user,
+            'persons' => $persons,
         ];
 
         // return

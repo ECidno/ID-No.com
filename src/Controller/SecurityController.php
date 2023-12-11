@@ -402,8 +402,8 @@ class SecurityController extends AbstractController
             ->getForm();
 
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-
+        if ($form->isSubmitted() && $form->isValid())
+        {
             /**
              * @var Nutzer
              */
