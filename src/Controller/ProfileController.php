@@ -7,7 +7,7 @@ namespace App\Controller;
  *
  * /*********************************************************************/
 
-use App\Entity\Person;
+use App\Entity\Items;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -44,6 +44,9 @@ class ProfileController extends AbstractController
             'user' => $user,
             'person' => $person,
             'persons' => $persons,
+            'layout' => $this->ajax
+                ? 'ajax'
+                : 'default',
         ];
 
         // return
@@ -57,7 +60,7 @@ class ProfileController extends AbstractController
      * @param Request $request
      * @return Response
      *
-     * @Route("/profile", name="app_profile_list", methods={"GET"})
+     * @Route("/profiles", name="app_profile_list", methods={"GET"})
      */
     public function list(Request $request): Response
     {
@@ -69,13 +72,28 @@ class ProfileController extends AbstractController
          */
         $user = $this->getUser();
 
-        // objects
-        $persons = $user->getPersons();
+        // get items per person
+        $persons = [];
+        foreach ($user->getPersons() as $person) {
+            $itemCount = $this->emDefault
+                ->getRepository(Items::class)
+                ->count(
+                    [
+                        'person' => $person
+                    ]
+                );
+
+            // set item count and add to array
+            $persons[] = $person->setItemCount($itemCount);
+        }
 
         // vars
         $variables = [
             'user' => $user,
             'persons' => $persons,
+            'layout' => $this->ajax === true
+                ? 'ajax'
+                : 'default',
         ];
 
         // return

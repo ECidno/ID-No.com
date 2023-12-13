@@ -17,9 +17,6 @@ const cbOffcanvas = (uri, options, autohide) => {
   // options
   options = options ?? {
     method: 'GET',
-    headers: {
-      'X-Requested-With': 'XMLHttpRequest'
-    }
   };
 
   // ajax

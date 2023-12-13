@@ -1,4 +1,4 @@
-{% extends 'default.html.twig' %}
+{% extends layout ~ '.html.twig' %}
 {% block title %}{{ 'meinidno.title'|trans }}{% endblock %}
 
 {# content #}
@@ -15,28 +15,163 @@
         <h3>{{ 'meinidno.profiles.title'|trans }}</h3>
         <p>{{ 'meinidno.profiles.description'|trans }}</p>
 
-        {% for person in persons %}
-        <div class="d-flex">
-          <div class="flex-shrink-0">
-            <div class="text-center userIconCenter">
+        {# profiles #}
+        <div class="row">
+          <div
+            id="idno-profiles"
+            class="col"
+            data-url="{{ path('app_profile_list') }}"
+            data-target="#idno-profiles">
+            {{ block('ajax') }}
+          </div>
+        </div>
+
+        {# buttons #}
+        <div class="row my-4">
+          <div class="col-6">
+            <a
+              href="{{ path('app_profile_index')}}"
+              class="btn btn-outline-dark"
+              aria-label="meinidno.title">
+              <i class="bi bi-arrow-bar-left me-1" aria-hidden="true"></i>
+              {{ 'meinidno.title'|trans }}
+            </a>
+          </div>
+          <div class="col-6 text-end">
+            <button
+              type="button"
+              class="btn btn-outline-primary ajax-modal"
+              data-url="{{ path('app_person_new')}}"
+              aria-label="{{ 'profiles.action.new.lbl'|trans }}">
+              <i class="bi bi-plus-square me-1" aria-hidden="true"></i>
+              {{ 'profiles.action.new.lbl'|trans }}
+            </button>
+          </div>
+        </div>
+
+        {# shop #}
+        <div class="row my-3">
+          <div class="col">
+            <hr />
+          </div>
+        </div>
+
+        <div class="row my-3">
+          <div class="col">
+            <h3>{{ 'profiles.shop.header'|trans }}</h3>
+            <p>{{ 'profiles.shop.description'|trans|raw|markdown_to_html }}</p>
+            <div class="text-center">
+              <a
+                class="btn btn-outline-dark px-3"
+                href="https://www.code-no.shop/sos-id-chip/"
+                target="_blank"
+                aria-label="{{ 'profiles.shop.btn.lbl'|trans }}">
+                {{ 'profiles.shop.btn.lbl'|trans }}
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{# ajax #}
+{% block ajax %}
+  {% for person in persons %}
+  {% set hasItem = person.itemCount is defined and person.itemCount > 0 %}
+    <div class="d-flex p-2 my-2{{ person.status == 'ok' ? '' : ' bg-dark bg-opacity-10' }}{{ hasItem ? '' : ' bg-danger bg-opacity-10'}}">
+      <div class="flex-shrink-0">
+        <div class="text-center userIconCenter bg-light p-2">
+          <a href="{{ path('app_person_show', { id: person.id })}}">
+            {% if person.imageSrc is defined and person.imageSrc != 'null' %}
               <div
                 class="userIcon"
                 style="background-image: url('{{ person.imageSrc }}');"
                 alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
               </div>
-            </div>
-          </div>
-          <div class="flex-grow-1 ms-3">
-            <div><h5>{{ person.fullName }}</h5></div>
-
-
-          </div>
+            {% else %}
+              <div class="userIcon"></div>
+            {% endif %}
+          </a>
+        </div>
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <div>
+          <a href="{{ path('app_person_show', { id: person.id })}}">
+            <h5>{{ person.fullName }}</h5>
+          </a>
+        </div>
+        <div class="py-2">
+          {% if person.status == 'ok' %}
+            <button
+              type="button"
+              class="btn btn-outline-dark ajax-action me-2"
+              title="{{ 'profiles.action.disable.lbl'|trans }}"
+              data-url="{{ path('app_api_person_disable', { id:person.id } )}}"
+              data-table="#idno-profiles"
+              aria-label="profiles.action.delete.lbl">
+              <i class="bi bi-toggle-off" aria-hidden="true"></i>
+            </button>
+          {% else %}
+            <button
+              type="button"
+              class="btn btn-outline-dark ajax-action me-2"
+              title="{{ 'profiles.action.enable.lbl'|trans }}"
+              data-url="{{ path('app_api_person_enable', { id:person.id } )}}"
+              data-table="#idno-profiles"
+              aria-label="profiles.action.enable.lbl">
+              <i class="bi bi-toggle-on text-success" aria-hidden="true"></i>
+            </button>
+          {% endif %}
+          <button
+            type="button"
+            class="btn btn-outline-dark ajax-modal"
+            title="{{ 'profiles.action.delete.lbl'|trans }}"
+            data-url="{{ path('app_person_delete', { id:person.id } )}}"
+            data-table="#idno-profiles"
+            aria-label="profiles.action.delete.lbl">
+            <i class="bi bi-trash" aria-hidden="true"></i>
+          </button>
         </div>
 
+        <div class="align-self-center">
 
-        {% endfor %}
+          {# items? #}
+          {% if not hasItem %}
+            <div class="text-danger">{{ 'person.warning.noItem.txt'|trans }}</div>
+          {% endif %}
 
+          {# last change #}
+          {% set difference = date('today').diff(date(person.lastChangeDatum)) %}
+          {% set dayDiff = difference.days %}
+          {% if dayDiff > 360 %}
+            <div class="text-danger">
+              {{ 'person.warning.lastChange.txt'|trans }}
+              <cb-timeago
+                datetime="{{ person.lastChangeDatum|date("c") }}"
+                locale="{{ language }}"
+                auto-update="60" />
+            </div>
+          {% elseif dayDiff > 90 %}
+            <div class="text-warning">
+              {{ 'person.warning.lastChange.txt'|trans }}
+              <cb-timeago
+                datetime="{{ person.lastChangeDatum|date("c") }}"
+                locale="{{ language }}"
+                auto-update="60" />
+            </div>
+          {% else %}
+            <div>
+              {{ 'person.warning.lastChange.txt'|trans }}
+              <cb-timeago
+                datetime="{{ person.lastChangeDatum|date("c") }}"
+                locale="{{ language }}"
+                auto-update="60" />
+            </div>
+          {%  endif %}
+        </div>
       </div>
     </div>
-  </div>
+  {% endfor %}
 {% endblock %}

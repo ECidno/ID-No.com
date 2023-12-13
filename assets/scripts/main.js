@@ -5,14 +5,18 @@ import bootstrapTable from 'bootstrap-table';
 import bootstrapTableLocaleAll from 'bootstrap-table/dist/bootstrap-table-locale-all';
 import 'bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js';
 
+// modules
 import { cbAction } from './modules/cbAction';
 import { cbAjax } from './modules/cbAjax';
 import { cbForm } from './modules/cbForm';
 import { cbMap, cbMapLocationError } from './modules/cbMap';
 import { cbMessage } from './modules/cbMessage';
-import { cbModal, cbModalButton } from './modules/cbModal';
-import { cbOffcanvas, cbOffcanvasButton } from './modules/cbOffcanvas';
+import { cbModalButton } from './modules/cbModal';
+import { cbOffcanvasButton } from './modules/cbOffcanvas';
 import { cbUpload } from './modules/cbUpload';
+
+// elements
+require('./elements/cbTimeago.js');
 
 // const's
 const ajaxAction = document.getElementsByClassName('ajax-action') || [];

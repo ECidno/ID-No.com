@@ -1,9 +1,9 @@
 <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
   <div class="modal-content">
-    {{ form_start(form, {'attr': {'class':'ajax-form'} }) }}
+    {{ form_start(form, {'attr': {'class':'ajax-form', 'data-table':'#idno-profiles' } }) }}
       <div class="modal-header">
         <h1 class="modal-title fs-5">
-          {{ 'person.lbl'|trans }} {{ person.fullName|raw }}
+          {{ 'person.new.lbl'|trans }}
         </h1>
         <button
           type="button"
@@ -14,7 +14,25 @@
       <div class="modal-body">
         <div class="row">
           <div class="col">
-            {% include '_partials/person/addEditForm.html.twig' %}
+            <div class="row">
+              <div class="col-6">
+                {{ form_row(form.vorname) }}
+              </div>
+              <div class="col-6">
+                {{ form_row(form.nachname) }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                {{ form_row(form.anrede) }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                {{ form_row(form.terms) }}
+                <div class="py-2">{{ 'person.terms.txt'|trans|raw|markdown_to_html }}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
