@@ -82,19 +82,11 @@
   {% set hasItem = person.itemCount is defined and person.itemCount > 0 %}
     <div class="d-flex p-2 my-2{{ person.status == 'ok' ? '' : ' bg-dark bg-opacity-10' }}{{ hasItem ? '' : ' bg-danger bg-opacity-10'}}">
       <div class="flex-shrink-0">
-        <div class="text-center userIconCenter bg-light p-2">
-          <a href="{{ path('app_person_show', { id: person.id })}}">
-            {% if person.imageSrc is defined and person.imageSrc != 'null' %}
-              <div
-                class="userIcon"
-                style="background-image: url('{{ person.imageSrc }}');"
-                alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
-              </div>
-            {% else %}
-              <div class="userIcon"></div>
-            {% endif %}
-          </a>
-        </div>
+        <a href="{{ path('app_person_show', { id: person.id })}}">
+          <div class="text-center userIconCenter">
+            {% include '_partials/person/userIcon.html.twig' %}
+          </div>
+        </a>
       </div>
       <div class="flex-grow-1 ms-3">
         <div>
@@ -151,7 +143,7 @@
               <cb-timeago
                 datetime="{{ person.lastChangeDatum|date("c") }}"
                 locale="{{ language }}"
-                auto-update="60" />
+                auto-update="30" />
             </div>
           {% elseif dayDiff > 90 %}
             <div class="text-warning">
@@ -159,7 +151,7 @@
               <cb-timeago
                 datetime="{{ person.lastChangeDatum|date("c") }}"
                 locale="{{ language }}"
-                auto-update="60" />
+                auto-update="30" />
             </div>
           {% else %}
             <div>
@@ -167,7 +159,7 @@
               <cb-timeago
                 datetime="{{ person.lastChangeDatum|date("c") }}"
                 locale="{{ language }}"
-                auto-update="60" />
+                auto-update="30" />
             </div>
           {%  endif %}
         </div>
