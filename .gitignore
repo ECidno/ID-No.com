@@ -5,7 +5,10 @@
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /logs/
+/media/userimages/
 /public/bundles/
+/public/build/
+/node_modules
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
