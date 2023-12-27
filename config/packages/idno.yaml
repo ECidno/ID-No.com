@@ -137,20 +137,12 @@ parameters:
 
     # carousel, slider
     carousel:
-      xmas_1:
+      2024_start:
         image:
-          desktop: slider/xmas_slider_desktop_1.jpg
-          mobile: slider/xmas_slider_mobile_1.jpg
+          desktop: slider/2024_slider_desktop.jpg
+          mobile: slider/2024_slider_mobile.jpg
         textStyle: 'position:absolute; left:25%; top:25%; margin-left:-70px; text-shadow: black 1px 1px 1px;'
-        link: 
-          href: https://www.code-no.shop/sos-id-chip/
-
-      xmas_2:
-        image:
-          desktop: slider/xmas_slider_desktop_2.jpg
-          mobile: slider/xmas_slider_mobile_2.jpg
-        textStyle: 'position:absolute; left:25%; top:25%; margin-left:-70px; text-shadow: black 1px 1px 1px;'
-        link: 
+        link:
           href: https://www.code-no.shop/sos-id-chip/
 
       sos_chip_shoe:

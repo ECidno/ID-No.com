@@ -3794,5 +3794,17 @@ Feel free to take a look.</target>
         <target></target>
       </segment>
     </unit>
+    <unit id="_oJ3I7d" name="index.carousel.slide.2024_start.caption">
+      <segment>
+        <source>index.carousel.slide.2024_start.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="ZoAeS0n" name="index.carousel.slide.2024_start.text">
+      <segment>
+        <source>index.carousel.slide.2024_start.text</source>
+        <target> </target>
+      </segment>
+    </unit>
   </file>
 </xliff>
