@@ -3055,7 +3055,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="lbhUQQO" name="meinidno.idno.title">
       <segment>
         <source>meinidno.idno.title</source>
-        <target>Overview: ID-No</target>
+        <target>My ID-Numbers</target>
       </segment>
     </unit>
     <unit id="q5AtHiT" name="meinidno.idno.description">
@@ -3792,6 +3792,18 @@ Feel free to take a look.</target>
       <segment>
         <source>index.carousel.slide.xmas_2.text</source>
         <target></target>
+      </segment>
+    </unit>
+    <unit id="_oJ3I7d" name="index.carousel.slide.2024_start.caption">
+      <segment>
+        <source>index.carousel.slide.2024_start.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="ZoAeS0n" name="index.carousel.slide.2024_start.text">
+      <segment>
+        <source>index.carousel.slide.2024_start.text</source>
+        <target> </target>
       </segment>
     </unit>
   </file>
