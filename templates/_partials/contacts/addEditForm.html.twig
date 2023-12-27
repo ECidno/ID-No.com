@@ -1,28 +1,34 @@
 {{ form_errors(form) }}
 
+<div class="row d-block d-sm-none">
+  <div class="col-3 offset-9 text-center py-3">
+    <h6 class="text-primary small">{{ 'sichtbar'|trans }}</h6>
+  </div>
+</div>
+
 <div class="row">
-  <div class="col-8">
+  <div class="col-9">
     {{ form_row(form.contactname) }}
   </div>
-  <div class="col-2">
+  <div class="col-3">
     {{ form_row(form.contactnameShow) }}
   </div>
 </div>
 
 <div class="row">
-  <div class="col-8">
+  <div class="col-9">
     {{ form_row(form.telefon) }}
   </div>
-  <div class="col-2">
+  <div class="col-3">
     {{ form_row(form.telefonShow) }}
   </div>
 </div>
 
 <div class="row">
-  <div class="col-8">
+  <div class="col-9">
     {{ form_row(form.beziehung) }}
   </div>
-  <div class="col-2">
+  <div class="col-3">
     {{ form_row(form.beziehungShow) }}
   </div>
 </div>

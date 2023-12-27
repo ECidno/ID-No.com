@@ -114,7 +114,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -141,7 +141,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -161,7 +161,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -210,7 +210,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -246,7 +246,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -294,7 +294,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -315,7 +315,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'],
                 'required' => false
@@ -335,7 +335,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'],
                 'required' => false
@@ -355,7 +355,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'],
                 'required' => false
@@ -382,7 +382,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -410,7 +410,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -431,7 +431,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'],
                 'required' => false
@@ -452,7 +452,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -472,7 +472,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -493,7 +493,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -502,7 +502,7 @@ class PersonType extends AbstractType
 
             ->add('organspender', CheckboxType::class, [
                 'label' => new TranslatableMessage('person.organspender.lbl'),
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch py-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -513,7 +513,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch py-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -522,7 +522,7 @@ class PersonType extends AbstractType
 
             ->add('patientenverf', CheckboxType::class, [
                 'label' => new TranslatableMessage('person.patientenverf.lbl'),
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch py-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -533,7 +533,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch py-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],
@@ -554,7 +554,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch'],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [
                     'role' => 'switch'
                 ],

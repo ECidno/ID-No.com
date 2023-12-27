@@ -40,7 +40,10 @@ class ContactType extends AbstractType
             ])
             ->add('contactnameShow', CheckboxType::class, [
                 'label' => new TranslatableMessage('sichtbar'),
-                'row_attr' => ['class' => 'form-switch'],
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => ['role' => 'switch'],
                 'required' => false
             ])
@@ -53,7 +56,10 @@ class ContactType extends AbstractType
             ])
             ->add('telefonShow', CheckboxType::class, [
                 'label' => new TranslatableMessage('sichtbar'),
-                'row_attr' => ['class' => 'form-switch'],
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => ['role' => 'switch'],
                 'required' => false
             ])
@@ -66,7 +72,10 @@ class ContactType extends AbstractType
             ])
             ->add('beziehungShow', CheckboxType::class, [
                 'label' => new TranslatableMessage('sichtbar'),
-                'row_attr' => ['class' => 'form-switch'],
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => ['role' => 'switch'],
                 'required' => false
             ]);
