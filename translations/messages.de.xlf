@@ -3404,7 +3404,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="K3PKIb6" name="meinidno.profile.title">
       <segment>
         <source>meinidno.profile.title</source>
-        <target>Profil / Notfall-Daten</target>
+        <target>Mein Account</target>
       </segment>
     </unit>
     <unit id="k7IqGnH" name="meinidno.profile.description">
@@ -4275,6 +4275,12 @@ Alle ID-Nummern und Kontakte, die mit diesem Profil verbunden sind, werden ebenf
       <segment>
         <source>person.warning.lastChange.txt</source>
         <target>Letzte Aktualisierung</target>
+      </segment>
+    </unit>
+    <unit id="s0oQtYh" name="meinidno.account.description">
+      <segment>
+        <source>meinidno.account.description</source>
+        <target>Hier verwalten Sie Ihren Account.</target>
       </segment>
     </unit>
   </file>

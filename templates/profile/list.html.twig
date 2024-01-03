@@ -153,14 +153,6 @@
                 locale="{{ language }}"
                 auto-update="30" />
             </div>
-          {% else %}
-            <div>
-              {{ 'person.warning.lastChange.txt'|trans }}
-              <cb-timeago
-                datetime="{{ person.lastChangeDatum|date("c") }}"
-                locale="{{ language }}"
-                auto-update="30" />
-            </div>
           {%  endif %}
         </div>
       </div>

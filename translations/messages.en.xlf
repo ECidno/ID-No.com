@@ -3037,7 +3037,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="K3PKIb6" name="meinidno.profile.title">
       <segment>
         <source>meinidno.profile.title</source>
-        <target>Profil / Emergency Data</target>
+        <target>My account</target>
       </segment>
     </unit>
     <unit id="k7IqGnH" name="meinidno.profile.description">
@@ -3067,7 +3067,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="sC3Y1zj" name="meinidno.contact.title">
       <segment>
         <source>meinidno.contact.title</source>
-        <target>My Contacts</target>
+        <target>My contacts</target>
       </segment>
     </unit>
     <unit id="mVElgW5" name="meinidno.contact.description">
@@ -3792,6 +3792,30 @@ Feel free to take a look.</target>
       <segment>
         <source>index.carousel.slide.xmas_2.text</source>
         <target></target>
+      </segment>
+    </unit>
+    <unit id="NpVIEan" name="profile.list.lbl">
+      <segment>
+        <source>profile.list.lbl</source>
+        <target>Familiy-Account / Profiles</target>
+      </segment>
+    </unit>
+    <unit id="WQWUSQH" name="account.settings.lbl">
+      <segment>
+        <source>account.settings.lbl</source>
+        <target>Account settings</target>
+      </segment>
+    </unit>
+    <unit id="yBoThbD" name="account.delete.lbl">
+      <segment>
+        <source>account.delete.lbl</source>
+        <target>Delete account</target>
+      </segment>
+    </unit>
+    <unit id="s0oQtYh" name="meinidno.account.description">
+      <segment>
+        <source>meinidno.account.description</source>
+        <target>Here you can manage your account.</target>
       </segment>
     </unit>
   </file>
