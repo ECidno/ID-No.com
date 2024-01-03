@@ -17,9 +17,6 @@ const cbModal = (uri, options, autohide) => {
   // options
   options = options ?? {
     method: 'GET',
-    headers: {
-      'X-Requested-With': 'XMLHttpRequest'
-    }
   };
 
   // ajax
@@ -32,8 +29,8 @@ const cbModal = (uri, options, autohide) => {
           {
             backdrop:'static'
           }
-        )
-        .show();
+        );
+      modal.show();
 
       // emit event if fully opened
       modalContainer.addEventListener(

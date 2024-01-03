@@ -10,6 +10,7 @@ namespace App\Controller;
 use App\Entity\Person;
 use App\Entity\PersonImages;
 use App\Form\Type\PersonType;
+use App\Form\Type\PersonAddType;
 use App\Service\FileUploader;
 use Imagine\Gd\Imagine;
 use Imagine\Image\Box;
@@ -35,64 +36,12 @@ class PersonApiController extends AbstractApiController
     /**
      * @var string entityFormType
      */
-    public static $entityFormAddType = PersonType::class;
+    public static $entityFormAddType = PersonAddType::class;
 
     /**
      * @var string entityFormType
      */
     public static $entityFormEditType = PersonType::class;
-
-
-    /**
-     * get entity operatons
-     *
-     * @param iterable $objects
-     * @return array
-     */
-    public function mapOperations($objects): iterable
-    {
-        $items = [];
-
-        // iterate
-        foreach ($objects as $item) {
-
-            // voter check | read
-            $this->denyAccessUnlessGranted('read', $item);
-
-            // set operations
-            $item->setOperations(
-                [
-/* not jet implemented
-                    'edit' => [
-                        'icon' => $this->settings['buttons']['edit'],
-                        'uri' => $this->generateUrl(
-                            'app_person_edit',
-                            [
-                                'id' => $item->getId(),
-                            ]
-                        )
-                    ],
-
-                    'delete' => [
-                        'icon' => $this->settings['buttons']['delete'],
-                        'uri' => $this->generateUrl(
-                            'app_person_delete',
-                            [
-                                'id' => $item->getId(),
-                            ]
-                        )
-                    ],
-*/
-                ]
-            );
-
-            // add
-            $items[] = $item;
-        }
-
-        // return
-        return $items;
-    }
 
 
     /**
@@ -259,7 +208,6 @@ class PersonApiController extends AbstractApiController
                 $request->request->get('_token')
             )
         ) {
-
             /**
              * @var PersonImages $image
              */
@@ -298,6 +246,78 @@ class PersonApiController extends AbstractApiController
                 Response::HTTP_PRECONDITION_FAILED
             );
         }
+
+        // return
+        return $this->json(
+            [
+                'message' => $message,
+            ]
+        );
+    }
+
+
+    /**
+     * enable
+     *
+     * @param int $id
+     * @param Request $request
+     * @return JsonResponse
+     *
+     * @Route("/enable/{id}", name="enable", methods={"GET"})
+     */
+    public function enable(int $id, Request $request): JsonResponse
+    {
+        $em = $this->emDefault;
+        $object = $em
+            ->getRepository(static::$entityClassName)
+            ->find($id);
+
+        // voter
+        $this->denyAccessUnlessGranted('enable', $object);
+
+        $object->setStatus('ok');
+        $em->persist($object);
+        $em->flush();
+
+        $message = $this->translator->trans(
+            $this->getTranslateKey('action.enable.success')
+        );
+
+        // return
+        return $this->json(
+            [
+                'message' => $message,
+            ]
+        );
+    }
+
+
+    /**
+     * disable
+     *
+     * @param int $id
+     * @param Request $request
+     * @return JsonResponse
+     *
+     * @Route("/disable/{id}", name="disable", methods={"GET"})
+     */
+    public function disable(int $id, Request $request): JsonResponse
+    {
+        $em = $this->emDefault;
+        $object = $em
+            ->getRepository(static::$entityClassName)
+            ->find($id);
+
+        // voter
+        $this->denyAccessUnlessGranted('disable', $object);
+
+        $object->setStatus('disabled');
+        $em->persist($object);
+        $em->flush();
+
+        $message = $this->translator->trans(
+            $this->getTranslateKey('action.disable.success')
+        );
 
         // return
         return $this->json(
@@ -435,7 +455,6 @@ class PersonApiController extends AbstractApiController
                     )
                 ]
             );
-
         }
 
         // return
@@ -449,5 +468,57 @@ class PersonApiController extends AbstractApiController
             ],
             $result['status']
         );
+    }
+
+
+    /**
+     * get entity operatons
+     *
+     * @param iterable $objects
+     * @return array
+     */
+    public function mapOperations($objects): iterable
+    {
+        $items = [];
+
+        // iterate
+        foreach ($objects as $item) {
+
+            // voter check | read
+            $this->denyAccessUnlessGranted('read', $item);
+
+            // set operations
+            $item->setOperations(
+                [
+/* not jet implemented
+                    'edit' => [
+                        'icon' => $this->settings['buttons']['edit'],
+                        'uri' => $this->generateUrl(
+                            'app_person_edit',
+                            [
+                                'id' => $item->getId(),
+                            ]
+                        )
+                    ],
+
+                    'delete' => [
+                        'icon' => $this->settings['buttons']['delete'],
+                        'uri' => $this->generateUrl(
+                            'app_person_delete',
+                            [
+                                'id' => $item->getId(),
+                            ]
+                        )
+                    ],
+*/
+                ]
+            );
+
+            // add
+            $items[] = $item;
+        }
+
+        // return
+        return $items;
     }
 }
