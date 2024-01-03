@@ -1,0 +1,6 @@
+# .symfony.local.yaml
+workers:
+    # built-in command that builds and watches front-end assets
+    # yarn_encore_watch:
+    #     cmd: ['yarn', 'encore', 'dev', '--watch']
+    yarn_encore_watch: ~
