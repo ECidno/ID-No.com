@@ -129,7 +129,7 @@ In 2001, Krechting became director of New Media at the Neckermann mail-order fir
       <segment>
         <source>company.advisory.text</source>
         <target><![CDATA[**Klaus Artmann (Chairman of the Advisory Board)**  
-**CEO holding ‹one› GmbH**
+**CEO holding ‹one› GmbH**  
 Klaus Artmann has been involved in Internet and online marketing developments for over 15 years. His work focuses on strategic customer consulting, eRelations and the realization of customer-specific business models.
 
 **Helmut von der Lieck (Deputy Chairman of the Advisory Board)**  
@@ -138,7 +138,6 @@ Helmut von der Lieck is an expert in sales, customer service and marketing. He h
 
 **Prof. Dr. Ingo Kett, Advisory Board,**  
 **Managing Director Viaticum GmbH**  
-
 Ingo Kett was head of Sapient Consulting in Germany. Before that, he was responsible for the European business for utilities at IBM and was Executive Partner at Accenture. He is the founder of Viaticum, Venture Capital, and was awarded „Business Angel of the Year“.
 ]]></target>
       </segment>
@@ -3816,6 +3815,18 @@ Feel free to take a look.</target>
       <segment>
         <source>meinidno.account.description</source>
         <target>Here you can manage your account.</target>
+      </segment>
+    </unit>
+    <unit id="ZoAeS0n" name="index.carousel.slide.2024_start.text">
+      <segment>
+        <source>index.carousel.slide.2024_start.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="_oJ3I7d" name="index.carousel.slide.2024_start.caption">
+      <segment>
+        <source>index.carousel.slide.2024_start.caption</source>
+        <target> </target>
       </segment>
     </unit>
   </file>
