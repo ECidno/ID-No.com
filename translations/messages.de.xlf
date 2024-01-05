@@ -563,16 +563,16 @@ Krechting ist Autor zahlreicher Veröffentlichung. Darüber hinaus wirkte Krecht
     <unit id="kddzrsu" name="company.advisory.text">
       <segment>
         <source>company.advisory.text</source>
-        <target><![CDATA[**Klaus Artmann (Beiratsvorsitzender)**
-**CEO holding ‹one› GmbH**
+        <target><![CDATA[**Klaus Artmann (Beiratsvorsitzender)**  
+**CEO holding ‹one› GmbH**  
 Klaus Artmann befasst sich seit über 15 Jahren mit Entwicklungen im Internet und Online Marketing. Schwerpunkte seiner Arbeit sind die strategische Kundenberatung, eRelations und Realisierung von kundenspezifischen Businessmodellen.
 
-**Helmut von der Lieck (stellvertretender Beiratsvorsitzender)**
-**Geschäftsführender Gesellschafter gemeinsam&anders gmbh**
+**Helmut von der Lieck (stellvertretender Beiratsvorsitzender)**  
+**Geschäftsführender Gesellschafter gemeinsam&anders gmbh**  
 Helmut von der Lieck ist Experte für Vertrieb, Kundenservice und -marketing. Er hat in verschiedenen deutschen Finanz- und Medienunternehmen aus DAX und MDAX über 20 Jahre Berufserfahrung gesammelt.
 
-**Prof. Dr. Ingo Kett , Beirat,**
-**Geschäftsführer Viaticum GmbH**
+**Prof. Dr. Ingo Kett , Beirat,**  
+**Geschäftsführer Viaticum GmbH**  
 Ingo Kett leitete die Sapient Consulting in Deutschland. Zuvor verantwortete er bei IBM das Europageschäft für Energieversorger und war Executive Partner bei Accenture. Er ist Gründer der Viaticum, Venture Capital, und wurde als „Business Angel des Jahres“ ausgezeichnet.]]></target>
       </segment>
     </unit>
@@ -4281,6 +4281,18 @@ Alle ID-Nummern und Kontakte, die mit diesem Profil verbunden sind, werden ebenf
       <segment>
         <source>meinidno.account.description</source>
         <target>Hier verwalten Sie Ihren Account.</target>
+      </segment>
+    </unit>
+    <unit id="_oJ3I7d" name="index.carousel.slide.2024_start.caption">
+      <segment>
+        <source>index.carousel.slide.2024_start.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="ZoAeS0n" name="index.carousel.slide.2024_start.text">
+      <segment>
+        <source>index.carousel.slide.2024_start.text</source>
+        <target> </target>
       </segment>
     </unit>
   </file>
