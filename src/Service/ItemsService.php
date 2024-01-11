@@ -67,7 +67,7 @@ class ItemsService
      */
     public function check($idno, $flashBagType = 'itemCheck', $purpose = 'register'): ?Items
     {
-        $idno = strtoupper($idno);
+        $idno = $this->sanitize($idno);
 
         // format check
         if (
@@ -138,5 +138,23 @@ class ItemsService
 
         // finally return $item
         return $item;
+    }
+
+    /**
+     * Sanitize / format ID-No
+     * strtoupper, replace O and I
+     * 
+     * @var string $idno
+     * @return string
+     */
+    public function sanitize(string $idno): string
+    {
+        $replace = ['O', 'I'];
+        $replacements = ['0', '1'];
+        
+        $idno = strtoupper($idno);
+        $idnoSanitized = str_replace($replace, $replacements, $idno);
+
+        return $idnoSanitized;
     }
 }
