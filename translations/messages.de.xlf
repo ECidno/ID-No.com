@@ -4283,6 +4283,12 @@ Alle ID-Nummern und Kontakte, die mit diesem Profil verbunden sind, werden ebenf
         <target>Hier verwalten Sie Ihren Account.</target>
       </segment>
     </unit>
+    <unit id="BR0dwrg" name="btn.back.lbl">
+      <segment>
+        <source>btn.back.lbl</source>
+        <target>Zurück</target>
+      </segment>
+    </unit>    
     <unit id="_oJ3I7d" name="index.carousel.slide.2024_start.caption">
       <segment>
         <source>index.carousel.slide.2024_start.caption</source>
