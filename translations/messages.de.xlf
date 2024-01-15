@@ -4141,5 +4141,11 @@ Schauen Sie gerne rein.</target>
         <target> </target>
       </segment>
     </unit>
+    <unit id="vcEb10f" name="registration.repeatEmail">
+      <segment>
+        <source>registration.repeatEmail</source>
+        <target>E-Mail wiederholen</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
