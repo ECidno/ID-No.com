@@ -25,4 +25,29 @@ class NutzerRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Nutzer::class);
     }
+
+    /**
+     * find all nutzer who should receive an account reminder mail
+     * 
+     * @return array
+     */
+    public function findForReminderMail(): array
+    {
+        $monthsAgo = new \DateTime('now');
+        $monthsAgo->modify('-3 month');
+        $yearAgo = new \DateTime('now');
+        $yearAgo->modify('-1 year');
+
+        $qb = $this->createQueryBuilder('n')
+            ->join('n.persons', 'p')
+            ->where('n.sendInformation = 1')
+            ->andWhere('n.informationSendDatum < :monthsAgo')
+            ->andWhere('p.lastChangeDatum < :yearAgo')
+            ->setParameter('monthsAgo', $monthsAgo)
+            ->setParameter('yearAgo', $yearAgo);
+
+        $query = $qb->getQuery();
+
+        return $query->execute();
+    }
 }

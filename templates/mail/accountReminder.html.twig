@@ -1,0 +1,12 @@
+{% extends 'mail/base.html.twig' %}
+
+{# content #}
+{% block content %}
+	{{ 'mail.accountReminder.text'|trans(
+		{
+            '%address%': nutzer.fullAddress,
+            '%person_name%': person.fullName,
+			'%login_link%': url('app_login'),
+		}
+	)|raw|markdown_to_html }}
+{% endblock %}

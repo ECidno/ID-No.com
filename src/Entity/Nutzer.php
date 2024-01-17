@@ -192,6 +192,11 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $sendInformation;
 
+    /**
+     * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
+     */
+    private $informationSendDatum;
 
     /**
      * constructor
@@ -429,6 +434,36 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
                 [
                     $this->getVorname(),
                     $this->getNachname(),
+                ]
+            )
+        );
+    }
+
+    /**
+     * @return ?string
+     */
+    public function getFullAddress(): ?string
+    {
+        // address
+        switch ($this->anrede) {
+            case 'm':
+                $anrede = 'Lieber'; # @TODO translate!
+                break;
+            case 'w':
+                $anrede = 'Liebe'; # @TODO translate!
+                break;
+            default:
+                $anrede = 'Guten Tag'; # @TODO translate!
+                break;
+        }
+
+        // return
+        return join(
+            ' ',
+            array_filter(
+                [
+                    $anrede,
+                    $this->getFullName()
                 ]
             )
         );
@@ -752,5 +787,25 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     public function getSendInformation(): ?int
     {
         return $this->sendInformation;
+    }
+
+    /**
+     * Get the value of informationSendDatum
+     */ 
+    public function getInformationSendDatum(): ?\DateTimeInterface
+    {
+        return $this->informationSendDatum;
+    }
+
+    /**
+     * Set the value of informationSendDatum
+     *
+     * @return  self
+     */ 
+    public function setInformationSendDatum(\DateTimeInterface $informationSendDatum): self
+    {
+        $this->informationSendDatum = $informationSendDatum;
+
+        return $this;
     }
 }

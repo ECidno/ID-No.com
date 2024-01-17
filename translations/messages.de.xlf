@@ -4147,5 +4147,24 @@ Schauen Sie gerne rein.</target>
         <target>E-Mail wiederholen</target>
       </segment>
     </unit>
+    <unit id="PtBw5bC" name="mail.accountReminder.text">
+      <segment>
+        <source>mail.accountReminder.text</source>
+        <target>%address%,  
+  
+wir haben festgestellt, dass seit einem Jahr keine Aktualisierung des SOS-ID-Notfallpasses Ihres Profils „%person_name%“ erfolgt ist.
+Deshalb möchten wir Sie freundlich bitten, Ihr Profil aufzufrischen und Ihre SOS-ID-Daten jetzt kurz auf Aktualität zu prüfen.
+
+Bitte hier klicken: %login_link%
+
+Auch wenn es keine Änderungen Ihrer SOS-ID-Daten gibt, empfehlen wir Ihnen, die Aktualität mit einem Klick auf "Meine Daten sind aktuell" zu bestätigen. Damit wissen Ihre Retter im Notfall, dass Ihre SOS-ID-Daten aktuell sind.
+
+Wir bedanken uns für Ihre wichtige Mithilfe!
+
+Mit herzlichen Grüßen aus Frankfurt
+
+Ihr ID-No.com-Team</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
