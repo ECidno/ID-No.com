@@ -38,9 +38,26 @@
     {% endif %}
 
     <div class="row justify-content-center">
+
       <div class="col-12 col-md-10 col-lg-8">
         <h3>{{ 'meinidno.profile.title'|trans }}</h3>
         <p>{{ 'meinidno.profile.description'|trans }}</p>
+
+        {# account data older than a year #}
+        {% if accountStale %}
+          <div class="row mt-3">
+            <div class="col-12 col-sm-6 col-lg-8 col-xl-6 col-xxl-3">
+              <div class="d-grid">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-url="{{ path('app_person_edit', { id:person.id }) }}">
+                  {{ 'profile.upToDate.lbl'|trans }}
+                </button>
+              </div>
+            </div>
+          </div>
+        {% endif %}
 
         <div class="row mt-3">
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">

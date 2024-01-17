@@ -3812,5 +3812,35 @@ Feel free to take a look.</target>
         <target>E-Mail repeat</target>
       </segment>
     </unit>
+    <unit id="dPO7Cnb" name="mail.accountReminder.subject">
+      <segment>
+        <source>mail.accountReminder.subject</source>
+        <target>Your SOS ID emergency passport: Is your SOS ID data still up to date?</target>
+      </segment>
+    </unit>
+    <unit id="PtBw5bC" name="mail.accountReminder.text">
+      <segment>
+        <source>mail.accountReminder.text</source>
+        <target>%address%,  
+  
+We have noticed that the SOS ID emergency passport for your profile "%person_name%" has not been updated for a year. We would therefore kindly ask you to refresh your profile and briefly check that your SOS ID data is up to date.
+
+Please click here: %login_link%
+
+Even if there are no changes to your SOS ID data, we recommend that you confirm that it is up to date by clicking on "My data is up to date". In an emergency this lets your rescuers know that your SOS ID data is up to date.
+
+Thank you for your important help!
+
+With best regards from Frankfurt
+
+Your ID-No.com Team</target>
+      </segment>
+    </unit>
+    <unit id="Wdsia8n" name="profile.upToDate.lbl">
+      <segment>
+        <source>profile.upToDate.lbl</source>
+        <target>My data is up to date</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

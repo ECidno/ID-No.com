@@ -4147,7 +4147,13 @@ Schauen Sie gerne rein.</target>
         <target>E-Mail wiederholen</target>
       </segment>
     </unit>
-    <unit id="PtBw5bC" name="mail.accountReminder.text">
+    <unit id="KSvqoFf" name="mail.accountReminder.subject">
+      <segment>
+        <source>mail.accountReminder.subject</source>
+        <target>Ihr SOS-ID-Notfallpass: Sind Ihre SOS-ID-Daten noch aktuell?</target>
+      </segment>
+    </unit>
+    <unit id=".k19gAH" name="mail.accountReminder.text">
       <segment>
         <source>mail.accountReminder.text</source>
         <target>%address%,  
@@ -4164,6 +4170,12 @@ Wir bedanken uns für Ihre wichtige Mithilfe!
 Mit herzlichen Grüßen aus Frankfurt
 
 Ihr ID-No.com-Team</target>
+      </segment>
+    </unit>
+    <unit id="Wdsia8n" name="profile.upToDate.lbl">
+      <segment>
+        <source>profile.upToDate.lbl</source>
+        <target>Meine Daten sind aktuell</target>
       </segment>
     </unit>
   </file>

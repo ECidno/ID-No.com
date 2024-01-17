@@ -39,10 +39,14 @@ class ProfileController extends AbstractController
         $persons = $user->getPersons();
         $person = $persons->first() ?? [];
 
+        $today = new \DateTime();
+        $lastChange = $today->diff($person->getLastChangeDatum());
+
         // vars
         $variables = [
             'user' => $user,
             'person' => $person,
+            'accountStale' => ($lastChange->days > 364),
         ];
 
         // return
