@@ -450,4 +450,40 @@ class PersonApiController extends AbstractApiController
             $result['status']
         );
     }
+
+    /**
+     * set up to date
+     *
+     * @param int $id
+     * @param Request $request
+     * @return Response
+     *
+     * @Route("/up_to_date/{id}", name="up_to_date", methods={"GET"})
+     */
+    public function setUpToDate(int $id, Request $request): JsonResponse
+    {
+        $em = $this->emDefault;
+        
+        // person
+        $person = $this->emDefault
+            ->getRepository(Person::class)
+            ->find($id);
+
+        // voter
+        $this->denyAccessUnlessGranted('edit', $person);
+
+        $person->setLastChangeDatum(new \DateTime('now'));
+
+        $em->persist($person);
+        $em->flush($person);
+
+        $message = 'ok'; 
+
+        // return
+        return $this->json(
+            [
+                'message' => $message,
+            ]
+        );
+    }
 }

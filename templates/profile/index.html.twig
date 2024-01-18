@@ -50,8 +50,8 @@
               <div class="d-grid">
                 <button
                   type="button"
-                  class="btn btn-primary"
-                  data-url="{{ path('app_person_edit', { id:person.id }) }}">
+                  class="btn btn-primary ajax-action"
+                  data-url="{{ path('app_api_person_up_to_date', { id:person.id }) }}">
                   {{ 'profile.upToDate.lbl'|trans }}
                 </button>
               </div>
