@@ -13,5 +13,11 @@
         <target>Wir konnten keinen User mit dieser E-Mail Adresse finden.</target>
       </segment>
     </unit>
+    <unit id="JI32Rxl" name="registration.repeatEmail.mismatch">
+      <segment>
+        <source>registration.repeatEmail.mismatch</source>
+        <target>E-Mails stimmen nicht überein</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

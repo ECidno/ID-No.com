@@ -47,14 +47,21 @@ class RegistrationType extends AbstractType
                 ],
                 'required' => true
             ])
-            ->add('email', EmailType::class, [
-                'label' => new TranslatableMessage('person.email'),
+            ->add('email', RepeatedType::class, [
+                'type' => EmailType::class,
                 'attr' => [
                     'class' => 'ajax-validate',
                     'maxlength' => 100,
                     'autocomplete' => 'off',
                     'data-url' => '/api/profile/validate/email/',
                 ],
+                'first_options' => [
+                    'label' => new TranslatableMessage('person.email')
+                ],
+                'second_options' => [
+                    'label' => new TranslatableMessage('registration.repeatEmail')
+                ],
+                'invalid_message' => new TranslatableMessage('registration.repeatEmail.mismatch'),
                 'required' => true,
             ])
             ->add('anrede', ChoiceType::class, [
