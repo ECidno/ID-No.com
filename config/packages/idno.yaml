@@ -111,7 +111,7 @@ parameters:
             page: index
             anchor: referenzen
           bussiness_clients:
-             href: 'https://www.code-no.shop/sie-sind-firmenkunde'
+             href: 'https://www.lebensretter.shop/sie-sind-firmenkunde'
 
         # user
         user:
@@ -143,7 +143,7 @@ parameters:
           mobile: slider/2024_slider_mobile.jpg
         textStyle: 'position:absolute; left:25%; top:25%; margin-left:-70px; text-shadow: black 1px 1px 1px;'
         link:
-          href: https://www.code-no.shop/sos-id-chip/
+          href: https://www.lebensretter.shop/sos-id-chip/
 
       sos_chip_shoe:
         image:
@@ -211,7 +211,7 @@ parameters:
           anchor: so_funktionierts
         shop:
           image: images/shopbutton_1.png
-          href: 'https://www.code-no.shop/sos-id-chip/'
+          href: 'https://www.lebensretter.shop/sos-id-chip/'
           target: _blank
         datasecurity:
           image: images/safebutton_1.png

@@ -125,6 +125,7 @@ class RegistrationType extends AbstractType
                 'required' => false
             ])
         ;
+        
     }
 
 
