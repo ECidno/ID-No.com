@@ -3841,5 +3841,89 @@ Feel free to take a look.</target>
         <target>E-Mail repeat</target>
       </segment>
     </unit>
+    <unit id="xS3cI9h" name="index.carousel.slide.2024_slider_1.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_1.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="6kIQvmQ" name="index.carousel.slide.2024_slider_1.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_1.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="4tCiDen" name="index.carousel.slide.2024_slider_2.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_2.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="BmafHjx" name="index.carousel.slide.2024_slider_2.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_2.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="3gJAemf" name="index.carousel.slide.2024_slider_3.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_3.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="BvbiESx" name="index.carousel.slide.2024_slider_3.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_3.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="T0DWFVj" name="index.carousel.slide.2024_slider_4.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_4.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="r5V1J5P" name="index.carousel.slide.2024_slider_4.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_4.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="_J.SYdh" name="index.carousel.slide.2024_slider_5.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_5.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="2fIVySN" name="index.carousel.slide.2024_slider_5.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_5.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="ssOJnZY" name="index.carousel.slide.2024_slider_6.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_6.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="cfRRg.7" name="index.carousel.slide.2024_slider_6.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_6.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="8p76X6K" name="index.carousel.slide.2024_slider_7.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_7.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="v.mK3w2" name="index.carousel.slide.2024_slider_7.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_7.text</source>
+        <target> </target>
+      </segment>
+    </unit>
   </file>
 </xliff>

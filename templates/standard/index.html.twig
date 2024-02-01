@@ -9,11 +9,11 @@
     {% for item in settings.carousel %}
       <link
         rel="preload"
-        href="{{ asset(item.image.mobile, 'media') }}"
+        href="{{ asset(item.image[language].mobile, 'media') }}"
         as="image" />
       <link
         rel="preload"
-        href="{{ asset(item.image.desktop, 'media') }}"
+        href="{{ asset(item.image[language].desktop, 'media') }}"
         as="image" />
     {% endfor %}
     <link
@@ -55,14 +55,14 @@
             target="{{ item.link.target ?? '_blank' }}">
           {% endif %}
           <img
-            src="{{ asset(item.image.desktop, 'media') }}"
+            src="{{ asset(item.image[language].desktop, 'media') }}"
             class="d-none d-lg-block w-100"
             alt="{{ caption|trans }}" />
           <div class="d-none d-lg-block text-white" {{ textStyleProperty|raw }}>
             <h2 class="h1 text-light">{{ text|trans|raw|nl2br }}</h2>
           </div>
           <img
-            src="{{ asset(item.image.mobile, 'media') }}"
+            src="{{ asset(item.image[language].mobile, 'media') }}"
             class="d-lg-none w-100"
             alt="{{ caption |trans}}" />
           <div class="carousel-caption pb-0 d-lg-none">
