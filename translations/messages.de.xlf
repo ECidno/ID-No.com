@@ -56,7 +56,7 @@ Das spart Zeit und kann im Ernstfall Leben retten.</target>
       <segment>
         <source>index.boxrow1.shop.text</source>
         <target>Unsere SOS-ID Produkte finden Sie ab einem UVP
-von 9,95 € hier im [Shop](https://www.code-no.shop/sos-id-chip/)</target>
+von 9,95 € hier im [Shop](https://www.lebensretter.shop/sos-id-chip/)</target>
       </segment>
     </unit>
     <unit id="DqhitoI" name="index.boxrow1.datasecurity.header">
@@ -4353,14 +4353,94 @@ Alle ID-Nummern und Kontakte, die mit diesem Profil verbunden sind, werden ebenf
 ]]></target>
       </segment>
     </unit>
-    <unit id="pHQHToi">
+    <unit id="vcEb10f" name="registration.repeatEmail">
       <segment>
-        <source>Ich habe die &lt;a href="/agb" target="_blank"&gt;&lt;a href="/"&gt;AB&lt;/a&gt;&lt;/a&gt; gelesen und bin mit deren Geltung einverstanden. Der Datenvorhaltung meiner im Notfallpass hinterlegten Daten stimme ich zu.
-
-</source>
-        <target><![CDATA[Ich habe die <a href="/agb" target="_blank"><a href="/">AB</a></a> gelesen und bin mit deren Geltung einverstanden. Der Datenvorhaltung meiner im Notfallpass hinterlegten Daten stimme ich zu.
-
-]]></target>
+        <source>registration.repeatEmail</source>
+        <target>E-Mail wiederholen</target>
+      </segment>
+    </unit>
+    <unit id="xS3cI9h" name="index.carousel.slide.2024_slider_1.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_1.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="6kIQvmQ" name="index.carousel.slide.2024_slider_1.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_1.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="4tCiDen" name="index.carousel.slide.2024_slider_2.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_2.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="BmafHjx" name="index.carousel.slide.2024_slider_2.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_2.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="3gJAemf" name="index.carousel.slide.2024_slider_3.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_3.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="BvbiESx" name="index.carousel.slide.2024_slider_3.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_3.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="T0DWFVj" name="index.carousel.slide.2024_slider_4.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_4.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="r5V1J5P" name="index.carousel.slide.2024_slider_4.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_4.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="_J.SYdh" name="index.carousel.slide.2024_slider_5.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_5.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="2fIVySN" name="index.carousel.slide.2024_slider_5.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_5.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="ssOJnZY" name="index.carousel.slide.2024_slider_6.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_6.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="cfRRg.7" name="index.carousel.slide.2024_slider_6.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_6.text</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="8p76X6K" name="index.carousel.slide.2024_slider_7.caption">
+      <segment>
+        <source>index.carousel.slide.2024_slider_7.caption</source>
+        <target> </target>
+      </segment>
+    </unit>
+    <unit id="v.mK3w2" name="index.carousel.slide.2024_slider_7.text">
+      <segment>
+        <source>index.carousel.slide.2024_slider_7.text</source>
+        <target> </target>
       </segment>
     </unit>
   </file>

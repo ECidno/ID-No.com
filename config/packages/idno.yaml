@@ -111,7 +111,7 @@ parameters:
             page: index
             anchor: referenzen
           bussiness_clients:
-             href: 'https://www.code-no.shop/sie-sind-firmenkunde'
+             href: 'https://www.lebensretter.shop/sie-sind-firmenkunde'
 
         # user
         user:
@@ -139,52 +139,98 @@ parameters:
     carousel:
       2024_start:
         image:
-          desktop: slider/2024_slider_desktop.jpg
-          mobile: slider/2024_slider_mobile.jpg
+          de:
+            desktop: slider/2024_slider_desktop.jpg
+            mobile: slider/2024_slider_mobile.jpg
+          en:
+            desktop: slider/2024_slider_desktop.jpg
+            mobile: slider/2024_slider_mobile.jpg
         textStyle: 'position:absolute; left:25%; top:25%; margin-left:-70px; text-shadow: black 1px 1px 1px;'
         link:
-          href: https://www.code-no.shop/sos-id-chip/
+          href: https://www.lebensretter.shop/sos-id-chip/
 
-      sos_chip_shoe:
+      2024_slider_1:
         image:
-          desktop: slider/slider_desktop_1.jpg
-          mobile: slider/slider_mobile_1.jpg
+          de:
+            desktop: slider/de/2024_slider_desktop_1.jpg
+            mobile: slider/de/2024_slider_mobile_1.jpg
+          en:
+            desktop: slider/en/2024_slider_desktop_1.jpg
+            mobile: slider/en/2024_slider_mobile_1.jpg
         textStyle: 'position:absolute; left:25%; top:25%; margin-left:-70px; text-shadow: black 1px 1px 1px;'
+        link:
+          href: https://www.lebensretter.shop/sos-id-chip/
 
-      quick_sos_data:
+      2024_slider_2:
         image:
-          desktop: slider/Slider_2_desktop_080621.jpg
-          mobile: slider/slider_mobile_2.jpg
+          de:
+            desktop: slider/de/2024_slider_desktop_2.jpg
+            mobile: slider/de/2024_slider_mobile_2.jpg
+          en:
+            desktop: slider/en/2024_slider_desktop_2.jpg
+            mobile: slider/en/2024_slider_mobile_2.jpg
         textStyle: 'position:absolute; left:25%; top:37%;  margin-left:-294px; text-shadow: black 1px 1px 1px;'
+        link:
+          href: https://www.lebensretter.shop/sos-id-chip/
 
-      best_practice_barmer:
+      2024_slider_3:
         image:
-          desktop: slider/slider_desktop_3.jpg
-          mobile: slider/slider_mobile_3.jpg
+          de:
+            desktop: slider/de/2024_slider_desktop_3.jpg
+            mobile: slider/de/2024_slider_mobile_3.jpg
+          en:
+            desktop: slider/en/2024_slider_desktop_3.jpg
+            mobile: slider/en/2024_slider_mobile_3.jpg
         textStyle: 'position:absolute; left:25%; top:28%; margin-left:-128px; text-shadow: black 1px 1px 1px;'
+        link:
+          href: https://www.lebensretter.shop/sos-id-chip/
 
-      sos_clip_bike:
+      2024_slider_4:
         image:
-          desktop: slider/slider_desktop_4.jpg
-          mobile: slider/slider_mobile_4.jpg
+          de:
+            desktop: slider/de/2024_slider_desktop_4.jpg
+            mobile: slider/de/2024_slider_mobile_4.jpg
+          en:
+            desktop: slider/en/2024_slider_desktop_4.jpg
+            mobile: slider/en/2024_slider_mobile_4.jpg
         textStyle: 'position:absolute; left:56%; top:35%; text-shadow: black 1px 1px 1px;'
+        link:
+          href: https://www.lebensretter.shop/sos-id-chip/
 
-      sos_clip_motorcycle:
+      2024_slider_5:
         image:
-          desktop: slider/slider_desktop_5.jpg
-          mobile: slider/slider_mobile_5.jpg
+          de:
+            desktop: slider/de/2024_slider_desktop_5.jpg
+            mobile: slider/de/2024_slider_mobile_5.jpg
+          en:
+            desktop: slider/en/2024_slider_desktop_5.jpg
+            mobile: slider/en/2024_slider_mobile_5.jpg
         textStyle: 'position:absolute; left:56%; top:35%; text-shadow: black 1px 1px 1px;'
+        link:
+          href: https://www.lebensretter.shop/sos-id-chip/
 
-      best_practice_harley_davidson:
+      2024_slider_6:
         image:
-          desktop: slider/slider_desktop_6.jpg
-          mobile: slider/slider_mobile_6.jpg
+          de:
+            desktop: slider/de/2024_slider_desktop_6.jpg
+            mobile: slider/de/2024_slider_mobile_6.jpg
+          en:
+            desktop: slider/en/2024_slider_desktop_6.jpg
+            mobile: slider/en/2024_slider_mobile_6.jpg
+        link:
+          href: https://www.lebensretter.shop/sos-id-chip/
 
-      sos_clip_senior:
+      2024_slider_7:
         image:
-          desktop: slider/slider_desktop_7.jpg
-          mobile: slider/slider_mobile_7.jpg
+          de:
+            desktop: slider/de/2024_slider_desktop_7.jpg
+            mobile: slider/de/2024_slider_mobile_7.jpg
+          en:
+            desktop: slider/en/2024_slider_desktop_7.jpg
+            mobile: slider/en/2024_slider_mobile_7.jpg
         textStyle: 'position:absolute; left:25%; top:30%; text-shadow: black 1px 1px 1px;'
+        link:
+          href: https://www.lebensretter.shop/sos-id-chip/
 
       # gem. E-Mail Herr Seidel dd. 11.01.2023
       # covid:
@@ -211,7 +257,7 @@ parameters:
           anchor: so_funktionierts
         shop:
           image: images/shopbutton_1.png
-          href: 'https://www.code-no.shop/sos-id-chip/'
+          href: 'https://www.lebensretter.shop/sos-id-chip/'
           target: _blank
         datasecurity:
           image: images/safebutton_1.png
