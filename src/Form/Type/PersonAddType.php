@@ -69,6 +69,7 @@ class PersonAddType extends AbstractType
             ])
             ->add('terms', CheckboxType::class, [
                 'label' => new TranslatableMessage('person.terms.lbl'),
+                'label_html' => true,
                 'mapped' => false,
                 'row_attr' => ['class' => 'form-switch pt-3'],
                 'attr' => [

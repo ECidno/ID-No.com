@@ -27,6 +27,7 @@ class PersonVoter extends Voter
     const ENABLE = 'enable';
     const DISABLE = 'disable';
     const UPLOAD = 'upload';
+    const UPTODATE = 'uptodate';
 
     /**
      * supports
@@ -52,6 +53,7 @@ class PersonVoter extends Voter
                     self::ENABLE,
                     self::DISABLE,
                     self::UPLOAD,
+                    self::UPTODATE,
                 ]
             )
         ) {
@@ -97,6 +99,7 @@ class PersonVoter extends Voter
             case self::ENABLE:
             case self::DISABLE:
             case self::UPLOAD:
+            case self::UPTODATE:
                 return $this->canRud($person, $user);
                 break;
         }

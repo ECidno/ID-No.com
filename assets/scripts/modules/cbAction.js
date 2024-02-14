@@ -45,6 +45,69 @@ const cbAction = (el) => {
 
 
 /**
+ * cloudbase | action on load
+ *
+ * @param object el
+ */
+const cbActionOnLoad = (el) => {
+  let initialized = el.dataset.initialized || false
+  const url = el.dataset.url;
+  const options = {
+    method: el.dataset.method || 'GET'
+  };
+
+  // initalized?
+  if(initialized) {
+    return;
+  }
+
+  // ajax
+  cbAjax(url, options)
+    .then(res => {
+      cbSuccessActions(res, el);
+    })
+
+    // catch
+    .catch(err => {
+      console.warn(err);
+    });
+
+  // set init
+  el.dataset.initialized = true;
+}
+
+
+/**
+ * cloudbase | reinit
+ *
+ * @param object response
+ * @param object el
+ *
+ * @return mixed
+ */
+const cbInitActions = (el) => {
+
+  // add listener for action buttons
+  Array
+    .from(document.getElementsByClassName('ajax-action') || [])
+    .forEach((el) => {
+      cbAction(el);
+    });
+
+  // add listener for modal buttons
+  Array
+    .from(document.getElementsByClassName('ajax-modal') || [])
+    .forEach((el) => {
+      if((el.dataset.renderMode || 'modal') === 'modal') {
+        cbModalButton(el);
+      } else {
+        cbOffcanvasButton(el);
+      }
+    });
+}
+
+
+/**
  * cloudbase | success actions
  *
  * @param object response
@@ -70,6 +133,7 @@ const cbSuccessActions = (response, el) => {
   // html?
   if((response.html || false) && (response.target || target)) {
     document.querySelector(response.target || target).innerHTML = response.html;
+    cbInitActions(el);
   }
 
   // redirect?
@@ -92,25 +156,7 @@ const cbSuccessActions = (response, el) => {
       cbAjax(tableUrl)
         .then(res => {
           tableEl.innerHTML = res.html;
-
-          // add listener for action buttons
-          Array
-            .from(document.getElementsByClassName('ajax-action') || [])
-            .forEach((el) => {
-              cbAction(el);
-            });
-
-          // add listener for modal buttons
-          Array
-            .from(document.getElementsByClassName('ajax-modal') || [])
-            .forEach((el) => {
-              if((el.dataset.renderMode || 'modal') === 'modal') {
-                cbModalButton(el);
-              } else {
-                cbOffcanvasButton(el);
-              }
-            });
-
+          cbInitActions(el);
         })
 
         // catch
@@ -134,4 +180,4 @@ const cbSuccessActions = (response, el) => {
 
 
 // export
-export { cbAction, cbSuccessActions }
+export { cbAction, cbActionOnLoad, cbSuccessActions }

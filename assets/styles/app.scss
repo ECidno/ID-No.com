@@ -225,6 +225,12 @@ body.modal-open .background-container {
   height: 7rem;
   background-size: cover;
   background-position: center;
+
+  i {
+    position:relative;
+    top: -.25rem;
+    left: -2.5rem;
+  }
 }
 
 .userIconCenterSmall {
