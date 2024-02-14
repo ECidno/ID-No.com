@@ -3622,7 +3622,7 @@ Zur **[Anmeldung](%login_link%)**  </target>
     <unit id="QTliobL" name="person.action.upload.success">
       <segment>
         <source>person.action.upload.success</source>
-        <target>Die Datei wurde erfolgreich hochgeladen.</target>
+        <target>File uploaded.</target>
       </segment>
     </unit>
     <unit id="6mi12mu" name="index.carousel.slide.safty_first.caption">
@@ -3834,6 +3834,145 @@ Thank you for your important help!
 With best regards from Frankfurt
 
 Your ID-No.com Team</target>
+      </segment>
+    </unit>
+ <unit id="2JPQ4Iw" name="meinidno.profiles.title">
+      <segment>
+        <source>meinidno.profiles.title</source>
+        <target>Profiles</target>
+      </segment>
+    </unit>
+    <unit id="b1aDvjQ" name="meinidno.profiles.description">
+      <segment>
+        <source>meinidno.profiles.description</source>
+        <target>Manage your profiles.</target>
+      </segment>
+    </unit>
+    <unit id="hNkt1My" name="profiles.action.disable.lbl">
+      <segment>
+        <source>profiles.action.disable.lbl</source>
+        <target>Disable profile</target>
+      </segment>
+    </unit>
+    <unit id="1r1kgeJ" name="profiles.action.delete.lbl">
+      <segment>
+        <source>profiles.action.delete.lbl</source>
+        <target>Remove profile</target>
+      </segment>
+    </unit>
+    <unit id="1hEfa4Z" name="profiles.action.uptodate.lbl">
+      <segment>
+        <source>profiles.action.uptodate.lbl</source>
+        <target>Profile data up-to-date</target>
+      </segment>
+    </unit>
+    <unit id="kicaS4I" name="person.warning.noItem.txt">
+      <segment>
+        <source>person.warning.noItem.txt</source>
+        <target>No ID-Number registered</target>
+      </segment>
+    </unit>
+    <unit id="9HpvEp4" name="profiles.action.enable.lbl">
+      <segment>
+        <source>profiles.action.enable.lbl</source>
+        <target>Enable profile</target>
+      </segment>
+    </unit>
+    <unit id="htwKJ1q" name="profiles.action.new.lbl">
+      <segment>
+        <source>profiles.action.new.lbl</source>
+        <target>New profile</target>
+      </segment>
+    </unit>
+    <unit id="5T5lt0G" name="profiles.shop.header">
+      <segment>
+        <source>profiles.shop.header</source>
+        <target>ID-No.com products</target>
+      </segment>
+    </unit>
+    <unit id="kyJLB83" name="profiles.shop.description">
+      <segment>
+        <source>profiles.shop.description</source>
+        <target>No ID-No.com product left? Head over to our shop!</target>
+      </segment>
+    </unit>
+    <unit id="njms5bG" name="profiles.shop.btn.lbl">
+      <segment>
+        <source>profiles.shop.btn.lbl</source>
+        <target>Shop</target>
+      </segment>
+    </unit>
+    <unit id="oXAVbXJ" name="person.action.failure.no_object">
+      <segment>
+        <source>person.action.failure.no_object</source>
+        <target>Profile not found!</target>
+      </segment>
+    </unit>
+    <unit id="vg.8n6G" name="profile.switch.lbl">
+      <segment>
+        <source>profile.switch.lbl</source>
+        <target>Switch profile</target>
+      </segment>
+    </unit>
+    <unit id="P2UjJJ3" name="btn.cancel.lbl">
+      <segment>
+        <source>btn.cancel.lbl</source>
+        <target>Cancel</target>
+      </segment>
+    </unit>
+    <unit id="hNiZpK8" name="person.action.enable.success">
+      <segment>
+        <source>person.action.enable.success</source>
+        <target>Profile enabled.</target>
+      </segment>
+    </unit>
+    <unit id="B8EHMy7" name="person.action.disable.success">
+      <segment>
+        <source>person.action.disable.success</source>
+        <target>Profile disabled.</target>
+      </segment>
+    </unit>
+    <unit id="RupriNJ" name="person.new.lbl">
+      <segment>
+        <source>person.new.lbl</source>
+        <target>New profile</target>
+      </segment>
+    </unit>
+    <unit id="eF7vfhI" name="person.terms.lbl">
+      <segment>
+        <source>person.terms.lbl</source>
+        <target><![CDATA[I accept the <a href="/en/agb" target="_blank">terms & conditions</a>.]]></target>
+      </segment>
+    </unit>
+    <unit id="If4oshY" name="person.terms.txt">
+      <segment>
+        <source>person.terms.txt</source>
+        <target>person.terms.txt</target>
+      </segment>
+    </unit>
+    <unit id="0AqZ1HE" name="person.action.create.success">
+      <segment>
+        <source>person.action.create.success</source>
+        <target>Profile created.</target>
+      </segment>
+    </unit>
+    <unit id="uHcS8D2" name="person.action.delete.header">
+      <segment>
+        <source>person.action.delete.header</source>
+        <target>Delete profile?</target>
+      </segment>
+    </unit>
+    <unit id="sxfh5_r" name="person.action.delete.text">
+      <segment>
+        <source>person.action.delete.text</source>
+        <target>Do you really want to delete the profile "%person%"?  
+All ID-Numbers and contacts associated with this profile will be deleted as well.</target>
+      </segment>
+    </unit>
+    <unit id="rAoLbpH" name="person.action.delete.success">
+      <segment>
+        <source>person.action.delete.success</source>
+        <target>Profile deleted.</target>
       </segment>
     </unit>
     <unit id="Wdsia8n" name="profile.upToDate.lbl">
