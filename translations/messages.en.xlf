@@ -129,7 +129,7 @@ In 2001, Krechting became director of New Media at the Neckermann mail-order fir
       <segment>
         <source>company.advisory.text</source>
         <target><![CDATA[**Klaus Artmann (Chairman of the Advisory Board)**  
-**CEO holding ‹one› GmbH**  
+**CEO holding ‹one› GmbH**
 Klaus Artmann has been involved in Internet and online marketing developments for over 15 years. His work focuses on strategic customer consulting, eRelations and the realization of customer-specific business models.
 
 **Helmut von der Lieck (Deputy Chairman of the Advisory Board)**  
@@ -138,6 +138,7 @@ Helmut von der Lieck is an expert in sales, customer service and marketing. He h
 
 **Prof. Dr. Ingo Kett, Advisory Board,**  
 **Managing Director Viaticum GmbH**  
+
 Ingo Kett was head of Sapient Consulting in Germany. Before that, he was responsible for the European business for utilities at IBM and was Executive Partner at Accenture. He is the founder of Viaticum, Venture Capital, and was awarded „Business Angel of the Year“.
 ]]></target>
       </segment>
@@ -330,7 +331,7 @@ for seniors</target>
     <unit id="7cX4FXm" name="index.boxrow1.shop.text">
       <segment>
         <source>index.boxrow1.shop.text</source>
-        <target>Find our emergency ID products for RRP 9,95 € here in the [shop](https://www.lebensretter.shop/sos-id-chip/)</target>
+        <target>Find our emergency ID products for RRP 9,95 € here in the [shop](https://www.code-no.shop/sos-id-chip/)</target>
       </segment>
     </unit>
     <unit id="DqhitoI" name="index.boxrow1.datasecurity.header">
@@ -3036,7 +3037,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="K3PKIb6" name="meinidno.profile.title">
       <segment>
         <source>meinidno.profile.title</source>
-        <target>My account</target>
+        <target>Profil / Emergency Data</target>
       </segment>
     </unit>
     <unit id="k7IqGnH" name="meinidno.profile.description">
@@ -3066,7 +3067,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="sC3Y1zj" name="meinidno.contact.title">
       <segment>
         <source>meinidno.contact.title</source>
-        <target>My contacts</target>
+        <target>My Contacts</target>
       </segment>
     </unit>
     <unit id="mVElgW5" name="meinidno.contact.description">
@@ -3793,34 +3794,10 @@ Feel free to take a look.</target>
         <target></target>
       </segment>
     </unit>
-    <unit id="NpVIEan" name="profile.list.lbl">
+    <unit id="_oJ3I7d" name="index.carousel.slide.2024_start.caption">
       <segment>
-        <source>profile.list.lbl</source>
-        <target>Familiy-Account / Profiles</target>
-      </segment>
-    </unit>
-    <unit id="WQWUSQH" name="account.settings.lbl">
-      <segment>
-        <source>account.settings.lbl</source>
-        <target>Account settings</target>
-      </segment>
-    </unit>
-    <unit id="yBoThbD" name="account.delete.lbl">
-      <segment>
-        <source>account.delete.lbl</source>
-        <target>Delete account</target>
-      </segment>
-    </unit>
-    <unit id="s0oQtYh" name="meinidno.account.description">
-      <segment>
-        <source>meinidno.account.description</source>
-        <target>Here you can manage your account.</target>
-      </segment>
-    </unit>
-    <unit id="BR0dwrg" name="btn.back.lbl">
-      <segment>
-        <source>btn.back.lbl</source>
-        <target>Back</target>
+        <source>index.carousel.slide.2024_start.caption</source>
+        <target> </target>
       </segment>
     </unit>
     <unit id="ZoAeS0n" name="index.carousel.slide.2024_start.text">
@@ -3829,13 +3806,37 @@ Feel free to take a look.</target>
         <target> </target>
       </segment>
     </unit>
-    <unit id="_oJ3I7d" name="index.carousel.slide.2024_start.caption">
+    <unit id="vcEb10f" name="registration.repeatEmail">
       <segment>
-        <source>index.carousel.slide.2024_start.caption</source>
-        <target> </target>
+        <source>registration.repeatEmail</source>
+        <target>E-Mail repeat</target>
       </segment>
     </unit>
-    <unit id="2JPQ4Iw" name="meinidno.profiles.title">
+    <unit id="dPO7Cnb" name="mail.accountReminder.subject">
+      <segment>
+        <source>mail.accountReminder.subject</source>
+        <target>Your SOS ID emergency passport: Is your SOS ID data still up to date?</target>
+      </segment>
+    </unit>
+    <unit id="PtBw5bC" name="mail.accountReminder.text">
+      <segment>
+        <source>mail.accountReminder.text</source>
+        <target>%address%,  
+  
+We have noticed that the SOS ID emergency passport for your profile "%person_name%" has not been updated for a year. We would therefore kindly ask you to refresh your profile and briefly check that your SOS ID data is up to date.
+
+Please click here: %login_link%
+
+Even if there are no changes to your SOS ID data, we recommend that you confirm that it is up to date by clicking on "My data is up to date". In an emergency this lets your rescuers know that your SOS ID data is up to date.
+
+Thank you for your important help!
+
+With best regards from Frankfurt
+
+Your ID-No.com Team</target>
+      </segment>
+    </unit>
+ <unit id="2JPQ4Iw" name="meinidno.profiles.title">
       <segment>
         <source>meinidno.profiles.title</source>
         <target>Profiles</target>
@@ -3972,95 +3973,12 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
       <segment>
         <source>person.action.delete.success</source>
         <target>Profile deleted.</target>
-    </unit>
-    <unit id="vcEb10f" name="registration.repeatEmail">
-      <segment>
-        <source>registration.repeatEmail</source>
-        <target>E-Mail repeat</target>
       </segment>
     </unit>
-    <unit id="xS3cI9h" name="index.carousel.slide.2024_slider_1.caption">
+    <unit id="Wdsia8n" name="profile.upToDate.lbl">
       <segment>
-        <source>index.carousel.slide.2024_slider_1.caption</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="6kIQvmQ" name="index.carousel.slide.2024_slider_1.text">
-      <segment>
-        <source>index.carousel.slide.2024_slider_1.text</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="4tCiDen" name="index.carousel.slide.2024_slider_2.caption">
-      <segment>
-        <source>index.carousel.slide.2024_slider_2.caption</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="BmafHjx" name="index.carousel.slide.2024_slider_2.text">
-      <segment>
-        <source>index.carousel.slide.2024_slider_2.text</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="3gJAemf" name="index.carousel.slide.2024_slider_3.caption">
-      <segment>
-        <source>index.carousel.slide.2024_slider_3.caption</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="BvbiESx" name="index.carousel.slide.2024_slider_3.text">
-      <segment>
-        <source>index.carousel.slide.2024_slider_3.text</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="T0DWFVj" name="index.carousel.slide.2024_slider_4.caption">
-      <segment>
-        <source>index.carousel.slide.2024_slider_4.caption</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="r5V1J5P" name="index.carousel.slide.2024_slider_4.text">
-      <segment>
-        <source>index.carousel.slide.2024_slider_4.text</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="_J.SYdh" name="index.carousel.slide.2024_slider_5.caption">
-      <segment>
-        <source>index.carousel.slide.2024_slider_5.caption</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="2fIVySN" name="index.carousel.slide.2024_slider_5.text">
-      <segment>
-        <source>index.carousel.slide.2024_slider_5.text</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="ssOJnZY" name="index.carousel.slide.2024_slider_6.caption">
-      <segment>
-        <source>index.carousel.slide.2024_slider_6.caption</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="cfRRg.7" name="index.carousel.slide.2024_slider_6.text">
-      <segment>
-        <source>index.carousel.slide.2024_slider_6.text</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="8p76X6K" name="index.carousel.slide.2024_slider_7.caption">
-      <segment>
-        <source>index.carousel.slide.2024_slider_7.caption</source>
-        <target> </target>
-      </segment>
-    </unit>
-    <unit id="v.mK3w2" name="index.carousel.slide.2024_slider_7.text">
-      <segment>
-        <source>index.carousel.slide.2024_slider_7.text</source>
-        <target> </target>
+        <source>profile.upToDate.lbl</source>
+        <target>My data is up to date</target>
       </segment>
     </unit>
   </file>
