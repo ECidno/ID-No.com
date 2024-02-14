@@ -117,14 +117,14 @@
 
 <div class="row border border-default rounded mb-3">
   <div class="col-3 col-lg-2 userIconContainer">
-    {% if person is defined and person.imageSrc is not empty %}
-      <div
-        class="userIcon m-2"
-        style="background-image: url('{{ person.imageSrc }}');" alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
-      </div>
-    {% else %}
-      <i class="bi bi-person-circle fs-1 p-2 align-middle"></i>
-    {% endif %}
+    {% set personImage = person.imageSrc is defined and person.imageSrc != 'null'
+      ? person.imageSrc
+      : asset('images/no_image-120x120.png', 'media')
+    %}
+    <div
+      class="userIcon m-2"
+      style="background-image: url('{{ personImage }}');" alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
+    </div>
   </div>
 
   <div class="col-6 col-lg-7">

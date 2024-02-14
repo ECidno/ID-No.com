@@ -89,8 +89,7 @@ class ProfileController extends AbstractController
 
         // vars
         $variables = [
-            'user' => $user,
-            'persons' => $persons,
+            'person_list' => $persons,
             'layout' => $this->ajax === true
                 ? 'ajax'
                 : 'default',

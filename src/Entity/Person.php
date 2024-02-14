@@ -1808,7 +1808,7 @@ class Person
      */
     public function setItemCount(?int $itemCount): self
     {
-        $this->itemCount = $itemCount ?? null;
+        $this->itemCount = $itemCount ?? 0;
         return $this;
     }
 

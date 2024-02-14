@@ -3422,7 +3422,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="lbhUQQO" name="meinidno.idno.title">
       <segment>
         <source>meinidno.idno.title</source>
-        <target>Meine ID-Nummern</target>
+        <target>ID-Nummern</target>
       </segment>
     </unit>
     <unit id="q5AtHiT" name="meinidno.idno.description">
@@ -3434,7 +3434,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="sC3Y1zj" name="meinidno.contact.title">
       <segment>
         <source>meinidno.contact.title</source>
-        <target>Meine Kontakte</target>
+        <target>Kontakte</target>
       </segment>
     </unit>
     <unit id="mVElgW5" name="meinidno.contact.description">
@@ -4192,9 +4192,9 @@ Schauen Sie gerne rein.</target>
     <unit id="eF7vfhI" name="person.terms.lbl">
       <segment>
         <source>person.terms.lbl</source>
-        <target>Ich habe die AGB gelesen und bin mit deren Geltung einverstanden. Der Datenvorhaltung meiner im Notfallpass hinterlegten Daten stimme ich zu.
+        <target><![CDATA[Ich habe die <a href="/agb" target="_blank">AGB</a> gelesen und bin mit deren Geltung einverstanden. Der Datenvorhaltung meiner im Notfallpass hinterlegten Daten stimme ich zu.
 
-</target>
+]]></target>
       </segment>
     </unit>
     <unit id="If4oshY" name="person.terms.txt">
@@ -4288,7 +4288,7 @@ Alle ID-Nummern und Kontakte, die mit diesem Profil verbunden sind, werden ebenf
         <source>btn.back.lbl</source>
         <target>Zurück</target>
       </segment>
-    </unit>    
+    </unit>
     <unit id="_oJ3I7d" name="index.carousel.slide.2024_start.caption">
       <segment>
         <source>index.carousel.slide.2024_start.caption</source>
@@ -4299,6 +4299,58 @@ Alle ID-Nummern und Kontakte, die mit diesem Profil verbunden sind, werden ebenf
       <segment>
         <source>index.carousel.slide.2024_start.text</source>
         <target> </target>
+      </segment>
+    </unit>
+    <unit id="1hEfa4Z" name="profiles.action.uptodate.lbl">
+      <segment>
+        <source>profiles.action.uptodate.lbl</source>
+        <target>Daten aktuell</target>
+      </segment>
+    </unit>
+    <unit id="eBYMbmW" name="person.action.uptodate.success">
+      <segment>
+        <source>person.action.uptodate.success</source>
+        <target>Personendaten sind aktuell.</target>
+      </segment>
+    </unit>
+    <unit id="oXAVbXJ" name="person.action.failure.no_object">
+      <segment>
+        <source>person.action.failure.no_object</source>
+        <target>Profil wurde nicht gefunden!</target>
+      </segment>
+    </unit>
+    <unit id="vg.8n6G" name="profile.switch.lbl">
+      <segment>
+        <source>profile.switch.lbl</source>
+        <target>Profil wechseln</target>
+      </segment>
+    </unit>
+    <unit id="Bo2kt0H" name="profile.index.lbl">
+      <segment>
+        <source>profile.index.lbl</source>
+        <target>Übersicht</target>
+      </segment>
+    </unit>
+    <unit id="7eVImWS" name="Terms">
+      <segment>
+        <source>Terms</source>
+        <target>Terms</target>
+      </segment>
+    </unit>
+    <unit id="Q6lVGEL">
+      <segment>
+        <source>ID-No.com nimmt den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und verwenden sie nicht für Werbezwecke. Die Anmeldung für Ihren Notfall-ID Pass ist kostenfrei.</source>
+        <target>ID-No.com nimmt den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und verwenden sie nicht für Werbezwecke. Die Anmeldung für Ihren Notfall-ID Pass ist kostenfrei.</target>
+      </segment>
+    </unit>
+    <unit id="8Qy3ai3">
+      <segment>
+        <source>Ich habe die &lt;a href="/agb" target="_blank"&gt;AGB&lt;/a&gt; gelesen und bin mit deren Geltung einverstanden. Der Datenvorhaltung meiner im Notfallpass hinterlegten Daten stimme ich zu.
+
+</source>
+        <target><![CDATA[Ich habe die <a href="/agb" target="_blank">AGB</a> gelesen und bin mit deren Geltung einverstanden. Der Datenvorhaltung meiner im Notfallpass hinterlegten Daten stimme ich zu.
+
+]]></target>
       </segment>
     </unit>
     <unit id="vcEb10f" name="registration.repeatEmail">

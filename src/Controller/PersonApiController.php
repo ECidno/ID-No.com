@@ -45,6 +45,83 @@ class PersonApiController extends AbstractApiController
 
 
     /**
+     * create
+     *
+     * @param Request $request
+     * @return JsonResponse
+     *
+     * @Route("/create", name="create", methods={"POST"})
+     */
+    public function create(Request $request): JsonResponse
+    {
+        $object = new static::$entityClassName();
+        $formType = static::$entityFormAddType;
+        $em = $this->emDefault;
+
+        // form
+        $form = $this->createForm($formType, $object);
+        $form->handleRequest($request);
+
+        // form valid
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            // voter
+            $this->denyAccessUnlessGranted('create', $object);
+
+            $em->persist($object);
+            $em->flush($object);
+
+            // message
+            $message = $this->translator->trans(
+                $this->getTranslateKey('action.create.success')
+            );
+
+        // form invalid
+        } else if (!$form->isValid()) {
+            $errors = $this->collectFormErrors($form);
+            $message = $this->translator->trans(
+                $this->getTranslateKey('action.create.error')
+            );
+
+            // Return status code 400 for validation errors: https://stackoverflow.com/a/3290198
+            return $this->json(
+                [
+                    'message' => $message,
+                    'errors' => $errors,
+                ],
+                Response::HTTP_BAD_REQUEST
+            );
+        }
+
+        // first "new" person created | redirect
+        if($object->getNutzer()->getPersons()->count() === 2) {
+
+            // $this->addFlash(
+            //     'success',
+            //     $message
+            // );
+
+            // return
+            return $this->json(
+                [
+                    'id' => $object->getId(),
+                    'redirect' => $this->generateUrl('app_profile_index'),
+                ]
+            );
+
+        // return
+        } else {
+            return $this->json(
+                [
+                    'id' => $object->getId(),
+                    'message' => $message,
+                ]
+            );
+        }
+    }
+
+
+    /**
      * update
      *
      * @param int $id
@@ -272,6 +349,17 @@ class PersonApiController extends AbstractApiController
             ->getRepository(static::$entityClassName)
             ->find($id);
 
+        // object?
+        if($object === null) {
+            return $this->json(
+                [
+                    'message' => $this->translator->trans(
+                        $this->getTranslateKey('action.failure.no_object')
+                    ),
+                ]
+            );
+        }
+
         // voter
         $this->denyAccessUnlessGranted('enable', $object);
 
@@ -279,14 +367,12 @@ class PersonApiController extends AbstractApiController
         $em->persist($object);
         $em->flush();
 
-        $message = $this->translator->trans(
-            $this->getTranslateKey('action.enable.success')
-        );
-
         // return
         return $this->json(
             [
-                'message' => $message,
+                'message' => $this->translator->trans(
+                    $this->getTranslateKey('action.enable.success')
+                ),
             ]
         );
     }
@@ -308,6 +394,17 @@ class PersonApiController extends AbstractApiController
             ->getRepository(static::$entityClassName)
             ->find($id);
 
+        // object?
+        if($object === null) {
+            return $this->json(
+                [
+                    'message' => $this->translator->trans(
+                        $this->getTranslateKey('action.failure.no_object')
+                    ),
+                ]
+            );
+        }
+
         // voter
         $this->denyAccessUnlessGranted('disable', $object);
 
@@ -315,14 +412,12 @@ class PersonApiController extends AbstractApiController
         $em->persist($object);
         $em->flush();
 
-        $message = $this->translator->trans(
-            $this->getTranslateKey('action.disable.success')
-        );
-
         // return
         return $this->json(
             [
-                'message' => $message,
+                'message' => $this->translator->trans(
+                    $this->getTranslateKey('action.disable.success')
+                ),
             ]
         );
     }
@@ -467,6 +562,51 @@ class PersonApiController extends AbstractApiController
                 'imageSrc' => $imageSrc,
             ],
             $result['status']
+        );
+    }
+
+
+    /**
+     * uptodate
+     *
+     * @param int $id
+     * @param Request $request
+     * @return JsonResponse
+     *
+     * @Route("/uptodate/{id}", name="uptodate", methods={"GET"})
+     */
+    public function uptodate(int $id, Request $request): JsonResponse
+    {
+        $em = $this->emDefault;
+        $object = $em
+            ->getRepository(static::$entityClassName)
+            ->find($id);
+
+        // object?
+        if($object === null) {
+            return $this->json(
+                [
+                    'message' => $this->translator->trans(
+                        $this->getTranslateKey('action.failure.no_object')
+                    ),
+                ]
+            );
+        }
+
+        // voter
+        $this->denyAccessUnlessGranted('uptodate', $object);
+
+        $object->setLastChangeDatum(new \DateTime());
+        $em->persist($object);
+        $em->flush();
+
+        // return
+        return $this->json(
+            [
+                'message' => $this->translator->trans(
+                    $this->getTranslateKey('action.uptodate.success')
+                ),
+            ]
         );
     }
 
