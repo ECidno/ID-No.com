@@ -75,20 +75,25 @@ staging:
   script:
     - cd /srv/www/symfony.idno/html
 
-    #- *git-script
-
+    # git
     - git checkout staging
     - git pull origin staging
 
     # composer
-    - composer install
-    
+    - "/usr/bin/php8.2 /usr/local/bin/composer install"
+
     # db
-    - "php bin/console doctrine:migrations:migrate -q"
+    - "/usr/bin/php8.2 bin/console doctrine:migrations:migrate -q"
 
     # cache
-    - "php bin/console cache:clear"
-    - "php bin/console cache:warmup"
+    - "/usr/bin/php8.2 bin/console cache:clear"
+    - "/usr/bin/php8.2 bin/console cache:warmup"
+
+    # nvm
+    - "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash"
+    - ". ~/.nvm/nvm.sh"
+    - "nvm --version"
+    - "nvm use"
 
     # yarn
     - yarn
@@ -128,15 +133,21 @@ production:
     - git pull origin main
 
     # composer
-    - /usr/bin/php8.1 /usr/local/bin/composer install --optimize-autoloader
-    - /usr/bin/php8.1 /usr/local/bin/composer dump-env prod
+    - /usr/bin/php8.2 /usr/local/bin/composer install --optimize-autoloader
+    - /usr/bin/php8.2 /usr/local/bin/composer dump-env prod
 
     # db
-    - "/usr/bin/php8.1 bin/console doctrine:migrations:migrate -q"
+    - "/usr/bin/php8.2 bin/console doctrine:migrations:migrate -q"
 
     # cache
-    - "/usr/bin/php8.1 bin/console cache:clear"
-    - "/usr/bin/php8.1 bin/console cache:warmup"
+    - "/usr/bin/php8.2 bin/console cache:clear"
+    - "/usr/bin/php8.2 bin/console cache:warmup"
+
+    # nvm
+    - "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash"
+    - ". ~/.nvm/nvm.sh"
+    - "nvm --version"
+    - "nvm use --delete-prefix"
 
     # yarn
     - yarn
