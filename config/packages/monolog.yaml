@@ -91,7 +91,6 @@ when@prod:
             # WEBCN-75
             idno:
                 level:    error
-                type:     rotating_file
+                type:     stream
                 path:     '%kernel.logs_dir%/idno.log'
                 channels: [idno]
-                max_files: 5
