@@ -7,6 +7,7 @@ namespace App\Controller;
  *
  **********************************************************************/
 
+use App\Entity\Items;
 use App\Entity\Person;
 use App\Entity\PersonImages;
 use App\Form\Type\PersonType;
@@ -271,6 +272,13 @@ class PersonApiController extends AbstractApiController
     public function delete(int $id, Request $request): JsonResponse
     {
         $em = $this->emDefault;
+
+        /**
+         * @var Nutzer
+         */
+        $user = $this->getUser();
+
+        // object
         $object = $em
             ->getRepository(static::$entityClassName)
             ->find($id);
@@ -302,6 +310,32 @@ class PersonApiController extends AbstractApiController
                 $em->remove($image);
             }
 
+            // new person for exiting items
+            $itemTargetPerson = $user->getPersons()->first();
+            while($itemTargetPerson->getId() === $object->getId()) {
+                $itemTargetPerson = $user->getPersons()->next();
+            }
+
+            // get id number if assigned, disable and assing them to main profile
+            $items = $em
+                ->getRepository(Items::class)
+                ->findBy([
+                    'person' => $object,
+                    'nutzer' => $user,
+                ]);
+
+            // iterate items
+            foreach ($items as $item) {
+                $item
+                    ->setPerson($itemTargetPerson)
+                    ->setStatus(false);
+
+                // update
+                $em->persist($item);
+                $em->flush($item);
+            }
+
+            // remove person
             $em->remove($object);
             $em->flush($object);
 

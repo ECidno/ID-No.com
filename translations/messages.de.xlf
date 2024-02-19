@@ -1556,7 +1556,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="IA5y3yw" name="item.action.delete.text">
       <segment>
         <source>item.action.delete.text</source>
-        <target>Möchten Sie die ID-Nummer  "%idNo%" wirklich entfernen? </target>
+        <target>Möchten Sie die ID-Nummer "%idNo%" wirklich entfernen? </target>
       </segment>
     </unit>
     <unit id="3Amepzd" name="person.lbl">
@@ -4238,7 +4238,7 @@ Schauen Sie gerne rein.</target>
         <source>person.action.delete.text</source>
         <target>Möchten Sie das Profil "%person%" wirklich entfernen?  
 
-Alle ID-Nummern und Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.</target>
+Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht. Alle ID-Nummern werden deaktiviert und dem ersten Profil in Ihrer Übersicht zugeordnet.</target>
       </segment>
     </unit>
     <unit id="rAoLbpH" name="person.action.delete.success">
