@@ -554,7 +554,7 @@ Red Cross squad leader civil protection</target>
     <unit id="MM4P3i3" name="ID-Nummer checken/aktivieren">
       <segment>
         <source>ID-Nummer checken/aktivieren</source>
-        <target>Enter ID number</target>
+        <target>Enter ID number:</target>
       </segment>
     </unit>
     <unit id="yIoLkHQ" name="Success">
