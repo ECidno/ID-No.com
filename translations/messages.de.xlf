@@ -678,7 +678,7 @@ Klaus Artmann (Beiratsvorsitzender)</target>
     <unit id="MM4P3i3" name="ID-Nummer checken/aktivieren">
       <segment>
         <source>ID-Nummer checken/aktivieren</source>
-        <target>ID-Nummer eingeben</target>
+        <target>ID-Nummer eingeben:</target>
       </segment>
     </unit>
     <unit id="cpJYWuS" name="Krankenversicherung">
