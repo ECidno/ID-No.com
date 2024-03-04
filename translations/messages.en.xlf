@@ -1003,7 +1003,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="41WERFZ" name="person.groesse">
       <segment>
         <source>person.groesse</source>
-        <target>Size:</target>
+        <target>Height:</target>
       </segment>
     </unit>
     <unit id="grdjQzd" name="person.gewicht">
@@ -1177,7 +1177,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="LNtZqBU" name="account.edit.lbl">
       <segment>
         <source>account.edit.lbl</source>
-        <target>Edit Account</target>
+        <target>Edit account</target>
       </segment>
     </unit>
     <unit id="hoXcfP0" name="profile.delete.lbl">
@@ -1345,7 +1345,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="sA6e0z0" name="person.telefonVorwahl.lbl">
       <segment>
         <source>person.telefonVorwahl.lbl</source>
-        <target>person.telefonVorwahl.lbl</target>
+        <target>Prefix</target>
       </segment>
     </unit>
     <unit id="WAqW5FP" name="person.telefon.lbl">
@@ -1441,7 +1441,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="ekMryqc" name="person.groesse.lbl">
       <segment>
         <source>person.groesse.lbl</source>
-        <target>Size</target>
+        <target>Height</target>
       </segment>
     </unit>
     <unit id="tQOcMl1" name="cm">
@@ -1477,7 +1477,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="S6uHNHe" name="person.versicherungsnummer.lbl">
       <segment>
         <source>person.versicherungsnummer.lbl</source>
-        <target>Insurace number</target>
+        <target>Insurance number</target>
       </segment>
     </unit>
     <unit id="7EGqC16" name="person.zusatzversicherung.lbl">
@@ -3031,7 +3031,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="F81R_cb" name="person.blutgruppe.choose.lbl">
       <segment>
         <source>person.blutgruppe.choose.lbl</source>
-        <target>-- Pleasy choose your blood type --</target>
+        <target>-- Please choose your blood type --</target>
       </segment>
     </unit>
     <unit id="K3PKIb6" name="meinidno.profile.title">
@@ -3085,7 +3085,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="pFzFHf8" name="items.idNo.lbl">
       <segment>
         <source>items.idNo.lbl</source>
-        <target>ID number</target>
+        <target>ID-number</target>
       </segment>
     </unit>
     <unit id="gmsAMFu" name="items.anbringung.lbl">
@@ -3121,19 +3121,19 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="RLlT90S" name="item.lbl">
       <segment>
         <source>item.lbl</source>
-        <target>ID number</target>
+        <target>ID-number</target>
       </segment>
     </unit>
     <unit id="c69XQyB" name="items.noStatus.lbl">
       <segment>
         <source>items.noStatus.lbl</source>
-        <target>ID number activ</target>
+        <target>ID-number active</target>
       </segment>
     </unit>
     <unit id="iN8764q" name="items.action.edit.success">
       <segment>
         <source>items.action.edit.success</source>
-        <target>The ID number has been saved.</target>
+        <target>ID-number saved.</target>
       </segment>
     </unit>
     <unit id="mD32oKh" name="person.image.lbl">
@@ -3652,7 +3652,7 @@ Zur **[Anmeldung](%login_link%)**  </target>
     <unit id="UPKIz7K" name="items.action.create.success">
       <segment>
         <source>items.action.create.success</source>
-        <target>the ID number has been activated.</target>
+        <target>ID-number has been activated.</target>
       </segment>
     </unit>
     <unit id="VOHR.Fx" name="mail.resetPassword.text">
@@ -3749,7 +3749,7 @@ Feel free to take a look.</target>
     <unit id="qIXbZfH" name="Laden Sie ein Foto hoch oder machen Sie ein Selfie.">
       <segment>
         <source>Laden Sie ein Foto hoch oder machen Sie ein Selfie.</source>
-        <target>Laden Sie ein Foto hoch oder machen Sie ein Selfie.</target>
+        <target>Upload a photo or take a selfie.</target>
       </segment>
     </unit>
     <unit id="CSN8DUX" name="Wrong file type, please use JPG-files only!">
@@ -3812,13 +3812,13 @@ Feel free to take a look.</target>
         <target>E-Mail repeat</target>
       </segment>
     </unit>
-    <unit id="dPO7Cnb" name="mail.accountReminder.subject">
+    <unit id="KSvqoFf" name="mail.accountReminder.subject">
       <segment>
         <source>mail.accountReminder.subject</source>
         <target>Your SOS ID emergency passport: Is your SOS ID data still up to date?</target>
       </segment>
     </unit>
-    <unit id="PtBw5bC" name="mail.accountReminder.text">
+    <unit id=".k19gAH" name="mail.accountReminder.text">
       <segment>
         <source>mail.accountReminder.text</source>
         <target>%address%,  
@@ -3836,7 +3836,7 @@ With best regards from Frankfurt
 Your ID-No.com Team</target>
       </segment>
     </unit>
- <unit id="2JPQ4Iw" name="meinidno.profiles.title">
+    <unit id="2JPQ4Iw" name="meinidno.profiles.title">
       <segment>
         <source>meinidno.profiles.title</source>
         <target>Profiles</target>
@@ -3947,7 +3947,7 @@ Your ID-No.com Team</target>
     <unit id="If4oshY" name="person.terms.txt">
       <segment>
         <source>person.terms.txt</source>
-        <target>person.terms.txt</target>
+        <target>ID-No.com takes the protection of your personal data very seriously. We treat your personal data confidentially and do not use it for advertising purposes. Registration for your emergency ID pass is free of charge.</target>
       </segment>
     </unit>
     <unit id="0AqZ1HE" name="person.action.create.success">
@@ -3979,6 +3979,102 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
       <segment>
         <source>profile.upToDate.lbl</source>
         <target>My data is up to date</target>
+      </segment>
+    </unit>
+    <unit id="s0oQtYh" name="meinidno.account.description">
+      <segment>
+        <source>meinidno.account.description</source>
+        <target>You can manage your emergency data here.</target>
+      </segment>
+    </unit>
+    <unit id="WQWUSQH" name="account.settings.lbl">
+      <segment>
+        <source>account.settings.lbl</source>
+        <target>Account settings</target>
+      </segment>
+    </unit>
+    <unit id="yBoThbD" name="account.delete.lbl">
+      <segment>
+        <source>account.delete.lbl</source>
+        <target>Delete account</target>
+      </segment>
+    </unit>
+    <unit id="NpVIEan" name="profile.list.lbl">
+      <segment>
+        <source>profile.list.lbl</source>
+        <target>Overview</target>
+      </segment>
+    </unit>
+    <unit id="Bo2kt0H" name="profile.index.lbl">
+      <segment>
+        <source>profile.index.lbl</source>
+        <target>Overview</target>
+      </segment>
+    </unit>
+    <unit id="224ln89" name="contact.action.create.success">
+      <segment>
+        <source>contact.action.create.success</source>
+        <target>New contact created.</target>
+      </segment>
+    </unit>
+    <unit id="IdjDkS_" name="contact.lbl">
+      <segment>
+        <source>contact.lbl</source>
+        <target>contact.lbl</target>
+      </segment>
+    </unit>
+    <unit id="jm4dwPc" name="contact.action.edit.success">
+      <segment>
+        <source>contact.action.edit.success</source>
+        <target>Contact saved.</target>
+      </segment>
+    </unit>
+    <unit id="BR0dwrg" name="btn.back.lbl">
+      <segment>
+        <source>btn.back.lbl</source>
+        <target>Overview</target>
+      </segment>
+    </unit>
+    <unit id="sek9koZ" name="contact.action.delete.header">
+      <segment>
+        <source>contact.action.delete.header</source>
+        <target>Remove contact?</target>
+      </segment>
+    </unit>
+    <unit id="N7BS7vS" name="contact.action.delete.text">
+      <segment>
+        <source>contact.action.delete.text</source>
+        <target>Do you really want to remove contact "%contactname%"?</target>
+      </segment>
+    </unit>
+    <unit id="sDJSAg0" name="item.action.delete.header">
+      <segment>
+        <source>item.action.delete.header</source>
+        <target>Remove ID-number?</target>
+      </segment>
+    </unit>
+    <unit id="IA5y3yw" name="item.action.delete.text">
+      <segment>
+        <source>item.action.delete.text</source>
+        <target>Do you really want to remove the ID-number "%idNo%"?</target>
+      </segment>
+    </unit>
+    <unit id="Kdf53sS" name="items.action.delete.success">
+      <segment>
+        <source>items.action.delete.success</source>
+        <target>ID-number removed.</target>
+      </segment>
+    </unit>
+    <unit id="Uvc.jio" name="contact.action.delete.success">
+      <segment>
+        <source>contact.action.delete.success</source>
+        <target>Contact removed.</target>
+      </segment>
+    </unit>
+    <unit id="CRItziR" name="person.warning.lastChange.txt">
+      <segment>
+        <source>person.warning.lastChange.txt</source>
+        <target>Last update</target>
       </segment>
     </unit>
   </file>
