@@ -31,7 +31,7 @@
                 data-url="{{ path('app_api_person_disable', { id:person.id } )}}"
                 data-table="#idno-profiles"
                 aria-label="profiles.action.delete.lbl">
-                <i class="bi bi-toggle2-off text-danger" aria-hidden="true"></i>
+                <i class="bi bi-toggle2-off text-success" aria-hidden="true"></i>
               </button>
             {% else %}
               <button
@@ -41,7 +41,7 @@
                 data-url="{{ path('app_api_person_enable', { id:person.id } )}}"
                 data-table="#idno-profiles"
                 aria-label="profiles.action.enable.lbl">
-                <i class="bi bi-toggle2-on text-success" aria-hidden="true"></i>
+                <i class="bi bi-toggle2-on text-danger" aria-hidden="true"></i>
               </button>
             {% endif %}
             &nbsp;
