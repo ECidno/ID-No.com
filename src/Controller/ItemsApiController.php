@@ -49,6 +49,9 @@ class ItemsApiController extends AbstractApiController
      */
     public function create(Request $request): JsonResponse
     {
+        /**
+         * @var Nutzer
+         */
         $nutzer = $this->getUser();
         $now = new \DateTime();
         $object = new static::$entityClassName();
@@ -131,13 +134,13 @@ class ItemsApiController extends AbstractApiController
     /**
      * delete
      *
-     * @param int $id
      * @param Request $request
+     * @param int $id
      * @return JsonResponse
      *
      * @Route("/delete/{id}", name="delete", methods={"POST","DELETE"})
      */
-    public function delete(int $id, Request $request): JsonResponse
+    public function delete(Request $request, int $id): JsonResponse
     {
         $object = $this->emDefault
             ->getRepository(static::$entityClassName)
@@ -256,7 +259,7 @@ class ItemsApiController extends AbstractApiController
      *
      * @Route("/validate/idno/{id?}/{idno?}/{purpose}", name="validate", methods={"GET"})
      */
-    public function validate(Request $request, ItemsService $itemsService, $idno, $purpose = 'register'): ?JsonResponse
+    public function validate(Request $request, ItemsService $itemsService, $id, $idno, $purpose = 'register'): ?JsonResponse
     {
         $item = $itemsService->check(
             $request->get('p_idno') ?? $idno,

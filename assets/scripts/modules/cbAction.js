@@ -117,9 +117,9 @@ const cbInitActions = (el) => {
  */
 const cbSuccessActions = (response, el) => {
   const dataset = el.dataset;
-  const bsTable = el.dataset.bsTable ?? false;
+  const bsTable = dataset.bsTable || false;
   const table = dataset.table || false;
-  const target = el.dataset.target || false;
+  const target = dataset.target || false;
 
   // message?
   if(response.message || false) {

@@ -36,13 +36,13 @@ class ProfileApiController extends AbstractApiController
     /**
      * pass_enable
      *
-     * @param int $id
      * @param Request $request
+     * @param int $id
      * @return JsonResponse
      *
      * @Route("/pass_enable/{id}", name="pass_enable", methods={"POST"})
      */
-    public function pass_enable(int $id, Request $request): JsonResponse
+    public function pass_enable(Request $request, int $id): JsonResponse
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
@@ -226,7 +226,7 @@ class ProfileApiController extends AbstractApiController
     }
 
 
-     /**
+    /**
      * changeCredentials
      * @param int $id
      * @param Request $request
@@ -243,9 +243,6 @@ class ProfileApiController extends AbstractApiController
          * @var Nutzer
          */
         $nutzer = $this->getUser();
-        // $nutzer = $this->emDefault
-        //     ->getRepository(Nutzer::class)
-        //     ->findOneById($id);
 
         // form
         $form = $this->createForm(

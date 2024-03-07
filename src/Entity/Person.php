@@ -12,6 +12,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Mime\MimeTypes;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -102,6 +103,12 @@ class Person
      * @Assert\NotBlank
      */
     private $nachname;
+
+    /**
+     * @var string
+     * @Groups({"read"})
+     */
+    private $fullname;
 
     /**
      * @var string

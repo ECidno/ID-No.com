@@ -101,22 +101,75 @@
             data-target="#idno-profiles">
           </div>
         </div>
+      </div>
 
-        {# shop #}
-        <div class="row my-3 justify-content-center">
-          <div class="col-12 col-md-10 col-lg-8">
-            <hr />
-            <h3>{{ 'profiles.shop.header'|trans }}</h3>
-            <p>{{ 'profiles.shop.description'|trans|raw|markdown_to_html }}</p>
-            <div class="text-start">
-              <a
-                class="btn btn-outline-dark px-3"
-                href="https://www.code-no.shop/sos-id-chip/"
-                target="_blank"
-                aria-label="{{ 'profiles.shop.btn.lbl'|trans }}">
-                {{ 'profiles.shop.btn.lbl'|trans }}
-              </a>
+      {# id numbers #}
+      <div class="row my-3 justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <hr />
+          <h3>{{ 'meinidno.idno.title'|trans }}</h3>
+          <p>{{ 'meinidno.idno.description'|trans }}</p>
+          <div
+            id="toolbarItems"
+            class="d-none">
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-success mx-1 ajax-modal"
+              data-url="{{ path('app_items_new') }}">
+              <i class="{{ settings.buttons.new }}"></i>
+              {{ 'items.action.new.lbl'|trans }}
+            </button>
           </div>
+          <table
+            id="tableItems"
+            class="d-none"
+            data-toggle="table"
+            data-classes="table table-sm table-hover"
+            data-toolbar="#toolbarItems"
+            data-locale="{{ language }}"
+            data-loading-template="loadingTemplate"
+            data-buttons-class="outline-dark btn-sm"
+            data-mobile-responsive="true"
+            data-show-refresh="false"
+            data-url="{{ path('app_api_items_read') }}"
+            data-ll-active="{{ 'active'|trans() }}"
+            data-ll-inactive="{{ 'inactive'|trans() }}">
+            <thead class="bg-light">
+              <tr>
+                <th
+                  data-field="idNo"
+                  data-formatter="window.formatter.item.idno">{{ 'items.table.idNo.lbl'|trans }}</th>
+                <th data-field="anbringung">{{ 'items.table.anbringung.lbl'|trans }}</th>
+                <th
+                  data-field="noStatus"
+                  data-formatter="window.formatter.item.status">{{ 'items.table.noStatus.lbl'|trans }}</th>
+                <th data-field="person.fullname">{{ 'items.table.person.lbl'|trans }}</th>
+                <th
+                  data-width="100"
+                  data-align="right"
+                  data-field="operate"
+                  data-formatter="operateFormatter"
+                  data-events="window.table.events.default">{{ 'Aktion'|trans }}</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+
+      {# shop #}
+      <div class="row my-3 justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <hr />
+          <h3>{{ 'profiles.shop.header'|trans }}</h3>
+          <p>{{ 'profiles.shop.description'|trans|raw|markdown_to_html }}</p>
+          <div class="text-start">
+            <a
+              class="btn btn-outline-dark px-3"
+              href="https://www.code-no.shop/sos-id-chip/"
+              target="_blank"
+              aria-label="{{ 'profiles.shop.btn.lbl'|trans }}">
+              {{ 'profiles.shop.btn.lbl'|trans }}
+            </a>
         </div>
       </div>
 
@@ -203,243 +256,4 @@
     </a>
   </div>
   {% endfor %}
-{% endblock %}
-
-
-{# content #}
-{% block content_old_view_all_at_startpage %}
-  <div class="container-fluid">
-    <div class="row my-3 justify-content-center">
-      <div id="myIdNoHeader" class="col-12 col-md-10 col-lg-8">
-        <h1>{{ 'meinidno.title'|trans }}</h1>
-      </div>
-    </div>
-
-    {# missing email verification #}
-    {% if user.status == 'unlogged' %}
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-8">
-          <div
-            class="alert alert-warning my-3"
-            role="alert">
-            <div class="d-flex">
-              <div class="flex-shrink-0">
-                <i class="bi bi-exclamation-triangle px-1"></i>
-              </div>
-              <div class="flex-grow-1 ms-2">
-                {{ 'meinidno.profile.missingEmailVerfication'|trans({
-                  '%nutzerAuth_request%': path('app_api_profile_email_auth_request')
-                }) }}
-                <a
-                  class="alert-link pointer ajax-action"
-                  data-url="{{ path('app_api_profile_email_auth_request') }}">
-                  {{ 'meinidno.profile.missingEmailVerfication.link.lbl'|trans }}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    {% endif %}
-
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-8">
-        <h3>{{ 'meinidno.profile.title'|trans }}</h3>
-        <p>{{ 'meinidno.profile.description'|trans }}</p>
-
-        <div class="row mt-3">
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="d-grid mb-3">
-              <button
-                type="button"
-                class="btn btn-outline-dark ajax-modal"
-                data-url="{{ path('app_person_edit', { id:person.id }) }}">
-                {{ 'profile.edit.lbl'|trans }}
-              </button>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="d-grid mb-3">
-              <a
-                class="btn btn-outline-dark"
-                href="{{ path('app_profile_list') }}">
-                {{ 'profile.list.lbl'|trans }}
-              </a>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="d-grid mb-3">
-              <button
-                type="button"
-                class="btn btn-outline-dark dropdown-toggle"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                {{ 'account.settings.lbl'|trans }}
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <a
-                    class="dropdown-item text-dark ajax-modal pointer"
-                    data-url="{{ path('app_account_edit') }}">
-                    {{ 'account.edit.lbl'|trans }}
-                  </a>
-                </li>
-                <li>
-                 <a
-                    href="{{ path('app_account_delete') }}"
-                    class="dropdown-item text-dark"
-                    data-url="{{ path('app_account_delete') }}">
-                    {{ 'account.delete.lbl'|trans }}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {# @TODO: Find a better solution for this div have btn look w/o hover! #}
-{#
-          <div class="col-12 col-lg-8 col-xl-6">
-            <div class="d-grid mb-3 btn border-{{ user.sichtbar == true ? 'dark' : 'dark' }}">
-              <form
-                role="form"
-                action="{{ path('app_api_profile_pass_enable', { id: user.id }) }}"
-                method="post"
-                data-callback="pass_enable"
-                class="">
-                <div class="form-check form-check-inline form-switch">
-                  <input
-                    type="hidden"
-                    name="sichtbar"
-                    value="0" />
-                  <label
-                    class="form-check-label text-dark pointer"
-                    for="fldPassEnable">{{ 'meinidno.profile.check'|trans }}
-                    <span class="icon">{{ user.sichtbar == true
-                      ? '<i class="bi bi-check-circle text-success ps-1"></i>'
-                      : '<i class="bi bi-exclamation-triangle text-warning ps-1"></i>'
-                    }}</span>
-                  </label>
-                  <input
-                    type="checkbox"
-                    id="fldPassEnable"
-                    class="form-check-input"
-                    name="sichtbar"
-                    value="1"
-                    role="switch"
-                    {{ user.sichtbar == true ? 'checked="checked"' }}
-                    data-icon-on="bi bi-check-circle text-success ps-1"
-                    data-icon-off="bi bi-exclamation-triangle text-warning ps-1"
-                    autocomplete="off" />
-                  <input
-                    type="hidden"
-                    name="token"
-                    value="{{ csrf_token('pass_enable') }}"/>
-                </div>
-              </form>
-            </div>
-          </div> #}
-
-        </div>
-      </div>
-    </div>
-
-    {# id number #}
-    <div class="row my-4">
-      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <h3>{{ 'meinidno.idno.title'|trans }}</h3>
-        <p>{{ 'meinidno.idno.description'|trans }}</p>
-        <div
-          id="toolbarItems"
-          class="d-none">
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-success mx-1 ajax-modal"
-            data-url="{{ path('app_items_new', { personId:person.id }) }}">
-            <i class="{{ settings.buttons.new }}"></i>
-            {{ 'items.action.new.lbl'|trans }}
-          </button>
-        </div>
-        <table
-          id="tableItems"
-          class="d-none"
-          data-toggle="table"
-          data-classes="table table-sm table-hover"
-          data-toolbar="#toolbarItems"
-          data-locale="{{ language }}"
-          data-loading-template="loadingTemplate"
-          data-buttons-class="outline-dark btn-sm"
-          data-mobile-responsive="true"
-          data-show-refresh="false"
-          data-url="{{ path('app_api_items_read', { personId:person.id }) }}"
-          data-ll-active="{{ 'active'|trans() }}"
-          data-ll-inactive="{{ 'inactive'|trans() }}">
-          <thead class="bg-light">
-            <tr>
-              <th
-                data-field="idNo"
-                data-formatter="window.formatter.item.idno">{{ 'items.table.idNo.lbl'|trans }}</th>
-              <th data-field="anbringung">{{ 'items.table.anbringung.lbl'|trans }}</th>
-              <th
-                data-field="noStatus"
-                data-formatter="window.formatter.item.status">{{ 'items.table.noStatus.lbl'|trans }}</th>
-              <th data-field="aktiviertDatum">{{ 'items.table.aktiviertDatum.lbl'|trans }}</th>
-              <th
-                data-width="100"
-                data-align="right"
-                data-field="operate"
-                data-formatter="operateFormatter"
-                data-events="window.table.events.default">{{ 'Aktion'|trans }}</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-    </div>
-
-    {# contacts #}
-    <div class="row my-4">
-      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <h3>{{ 'meinidno.contact.title'|trans }}</h3>
-        <p>{{ 'meinidno.contact.description'|trans }}</p>
-        <div
-          id="toolbarContacts"
-          class="d-none">
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-success mx-1 ajax-modal"
-            data-url="{{ path('app_contacts_new', { personId:person.id }) }}">
-            <i class="{{ settings.buttons.new }}"></i>
-            {{ 'contacts.action.new.lbl'|trans }}
-          </button>
-        </div>
-        <table
-          id="tableContacts"
-          class="d-none"
-          data-toggle="table"
-          data-classes="table table-sm table-hover"
-          data-toolbar="#toolbarContacts"
-          data-locale="{{ language }}"
-          data-loading-template="loadingTemplate"
-          data-buttons-class="outline-dark btn-sm"
-          data-mobile-responsive="true"
-          data-show-refresh="false"
-          data-url="{{ path('app_api_contacts_read', { personId:person.id }) }}">
-          <thead class="bg-light">
-            <tr>
-              <th data-field="contactname">{{ 'contact.table.contactname.lbl'|trans }}</th>
-              <th data-field="telefon">{{ 'contact.table.telefon.lbl'|trans }}</th>
-              <th data-field="beziehung">{{ 'contact.table.beziehung.lbl'|trans }}</th>
-              <th
-                data-width="100"
-                data-align="right"
-                data-field="operate"
-                data-formatter="operateFormatter"
-                data-events="window.table.events.default">{{ 'Aktion'|trans }}</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-    </div>
-  </div>
 {% endblock %}
