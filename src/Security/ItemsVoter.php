@@ -106,6 +106,10 @@ class ItemsVoter extends Voter
      */
     private function canC(Items $item, Nutzer $user): bool
     {
+        if($item->getPerson() === null) {
+            return true;
+        }
+
         // iterate user's persons
         foreach ($user->getPersons() as $person) {
             if(
@@ -128,6 +132,10 @@ class ItemsVoter extends Voter
      */
     private function canRud(Items $item, Nutzer $user): bool
     {
+        if($item->getPerson() === null) {
+            return true;
+        }
+
         // iterate user's persons
         foreach ($user->getPersons() as $person) {
             if(

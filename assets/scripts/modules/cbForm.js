@@ -257,35 +257,12 @@ const cbForm = (el) => {
         // ajax
         cbAjax(url, options)
           .then(res => {
-
             cbSuccessActions(res, el);
 
             // close modal if open/advised
             if(modalInstance) {
               modalInstance.hide();
             }
-/*
-            // message?
-            if(res.message ?? false) {
-              cbMessage(
-                res.severity || 0,
-                null,
-                res.message
-              );
-            }
-
-            // table refresh?
-            if(table) {
-              jQuery('#' + table)
-                .bootstrapTable(
-                  'refresh',
-                  {
-                    silent: true
-                  }
-                );
-              }
-              */
-
           })
 
           // catch

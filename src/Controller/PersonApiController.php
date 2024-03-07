@@ -125,14 +125,13 @@ class PersonApiController extends AbstractApiController
     /**
      * update
      *
-     * @param int $id
      * @param Request $request
-     *
+     * @param int $id
      * @return JsonResponse
      *
      * @Route("/update/{id}", name="update", methods={"POST"})
      */
-    public function update(int $id, Request $request): JsonResponse
+    public function update(Request $request, int $id): JsonResponse
     {
         $formType = static::$entityFormEditType;
         $em = $this->emDefault;
@@ -263,13 +262,13 @@ class PersonApiController extends AbstractApiController
     /**
      * delete
      *
-     * @param int $id
      * @param Request $request
+     * @param int $id
      * @return JsonResponse
      *
      * @Route("/delete/{id}", name="delete", methods={"POST","DELETE"})
      */
-    public function delete(int $id, Request $request): JsonResponse
+    public function delete(Request $request, int $id): JsonResponse
     {
         $em = $this->emDefault;
 
@@ -300,6 +299,7 @@ class PersonApiController extends AbstractApiController
                 ->getRepository(PersonImages::class)
                 ->findBy(['person' => $id]);
 
+            // image?
             if ($image) {
                 $image = $image[0];
                 $imagePath = $this->getParameter('userimages_directory').'/'.$image->getBild();
@@ -310,29 +310,55 @@ class PersonApiController extends AbstractApiController
                 $em->remove($image);
             }
 
-            // new person for exiting items
-            $itemTargetPerson = $user->getPersons()->first();
-            while($itemTargetPerson->getId() === $object->getId()) {
-                $itemTargetPerson = $user->getPersons()->next();
-            }
+            // remove item profile assingment if only one person left
+            if($user->getPersons()->count() > 2) {
+                $itemTargetPerson = null;
 
-            // get id number if assigned, disable and assing them to main profile
-            $items = $em
-                ->getRepository(Items::class)
-                ->findBy([
-                    'person' => $object,
-                    'nutzer' => $user,
-                ]);
+                // get all profile items
+                $items = $em
+                    ->getRepository(Items::class)
+                    ->findBy(
+                        [
+                            'person' => $object,
+                            'nutzer' => $user,
+                        ]
+                    );
 
-            // iterate items
-            foreach ($items as $item) {
-                $item
-                    ->setPerson($itemTargetPerson)
-                    ->setStatus(false);
+                // iterate items
+                foreach ($items as $item) {
+                    $item
+                        ->setPerson($itemTargetPerson)
+                        ->setStatus(false);
 
-                // update
-                $em->persist($item);
-                $em->flush($item);
+                    // update
+                    $em->persist($item);
+                    $em->flush($item);
+                }
+
+            // assign all user items to main profile if only one left
+            } else {
+                $itemTargetPerson = $user->getPersons()->first();
+                while($itemTargetPerson->getId() === $object->getId()) {
+                    $itemTargetPerson = $user->getPersons()->next();
+                }
+
+                // get all user items
+                $items = $em
+                    ->getRepository(Items::class)
+                    ->findBy(
+                        [
+                            'nutzer' => $user,
+                        ]
+                    );
+
+                // iterate items (and don't change status)
+                foreach ($items as $item) {
+                    $item->setPerson($itemTargetPerson);
+
+                    // update
+                    $em->persist($item);
+                    $em->flush($item);
+                }
             }
 
             // remove person
@@ -370,13 +396,13 @@ class PersonApiController extends AbstractApiController
     /**
      * enable
      *
-     * @param int $id
      * @param Request $request
+     * @param int $id
      * @return JsonResponse
      *
      * @Route("/enable/{id}", name="enable", methods={"GET"})
      */
-    public function enable(int $id, Request $request): JsonResponse
+    public function enable(Request $request, int $id): JsonResponse
     {
         $em = $this->emDefault;
         $object = $em
@@ -415,13 +441,13 @@ class PersonApiController extends AbstractApiController
     /**
      * disable
      *
-     * @param int $id
      * @param Request $request
+     * @param int $id
      * @return JsonResponse
      *
      * @Route("/disable/{id}", name="disable", methods={"GET"})
      */
-    public function disable(int $id, Request $request): JsonResponse
+    public function disable(Request $request, int $id): JsonResponse
     {
         $em = $this->emDefault;
         $object = $em
@@ -460,15 +486,15 @@ class PersonApiController extends AbstractApiController
     /**
      * upload
      *
-     * @param int $id
      * @param Request $request
      * @param FileUploader $fileUploader
+     * @param int $id
      *
      * @return JsonResponse
      *
      * @Route("/upload/{id}", name="upload", methods={"POST"})
      */
-    public function upload(int $id, Request $request, FileUploader $fileUploader): JsonResponse
+    public function upload(Request $request, FileUploader $fileUploader, int $id): JsonResponse
     {
         // person
         $person = $this->emDefault
@@ -603,13 +629,13 @@ class PersonApiController extends AbstractApiController
     /**
      * uptodate
      *
-     * @param int $id
      * @param Request $request
+     * @param int $id
      * @return JsonResponse
      *
      * @Route("/uptodate/{id}", name="uptodate", methods={"GET"})
      */
-    public function uptodate(int $id, Request $request): JsonResponse
+    public function uptodate(Request $request, int $id): JsonResponse
     {
         $em = $this->emDefault;
         $object = $em
@@ -662,31 +688,7 @@ class PersonApiController extends AbstractApiController
             $this->denyAccessUnlessGranted('read', $item);
 
             // set operations
-            $item->setOperations(
-                [
-/* not jet implemented
-                    'edit' => [
-                        'icon' => $this->settings['buttons']['edit'],
-                        'uri' => $this->generateUrl(
-                            'app_person_edit',
-                            [
-                                'id' => $item->getId(),
-                            ]
-                        )
-                    ],
-
-                    'delete' => [
-                        'icon' => $this->settings['buttons']['delete'],
-                        'uri' => $this->generateUrl(
-                            'app_person_delete',
-                            [
-                                'id' => $item->getId(),
-                            ]
-                        )
-                    ],
-*/
-                ]
-            );
+            $item->setOperations([]);
 
             // add
             $items[] = $item;

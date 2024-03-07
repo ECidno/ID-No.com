@@ -4443,5 +4443,29 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
         <target> </target>
       </segment>
     </unit>
+    <unit id="ri2ic6a" name="items.table.person.lbl">
+      <segment>
+        <source>items.table.person.lbl</source>
+        <target>Profil</target>
+      </segment>
+    </unit>
+    <unit id="YAfbY_G" name="Person">
+      <segment>
+        <source>Person</source>
+        <target>Person</target>
+      </segment>
+    </unit>
+    <unit id="l5qOKZ6" name="items.person.lbl">
+      <segment>
+        <source>items.person.lbl</source>
+        <target>Profil</target>
+      </segment>
+    </unit>
+    <unit id="1NkEQDu" name="items.person.not_assigned.lbl">
+      <segment>
+        <source>items.person.not_assigned.lbl</source>
+        <target>Nicht zugewiesen</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -4077,5 +4077,23 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
         <target>Last update</target>
       </segment>
     </unit>
+    <unit id="ri2ic6a" name="items.table.person.lbl">
+      <segment>
+        <source>items.table.person.lbl</source>
+        <target>Profile</target>
+      </segment>
+    </unit>
+    <unit id="1NkEQDu" name="items.person.not_assigned.lbl">
+      <segment>
+        <source>items.person.not_assigned.lbl</source>
+        <target>Not assigned</target>
+      </segment>
+    </unit>
+    <unit id="l5qOKZ6" name="items.person.lbl">
+      <segment>
+        <source>items.person.lbl</source>
+        <target>Profile</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
