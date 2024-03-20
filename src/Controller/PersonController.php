@@ -8,6 +8,7 @@ namespace App\Controller;
  **********************************************************************/
 
 use App\Entity\Person;
+use App\Form\Type\PersonAddType;
 use App\Form\Type\PersonType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,6 +21,45 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class PersonController extends AbstractController
 {
+    /**
+     * show action
+     *
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     *
+     * @Route("/show/{id}", name="show", methods={"GET"})
+     */
+    public function show(Request $request, int $id = null): Response
+    {
+        // user authenticated
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        /**
+         * @var Nutzer
+         */
+        $user = $this->getUser();
+
+        // person
+        $person = $id === null
+            ? $user->getPersons()->first() ?? []
+            : $this->emDefault
+                ->getRepository(Person::class)
+                ->find($id);
+
+        // voter
+        $this->denyAccessUnlessGranted('edit', $person);
+
+        // vars
+        $variables = [
+            'user' => $user,
+            'person' => $person,
+        ];
+
+        // return
+        return $this->renderAndRespond($variables);
+    }
+
 
     /**
      * new
@@ -33,11 +73,13 @@ class PersonController extends AbstractController
     public function new(Request $request): Response
     {
         $person = new Person();
-        $person->setNutzer($this->getUser());
+        $person
+            ->setNutzer($this->getUser())
+            ->setStatus('ok');
 
         // form
         $form = $this->formFactory->createBuilder(
-            PersonType::class,
+            PersonAddType::class,
             $person,
             [
                 'action' => $this->generateUrl('app_api_person_create'),
@@ -51,10 +93,18 @@ class PersonController extends AbstractController
         ];
 
         // return
-        return $this->renderAndRespond(
-            $variables,
-            true
-        );
+        return $this->ajax
+            ? $this->json(
+                [
+                    'html' => $this
+                        ->render($this->template, $variables)
+                        ->getContent(),
+                ]
+            )
+            : $this->renderAndRespond(
+                $variables,
+                true
+            );
     }
 
 

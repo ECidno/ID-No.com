@@ -349,33 +349,41 @@ class ItemsController extends AbstractController
     /**
      * new
      *
-     * @param int $personId
      * @param Request $request
+     * @param int $personId
      * @return Response
      *
-     * @Route("/items/new/{personId}", name="new", methods={"GET"})
+     * @Route("/items/new/{personId?0}", name="new", methods={"GET"})
      */
-    public function new(int $personId, Request $request): Response
+    public function new(Request $request, int $personId = 0): Response
     {
         /**
          * @var Nutzer
          */
-        $user = $this->getUser();
-        $person = $this->emDefault
-            ->getRepository(Person::class)
-            ->findOneBy([
-                'id' => $personId,
-                'nutzer' => $this->getUser(),
-            ]);
+        $nutzer = $this->getUser();
 
-        // voter
-        $this->denyAccessUnlessGranted('edit', $person);
+        // set user and person
+        if((int) $personId > 0) {
+            $person = $this->emDefault
+                ->getRepository(Person::class)
+                ->findOneBy([
+                    'id' => $personId,
+                    'nutzer' => $this->getUser(),
+                ]);
 
-        // new item
-        $item = new Items();
-        $item
-            ->setNutzer($user)
-            ->setPerson($person);
+            // voter
+            $this->denyAccessUnlessGranted('edit', $person);
+
+            // new item
+            $item = new Items();
+            $item
+                ->setNutzer($nutzer)
+                ->setPerson($person);
+
+        // set user only
+        } else {
+            $item = (new Items())->setNutzer($nutzer);
+        }
 
         // form
         $form = $this->formFactory->createBuilder(

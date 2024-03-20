@@ -24,7 +24,10 @@ class PersonVoter extends Voter
     const UPDATE = 'update';
     const EDIT = 'edit';
     const DELETE = 'delete';
+    const ENABLE = 'enable';
+    const DISABLE = 'disable';
     const UPLOAD = 'upload';
+    const UPTODATE = 'uptodate';
 
     /**
      * supports
@@ -47,7 +50,10 @@ class PersonVoter extends Voter
                     self::UPDATE,
                     self::EDIT,
                     self::DELETE,
+                    self::ENABLE,
+                    self::DISABLE,
                     self::UPLOAD,
+                    self::UPTODATE,
                 ]
             )
         ) {
@@ -82,15 +88,37 @@ class PersonVoter extends Voter
 
         // switch case operation
         switch ($attribute) {
+            case self::CREATE:
+                return $this->canC($person, $user);
+                break;
+
             case self::READ:
             case self::EDIT:
             case self::UPDATE:
             case self::DELETE:
+            case self::ENABLE:
+            case self::DISABLE:
             case self::UPLOAD:
+            case self::UPTODATE:
                 return $this->canRud($person, $user);
+                break;
         }
 
         throw new \LogicException('This code should not be reached!');
+    }
+
+
+    /**
+     * can create
+     *
+     * @param Person $person
+     * @param Nutzer $user
+     *
+     * @return bool
+     */
+    private function canC(Person $person, Nutzer $user): bool
+    {
+        return $person->getNutzer() === $user;
     }
 
 

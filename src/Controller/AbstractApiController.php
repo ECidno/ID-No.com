@@ -258,30 +258,44 @@ class AbstractApiController extends SymfonyAbstractController
     /**
      * read
      *
-     * @param int $personId
      * @param Request $request
-     * @param SerializerInterface $serializer
-     *
+     * @param int $personId
      * @return JsonResponse
      *
-     * @Route("/{personId}", name="read", methods={"GET", "POST"})
+     * @Route("/{personId?0}", name="read", methods={"GET", "POST"})
      */
-    public function read(int $personId, Request $request, SerializerInterface $serializer): JsonResponse
+    public function read(Request $request, int $personId = 0): JsonResponse
     {
-        $person = $this->emDefault
-            ->getRepository(Person::class)
-            ->findOneBy([
-                'id' => $personId,
-                'nutzer' => $this->getUser(),
-            ]);
+        /**
+         * @var Nutzer
+         */
+        $user = $this->getUser();
 
-        // voter check
-        $this->denyAccessUnlessGranted('read', $person);
+        // find items by person
+        if((int) $personId > 0) {
+            $person = $this->emDefault
+                ->getRepository(Person::class)
+                ->findOneBy(
+                    [
+                        'id' => $personId,
+                        'nutzer' => $user,
+                    ]
+                );
 
-        // get
-        $objects = $this->emDefault
-            ->getRepository(static::$entityClassName)
-            ->findByPerson($person);
+            // voter check
+            $this->denyAccessUnlessGranted('read', $person);
+
+            // get
+            $objects = $this->emDefault
+                ->getRepository(static::$entityClassName)
+                ->findByPerson($person);
+
+        // find items by user
+        } else {
+            $objects = $this->emDefault
+                ->getRepository(static::$entityClassName)
+                ->findByNutzer($user);
+        }
 
         // map
         $items = $this->mapOperations($objects);
@@ -291,7 +305,9 @@ class AbstractApiController extends SymfonyAbstractController
             $items,
             Response::HTTP_OK,
             [],
-            ['groups' => 'read']
+            [
+                'groups' => 'read'
+            ]
         );
     }
 
@@ -299,14 +315,13 @@ class AbstractApiController extends SymfonyAbstractController
     /**
      * update
      *
-     * @param int $id
      * @param Request $request
-     *
+     * @param int $id
      * @return JsonResponse
      *
      * @Route("/update/{id}", name="update", methods={"POST"})
      */
-    public function update(int $id, Request $request): JsonResponse
+    public function update(Request $request, int $id): JsonResponse
     {
         $formType = static::$entityFormEditType;
 
@@ -366,13 +381,13 @@ class AbstractApiController extends SymfonyAbstractController
     /**
      * delete
      *
-     * @param int $id
      * @param Request $request
+     * @param int $id
      * @return JsonResponse
      *
      * @Route("/delete/{id}", name="delete", methods={"POST","DELETE"})
      */
-    public function delete(int $id, Request $request): JsonResponse
+    public function delete(Request $request, int $id): JsonResponse
     {
         $em = $this->emDefault;
         $object = $em

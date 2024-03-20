@@ -64,6 +64,7 @@ class Items extends AbstractEntity
     /**
      * @var Person
      * @ORM\ManyToOne(targetEntity="Person")
+     * @Groups({"read"})
      */
      private $person = null;
 

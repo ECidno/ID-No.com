@@ -119,17 +119,20 @@
                 {% if person is not defined %}
                   {% set person = app.user.persons.0 %}
                 {% endif %}
-
-                {% if person is defined and person.imageShow == true and person.imageSrc is not empty %}
-                  <div class="text-center userIconCenter userIconCenterSmall">
+                {% set personImage = person.imageSrc is defined and person.imageSrc != 'null'
+                  ? person.imageSrc
+                  : asset('images/no_image-120x120.png', 'media')
+                %}
+                <div class="text-center userIconCenter userIconCenterSmall">
+                  <div class="border rounded p-1">
                     <div
                       class="userIcon userIconSmall"
-                      style="background-image: url('{{ person.imageSrc }}');" alt="{{ person.vorname|raw }} {{ person.nachname|raw }}">
+                      style="background-image: url('{{ personImage }}');"
+                      alt="Bild von {{ person.vorname|raw }} {{ person.nachname|raw }}"
+                      title="{{ person.vorname|raw }} {{ person.nachname|raw }}">
                     </div>
                   </div>
-                {% else %}
-                  <i class="bi bi-person-circle fs-3 pe-1 align-middle"></i>
-                {% endif %}
+                </div>
                 <span class="align-middle">{{ 'meinidno.title'|trans }}</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">

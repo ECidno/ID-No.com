@@ -5,17 +5,22 @@ import bootstrapTable from 'bootstrap-table';
 import bootstrapTableLocaleAll from 'bootstrap-table/dist/bootstrap-table-locale-all';
 import 'bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js';
 
-import { cbAction } from './modules/cbAction';
+// modules
+import { cbAction, cbActionOnLoad } from './modules/cbAction';
 import { cbAjax } from './modules/cbAjax';
 import { cbForm } from './modules/cbForm';
 import { cbMap, cbMapLocationError } from './modules/cbMap';
 import { cbMessage } from './modules/cbMessage';
-import { cbModal, cbModalButton } from './modules/cbModal';
-import { cbOffcanvas, cbOffcanvasButton } from './modules/cbOffcanvas';
+import { cbModalButton } from './modules/cbModal';
+import { cbOffcanvasButton } from './modules/cbOffcanvas';
 import { cbUpload } from './modules/cbUpload';
+
+// elements
+require('./elements/cbTimeago.js');
 
 // const's
 const ajaxAction = document.getElementsByClassName('ajax-action') || [];
+const ajaxActionOnLoad = document.getElementsByClassName('ajax-action-onload') || [];
 const ajaxForms = document.getElementsByClassName('ajax-form') || [];
 const ajaxModal = document.getElementsByClassName('ajax-modal') || [];
 const ajaxUpload = document.getElementsByClassName('ajax-upload') || [];
@@ -182,6 +187,20 @@ document.addEventListener(
       );
 
 
+    // add listener for action onload
+    Array
+      .from(ajaxActionOnLoad)
+      .forEach((el) => {
+        cbActionOnLoad(el);
+      });
+
+    // add listener for action buttons
+    Array
+      .from(ajaxAction)
+      .forEach((el) => {
+        cbAction(el);
+      });
+
     // add listener for modal buttons
     Array
       .from(ajaxModal)
@@ -191,13 +210,6 @@ document.addEventListener(
         } else {
           cbOffcanvasButton(el);
         }
-      });
-
-    // add listener for action buttons
-    Array
-      .from(ajaxAction)
-      .forEach((el) => {
-        cbAction(el);
       });
 
     // add listener for forms
@@ -362,7 +374,6 @@ document.addEventListener(
 
               el.dataset.init = true;
             });
-
         },
         false
       );

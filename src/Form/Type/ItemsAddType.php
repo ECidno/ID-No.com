@@ -8,11 +8,17 @@ namespace App\Form\Type;
  **********************************************************************/
 
 use App\Entity\Items;
+use App\Entity\Person;
+use App\Entity\Nutzer;
+use Doctrine\ORM\EntityRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Translation\TranslatableMessage;
 
 /**
@@ -21,6 +27,15 @@ use Symfony\Component\Translation\TranslatableMessage;
 class ItemsAddType extends AbstractType
 {
     /**
+     * constructor
+     *
+     * @param ContainerBagInterface TokenStorageInterface $token
+     */
+    public function __construct(protected TokenStorageInterface $token)
+    {}
+
+
+    /**
      * buildForm
      *
      * @param FormBuilderInterface $builder
@@ -28,8 +43,13 @@ class ItemsAddType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        /**
+         * @var Nutzer
+         */
+        $nutzer = $this->token->getToken()->getUser();
+
+        // builder
         $builder
-            ->add('person', EntityHiddenType::class)
             ->add('idNo', TextType::class, [
                 'label' => new TranslatableMessage('items.idNo.lbl'),
                 'attr' => [
@@ -39,7 +59,7 @@ class ItemsAddType extends AbstractType
                     'autocomplete' => 'off',
                     'data-url' => '/api/items/validate/idno/',
                 ],
-                'required' => true
+                'required' => true,
             ])
             ->add('anbringung', TextType::class, [
                 'label' => new TranslatableMessage('items.anbringung.lbl'),
@@ -47,8 +67,33 @@ class ItemsAddType extends AbstractType
                     'autocomplete' => 'off',
                     'maxlength' => 255,
                 ],
-                'required' => false
-            ]);
+                'required' => false,
+            ])
+
+            ->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) use($nutzer) {
+                $form = $event->getForm();
+
+                // show profile select if more than one profiles exists
+                if($nutzer->getPersons()->count() === 1) {
+                    $form->add('person', EntityHiddenType::class);
+                } else {
+                    $form->add('person', EntityType::class, [
+                        'label' => new TranslatableMessage('items.person.lbl'),
+                        'class' => Person::class,
+                        'query_builder' => function (EntityRepository $er) use($nutzer) {
+                            return $er
+                                ->createQueryBuilder('p')
+                                ->where('p.nutzer=:nutzer')
+                                ->orderBy('p.vorname', 'ASC')
+                                ->setParameter('nutzer', $nutzer);
+                        },
+                        'choice_label' => 'fullname',
+                        'placeholder' => 'items.person.not_assigned.lbl',
+                        'required' => false,
+                    ]);
+                }
+            })
+            ;
         }
 
 
