@@ -108,7 +108,7 @@ class Person
      * @var string
      * @Groups({"read"})
      */
-    private $fullname;
+    private $fullName;
 
     /**
      * @var string
