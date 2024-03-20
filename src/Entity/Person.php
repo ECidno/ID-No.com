@@ -12,6 +12,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Mime\MimeTypes;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -45,7 +46,7 @@ class Person
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="App\Entity\Contact", mappedBy="person")
+     * @ORM\OneToMany(targetEntity="App\Entity\Contact", mappedBy="person", orphanRemoval="true")
      */
     private $contacts;
 
@@ -75,7 +76,7 @@ class Person
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=true)
      * @Gedmo\Versioned
      */
     private $email;
@@ -102,6 +103,12 @@ class Person
      * @Assert\NotBlank
      */
     private $nachname;
+
+    /**
+     * @var string
+     * @Groups({"read"})
+     */
+    private $fullname;
 
     /**
      * @var string
@@ -446,6 +453,11 @@ class Person
      */
     private $lastChangeDatum;
 
+    /**
+     * @var int
+     */
+    private $itemCount;
+
 
     /**
      * constructor
@@ -627,10 +639,10 @@ class Person
 
 
     /**
-     * @param string $sprache
+     * @param ?string $sprache
      * @return Person
      */
-    public function setSprache(string $sprache): self
+    public function setSprache(?string $sprache): self
     {
         $this->sprache = $sprache;
         return $this;
@@ -646,10 +658,10 @@ class Person
 
 
     /**
-     * @param string $email
+     * @param ?string $email
      * @return Person
      */
-    public function setEmail(string $email): self
+    public function setEmail(?string $email): self
     {
         $this->email = $email;
         return $this;
@@ -1794,5 +1806,24 @@ class Person
     public function getLastChangeDatum(): ?\DateTimeInterface
     {
         return $this->lastChangeDatum;
+    }
+
+
+    /**
+     * @param int $itemCount
+     * @return Person
+     */
+    public function setItemCount(?int $itemCount): self
+    {
+        $this->itemCount = $itemCount ?? 0;
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getItemCount(): ?int
+    {
+        return html_entity_decode($this->itemCount);
     }
 }

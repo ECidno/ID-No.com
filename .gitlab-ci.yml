@@ -95,6 +95,12 @@ staging:
     - "nvm --version"
     - "nvm use"
 
+    # nvm
+    - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+    - ". ~/.nvm/nvm.sh"
+    - nvm --version
+    - nvm use
+
     # yarn
     - yarn
     - yarn encore dev

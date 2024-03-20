@@ -224,12 +224,18 @@ body.modal-open .background-container {
   align-items: center;
 }
 .userIcon {
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   overflow: hidden;
   width: 7rem;
   height: 7rem;
   background-size: cover;
   background-position: center;
+
+  i {
+    position:relative;
+    top: -.25rem;
+    left: -2.5rem;
+  }
 }
 
 .userIconCenterSmall {

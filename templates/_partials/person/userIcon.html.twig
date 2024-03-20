@@ -1,0 +1,12 @@
+{% set personImage = person.imageSrc is defined and person.imageSrc != 'null'
+  ? person.imageSrc
+  : asset('images/no_image-120x120.png', 'media')
+%}
+<div class="border rounded p-2">
+  <div
+    class="userIcon"
+    style="background-image: url('{{ personImage }}');"
+    alt="Bild von {{ person.vorname|raw }} {{ person.nachname|raw }}"
+    title="{{ person.vorname|raw }} {{ person.nachname|raw }}">
+  </div>
+</div>

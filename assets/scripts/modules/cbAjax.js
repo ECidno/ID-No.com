@@ -9,12 +9,26 @@ export const name = 'cbAjax';
  * @return Promise
  */
 const cbAjax = async (uri, options) => {
+  options = options ?? {
+    method: 'GET',
+  };
+
+  // headers
+  options.headers = options.headers ?? {
+    'X-Requested-With': 'XMLHttpRequest'
+  };
+
+  // set X-Requested-With header
+  if(!('X-Requested-With' in options.headers)) {
+    options.headers['X-Requested-With'] = 'XMLHttpRequest';
+  }
 
   // return promise
   const res = await fetch(
     uri,
     options
   );
+
   if (res.ok) {
     return res.json();
   }

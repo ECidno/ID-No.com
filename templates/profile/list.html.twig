@@ -1,0 +1,137 @@
+{% extends 'ajax.html.twig' %}
+{% block title %}{{ 'meinidno.title'|trans }}{% endblock %}
+
+{# ajax #}
+{% block ajax %}
+  {% for person in person_list %}
+    {% set hasItem = person.itemCount is defined and person.itemCount > 0 %}
+    {% set difference = date('today').diff(date(person.lastChangeDatum)) %}
+    {% set dayDiff = difference.days %}
+    <div class="col-12 col-xl-6">
+      <div class="d-flex p-2 my-2{{ person.status == 'ok' ? '' : ' bg-dark bg-opacity-10' }}{{ hasItem ? '' : ' bg-danger bg-opacity-10'}}">
+        <div class="flex-shrink-0">
+          <a href="{{ path('app_person_show', { id: person.id })}}">
+            <div class="text-center userIconCenter">
+              {% include '_partials/person/userIcon.html.twig' %}
+            </div>
+          </a>
+        </div>
+        <div class="flex-grow-1 ms-3">
+          <div>
+            <a href="{{ path('app_person_show', { id: person.id })}}">
+              <h5>{{ person.fullName }}</h5>
+            </a>
+          </div>
+          <div class="py-2">
+            {% if person.status == 'ok' %}
+              <button
+                type="button"
+                class="btn btn-outline-dark ajax-action"
+                title="{{ 'profiles.action.disable.lbl'|trans }}"
+                data-url="{{ path('app_api_person_disable', { id:person.id } )}}"
+                data-table="#idno-profiles"
+                aria-label="profiles.action.delete.lbl">
+                <i class="bi bi-toggle2-off text-success" aria-hidden="true"></i>
+              </button>
+            {% else %}
+              <button
+                type="button"
+                class="btn btn-outline-dark ajax-action"
+                title="{{ 'profiles.action.enable.lbl'|trans }}"
+                data-url="{{ path('app_api_person_enable', { id:person.id } )}}"
+                data-table="#idno-profiles"
+                aria-label="profiles.action.enable.lbl">
+                <i class="bi bi-toggle2-on text-danger" aria-hidden="true"></i>
+              </button>
+            {% endif %}
+            &nbsp;
+            {% if person_list|length > 1 %}
+              <button
+                type="button"
+                class="btn btn-outline-dark ajax-modal"
+                title="{{ 'profiles.action.delete.lbl'|trans }}"
+                data-url="{{ path('app_person_delete', { id:person.id } )}}"
+                data-table="#idno-profiles"
+                aria-label="profiles.action.delete.lbl">
+                <i class="bi bi-trash" aria-hidden="true"></i>
+              </button>
+            {% endif %}
+
+            {% if dayDiff > 90 %}
+              &nbsp;
+              <button
+                type="button"
+                class="btn btn-outline-dark ajax-action"
+                title="{{ 'profiles.action.uptodate.lbl'|trans }}"
+                data-url="{{ path('app_api_person_uptodate', { id:person.id } )}}"
+                data-table="#idno-profiles"
+                aria-label="profiles.action.uptodate.lbl">
+                <i class="bi bi-person-check-fill text-success" aria-hidden="true"></i>
+              </button>
+            {% endif %}
+          </div>
+
+          <div class="align-self-center">
+
+            {# items? #}
+            {% if not hasItem %}
+              <div class="text-danger">{{ 'person.warning.noItem.txt'|trans }}</div>
+            {% endif %}
+
+            {# last change #}
+            {% if dayDiff > 360 %}
+              <div class="text-danger">
+                {{ 'person.warning.lastChange.txt'|trans }}
+                <cb-timeago
+                  datetime="{{ person.lastChangeDatum|date("c") }}"
+                  locale="{{ language }}"
+                  auto-update="30" />
+              </div>
+            {% elseif dayDiff > 90 %}
+              <div class="text-warning">
+                {{ 'person.warning.lastChange.txt'|trans }}
+                <cb-timeago
+                  datetime="{{ person.lastChangeDatum|date("c") }}"
+                  locale="{{ language }}"
+                  auto-update="30" />
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+  {# new person #}
+  {% set personImage = asset('images/no_image-120x120.png', 'media') %}
+  <div class="col-12 col-xl-6">
+    <div class="d-flex p-2 my-2">
+      <div class="flex-shrink-0">
+        <a
+          class="ajax-modal pointer"
+          data-url="{{ path('app_person_new')}}">
+          <div class="text-center userIconCenter">
+            <div class="border rounded p-2">
+              <div
+                class="userIcon"
+                style="background-image: url('{{ personImage }}');"
+                alt="{{ 'profiles.action.new.lbl'|trans }}"
+                title="{{ 'profiles.action.new.lbl'|trans }}">
+                <i class="bi bi-plus-square fs-3" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <div>
+          <a
+            class="ajax-modal pointer"
+            data-url="{{ path('app_person_new')}}">
+            <h5>{{ 'profiles.action.new.lbl'|trans }}</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

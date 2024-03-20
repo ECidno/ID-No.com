@@ -1,6 +1,8 @@
 import jQuery from 'jquery';
 import { cbAjax } from './cbAjax';
 import { cbMessage } from './cbMessage';
+import { cbModalButton } from './cbModal';
+import { cbOffcanvasButton } from './cbOffcanvas';
 
 export const name = 'cbAction';
 
@@ -11,9 +13,8 @@ export const name = 'cbAction';
  */
 const cbAction = (el) => {
   let initialized = el.dataset.initialized || false
-  let url = el.dataset.url;
-  let table = el.dataset.table ?? false;
-  let options = {
+  const url = el.dataset.url;
+  const options = {
     method: el.dataset.method || 'GET'
   };
 
@@ -28,26 +29,7 @@ const cbAction = (el) => {
     e => {
       cbAjax(url, options)
         .then(res => {
-
-          // message?
-          if(res.message ?? false) {
-            cbMessage(
-              res.severity || 0,
-              null,
-              res.message
-            );
-          }
-
-          // table refresh?
-          if(table) {
-            jQuery('#' + table)
-              .bootstrapTable(
-                'refresh',
-                {
-                  silent: true
-                }
-              );
-            }
+          cbSuccessActions(res, el);
         })
 
         // catch
@@ -61,5 +43,141 @@ const cbAction = (el) => {
   el.dataset.initialized = true;
 }
 
+
+/**
+ * cloudbase | action on load
+ *
+ * @param object el
+ */
+const cbActionOnLoad = (el) => {
+  let initialized = el.dataset.initialized || false
+  const url = el.dataset.url;
+  const options = {
+    method: el.dataset.method || 'GET'
+  };
+
+  // initalized?
+  if(initialized) {
+    return;
+  }
+
+  // ajax
+  cbAjax(url, options)
+    .then(res => {
+      cbSuccessActions(res, el);
+    })
+
+    // catch
+    .catch(err => {
+      console.warn(err);
+    });
+
+  // set init
+  el.dataset.initialized = true;
+}
+
+
+/**
+ * cloudbase | reinit
+ *
+ * @param object response
+ * @param object el
+ *
+ * @return mixed
+ */
+const cbInitActions = (el) => {
+
+  // add listener for action buttons
+  Array
+    .from(document.getElementsByClassName('ajax-action') || [])
+    .forEach((el) => {
+      cbAction(el);
+    });
+
+  // add listener for modal buttons
+  Array
+    .from(document.getElementsByClassName('ajax-modal') || [])
+    .forEach((el) => {
+      if((el.dataset.renderMode || 'modal') === 'modal') {
+        cbModalButton(el);
+      } else {
+        cbOffcanvasButton(el);
+      }
+    });
+}
+
+
+/**
+ * cloudbase | success actions
+ *
+ * @param object response
+ * @param object el
+ *
+ * @return mixed
+ */
+const cbSuccessActions = (response, el) => {
+  const dataset = el.dataset;
+  const bsTable = dataset.bsTable || false;
+  const table = dataset.table || false;
+  const target = dataset.target || false;
+
+  // message?
+  if(response.message || false) {
+    cbMessage(
+      response.severity || 0,
+      null,
+      response.message
+    );
+  }
+
+  // html?
+  if((response.html || false) && (response.target || target)) {
+    document.querySelector(response.target || target).innerHTML = response.html;
+    cbInitActions(el);
+  }
+
+  // redirect?
+  if (response.redirect || false) {
+    window.location.href = response.redirect;
+  }
+
+  // table refresh?
+  if(table) {
+    const tableEl = document.querySelector(table) ?? false;
+    const tableUrl = tableEl
+      ? tableEl.dataset.url
+      : false;
+    const options = {
+      method: el.dataset.method || 'GET'
+    };
+
+    // url?
+    if(tableUrl, options) {
+      cbAjax(tableUrl)
+        .then(res => {
+          tableEl.innerHTML = res.html;
+          cbInitActions(el);
+        })
+
+        // catch
+        .catch(err => {
+          console.warn(err);
+        });
+    }
+  }
+
+  // bs table refresh?
+  if(bsTable) {
+    jQuery('#' + bsTable)
+      .bootstrapTable(
+        'refresh',
+        {
+          silent: true
+        }
+      );
+    }
+}
+
+
 // export
-export { cbAction }
+export { cbAction, cbActionOnLoad, cbSuccessActions }

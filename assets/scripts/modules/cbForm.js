@@ -1,5 +1,6 @@
 import { Modal } from 'bootstrap';
 import jQuery from 'jquery';
+import { cbSuccessActions } from './cbAction';
 import { cbAjax } from './cbAjax';
 import { cbMessage } from './cbMessage';
 
@@ -11,28 +12,16 @@ export const name = 'cbForm';
  * @param object el
  */
 const cbForm = (el) => {
+  const modalContainer = document.getElementById('modalContainer') || false;
   const btnCollectionAdd = document.getElementsByClassName('add-collection-widget') || null;
   const btnCollectionRemove = document.getElementsByClassName('remove-collection-widget') || null;
   const ajaxValidate = document.getElementsByClassName('ajax-validate') || [];
-  let initialized = el.dataset.initialized || false
+  const initialized = el.dataset.initialized || false;
 
   // initalized?
   if(initialized) {
     return;
   }
-
-  // bootstrap-select
-/*
-  jQuery('select.form-select')
-    .removeClass('form-select')
-    .addClass('form-control')
-    .selectpicker({
-      style:'btn-outline-light'
-    });
-*/
-
-  // specials
-  //userForm(el);
 
   // button | collection add
   Array
@@ -41,12 +30,12 @@ const cbForm = (el) => {
       el.addEventListener(
         'click',
         e => {
-          let form = el.closest('form');
-          let list = document.getElementById(el.dataset.listSelector);
+          const form = el.closest('form');
+          const list = document.getElementById(el.dataset.listSelector);
           var counter = list.dataset.widgetCounter || list.children().length;
 
           // grab the prototype template
-          let newWidget = list.dataset.prototype;
+          var newWidget = list.dataset.prototype;
           newWidget = newWidget.replace(/__name__/g, counter);
           counter++;
 
@@ -54,7 +43,7 @@ const cbForm = (el) => {
           list.dataset.widgetCounter = counter;
 
           // create a new list element and add it to the list
-          var item = jQuery(list.dataset.widgetTags)
+          const item = jQuery(list.dataset.widgetTags)
             .html(newWidget);
 
           // add event to remove button
@@ -119,9 +108,9 @@ const cbForm = (el) => {
       el.addEventListener(
         'click',
         e => {
-          let form = el.closest('form');
-          let item = jQuery(el).closest('div.collection-item');
-          let list = document.getElementById(el.dataset.listSelector);
+          const form = el.closest('form');
+          const item = jQuery(el).closest('div.collection-item');
+          const list = document.getElementById(el.dataset.listSelector);
           var counter = list.dataset.widgetCounter || list.children().length;
 
           // remove item
@@ -154,9 +143,9 @@ const cbForm = (el) => {
   Array
     .from(ajaxValidate)
     .forEach((el) => {
-      let initialized = el.dataset.initialized || false
-      let url = el.dataset.url;
-      let options = {
+      const initialized = el.dataset.initialized || false
+      const url = el.dataset.url;
+      const options = {
         method: el.dataset.method || 'GET'
       };
 
@@ -169,11 +158,11 @@ const cbForm = (el) => {
       el.addEventListener(
         'blur',
         e => {
-          let field = e.target;
-          let form = field.closest('form');
-          let id = parseInt(form.getAttribute('action').split('/').pop());
-          let val = field.value.trim();
-          let finalUrl = url + (isNaN(id) ? 0 : id) + '/' + encodeURIComponent(val);
+          const field = e.target;
+          const form = field.closest('form');
+          const id = parseInt(form.getAttribute('action').split('/').pop());
+          const val = field.value.trim();
+          const finalUrl = url + (isNaN(id) ? 0 : id) + '/' + encodeURIComponent(val);
 
           cbAjax(finalUrl, options)
             .then(res => {
@@ -207,7 +196,7 @@ const cbForm = (el) => {
               field.classList.add('is-invalid');
 
               // error?
-              let error = err.message ?? err.errors ?? false;
+              const error = err.message ?? err.errors ?? false;
               if(error) {
                 showFieldError(field, error);
               }
@@ -222,7 +211,7 @@ const cbForm = (el) => {
 
   // enable, disable action buttons
   const setActionButtonStatus = (el, disabled) => {
-    let formButtons = el.querySelectorAll('button');
+    const formButtons = el.querySelectorAll('button');
     Array
       .from(formButtons)
       .forEach((actionBtn) => {
@@ -232,8 +221,8 @@ const cbForm = (el) => {
 
   // show form field error
   const showFieldError = (field, message) => {
-    let parent = field.parentNode;
-    let errorContainer = document.createElement('div');
+    const parent = field.parentNode;
+    const errorContainer = document.createElement('div');
 
     Array
       .from(parent.getElementsByClassName('invalid-feedback') || [])
@@ -254,12 +243,13 @@ const cbForm = (el) => {
     .addEventListener(
       'submit',
       e => {
-        let url = el.getAttribute('action');
-        let options = {
+        const modalInstance = Modal.getInstance(modalContainer) || false;
+        const url = el.getAttribute('action');
+        const options = {
           method: el.getAttribute('method') || 'POST',
           body: new FormData(el)
         };
-        let table = el.dataset.table || null;
+        const table = el.dataset.table || null;
 
         // disable action buttons
         setActionButtonStatus(el, true);
@@ -267,32 +257,12 @@ const cbForm = (el) => {
         // ajax
         cbAjax(url, options)
           .then(res => {
+            cbSuccessActions(res, el);
 
             // close modal if open/advised
-            let modalInstance = Modal.getInstance(modalContainer);
             if(modalInstance) {
               modalInstance.hide();
             }
-
-            // message?
-            if(res.message ?? false) {
-              cbMessage(
-                res.severity || 0,
-                null,
-                res.message
-              );
-            }
-
-            // table refresh?
-            if(table) {
-              jQuery('#' + table)
-                .bootstrapTable(
-                  'refresh',
-                  {
-                    silent: true
-                  }
-                );
-              }
           })
 
           // catch
