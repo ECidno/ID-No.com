@@ -85,7 +85,7 @@ class ItemsEditType extends AbstractType
                                 ->orderBy('p.vorname', 'ASC')
                                 ->setParameter('nutzer', $nutzer);
                         },
-                        'choice_label' => 'fullname',
+                        'choice_label' => 'fullName',
                         'placeholder' => 'items.person.not_assigned.lbl',
                         'required' => false,
                     ]);
