@@ -300,3 +300,18 @@ body.modal-open .background-container {
 .home-testimonial a {
   text-decoration: underline;
 }
+
+/* emblem datenschutz */
+.emblem-datenschutzexperte.account {
+  position: absolute;
+  right: -184px;
+}
+.emblem-datenschutzexperte.footer {
+  margin-top: -16px;
+}
+@media (max-width: 575px) {
+  .emblem-datenschutzexperte.footer {
+    margin-top: 0;
+    margin-left: -10px;
+  }
+}

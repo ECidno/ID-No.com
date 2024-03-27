@@ -4,21 +4,31 @@
 		<div class="container">
 			<div class="row my-3">
 				<div class="col-5 text-md-start text-sm-center">
+					<div class="row">
+						<div class="col-12 col-lg-5 order-2 order-md-1">
+							<img src="{{ asset('images/datenschutzsiegel_border.png', 'media') }}"
+								alt="Datenschutzexperte.de"
+								title="Datenschutzexperte.de"
+								class="ms-md-3 me-2 emblem-datenschutzexperte footer">
+						</div>
 
-					{# no some icons on index #}
-					{% if app.request.attributes.get('_route') != 'app_standard_index' %}
-						{% for key, item in settings.social %}
-							<a
-								href="{{ item.href }}"
-								target="_blank">
-								<img
-									class="socialmedia_icon"
-									src="{{ asset(item.icon, 'media') }}"
-									alt="{{ item.title }}" />
-							</a>
-							<br class="d-md-none" />
-						{% endfor %}
-					{% endif %}
+						<div class="col-12 col-lg-7 order-1 order-md-2">
+							{# no some icons on index #}
+							{% if app.request.attributes.get('_route') != 'app_standard_index' %}
+								{% for key, item in settings.social %}
+									<a
+										href="{{ item.href }}"
+										target="_blank">
+										<img
+											class="socialmedia_icon"
+											src="{{ asset(item.icon, 'media') }}"
+											alt="{{ item.title }}" />
+									</a>
+									<br class="d-md-none" />
+								{% endfor %}
+							{% endif %}
+						</div>
+					</div>
 				</div>
 
 				<div class="col-7 col-lg-6">

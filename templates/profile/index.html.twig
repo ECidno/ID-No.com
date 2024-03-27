@@ -5,6 +5,17 @@
 {# content #}
 {% block content %}
   <div class="container-fluid">
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8 position-relative">
+        <div class="emblem-datenschutzexperte account" style="position: absolute; right: -184px">
+          <img src="{{ asset('images/datenschutzsiegel_border.png', 'media') }}"
+            alt="Datenschutzexperte.de"
+            title="Datenschutzexperte.de">
+        </div>
+      </div>
+    </div>
+
     <div class="row my-3 justify-content-center">
       <div id="myIdNoHeader" class="col-12 col-md-10 col-lg-8">
         <h1>{{ 'meinidno.title'|trans }}</h1>

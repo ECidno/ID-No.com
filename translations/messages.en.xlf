@@ -3881,7 +3881,7 @@ Your ID-No.com Team</target>
     <unit id="htwKJ1q" name="profiles.action.new.lbl">
       <segment>
         <source>profiles.action.new.lbl</source>
-        <target>New profile</target>
+        <target>Add new person</target>
       </segment>
     </unit>
     <unit id="5T5lt0G" name="profiles.shop.header">
