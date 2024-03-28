@@ -162,8 +162,8 @@ class ItemsController extends AbstractController
                 $this->mailService->infoMail(
                     [
                         'subject' => 'Information - Ihr ID-No.com Produkt wurde genutzt!',
-                        'recipientEmail' => $person->getEmail(),
-                        'recipientName' => $person->getFullName(),
+                        'recipientEmail' => $nutzer->getEmail(),
+                        'recipientName' => $nutzer->getFullName(),
                         'item' => $item,
                         'nutzer' => $nutzer,
                         'person' => $person,
@@ -190,7 +190,7 @@ class ItemsController extends AbstractController
                 ItemsController::class,
                 $item->getId(),
                 'pass',
-                $person->getEmail(),
+                $nutzer->getEmail(),
                 LogEntry::SEVERITY_INFO
             );
 
