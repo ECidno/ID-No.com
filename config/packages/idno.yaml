@@ -137,18 +137,6 @@ parameters:
 
     # carousel, slider
     carousel:
-      2024_start:
-        image:
-          de:
-            desktop: slider/2024_slider_desktop.jpg
-            mobile: slider/2024_slider_mobile.jpg
-          en:
-            desktop: slider/2024_slider_desktop.jpg
-            mobile: slider/2024_slider_mobile.jpg
-        textStyle: 'position:absolute; left:25%; top:25%; margin-left:-70px; text-shadow: black 1px 1px 1px;'
-        link:
-          href: https://www.lebensretter.shop/sos-id-chip/
-
       2024_slider_1:
         image:
           de:
