@@ -15,6 +15,8 @@ use App\Form\Type\PersonAddType;
 use App\Service\FileUploader;
 use Imagine\Gd\Imagine;
 use Imagine\Image\Box;
+use Imagine\Image\Metadata\ExifMetadataReader;
+use Imagine\Filter\Basic\Autorotate;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -568,8 +570,14 @@ class PersonApiController extends AbstractApiController
             }
 
             $imagine = new Imagine;
+            $imagine->setMetadataReader(new ExifMetadataReader());
             $photo = $imagine->open($imgFile);
-            $photo->resize(new Box($width, $height))->save($imgFile);
+            $photo->resize(new Box($width, $height));
+
+            $autorotate = new Autorotate();
+            $autorotate->apply($photo);
+
+            $photo->save($imgFile);
 
             if (!$image) {
                 $image = new PersonImages;
