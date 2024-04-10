@@ -182,6 +182,23 @@ img.socialmedia_icon_row {
 #idno_form {
   .form-floating.is-invalid {
     #lblIdNo {
+      top: -10px;
+    }
+    .invalid-feedback-inline {
+      top: auto;
+      bottom: -10px;
+      text-align: center !important;
+      padding-right: 0.75rem !important;
+    }
+  }
+}
+#idno_form {
+  .form-floating.is-invalid {
+    .form-control:focus ~ #lblIdNo {
+      display: block;
+      top: 0;
+    }
+    .form-control:focus ~ .invalid-feedback-inline {
       display: none;
     }
   }
