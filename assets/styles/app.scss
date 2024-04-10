@@ -179,6 +179,13 @@ img.socialmedia_icon_row {
   font-size: 1.2em;
   -webkit-text-stroke: 1px var(--bs-body-color);
 }
+#idno_form {
+  .form-floating.is-invalid {
+    #lblIdNo {
+      display: none;
+    }
+  }
+}
 
 #toTop {
   display:none;
