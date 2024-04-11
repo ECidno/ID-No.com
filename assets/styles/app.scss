@@ -179,6 +179,39 @@ img.socialmedia_icon_row {
   font-size: 1.2em;
   -webkit-text-stroke: 1px var(--bs-body-color);
 }
+#idno_form {
+  .form-floating.is-invalid {
+    #lblIdNo {
+      top: -10px;
+    }
+    .invalid-feedback-inline {
+      top: auto;
+      bottom: -10px;
+      text-align: center !important;
+      padding-right: 0.75rem !important;
+    }
+  }
+}
+#idno_form {
+  .form-floating.is-invalid {
+    .form-control:focus ~ #lblIdNo {
+      display: block;
+      top: 0;
+    }
+    .form-control:focus ~ .invalid-feedback-inline {
+      display: none;
+    }
+  }
+}
+@media (max-width: 767px) {
+  #idno_form {
+    .form-floating.is-invalid {
+      .form-control.is-invalid {
+        background-image: none;
+      }
+    }
+  }
+}
 
 #toTop {
   display:none;
