@@ -203,6 +203,15 @@ img.socialmedia_icon_row {
     }
   }
 }
+@media (max-width: 767px) {
+  #idno_form {
+    .form-floating.is-invalid {
+      .form-control.is-invalid {
+        background-image: none;
+      }
+    }
+  }
+}
 
 #toTop {
   display:none;
