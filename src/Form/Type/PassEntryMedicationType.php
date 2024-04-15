@@ -7,7 +7,7 @@ namespace App\Form\Type;
  *
  **********************************************************************/
 
-use App\Entity\PassEntryCondition;
+use App\Entity\PassEntryMedication;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Form\AbstractType;
@@ -27,9 +27,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Translation\TranslatableMessage;
 
 /**
- * PassEntryConditionType type
+ * PassEntryMedicationType type
  */
-class PassEntryConditionType extends AbstractType
+class PassEntryMedicationType extends AbstractType
 {
     /**
      * @var EntityManagerInterface emDefault
@@ -57,26 +57,28 @@ class PassEntryConditionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('category', ChoiceType::class, [
-                'label' => new TranslatableMessage('person.kategorie.lbl'),
-                'choices' => [
-                    'Herz-Kreislauf-Erkrankungen' => 'Herz-Kreislauf-Erkrankungen',
-                    'Neurologische/ Psychische Erkrankungen' => 'Neurologische/ Psychische Erkrankungen',
-                    'Krebs' => 'Krebs',
-                    'Atemwegserkrankungen' => 'Atemwegserkrankungen',
-                ],
-                // 'row_attr' => [
-                //     'class' => 'col-8'
-                // ]
+            ->add('ingredient', TextType::class, [
+                'label' => new TranslatableMessage('person.medication.ingredient.lbl'),
+                'required' => false
             ])
-            ->add('title', ChoiceType::class, [
-                'label' => new TranslatableMessage('person.art.lbl'),
-                'choices' => [
-                    'a' => 'b'
-                ],
+            ->add('tradeName', TextType::class, [
+                'label' => new TranslatableMessage('person.medication.tradeName.lbl'),
+                'required' => false
+            ])
+            ->add('dosage', TextType::class, [
+                'label' => new TranslatableMessage('person.medication.dosage.lbl'),
+                'required' => false
+            ])
+            ->add('consumption', TextType::class, [
+                'label' => new TranslatableMessage('person.medication.consumption.lbl'),
+                'required' => false
             ])
             ->add('comment', TextType::class, [
-                'label' => new TranslatableMessage('person.erkrankungen.anmerkungen.lbl'),
+                'label' => new TranslatableMessage('person.medication.comment.lbl'),
+                'required' => false
+            ])
+            ->add('emergencyNotes', TextType::class, [
+                'label' => new TranslatableMessage('person.medication.emergencyNotes.lbl'),
                 'required' => false
             ])
             ->add('remove', ButtonType::class, [
@@ -99,8 +101,8 @@ class PassEntryConditionType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => PassEntryCondition::class,
-            'csrf_token_id' => PassEntryCondition::class,
+            'data_class' => PassEntryMedication::class,
+            'csrf_token_id' => PassEntryMedication::class,
             'csrf_protection' => true,
         ]);
     }

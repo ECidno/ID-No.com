@@ -7,7 +7,7 @@ namespace App\Form\Type;
  *
  **********************************************************************/
 
-use App\Entity\PassEntryCondition;
+use App\Entity\PassEntryAllergy;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Form\AbstractType;
@@ -27,9 +27,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Translation\TranslatableMessage;
 
 /**
- * PassEntryConditionType type
+ * PassEntryAllergyType type
  */
-class PassEntryConditionType extends AbstractType
+class PassEntryAllergyType extends AbstractType
 {
     /**
      * @var EntityManagerInterface emDefault
@@ -69,12 +69,6 @@ class PassEntryConditionType extends AbstractType
                 //     'class' => 'col-8'
                 // ]
             ])
-            ->add('title', ChoiceType::class, [
-                'label' => new TranslatableMessage('person.art.lbl'),
-                'choices' => [
-                    'a' => 'b'
-                ],
-            ])
             ->add('comment', TextType::class, [
                 'label' => new TranslatableMessage('person.erkrankungen.anmerkungen.lbl'),
                 'required' => false
@@ -99,8 +93,8 @@ class PassEntryConditionType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => PassEntryCondition::class,
-            'csrf_token_id' => PassEntryCondition::class,
+            'data_class' => PassEntryAllergy::class,
+            'csrf_token_id' => PassEntryAllergy::class,
             'csrf_protection' => true,
         ]);
     }

@@ -203,16 +203,17 @@
       <div class="col-9">
         {{ form_row(form.erkrankungen) }}
         
-        <ul id ="person_passEntryConditions" 
-            data-index="{{ form.passEntryConditions|length > 0 ? form.passEntryConditions|last.vars.name + 1 : 0 }}"
-            data-prototype="{{ form_widget(form.passEntryConditions.vars.prototype)|e('html_attr') }}">
-            {% for entry in form.passEntryConditions %}
-                <li>{{ form_row(entry) }}</li>
-            {% endfor %}
+        <ul id="person_passEntryConditions"
+          class="pass-entry-list"
+          data-index="{{ form.passEntryConditions|length > 0 ? form.passEntryConditions|last.vars.name + 1 : 0 }}"
+          data-prototype="{{ form_widget(form.passEntryConditions.vars.prototype)|e('html_attr') }}">
+          {% for entry in form.passEntryConditions %}
+              <li>{{ form_row(entry) }}</li>
+          {% endfor %}
         </ul>
 
         {#{{ form_row(form.passEntryConditions) }}#}
-        <button type="button" class="add-item-widget" data-list-selector="person_passEntryConditions">+</button>
+        <button type="button" class="btn add-item-widget" data-list-selector="person_passEntryConditions">+</button>
       </div>
       <div class="col-3 text-light">
         {{ form_row(form.erkrankungenShow) }}
@@ -222,6 +223,17 @@
     <div class="row">
       <div class="col-9">
         {{ form_row(form.medikamente) }}
+
+        <ul id="person_passEntryMedications"
+          class="pass-entry-list"
+          data-index="{{ form.passEntryMedications|length > 0 ? form.passEntryMedications|last.vars.name + 1 : 0 }}"
+          data-prototype="{{ form_widget(form.passEntryMedications.vars.prototype)|e('html_attr') }}">
+          {% for entry in form.passEntryMedications %}
+              <li>{{ form_row(entry) }}</li>
+          {% endfor %}
+        </ul>
+
+        <button type="button" class="btn add-item-widget" data-list-selector="person_passEntryMedications">+</button>
       </div>
       <div class="col-3 text-light">
         {{ form_row(form.medikamenteShow) }}
@@ -231,6 +243,17 @@
     <div class="row">
       <div class="col-9">
         {{ form_row(form.allergieen) }}
+
+        <ul id="person_passEntryAllergies"
+          class="pass-entry-list"
+          data-index="{{ form.passEntryAllergies|length > 0 ? form.passEntryAllergies|last.vars.name + 1 : 0 }}"
+          data-prototype="{{ form_widget(form.passEntryAllergies.vars.prototype)|e('html_attr') }}">
+          {% for entry in form.passEntryAllergies %}
+              <li>{{ form_row(entry) }}</li>
+          {% endfor %}
+        </ul>
+
+        <button type="button" class="btn add-item-widget" data-list-selector="person_passEntryAllergies">+</button>
       </div>
       <div class="col-3 text-light">
         {{ form_row(form.allergieenShow) }}

@@ -402,19 +402,19 @@ class Person
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="App\Entity\PassEntryCondition", mappedBy="person", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="App\Entity\PassEntryCondition", mappedBy="person", cascade={"all"}, orphanRemoval=true)
      */
     private $passEntryConditions;
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="App\Entity\PassEntryMedication", mappedBy="person", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="App\Entity\PassEntryMedication", mappedBy="person", cascade={"all"}, orphanRemoval=true)
      */
     private $passEntryMedications;
     
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="App\Entity\PassEntryAllergy", mappedBy="person", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="App\Entity\PassEntryAllergy", mappedBy="person", cascade={"all"}, orphanRemoval=true)
      */
     private $passEntryAllergies;
 
@@ -1887,6 +1887,92 @@ class Person
     {
         if ($this->passEntryConditions->contains($passEntryCondition)) {
             $this->passEntryConditions->removeElement($passEntryCondition);
+        }
+        return $this;
+    }
+
+    /**
+     * @param Collection $passEntryMedications
+     * @return Person
+     */
+    public function setPassEntryMedications(Collection $passEntryMedications): self
+    {
+        $this->passEntryMedications = $passEntryMedications;
+        return $this;
+    }
+
+    /**
+     * @return Collection|PassEntryMedication[]
+     */
+    public function getPassEntryMedications(): Collection
+    {
+        return $this->passEntryMedications;
+    }
+
+    /**
+     * @param PassEntryMedication $passEntryMedication
+     * @return Person
+     */
+    public function addPassEntryMedication(PassEntryMedication $passEntryMedication): self
+    {
+        if (!$this->passEntryMedications->contains($passEntryMedication)) {
+            $this->passEntryMedications[] = $passEntryMedication;
+            $passEntryMedication->setPerson($this);
+        }
+        return $this;
+    }
+
+    /**
+     * @param PassEntryMedication $passEntryMedication
+     * @return Person
+     */
+    public function removePassEntryMedication(PassEntryMedication $passEntryMedication): self
+    {
+        if ($this->passEntryMedications->contains($passEntryMedication)) {
+            $this->passEntryMedications->removeElement($passEntryMedication);
+        }
+        return $this;
+    }
+
+    /**
+     * @param Collection $passEntryAllergies
+     * @return Person
+     */
+    public function setPassEntryAllergies(Collection $passEntryAllergies): self
+    {
+        $this->passEntryAllergies = $passEntryAllergies;
+        return $this;
+    }
+
+    /**
+     * @return Collection|PassEntryAllergy[]
+     */
+    public function getPassEntryAllergies(): Collection
+    {
+        return $this->passEntryAllergies;
+    }
+
+    /**
+     * @param PassEntryAllergy $passEntrAllergy
+     * @return Person
+     */
+    public function addPassEntryAllergy(PassEntryAllergy $passEntryAllergy): self
+    {
+        if (!$this->passEntryAllergies->contains($passEntryAllergy)) {
+            $this->passEntryAllergies[] = $passEntryAllergy;
+            $passEntryAllergy->setPerson($this);
+        }
+        return $this;
+    }
+
+    /**
+     * @param PassEntryAllergy $passEntryAllergy
+     * @return Person
+     */
+    public function removePassEntryAllergy(PassEntryAllergy $passEntryAllergy): self
+    {
+        if ($this->passEntryAllergies->contains($passEntryAllergy)) {
+            $this->passEntryAllergies->removeElement($passEntryAllergy);
         }
         return $this;
     }

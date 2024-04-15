@@ -320,7 +320,8 @@ class PersonType extends AbstractType
                 'by_reference' => false,
                 'label' => '',
                 'attr' => [
-                    'data-index' => 0
+                    'data-index' => 0,
+                    'class' => 'row'
                 ]
             ])
             ->add('erkrankungenShow', CheckboxType::class, [
@@ -343,6 +344,18 @@ class PersonType extends AbstractType
                 ],
                 'required' => false
             ])
+            ->add('passEntryMedications', CollectionType::class, [
+                'entry_type' => PassEntryMedicationType::class,
+                'entry_options' => [],
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+                'label' => '',
+                'attr' => [
+                    'data-index' => 0,
+                    'class' => 'row'
+                ]
+            ])
             ->add('medikamenteShow', CheckboxType::class, [
                 'label' => new TranslatableMessage('sichtbar'),
                 'label_attr' => [
@@ -362,6 +375,18 @@ class PersonType extends AbstractType
                     'autocomplete' => 'off',
                 ],
                 'required' => false
+            ])
+            ->add('passEntryAllergies', CollectionType::class, [
+                'entry_type' => PassEntryAllergyType::class,
+                'entry_options' => [],
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+                'label' => '',
+                'attr' => [
+                    'data-index' => 0,
+                    'class' => 'row'
+                ]
             ])
             ->add('allergieenShow', CheckboxType::class, [
                 'label' => new TranslatableMessage('sichtbar'),
