@@ -36,7 +36,7 @@ class PassEntryCondition
      * @var int
      * @ORM\Column(type="integer")
      */
-    private $sorting;
+    private $sorting = 0;
 
     /**
      * @var Person

@@ -9,10 +9,12 @@ namespace App\Form\Type;
 
 use App\Entity\Person;
 use App\Form\Type\EntityHiddenType;
+use App\Form\Type\PassEntryConditionType;
 use Locale;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -309,6 +311,17 @@ class PersonType extends AbstractType
                     'autocomplete' => 'off',
                 ],
                 'required' => false,
+            ])
+            ->add('passEntryConditions', CollectionType::class, [
+                'entry_type' => PassEntryConditionType::class,
+                'entry_options' => [],
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+                'label' => '',
+                'attr' => [
+                    'data-index' => 0
+                ]
             ])
             ->add('erkrankungenShow', CheckboxType::class, [
                 'label' => new TranslatableMessage('sichtbar'),

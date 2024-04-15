@@ -301,6 +301,19 @@ document.addEventListener(
             .from(ajaxForms)
             .forEach((el) => {
               cbForm(el);
+              document.querySelectorAll('.add-item-widget')
+                .forEach(btn => {
+                    btn.addEventListener("click", addItemToCollection)
+                });
+              document.querySelectorAll('button.remove-item-widget')
+                .forEach(item => {
+                  item.addEventListener(
+                    'click',
+                    (e) => {
+                      e.preventDefault();
+                      item.closest('fieldset').remove();
+                    })
+                  });
             });
 
           // add listener for uploads
@@ -378,6 +391,33 @@ document.addEventListener(
         false
       );
 
+    function addItemToCollection(event) {
+      const collectionHolder = document.getElementById(event.currentTarget.dataset.listSelector);
+
+      const item = document.createElement('li');
+      item.innerHTML = collectionHolder
+        .dataset
+        .prototype
+        .replace(
+          /__name__/g,
+          collectionHolder.dataset.index
+        );
+    
+      // add event to remove button
+      item
+        .querySelector('button.remove-item-widget')
+        .addEventListener(
+          'click',
+          (e) => {
+            e.preventDefault();
+            item.remove();
+        }
+      );
+
+      collectionHolder.appendChild(item);
+    
+      collectionHolder.dataset.index++;
+    }
 
     /*
      * page object event listener
