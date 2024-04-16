@@ -329,7 +329,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch pt-3'],
+                'row_attr' => ['class' => 'form-switch'],
                 'attr' => [
                     'role' => 'switch'],
                 'required' => false
@@ -361,7 +361,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch pt-3'],
+                'row_attr' => ['class' => 'form-switch'],
                 'attr' => [
                     'role' => 'switch'],
                 'required' => false
@@ -393,7 +393,7 @@ class PersonType extends AbstractType
                 'label_attr' => [
                     'class' => 'd-none d-sm-block',
                 ],
-                'row_attr' => ['class' => 'form-switch pt-3'],
+                'row_attr' => ['class' => 'form-switch'],
                 'attr' => [
                     'role' => 'switch'],
                 'required' => false

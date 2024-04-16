@@ -66,7 +66,7 @@ class PassEntryConditionType extends AbstractType
                     'Atemwegserkrankungen' => 'Atemwegserkrankungen',
                 ],
                 // 'row_attr' => [
-                //     'class' => 'col-8'
+                //     'class' => 'form-floating'
                 // ]
             ])
             ->add('title', ChoiceType::class, [
@@ -85,7 +85,7 @@ class PassEntryConditionType extends AbstractType
                     'class' => 'remove-item-widget',
                 ],
                 'row_attr' => [
-                    'class' => 'col-3'
+                    'class' => 'form-floating mb-3 remove-widget-container'
                 ]
             ])
             ;

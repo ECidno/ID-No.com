@@ -87,7 +87,7 @@ class PassEntryMedicationType extends AbstractType
                     'class' => 'remove-item-widget',
                 ],
                 'row_attr' => [
-                    'class' => 'col-3'
+                    'class' => 'form-floating mb-3 remove-widget-container'
                 ]
             ])
             ;

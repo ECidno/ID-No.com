@@ -58,19 +58,23 @@ class PassEntryAllergyType extends AbstractType
     {
         $builder
             ->add('category', ChoiceType::class, [
-                'label' => new TranslatableMessage('person.kategorie.lbl'),
+                'label' => new TranslatableMessage('person.allergie.kategorie.lbl'),
                 'choices' => [
-                    'Herz-Kreislauf-Erkrankungen' => 'Herz-Kreislauf-Erkrankungen',
-                    'Neurologische/ Psychische Erkrankungen' => 'Neurologische/ Psychische Erkrankungen',
-                    'Krebs' => 'Krebs',
-                    'Atemwegserkrankungen' => 'Atemwegserkrankungen',
+                    'Medikamente' => 'Medikamente',
+                    'Insektengift' => 'Insektengift',
+                    'Pollen' => 'Pollen',
+                    'Hausstaubmilben' => 'Hausstaubmilben',
+                    'Tiere' => 'Tiere',
+                    'Nahrungs' > 'Nahrungs',
+                    'Schimmel' => 'Schimmel',
+                    'Kontaktstoffe' => 'Kontaktstoffe',
                 ],
                 // 'row_attr' => [
                 //     'class' => 'col-8'
                 // ]
             ])
             ->add('comment', TextType::class, [
-                'label' => new TranslatableMessage('person.erkrankungen.anmerkungen.lbl'),
+                'label' => new TranslatableMessage('person.allergie.anmerkungen.lbl'),
                 'required' => false
             ])
             ->add('remove', ButtonType::class, [
@@ -79,7 +83,7 @@ class PassEntryAllergyType extends AbstractType
                     'class' => 'remove-item-widget',
                 ],
                 'row_attr' => [
-                    'class' => 'col-3'
+                    'class' => 'form-floating mb-3 remove-widget-container'
                 ]
             ])
             ;
