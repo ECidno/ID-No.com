@@ -1,3 +1,10 @@
+{% import _self as formMacros %}
+
+{# macro for item form container #}
+{% macro itemFormContainer(item, loop) %}
+  {% include '_partials/person/medicationItem.html.twig' %}
+{% endmacro %}
+
 {{ form_errors(form) }}
 
 <div class="row">
@@ -263,6 +270,7 @@
 
     <div class="row">
       <div class="col-9">
+        {#
         <ul id="person_passEntryMedications"
           class="pass-entry-list"
           data-index="{{ form.passEntryMedications|length > 0 ? form.passEntryMedications|last.vars.name + 1 : 0 }}"
@@ -271,6 +279,19 @@
               <li>{{ form_row(entry) }}</li>
           {% endfor %}
         </ul>
+        #}
+
+        <ul id="person_passEntryMedications"
+          class="pass-entry-list"
+          data-index="{{ form.passEntryMedications|length > 0 ? form.passEntryMedications|last.vars.name + 1 : 0 }}"
+          data-prototype="{{ formMacros.itemFormContainer(form.passEntryMedications.vars.prototype, 1)|spaceless|e('html_attr') }}">
+          {% for entry in form.passEntryMedications %}
+              <li>
+                {{ formMacros.itemFormContainer(item, loop.index) }}
+              </li>
+          {% endfor %}
+        </ul>
+
         {% do form.passEntryMedications.setRendered() %}        
       </div>
     </div>
