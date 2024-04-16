@@ -58,25 +58,158 @@ class PassEntryConditionType extends AbstractType
     {
         $builder
             ->add('category', ChoiceType::class, [
-                'label' => new TranslatableMessage('person.kategorie.lbl'),
+                'label' => new TranslatableMessage('person.condition.category.lbl'),
                 'choices' => [
                     'Herz-Kreislauf-Erkrankungen' => 'Herz-Kreislauf-Erkrankungen',
                     'Neurologische/ Psychische Erkrankungen' => 'Neurologische/ Psychische Erkrankungen',
                     'Krebs' => 'Krebs',
                     'Atemwegserkrankungen' => 'Atemwegserkrankungen',
+                    'Stoffwechselerkrankungen' => 'Stoffwechselerkrankungen',
+                    'Muskel-/ Skelettsystem' => 'Muskel-/ Skelettsystem',
+                    'Autoimmunerkrankungen' => 'Autoimmunerkrankungen',
+                    'Nierenerkrankungen' => 'Nierenerkrankungen',
                 ],
-                // 'row_attr' => [
-                //     'class' => 'form-floating'
-                // ]
+                'choice_attr' => [
+                    'Herz-Kreislauf-Erkrankungen' => ['data-category' => 'herzkreislauf'],
+                    'Neurologische/ Psychische Erkrankungen' => ['data-category' => 'neurologisch'],
+                    'Krebs' => ['data-category' => 'krebs'],
+                    'Atemwegserkrankungen' => ['data-category' => 'atemweg'],
+                    'Stoffwechselerkrankungen' => ['data-category' => 'stoffwechsel'],
+                    'Muskel-/ Skelettsystem' => ['data-category' => 'muskel'],
+                    'Autoimmunerkrankungen' => ['data-category' => 'autoimmun'],
+                    'Nierenerkrankungen' => ['data-category' => 'niere'],
+                ],
+                'attr' => [
+                    'class' => 'condition-category-select',
+                    'data-width' => '100%',
+                ]
             ])
             ->add('title', ChoiceType::class, [
-                'label' => new TranslatableMessage('person.art.lbl'),
+                'label' => new TranslatableMessage('person.condition.title.lbl'),
                 'choices' => [
-                    'a' => 'b'
+                    'Herzinfarkt' => 'Herzinfarkt',
+                    'Bluthochdruck' => 'Bluthochdruck',
+                    'Angina Pectoris' => 'Angina Pectoris',
+                    'Herzinsuffizienz und andere kardiovaskuläre Probleme' => 'Herzinsuffizienz und andere kardiovaskuläre Probleme',
+                    'Herzrhythmusstörung' => 'Herzrhythmusstörung',
+                    'Herzmuskelentzündung' => 'Herzmuskelentzündung',
+                    'KHK' => 'KHK',
+                    
+                    'Schlaganfall' => 'Schlaganfall',
+                    'Demenz' => 'Demenz',
+                    'Alzheimer' => 'Alzheimer',
+                    'Depressionen' => 'Depressionen',
+                    'Angststörungen' => 'Angststörungen',
+
+                    'Lungenkrebs' => 'Lungenkrebs',
+                    'Brustkrebs' => 'Brustkrebs',
+                    'Darmkrebs' => 'Darmkrebs',
+                    'Gebärmutterhalskrebs' => 'Gebärmutterhalskrebs',
+                    'Prostatakrebs' => 'Prostatakrebs',
+                    'Blasenkrebs' => 'Blasenkrebs',
+                    'Hautkrebs' => 'Hautkrebs',
+                    'Nierenzellkarzinom' => 'Nierenzellkarzinom',
+                    'Schilddrüsenkrebs' => 'Schilddrüsenkrebs',
+
+                    'Lungenerkrankung (COPD)' => 'Lungenerkrankung (COPD)',
+                    'Asthma' => 'Asthma',
+                    'chronische Bronchitis' => 'chronische Bronchitis',
+
+                    'Struma' => 'Struma',
+                    'Morbus Basedow' => 'Morbus Basedow',
+                    'Hashimoto-Thyreoditis' => 'Hashimoto-Thyreoditis',
+                    'Überfunktion' => 'Überfunktion',
+                    'Unterfunktion' => 'Unterfunktion',
+                    'Diabetes Typ 1' => 'Diabetes Typ 1',
+                    'Diabetes Typ 2' => 'Diabetes Typ 2',
+
+                    'Arthritis' => 'Arthritis',
+                    'Arthrose' => 'Arthrose',
+                    'Osteoporose' => 'Osteoporose',
+
+                    'Rheuma' => 'Rheuma',
+                    'Lupus' => 'Lupus',
+                    'Morbus Crohn' => 'Morbus Crohn',
+                    'Zöliakie' => 'Zöliakie',
+                    'Colitis ulcerosa' => 'Colitis ulcerosa',
+
+                    'Akute Niereninsuffizienz' => 'Akute Niereninsuffizienz',
+                    'Chronische Niereninsuffizienz' => 'Chronische Niereninsuffizienz',
+                    'Diabetische Nephropathie' => 'Diabetische Nephropathie',
+                    'Morbus Addison' => 'Morbus Addison',
+                    'Nierenbeckenentzündung (Pyelonephritis)' => 'Nierenbeckenentzündung (Pyelonephritis)',
+                    'Nierensteine' => 'Nierensteine',
+                    'Nierenszysten' => 'Nierenszysten',
+                    'Dialysepflicht' => 'Dialysepflicht',
+
+                    'Andere' => 'Andere',
                 ],
+                'choice_attr' => [
+                    'Herzinfarkt' => ['class' => 'herzkreislauf'],
+                    'Bluthochdruck' => ['class' => 'herzkreislauf'],
+                    'Angina Pectoris' => ['class' => 'herzkreislauf'],
+                    'Herzinsuffizienz und andere kardiovaskuläre Probleme' => ['class' => 'herzkreislauf'],
+                    'Herzrhythmusstörung' => ['class' => 'herzkreislauf'],
+                    'Herzmuskelentzündung' => ['class' => 'herzkreislauf'],
+                    'KHK' => ['class' => 'herzkreislauf'],
+                    
+                    'Schlaganfall' => ['class' => 'neurologisch'],
+                    'Demenz' => ['class' => 'neurologisch'],
+                    'Alzheimer' => ['class' => 'neurologisch'],
+                    'Depressionen' => ['class' => 'neurologisch'],
+                    'Angststörungen' => ['class' => 'neurologisch'],
+                    
+                    'Lungenkrebs' => ['class' => 'krebs'],
+                    'Brustkrebs' => ['class' => 'krebs'],
+                    'Darmkrebs' => ['class' => 'krebs'],
+                    'Gebärmutterhalskrebs' => ['class' => 'krebs'],
+                    'Prostatakrebs' => ['class' => 'krebs'],
+                    'Blasenkrebs' => ['class' => 'krebs'],
+                    'Hautkrebs' => ['class' => 'krebs'],
+                    'Nierenzellkarzinom' => ['class' => 'krebs'],
+                    'Schilddrüsenkrebs' => ['class' => 'krebs'],
+
+                    'Lungenerkrankung (COPD)' => ['class' => 'atemweg'],
+                    'Asthma' => ['class' => 'atemweg'],
+                    'chronische Bronchitis' => ['class' => 'atemweg'],
+
+                    'Struma' => ['class' => 'stoffwechsel'],
+                    'Morbus Basedow' => ['class' => 'stoffwechsel'],
+                    'Hashimoto-Thyreoditis' => ['class' => 'stoffwechsel'],
+                    'Überfunktion' => ['class' => 'stoffwechsel'],
+                    'Unterfunktion' => ['class' => 'stoffwechsel'],
+                    'Diabetes Typ 1' => ['class' => 'stoffwechsel'],
+                    'Diabetes Typ 2' => ['class' => 'stoffwechsel'],
+
+                    'Arthritis' => ['class' => 'muskel'],
+                    'Arthrose' => ['class' => 'muskel'],
+                    'Osteoporose' => ['class' => 'muskel'],
+
+                    'Rheuma' => ['class' => 'autoimmun'],
+                    'Lupus' => ['class' => 'autoimmun'],
+                    'Morbus Crohn' => ['class' => 'autoimmun'],
+                    'Zöliakie' => ['class' => 'autoimmun'],
+                    'Colitis ulcerosa' => ['class' => 'autoimmun'],
+
+                    'Akute Niereninsuffizienz' => ['class' => 'niere'],
+                    'Chronische Niereninsuffizienz' => ['class' => 'niere'],
+                    'Diabetische Nephropathie' => ['class' => 'niere'],
+                    'Morbus Addison' => ['class' => 'niere'],
+                    'Nierenbeckenentzündung (Pyelonephritis)' => ['class' => 'niere'],
+                    'Nierensteine' => ['class' => 'niere'],
+                    'Nierenszysten' => ['class' => 'niere'],
+                    'Dialysepflicht' => ['class' => 'niere'],
+
+                    'Andere' => ['class' => 'all'],
+
+                ],
+                'attr' => [
+                    'class' => 'condition-title-select',
+                    'data-width' => '100%',
+                ]
             ])
             ->add('comment', TextType::class, [
-                'label' => new TranslatableMessage('person.erkrankungen.anmerkungen.lbl'),
+                'label' => new TranslatableMessage('person.condition.comment.lbl'),
                 'required' => false
             ])
             ->add('remove', ButtonType::class, [

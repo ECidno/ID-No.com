@@ -2,6 +2,7 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 @import "~bootstrap-table";
+@import "bootstrap-select/bootstrap-select";
 @import "~leaflet";
 
 @import "~placeholder-loading/src/scss/placeholder-loading";
@@ -374,5 +375,39 @@ body.modal-open .background-container {
   h4.sub-head {
     color: $white;
     font-size: 1rem;
+  }
+}
+
+/*
+ * bootstrap select
+ */
+.form-floating {
+ >.bootstrap-select {
+    &.form-select {
+      padding-top: 0;
+      padding-right: 0;
+      .dropdown-menu {
+        left: -0.75rem !important;
+        margin-top: 4px !important;
+      }
+    }
+
+    >.dropdown-toggle {
+      background-color: transparent;
+      border: none;
+      padding: 1.625rem var(--bs-btn-padding-x) 0 0;
+
+      &:active {
+        background-color: transparent;
+      }
+
+      &:focus {
+        outline: none !important;
+      }
+
+      &:after {
+        border: none;
+      }
+    }
   }
 }

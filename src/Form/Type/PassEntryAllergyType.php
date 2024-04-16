@@ -65,7 +65,7 @@ class PassEntryAllergyType extends AbstractType
                     'Pollen' => 'Pollen',
                     'Hausstaubmilben' => 'Hausstaubmilben',
                     'Tiere' => 'Tiere',
-                    'Nahrungs' > 'Nahrungs',
+                    'Nahrungs' => 'Nahrungs',
                     'Schimmel' => 'Schimmel',
                     'Kontaktstoffe' => 'Kontaktstoffe',
                 ],
