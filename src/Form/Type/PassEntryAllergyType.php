@@ -74,7 +74,7 @@ class PassEntryAllergyType extends AbstractType
                 // ]
             ])
             ->add('comment', TextType::class, [
-                'label' => new TranslatableMessage('person.allergoy.comment.lbl'),
+                'label' => new TranslatableMessage('person.allergy.comment.lbl'),
                 'required' => false
             ])
             ->add('remove', ButtonType::class, [

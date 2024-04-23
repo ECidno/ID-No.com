@@ -1537,7 +1537,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="SjfMmjS" name="person.condition.new.lbl">
       <segment>
         <source>person.condition.new.lbl</source>
-        <target>add condition</target>
+        <target>add disease</target>
       </segment>
     </unit>
     <unit id="1wJQxlA" name="person.medication.new.lbl">
@@ -1603,7 +1603,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="Am8yK5v" name="person.condition.comment.lbl">
       <segment>
         <source>person.condition.comment.lbl</source>
-        <target>Comment condition</target>
+        <target>Comment disease</target>
       </segment>
     </unit>
     <unit id="loi5AkI" name="person.medication.ingredient.lbl">
@@ -4693,6 +4693,24 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
       <segment>
         <source>Kontaktstoffe</source>
         <target>Kontaktstoffe</target>
+      </segment>
+    </unit>
+    <unit id="eRUBO5e" name="person.condition.lbl">
+      <segment>
+        <source>person.condition.lbl</source>
+        <target>Disease</target>
+      </segment>
+    </unit>
+    <unit id="sh61ir9" name="person.medication.lbl">
+      <segment>
+        <source>person.medication.lbl</source>
+        <target>Medikament</target>
+      </segment>
+    </unit>
+    <unit id="cJgRo.Q" name="person.allergy.lbl">
+      <segment>
+        <source>person.allergy.lbl</source>
+        <target>Allergie</target>
       </segment>
     </unit>
   </file>

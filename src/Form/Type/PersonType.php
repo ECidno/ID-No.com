@@ -455,6 +455,14 @@ class PersonType extends AbstractType
                 'required' => false
             ])
 
+            ->add('operationsActive', CheckboxType::class, [
+                'label' => new TranslatableMessage('person.operationsActive.lbl'),
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+            ])
             ->add('operations', TextareaType::class, [
                 'label' => new TranslatableMessage('person.operations.lbl'),
                 'attr' => [
@@ -538,6 +546,83 @@ class PersonType extends AbstractType
                 'required' => false
             ])
 
+            ->add('importantNote', TextareaType::class, [
+                'label' => new TranslatableMessage('person.importantNote.lbl'),
+                'attr' => [
+                    'class' => 'h-100',
+                    'maxlength' => 65535,
+                    'autocomplete' => 'off',
+                ],
+                'required' => false
+            ])
+            ->add('importantNoteShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+            ])
+
+            ->add('pacemaker', CheckboxType::class, [
+                'label' => new TranslatableMessage('person.pacemaker.lbl'),
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+            ])
+            ->add('pacemakerShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+            ])
+            ->add('pacemakerComment', TextType::class, [
+                'label' => new TranslatableMessage('person.pacemakerComment.lbl'),
+                'attr' => [
+                    'maxlength' => 100,
+                    'autocomplete' => 'off',
+                ],
+                'required' => false
+            ])
+
+            ->add('pregnancy', CheckboxType::class, [
+                'label' => new TranslatableMessage('person.pregnancy.lbl'),
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+            ])
+            ->add('pregnancyShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+            ])
+            ->add('pregnancyComment', TextType::class, [
+                'label' => new TranslatableMessage('person.pregnancyComment.lbl'),
+                'attr' => [
+                    'maxlength' => 100,
+                    'autocomplete' => 'off',
+                ],
+                'required' => false
+            ])
+
             ->add('organspender', CheckboxType::class, [
                 'label' => new TranslatableMessage('person.organspender.lbl'),
                 'row_attr' => ['class' => 'form-switch py-3'],
@@ -574,6 +659,14 @@ class PersonType extends AbstractType
                 'row_attr' => ['class' => 'form-switch py-3'],
                 'attr' => [
                     'role' => 'switch'
+                ],
+                'required' => false
+            ])
+            ->add('patientenverfComment', TextType::class, [
+                'label' => new TranslatableMessage('person.patientenverfComment.lbl'),
+                'attr' => [
+                    'maxlength' => 255,
+                    'autocomplete' => 'off',
                 ],
                 'required' => false
             ])

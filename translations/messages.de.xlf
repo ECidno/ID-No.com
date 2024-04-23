@@ -4096,7 +4096,7 @@ Schauen Sie gerne rein.</target>
     <unit id="ZgEYCtw" name="person.operations.lbl">
       <segment>
         <source>person.operations.lbl</source>
-        <target>Operationen (Operation, Datum, Ort)</target>
+        <target>Anmerkungen (Operation, Datum, Ort)</target>
       </segment>
     </unit>
     <unit id="dC15BRX" name="Operationen">
@@ -4525,6 +4525,12 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
       <segment>
         <source>2</source>
         <target>2</target>
+      </segment>
+    </unit>
+    <unit id="eRUBO5e" name="person.condition.lbl">
+      <segment>
+        <source>person.condition.lbl</source>
+        <target>Erkrankung</target>
       </segment>
     </unit>
     <unit id="v1BIxhx" name="person.condition.category.lbl">
@@ -5011,6 +5017,60 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
       <segment>
         <source>person.allergy.comment.lbl</source>
         <target>Anmerkung Allergie</target>
+      </segment>
+    </unit>
+    <unit id="sh61ir9" name="person.medication.lbl">
+      <segment>
+        <source>person.medication.lbl</source>
+        <target>Medikament</target>
+      </segment>
+    </unit>
+    <unit id="cJgRo.Q" name="person.allergy.lbl">
+      <segment>
+        <source>person.allergy.lbl</source>
+        <target>Allergie</target>
+      </segment>
+    </unit>
+    <unit id="ijf53JO" name="person.importantNote.lbl">
+      <segment>
+        <source>person.importantNote.lbl</source>
+        <target>Bitte umbedingt beachten:</target>
+      </segment>
+    </unit>
+    <unit id="F7xOzXs" name="person.pacemaker.lbl">
+      <segment>
+        <source>person.pacemaker.lbl</source>
+        <target>Herzschrittmacher</target>
+      </segment>
+    </unit>
+    <unit id="HT1qsnT" name="person.pacemakerComment.lbl">
+      <segment>
+        <source>person.pacemakerComment.lbl</source>
+        <target>Herzschrittmacher Anmerkung</target>
+      </segment>
+    </unit>
+    <unit id="Y_nBBYy" name="person.pregnancy.lbl">
+      <segment>
+        <source>person.pregnancy.lbl</source>
+        <target>Schwangerschaft</target>
+      </segment>
+    </unit>
+    <unit id="rtAG2h1" name="person.pregnancyComment.lbl">
+      <segment>
+        <source>person.pregnancyComment.lbl</source>
+        <target>Schwangerschaft Anmerkung</target>
+      </segment>
+    </unit>
+    <unit id="E4nSPrc" name="person.operationsActive.lbl">
+      <segment>
+        <source>person.operationsActive.lbl</source>
+        <target>Operationen</target>
+      </segment>
+    </unit>
+    <unit id=".aFyrCo" name="person.patientenverfComment.lbl">
+      <segment>
+        <source>person.patientenverfComment.lbl</source>
+        <target>Patientenverfügung Anmerkung</target>
       </segment>
     </unit>
   </file>
