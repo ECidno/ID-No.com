@@ -2,6 +2,7 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 @import "~bootstrap-table";
+@import "bootstrap-select/bootstrap-select";
 @import "~leaflet";
 
 @import "~placeholder-loading/src/scss/placeholder-loading";
@@ -346,5 +347,69 @@ body.modal-open .background-container {
   .emblem-datenschutzexperte.footer {
     margin-top: 0;
     margin-left: -10px;
+  }
+}
+
+/* notfallpass form */
+.pass-entry-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  legend {
+    display: none;
+  }
+  .remove-item-widget {
+    width: 8rem;
+    background-color: $green;
+    color: $white;
+  }
+  .remove-widget-container-pos {
+    position: absolute;
+    top: 0;
+    right: -152px;
+  }
+}
+.add-item-widget {
+  background-color: $green;
+  color: $white;
+}
+.pass-data {
+  h4.sub-head {
+    color: $white;
+    font-size: 1rem;
+  }
+}
+
+/*
+ * bootstrap select
+ */
+.form-floating {
+ >.bootstrap-select {
+    &.form-select {
+      padding-top: 0;
+      padding-right: 0;
+      .dropdown-menu {
+        left: -0.75rem !important;
+        margin-top: 4px !important;
+      }
+    }
+
+    >.dropdown-toggle {
+      background-color: transparent;
+      border: none;
+      padding: 1.625rem var(--bs-btn-padding-x) 0 0;
+
+      &:active {
+        background-color: transparent;
+      }
+
+      &:focus {
+        outline: none !important;
+      }
+
+      &:after {
+        border: none;
+      }
+    }
   }
 }

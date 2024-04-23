@@ -14,6 +14,9 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Mime\MimeTypes;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Entity\PassEntryCondition;
+use App\Entity\PassEntryMedication;
+use App\Entity\PassEntryAllergy;
 
 /**
  * Person
@@ -396,6 +399,24 @@ class Person
      * @Gedmo\Versioned
      */
     private $allergieenShow = 1;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="App\Entity\PassEntryCondition", mappedBy="person", cascade={"all"}, orphanRemoval=true)
+     */
+    private $passEntryConditions;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="App\Entity\PassEntryMedication", mappedBy="person", cascade={"all"}, orphanRemoval=true)
+     */
+    private $passEntryMedications;
+    
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="App\Entity\PassEntryAllergy", mappedBy="person", cascade={"all"}, orphanRemoval=true)
+     */
+    private $passEntryAllergies;
 
     /**
      * @var bool
@@ -1825,5 +1846,134 @@ class Person
     public function getItemCount(): ?int
     {
         return html_entity_decode($this->itemCount);
+    }
+
+    /**
+     * @param Collection $passEntryConditions
+     * @return Person
+     */
+    public function setPassEntryConditions(Collection $passEntryConditions): self
+    {
+        $this->passEntryConditions = $passEntryConditions;
+        return $this;
+    }
+
+    /**
+     * @return Collection|PassEntryCondition[]
+     */
+    public function getPassEntryConditions(): Collection
+    {
+        return $this->passEntryConditions;
+    }
+
+    /**
+     * @param PassEntryCondition $passEntryCondition
+     * @return Person
+     */
+    public function addPassEntryCondition(PassEntryCondition $passEntryCondition): self
+    {
+        if (!$this->passEntryConditions->contains($passEntryCondition)) {
+            $this->passEntryConditions[] = $passEntryCondition;
+            $passEntryCondition->setPerson($this);
+        }
+        return $this;
+    }
+
+    /**
+     * @param PassEntryCondition $passEntryCondition
+     * @return Person
+     */
+    public function removePassEntryCondition(PassEntryCondition $passEntryCondition): self
+    {
+        if ($this->passEntryConditions->contains($passEntryCondition)) {
+            $this->passEntryConditions->removeElement($passEntryCondition);
+        }
+        return $this;
+    }
+
+    /**
+     * @param Collection $passEntryMedications
+     * @return Person
+     */
+    public function setPassEntryMedications(Collection $passEntryMedications): self
+    {
+        $this->passEntryMedications = $passEntryMedications;
+        return $this;
+    }
+
+    /**
+     * @return Collection|PassEntryMedication[]
+     */
+    public function getPassEntryMedications(): Collection
+    {
+        return $this->passEntryMedications;
+    }
+
+    /**
+     * @param PassEntryMedication $passEntryMedication
+     * @return Person
+     */
+    public function addPassEntryMedication(PassEntryMedication $passEntryMedication): self
+    {
+        if (!$this->passEntryMedications->contains($passEntryMedication)) {
+            $this->passEntryMedications[] = $passEntryMedication;
+            $passEntryMedication->setPerson($this);
+        }
+        return $this;
+    }
+
+    /**
+     * @param PassEntryMedication $passEntryMedication
+     * @return Person
+     */
+    public function removePassEntryMedication(PassEntryMedication $passEntryMedication): self
+    {
+        if ($this->passEntryMedications->contains($passEntryMedication)) {
+            $this->passEntryMedications->removeElement($passEntryMedication);
+        }
+        return $this;
+    }
+
+    /**
+     * @param Collection $passEntryAllergies
+     * @return Person
+     */
+    public function setPassEntryAllergies(Collection $passEntryAllergies): self
+    {
+        $this->passEntryAllergies = $passEntryAllergies;
+        return $this;
+    }
+
+    /**
+     * @return Collection|PassEntryAllergy[]
+     */
+    public function getPassEntryAllergies(): Collection
+    {
+        return $this->passEntryAllergies;
+    }
+
+    /**
+     * @param PassEntryAllergy $passEntrAllergy
+     * @return Person
+     */
+    public function addPassEntryAllergy(PassEntryAllergy $passEntryAllergy): self
+    {
+        if (!$this->passEntryAllergies->contains($passEntryAllergy)) {
+            $this->passEntryAllergies[] = $passEntryAllergy;
+            $passEntryAllergy->setPerson($this);
+        }
+        return $this;
+    }
+
+    /**
+     * @param PassEntryAllergy $passEntryAllergy
+     * @return Person
+     */
+    public function removePassEntryAllergy(PassEntryAllergy $passEntryAllergy): self
+    {
+        if ($this->passEntryAllergies->contains($passEntryAllergy)) {
+            $this->passEntryAllergies->removeElement($passEntryAllergy);
+        }
+        return $this;
     }
 }

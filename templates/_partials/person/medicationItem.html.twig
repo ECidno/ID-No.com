@@ -1,0 +1,36 @@
+{% import _self as formMacros %}
+<fieldset class="form-floating">
+    <div class="row">
+        <div class="col-9">
+            <div class="row">
+                <div class="col-6">
+                    {{ form_row(item.ingredient) }}
+                </div>
+                <div class="col-6">
+                    {{ form_row(item.tradeName) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    {{ form_row(item.dosage) }}
+                </div>
+                <div class="col-6">
+                    {{ form_row(item.consumption) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    {{ form_row(item.comment) }}
+                </div>
+                <div class="col-6">
+                    {{ form_row(item.emergencyNotes) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            {{ form_row(item.remove) }}
+        </div>
+    </div>
+</fieldset>

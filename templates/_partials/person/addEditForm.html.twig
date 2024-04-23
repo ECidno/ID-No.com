@@ -1,3 +1,10 @@
+{% import _self as formMacros %}
+
+{# macro for item form container #}
+{% macro itemFormContainer(item, loop) %}
+  {% include '_partials/person/medicationItem.html.twig' %}
+{% endmacro %}
+
 {{ form_errors(form) }}
 
 <div class="row">
@@ -187,7 +194,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row pass-data">
   <div class="col bg-dark rounded">
     <h4 class="text-light my-3">{{ 'person.medicalDetails.lbl'|trans }}</h4>
     <div class="row">
@@ -201,16 +208,48 @@
 
     <div class="row">
       <div class="col-9">
-        {{ form_row(form.erkrankungen) }}
+        <h4 class="sub-head">{{ 'Erkrankungen'|trans }}</h4>
       </div>
       <div class="col-3 text-light">
         {{ form_row(form.erkrankungenShow) }}
       </div>
     </div>
+    <div class="row">
+      <div class="col-9">
+        {% if field_value(form.erkrankungen) %}
+          {{ form_row(form.erkrankungen) }}
+        {% else %}
+          <div class="d-none">
+            {{ form_row(form.erkrankungen) }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-9">
-        {{ form_row(form.medikamente) }}
+        <ul id="person_passEntryConditions"
+          class="pass-entry-list row"
+          data-index="{{ form.passEntryConditions|length > 0 ? form.passEntryConditions|last.vars.name + 1 : 0 }}"
+          data-prototype="{{ form_row(form.passEntryConditions.vars.prototype)|e('html_attr') }}">
+          {% for entry in form.passEntryConditions %}
+              <li>{{ form_row(entry) }}</li>
+          {% endfor %}
+        </ul>
+        {% do form.passEntryConditions.setRendered() %}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        {#{{ form_row(form.passEntryConditions) }}#}
+        <button type="button" class="btn add-item-widget mb-3" data-list-selector="person_passEntryConditions">{{ 'person.condition.new.lbl'|trans }}</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        <h4 class="sub-head">{{ 'Medikamente'|trans }}</h4>
       </div>
       <div class="col-3 text-light">
         {{ form_row(form.medikamenteShow) }}
@@ -219,10 +258,73 @@
 
     <div class="row">
       <div class="col-9">
-        {{ form_row(form.allergieen) }}
+        {% if field_value(form.medikamente) %}
+          {{ form_row(form.medikamente) }}
+        {% else %}
+          <div class="d-none">
+            {{ form_row(form.medikamente) }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <ul id="person_passEntryMedications"
+      class="pass-entry-list"
+      data-index="{{ form.passEntryMedications|length > 0 ? form.passEntryMedications|last.vars.name + 1 : 0 }}"
+      data-prototype="{{ formMacros.itemFormContainer(form.passEntryMedications.vars.prototype, 1)|spaceless|e('html_attr') }}">
+      {% for entry in form.passEntryMedications %}
+          <li>
+            {{ formMacros.itemFormContainer(entry, loop.index) }}
+          </li>
+      {% endfor %}
+    </ul>
+
+    {% do form.passEntryMedications.setRendered() %}        
+
+    <div class="row">
+      <div class="col-9">
+        <button type="button" class="btn add-item-widget mb-3" data-list-selector="person_passEntryMedications">{{ 'person.medication.new.lbl'|trans }}</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        <h4 class="sub-head">{{ 'Allergien'|trans }}</h4>
       </div>
       <div class="col-3 text-light">
         {{ form_row(form.allergieenShow) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        {% if field_value(form.allergieen) %}
+          {{ form_row(form.allergieen) }}
+        {% else %}
+          <div class="d-none">
+            {{ form_row(form.allergieen) }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        <ul id="person_passEntryAllergies"
+          class="pass-entry-list"
+          data-index="{{ form.passEntryAllergies|length > 0 ? form.passEntryAllergies|last.vars.name + 1 : 0 }}"
+          data-prototype="{{ form_row(form.passEntryAllergies.vars.prototype)|e('html_attr') }}">
+          {% for entry in form.passEntryAllergies %}
+              <li>{{ form_row(entry) }}</li>
+          {% endfor %}
+        </ul>
+        {% do form.passEntryAllergies.setRendered() %}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        <button type="button" class="btn add-item-widget mb-3" data-list-selector="person_passEntryAllergies">{{ 'person.allergy.new.lbl'|trans }}</button>
       </div>
     </div>
 

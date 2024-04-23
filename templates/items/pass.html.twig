@@ -180,18 +180,59 @@
                 {% endif %}
 
                 {# diseases #}
-                {% if person.erkrankungenShow == true and person.erkrankungen is not empty %}
+                {% if person.erkrankungenShow == true and (person.erkrankungen is not empty or person.passEntryConditions) %}
                   <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Erkrankungen'|trans }}</strong><br />
                     {{ person.erkrankungen|raw|nl2br }}
+
+                    {% for condition in person.passEntryConditions %}
+                      <p>
+                        {{ condition.category }}
+                        {% if condition.title %}
+                          -
+                          {{ condition.title }}
+                        {% endif %}
+                        {% if condition.comment %}
+                          -
+                          {{ condition.comment }}
+                        {% endif %}
+                      </p>
+                    {% endfor %}
                   </div>
                 {% endif %}
 
                 {# medicines #}
-                {% if person.medikamenteShow == true and person.medikamente is not empty %}
+                {% if person.medikamenteShow == true and (person.medikamente is not empty or person.passEntryMedications) %}
                   <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Medikamente'|trans }}</strong><br />
                     {{ person.medikamente|raw|nl2br }}
+
+                    {% for medication in person.passEntryMedications %}
+                      <p>
+                        {% if medication.ingredient %}
+                          {{ 'person.medication.ingredient.lbl'|trans }}:
+                          {{ medication.ingredient }}
+                        {% endif %}
+                        {% if medication.tradeName %}
+                          {{ 'person.medication.tradeName.lbl'|trans }}:
+                          {{ medication.tradeName }}
+                        {% endif %}
+                        <br/>
+                        {% if medication.tradeName %}
+                          {{ 'person.medication.dosage.lbl'|trans }}:
+                          {{ medication.dosage }}
+                        {% endif %}
+                        {% if  medication.consumption %}
+                          {{ 'person.medication.consumption.lbl'|trans }}:
+                          {{ medication.consumption }}
+                        {% endif %}
+                        {% if medication.emergencyNotes %}
+                          <br/>
+                          {{ 'person.medication.emergencyNotes.lbl'|trans }}:
+                          {{ medication.emergencyNotes }}
+                        {% endif %}
+                      </p>
+                    {% endfor %}
                   </div>
                 {% endif %}
 
@@ -200,6 +241,17 @@
                   <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Allergieen'|trans }}</strong><br />
                     {{ person.allergieen|raw|nl2br }}
+
+                    {% for allergy in person.passEntryAllergies %}
+                      <p>
+                        {{ 'person.allergy.category.lbl'|trans }}:
+                        {{ allergy.category }}
+                        {% if allergy.comment %}
+                          {{ 'person.allergy.comment.lbl'|trans }}:
+                          {{ allergy.comment }}
+                        {% endif %}
+                      </p>
+                    {% endfor %}
                   </div>
                 {% endif %}
 
