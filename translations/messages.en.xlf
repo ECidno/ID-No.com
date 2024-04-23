@@ -3887,7 +3887,7 @@ Feel free to take a look.</target>
     <unit id="ZgEYCtw" name="person.operations.lbl">
       <segment>
         <source>person.operations.lbl</source>
-        <target>Operations/surgeries (incl. date and location)</target>
+        <target>Comment (incl. date and location)</target>
       </segment>
     </unit>
     <unit id="TnXrVv3" name="index.carousel.slide.xmas_1.caption">
@@ -4711,6 +4711,48 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
       <segment>
         <source>person.allergy.lbl</source>
         <target>Allergie</target>
+      </segment>
+    </unit>
+    <unit id="ijf53JO" name="person.importantNote.lbl">
+      <segment>
+        <source>person.importantNote.lbl</source>
+        <target>Please pay attention to:</target>
+      </segment>
+    </unit>
+    <unit id="F7xOzXs" name="person.pacemaker.lbl">
+      <segment>
+        <source>person.pacemaker.lbl</source>
+        <target>Pacemaker</target>
+      </segment>
+    </unit>
+    <unit id="HT1qsnT" name="person.pacemakerComment.lbl">
+      <segment>
+        <source>person.pacemakerComment.lbl</source>
+        <target>Comment pacemaker</target>
+      </segment>
+    </unit>
+    <unit id="Y_nBBYy" name="person.pregnancy.lbl">
+      <segment>
+        <source>person.pregnancy.lbl</source>
+        <target>Pregnancy</target>
+      </segment>
+    </unit>
+    <unit id="rtAG2h1" name="person.pregnancyComment.lbl">
+      <segment>
+        <source>person.pregnancyComment.lbl</source>
+        <target>Comment pregnancy</target>
+      </segment>
+    </unit>
+    <unit id="E4nSPrc" name="person.operationsActive.lbl">
+      <segment>
+        <source>person.operationsActive.lbl</source>
+        <target>Operations/surgeries</target>
+      </segment>
+    </unit>
+    <unit id=".aFyrCo" name="person.patientenverfComment.lbl">
+      <segment>
+        <source>person.patientenverfComment.lbl</source>
+        <target>Comment patient directive</target>
       </segment>
     </unit>
   </file>

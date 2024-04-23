@@ -5034,7 +5034,7 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
     <unit id="ijf53JO" name="person.importantNote.lbl">
       <segment>
         <source>person.importantNote.lbl</source>
-        <target>Bitte umbedingt beachten:</target>
+        <target>Bitte unbedingt beachten:</target>
       </segment>
     </unit>
     <unit id="F7xOzXs" name="person.pacemaker.lbl">
