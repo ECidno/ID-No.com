@@ -359,13 +359,14 @@ body.modal-open .background-container {
     display: none;
   }
   .remove-item-widget {
+    width: 8rem;
     background-color: $green;
     color: $white;
   }
-  .remove-widget-container {
+  .remove-widget-container-pos {
     position: absolute;
     top: 0;
-    right: -90px;
+    right: -152px;
   }
 }
 .add-item-widget {

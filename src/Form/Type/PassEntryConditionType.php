@@ -213,12 +213,12 @@ class PassEntryConditionType extends AbstractType
                 'required' => false
             ])
             ->add('remove', ButtonType::class, [
-                'label' => 'delete',
+                'label' => new TranslatableMessage('person.condition.delete.lbl'),
                 'attr' => [
                     'class' => 'remove-item-widget',
                 ],
                 'row_attr' => [
-                    'class' => 'form-floating mb-3 remove-widget-container'
+                    'class' => 'form-floating mb-3 remove-widget-container-pos'
                 ]
             ])
             ;

@@ -58,7 +58,7 @@ class PassEntryAllergyType extends AbstractType
     {
         $builder
             ->add('category', ChoiceType::class, [
-                'label' => new TranslatableMessage('person.allergie.kategorie.lbl'),
+                'label' => new TranslatableMessage('person.allergy.category.lbl'),
                 'choices' => [
                     'Medikamente' => 'Medikamente',
                     'Insektengift' => 'Insektengift',
@@ -74,16 +74,16 @@ class PassEntryAllergyType extends AbstractType
                 // ]
             ])
             ->add('comment', TextType::class, [
-                'label' => new TranslatableMessage('person.allergie.anmerkungen.lbl'),
+                'label' => new TranslatableMessage('person.allergoy.comment.lbl'),
                 'required' => false
             ])
             ->add('remove', ButtonType::class, [
-                'label' => 'delete',
+                'label' => new TranslatableMessage('person.allergy.delete.lbl'),
                 'attr' => [
                     'class' => 'remove-item-widget',
                 ],
                 'row_attr' => [
-                    'class' => 'form-floating mb-3 remove-widget-container'
+                    'class' => 'form-floating mb-3 remove-widget-container-pos'
                 ]
             ])
             ;

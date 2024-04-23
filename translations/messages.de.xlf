@@ -4617,27 +4617,15 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
         <target>Kontaktstoffe</target>
       </segment>
     </unit>
-    <unit id="VKOPU9q" name="person.allergie.kategorie.lbl">
+    <unit id="SjfMmjS" name="person.condition.new.lbl">
       <segment>
-        <source>person.allergie.kategorie.lbl</source>
-        <target>person.allergie.kategorie.lbl</target>
-      </segment>
-    </unit>
-    <unit id="60k7Rb3" name="person.allergie.anmerkungen.lbl">
-      <segment>
-        <source>person.allergie.anmerkungen.lbl</source>
-        <target>person.allergie.anmerkungen.lbl</target>
-      </segment>
-    </unit>
-    <unit id="jPTYgBJ" name="weitere Erkrankung">
-      <segment>
-        <source>weitere Erkrankung</source>
+        <source>person.condition.new.lbl</source>
         <target>weitere Erkrankung</target>
       </segment>
     </unit>
-    <unit id="TItP81N" name="weiteres Medikament">
+    <unit id="1wJQxlA" name="person.medication.new.lbl">
       <segment>
-        <source>weiteres Medikament</source>
+        <source>person.medication.new.lbl</source>
         <target>weiteres Medikament</target>
       </segment>
     </unit>
@@ -4647,9 +4635,9 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
         <target>Allergien</target>
       </segment>
     </unit>
-    <unit id="BFt5Zal" name="weitere Allergie">
+    <unit id="n3xmpJj" name="person.allergy.new.lbl">
       <segment>
-        <source>weitere Allergie</source>
+        <source>person.allergy.new.lbl</source>
         <target>weitere Allergie</target>
       </segment>
     </unit>
@@ -4993,6 +4981,36 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
       <segment>
         <source>Nahrungs</source>
         <target>Nahrungs</target>
+      </segment>
+    </unit>
+    <unit id="nP5MZwS" name="person.condition.delete.lbl">
+      <segment>
+        <source>person.condition.delete.lbl</source>
+        <target>Entfernen</target>
+      </segment>
+    </unit>
+    <unit id="PrrxzZC" name="person.medication.delete.lbl">
+      <segment>
+        <source>person.medication.delete.lbl</source>
+        <target>Entfernen</target>
+      </segment>
+    </unit>
+    <unit id="j8eXSE2" name="person.allergy.delete.lbl">
+      <segment>
+        <source>person.allergy.delete.lbl</source>
+        <target>Entfernen</target>
+      </segment>
+    </unit>
+    <unit id="OGJBvgS" name="person.allergy.category.lbl">
+      <segment>
+        <source>person.allergy.category.lbl</source>
+        <target>Kategorie</target>
+      </segment>
+    </unit>
+    <unit id="f42TX.Y" name="person.allergy.comment.lbl">
+      <segment>
+        <source>person.allergy.comment.lbl</source>
+        <target>Anmerkung Allergie</target>
       </segment>
     </unit>
   </file>

@@ -82,7 +82,7 @@ class PassEntryMedicationType extends AbstractType
                 'required' => false
             ])
             ->add('remove', ButtonType::class, [
-                'label' => 'delete',
+                'label' => new TranslatableMessage('person.medication.delete.lbl'),
                 'attr' => [
                     'class' => 'remove-item-widget',
                 ],
