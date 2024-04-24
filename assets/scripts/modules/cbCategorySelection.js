@@ -62,9 +62,10 @@ const cbCategorySelection = (el) => {
           sel.addEventListener("change", displayCategoryValues)
       });
 
+    item.querySelector('.loop-value').innerHTML = parseInt(collectionHolder.dataset.index) + 1;
 
     collectionHolder.appendChild(item);
-  
+    
     collectionHolder.dataset.index++;
   }
   

@@ -1537,7 +1537,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="SjfMmjS" name="person.condition.new.lbl">
       <segment>
         <source>person.condition.new.lbl</source>
-        <target>add condition</target>
+        <target>add disease</target>
       </segment>
     </unit>
     <unit id="1wJQxlA" name="person.medication.new.lbl">
@@ -1603,7 +1603,7 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
     <unit id="Am8yK5v" name="person.condition.comment.lbl">
       <segment>
         <source>person.condition.comment.lbl</source>
-        <target>Comment condition</target>
+        <target>Comment disease</target>
       </segment>
     </unit>
     <unit id="loi5AkI" name="person.medication.ingredient.lbl">
@@ -3887,7 +3887,7 @@ Feel free to take a look.</target>
     <unit id="ZgEYCtw" name="person.operations.lbl">
       <segment>
         <source>person.operations.lbl</source>
-        <target>Operations/surgeries (incl. date and location)</target>
+        <target>Comment (incl. date and location)</target>
       </segment>
     </unit>
     <unit id="TnXrVv3" name="index.carousel.slide.xmas_1.caption">
@@ -4693,6 +4693,132 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
       <segment>
         <source>Kontaktstoffe</source>
         <target>Kontaktstoffe</target>
+      </segment>
+    </unit>
+    <unit id="eRUBO5e" name="person.condition.lbl">
+      <segment>
+        <source>person.condition.lbl</source>
+        <target>Disease</target>
+      </segment>
+    </unit>
+    <unit id="sh61ir9" name="person.medication.lbl">
+      <segment>
+        <source>person.medication.lbl</source>
+        <target>Medikament</target>
+      </segment>
+    </unit>
+    <unit id="cJgRo.Q" name="person.allergy.lbl">
+      <segment>
+        <source>person.allergy.lbl</source>
+        <target>Allergie</target>
+      </segment>
+    </unit>
+    <unit id="ijf53JO" name="person.importantNote.lbl">
+      <segment>
+        <source>person.importantNote.lbl</source>
+        <target>Please pay attention to:</target>
+      </segment>
+    </unit>
+    <unit id="F7xOzXs" name="person.pacemaker.lbl">
+      <segment>
+        <source>person.pacemaker.lbl</source>
+        <target>Pacemaker</target>
+      </segment>
+    </unit>
+    <unit id="HT1qsnT" name="person.pacemakerComment.lbl">
+      <segment>
+        <source>person.pacemakerComment.lbl</source>
+        <target>Comment pacemaker</target>
+      </segment>
+    </unit>
+    <unit id="Y_nBBYy" name="person.pregnancy.lbl">
+      <segment>
+        <source>person.pregnancy.lbl</source>
+        <target>Pregnancy</target>
+      </segment>
+    </unit>
+    <unit id="rtAG2h1" name="person.pregnancyComment.lbl">
+      <segment>
+        <source>person.pregnancyComment.lbl</source>
+        <target>Comment pregnancy</target>
+      </segment>
+    </unit>
+    <unit id="E4nSPrc" name="person.operationsActive.lbl">
+      <segment>
+        <source>person.operationsActive.lbl</source>
+        <target>Operations/surgeries</target>
+      </segment>
+    </unit>
+    <unit id=".aFyrCo" name="person.patientenverfComment.lbl">
+      <segment>
+        <source>person.patientenverfComment.lbl</source>
+        <target>Comment patient directive</target>
+      </segment>
+    </unit>
+    <unit id="nEBp4uP" name="person.conditionsActive.lbl">
+      <segment>
+        <source>person.conditionsActive.lbl</source>
+        <target>Diseases</target>
+      </segment>
+    </unit>
+    <unit id="k1Qk59y" name="person.reanimation.choose.lbl">
+      <segment>
+        <source>person.reanimation.choose.lbl</source>
+        <target>n/a</target>
+      </segment>
+    </unit>
+    <unit id="VLEkEPa" name="person.reanimation.always">
+      <segment>
+        <source>person.reanimation.always</source>
+        <target>Always</target>
+      </segment>
+    </unit>
+    <unit id="w76UbCj" name="person.reanimation.never">
+      <segment>
+        <source>person.reanimation.never</source>
+        <target>Never</target>
+      </segment>
+    </unit>
+    <unit id="iJwbFPg" name="person.reanimation.inTheseCases">
+      <segment>
+        <source>person.reanimation.inTheseCases</source>
+        <target>Only in these cases</target>
+      </segment>
+    </unit>
+    <unit id="urjMdWt" name="person.reanimation.lbl">
+      <segment>
+        <source>person.reanimation.lbl</source>
+        <target>Reanimation</target>
+      </segment>
+    </unit>
+    <unit id="BcKt6w7" name="person.medicationsActive.lbl">
+      <segment>
+        <source>person.medicationsActive.lbl</source>
+        <target>Medications</target>
+      </segment>
+    </unit>
+    <unit id="Awe5phA" name="person.allergiesActive.lbl">
+      <segment>
+        <source>person.allergiesActive.lbl</source>
+        <target>Allergies</target>
+      </segment>
+    </unit>
+    <unit id="A3E_X2i" name="person.reanimationComment.lbl">
+      <segment>
+        <source>person.reanimationComment.lbl</source>
+        <target>Reanimation in these cases</target>
+      </segment>
+    </unit>
+    <unit id="W7wpO.H" name="person.action.edit.error">
+      <segment>
+        <source>person.action.edit.error</source>
+        <target>person.action.edit.error</target>
+      </segment>
+    </unit>
+    <unit id="NCZUcJd" name="person.organspenderComment.lbl">
+      <segment>
+        <source>person.organspenderComment.lbl</source>
+        <target>Comment organ donor</target>
       </segment>
     </unit>
   </file>

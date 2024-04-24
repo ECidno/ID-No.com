@@ -312,6 +312,16 @@ class PersonType extends AbstractType
                 ],
                 'required' => false,
             ])
+            ->add('conditionsActive', CheckboxType::class, [
+                'label' => new TranslatableMessage('person.conditionsActive.lbl'),
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch',
+                    'data-bs-toggle' => 'collapse',
+                    'href' => '#conditionsShowContainer'
+                ],
+                'required' => false
+            ])
             ->add('passEntryConditions', CollectionType::class, [
                 'entry_type' => PassEntryConditionType::class,
                 'entry_options' => [],
@@ -344,6 +354,16 @@ class PersonType extends AbstractType
                 ],
                 'required' => false
             ])
+            ->add('medicationsActive', CheckboxType::class, [
+                'label' => new TranslatableMessage('person.medicationsActive.lbl'),
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch',
+                    'data-bs-toggle' => 'collapse',
+                    'href' => '#medicationsShowContainer'
+                ],
+                'required' => false
+            ])
             ->add('passEntryMedications', CollectionType::class, [
                 'entry_type' => PassEntryMedicationType::class,
                 'entry_options' => [],
@@ -373,6 +393,16 @@ class PersonType extends AbstractType
                     'class' => 'h-100',
                     'maxlength' => 65535,
                     'autocomplete' => 'off',
+                ],
+                'required' => false
+            ])
+            ->add('allergiesActive', CheckboxType::class, [
+                'label' => new TranslatableMessage('person.allergiesActive.lbl'),
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch',
+                    'data-bs-toggle' => 'collapse',
+                    'href' => '#allergiesShowContainer'
                 ],
                 'required' => false
             ])
@@ -455,6 +485,16 @@ class PersonType extends AbstractType
                 'required' => false
             ])
 
+            ->add('operationsActive', CheckboxType::class, [
+                'label' => new TranslatableMessage('person.operationsActive.lbl'),
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch',
+                    'data-bs-toggle' => 'collapse',
+                    'href' => '#operationsShowContainer'
+                ],
+                'required' => false
+            ])
             ->add('operations', TextareaType::class, [
                 'label' => new TranslatableMessage('person.operations.lbl'),
                 'attr' => [
@@ -538,11 +578,135 @@ class PersonType extends AbstractType
                 'required' => false
             ])
 
+            ->add('importantNote', TextareaType::class, [
+                'label' => new TranslatableMessage('person.importantNote.lbl'),
+                'attr' => [
+                    'class' => 'h-100',
+                    'maxlength' => 65535,
+                    'autocomplete' => 'off',
+                ],
+                'required' => false
+            ])
+            ->add('importantNoteShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+            ])
+
+            ->add('reanimation', ChoiceType::class, [
+                'label' => new TranslatableMessage('person.reanimation.lbl'),
+                'choices' => [
+                    'please choose' => '',
+                    'person.reanimation.always' => 'rea_always',
+                    'person.reanimation.never' => 'rea_never',
+                    'person.reanimation.inTheseCases' => 'rea_condition',
+                ],
+                'choice_label' => function($choice, $key, $value) {
+                    if (empty($choice)) {
+                        return new TranslatableMessage('person.reanimation.choose.lbl');
+                    } else {
+                        return $key;
+                    }
+                },
+                'required' => false
+            ])
+            ->add('reanimationShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+            ])
+            ->add('reanimationComment', TextType::class, [
+                'label' => new TranslatableMessage('person.reanimationComment.lbl'),
+                'row_attr' => [
+                    'id' => 'reanimationShowContainer',
+                    'class' => 'form-floating mb-3'
+                ],
+                'attr' => [
+                    'maxlength' => 100,
+                    'autocomplete' => 'off',
+                ],
+                'required' => false
+            ])
+
+            ->add('pacemaker', CheckboxType::class, [
+                'label' => new TranslatableMessage('person.pacemaker.lbl'),
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch',
+                    'data-bs-toggle' => 'collapse',
+                    'href' => '#pacemakerShowContainer'
+                ],
+                'required' => false
+            ])
+            ->add('pacemakerShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+            ])
+            ->add('pacemakerComment', TextType::class, [
+                'label' => new TranslatableMessage('person.pacemakerComment.lbl'),
+                'attr' => [
+                    'maxlength' => 100,
+                    'autocomplete' => 'off',
+                ],
+                'required' => false
+            ])
+
+            ->add('pregnancy', CheckboxType::class, [
+                'label' => new TranslatableMessage('person.pregnancy.lbl'),
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch',
+                    'data-bs-toggle' => 'collapse',
+                    'href' => '#pregnancyShowContainer'
+                ],
+                'required' => false
+            ])
+            ->add('pregnancyShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+            ])
+            ->add('pregnancyComment', TextType::class, [
+                'label' => new TranslatableMessage('person.pregnancyComment.lbl'),
+                'attr' => [
+                    'maxlength' => 100,
+                    'autocomplete' => 'off',
+                ],
+                'required' => false
+            ])
+
             ->add('organspender', CheckboxType::class, [
                 'label' => new TranslatableMessage('person.organspender.lbl'),
                 'row_attr' => ['class' => 'form-switch py-3'],
                 'attr' => [
-                    'role' => 'switch'
+                    'role' => 'switch',
+                    'data-bs-toggle' => 'collapse',
+                    'href' => '#organspenderShowContainer'
                 ],
                 'required' => false
             ])
@@ -557,12 +721,25 @@ class PersonType extends AbstractType
                 ],
                 'required' => false
             ])
+            ->add('organspenderComment', TextType::class, [
+                'label' => new TranslatableMessage('person.organspenderComment.lbl'),
+                'row_attr' => [
+                    'class' => 'form-floating mb-3'
+                ],
+                'attr' => [
+                    'maxlength' => 100,
+                    'autocomplete' => 'off',
+                ],
+                'required' => false
+            ])
 
             ->add('patientenverf', CheckboxType::class, [
                 'label' => new TranslatableMessage('person.patientenverf.lbl'),
                 'row_attr' => ['class' => 'form-switch py-3'],
                 'attr' => [
-                    'role' => 'switch'
+                    'role' => 'switch',
+                    'data-bs-toggle' => 'collapse',
+                    'href' => '#patientenverfShowContainer'
                 ],
                 'required' => false
             ])
@@ -574,6 +751,14 @@ class PersonType extends AbstractType
                 'row_attr' => ['class' => 'form-switch py-3'],
                 'attr' => [
                     'role' => 'switch'
+                ],
+                'required' => false
+            ])
+            ->add('patientenverfComment', TextType::class, [
+                'label' => new TranslatableMessage('person.patientenverfComment.lbl'),
+                'attr' => [
+                    'maxlength' => 255,
+                    'autocomplete' => 'off',
                 ],
                 'required' => false
             ])

@@ -289,6 +289,13 @@ class Person
     private $groesseShow = 1;
 
     /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"0"}))
+     * @Gedmo\Versioned
+     */
+    private $operationsActive = 0;
+
+    /**
      * @var string
      * @ORM\Column(type="text", length=65535, nullable=true)
      * @Gedmo\Versioned
@@ -407,16 +414,37 @@ class Person
     private $passEntryConditions;
 
     /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private $conditionsActive = 0;
+
+    /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="App\Entity\PassEntryMedication", mappedBy="person", cascade={"all"}, orphanRemoval=true)
      */
     private $passEntryMedications;
-    
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private $medicationsActive = 0;
+
     /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="App\Entity\PassEntryAllergy", mappedBy="person", cascade={"all"}, orphanRemoval=true)
      */
     private $passEntryAllergies;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private $allergiesActive = 0;
 
     /**
      * @var bool
@@ -433,11 +461,25 @@ class Person
     private $organspenderShow = true;
 
     /**
+     * @var string
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     * @Gedmo\Versioned
+     */
+    private $organspenderComment;
+
+    /**
      * @var bool
      * @ORM\Column(type="boolean", options={"default":"1"}))
      * @Gedmo\Versioned
      */
     private $patientenverf = true;
+
+    /**
+     * @var string
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     * @Gedmo\Versioned
+     */
+    private $patientenverfComment;
 
     /**
      * @var bool
@@ -459,6 +501,83 @@ class Person
      * @Gedmo\Versioned
      */
     private $weitereangabenShow = 1;
+
+    /**
+     * @var string
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     * @Gedmo\Versioned
+     */
+    private $importantNote;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private $importantNoteShow = 1;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=32)
+     * @Gedmo\Versioned
+     */
+    private $reanimation;
+
+    /**
+     * @var string
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     * @Gedmo\Versioned
+     */
+    private $reanimationComment;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private $reanimationShow = 1;
+
+    /**
+     * @var string
+     * @ORM\Column(type="boolean", options={"default":"0"})
+     * @Gedmo\Versioned
+     */
+    private $pacemaker;
+
+    /**
+     * @var string
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     * @Gedmo\Versioned
+     */
+    private $pacemakerComment;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private $pacemakerShow = 1;
+
+    /**
+     * @var string
+     * @ORM\Column(type="boolean", options={"default":"0"})
+     * @Gedmo\Versioned
+     */
+    private $pregnancy;
+
+    /**
+     * @var string
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     * @Gedmo\Versioned
+     */
+    private $pregnancyComment;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private $pregnancyShow = 1;
 
     /**
      * @Assert\Type("\DateTimeInterface")
@@ -1974,6 +2093,414 @@ class Person
         if ($this->passEntryAllergies->contains($passEntryAllergy)) {
             $this->passEntryAllergies->removeElement($passEntryAllergy);
         }
+        return $this;
+    }
+
+    /**
+     * Get the value of operationsActive
+     *
+     * @return  bool
+     */ 
+    public function getOperationsActive(): bool
+    {
+        return $this->operationsActive;
+    }
+
+    /**
+     * Set the value of operationsActive
+     *
+     * @param  bool  $operationsActive
+     *
+     * @return  self
+     */ 
+    public function setOperationsActive(bool $operationsActive): self
+    {
+        $this->operationsActive = $operationsActive;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of patientenverfComment
+     *
+     * @return  ?string
+     */ 
+    public function getPatientenverfComment(): ?string
+    {
+        return $this->patientenverfComment;
+    }
+
+    /**
+     * Set the value of patientenverfComment
+     *
+     * @param  string  $patientenverfComment
+     *
+     * @return  self
+     */ 
+    public function setPatientenverfComment(?string $patientenverfComment): self
+    {
+        $this->patientenverfComment = $patientenverfComment;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of importantNote
+     *
+     * @return  string
+     */ 
+    public function getImportantNote(): ?string
+    {
+        return $this->importantNote;
+    }
+
+    /**
+     * Set the value of importantNote
+     *
+     * @param  string  $importantNote
+     *
+     * @return  self
+     */ 
+    public function setImportantNote(?string $importantNote): self
+    {
+        $this->importantNote = $importantNote;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of importantNoteShow
+     *
+     * @return  bool
+     */ 
+    public function getImportantNoteShow(): bool
+    {
+        return $this->importantNoteShow;
+    }
+
+    /**
+     * Set the value of importantNoteShow
+     *
+     * @param  bool  $importantNoteShow
+     *
+     * @return  self
+     */ 
+    public function setImportantNoteShow(bool $importantNoteShow): self
+    {
+        $this->importantNoteShow = $importantNoteShow;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of pacemaker
+     *
+     * @return  bool
+     */ 
+    public function getPacemaker(): bool
+    {
+        return $this->pacemaker;
+    }
+
+    /**
+     * Set the value of pacemaker
+     *
+     * @param  bool  $pacemaker
+     *
+     * @return  self
+     */ 
+    public function setPacemaker(bool $pacemaker): self
+    {
+        $this->pacemaker = $pacemaker;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of pacemakerComment
+     *
+     * @return  string
+     */ 
+    public function getPacemakerComment(): ?string
+    {
+        return $this->pacemakerComment;
+    }
+
+    /**
+     * Set the value of pacemakerComment
+     *
+     * @param  string  $pacemakerComment
+     *
+     * @return  self
+     */ 
+    public function setPacemakerComment(?string $pacemakerComment): self
+    {
+        $this->pacemakerComment = $pacemakerComment;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of pacemakerShow
+     *
+     * @return  bool
+     */ 
+    public function getPacemakerShow(): bool
+    {
+        return $this->pacemakerShow;
+    }
+
+    /**
+     * Set the value of pacemakerShow
+     *
+     * @param  bool  $pacemakerShow
+     *
+     * @return  self
+     */ 
+    public function setPacemakerShow(bool $pacemakerShow): self
+    {
+        $this->pacemakerShow = $pacemakerShow;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of pregnancy
+     *
+     * @return  bool
+     */ 
+    public function getPregnancy(): bool
+    {
+        return $this->pregnancy;
+    }
+
+    /**
+     * Set the value of pregnancy
+     *
+     * @param  bool  $pregnancy
+     *
+     * @return  self
+     */ 
+    public function setPregnancy(bool $pregnancy): self
+    {
+        $this->pregnancy = $pregnancy;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of pregnancyComment
+     *
+     * @return  string
+     */ 
+    public function getPregnancyComment(): ?string
+    {
+        return $this->pregnancyComment;
+    }
+
+    /**
+     * Set the value of pregnancyComment
+     *
+     * @param  string  $pregnancyComment
+     *
+     * @return  self
+     */ 
+    public function setPregnancyComment(?string $pregnancyComment): self
+    {
+        $this->pregnancyComment = $pregnancyComment;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of pregnancyShow
+     *
+     * @return  bool
+     */ 
+    public function getPregnancyShow(): bool
+    {
+        return $this->pregnancyShow;
+    }
+
+    /**
+     * Set the value of pregnancyShow
+     *
+     * @param  bool  $pregnancyShow
+     *
+     * @return  self
+     */ 
+    public function setPregnancyShow(bool $pregnancyShow): self
+    {
+        $this->pregnancyShow = $pregnancyShow;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of conditionsActive
+     *
+     * @return  bool
+     */ 
+    public function getConditionsActive(): bool
+    {
+        return $this->conditionsActive;
+    }
+
+    /**
+     * Set the value of conditionsActive
+     *
+     * @param  bool  $conditionsActive
+     *
+     * @return  self
+     */ 
+    public function setConditionsActive(bool $conditionsActive): self
+    {
+        $this->conditionsActive = $conditionsActive;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of medicationsActive
+     *
+     * @return  bool
+     */ 
+    public function getMedicationsActive(): bool
+    {
+        return $this->medicationsActive;
+    }
+
+    /**
+     * Set the value of medicationsActive
+     *
+     * @param  bool  $medicationsActive
+     *
+     * @return  self
+     */ 
+    public function setMedicationsActive(bool $medicationsActive): self
+    {
+        $this->medicationsActive = $medicationsActive;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of allergiesActive
+     *
+     * @return  bool
+     */ 
+    public function getAllergiesActive(): bool
+    {
+        return $this->allergiesActive;
+    }
+
+    /**
+     * Set the value of allergiesActive
+     *
+     * @param  bool  $allergiesActive
+     *
+     * @return  self
+     */ 
+    public function setAllergiesActive(bool $allergiesActive): self
+    {
+        $this->allergiesActive = $allergiesActive;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of reanimation
+     *
+     * @return  string
+     */ 
+    public function getReanimation(): ?string
+    {
+        return $this->reanimation;
+    }
+
+    /**
+     * Set the value of reanimation
+     *
+     * @param  string  $reanimation
+     *
+     * @return  self
+     */ 
+    public function setReanimation(?string $reanimation): self
+    {
+        $this->reanimation = $reanimation;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of reanimationComment
+     *
+     * @return  string
+     */ 
+    public function getReanimationComment(): ?string
+    {
+        return $this->reanimationComment;
+    }
+
+    /**
+     * Set the value of reanimationComment
+     *
+     * @param  string  $reanimationComment
+     *
+     * @return  self
+     */ 
+    public function setReanimationComment(?string $reanimationComment): self
+    {
+        $this->reanimationComment = $reanimationComment;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of reanimationShow
+     *
+     * @return  bool
+     */ 
+    public function getReanimationShow(): bool
+    {
+        return $this->reanimationShow;
+    }
+
+    /**
+     * Set the value of reanimationShow
+     *
+     * @param  bool  $reanimationShow
+     *
+     * @return  self
+     */ 
+    public function setReanimationShow(bool $reanimationShow): self
+    {
+        $this->reanimationShow = $reanimationShow;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of organspenderComment
+     *
+     * @return  string
+     */ 
+    public function getOrganspenderComment(): ?string
+    {
+        return $this->organspenderComment;
+    }
+
+    /**
+     * Set the value of organspenderComment
+     *
+     * @param  string  $organspenderComment
+     *
+     * @return  self
+     */ 
+    public function setOrganspenderComment(?string $organspenderComment): self
+    {
+        $this->organspenderComment = $organspenderComment;
+
         return $this;
     }
 }
