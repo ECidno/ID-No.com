@@ -4776,13 +4776,13 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
     <unit id="w76UbCj" name="person.reanimation.never">
       <segment>
         <source>person.reanimation.never</source>
-        <target>Never</target>
+        <target>Reanimation: never</target>
       </segment>
     </unit>
     <unit id="iJwbFPg" name="person.reanimation.inTheseCases">
       <segment>
         <source>person.reanimation.inTheseCases</source>
-        <target>Only in these cases</target>
+        <target>Reanimation: only in these cases</target>
       </segment>
     </unit>
     <unit id="urjMdWt" name="person.reanimation.lbl">
@@ -4819,6 +4819,24 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
       <segment>
         <source>person.organspenderComment.lbl</source>
         <target>Comment organ donor</target>
+      </segment>
+    </unit>
+    <unit id="_tMakEK" name="person.reanimation.rea_always">
+      <segment>
+        <source>person.reanimation.rea_always</source>
+        <target>Reanimation: always</target>
+      </segment>
+    </unit>
+    <unit id="PTQeJDr" name="Keine genannt">
+      <segment>
+        <source>Keine genannt</source>
+        <target>None mentioned</target>
+      </segment>
+    </unit>
+    <unit id="CsLq_wp" name="person.reanimation.rea_condition">
+      <segment>
+        <source>person.reanimation.rea_condition</source>
+        <target>person.reanimation.rea_condition</target>
       </segment>
     </unit>
   </file>
