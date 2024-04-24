@@ -4755,5 +4755,71 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
         <target>Comment patient directive</target>
       </segment>
     </unit>
+    <unit id="nEBp4uP" name="person.conditionsActive.lbl">
+      <segment>
+        <source>person.conditionsActive.lbl</source>
+        <target>Diseases</target>
+      </segment>
+    </unit>
+    <unit id="k1Qk59y" name="person.reanimation.choose.lbl">
+      <segment>
+        <source>person.reanimation.choose.lbl</source>
+        <target>n/a</target>
+      </segment>
+    </unit>
+    <unit id="VLEkEPa" name="person.reanimation.always">
+      <segment>
+        <source>person.reanimation.always</source>
+        <target>Always</target>
+      </segment>
+    </unit>
+    <unit id="w76UbCj" name="person.reanimation.never">
+      <segment>
+        <source>person.reanimation.never</source>
+        <target>Never</target>
+      </segment>
+    </unit>
+    <unit id="iJwbFPg" name="person.reanimation.inTheseCases">
+      <segment>
+        <source>person.reanimation.inTheseCases</source>
+        <target>Only in these cases</target>
+      </segment>
+    </unit>
+    <unit id="urjMdWt" name="person.reanimation.lbl">
+      <segment>
+        <source>person.reanimation.lbl</source>
+        <target>Reanimation</target>
+      </segment>
+    </unit>
+    <unit id="BcKt6w7" name="person.medicationsActive.lbl">
+      <segment>
+        <source>person.medicationsActive.lbl</source>
+        <target>Medications</target>
+      </segment>
+    </unit>
+    <unit id="Awe5phA" name="person.allergiesActive.lbl">
+      <segment>
+        <source>person.allergiesActive.lbl</source>
+        <target>Allergies</target>
+      </segment>
+    </unit>
+    <unit id="A3E_X2i" name="person.reanimationComment.lbl">
+      <segment>
+        <source>person.reanimationComment.lbl</source>
+        <target>Reanimation in these cases</target>
+      </segment>
+    </unit>
+    <unit id="W7wpO.H" name="person.action.edit.error">
+      <segment>
+        <source>person.action.edit.error</source>
+        <target>person.action.edit.error</target>
+      </segment>
+    </unit>
+    <unit id="NCZUcJd" name="person.organspenderComment.lbl">
+      <segment>
+        <source>person.organspenderComment.lbl</source>
+        <target>Comment organ donor</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

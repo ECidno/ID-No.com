@@ -414,16 +414,37 @@ class Person
     private $passEntryConditions;
 
     /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private $conditionsActive = 0;
+
+    /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="App\Entity\PassEntryMedication", mappedBy="person", cascade={"all"}, orphanRemoval=true)
      */
     private $passEntryMedications;
-    
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private $medicationsActive = 0;
+
     /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="App\Entity\PassEntryAllergy", mappedBy="person", cascade={"all"}, orphanRemoval=true)
      */
     private $passEntryAllergies;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private $allergiesActive = 0;
 
     /**
      * @var bool
@@ -438,6 +459,13 @@ class Person
      * @Gedmo\Versioned
      */
     private $organspenderShow = true;
+
+    /**
+     * @var string
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     * @Gedmo\Versioned
+     */
+    private $organspenderComment;
 
     /**
      * @var bool
@@ -490,7 +518,28 @@ class Person
 
     /**
      * @var string
-     * @ORM\Column(type="boolean", length=65535, options={"default":"0"})
+     * @ORM\Column(type="string", length=32)
+     * @Gedmo\Versioned
+     */
+    private $reanimation;
+
+    /**
+     * @var string
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     * @Gedmo\Versioned
+     */
+    private $reanimationComment;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private $reanimationShow = 1;
+
+    /**
+     * @var string
+     * @ORM\Column(type="boolean", options={"default":"0"})
      * @Gedmo\Versioned
      */
     private $pacemaker;
@@ -511,7 +560,7 @@ class Person
 
     /**
      * @var string
-     * @ORM\Column(type="boolean", length=65535, options={"default":"0"})
+     * @ORM\Column(type="boolean", options={"default":"0"})
      * @Gedmo\Versioned
      */
     private $pregnancy;
@@ -2283,6 +2332,174 @@ class Person
     public function setPregnancyShow(bool $pregnancyShow): self
     {
         $this->pregnancyShow = $pregnancyShow;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of conditionsActive
+     *
+     * @return  bool
+     */ 
+    public function getConditionsActive(): bool
+    {
+        return $this->conditionsActive;
+    }
+
+    /**
+     * Set the value of conditionsActive
+     *
+     * @param  bool  $conditionsActive
+     *
+     * @return  self
+     */ 
+    public function setConditionsActive(bool $conditionsActive): self
+    {
+        $this->conditionsActive = $conditionsActive;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of medicationsActive
+     *
+     * @return  bool
+     */ 
+    public function getMedicationsActive(): bool
+    {
+        return $this->medicationsActive;
+    }
+
+    /**
+     * Set the value of medicationsActive
+     *
+     * @param  bool  $medicationsActive
+     *
+     * @return  self
+     */ 
+    public function setMedicationsActive(bool $medicationsActive): self
+    {
+        $this->medicationsActive = $medicationsActive;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of allergiesActive
+     *
+     * @return  bool
+     */ 
+    public function getAllergiesActive(): bool
+    {
+        return $this->allergiesActive;
+    }
+
+    /**
+     * Set the value of allergiesActive
+     *
+     * @param  bool  $allergiesActive
+     *
+     * @return  self
+     */ 
+    public function setAllergiesActive(bool $allergiesActive): self
+    {
+        $this->allergiesActive = $allergiesActive;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of reanimation
+     *
+     * @return  string
+     */ 
+    public function getReanimation(): ?string
+    {
+        return $this->reanimation;
+    }
+
+    /**
+     * Set the value of reanimation
+     *
+     * @param  string  $reanimation
+     *
+     * @return  self
+     */ 
+    public function setReanimation(?string $reanimation): self
+    {
+        $this->reanimation = $reanimation;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of reanimationComment
+     *
+     * @return  string
+     */ 
+    public function getReanimationComment(): ?string
+    {
+        return $this->reanimationComment;
+    }
+
+    /**
+     * Set the value of reanimationComment
+     *
+     * @param  string  $reanimationComment
+     *
+     * @return  self
+     */ 
+    public function setReanimationComment(?string $reanimationComment): self
+    {
+        $this->reanimationComment = $reanimationComment;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of reanimationShow
+     *
+     * @return  bool
+     */ 
+    public function getReanimationShow(): bool
+    {
+        return $this->reanimationShow;
+    }
+
+    /**
+     * Set the value of reanimationShow
+     *
+     * @param  bool  $reanimationShow
+     *
+     * @return  self
+     */ 
+    public function setReanimationShow(bool $reanimationShow): self
+    {
+        $this->reanimationShow = $reanimationShow;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of organspenderComment
+     *
+     * @return  string
+     */ 
+    public function getOrganspenderComment(): ?string
+    {
+        return $this->organspenderComment;
+    }
+
+    /**
+     * Set the value of organspenderComment
+     *
+     * @param  string  $organspenderComment
+     *
+     * @return  self
+     */ 
+    public function setOrganspenderComment(?string $organspenderComment): self
+    {
+        $this->organspenderComment = $organspenderComment;
 
         return $this;
     }

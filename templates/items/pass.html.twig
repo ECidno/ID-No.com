@@ -68,6 +68,50 @@
           {% endif %}
         {% endif %}
 
+        {% if person.importantNoteShow or person.reanimationShow or person.pacemakerShow or person.pregnancyShow %}
+          {% if person.importantNote or person.reanimation or person.pacemaker or person.pregnancy %}
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="alert alert-danger pb-0">
+                    {% if person.importantNote %}
+                      <p><strong>{{ 'person.importantNote.lbl'|trans }} {{ person.importantNote|nl2br }}</strong></p>
+                    {% endif %}
+                    {% if person.reanimation and person.reanimationShow %}
+                      <p>
+                        {{ ('person.reanimation.'~person.reanimation)|trans }} 
+                        {% if person.reanimation == 'rea_condition' %}
+                          {{ person.reanimationComment }}
+                        {% endif %}
+                      </p>
+                    {% endif %}
+                    {% if person.pacemaker %}
+                      <p>
+                        {{ 'person.pacemaker.lbl'|trans }}: 
+                        {% if person.pacemakerComment %}
+                          {{ person.pacemakerComment }}
+                        {% else %}
+                          {{ 'yes'|trans }}
+                        {% endif %}
+                      </p>
+                    {% endif %}
+                    {% if person.pregnancy %}
+                      <p>
+                        {{ 'person.pregnancy.lbl'|trans }}: 
+                        {% if person.pregnancyComment %}
+                          {{ person.pregnancyComment }}
+                        {% else %}
+                          {{ 'yes'|trans }}
+                        {% endif %}
+                      </p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
+
         {# name #}
         <div class="container">
           <div class="row py-3">
@@ -183,21 +227,24 @@
                 {% if person.erkrankungenShow == true and (person.erkrankungen is not empty or person.passEntryConditions) %}
                   <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Erkrankungen'|trans }}</strong><br />
-                    {{ person.erkrankungen|raw|nl2br }}
+                    {% if person.conditionsActive %}
+                      {{ person.erkrankungen|raw|nl2br }}
 
-                    {% for condition in person.passEntryConditions %}
-                      <p>
-                        {{ condition.category }}
-                        {% if condition.title %}
-                          -
-                          {{ condition.title }}
-                        {% endif %}
-                        {% if condition.comment %}
-                          -
-                          {{ condition.comment }}
-                        {% endif %}
-                      </p>
-                    {% endfor %}
+                      {% for condition in person.passEntryConditions %}
+                        <p>
+                          {{ condition.category }}
+                          {% if condition.title %}
+                            -
+                            {{ condition.title }}
+                          {% endif %}
+                          {% if condition.comment %}
+                            -
+                            {{ condition.comment }}
+                          {% endif %}
+                      {% endfor %}
+                    {% else %}
+                      </p>{{ 'Keine genannt'|trans }}</p>
+                    {% endif %}
                   </div>
                 {% endif %}
 
@@ -205,34 +252,38 @@
                 {% if person.medikamenteShow == true and (person.medikamente is not empty or person.passEntryMedications) %}
                   <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Medikamente'|trans }}</strong><br />
-                    {{ person.medikamente|raw|nl2br }}
+                    {% if person.medicationsActive %}
+                      {{ person.medikamente|raw|nl2br }}
 
-                    {% for medication in person.passEntryMedications %}
-                      <p>
-                        {% if medication.ingredient %}
-                          {{ 'person.medication.ingredient.lbl'|trans }}:
-                          {{ medication.ingredient }}
-                        {% endif %}
-                        {% if medication.tradeName %}
-                          {{ 'person.medication.tradeName.lbl'|trans }}:
-                          {{ medication.tradeName }}
-                        {% endif %}
-                        <br/>
-                        {% if medication.tradeName %}
-                          {{ 'person.medication.dosage.lbl'|trans }}:
-                          {{ medication.dosage }}
-                        {% endif %}
-                        {% if  medication.consumption %}
-                          {{ 'person.medication.consumption.lbl'|trans }}:
-                          {{ medication.consumption }}
-                        {% endif %}
-                        {% if medication.emergencyNotes %}
+                      {% for medication in person.passEntryMedications %}
+                        <p>
+                          {% if medication.ingredient %}
+                            {{ 'person.medication.ingredient.lbl'|trans }}:
+                            {{ medication.ingredient }}
+                          {% endif %}
+                          {% if medication.tradeName %}
+                            {{ 'person.medication.tradeName.lbl'|trans }}:
+                            {{ medication.tradeName }}
+                          {% endif %}
                           <br/>
-                          {{ 'person.medication.emergencyNotes.lbl'|trans }}:
-                          {{ medication.emergencyNotes }}
-                        {% endif %}
-                      </p>
-                    {% endfor %}
+                          {% if medication.tradeName %}
+                            {{ 'person.medication.dosage.lbl'|trans }}:
+                            {{ medication.dosage }}
+                          {% endif %}
+                          {% if  medication.consumption %}
+                            {{ 'person.medication.consumption.lbl'|trans }}:
+                            {{ medication.consumption }}
+                          {% endif %}
+                          {% if medication.emergencyNotes %}
+                            <br/>
+                            {{ 'person.medication.emergencyNotes.lbl'|trans }}:
+                            {{ medication.emergencyNotes }}
+                          {% endif %}
+                        </p>
+                      {% endfor %}
+                    {% else %}
+                      </p>{{ 'Keine genannt'|trans }}</p>
+                    {% endif %}
                   </div>
                 {% endif %}
 
@@ -240,18 +291,22 @@
                 {% if person.allergieenShow == true and person.allergieen is not empty %}
                   <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Allergieen'|trans }}</strong><br />
-                    {{ person.allergieen|raw|nl2br }}
+                    {% if person.allergiesActive %}
+                      {{ person.allergieen|raw|nl2br }}
 
-                    {% for allergy in person.passEntryAllergies %}
-                      <p>
-                        {{ 'person.allergy.category.lbl'|trans }}:
-                        {{ allergy.category }}
-                        {% if allergy.comment %}
-                          {{ 'person.allergy.comment.lbl'|trans }}:
-                          {{ allergy.comment }}
-                        {% endif %}
-                      </p>
-                    {% endfor %}
+                      {% for allergy in person.passEntryAllergies %}
+                        <p>
+                          {{ 'person.allergy.category.lbl'|trans }}:
+                          {{ allergy.category }}
+                          {% if allergy.comment %}
+                            {{ 'person.allergy.comment.lbl'|trans }}:
+                            {{ allergy.comment }}
+                          {% endif %}
+                        </p>
+                      {% endfor %}
+                    {% else %}
+                      </p>{{ 'Keine genannt'|trans }}</p>
+                    {% endif %}
                   </div>
                 {% endif %}
 
@@ -294,40 +349,6 @@
             </div>
           </div>
         </div>
-        {% endif %}
-
-        {# insurance #}
-        {% if person.insuranceShow == true %}
-          <div class="row py-3 bg-dark">
-            <div class="col-12 text-light">
-              <div class="container">
-
-                {# health insurance #}
-                {% if person.krankenversicherungShow == true and person.krankenversicherung is not empty %}
-                  <div class="my-3 p-3 border border-light">
-                    <strong>{{ 'Krankenversicherung'|trans }}</strong><br />
-                    {{ person.krankenversicherung|raw|nl2br }}
-                  </div>
-                {% endif %}
-
-                {# insurance number #}
-                {% if person.versicherungsnummerShow == true and person.versicherungsnummer is not empty %}
-                  <div class="my-3 p-3 border border-light">
-                    <strong>{{ 'Versicherungs-Nr.'|trans }}</strong><br />
-                    {{ person.versicherungsnummer|raw|nl2br }}
-                  </div>
-                {% endif %}
-
-                {# additional insurance #}
-                {% if person.zusatzversicherungShow == true and person.zusatzversicherung is not empty %}
-                  <div class="my-3 p-3 border border-light">
-                    <strong>{{ 'Zusatzversicherung'|trans }}</strong><br />
-                    {{ person.zusatzversicherung|raw|nl2br }}
-                  </div>
-                {% endif %}
-              </div>
-            </div>
-          </div>
         {% endif %}
 
         {# address #}
@@ -381,7 +402,10 @@
               {% if person.organspenderShow == true and person.organspender is not empty %}
                 <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'Organspendeausweis'|trans }}</strong><br />
-                  {{ person.organspender ? 'ja'|trans : 'nein'|trans }}
+                  {{ person.organspender ? 'ja'|trans : 'nein'|trans }} 
+                  {% if person.organspenderComment %}
+                    - {{ person.organspenderComment }}
+                  {% endif %}
                 </div>
               {% endif %}
 
@@ -390,6 +414,9 @@
                 <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'Patienten­verfügung'|trans }}</strong><br />
                   {{ person.patientenverf ? 'ja'|trans : 'nein'|trans }}
+                  {% if person.patientenverfComment %}
+                    - {{ person.patientenverfComment }}
+                  {% endif %}
                 </div>
               {% endif %}
 
@@ -403,6 +430,41 @@
             </div>
           </div>
         </div>
+
+        {# insurance #}
+        {% if person.insuranceShow == true %}
+          <div class="row py-3 bg-dark">
+            <div class="col-12 text-light">
+              <div class="container">
+
+                {# health insurance #}
+                {% if person.krankenversicherungShow == true and person.krankenversicherung is not empty %}
+                  <div class="my-3 p-3 border border-light">
+                    <strong>{{ 'Krankenversicherung'|trans }}</strong><br />
+                    {{ person.krankenversicherung|raw|nl2br }}
+                  </div>
+                {% endif %}
+
+                {# insurance number #}
+                {% if person.versicherungsnummerShow == true and person.versicherungsnummer is not empty %}
+                  <div class="my-3 p-3 border border-light">
+                    <strong>{{ 'Versicherungs-Nr.'|trans }}</strong><br />
+                    {{ person.versicherungsnummer|raw|nl2br }}
+                  </div>
+                {% endif %}
+
+                {# additional insurance #}
+                {% if person.zusatzversicherungShow == true and person.zusatzversicherung is not empty %}
+                  <div class="my-3 p-3 border border-light">
+                    <strong>{{ 'Zusatzversicherung'|trans }}</strong><br />
+                    {{ person.zusatzversicherung|raw|nl2br }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
       </div>
     </div>
   </div>
