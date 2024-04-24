@@ -293,7 +293,7 @@ class Person
      * @ORM\Column(type="boolean", options={"default":"0"}))
      * @Gedmo\Versioned
      */
-    private $operationsActive = 0;
+    private $operationsActive = 1;
 
     /**
      * @var string
@@ -418,7 +418,7 @@ class Person
      * @ORM\Column(type="boolean", options={"default":"1"}))
      * @Gedmo\Versioned
      */
-    private $conditionsActive = 0;
+    private $conditionsActive = 1;
 
     /**
      * @var ArrayCollection
@@ -431,7 +431,7 @@ class Person
      * @ORM\Column(type="boolean", options={"default":"1"}))
      * @Gedmo\Versioned
      */
-    private $medicationsActive = 0;
+    private $medicationsActive = 1;
 
     /**
      * @var ArrayCollection
@@ -444,7 +444,7 @@ class Person
      * @ORM\Column(type="boolean", options={"default":"1"}))
      * @Gedmo\Versioned
      */
-    private $allergiesActive = 0;
+    private $allergiesActive = 1;
 
     /**
      * @var bool

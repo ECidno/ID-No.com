@@ -288,7 +288,7 @@
                 {% endif %}
 
                 {# allergies #}
-                {% if person.allergieenShow == true and person.allergieen is not empty %}
+                {% if person.allergieenShow == true and (person.allergieen is not empty or person.passEntryAllergies)%}
                   <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Allergieen'|trans }}</strong><br />
                     {% if person.allergiesActive %}
@@ -311,7 +311,7 @@
                 {% endif %}
 
                 {# operations #}
-                {% if person.operationsShow == true and person.operations is not empty %}
+                {% if person.operationsShow == true and person.operations is not empty and person.operationsActive %}
                   <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Operationen'|trans }}</strong><br />
                     {{ person.operations|raw|nl2br }}
