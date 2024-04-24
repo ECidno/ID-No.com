@@ -5157,5 +5157,11 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
         <target>Reanimation nur in diesen Fällen:</target>
       </segment>
     </unit>
+    <unit id="inmIkP6" name="yes">
+      <segment>
+        <source>yes</source>
+        <target>ja</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
