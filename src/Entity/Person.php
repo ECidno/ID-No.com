@@ -542,7 +542,7 @@ class Person
      * @ORM\Column(type="boolean", options={"default":"0"})
      * @Gedmo\Versioned
      */
-    private $pacemaker;
+    private $pacemaker = false;
 
     /**
      * @var string
@@ -563,7 +563,7 @@ class Person
      * @ORM\Column(type="boolean", options={"default":"0"})
      * @Gedmo\Versioned
      */
-    private $pregnancy;
+    private $pregnancy = false;
 
     /**
      * @var string
