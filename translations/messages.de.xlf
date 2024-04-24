@@ -4566,7 +4566,7 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
     <unit id="noeOV7K" name="person.medication.tradeName.lbl">
       <segment>
         <source>person.medication.tradeName.lbl</source>
-        <target>Handlesname</target>
+        <target>Handelsname</target>
       </segment>
     </unit>
     <unit id="l0iUzXL" name="person.medication.dosage.lbl">

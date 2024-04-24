@@ -20,7 +20,7 @@ final class Version20240423141523 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE person ADD operations_active TINYINT(1) DEFAULT 0 NOT NULL');
+        $this->addSql('ALTER TABLE person ADD operations_active TINYINT(1) DEFAULT 1 NOT NULL');
         $this->addSql('ALTER TABLE person ADD patientenverf_comment TEXT DEFAULT NULL');
         $this->addSql('ALTER TABLE person ADD important_note TEXT DEFAULT NULL');
         $this->addSql('ALTER TABLE person ADD important_note_show TINYINT(1) DEFAULT 1 NOT NULL');
