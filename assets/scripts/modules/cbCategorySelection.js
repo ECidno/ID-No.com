@@ -80,6 +80,7 @@ const cbCategorySelection = (el) => {
    * notfallpass conditions: set displayed values when selecting category
    */
   function displayCategoryValues(event) {
+    return;
     const categorySelect = event.target;
     const category = categorySelect.options[categorySelect.selectedIndex].dataset.category;
     const titleSelect = categorySelect.closest('fieldset').querySelector('.condition-title-select');
@@ -106,6 +107,7 @@ const cbCategorySelection = (el) => {
    * notfallpass conditions: set displayed values on modal load
    */
   function initCategoryValues(element) {
+    return;
     const category = element.options[element.selectedIndex].dataset.category;
     const titleSelect = element.closest('fieldset').querySelector('.condition-title-select');
     if (category) {
