@@ -472,7 +472,7 @@ class Person
      * @ORM\Column(type="boolean", options={"default":"1"}))
      * @Gedmo\Versioned
      */
-    private $patientenverf = true;
+    private $patientenverf = false;
 
     /**
      * @var string

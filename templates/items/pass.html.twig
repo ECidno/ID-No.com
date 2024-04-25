@@ -74,10 +74,10 @@
               <div class="row">
                 <div class="col-12">
                   <div class="alert alert-danger pb-0">
-                    {% if person.importantNote %}
+                    {% if person.importantNoteShow == true and person.importantNote is not empty %}
                       <p><strong>{{ 'person.importantNote.lbl'|trans }} {{ person.importantNote|nl2br }}</strong></p>
                     {% endif %}
-                    {% if person.reanimation and person.reanimationShow %}
+                    {% if person.reanimationShow == true and person.reanimation is not empty %}
                       <p>
                         {{ ('person.reanimation.'~person.reanimation)|trans }} 
                         {% if person.reanimation == 'rea_condition' %}
@@ -85,7 +85,7 @@
                         {% endif %}
                       </p>
                     {% endif %}
-                    {% if person.pacemaker %}
+                    {% if person.pacemakerShow == true and  person.pacemaker is not empty %}
                       <p>
                         {{ 'person.pacemaker.lbl'|trans }}: 
                         {% if person.pacemakerComment %}
@@ -95,7 +95,7 @@
                         {% endif %}
                       </p>
                     {% endif %}
-                    {% if person.pregnancy %}
+                    {% if person.pregnancyShow == true and  person.pregnancy is not empty %}
                       <p>
                         {{ 'person.pregnancy.lbl'|trans }}: 
                         {% if person.pregnancyComment %}
@@ -351,50 +351,42 @@
         </div>
         {% endif %}
 
-        {# address #}
+        {# options #}
         <div class="row py-3">
           <div class="col-12">
             <div class="container">
-              {% if
-                 (person.strasse is not empty and person.strasseShow == true) or
-                 (person.zusatz is not empty and person.zusatzShow == true) or
-                 (person.ort is not empty and person.ortShow == true)
-               %}
+              {# reanimation #}
+              {% if person.reanimationShow == true and person.reanimation is not empty %}
                 <div class="my-3 p-3 border border-dark">
-                  <strong>{{ 'Wohnort'|trans }}</strong>
-
-                  {# street #}
-                  {% if person.strasseShow == true and person.strasse is not empty %}
-                    <br />{{ person.strasse|raw|nl2br }}
+                  <strong>{{ 'person.reanimation.lbl'|trans }}</strong><br />
+                  {{ ('person.reanimation.'~person.reanimation)|trans }} 
+                  {% if person.reanimation == 'rea_condition' %}
+                    {{ person.reanimationComment }}
                   {% endif %}
-
-                  {# additional #}
-                  {% if person.zusatzShow == true and person.zusatz is not empty %}
-                    <br />{{ person.zusatz|raw|nl2br }}
-                  {% endif %}
-
-                  {# residence #}
-                  {% if person.ortShow == true and person.ort is not empty %}
-                    <br />{{ person.plz|raw|nl2br }} {{ person.ort|raw|nl2br }}
-                  {% endif %}
-
-                  <br />{{ person.land|raw|nl2br }}
                 </div>
               {% endif %}
 
-              {# telefon #}
-              {% if person.telefonShow == true and person.telefon is not empty %}
+              {# pacemaker #}
+              {% if person.pacemakerShow == true and person.pacemaker is not empty %}
                 <div class="my-3 p-3 border border-dark">
-                  <strong>{{ 'Telefon'|trans }}</strong><br />
-                  {{ person.telefonDisplay }}
+                  <strong>{{ 'person.pacemaker.lbl'|trans }}</strong><br />
+                  {{ person.pacemaker ? 'ja'|trans : 'nein'|trans }} 
+                  {% if person.pacemakerComment %}
+                    - {{ person.pacemakerComment }}
+                  {% else %}
+                    {{ 'yes'|trans }}
+                  {% endif %}
                 </div>
               {% endif %}
 
-              {# mobile #}
-              {% if person.mobileShow == true and person.mobile is not empty %}
+              {# pregnancy #}
+              {% if person.pregnancyShow == true and person.pregnancy is not empty %}
                 <div class="my-3 p-3 border border-dark">
-                  <strong>{{ 'Mobile'|trans }}</strong><br />
-                  {{ person.mobileDisplay }}
+                  <strong>{{ 'person.pregnancy.lbl'|trans }}</strong><br />
+                  {{ person.pregnancy ? 'ja'|trans : 'nein'|trans }} 
+                  {% if person.pregnancyComment %}
+                    - {{ person.pregnancyComment }}
+                  {% endif %}
                 </div>
               {% endif %}
 
@@ -464,6 +456,56 @@
             </div>
           </div>
         {% endif %}
+
+        {# address #}
+        <div class="row py-3">
+          <div class="col-12">
+            <div class="container">
+              {% if
+                 (person.strasse is not empty and person.strasseShow == true) or
+                 (person.zusatz is not empty and person.zusatzShow == true) or
+                 (person.ort is not empty and person.ortShow == true)
+               %}
+                <div class="my-3 p-3 border border-dark">
+                  <strong>{{ 'Wohnort'|trans }}</strong>
+
+                  {# street #}
+                  {% if person.strasseShow == true and person.strasse is not empty %}
+                    <br />{{ person.strasse|raw|nl2br }}
+                  {% endif %}
+
+                  {# additional #}
+                  {% if person.zusatzShow == true and person.zusatz is not empty %}
+                    <br />{{ person.zusatz|raw|nl2br }}
+                  {% endif %}
+
+                  {# residence #}
+                  {% if person.ortShow == true and person.ort is not empty %}
+                    <br />{{ person.plz|raw|nl2br }} {{ person.ort|raw|nl2br }}
+                  {% endif %}
+
+                  <br />{{ person.land|raw|nl2br }}
+                </div>
+              {% endif %}
+
+              {# telefon #}
+              {% if person.telefonShow == true and person.telefon is not empty %}
+                <div class="my-3 p-3 border border-dark">
+                  <strong>{{ 'Telefon'|trans }}</strong><br />
+                  {{ person.telefonDisplay }}
+                </div>
+              {% endif %}
+
+              {# mobile #}
+              {% if person.mobileShow == true and person.mobile is not empty %}
+                <div class="my-3 p-3 border border-dark">
+                  <strong>{{ 'Mobile'|trans }}</strong><br />
+                  {{ person.mobileDisplay }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>

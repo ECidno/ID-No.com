@@ -1,6 +1,13 @@
 export const name = 'cbCategorySelection';
 
 const cbCategorySelection = (el) => {
+  const cinitialized = el.dataset.cinitialized || false;
+
+  // initalized?
+  if(cinitialized) {
+    return;
+  }
+
   document.querySelectorAll('.add-item-widget')
     .forEach(btn => {
       btn.addEventListener("click", addItemToCollection);
@@ -87,7 +94,11 @@ const cbCategorySelection = (el) => {
         li.classList.remove('d-none');
       });
       // select first element of selected category
-      titleSelect.querySelector('option.'+category).selected = true;
+      if (category=='other') {
+        titleSelect.querySelector('option.all').selected = true;
+      } else {
+        titleSelect.querySelector('option.'+category).selected = true;
+      }
     }
   }
 
@@ -104,8 +115,13 @@ const cbCategorySelection = (el) => {
       titleSelect.querySelectorAll('option.'+category).forEach((li) => {
         li.classList.remove('d-none');
       });
+      titleSelect.querySelectorAll('option.all').forEach((li) => {
+        li.classList.remove('d-none');
+      });
     }
   }
+  // set init
+  el.dataset.cinitialized = true;
 }
 
 // export

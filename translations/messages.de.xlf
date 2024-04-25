@@ -5163,5 +5163,11 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
         <target>ja</target>
       </segment>
     </unit>
+    <unit id="TQPbOTz" name="nein">
+      <segment>
+        <source>nein</source>
+        <target>nein</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

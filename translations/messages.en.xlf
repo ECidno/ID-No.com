@@ -4839,5 +4839,11 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
         <target>person.reanimation.rea_condition</target>
       </segment>
     </unit>
+    <unit id="TQPbOTz" name="nein">
+      <segment>
+        <source>nein</source>
+        <target>no</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
