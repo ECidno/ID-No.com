@@ -68,6 +68,7 @@ class PassEntryConditionType extends AbstractType
                     'Muskel-/ Skelettsystem' => 'Muskel-/ Skelettsystem',
                     'Autoimmunerkrankungen' => 'Autoimmunerkrankungen',
                     'Nierenerkrankungen' => 'Nierenerkrankungen',
+                    'Andere' => 'Andere',
                 ],
                 'choice_attr' => [
                     'Herz-Kreislauf-Erkrankungen' => ['data-category' => 'herzkreislauf'],
@@ -78,6 +79,7 @@ class PassEntryConditionType extends AbstractType
                     'Muskel-/ Skelettsystem' => ['data-category' => 'muskel'],
                     'Autoimmunerkrankungen' => ['data-category' => 'autoimmun'],
                     'Nierenerkrankungen' => ['data-category' => 'niere'],
+                    'Andere' => ['data-category' => 'other'],
                 ],
                 'attr' => [
                     'class' => 'condition-category-select',
@@ -175,7 +177,7 @@ class PassEntryConditionType extends AbstractType
 
                     'Struma' => ['class' => 'stoffwechsel'],
                     'Morbus Basedow' => ['class' => 'stoffwechsel'],
-                    'Hashimoto-Thyreoditis' => ['class' => 'stoffwechsel'],
+                    'Hashimoto-Thyreoditis' => ['class' => 'stoffwechsel autoimmun'],
                     'Überfunktion' => ['class' => 'stoffwechsel'],
                     'Unterfunktion' => ['class' => 'stoffwechsel'],
                     'Diabetes Typ 1' => ['class' => 'stoffwechsel'],

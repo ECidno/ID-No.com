@@ -363,11 +363,10 @@ body.modal-open .background-container {
     background-color: $green;
     color: $white;
   }
-  // .remove-widget-container-pos {
-  //   position: absolute;
-  //   top: 0;
-  //   right: -152px;
-  // }
+  .remove-item-widget:hover {
+    background-color: $white;
+    color: $dark;
+  }
 }
 .add-item-widget {
   background-color: $green;
@@ -380,6 +379,9 @@ body.modal-open .background-container {
   }
   h4.sub-head.small {
     font-size: 0.8rem;
+  }
+  .add-item-widget:hover {
+    background-color: $white;
   }
 }
 
