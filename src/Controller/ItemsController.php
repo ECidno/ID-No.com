@@ -51,7 +51,6 @@ class ItemsController extends AbstractController
     {
         /* CNBID22-63, revert CNBID22-51
         $session = $request->getSession();
-
         $idNo = $request->get('p_idno')
             ?? $request
                 ->getSession()
@@ -118,7 +117,7 @@ class ItemsController extends AbstractController
             $person = $item->getPerson();
 
             // user pass active (sichtbar)
-            if($nutzer->getSichtbar() === false) {
+            if($nutzer->getSichtbar() === false || $person === null) {
                 $this->addFlash(
                     'itemError',
                     $this->translator->trans('ID-Number locked!')
