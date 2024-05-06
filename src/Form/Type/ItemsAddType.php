@@ -69,7 +69,6 @@ class ItemsAddType extends AbstractType
                 ],
                 'required' => false,
             ])
-
             ->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) use($nutzer) {
                 $form = $event->getForm();
 
