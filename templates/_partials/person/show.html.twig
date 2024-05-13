@@ -1,5 +1,5 @@
 {# id number #}
-{% set items_read_url = persons|length > 1
+{% set items_read_url = persons is defined and persons|length > 1
   ? path('app_api_items_read', { personId: person.id })
   : path('app_api_items_read')
 %}
