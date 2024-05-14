@@ -224,23 +224,37 @@
                 {% endif %}
 
                 {# diseases #}
-                {% if person.erkrankungenShow == true and (person.erkrankungen is not empty or person.passEntryConditions) %}
+                {% if person.erkrankungenShow == true and (person.erkrankungen is not empty or person.passEntryConditions is not empty) %}
                   <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Erkrankungen'|trans }}</strong><br />
                     {% if person.conditionsActive %}
-                      {{ person.erkrankungen|raw|nl2br }}
+                      {% if person.erkrankungen %}
+                        <p>{{ person.erkrankungen|raw|nl2br }}</p>
+                      {% endif %}
 
                       {% for condition in person.passEntryConditions %}
-                        <p>
-                          {{ condition.category }}
+                        <div class="row">
+                          <div class="col-12 col-lg-4">
+                            {{ condition.category }}
+                          </div>
                           {% if condition.title %}
-                            -
-                            {{ condition.title }}
+                            <div class="col-12 col-lg-8">
+                              {{ condition.title }}
+                            </div>
                           {% endif %}
                           {% if condition.comment %}
-                            -
+                            <div class="col-12">
                             {{ condition.comment }}
+                          </div>
                           {% endif %}
+                        </div>
+
+                        {% if not loop.last %}
+                          <div class="col-12">
+                              <hr>
+                          </div>
+                        {% endif %}
+
                       {% endfor %}
                     {% else %}
                       </p>{{ 'Keine genannt'|trans }}</p>
@@ -249,38 +263,67 @@
                 {% endif %}
 
                 {# medicines #}
-                {% if person.medikamenteShow == true and (person.medikamente is not empty or person.passEntryMedications) %}
+                {% if person.medikamenteShow == true and (person.medikamente is not empty or person.passEntryMedications is not empty) %}
                   <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Medikamente'|trans }}</strong><br />
                     {% if person.medicationsActive %}
-                      {{ person.medikamente|raw|nl2br }}
-
-                      {% for medication in person.passEntryMedications %}
+                      {% if person.medikamente %}
                         <p>
+                          {{ person.medikamente|raw|nl2br }}
+                        </p>
+                      {% endif %}
+
+                      <div class="row mb-2 mt-2">
+                      {% for medication in person.passEntryMedications %}
                           {% if medication.ingredient %}
-                            {{ 'person.medication.ingredient.lbl'|trans }}:
-                            {{ medication.ingredient }}
+                            <div class="col-6 col-lg-3 pe-3">
+                              {{ 'person.medication.ingredient.lbl'|trans }}:
+                            </div>
+                            <div class="col-6 col-lg-3 pe-3">
+                              {{ medication.ingredient }}
+                            </div>
                           {% endif %}
                           {% if medication.tradeName %}
-                            {{ 'person.medication.tradeName.lbl'|trans }}:
-                            {{ medication.tradeName }}
+                            <div class="col-6 col-lg-3 pe-3">
+                              {{ 'person.medication.tradeName.lbl'|trans }}:
+                            </div>
+                            <div class="col-6 col-lg-3 pe-3">
+                              {{ medication.tradeName }}
+                            </div>
                           {% endif %}
-                          <br/>
                           {% if medication.tradeName %}
-                            {{ 'person.medication.dosage.lbl'|trans }}:
-                            {{ medication.dosage }}
+                            <div class="col-6 col-lg-3 pe-3">
+                              {{ 'person.medication.dosage.lbl'|trans }}:
+                            </div>
+                            <div class="col-6 col-lg-3 pe-3">
+                              {{ medication.dosage }}
+                            </div>
                           {% endif %}
                           {% if  medication.consumption %}
-                            {{ 'person.medication.consumption.lbl'|trans }}:
-                            {{ medication.consumption }}
+                            <div class="col-6 col-lg-3 pe-3">
+                              {{ 'person.medication.consumption.lbl'|trans }}:
+                            </div>
+                            <div class="col-6 col-lg-3 pe-3">
+                              {{ medication.consumption }}
+                            </div>
                           {% endif %}
                           {% if medication.emergencyNotes %}
-                            <br/>
-                            {{ 'person.medication.emergencyNotes.lbl'|trans }}:
-                            {{ medication.emergencyNotes }}
+                              <div class="col-6 col-lg-3 pe-3">
+                                {{ 'person.medication.emergencyNotes.lbl'|trans }}:
+                              </div>
+                              <div class="col-6 col-lg-8 pe-3">
+                                {{ medication.emergencyNotes }}
+                              </div>
                           {% endif %}
-                        </p>
+                        
+                          {% if not loop.last %}
+                            <div class="col-12">
+                                <hr>
+                            </div>
+                          {% endif %}
+
                       {% endfor %}
+                      </div>
                     {% else %}
                       </p>{{ 'Keine genannt'|trans }}</p>
                     {% endif %}
@@ -288,21 +331,41 @@
                 {% endif %}
 
                 {# allergies #}
-                {% if person.allergieenShow == true and (person.allergieen is not empty or person.passEntryAllergies)%}
+                {% if person.allergieenShow == true and (person.allergieen is not empty or person.passEntryAllergies is not empty)%}
                   <div class="my-3 p-3 border border-light">
                     <strong>{{ 'Allergieen'|trans }}</strong><br />
                     {% if person.allergiesActive %}
-                      {{ person.allergieen|raw|nl2br }}
+                      {% if person.allergieen %}
+                        <p>
+                          {{ person.allergieen|raw|nl2br }}
+                        </p>
+                      {% endif %}
 
                       {% for allergy in person.passEntryAllergies %}
-                        <p>
-                          {{ 'person.allergy.category.lbl'|trans }}:
-                          {{ allergy.category }}
+                        <div class="row">
+                          <div class="col-6 col-lg-3 pe-3">
+                            {{ 'person.allergy.category.lbl'|trans }}:
+                          </div>
+                          <div class="col-6 col-lg-3 pe-3">
+                            {{ allergy.category }}
+                          </div>
                           {% if allergy.comment %}
-                            {{ 'person.allergy.comment.lbl'|trans }}:
-                            {{ allergy.comment }}
+                            {#
+                            <div class="col-6 col-lg-3 pe-3">
+                              {{ 'person.allergy.comment.lbl'|trans }}
+                            </div>
+                            #}
+                            <div class="col-12 col-lg-6 pe-3">
+                              {{ allergy.comment }}
+                            </div>
                           {% endif %}
-                        </p>
+                        </div>
+
+                        {% if not loop.last %}
+                          <div class="col-12">
+                              <hr>
+                          </div>
+                        {% endif %}
                       {% endfor %}
                     {% else %}
                       </p>{{ 'Keine genannt'|trans }}</p>
@@ -356,6 +419,7 @@
           <div class="col-12">
             <div class="container">
               {# reanimation #}
+              {#
               {% if person.reanimationShow == true and person.reanimation is not empty %}
                 <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'person.reanimation.lbl'|trans }}</strong><br />
@@ -365,6 +429,7 @@
                   {% endif %}
                 </div>
               {% endif %}
+              #}
 
               {# pacemaker #}
               {% if person.pacemakerShow == true and person.pacemaker is not empty %}
@@ -373,8 +438,6 @@
                   {{ person.pacemaker ? 'ja'|trans : 'nein'|trans }} 
                   {% if person.pacemakerComment %}
                     - {{ person.pacemakerComment }}
-                  {% else %}
-                    {{ 'yes'|trans }}
                   {% endif %}
                 </div>
               {% endif %}
@@ -462,10 +525,10 @@
           <div class="col-12">
             <div class="container">
               {% if
-                 (person.strasse is not empty and person.strasseShow == true) or
-                 (person.zusatz is not empty and person.zusatzShow == true) or
-                 (person.ort is not empty and person.ortShow == true)
-               %}
+                (person.strasse is not empty and person.strasseShow == true) or
+                (person.zusatz is not empty and person.zusatzShow == true) or
+                (person.ort is not empty and person.ortShow == true)
+              %}
                 <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'Wohnort'|trans }}</strong>
 
