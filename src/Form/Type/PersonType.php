@@ -598,47 +598,47 @@ class PersonType extends AbstractType
                 ],
                 'required' => false
             ])
-
-            ->add('reanimation', ChoiceType::class, [
-                'label' => new TranslatableMessage('person.reanimation.lbl'),
-                'choices' => [
-                    'please choose' => '',
-                    'person.reanimation.always' => 'rea_always',
-                    'person.reanimation.never' => 'rea_never',
-                    'person.reanimation.inTheseCases' => 'rea_condition',
-                ],
-                'choice_label' => function($choice, $key, $value) {
-                    if (empty($choice)) {
-                        return new TranslatableMessage('person.reanimation.choose.lbl');
-                    } else {
-                        return $key;
-                    }
-                },
-                'required' => false
-            ])
-            ->add('reanimationShow', CheckboxType::class, [
-                'label' => new TranslatableMessage('sichtbar'),
-                'label_attr' => [
-                    'class' => 'd-none d-sm-block',
-                ],
-                'row_attr' => ['class' => 'form-switch py-3'],
-                'attr' => [
-                    'role' => 'switch'
-                ],
-                'required' => false
-            ])
-            ->add('reanimationComment', TextType::class, [
-                'label' => new TranslatableMessage('person.reanimationComment.lbl'),
-                'row_attr' => [
-                    'id' => 'reanimationShowContainer',
-                    'class' => 'form-floating mb-3'
-                ],
-                'attr' => [
-                    'maxlength' => 100,
-                    'autocomplete' => 'off',
-                ],
-                'required' => false
-            ])
+            
+            // ->add('reanimation', ChoiceType::class, [
+            //     'label' => new TranslatableMessage('person.reanimation.lbl'),
+            //     'choices' => [
+            //         'please choose' => '',
+            //         'person.reanimation.always' => 'rea_always',
+            //         'person.reanimation.never' => 'rea_never',
+            //         'person.reanimation.inTheseCases' => 'rea_condition',
+            //     ],
+            //     'choice_label' => function($choice, $key, $value) {
+            //         if (empty($choice)) {
+            //             return new TranslatableMessage('person.reanimation.choose.lbl');
+            //         } else {
+            //             return $key;
+            //         }
+            //     },
+            //     'required' => false
+            // ])
+            // ->add('reanimationShow', CheckboxType::class, [
+            //     'label' => new TranslatableMessage('sichtbar'),
+            //     'label_attr' => [
+            //         'class' => 'd-none d-sm-block',
+            //     ],
+            //     'row_attr' => ['class' => 'form-switch py-3'],
+            //     'attr' => [
+            //         'role' => 'switch'
+            //     ],
+            //     'required' => false
+            // ])
+            // ->add('reanimationComment', TextType::class, [
+            //     'label' => new TranslatableMessage('person.reanimationComment.lbl'),
+            //     'row_attr' => [
+            //         'id' => 'reanimationShowContainer',
+            //         'class' => 'form-floating mb-3'
+            //     ],
+            //     'attr' => [
+            //         'maxlength' => 100,
+            //         'autocomplete' => 'off',
+            //     ],
+            //     'required' => false
+            // ])
 
             ->add('pacemaker', CheckboxType::class, [
                 'label' => new TranslatableMessage('person.pacemaker.lbl'),

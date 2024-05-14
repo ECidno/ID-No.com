@@ -307,8 +307,8 @@ document.addEventListener(
               cbCategorySelection(el);
             });
 
-          jQuery('.condition-category-select').selectpicker({'liveSearch' : true});
-          jQuery('.condition-title-select').selectpicker({'liveSearch' : true});
+          // jQuery('.condition-category-select').selectpicker({'liveSearch' : true});
+          // jQuery('.condition-title-select').selectpicker({'liveSearch' : true});
 
           // add listener for uploads
           Array
