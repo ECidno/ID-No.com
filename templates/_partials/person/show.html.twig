@@ -1,4 +1,8 @@
 {# id number #}
+{% set items_read_url = persons is defined and persons|length > 1
+  ? path('app_api_items_read', { personId: person.id })
+  : path('app_api_items_read')
+%}
 <div class="row my-4">
   <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
     <h5>{{ 'meinidno.idno.title'|trans }}</h5>
@@ -9,7 +13,7 @@
       <button
         type="button"
         class="btn btn-sm btn-outline-success mx-1 ajax-modal"
-        data-url="{{ path('app_items_new', { personId:person.id }) }}">
+        data-url="{{ path('app_items_new', { personId: person.id }) }}">
         <i class="{{ settings.buttons.new }}"></i>
         {{ 'items.action.new.lbl'|trans }}
       </button>
@@ -25,7 +29,7 @@
       data-buttons-class="outline-dark btn-sm"
       data-mobile-responsive="true"
       data-show-refresh="false"
-      data-url="{{ path('app_api_items_read', { personId:person.id }) }}"
+      data-url="{{ items_read_url }}"
       data-ll-active="{{ 'active'|trans() }}"
       data-ll-inactive="{{ 'inactive'|trans() }}">
       <thead class="bg-light">
@@ -38,6 +42,9 @@
             data-field="noStatus"
             data-formatter="window.formatter.item.status">{{ 'items.table.noStatus.lbl'|trans }}</th>
           <th data-field="aktiviertDatum">{{ 'items.table.aktiviertDatum.lbl'|trans }}</th>
+          {% if persons|length == 1 %}
+            <th data-field="person.fullName">{{ 'items.table.person.lbl'|trans }}</th>
+          {% endif %}
           <th
             data-width="100"
             data-align="right"

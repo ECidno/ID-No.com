@@ -70,6 +70,23 @@ class ItemsEditType extends AbstractType
                 'required' => false
             ])
 
+            // always show person select | WEBCN-130
+            ->add('person', EntityType::class, [
+                'label' => new TranslatableMessage('items.person.lbl'),
+                'class' => Person::class,
+                'query_builder' => function (EntityRepository $er) use($nutzer) {
+                    return $er
+                        ->createQueryBuilder('p')
+                        ->where('p.nutzer=:nutzer')
+                        ->orderBy('p.vorname', 'ASC')
+                        ->setParameter('nutzer', $nutzer);
+                },
+                'choice_label' => 'fullName',
+                'placeholder' => 'items.person.not_assigned.lbl',
+                'required' => false,
+            ])
+
+            /*
             ->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) use($nutzer) {
                 $form = $event->getForm();
 
@@ -91,6 +108,7 @@ class ItemsEditType extends AbstractType
                     ]);
                 }
             })
+            */
             ;
     }
 

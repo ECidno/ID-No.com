@@ -125,7 +125,7 @@
       </div>
     </div>
 
-    {% include '_partials/person/show.html.twig' %}
+    {% include '_partials/person/show.html.twig' with { persons: person.nutzer.persons } %}
 
     <div class="row my-4">
       <div class="col-8 offset-2 text-start">
