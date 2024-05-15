@@ -18,7 +18,9 @@ const cbCategorySelection = (el) => {
         'click',
         (e) => {
           e.preventDefault();
+          let listContainer = item.closest('ul');
           item.closest('fieldset').remove();
+          updateLoopNumbers(listContainer);
         })
       });
   document.querySelectorAll('.condition-category-select')
@@ -54,7 +56,9 @@ const cbCategorySelection = (el) => {
         'click',
         (e) => {
           e.preventDefault();
+          let listContainer = item.closest('ul');
           item.remove();
+          updateLoopNumbers(listContainer);
       }
     );
 
@@ -69,10 +73,8 @@ const cbCategorySelection = (el) => {
           sel.addEventListener("change", displayCategoryValues)
       });
 
-    item.querySelector('.loop-value').innerHTML = parseInt(collectionHolder.dataset.index) + 1;
-
     collectionHolder.appendChild(item);
-    
+    updateLoopNumbers(collectionHolder);
     collectionHolder.dataset.index++;
   }
   
@@ -122,6 +124,18 @@ const cbCategorySelection = (el) => {
       });
     }
   }
+
+  /**
+   * update displayed loop numbers
+   */
+  function updateLoopNumbers(element) {
+    var counter = 1;
+    element.querySelectorAll('.loop-value').forEach((numberContainer) => {
+      numberContainer.innerHTML = counter;
+      counter++;
+    });
+  }
+
   // set init
   el.dataset.cinitialized = true;
 }

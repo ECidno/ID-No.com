@@ -68,8 +68,8 @@
           {% endif %}
         {% endif %}
 
-        {% if person.importantNoteShow or person.reanimationShow or person.pacemakerShow or person.pregnancyShow %}
-          {% if person.importantNote or person.reanimation or person.pacemaker or person.pregnancy %}
+        {% if person.importantNoteShow or person.pacemakerShow or person.pregnancyShow %}
+          {% if person.importantNote or person.pacemaker or person.pregnancy %}
             <div class="container">
               <div class="row">
                 <div class="col-12">
@@ -77,6 +77,7 @@
                     {% if person.importantNoteShow == true and person.importantNote is not empty %}
                       <p><strong>{{ 'person.importantNote.lbl'|trans }} {{ person.importantNote|nl2br }}</strong></p>
                     {% endif %}
+                    {#
                     {% if person.reanimationShow == true and person.reanimation is not empty %}
                       <p>
                         {{ ('person.reanimation.'~person.reanimation)|trans }} 
@@ -85,6 +86,7 @@
                         {% endif %}
                       </p>
                     {% endif %}
+                    #}
                     {% if person.pacemakerShow == true and  person.pacemaker is not empty %}
                       <p>
                         {{ 'person.pacemaker.lbl'|trans }}: 

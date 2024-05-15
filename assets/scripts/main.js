@@ -382,15 +382,15 @@ document.addEventListener(
               el.dataset.init = true;
             });
 
-          document.getElementById('person_reanimation').addEventListener('change', (e) => {
-            let el = e.target;
-            const showContainer = document.getElementById('reanimationShowContainer');
-            if (el.value=='rea_condition') {
-              showContainer.classList.add('show');
-            } else {
-              showContainer.classList.remove('show');
-            }
-          });
+          // document.getElementById('person_reanimation').addEventListener('change', (e) => {
+          //   let el = e.target;
+          //   const showContainer = document.getElementById('reanimationShowContainer');
+          //   if (el.value=='rea_condition') {
+          //     showContainer.classList.add('show');
+          //   } else {
+          //     showContainer.classList.remove('show');
+          //   }
+          // });
         },
         false
       );
