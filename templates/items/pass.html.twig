@@ -236,19 +236,17 @@
 
                       {% for condition in person.passEntryConditions %}
                         <div class="row">
-                          <div class="col-12 col-lg-4">
-                            {{ condition.category }}
+                          <div class="col-12">
+                            {{ condition.category }}:
+                            {% if condition.title %}
+                              <span class="text-success ps-1">
+                                {{ condition.title }}{% if condition.comment %}, {% endif %}
+                              </span>
+                            {% endif %}
+                            {% if condition.comment %}
+                              {{ condition.comment }}
+                            {% endif %}
                           </div>
-                          {% if condition.title %}
-                            <div class="col-12 col-lg-8">
-                              {{ condition.title }}
-                            </div>
-                          {% endif %}
-                          {% if condition.comment %}
-                            <div class="col-12">
-                            {{ condition.comment }}
-                          </div>
-                          {% endif %}
                         </div>
 
                         {% if not loop.last %}
@@ -277,53 +275,43 @@
 
                       <div class="row mb-2 mt-2">
                       {% for medication in person.passEntryMedications %}
+                        <div class="col-12 pe-3">
                           {% if medication.ingredient %}
-                            <div class="col-6 col-lg-3 pe-3">
                               {{ 'person.medication.ingredient.lbl'|trans }}:
-                            </div>
-                            <div class="col-6 col-lg-3 pe-3">
                               {{ medication.ingredient }}
-                            </div>
                           {% endif %}
                           {% if medication.tradeName %}
-                            <div class="col-6 col-lg-3 pe-3">
-                              {{ 'person.medication.tradeName.lbl'|trans }}:
-                            </div>
-                            <div class="col-6 col-lg-3 pe-3">
-                              {{ medication.tradeName }}
-                            </div>
+                              ({{ 'person.medication.tradeName.lbl'|trans }}:
+                              {{ medication.tradeName }})
                           {% endif %}
-                          {% if medication.tradeName %}
-                            <div class="col-6 col-lg-3 pe-3">
-                              {{ 'person.medication.dosage.lbl'|trans }}:
-                            </div>
-                            <div class="col-6 col-lg-3 pe-3">
-                              {{ medication.dosage }}
-                            </div>
+                        </div>
+                        <div class="col-12 pe-3">
+                          {% if medication.dosage %}
+                            {{ 'person.medication.dosage.lbl'|trans }}:
+                            {{ medication.dosage }}
                           {% endif %}
                           {% if  medication.consumption %}
-                            <div class="col-6 col-lg-3 pe-3">
-                              {{ 'person.medication.consumption.lbl'|trans }}:
-                            </div>
-                            <div class="col-6 col-lg-3 pe-3">
-                              {{ medication.consumption }}
+                            ({{ 'person.medication.consumption.lbl'|trans }}:
+                            {{ medication.consumption }})
+                          {% endif %}
+                          {% if medication.comment %}
+                            <div class="text-success">
+                              {{ medication.comment }}
                             </div>
                           {% endif %}
                           {% if medication.emergencyNotes %}
-                              <div class="col-6 col-lg-3 pe-3">
-                                {{ 'person.medication.emergencyNotes.lbl'|trans }}:
-                              </div>
-                              <div class="col-6 col-lg-8 pe-3">
-                                {{ medication.emergencyNotes }}
-                              </div>
-                          {% endif %}
-                        
-                          {% if not loop.last %}
-                            <div class="col-12">
-                                <hr>
+                            <div class="text-success">
+                              {{ 'person.medication.emergencyNotes.lbl'|trans }}:
+                              {{ medication.emergencyNotes }}
                             </div>
                           {% endif %}
+                        </div>
 
+                        {% if not loop.last %}
+                          <div class="col-12">
+                              <hr>
+                          </div>
+                        {% endif %}
                       {% endfor %}
                       </div>
                     {% else %}
@@ -345,22 +333,14 @@
 
                       {% for allergy in person.passEntryAllergies %}
                         <div class="row">
-                          <div class="col-6 col-lg-3 pe-3">
+                          <div class="col-12 pe-3">
                             {{ 'person.allergy.category.lbl'|trans }}:
+                            <span class="text-success ps-1">{{ allergy.category }}</span>
+
+                            {% if allergy.comment %}
+                              ({{ allergy.comment }})
+                            {% endif %}
                           </div>
-                          <div class="col-6 col-lg-3 pe-3">
-                            {{ allergy.category }}
-                          </div>
-                          {% if allergy.comment %}
-                            {#
-                            <div class="col-6 col-lg-3 pe-3">
-                              {{ 'person.allergy.comment.lbl'|trans }}
-                            </div>
-                            #}
-                            <div class="col-12 col-lg-6 pe-3">
-                              {{ allergy.comment }}
-                            </div>
-                          {% endif %}
                         </div>
 
                         {% if not loop.last %}
