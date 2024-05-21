@@ -606,6 +606,15 @@ class Person
     {
         $this->contacts = new ArrayCollection();
         $this->images = new ArrayCollection();
+        if (empty($this->getErkrankungen()) && empty($this->getPassEntryConditions())) {
+            $this->setConditionsActive(false);
+        }
+        if (empty($this->getMedikamente()) && empty($this->getPassEntryMedications())) {
+            $this->setMedicationsActive(false);
+        }
+        if (empty($this->getAllergieen()) && empty($this->getPassEntryAllergies())) {
+            $this->setAllergiesActive(false);
+        }
     }
 
 
@@ -1968,19 +1977,19 @@ class Person
     }
 
     /**
-     * @param Collection $passEntryConditions
+     * @param ?Collection $passEntryConditions
      * @return Person
      */
-    public function setPassEntryConditions(Collection $passEntryConditions): self
+    public function setPassEntryConditions(?Collection $passEntryConditions): self
     {
         $this->passEntryConditions = $passEntryConditions;
         return $this;
     }
 
     /**
-     * @return Collection|PassEntryCondition[]
+     * @return ?Collection|PassEntryCondition[]
      */
-    public function getPassEntryConditions(): Collection
+    public function getPassEntryConditions(): ?Collection
     {
         return $this->passEntryConditions;
     }
@@ -2011,19 +2020,19 @@ class Person
     }
 
     /**
-     * @param Collection $passEntryMedications
+     * @param ?Collection $passEntryMedications
      * @return Person
      */
-    public function setPassEntryMedications(Collection $passEntryMedications): self
+    public function setPassEntryMedications(?Collection $passEntryMedications): self
     {
         $this->passEntryMedications = $passEntryMedications;
         return $this;
     }
 
     /**
-     * @return Collection|PassEntryMedication[]
+     * @return ?Collection|PassEntryMedication[]
      */
-    public function getPassEntryMedications(): Collection
+    public function getPassEntryMedications(): ?Collection
     {
         return $this->passEntryMedications;
     }
@@ -2054,19 +2063,19 @@ class Person
     }
 
     /**
-     * @param Collection $passEntryAllergies
+     * @param ?Collection $passEntryAllergies
      * @return Person
      */
-    public function setPassEntryAllergies(Collection $passEntryAllergies): self
+    public function setPassEntryAllergies(?Collection $passEntryAllergies): self
     {
         $this->passEntryAllergies = $passEntryAllergies;
         return $this;
     }
 
     /**
-     * @return Collection|PassEntryAllergy[]
+     * @return ?Collection|PassEntryAllergy[]
      */
-    public function getPassEntryAllergies(): Collection
+    public function getPassEntryAllergies(): ?Collection
     {
         return $this->passEntryAllergies;
     }
