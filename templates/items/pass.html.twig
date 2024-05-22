@@ -237,10 +237,10 @@
                       {% for condition in person.passEntryConditions %}
                         <div class="row">
                           <div class="col-12">
-                            {{ condition.category }}:
+                            {{ condition.category|trans }}:
                             {% if condition.title %}
                               <span class="text-success ps-1">
-                                {{ condition.title }}{% if condition.comment %}, {% endif %}
+                                {{ condition.title|trans }}{% if condition.comment %}, {% endif %}
                               </span>
                             {% endif %}
                             {% if condition.comment %}
@@ -336,7 +336,7 @@
                         <div class="row">
                           <div class="col-12 pe-3">
                             {{ 'person.allergy.category.lbl'|trans }}:
-                            <span class="text-success ps-1">{{ allergy.category }}</span>
+                            <span class="text-success ps-1">{{ allergy.category|trans }}</span>
 
                             {% if allergy.comment %}
                               ({{ allergy.comment }})
