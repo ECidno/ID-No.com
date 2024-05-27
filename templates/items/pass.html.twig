@@ -278,7 +278,9 @@
                         <div class="col-12 pe-3">
                           {% if medication.ingredient %}
                               {{ 'person.medication.ingredient.lbl'|trans }}:
-                              {{ medication.ingredient }}
+                              <span class="text-success">
+                                {{ medication.ingredient }}
+                              </span>
                           {% endif %}
                           {% if medication.tradeName %}
                               ({{ 'person.medication.tradeName.lbl'|trans }}:
@@ -295,13 +297,13 @@
                             {{ medication.consumption }})
                           {% endif %}
                           {% if medication.comment %}
-                            <div class="text-success">
+                            <div>
                               {{ 'person.medication.comment.lbl'|trans }}:
                               {{ medication.comment }}
                             </div>
                           {% endif %}
                           {% if medication.emergencyNotes %}
-                            <div class="text-success">
+                            <div>
                               {{ 'person.medication.emergencyNotes.lbl'|trans }}:
                               {{ medication.emergencyNotes }}
                             </div>
