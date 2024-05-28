@@ -236,8 +236,12 @@
 
                       {% for condition in person.passEntryConditions %}
                         <div class="row">
-                          <div class="col-12">
-                            {{ condition.category|trans }}:
+                          <div class="col-12 text-decoration-underline">
+                            {{ loop.index }}. {{ condition.category|trans }}:
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12 ps-5">
                             {% if condition.title %}
                               <span class="text-success ps-1">
                                 {{ condition.title|trans }}{% if condition.comment %}, {% endif %}
@@ -277,7 +281,8 @@
                       {% for medication in person.passEntryMedications %}
                         <div class="col-12 pe-3">
                           {% if medication.ingredient %}
-                              {{ 'person.medication.ingredient.lbl'|trans }}:
+                              <span class="text-decoration-underline">
+                                {{ loop.index }}. {{ 'person.medication.ingredient.lbl'|trans }}:</span>
                               <span class="text-success">
                                 {{ medication.ingredient }}
                               </span>
@@ -287,7 +292,7 @@
                               {{ medication.tradeName }})
                           {% endif %}
                         </div>
-                        <div class="col-12 pe-3">
+                        <div class="col-12 pe-3 ps-5">
                           {% if medication.dosage %}
                             {{ 'person.medication.dosage.lbl'|trans }}:
                             {{ medication.dosage }}
@@ -337,7 +342,8 @@
                       {% for allergy in person.passEntryAllergies %}
                         <div class="row">
                           <div class="col-12 pe-3">
-                            {{ 'person.allergy.category.lbl'|trans }}:
+                            <span class="text-decoration-underline">
+                              {{ loop.index }}. {{ 'person.allergy.category.lbl'|trans }}:</span>
                             <span class="text-success ps-1">{{ allergy.category|trans }}</span>
 
                             {% if allergy.comment %}
