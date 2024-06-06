@@ -121,13 +121,13 @@
               <table class="table table-sm">
                 <tr>
                   <td colspan="2">
-                    <strong class="text-success">{{ person.vorname|raw }} {{ person.nachname|raw }}</strong>
+                    <strong class="fw-bold">{{ person.vorname|raw }} {{ person.nachname|raw }}</strong>
                   </td>
                 </tr>
                 {% if person.dateOfBirth %}
                   <tr>
                     <td colspan="2">
-                      <span class="text-success">* {{ person.dateOfBirth|date('d.m.Y') }} ({{ person.age }} {{ 'years'|trans }})</span>
+                      <span class="fw-bold">* {{ person.dateOfBirth|date('d.m.Y') }} ({{ person.age }} {{ 'years'|trans }})</span>
                     </td>
                   </tr>
                 {% endif %}
@@ -165,7 +165,7 @@
               {% if person.ort and person.ortShow == true and false %}
                 <button
                   id="mapShow"
-                  class="btn btn-outline-dark text-success px-4 py-2">
+                  class="btn btn-outline-dark fw-bold px-4 py-2">
                   <i class="bi bi-geo-alt-fill"></i>
                   <span class="ps-1">{{ 'Standort'|trans }}</span>
                 </button>
@@ -173,7 +173,7 @@
             </div>
             <div class="col-6 text-end">
               <a
-                class="btn btn-outline-dark text-success px-4 py-2"
+                class="btn btn-outline-dark fw-bold px-4 py-2"
                 href="tel:112">
                 <i class="bi bi-telephone-fill"></i>
                 <span class="ps-1">{{ 'Notruf'|trans }}</span>
@@ -243,8 +243,8 @@
                         <div class="row">
                           <div class="col-12 ps-5">
                             {% if condition.title %}
-                              <span class="text-success ps-1">
-                                {{ condition.title|trans }}{% if condition.comment %}, {% endif %}
+                              <span class="fw-bold ps-1">
+                                — {{ condition.title|trans }}{% if condition.comment %}, {% endif %}
                               </span>
                             {% endif %}
                             {% if condition.comment %}
@@ -283,7 +283,7 @@
                           {% if medication.ingredient %}
                               <span class="text-decoration-underline">
                                 {{ loop.index }}. {{ 'person.medication.ingredient.lbl'|trans }}:</span>
-                              <span class="text-success">
+                              <span class="fw-bold">
                                 {{ medication.ingredient }}
                               </span>
                           {% endif %}
@@ -294,22 +294,22 @@
                         </div>
                         <div class="col-12 pe-3 ps-5">
                           {% if medication.dosage %}
-                            {{ 'person.medication.dosage.lbl'|trans }}:
+                            — {{ 'person.medication.dosage.lbl'|trans }}:
                             {{ medication.dosage }}
                           {% endif %}
                           {% if  medication.consumption %}
-                            ({{ 'person.medication.consumption.lbl'|trans }}:
+                            — ({{ 'person.medication.consumption.lbl'|trans }}:
                             {{ medication.consumption }})
                           {% endif %}
                           {% if medication.comment %}
                             <div>
-                              {{ 'person.medication.comment.lbl'|trans }}:
+                              — {{ 'person.medication.comment.lbl'|trans }}:
                               {{ medication.comment }}
                             </div>
                           {% endif %}
                           {% if medication.emergencyNotes %}
                             <div>
-                              {{ 'person.medication.emergencyNotes.lbl'|trans }}:
+                              — {{ 'person.medication.emergencyNotes.lbl'|trans }}:
                               {{ medication.emergencyNotes }}
                             </div>
                           {% endif %}
@@ -344,7 +344,7 @@
                           <div class="col-12 pe-3">
                             <span class="text-decoration-underline">
                               {{ loop.index }}. {{ 'person.allergy.category.lbl'|trans }}:</span>
-                            <span class="text-success ps-1">{{ allergy.category|trans }}</span>
+                            <span class="fw-bold ps-1">{{ allergy.category|trans }}</span>
 
                             {% if allergy.comment %}
                               ({{ allergy.comment }})
@@ -391,7 +391,7 @@
                   {% if contact.entry.phone is defined and contact.entry.phone is not empty %}
                     <div class="col-6 text-end">
                       <a
-                        class="btn btn-outline-dark text-success px-4 py-2"
+                        class="btn btn-outline-dark fw-bold px-4 py-2"
                         href="tel:{{ contact.entry.phone }}">
                         <i class="bi bi-telephone-fill"></i>
                         <span class="ps-1">{{ 'Anrufen'|trans }}</span>
