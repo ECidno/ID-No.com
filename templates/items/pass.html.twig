@@ -244,7 +244,7 @@
                           <div class="col-12 ps-5">
                             {% if condition.title %}
                               <span class="fw-bold ps-1">
-                                — {{ condition.title|trans }}{% if condition.comment %}, {% endif %}
+                                – {{ condition.title|trans }}{% if condition.comment %}, {% endif %}
                               </span>
                             {% endif %}
                             {% if condition.comment %}
@@ -294,22 +294,22 @@
                         </div>
                         <div class="col-12 pe-3 ps-5">
                           {% if medication.dosage %}
-                            — {{ 'person.medication.dosage.lbl'|trans }}:
+                            – {{ 'person.medication.dosage.lbl'|trans }}:
                             {{ medication.dosage }}
                           {% endif %}
                           {% if  medication.consumption %}
-                            — ({{ 'person.medication.consumption.lbl'|trans }}:
+                            – ({{ 'person.medication.consumption.lbl'|trans }}:
                             {{ medication.consumption }})
                           {% endif %}
                           {% if medication.comment %}
                             <div>
-                              — {{ 'person.medication.comment.lbl'|trans }}:
+                              – {{ 'person.medication.comment.lbl'|trans }}:
                               {{ medication.comment }}
                             </div>
                           {% endif %}
                           {% if medication.emergencyNotes %}
                             <div>
-                              — {{ 'person.medication.emergencyNotes.lbl'|trans }}:
+                              – {{ 'person.medication.emergencyNotes.lbl'|trans }}:
                               {{ medication.emergencyNotes }}
                             </div>
                           {% endif %}
