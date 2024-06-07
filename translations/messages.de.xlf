@@ -1826,7 +1826,7 @@ Durch einen entsprechenden Zeitstempel im Notfall-Pass sowie regelmäßige Aktua
     <unit id="uSf25t8" name="person.weitereangaben.lbl">
       <segment>
         <source>person.weitereangaben.lbl</source>
-        <target>weitere Angaben</target>
+        <target>weitere Angaben z.B. Ablageort</target>
       </segment>
     </unit>
     <unit id="sND_BfY" name="Gewicht einheit">
