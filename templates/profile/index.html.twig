@@ -172,7 +172,7 @@
         <div class="col-12 col-md-10 col-lg-8">
           <hr />
           <h3>{{ 'profiles.shop.header'|trans }}</h3>
-          <p>{{ 'profiles.shop.description'|trans|raw|markdown_to_html }}</p>
+          {{ 'profiles.shop.description'|trans|raw|markdown_to_html }}
           <div class="text-start">
             <a
               class="btn btn-outline-dark px-3"
@@ -181,6 +181,7 @@
               aria-label="{{ 'profiles.shop.btn.lbl'|trans }}">
               {{ 'profiles.shop.btn.lbl'|trans }}
             </a>
+          </div>
         </div>
       </div>
 

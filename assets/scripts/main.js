@@ -5,6 +5,8 @@ import bootstrapTable from 'bootstrap-table';
 import bootstrapTableLocaleAll from 'bootstrap-table/dist/bootstrap-table-locale-all';
 import 'bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js';
 
+import './bootstrap-select/bootstrap-select';
+
 // modules
 import { cbAction, cbActionOnLoad } from './modules/cbAction';
 import { cbAjax } from './modules/cbAjax';
@@ -14,6 +16,7 @@ import { cbMessage } from './modules/cbMessage';
 import { cbModalButton } from './modules/cbModal';
 import { cbOffcanvasButton } from './modules/cbOffcanvas';
 import { cbUpload } from './modules/cbUpload';
+import { cbCategorySelection } from './modules/cbCategorySelection';
 
 // elements
 require('./elements/cbTimeago.js');
@@ -301,7 +304,11 @@ document.addEventListener(
             .from(ajaxForms)
             .forEach((el) => {
               cbForm(el);
+              cbCategorySelection(el);
             });
+
+          // jQuery('.condition-category-select').selectpicker({'liveSearch' : true});
+          // jQuery('.condition-title-select').selectpicker({'liveSearch' : true});
 
           // add listener for uploads
           Array
@@ -374,10 +381,19 @@ document.addEventListener(
 
               el.dataset.init = true;
             });
+
+          // document.getElementById('person_reanimation').addEventListener('change', (e) => {
+          //   let el = e.target;
+          //   const showContainer = document.getElementById('reanimationShowContainer');
+          //   if (el.value=='rea_condition') {
+          //     showContainer.classList.add('show');
+          //   } else {
+          //     showContainer.classList.remove('show');
+          //   }
+          // });
         },
         false
       );
-
 
     /*
      * page object event listener

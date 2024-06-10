@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="en">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="en">
   <file id="messages.en">
     <unit id="5LufHs6" name="Start">
       <segment>
@@ -1520,6 +1520,126 @@ Die CODE-No.com GmbH hat mit ID-No.com und dem digitalen Notfall-ID Pass eine ei
       <segment>
         <source>Save</source>
         <target>Save</target>
+      </segment>
+    </unit>
+    <unit id="VKOPU9q" name="person.allergie.kategorie.lbl">
+      <segment>
+        <source>person.allergie.kategorie.lbl</source>
+        <target>Category</target>
+      </segment>
+    </unit>
+    <unit id="60k7Rb3" name="person.allergie.anmerkungen.lbl">
+      <segment>
+        <source>person.allergie.anmerkungen.lbl</source>
+        <target>Comment</target>
+      </segment>
+    </unit>
+    <unit id="SjfMmjS" name="person.condition.new.lbl">
+      <segment>
+        <source>person.condition.new.lbl</source>
+        <target>add disease</target>
+      </segment>
+    </unit>
+    <unit id="1wJQxlA" name="person.medication.new.lbl">
+      <segment>
+        <source>person.medication.new.lbl</source>
+        <target>add medication</target>
+      </segment>
+    </unit>
+    <unit id="pJx25eL" name="Allergien">
+      <segment>
+        <source>Allergien</source>
+        <target>Allergies</target>
+      </segment>
+    </unit>
+    <unit id="n3xmpJj" name="person.allergy.new.lbl">
+      <segment>
+        <source>person.allergy.new.lbl</source>
+        <target>add allergy</target>
+      </segment>
+    </unit>
+    <unit id="nP5MZwS" name="person.condition.delete.lbl">
+      <segment>
+        <source>person.condition.delete.lbl</source>
+        <target>remove</target>
+      </segment>
+    </unit>
+    <unit id="PrrxzZC" name="person.medication.delete.lbl">
+      <segment>
+        <source>person.medication.delete.lbl</source>
+        <target>remove</target>
+      </segment>
+    </unit>
+    <unit id="j8eXSE2" name="person.allergy.delete.lbl">
+      <segment>
+        <source>person.allergy.delete.lbl</source>
+        <target>remove</target>
+      </segment>
+    </unit>
+    <unit id="OGJBvgS" name="person.allergy.category.lbl">
+      <segment>
+        <source>person.allergy.category.lbl</source>
+        <target>Category</target>
+      </segment>
+    </unit>
+    <unit id="f42TX.Y" name="person.allergy.comment.lbl">
+      <segment>
+        <source>person.allergy.comment.lbl</source>
+        <target>Comment allergy</target>
+      </segment>
+    </unit>
+    <unit id="v1BIxhx" name="person.condition.category.lbl">
+      <segment>
+        <source>person.condition.category.lbl</source>
+        <target>Category</target>
+      </segment>
+    </unit>
+    <unit id="EMyFxt4" name="person.condition.title.lbl">
+      <segment>
+        <source>person.condition.title.lbl</source>
+        <target>Type</target>
+      </segment>
+    </unit>
+    <unit id="Am8yK5v" name="person.condition.comment.lbl">
+      <segment>
+        <source>person.condition.comment.lbl</source>
+        <target>Comment disease</target>
+      </segment>
+    </unit>
+    <unit id="loi5AkI" name="person.medication.ingredient.lbl">
+      <segment>
+        <source>person.medication.ingredient.lbl</source>
+        <target>Active ingredient</target>
+      </segment>
+    </unit>
+    <unit id="noeOV7K" name="person.medication.tradeName.lbl">
+      <segment>
+        <source>person.medication.tradeName.lbl</source>
+        <target>Trade name</target>
+      </segment>
+    </unit>
+    <unit id="l0iUzXL" name="person.medication.dosage.lbl">
+      <segment>
+        <source>person.medication.dosage.lbl</source>
+        <target>Dosage</target>
+      </segment>
+    </unit>
+    <unit id="iebqg0F" name="person.medication.consumption.lbl">
+      <segment>
+        <source>person.medication.consumption.lbl</source>
+        <target>Consumption</target>
+      </segment>
+    </unit>
+    <unit id="eAn7va8" name="person.medication.comment.lbl">
+      <segment>
+        <source>person.medication.comment.lbl</source>
+        <target>Reason</target>
+      </segment>
+    </unit>
+    <unit id="D3yOiQD" name="person.medication.emergencyNotes.lbl">
+      <segment>
+        <source>person.medication.emergencyNotes.lbl</source>
+        <target>Note in emergency</target>
       </segment>
     </unit>
     <unit id="8QBTTol" name="items.table.noStatus.lbl">
@@ -3767,7 +3887,7 @@ Feel free to take a look.</target>
     <unit id="ZgEYCtw" name="person.operations.lbl">
       <segment>
         <source>person.operations.lbl</source>
-        <target>Operations/surgeries (incl. date and location)</target>
+        <target>Comment (incl. date and location)</target>
       </segment>
     </unit>
     <unit id="TnXrVv3" name="index.carousel.slide.xmas_1.caption">
@@ -4177,6 +4297,552 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
       <segment>
         <source>items.person.lbl</source>
         <target>Profile</target>
+      </segment>
+    </unit>
+    <unit id="bf.OUs." name="Herz-Kreislauf-Erkrankungen">
+      <segment>
+        <source>Herz-Kreislauf-Erkrankungen</source>
+        <target>Herz-Kreislauf-Erkrankungen</target>
+      </segment>
+    </unit>
+    <unit id="kRZ4Ffc" name="Neurologische/ Psychische Erkrankungen">
+      <segment>
+        <source>Neurologische/ Psychische Erkrankungen</source>
+        <target>Neurologische/ Psychische Erkrankungen</target>
+      </segment>
+    </unit>
+    <unit id="5ZGpFWt" name="Krebs">
+      <segment>
+        <source>Krebs</source>
+        <target>Krebs</target>
+      </segment>
+    </unit>
+    <unit id="2b0VEKV" name="Atemwegserkrankungen">
+      <segment>
+        <source>Atemwegserkrankungen</source>
+        <target>Atemwegserkrankungen</target>
+      </segment>
+    </unit>
+    <unit id="2NZQDTK" name="Stoffwechselerkrankungen">
+      <segment>
+        <source>Stoffwechselerkrankungen</source>
+        <target>Stoffwechselerkrankungen</target>
+      </segment>
+    </unit>
+    <unit id="ka_rstZ" name="Muskel-/ Skelettsystem">
+      <segment>
+        <source>Muskel-/ Skelettsystem</source>
+        <target>Muskel-/ Skelettsystem</target>
+      </segment>
+    </unit>
+    <unit id="B6euW66" name="Autoimmunerkrankungen">
+      <segment>
+        <source>Autoimmunerkrankungen</source>
+        <target>Autoimmunerkrankungen</target>
+      </segment>
+    </unit>
+    <unit id="KoYriKj" name="Nierenerkrankungen">
+      <segment>
+        <source>Nierenerkrankungen</source>
+        <target>Nierenerkrankungen</target>
+      </segment>
+    </unit>
+    <unit id="TBFXDuN" name="Herzinfarkt">
+      <segment>
+        <source>Herzinfarkt</source>
+        <target>Herzinfarkt</target>
+      </segment>
+    </unit>
+    <unit id="CymuODK" name="Bluthochdruck">
+      <segment>
+        <source>Bluthochdruck</source>
+        <target>Bluthochdruck</target>
+      </segment>
+    </unit>
+    <unit id="UQwT3fU" name="Angina Pectoris">
+      <segment>
+        <source>Angina Pectoris</source>
+        <target>Angina Pectoris</target>
+      </segment>
+    </unit>
+    <unit id="qvnjROz" name="Herzinsuffizienz und andere kardiovaskuläre Probleme">
+      <segment>
+        <source>Herzinsuffizienz und andere kardiovaskuläre Probleme</source>
+        <target>Herzinsuffizienz und andere kardiovaskuläre Probleme</target>
+      </segment>
+    </unit>
+    <unit id="_jjutQG" name="Herzrhythmusstörung">
+      <segment>
+        <source>Herzrhythmusstörung</source>
+        <target>Herzrhythmusstörung</target>
+      </segment>
+    </unit>
+    <unit id="uh0mZ6u" name="Herzmuskelentzündung">
+      <segment>
+        <source>Herzmuskelentzündung</source>
+        <target>Herzmuskelentzündung</target>
+      </segment>
+    </unit>
+    <unit id="HdhMx3." name="KHK">
+      <segment>
+        <source>KHK</source>
+        <target>KHK</target>
+      </segment>
+    </unit>
+    <unit id="HD8nfbl" name="Schlaganfall">
+      <segment>
+        <source>Schlaganfall</source>
+        <target>Schlaganfall</target>
+      </segment>
+    </unit>
+    <unit id="K2Wbd.A" name="Demenz">
+      <segment>
+        <source>Demenz</source>
+        <target>Demenz</target>
+      </segment>
+    </unit>
+    <unit id="JIwxW7a" name="Alzheimer">
+      <segment>
+        <source>Alzheimer</source>
+        <target>Alzheimer</target>
+      </segment>
+    </unit>
+    <unit id="Wi_KQjC" name="Depressionen">
+      <segment>
+        <source>Depressionen</source>
+        <target>Depressionen</target>
+      </segment>
+    </unit>
+    <unit id="CFFZk8v" name="Angststörungen">
+      <segment>
+        <source>Angststörungen</source>
+        <target>Angststörungen</target>
+      </segment>
+    </unit>
+    <unit id="LazsbLq" name="Lungenkrebs">
+      <segment>
+        <source>Lungenkrebs</source>
+        <target>Lungenkrebs</target>
+      </segment>
+    </unit>
+    <unit id="s1FaGCo" name="Brustkrebs">
+      <segment>
+        <source>Brustkrebs</source>
+        <target>Brustkrebs</target>
+      </segment>
+    </unit>
+    <unit id="y7aop5s" name="Darmkrebs">
+      <segment>
+        <source>Darmkrebs</source>
+        <target>Darmkrebs</target>
+      </segment>
+    </unit>
+    <unit id="bitPnqf" name="Gebärmutterhalskrebs">
+      <segment>
+        <source>Gebärmutterhalskrebs</source>
+        <target>Gebärmutterhalskrebs</target>
+      </segment>
+    </unit>
+    <unit id="fkDjH4O" name="Prostatakrebs">
+      <segment>
+        <source>Prostatakrebs</source>
+        <target>Prostatakrebs</target>
+      </segment>
+    </unit>
+    <unit id="Gp6pcet" name="Blasenkrebs">
+      <segment>
+        <source>Blasenkrebs</source>
+        <target>Blasenkrebs</target>
+      </segment>
+    </unit>
+    <unit id="kaFNDWc" name="Hautkrebs">
+      <segment>
+        <source>Hautkrebs</source>
+        <target>Hautkrebs</target>
+      </segment>
+    </unit>
+    <unit id="iP6UFCN" name="Nierenzellkarzinom">
+      <segment>
+        <source>Nierenzellkarzinom</source>
+        <target>Nierenzellkarzinom</target>
+      </segment>
+    </unit>
+    <unit id="vSe7.Uc" name="Schilddrüsenkrebs">
+      <segment>
+        <source>Schilddrüsenkrebs</source>
+        <target>Schilddrüsenkrebs</target>
+      </segment>
+    </unit>
+    <unit id="JuMRhC8" name="Lungenerkrankung (COPD)">
+      <segment>
+        <source>Lungenerkrankung (COPD)</source>
+        <target>Lungenerkrankung (COPD)</target>
+      </segment>
+    </unit>
+    <unit id="2Dz16RK" name="Asthma">
+      <segment>
+        <source>Asthma</source>
+        <target>Asthma</target>
+      </segment>
+    </unit>
+    <unit id="aGwfcRL" name="chronische Bronchitis">
+      <segment>
+        <source>chronische Bronchitis</source>
+        <target>chronische Bronchitis</target>
+      </segment>
+    </unit>
+    <unit id="MgjrdoE" name="Struma">
+      <segment>
+        <source>Struma</source>
+        <target>Struma</target>
+      </segment>
+    </unit>
+    <unit id="CeJHmln" name="Morbus Basedow">
+      <segment>
+        <source>Morbus Basedow</source>
+        <target>Morbus Basedow</target>
+      </segment>
+    </unit>
+    <unit id="snm7c8n" name="Hashimoto-Thyreoditis">
+      <segment>
+        <source>Hashimoto-Thyreoditis</source>
+        <target>Hashimoto-Thyreoditis</target>
+      </segment>
+    </unit>
+    <unit id="dHd4DYq" name="Überfunktion">
+      <segment>
+        <source>Überfunktion</source>
+        <target>Überfunktion</target>
+      </segment>
+    </unit>
+    <unit id="3M9LCJQ" name="Unterfunktion">
+      <segment>
+        <source>Unterfunktion</source>
+        <target>Unterfunktion</target>
+      </segment>
+    </unit>
+    <unit id="2SuvXDw" name="Diabetes Typ 1">
+      <segment>
+        <source>Diabetes Typ 1</source>
+        <target>Diabetes Typ 1</target>
+      </segment>
+    </unit>
+    <unit id="OELSIbH" name="Diabetes Typ 2">
+      <segment>
+        <source>Diabetes Typ 2</source>
+        <target>Diabetes Typ 2</target>
+      </segment>
+    </unit>
+    <unit id="d_PNibD" name="Arthritis">
+      <segment>
+        <source>Arthritis</source>
+        <target>Arthritis</target>
+      </segment>
+    </unit>
+    <unit id="fStPy4g" name="Arthrose">
+      <segment>
+        <source>Arthrose</source>
+        <target>Arthrose</target>
+      </segment>
+    </unit>
+    <unit id="0_4e.jA" name="Osteoporose">
+      <segment>
+        <source>Osteoporose</source>
+        <target>Osteoporose</target>
+      </segment>
+    </unit>
+    <unit id="RggT4Os" name="Rheuma">
+      <segment>
+        <source>Rheuma</source>
+        <target>Rheuma</target>
+      </segment>
+    </unit>
+    <unit id="EIYnJUJ" name="Lupus">
+      <segment>
+        <source>Lupus</source>
+        <target>Lupus</target>
+      </segment>
+    </unit>
+    <unit id="JYFxGDG" name="Morbus Crohn">
+      <segment>
+        <source>Morbus Crohn</source>
+        <target>Morbus Crohn</target>
+      </segment>
+    </unit>
+    <unit id="ccIR9Pt" name="Zöliakie">
+      <segment>
+        <source>Zöliakie</source>
+        <target>Zöliakie</target>
+      </segment>
+    </unit>
+    <unit id="bBocz6q" name="Colitis ulcerosa">
+      <segment>
+        <source>Colitis ulcerosa</source>
+        <target>Colitis ulcerosa</target>
+      </segment>
+    </unit>
+    <unit id="UGRqO.h" name="Akute Niereninsuffizienz">
+      <segment>
+        <source>Akute Niereninsuffizienz</source>
+        <target>Akute Niereninsuffizienz</target>
+      </segment>
+    </unit>
+    <unit id="S4brTEC" name="Chronische Niereninsuffizienz">
+      <segment>
+        <source>Chronische Niereninsuffizienz</source>
+        <target>Chronische Niereninsuffizienz</target>
+      </segment>
+    </unit>
+    <unit id="VFH3hnT" name="Diabetische Nephropathie">
+      <segment>
+        <source>Diabetische Nephropathie</source>
+        <target>Diabetische Nephropathie</target>
+      </segment>
+    </unit>
+    <unit id="HhaUQMd" name="Morbus Addison">
+      <segment>
+        <source>Morbus Addison</source>
+        <target>Morbus Addison</target>
+      </segment>
+    </unit>
+    <unit id="1G_cw1r" name="Nierenbeckenentzündung (Pyelonephritis)">
+      <segment>
+        <source>Nierenbeckenentzündung (Pyelonephritis)</source>
+        <target>Nierenbeckenentzündung (Pyelonephritis)</target>
+      </segment>
+    </unit>
+    <unit id="yqYvoha" name="Nierensteine">
+      <segment>
+        <source>Nierensteine</source>
+        <target>Nierensteine</target>
+      </segment>
+    </unit>
+    <unit id="dCL3IMi" name="Nierenszysten">
+      <segment>
+        <source>Nierenszysten</source>
+        <target>Nierenszysten</target>
+      </segment>
+    </unit>
+    <unit id="MaHAplL" name="Dialysepflicht">
+      <segment>
+        <source>Dialysepflicht</source>
+        <target>Dialysepflicht</target>
+      </segment>
+    </unit>
+    <unit id="56pvBSz" name="Andere">
+      <segment>
+        <source>Andere</source>
+        <target>Andere</target>
+      </segment>
+    </unit>
+    <unit id="le023yQ" name="__name__label__">
+      <segment>
+        <source>__name__label__</source>
+        <target>__name__label__</target>
+      </segment>
+    </unit>
+    <unit id="X_zrZv." name="0">
+      <segment>
+        <source>0</source>
+        <target>0</target>
+      </segment>
+    </unit>
+    <unit id="a4ayc.8" name="1">
+      <segment>
+        <source>1</source>
+        <target>1</target>
+      </segment>
+    </unit>
+    <unit id="H6FzitV" name="Insektengift">
+      <segment>
+        <source>Insektengift</source>
+        <target>Insektengift</target>
+      </segment>
+    </unit>
+    <unit id="B20Ts9d" name="Pollen">
+      <segment>
+        <source>Pollen</source>
+        <target>Pollen</target>
+      </segment>
+    </unit>
+    <unit id="UU3vPCs" name="Hausstaubmilben">
+      <segment>
+        <source>Hausstaubmilben</source>
+        <target>Hausstaubmilben</target>
+      </segment>
+    </unit>
+    <unit id="2WCclJ6" name="Tiere">
+      <segment>
+        <source>Tiere</source>
+        <target>Tiere</target>
+      </segment>
+    </unit>
+    <unit id="E9_p2Th" name="Nahrungs">
+      <segment>
+        <source>Nahrungs</source>
+        <target>Nahrungs</target>
+      </segment>
+    </unit>
+    <unit id="XKjdzk5" name="Schimmel">
+      <segment>
+        <source>Schimmel</source>
+        <target>Schimmel</target>
+      </segment>
+    </unit>
+    <unit id="CCubpaX" name="Kontaktstoffe">
+      <segment>
+        <source>Kontaktstoffe</source>
+        <target>Kontaktstoffe</target>
+      </segment>
+    </unit>
+    <unit id="eRUBO5e" name="person.condition.lbl">
+      <segment>
+        <source>person.condition.lbl</source>
+        <target>Disease</target>
+      </segment>
+    </unit>
+    <unit id="sh61ir9" name="person.medication.lbl">
+      <segment>
+        <source>person.medication.lbl</source>
+        <target>Medikament</target>
+      </segment>
+    </unit>
+    <unit id="cJgRo.Q" name="person.allergy.lbl">
+      <segment>
+        <source>person.allergy.lbl</source>
+        <target>Allergie</target>
+      </segment>
+    </unit>
+    <unit id="ijf53JO" name="person.importantNote.lbl">
+      <segment>
+        <source>person.importantNote.lbl</source>
+        <target>Please pay attention to:</target>
+      </segment>
+    </unit>
+    <unit id="F7xOzXs" name="person.pacemaker.lbl">
+      <segment>
+        <source>person.pacemaker.lbl</source>
+        <target>Pacemaker</target>
+      </segment>
+    </unit>
+    <unit id="HT1qsnT" name="person.pacemakerComment.lbl">
+      <segment>
+        <source>person.pacemakerComment.lbl</source>
+        <target>Comment pacemaker</target>
+      </segment>
+    </unit>
+    <unit id="Y_nBBYy" name="person.pregnancy.lbl">
+      <segment>
+        <source>person.pregnancy.lbl</source>
+        <target>Pregnancy</target>
+      </segment>
+    </unit>
+    <unit id="rtAG2h1" name="person.pregnancyComment.lbl">
+      <segment>
+        <source>person.pregnancyComment.lbl</source>
+        <target>Comment pregnancy</target>
+      </segment>
+    </unit>
+    <unit id="E4nSPrc" name="person.operationsActive.lbl">
+      <segment>
+        <source>person.operationsActive.lbl</source>
+        <target>Operations/surgeries</target>
+      </segment>
+    </unit>
+    <unit id=".aFyrCo" name="person.patientenverfComment.lbl">
+      <segment>
+        <source>person.patientenverfComment.lbl</source>
+        <target>Comment patient directive</target>
+      </segment>
+    </unit>
+    <unit id="nEBp4uP" name="person.conditionsActive.lbl">
+      <segment>
+        <source>person.conditionsActive.lbl</source>
+        <target>Diseases</target>
+      </segment>
+    </unit>
+    <unit id="k1Qk59y" name="person.reanimation.choose.lbl">
+      <segment>
+        <source>person.reanimation.choose.lbl</source>
+        <target>n/a</target>
+      </segment>
+    </unit>
+    <unit id="VLEkEPa" name="person.reanimation.always">
+      <segment>
+        <source>person.reanimation.always</source>
+        <target>Always</target>
+      </segment>
+    </unit>
+    <unit id="w76UbCj" name="person.reanimation.never">
+      <segment>
+        <source>person.reanimation.never</source>
+        <target>Reanimation: never</target>
+      </segment>
+    </unit>
+    <unit id="iJwbFPg" name="person.reanimation.inTheseCases">
+      <segment>
+        <source>person.reanimation.inTheseCases</source>
+        <target>Reanimation: only in these cases</target>
+      </segment>
+    </unit>
+    <unit id="urjMdWt" name="person.reanimation.lbl">
+      <segment>
+        <source>person.reanimation.lbl</source>
+        <target>Reanimation</target>
+      </segment>
+    </unit>
+    <unit id="BcKt6w7" name="person.medicationsActive.lbl">
+      <segment>
+        <source>person.medicationsActive.lbl</source>
+        <target>Medications</target>
+      </segment>
+    </unit>
+    <unit id="Awe5phA" name="person.allergiesActive.lbl">
+      <segment>
+        <source>person.allergiesActive.lbl</source>
+        <target>Allergies</target>
+      </segment>
+    </unit>
+    <unit id="A3E_X2i" name="person.reanimationComment.lbl">
+      <segment>
+        <source>person.reanimationComment.lbl</source>
+        <target>Reanimation in these cases</target>
+      </segment>
+    </unit>
+    <unit id="W7wpO.H" name="person.action.edit.error">
+      <segment>
+        <source>person.action.edit.error</source>
+        <target>person.action.edit.error</target>
+      </segment>
+    </unit>
+    <unit id="NCZUcJd" name="person.organspenderComment.lbl">
+      <segment>
+        <source>person.organspenderComment.lbl</source>
+        <target>Comment organ donor</target>
+      </segment>
+    </unit>
+    <unit id="_tMakEK" name="person.reanimation.rea_always">
+      <segment>
+        <source>person.reanimation.rea_always</source>
+        <target>Reanimation: always</target>
+      </segment>
+    </unit>
+    <unit id="PTQeJDr" name="Keine genannt">
+      <segment>
+        <source>Keine genannt</source>
+        <target>None mentioned</target>
+      </segment>
+    </unit>
+    <unit id="CsLq_wp" name="person.reanimation.rea_condition">
+      <segment>
+        <source>person.reanimation.rea_condition</source>
+        <target>person.reanimation.rea_condition</target>
+      </segment>
+    </unit>
+    <unit id="TQPbOTz" name="nein">
+      <segment>
+        <source>nein</source>
+        <target>no</target>
       </segment>
     </unit>
   </file>

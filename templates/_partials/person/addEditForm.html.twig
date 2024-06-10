@@ -1,3 +1,18 @@
+{% import _self as formMacros %}
+
+{# macros for item form containers #}
+{% macro conditionItemFormContainer(item, loop) %}
+  {% include '_partials/person/conditionItem.html.twig' %}
+{% endmacro %}
+
+{% macro medicationItemFormContainer(item, loop) %}
+  {% include '_partials/person/medicationItem.html.twig' %}
+{% endmacro %}
+
+{% macro allergyItemFormContainer(item, loop) %}
+  {% include '_partials/person/allergyItem.html.twig' %}
+{% endmacro %}
+
 {{ form_errors(form) }}
 
 <div class="row">
@@ -187,7 +202,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row pass-data">
   <div class="col bg-dark rounded">
     <h4 class="text-light my-3">{{ 'person.medicalDetails.lbl'|trans }}</h4>
     <div class="row">
@@ -200,29 +215,168 @@
     </div>
 
     <div class="row">
-      <div class="col-9">
-        {{ form_row(form.erkrankungen) }}
+      <div class="col-9 text-light">
+        {{ form_row(form.conditionsActive) }}
       </div>
-      <div class="col-3 text-light">
+      {#<div class="col-9">
+        <h4 class="sub-head">{{ 'Erkrankungen'|trans }}</h4>
+      </div>#}
+      <div class="col-3 text-light pt-3">
         {{ form_row(form.erkrankungenShow) }}
+      </div>
+    </div>
+    <div id="conditionsShowContainer" class="collapse {% if form.conditionsActive.vars.checked %}show{% endif %}">
+      <div class="row">
+        <div class="col-9">
+          {% if field_value(form.erkrankungen) %}
+            {{ form_row(form.erkrankungen) }}
+          {% else %}
+            <div class="d-none">
+              {{ form_row(form.erkrankungen) }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      {#
+      <div class="row">
+        <div class="col-9">
+          <ul id="person_passEntryConditions"
+            class="pass-entry-list row"
+            data-index="{{ form.passEntryConditions|length > 0 ? form.passEntryConditions|last.vars.name + 1 : 0 }}"
+            data-prototype="{{ form_row(form.passEntryConditions.vars.prototype)|e('html_attr') }}">
+            {% for key, entry in form.passEntryConditions %}
+                <li>
+                  {{ form_row(entry) }}
+                </li>
+            {% endfor %}
+          </ul>
+          {% do form.passEntryConditions.setRendered() %}
+        </div>
+      </div>
+      #}    
+
+      <ul id="person_passEntryConditions"
+        class="pass-entry-list row"
+        data-index="{{ form.passEntryConditions|length > 0 ? form.passEntryConditions|last.vars.name + 1 : 0 }}"
+        data-prototype="{{ formMacros.conditionItemFormContainer(form.passEntryConditions.vars.prototype, 1)|spaceless|e('html_attr') }}">
+        {% for entry in form.passEntryConditions %}
+            <li>
+              {{ formMacros.conditionItemFormContainer(entry, loop.index) }}
+            </li>
+        {% endfor %}
+      </ul>
+      {% do form.passEntryConditions.setRendered() %}
+
+      <div class="row">
+        <div class="col-9">
+          <button type="button" class="btn add-item-widget mb-3" data-list-selector="person_passEntryConditions">{{ 'person.condition.new.lbl'|trans }}</button>
+        </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-9">
-        {{ form_row(form.medikamente) }}
+      <div class="col-9 text-light">
+        {{ form_row(form.medicationsActive) }}
       </div>
-      <div class="col-3 text-light">
+      {#<div class="col-9">
+        <h4 class="sub-head">{{ 'Medikamente'|trans }}</h4>
+      </div>#}
+      <div class="col-3 text-light pt-3">
         {{ form_row(form.medikamenteShow) }}
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-9">
-        {{ form_row(form.allergieen) }}
+    <div id="medicationsShowContainer" class="collapse {% if form.medicationsActive.vars.checked %}show{% endif %}">
+      <div class="row">
+        <div class="col-9">
+          {% if field_value(form.medikamente) %}
+            {{ form_row(form.medikamente) }}
+          {% else %}
+            <div class="d-none">
+              {{ form_row(form.medikamente) }}
+            </div>
+          {% endif %}
+        </div>
       </div>
-      <div class="col-3 text-light">
+
+      <ul id="person_passEntryMedications"
+        class="pass-entry-list"
+        data-index="{{ form.passEntryMedications|length > 0 ? form.passEntryMedications|last.vars.name + 1 : 0 }}"
+        data-prototype="{{ formMacros.medicationItemFormContainer(form.passEntryMedications.vars.prototype, 1)|spaceless|e('html_attr') }}">
+        {% for entry in form.passEntryMedications %}
+            <li>
+              {{ formMacros.medicationItemFormContainer(entry, loop.index) }}
+            </li>
+        {% endfor %}
+      </ul>
+
+      {% do form.passEntryMedications.setRendered() %}        
+
+      <div class="row">
+        <div class="col-9">
+          <button type="button" class="btn add-item-widget mb-3" data-list-selector="person_passEntryMedications">{{ 'person.medication.new.lbl'|trans }}</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9 text-light">
+        {{ form_row(form.allergiesActive) }}
+      </div>
+      {#<div class="col-9">
+        <h4 class="sub-head">{{ 'Allergien'|trans }}</h4>
+      </div>#}
+      <div class="col-3 text-light pt-3">
         {{ form_row(form.allergieenShow) }}
+      </div>
+    </div>
+
+    <div id="allergiesShowContainer" class="collapse {% if form.allergiesActive.vars.checked %}show{% endif %}">
+      <div class="row">
+        <div class="col-9">
+          {% if field_value(form.allergieen) %}
+            {{ form_row(form.allergieen) }}
+          {% else %}
+            <div class="d-none">
+              {{ form_row(form.allergieen) }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      {#
+      <div class="row">
+        <div class="col-9">
+          <ul id="person_passEntryAllergies"
+            class="pass-entry-list"
+            data-index="{{ form.passEntryAllergies|length > 0 ? form.passEntryAllergies|last.vars.name + 1 : 0 }}"
+            data-prototype="{{ form_row(form.passEntryAllergies.vars.prototype)|e('html_attr') }}">
+            {% for entry in form.passEntryAllergies %}
+                <li>{{ form_row(entry) }}</li>
+            {% endfor %}
+          </ul>
+          {% do form.passEntryAllergies.setRendered() %}
+        </div>
+      </div>
+      #}
+
+      <ul id="person_passEntryAllergies"
+        class="pass-entry-list"
+        data-index="{{ form.passEntryAllergies|length > 0 ? form.passEntryAllergies|last.vars.name + 1 : 0 }}"
+        data-prototype="{{ formMacros.allergyItemFormContainer(form.passEntryAllergies.vars.prototype, 1)|spaceless|e('html_attr') }}">
+        {% for entry in form.passEntryAllergies %}
+            <li>
+              {{ formMacros.allergyItemFormContainer(entry, loop.index) }}
+            </li>
+        {% endfor %}
+      </ul>
+      {% do form.passEntryAllergies.setRendered() %}
+
+
+      <div class="row">
+        <div class="col-9">
+          <button type="button" class="btn add-item-widget mb-3" data-list-selector="person_passEntryAllergies">{{ 'person.allergy.new.lbl'|trans }}</button>
+        </div>
       </div>
     </div>
 
@@ -250,12 +404,129 @@
       </div>
     </div>
 
+    {#
+    <h4 class="sub-head small">{{ 'person.operationsActive.lbl'|trans }}</h4>
     <div class="row">
-      <div class="col-9">
+      <div class="col-1">
+        {{ form_row(form.operationsActive) }}
+      </div>
+      <div class="col-8">
         {{ form_row(form.operations) }}
       </div>
       <div class="col-3 text-light">
         {{ form_row(form.operationsShow) }}
+      </div>
+    </div>
+    #}
+
+    <div class="row">
+      <div class="col-9 text-light">
+        {{ form_row(form.operationsActive) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.operationsShow) }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-8 collapse {% if form.operationsActive.vars.checked %}show{% endif %}" id="operationsShowContainer">
+        {{ form_row(form.operations) }}
+      </div>
+    </div>
+
+    <h4 class="text-light my-3">{{ 'person.morePatientDetails.lbl'|trans }}</h4>
+    <div class="row">
+      <div class="col-9">
+        {{ form_row(form.importantNote) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.importantNoteShow) }}
+      </div>
+    </div>
+
+  {#
+    <div class="row">
+      <div class="col-9">
+        {{ form_row(form.reanimation) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.reanimationShow) }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-8 collapse {% if field_value(form.reanimation)=='rea_condition' %}show{% endif %}" id="reanimationShowContainer">
+        {{ form_row(form.reanimationComment) }}
+      </div>
+    </div>
+  #}
+
+    <div class="row">
+      <div class="col-9 text-light">
+        {{ form_row(form.pacemaker) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.pacemakerShow) }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-8 collapse {% if form.pacemaker.vars.checked %}show{% endif %}" id="pacemakerShowContainer">
+        {{ form_row(form.pacemakerComment) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9 text-light">
+        {{ form_row(form.pregnancy) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.pregnancyShow) }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-8 collapse {% if form.pregnancy.vars.checked %}show{% endif %}" id="pregnancyShowContainer">
+        {{ form_row(form.pregnancyComment) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9 text-light">
+        {{ form_row(form.organspender) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.organspenderShow) }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-8 collapse {% if form.organspender.vars.checked %}show{% endif %}" id="organspenderShowContainer">
+        {{ form_row(form.organspenderComment) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9 text-light">
+        {{ form_row(form.patientenverf) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.patientenverfShow) }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-8 collapse {% if form.patientenverf.vars.checked %}show{% endif %}" id="patientenverfShowContainer">
+        {{ form_row(form.patientenverfComment) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-9">
+        {{ form_row(form.weitereangaben) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.weitereangabenShow) }}
       </div>
     </div>
 
@@ -287,32 +558,5 @@
       </div>
     </div>
 
-    <h4 class="text-light my-3">{{ 'person.morePatientDetails.lbl'|trans }}</h4>
-    <div class="row mb-3">
-      <div class="col-9 text-light">
-        {{ form_row(form.organspender) }}
-      </div>
-      <div class="col-3 text-light">
-        {{ form_row(form.organspenderShow) }}
-      </div>
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-9 text-light">
-        {{ form_row(form.patientenverf) }}
-      </div>
-      <div class="col-3 text-light">
-        {{ form_row(form.patientenverfShow) }}
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-9">
-        {{ form_row(form.weitereangaben) }}
-      </div>
-      <div class="col-3 text-light">
-        {{ form_row(form.weitereangabenShow) }}
-      </div>
-    </div>
   </div>
 </div>
