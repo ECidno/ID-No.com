@@ -8,7 +8,7 @@ import 'bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.min.js';
 import './bootstrap-select/bootstrap-select';
 
 // modules
-import { cbAction, cbActionOnLoad } from './modules/cbAction';
+import { cbAction, cbActionOnLoad, cbActionWithConfirm } from './modules/cbAction';
 import { cbAjax } from './modules/cbAjax';
 import { cbForm } from './modules/cbForm';
 import { cbMap, cbMapLocationError } from './modules/cbMap';
@@ -23,6 +23,7 @@ require('./elements/cbTimeago.js');
 
 // const's
 const ajaxAction = document.getElementsByClassName('ajax-action') || [];
+const ajaxModalAction = document.getElementsByClassName('ajax-modal-action') || [];
 const ajaxActionOnLoad = document.getElementsByClassName('ajax-action-onload') || [];
 const ajaxForms = document.getElementsByClassName('ajax-form') || [];
 const ajaxModal = document.getElementsByClassName('ajax-modal') || [];
@@ -309,6 +310,13 @@ document.addEventListener(
 
           // jQuery('.condition-category-select').selectpicker({'liveSearch' : true});
           // jQuery('.condition-title-select').selectpicker({'liveSearch' : true});
+
+          // add listener for action buttons
+          Array
+            .from(ajaxModalAction)
+            .forEach((el) => {
+              cbActionWithConfirm(el);
+            });
 
           // add listener for uploads
           Array

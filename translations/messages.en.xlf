@@ -4845,5 +4845,23 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
         <target>no</target>
       </segment>
     </unit>
+    <unit id="z9EDSBW" name="person.action.imageremove.success">
+      <segment>
+        <source>person.action.imageremove.success</source>
+        <target>Image deleted successfully</target>
+      </segment>
+    </unit>
+    <unit id="xNcPOAq" name="person.imageRemove.lbl">
+      <segment>
+        <source>person.imageRemove.lbl</source>
+        <target>Delete image</target>
+      </segment>
+    </unit>
+    <unit id="KJBgFNm" name="person.imageRemove.confirm.lbl">
+      <segment>
+        <source>person.imageRemove.confirm.lbl</source>
+        <target>Really delete the image?</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
