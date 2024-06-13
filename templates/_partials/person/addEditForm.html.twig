@@ -193,6 +193,18 @@
         </div>
       </progressItem>
     </div>
+
+    <div class="text-end image-remove-container {% if person.imageSrc is defined and person.imageSrc == 'null' %}d-none{% endif %}">
+      <a
+        class="ajax-modal-action btn btn-outline-success"
+        data-url="{{ path('app_api_person_image_remove', { id:person.id })}}"
+        data-method="POST"
+        data-confirm="{{ 'person.imageRemove.confirm.lbl'|trans }}"
+        >
+        {{ 'person.imageRemove.lbl'|trans }}
+      </a>
+    </div>
+
     {#{ form_row(form.personImage) }#}
   </div>
   <div class="col-3">

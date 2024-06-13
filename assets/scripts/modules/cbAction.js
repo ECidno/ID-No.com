@@ -43,6 +43,57 @@ const cbAction = (el) => {
   el.dataset.initialized = true;
 }
 
+/**
+ * cloudbase | action
+ *
+ * @param object el
+ */
+const cbActionWithConfirm = (el) => {
+  let initialized = el.dataset.initialized || false
+  const url = el.dataset.url;
+  const confirmMessage = el.dataset.confirm;
+  const options = {
+    method: el.dataset.method || 'GET'
+  };
+
+  // initalized?
+  if(initialized) {
+    return;
+  }
+
+  // listener
+  el.addEventListener(
+    'click',
+    e => {
+      if (confirmMessage) {
+        if (confirm(confirmMessage)) {
+          cbAjax(url, options)
+            .then(res => {
+              cbSuccessActions(res, el);
+            })
+
+            // catch
+            .catch(err => {
+              console.warn(err);
+            });
+        }
+      } else {
+        cbAjax(url, options)
+        .then(res => {
+          cbSuccessActions(res, el);
+        })
+
+        // catch
+        .catch(err => {
+          console.warn(err);
+        });
+      }
+    }
+  );
+
+  // set init
+  el.dataset.initialized = true;
+}
 
 /**
  * cloudbase | action on load
@@ -180,4 +231,4 @@ const cbSuccessActions = (response, el) => {
 
 
 // export
-export { cbAction, cbActionOnLoad, cbSuccessActions }
+export { cbAction, cbActionOnLoad, cbActionWithConfirm, cbSuccessActions }

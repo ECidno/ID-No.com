@@ -633,6 +633,62 @@ class PersonApiController extends AbstractApiController
         );
     }
 
+    /**
+     * image remove
+     *
+     * @param Request $request
+     * @param int $id
+     *
+     * @return JsonResponse
+     *
+     * @Route("/image_remove/{id}", name="image_remove", methods={"POST"})
+     */
+    public function imageRemove(Request $request, int $id): JsonResponse
+    {
+        // person
+        $person = $this->emDefault
+            ->getRepository(Person::class)
+            ->find($id);
+
+        // voter
+        $this->denyAccessUnlessGranted('upload', $person);
+
+        $em = $this->emDefault;
+        /**
+         * @var PersonImages $image
+         */
+        $image = $em
+            ->getRepository(PersonImages::class)
+            ->findBy(['person' => $id]);
+
+        // image?
+        if ($image) {
+            $image = $image[0];
+            
+            $oldImagePath = $this->getParameter('userimages_directory').'/'.$image->getBild();
+            $filesystem = new Filesystem();
+            if ($filesystem->exists($oldImagePath)) {
+                $filesystem->remove($oldImagePath);
+            }
+            $em->remove($image);
+            $em->flush();
+        }
+
+        $message = $this->translator->trans(
+            $this->getTranslateKey('action.imageRemove.success')
+        );
+        $result = Response::HTTP_OK;
+
+        // return
+        return $this->json(
+            [
+                'message' => $message,
+                'html' => ' ',
+                'target' => '.userIconContainer',
+            ],
+            $result
+        );
+    }
 
     /**
      * uptodate
@@ -677,7 +733,6 @@ class PersonApiController extends AbstractApiController
             ]
         );
     }
-
 
     /**
      * get entity operatons
