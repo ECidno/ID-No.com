@@ -5169,5 +5169,23 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
         <target>nein</target>
       </segment>
     </unit>
+    <unit id="z9EDSBW" name="person.action.imageremove.success">
+      <segment>
+        <source>person.action.imageremove.success</source>
+        <target>Bild erfolgreich gelöscht</target>
+      </segment>
+    </unit>
+    <unit id="xNcPOAq" name="person.imageRemove.lbl">
+      <segment>
+        <source>person.imageRemove.lbl</source>
+        <target>Bild löschen</target>
+      </segment>
+    </unit>
+    <unit id="KJBgFNm" name="person.imageRemove.confirm.lbl">
+      <segment>
+        <source>person.imageRemove.confirm.lbl</source>
+        <target>Wollen Sie das Bild wirklich löschen?</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
