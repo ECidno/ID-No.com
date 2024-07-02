@@ -154,6 +154,11 @@ img.socialmedia_icon {
 img.socialmedia_icon_row {
   height: 55px;
 }
+.footer-mobile {
+  img.socialmedia_icon {
+    margin: 20px 10px 0 10px;
+  }
+}
 
 
 /*
@@ -343,12 +348,14 @@ body.modal-open .background-container {
 .emblem-datenschutzexperte.footer {
   margin-top: -16px;
 }
+/*
 @media (max-width: 575px) {
   .emblem-datenschutzexperte.footer {
     margin-top: 0;
     margin-left: -10px;
   }
 }
+*/
 
 /* notfallpass form */
 .pass-entry-list {
