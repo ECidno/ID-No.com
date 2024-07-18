@@ -4866,19 +4866,19 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
     <unit id="vkZMO6O" name="outboundLink.confirm.header">
       <segment>
         <source>outboundLink.confirm.header</source>
-        <target>You are leaving id-no.com</target>
+        <target>You are leaving ID-No.com</target>
       </segment>
     </unit>
     <unit id="64TxGf0" name="outboundLink.confirm.text">
       <segment>
         <source>outboundLink.confirm.text</source>
-        <target>You are now leaving id-no.com and will be redirected to www.youtube.com.</target>
+        <target>You are now leaving ID-No.com and will be redirected to www.youtube.com.</target>
       </segment>
     </unit>
     <unit id="c_B3BXx" name="outboundLink.confirm.cancel">
       <segment>
         <source>outboundLink.confirm.cancel</source>
-        <target>Back to id-no.com</target>
+        <target>Back to ID-No.com</target>
       </segment>
     </unit>
     <unit id="4QMusQD" name="outboundLink.confirm.ok">
