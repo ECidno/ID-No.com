@@ -5187,5 +5187,29 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
         <target>Wollen Sie das Bild wirklich löschen?</target>
       </segment>
     </unit>
+    <unit id="vkZMO6O" name="outboundLink.confirm.header">
+      <segment>
+        <source>outboundLink.confirm.header</source>
+        <target>Sie verlassen id-no.com</target>
+      </segment>
+    </unit>
+    <unit id="64TxGf0" name="outboundLink.confirm.text">
+      <segment>
+        <source>outboundLink.confirm.text</source>
+        <target>Sie verlassen jetzt id-no.com und werden zu www.youtube.com weitergeleitet.</target>
+      </segment>
+    </unit>
+    <unit id="c_B3BXx" name="outboundLink.confirm.cancel">
+      <segment>
+        <source>outboundLink.confirm.cancel</source>
+        <target>Zurück zu id-no.com</target>
+      </segment>
+    </unit>
+    <unit id="4QMusQD" name="outboundLink.confirm.ok">
+      <segment>
+        <source>outboundLink.confirm.ok</source>
+        <target>Weiter</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
