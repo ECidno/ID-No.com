@@ -1,0 +1,33 @@
+<div id="confirmLinkModal" class="modal fade" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5">
+                {{ 'outboundLink.confirm.header'|trans }}
+            </h1>
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {{ 'outboundLink.confirm.text'|trans }}
+            </div>
+            <div class="modal-footer">
+            <button
+                class="btn btn-outline-dark"
+                data-bs-dismiss="modal"
+                aria-label="Close">
+                {{ 'outboundLink.confirm.cancel'|trans }}
+            </button>
+            <a
+                href="/infovideo"
+                target="_blank"
+                class="btn btn-primary text-black">
+                {{ 'outboundLink.confirm.ok'|trans }}
+            </a>
+            </div>
+        </div>
+    </div>
+</div>
