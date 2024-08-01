@@ -5211,5 +5211,11 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
         <target>Weiter</target>
       </segment>
     </unit>
+    <unit id="KP67fov" name="Epilepsie">
+      <segment>
+        <source>Epilepsie</source>
+        <target>Epilepsie</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

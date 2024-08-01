@@ -4887,5 +4887,11 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
         <target>Continue</target>
       </segment>
     </unit>
+    <unit id="KP67fov" name="Epilepsie">
+      <segment>
+        <source>Epilepsie</source>
+        <target>Epilepsie</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
