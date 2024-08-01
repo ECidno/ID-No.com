@@ -98,6 +98,7 @@ class PassEntryConditionType extends AbstractType
                     'KHK' => 'KHK',
                     
                     'Schlaganfall' => 'Schlaganfall',
+                    'Epilepsie' => 'Epilepsie',
                     'Demenz' => 'Demenz',
                     'Alzheimer' => 'Alzheimer',
                     'Depressionen' => 'Depressionen',
@@ -156,6 +157,7 @@ class PassEntryConditionType extends AbstractType
                     'KHK' => ['class' => 'herzkreislauf'],
                     
                     'Schlaganfall' => ['class' => 'neurologisch'],
+                    'Epilepsie' => ['class' => 'neurologisch'],
                     'Demenz' => ['class' => 'neurologisch'],
                     'Alzheimer' => ['class' => 'neurologisch'],
                     'Depressionen' => ['class' => 'neurologisch'],
