@@ -287,9 +287,9 @@ parameters:
       Allianz:
         logo: references/allianz.png
         logo_bw: references/allianz_sw.png
-      DRK:
-        logo: references/drk.png
-        logo_bw: references/drk_sw.png
+      Ziener:
+        logo: references/ziener.png
+        logo_bw: references/ziener.png
       SportScheck:
         logo: references/sportscheck.png
         logo_bw: references/sportscheck_sw.png
