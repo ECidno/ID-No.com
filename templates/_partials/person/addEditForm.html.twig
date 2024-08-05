@@ -230,9 +230,6 @@
       <div class="col-9 text-light">
         {{ form_row(form.conditionsActive) }}
       </div>
-      {#<div class="col-9">
-        <h4 class="sub-head">{{ 'Erkrankungen'|trans }}</h4>
-      </div>#}
       <div class="col-3 text-light pt-3">
         {{ form_row(form.erkrankungenShow) }}
       </div>
@@ -249,23 +246,6 @@
           {% endif %}
         </div>
       </div>
-      {#
-      <div class="row">
-        <div class="col-9">
-          <ul id="person_passEntryConditions"
-            class="pass-entry-list row"
-            data-index="{{ form.passEntryConditions|length > 0 ? form.passEntryConditions|last.vars.name + 1 : 0 }}"
-            data-prototype="{{ form_row(form.passEntryConditions.vars.prototype)|e('html_attr') }}">
-            {% for key, entry in form.passEntryConditions %}
-                <li>
-                  {{ form_row(entry) }}
-                </li>
-            {% endfor %}
-          </ul>
-          {% do form.passEntryConditions.setRendered() %}
-        </div>
-      </div>
-      #}    
 
       <ul id="person_passEntryConditions"
         class="pass-entry-list row"
@@ -290,9 +270,6 @@
       <div class="col-9 text-light">
         {{ form_row(form.medicationsActive) }}
       </div>
-      {#<div class="col-9">
-        <h4 class="sub-head">{{ 'Medikamente'|trans }}</h4>
-      </div>#}
       <div class="col-3 text-light pt-3">
         {{ form_row(form.medikamenteShow) }}
       </div>
@@ -335,9 +312,6 @@
       <div class="col-9 text-light">
         {{ form_row(form.allergiesActive) }}
       </div>
-      {#<div class="col-9">
-        <h4 class="sub-head">{{ 'Allergien'|trans }}</h4>
-      </div>#}
       <div class="col-3 text-light pt-3">
         {{ form_row(form.allergieenShow) }}
       </div>
@@ -355,22 +329,6 @@
           {% endif %}
         </div>
       </div>
-
-      {#
-      <div class="row">
-        <div class="col-9">
-          <ul id="person_passEntryAllergies"
-            class="pass-entry-list"
-            data-index="{{ form.passEntryAllergies|length > 0 ? form.passEntryAllergies|last.vars.name + 1 : 0 }}"
-            data-prototype="{{ form_row(form.passEntryAllergies.vars.prototype)|e('html_attr') }}">
-            {% for entry in form.passEntryAllergies %}
-                <li>{{ form_row(entry) }}</li>
-            {% endfor %}
-          </ul>
-          {% do form.passEntryAllergies.setRendered() %}
-        </div>
-      </div>
-      #}
 
       <ul id="person_passEntryAllergies"
         class="pass-entry-list"
@@ -415,21 +373,6 @@
         {{ form_row(form.groesseShow) }}
       </div>
     </div>
-
-    {#
-    <h4 class="sub-head small">{{ 'person.operationsActive.lbl'|trans }}</h4>
-    <div class="row">
-      <div class="col-1">
-        {{ form_row(form.operationsActive) }}
-      </div>
-      <div class="col-8">
-        {{ form_row(form.operations) }}
-      </div>
-      <div class="col-3 text-light">
-        {{ form_row(form.operationsShow) }}
-      </div>
-    </div>
-    #}
 
     <div class="row">
       <div class="col-9 text-light">
