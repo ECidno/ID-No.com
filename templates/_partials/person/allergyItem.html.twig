@@ -2,16 +2,18 @@
 <fieldset class="form-floating">
     <h4 class="sub-head small">{{ 'person.allergy.lbl'|trans }} <span class="loop-value">{{ loop }}</span></h4>
     <div class="row">
-        <div class="col-9">
-            {{ form_row(item.category) }}
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-6">
+                    {{ form_row(item.category) }}
+                </div>
+                <div class="col-6">
+                    {{ form_row(item.comment) }}
+                </div>
+            </div>
         </div>
-        <div class="col-3">
+        <div class="col-md-3 text-end">
             {{ form_row(item.remove) }}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-9">
-            {{ form_row(item.comment) }}
         </div>
     </div>
 </fieldset>
