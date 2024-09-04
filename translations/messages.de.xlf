@@ -4992,7 +4992,7 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
     <unit id="E9_p2Th" name="Nahrungs">
       <segment>
         <source>Nahrungs</source>
-        <target>Nahrungs</target>
+        <target>Nahrungsmittel</target>
       </segment>
     </unit>
     <unit id="nP5MZwS" name="person.condition.delete.lbl">

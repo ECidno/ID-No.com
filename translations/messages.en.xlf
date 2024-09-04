@@ -4680,7 +4680,7 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
     <unit id="E9_p2Th" name="Nahrungs">
       <segment>
         <source>Nahrungs</source>
-        <target>Nahrungs</target>
+        <target>Nahrungsmittel</target>
       </segment>
     </unit>
     <unit id="XKjdzk5" name="Schimmel">
