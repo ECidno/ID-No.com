@@ -111,6 +111,9 @@ img.anniversary_5  {
   left: 0;
   right: 0;
 }
+.carousel-control-prev, .carousel-control-next {
+  width: 25%;
+}
 
 img.ref-logo {
   -webkit-filter: grayscale(100%) brightness(2);
