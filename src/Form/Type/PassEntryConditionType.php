@@ -96,7 +96,7 @@ class PassEntryConditionType extends AbstractType
                     'Herzrhythmusstörung' => 'Herzrhythmusstörung',
                     'Herzmuskelentzündung' => 'Herzmuskelentzündung',
                     'KHK' => 'KHK',
-                    
+
                     'Schlaganfall' => 'Schlaganfall',
                     'Epilepsie' => 'Epilepsie',
                     'Demenz' => 'Demenz',
@@ -155,14 +155,14 @@ class PassEntryConditionType extends AbstractType
                     'Herzrhythmusstörung' => ['class' => 'herzkreislauf'],
                     'Herzmuskelentzündung' => ['class' => 'herzkreislauf'],
                     'KHK' => ['class' => 'herzkreislauf'],
-                    
+
                     'Schlaganfall' => ['class' => 'neurologisch'],
                     'Epilepsie' => ['class' => 'neurologisch'],
                     'Demenz' => ['class' => 'neurologisch'],
                     'Alzheimer' => ['class' => 'neurologisch'],
                     'Depressionen' => ['class' => 'neurologisch'],
                     'Angststörungen' => ['class' => 'neurologisch'],
-                    
+
                     'Lungenkrebs' => ['class' => 'krebs'],
                     'Brustkrebs' => ['class' => 'krebs'],
                     'Darmkrebs' => ['class' => 'krebs'],
@@ -214,6 +214,9 @@ class PassEntryConditionType extends AbstractType
             ])
             ->add('comment', TextType::class, [
                 'label' => new TranslatableMessage('person.condition.comment.lbl'),
+                'attr' => [
+                    'maxlength' => 65535,
+                ],
                 'required' => false
             ])
             ->add('remove', ButtonType::class, [

@@ -59,26 +59,44 @@ class PassEntryMedicationType extends AbstractType
         $builder
             ->add('ingredient', TextType::class, [
                 'label' => new TranslatableMessage('person.medication.ingredient.lbl'),
+                'attr' => [
+                    'maxlength' => 255,
+                ],
                 'required' => false
             ])
             ->add('tradeName', TextType::class, [
                 'label' => new TranslatableMessage('person.medication.tradeName.lbl'),
+                'attr' => [
+                    'maxlength' => 255,
+                ],
                 'required' => false
             ])
             ->add('dosage', TextType::class, [
                 'label' => new TranslatableMessage('person.medication.dosage.lbl'),
+                'attr' => [
+                    'maxlength' => 255,
+                ],
                 'required' => false
             ])
             ->add('consumption', TextType::class, [
                 'label' => new TranslatableMessage('person.medication.consumption.lbl'),
+                'attr' => [
+                    'maxlength' => 255,
+                ],
                 'required' => false
             ])
             ->add('comment', TextType::class, [
                 'label' => new TranslatableMessage('person.medication.comment.lbl'),
+                'attr' => [
+                    'maxlength' => 65535,
+                ],
                 'required' => false
             ])
             ->add('emergencyNotes', TextType::class, [
                 'label' => new TranslatableMessage('person.medication.emergencyNotes.lbl'),
+                'attr' => [
+                    'maxlength' => 65535,
+                ],
                 'required' => false
             ])
             ->add('remove', ButtonType::class, [
