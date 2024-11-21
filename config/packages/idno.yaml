@@ -141,7 +141,7 @@ parameters:
         image:
           de:
             desktop: slider/de/Xmas_2024_Banner_ID-No_01_Desktop.jpg
-            mobile: slider/de/Xmas_2024_Banner_ID-No_Mobile.jpg
+            mobile: slider/de/Xmas_2024_Banner_ID-No_01_Mobile_new.jpg
           en:
             desktop: slider/en/2024_slider_desktop_1.jpg
             mobile: slider/en/2024_slider_mobile_1.jpg
@@ -153,7 +153,7 @@ parameters:
         image:
           de:
             desktop: slider/de/Xmas_2024_Banner_ID-No_02_Desktop.jpg
-            mobile: slider/de/Xmas_2024_Banner_ID-No_02_Mobile.jpg
+            mobile: slider/de/Xmas_2024_Banner_ID-No_02_Mobile_new.jpg
           en:
             desktop: slider/en/2024_slider_desktop_2.jpg
             mobile: slider/en/2024_slider_mobile_2.jpg
