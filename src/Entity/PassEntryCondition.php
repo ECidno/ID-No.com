@@ -40,7 +40,7 @@ class PassEntryCondition
 
     /**
      * @var Person
-     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="passEntryMedication")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="passEntryCondition")
      */
     private $person;
 
@@ -83,7 +83,7 @@ class PassEntryCondition
      * Get the value of id
      *
      * @return  int
-     */ 
+     */
     public function getId(): int
     {
         return $this->id;
@@ -93,7 +93,7 @@ class PassEntryCondition
      * Get the value of sorting
      *
      * @return  int
-     */ 
+     */
     public function getSorting()
     {
         return $this->sorting;
@@ -105,7 +105,7 @@ class PassEntryCondition
      * @param  int  $sorting
      *
      * @return  self
-     */ 
+     */
     public function setSorting(int $sorting)
     {
         $this->sorting = $sorting;
@@ -117,7 +117,7 @@ class PassEntryCondition
      * Get the value of person
      *
      * @return  Person
-     */ 
+     */
     public function getPerson()
     {
         return $this->person;
@@ -129,7 +129,7 @@ class PassEntryCondition
      * @param  Person  $person
      *
      * @return  self
-     */ 
+     */
     public function setPerson(Person $person)
     {
         $this->person = $person;
@@ -141,7 +141,7 @@ class PassEntryCondition
      * Get the value of category
      *
      * @return  string
-     */ 
+     */
     public function getCategory()
     {
         return $this->category;
@@ -153,7 +153,7 @@ class PassEntryCondition
      * @param  string  $category
      *
      * @return  self
-     */ 
+     */
     public function setCategory(string $category)
     {
         $this->category = $category;
@@ -165,7 +165,7 @@ class PassEntryCondition
      * Get the value of title
      *
      * @return  string
-     */ 
+     */
     public function getTitle()
     {
         return $this->title;
@@ -177,7 +177,7 @@ class PassEntryCondition
      * @param  string  $title
      *
      * @return  self
-     */ 
+     */
     public function setTitle(string $title)
     {
         $this->title = $title;
@@ -189,7 +189,7 @@ class PassEntryCondition
      * Get the value of comment
      *
      * @return  string
-     */ 
+     */
     public function getComment()
     {
         return $this->comment;
@@ -201,7 +201,7 @@ class PassEntryCondition
      * @param  string  $comment
      *
      * @return  self
-     */ 
+     */
     public function setComment(string $comment)
     {
         $this->comment = $comment;
@@ -211,7 +211,7 @@ class PassEntryCondition
 
     /**
      * Get the value of created
-     */ 
+     */
     public function getCreated()
     {
         return $this->created;
@@ -221,7 +221,7 @@ class PassEntryCondition
      * Set the value of created
      *
      * @return  self
-     */ 
+     */
     public function setCreated($created)
     {
         $this->created = $created;
@@ -231,7 +231,7 @@ class PassEntryCondition
 
     /**
      * Get the value of lastChange
-     */ 
+     */
     public function getLastChange()
     {
         return $this->lastChange;
@@ -241,7 +241,7 @@ class PassEntryCondition
      * Set the value of lastChange
      *
      * @return  self
-     */ 
+     */
     public function setLastChange($lastChange)
     {
         $this->lastChange = $lastChange;

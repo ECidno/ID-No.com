@@ -40,7 +40,7 @@ class PassEntryAllergy
 
     /**
      * @var Person
-     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="passEntryMedication")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="passEntryAllergy")
      */
     private $person;
 
@@ -76,7 +76,7 @@ class PassEntryAllergy
      * Get the value of id
      *
      * @return  int
-     */ 
+     */
     public function getId(): int
     {
         return $this->id;
@@ -86,7 +86,7 @@ class PassEntryAllergy
      * Get the value of sorting
      *
      * @return  int
-     */ 
+     */
     public function getSorting()
     {
         return $this->sorting;
@@ -98,7 +98,7 @@ class PassEntryAllergy
      * @param  int  $sorting
      *
      * @return  self
-     */ 
+     */
     public function setSorting(int $sorting)
     {
         $this->sorting = $sorting;
@@ -110,7 +110,7 @@ class PassEntryAllergy
      * Get the value of person
      *
      * @return  Person
-     */ 
+     */
     public function getPerson()
     {
         return $this->person;
@@ -122,7 +122,7 @@ class PassEntryAllergy
      * @param  Person  $person
      *
      * @return  self
-     */ 
+     */
     public function setPerson(Person $person)
     {
         $this->person = $person;
@@ -134,7 +134,7 @@ class PassEntryAllergy
      * Get the value of category
      *
      * @return  string
-     */ 
+     */
     public function getCategory()
     {
         return $this->category;
@@ -146,7 +146,7 @@ class PassEntryAllergy
      * @param  string  $category
      *
      * @return  self
-     */ 
+     */
     public function setCategory(string $category)
     {
         $this->category = $category;
@@ -158,7 +158,7 @@ class PassEntryAllergy
      * Get the value of comment
      *
      * @return  string
-     */ 
+     */
     public function getComment()
     {
         return $this->comment;
@@ -170,7 +170,7 @@ class PassEntryAllergy
      * @param  string  $comment
      *
      * @return  self
-     */ 
+     */
     public function setComment(string $comment)
     {
         $this->comment = $comment;
@@ -180,7 +180,7 @@ class PassEntryAllergy
 
     /**
      * Get the value of created
-     */ 
+     */
     public function getCreated()
     {
         return $this->created;
@@ -190,17 +190,17 @@ class PassEntryAllergy
      * Set the value of created
      *
      * @return  self
-     */ 
+     */
     public function setCreated($created)
     {
         $this->created = $created;
 
         return $this;
     }
- 
+
     /**
      * Get the value of lastChange
-     */ 
+     */
     public function getLastChange()
     {
         return $this->lastChange;
@@ -210,7 +210,7 @@ class PassEntryAllergy
      * Set the value of lastChange
      *
      * @return  self
-     */ 
+     */
     public function setLastChange($lastChange)
     {
         $this->lastChange = $lastChange;
