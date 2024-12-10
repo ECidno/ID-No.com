@@ -164,7 +164,7 @@ class PassEntryCondition
     /**
      * Get the value of title
      *
-     * @return  string
+     * @return  ?string
      */
     public function getTitle()
     {
@@ -174,11 +174,11 @@ class PassEntryCondition
     /**
      * Set the value of title
      *
-     * @param  string  $title
+     * @param  ?string  $title
      *
      * @return  self
      */
-    public function setTitle(string $title)
+    public function setTitle(?string $title)
     {
         $this->title = $title;
 
@@ -188,7 +188,7 @@ class PassEntryCondition
     /**
      * Get the value of comment
      *
-     * @return  string
+     * @return  ?string
      */
     public function getComment()
     {
@@ -198,11 +198,11 @@ class PassEntryCondition
     /**
      * Set the value of comment
      *
-     * @param  string  $comment
+     * @param  ?string  $comment
      *
      * @return  self
      */
-    public function setComment(string $comment)
+    public function setComment(?string $comment)
     {
         $this->comment = $comment;
 
