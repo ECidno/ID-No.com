@@ -104,7 +104,7 @@ class PassEntryMedication
      * Get the value of id
      *
      * @return  int
-     */ 
+     */
     public function getId(): int
     {
         return $this->id;
@@ -114,7 +114,7 @@ class PassEntryMedication
      * Get the value of sorting
      *
      * @return  int
-     */ 
+     */
     public function getSorting()
     {
         return $this->sorting;
@@ -126,7 +126,7 @@ class PassEntryMedication
      * @param  int  $sorting
      *
      * @return  self
-     */ 
+     */
     public function setSorting(int $sorting)
     {
         $this->sorting = $sorting;
@@ -138,7 +138,7 @@ class PassEntryMedication
      * Get the value of person
      *
      * @return  Person
-     */ 
+     */
     public function getPerson()
     {
         return $this->person;
@@ -150,7 +150,7 @@ class PassEntryMedication
      * @param  Person  $person
      *
      * @return  self
-     */ 
+     */
     public function setPerson(Person $person)
     {
         $this->person = $person;
@@ -161,8 +161,8 @@ class PassEntryMedication
     /**
      * Get the value of ingredient
      *
-     * @return  string
-     */ 
+     * @return  ?string
+     */
     public function getIngredient()
     {
         return $this->ingredient;
@@ -171,11 +171,11 @@ class PassEntryMedication
     /**
      * Set the value of ingredient
      *
-     * @param  string  $ingredient
+     * @param  ?string  $ingredient
      *
      * @return  self
-     */ 
-    public function setIngredient(string $ingredient)
+     */
+    public function setIngredient(?string $ingredient)
     {
         $this->ingredient = $ingredient;
 
@@ -185,8 +185,8 @@ class PassEntryMedication
     /**
      * Get the value of tradeName
      *
-     * @return  string
-     */ 
+     * @return  ?string
+     */
     public function getTradeName()
     {
         return $this->tradeName;
@@ -195,11 +195,11 @@ class PassEntryMedication
     /**
      * Set the value of tradeName
      *
-     * @param  string  $tradeName
+     * @param  ?string  $tradeName
      *
      * @return  self
-     */ 
-    public function setTradeName(string $tradeName)
+     */
+    public function setTradeName(?string $tradeName)
     {
         $this->tradeName = $tradeName;
 
@@ -209,8 +209,8 @@ class PassEntryMedication
     /**
      * Get the value of dosage
      *
-     * @return  string
-     */ 
+     * @return  ?string
+     */
     public function getDosage()
     {
         return $this->dosage;
@@ -219,11 +219,11 @@ class PassEntryMedication
     /**
      * Set the value of dosage
      *
-     * @param  string  $dosage
+     * @param  ?string  $dosage
      *
      * @return  self
-     */ 
-    public function setDosage(string $dosage)
+     */
+    public function setDosage(?string $dosage)
     {
         $this->dosage = $dosage;
 
@@ -233,8 +233,8 @@ class PassEntryMedication
     /**
      * Get the value of consumption
      *
-     * @return  string
-     */ 
+     * @return  ?string
+     */
     public function getConsumption()
     {
         return $this->consumption;
@@ -243,11 +243,11 @@ class PassEntryMedication
     /**
      * Set the value of consumption
      *
-     * @param  string  $consumption
+     * @param  ?string  $consumption
      *
      * @return  self
-     */ 
-    public function setConsumption(string $consumption)
+     */
+    public function setConsumption(?string $consumption)
     {
         $this->consumption = $consumption;
 
@@ -257,8 +257,8 @@ class PassEntryMedication
     /**
      * Get the value of emergencyNotes
      *
-     * @return  string
-     */ 
+     * @return  ?string
+     */
     public function getEmergencyNotes()
     {
         return $this->emergencyNotes;
@@ -267,11 +267,11 @@ class PassEntryMedication
     /**
      * Set the value of emergencyNotes
      *
-     * @param  string  $emergencyNotes
+     * @param  ?string  $emergencyNotes
      *
      * @return  self
-     */ 
-    public function setEmergencyNotes(string $emergencyNotes)
+     */
+    public function setEmergencyNotes(?string $emergencyNotes)
     {
         $this->emergencyNotes = $emergencyNotes;
 
@@ -281,8 +281,8 @@ class PassEntryMedication
     /**
      * Get the value of comment
      *
-     * @return  string
-     */ 
+     * @return  ?string
+     */
     public function getComment()
     {
         return $this->comment;
@@ -291,11 +291,11 @@ class PassEntryMedication
     /**
      * Set the value of comment
      *
-     * @param  string  $comment
+     * @param  ?string  $comment
      *
      * @return  self
-     */ 
-    public function setComment(string $comment)
+     */
+    public function setComment(?string $comment)
     {
         $this->comment = $comment;
 
@@ -304,7 +304,7 @@ class PassEntryMedication
 
     /**
      * Get the value of created
-     */ 
+     */
     public function getCreated()
     {
         return $this->created;
@@ -314,7 +314,7 @@ class PassEntryMedication
      * Set the value of created
      *
      * @return  self
-     */ 
+     */
     public function setCreated($created)
     {
         $this->created = $created;
@@ -324,7 +324,7 @@ class PassEntryMedication
 
     /**
      * Get the value of lastChange
-     */ 
+     */
     public function getLastChange()
     {
         return $this->lastChange;
@@ -334,7 +334,7 @@ class PassEntryMedication
      * Set the value of lastChange
      *
      * @return  self
-     */ 
+     */
     public function setLastChange($lastChange)
     {
         $this->lastChange = $lastChange;

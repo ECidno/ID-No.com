@@ -157,7 +157,7 @@ class PassEntryAllergy
     /**
      * Get the value of comment
      *
-     * @return  string
+     * @return  ?string
      */
     public function getComment()
     {
@@ -167,11 +167,11 @@ class PassEntryAllergy
     /**
      * Set the value of comment
      *
-     * @param  string  $comment
+     * @param  ?string  $comment
      *
      * @return  self
      */
-    public function setComment(string $comment)
+    public function setComment(?string $comment)
     {
         $this->comment = $comment;
 
