@@ -5217,5 +5217,17 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
         <target>Epilepsie</target>
       </segment>
     </unit>
+    <unit id="bv45tfI" name="person.healthCareProxy.lbl">
+      <segment>
+        <source>person.healthCareProxy.lbl</source>
+        <target>Vorsorgevollmacht</target>
+      </segment>
+    </unit>
+    <unit id="n1_iWTC" name="person.healthCareProxyComment.lbl">
+      <segment>
+        <source>person.healthCareProxyComment.lbl</source>
+        <target>Vorsorgevollmacht Anmerkung</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

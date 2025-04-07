@@ -598,7 +598,7 @@ class PersonType extends AbstractType
                 ],
                 'required' => false
             ])
-            
+
             // ->add('reanimation', ChoiceType::class, [
             //     'label' => new TranslatableMessage('person.reanimation.lbl'),
             //     'choices' => [
@@ -756,6 +756,36 @@ class PersonType extends AbstractType
             ])
             ->add('patientenverfComment', TextType::class, [
                 'label' => new TranslatableMessage('person.patientenverfComment.lbl'),
+                'attr' => [
+                    'maxlength' => 255,
+                    'autocomplete' => 'off',
+                ],
+                'required' => false
+            ])
+
+            ->add('healthCareProxy', CheckboxType::class, [
+                'label' => new TranslatableMessage('person.healthCareProxy.lbl'),
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch',
+                    'data-bs-toggle' => 'collapse',
+                    'href' => '#healthCareProxyShowContainer'
+                ],
+                'required' => false
+            ])
+            ->add('healthCareProxyShow', CheckboxType::class, [
+                'label' => new TranslatableMessage('sichtbar'),
+                'label_attr' => [
+                    'class' => 'd-none d-sm-block',
+                ],
+                'row_attr' => ['class' => 'form-switch py-3'],
+                'attr' => [
+                    'role' => 'switch'
+                ],
+                'required' => false
+            ])
+            ->add('healthCareProxyComment', TextType::class, [
+                'label' => new TranslatableMessage('person.healthCareProxyComment.lbl'),
                 'attr' => [
                     'maxlength' => 255,
                     'autocomplete' => 'off',

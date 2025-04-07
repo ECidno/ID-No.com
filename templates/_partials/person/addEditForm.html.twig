@@ -299,7 +299,7 @@
         {% endfor %}
       </ul>
 
-      {% do form.passEntryMedications.setRendered() %}        
+      {% do form.passEntryMedications.setRendered() %}
 
       <div class="row">
         <div class="col-9">
@@ -477,7 +477,23 @@
     </div>
 
     <div class="row">
-      <div class="col-9">
+      <div class="col-9 text-light">
+        {{ form_row(form.healthCareProxy) }}
+      </div>
+      <div class="col-3 text-light">
+        {{ form_row(form.healthCareProxyShow) }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-8 collapse {% if form.healthCareProxy.vars.checked %}show{% endif %}" id="healthCareProxyShowContainer">
+        {{ form_row(form.healthCareProxyComment) }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-8">
         {{ form_row(form.weitereangaben) }}
       </div>
       <div class="col-3 text-light">
