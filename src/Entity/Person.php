@@ -489,6 +489,27 @@ class Person
     private $patientenverfShow = 1;
 
     /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"0"}))
+     * @Gedmo\Versioned
+     */
+    private bool $healthCareProxy = false;
+
+    /**
+     * @var string
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     * @Gedmo\Versioned
+     */
+    private string $healthCareProxyComment;
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", options={"default":"1"}))
+     * @Gedmo\Versioned
+     */
+    private bool $healthCareProxyShow = true;
+
+    /**
      * @var string
      * @ORM\Column(type="text", length=65535, nullable=true)
      * @Gedmo\Versioned
@@ -2109,7 +2130,7 @@ class Person
      * Get the value of operationsActive
      *
      * @return  bool
-     */ 
+     */
     public function getOperationsActive(): bool
     {
         return $this->operationsActive;
@@ -2121,7 +2142,7 @@ class Person
      * @param  bool  $operationsActive
      *
      * @return  self
-     */ 
+     */
     public function setOperationsActive(bool $operationsActive): self
     {
         $this->operationsActive = $operationsActive;
@@ -2133,7 +2154,7 @@ class Person
      * Get the value of patientenverfComment
      *
      * @return  ?string
-     */ 
+     */
     public function getPatientenverfComment(): ?string
     {
         return $this->patientenverfComment;
@@ -2145,7 +2166,7 @@ class Person
      * @param  string  $patientenverfComment
      *
      * @return  self
-     */ 
+     */
     public function setPatientenverfComment(?string $patientenverfComment): self
     {
         $this->patientenverfComment = $patientenverfComment;
@@ -2157,7 +2178,7 @@ class Person
      * Get the value of importantNote
      *
      * @return  string
-     */ 
+     */
     public function getImportantNote(): ?string
     {
         return $this->importantNote;
@@ -2169,7 +2190,7 @@ class Person
      * @param  string  $importantNote
      *
      * @return  self
-     */ 
+     */
     public function setImportantNote(?string $importantNote): self
     {
         $this->importantNote = $importantNote;
@@ -2181,7 +2202,7 @@ class Person
      * Get the value of importantNoteShow
      *
      * @return  bool
-     */ 
+     */
     public function getImportantNoteShow(): bool
     {
         return $this->importantNoteShow;
@@ -2193,7 +2214,7 @@ class Person
      * @param  bool  $importantNoteShow
      *
      * @return  self
-     */ 
+     */
     public function setImportantNoteShow(bool $importantNoteShow): self
     {
         $this->importantNoteShow = $importantNoteShow;
@@ -2205,7 +2226,7 @@ class Person
      * Get the value of pacemaker
      *
      * @return  bool
-     */ 
+     */
     public function getPacemaker(): bool
     {
         return $this->pacemaker;
@@ -2217,7 +2238,7 @@ class Person
      * @param  bool  $pacemaker
      *
      * @return  self
-     */ 
+     */
     public function setPacemaker(bool $pacemaker): self
     {
         $this->pacemaker = $pacemaker;
@@ -2229,7 +2250,7 @@ class Person
      * Get the value of pacemakerComment
      *
      * @return  string
-     */ 
+     */
     public function getPacemakerComment(): ?string
     {
         return $this->pacemakerComment;
@@ -2241,7 +2262,7 @@ class Person
      * @param  string  $pacemakerComment
      *
      * @return  self
-     */ 
+     */
     public function setPacemakerComment(?string $pacemakerComment): self
     {
         $this->pacemakerComment = $pacemakerComment;
@@ -2253,7 +2274,7 @@ class Person
      * Get the value of pacemakerShow
      *
      * @return  bool
-     */ 
+     */
     public function getPacemakerShow(): bool
     {
         return $this->pacemakerShow;
@@ -2265,7 +2286,7 @@ class Person
      * @param  bool  $pacemakerShow
      *
      * @return  self
-     */ 
+     */
     public function setPacemakerShow(bool $pacemakerShow): self
     {
         $this->pacemakerShow = $pacemakerShow;
@@ -2277,7 +2298,7 @@ class Person
      * Get the value of pregnancy
      *
      * @return  bool
-     */ 
+     */
     public function getPregnancy(): bool
     {
         return $this->pregnancy;
@@ -2289,7 +2310,7 @@ class Person
      * @param  bool  $pregnancy
      *
      * @return  self
-     */ 
+     */
     public function setPregnancy(bool $pregnancy): self
     {
         $this->pregnancy = $pregnancy;
@@ -2301,7 +2322,7 @@ class Person
      * Get the value of pregnancyComment
      *
      * @return  string
-     */ 
+     */
     public function getPregnancyComment(): ?string
     {
         return $this->pregnancyComment;
@@ -2313,7 +2334,7 @@ class Person
      * @param  string  $pregnancyComment
      *
      * @return  self
-     */ 
+     */
     public function setPregnancyComment(?string $pregnancyComment): self
     {
         $this->pregnancyComment = $pregnancyComment;
@@ -2325,7 +2346,7 @@ class Person
      * Get the value of pregnancyShow
      *
      * @return  bool
-     */ 
+     */
     public function getPregnancyShow(): bool
     {
         return $this->pregnancyShow;
@@ -2337,7 +2358,7 @@ class Person
      * @param  bool  $pregnancyShow
      *
      * @return  self
-     */ 
+     */
     public function setPregnancyShow(bool $pregnancyShow): self
     {
         $this->pregnancyShow = $pregnancyShow;
@@ -2349,7 +2370,7 @@ class Person
      * Get the value of conditionsActive
      *
      * @return  bool
-     */ 
+     */
     public function getConditionsActive(): bool
     {
         return $this->conditionsActive;
@@ -2361,7 +2382,7 @@ class Person
      * @param  bool  $conditionsActive
      *
      * @return  self
-     */ 
+     */
     public function setConditionsActive(bool $conditionsActive): self
     {
         $this->conditionsActive = $conditionsActive;
@@ -2373,7 +2394,7 @@ class Person
      * Get the value of medicationsActive
      *
      * @return  bool
-     */ 
+     */
     public function getMedicationsActive(): bool
     {
         return $this->medicationsActive;
@@ -2385,7 +2406,7 @@ class Person
      * @param  bool  $medicationsActive
      *
      * @return  self
-     */ 
+     */
     public function setMedicationsActive(bool $medicationsActive): self
     {
         $this->medicationsActive = $medicationsActive;
@@ -2397,7 +2418,7 @@ class Person
      * Get the value of allergiesActive
      *
      * @return  bool
-     */ 
+     */
     public function getAllergiesActive(): bool
     {
         return $this->allergiesActive;
@@ -2409,7 +2430,7 @@ class Person
      * @param  bool  $allergiesActive
      *
      * @return  self
-     */ 
+     */
     public function setAllergiesActive(bool $allergiesActive): self
     {
         $this->allergiesActive = $allergiesActive;
@@ -2421,7 +2442,7 @@ class Person
      * Get the value of reanimation
      *
      * @return  string
-     */ 
+     */
     public function getReanimation(): ?string
     {
         return $this->reanimation;
@@ -2433,7 +2454,7 @@ class Person
      * @param  string  $reanimation
      *
      * @return  self
-     */ 
+     */
     public function setReanimation(?string $reanimation): self
     {
         $this->reanimation = $reanimation;
@@ -2445,7 +2466,7 @@ class Person
      * Get the value of reanimationComment
      *
      * @return  string
-     */ 
+     */
     public function getReanimationComment(): ?string
     {
         return $this->reanimationComment;
@@ -2457,7 +2478,7 @@ class Person
      * @param  string  $reanimationComment
      *
      * @return  self
-     */ 
+     */
     public function setReanimationComment(?string $reanimationComment): self
     {
         $this->reanimationComment = $reanimationComment;
@@ -2469,7 +2490,7 @@ class Person
      * Get the value of reanimationShow
      *
      * @return  bool
-     */ 
+     */
     public function getReanimationShow(): bool
     {
         return $this->reanimationShow;
@@ -2481,7 +2502,7 @@ class Person
      * @param  bool  $reanimationShow
      *
      * @return  self
-     */ 
+     */
     public function setReanimationShow(bool $reanimationShow): self
     {
         $this->reanimationShow = $reanimationShow;
@@ -2493,7 +2514,7 @@ class Person
      * Get the value of organspenderComment
      *
      * @return  string
-     */ 
+     */
     public function getOrganspenderComment(): ?string
     {
         return $this->organspenderComment;
@@ -2505,11 +2526,81 @@ class Person
      * @param  string  $organspenderComment
      *
      * @return  self
-     */ 
+     */
     public function setOrganspenderComment(?string $organspenderComment): self
     {
         $this->organspenderComment = $organspenderComment;
 
+        return $this;
+    }
+
+
+    /**
+     * Get the value of healthCareProxy
+     *
+     * @return bool
+     */
+    public function getHealthCareProxy(): bool
+    {
+        return $this->healthCareProxy;
+    }
+
+    /**
+     * Set the value of healthCareProxy
+     *
+     * @param bool $healthCareProxy
+     *
+     * @return self
+     */
+    public function setHealthCareProxy(bool $healthCareProxy): self
+    {
+        $this->healthCareProxy = $healthCareProxy;
+        return $this;
+    }
+
+    /**
+     * Get the value of healthCareProxyComment
+     *
+     * @return string
+     */
+    public function getHealthCareProxyComment(): string
+    {
+        return $this->healthCareProxyComment;
+    }
+
+    /**
+     * Set the value of healthCareProxyComment
+     *
+     * @param string $healthCareProxyComment
+     *
+     * @return self
+     */
+    public function setHealthCareProxyComment(string $healthCareProxyComment): self
+    {
+        $this->healthCareProxyComment = $healthCareProxyComment;
+        return $this;
+    }
+
+    /**
+     * Get the value of healthCareProxyShow
+     *
+     * @return bool
+     */
+    public function getHealthCareProxyShow(): bool
+    {
+        return $this->healthCareProxyShow;
+    }
+
+    /**
+     * Set the value of healthCareProxyShow
+     *
+     * @param bool $healthCareProxyShow
+     *
+     * @return self
+     */
+    public function setHealthCareProxyShow(bool $healthCareProxyShow): self
+    {
+        $this->healthCareProxyShow = $healthCareProxyShow;
         return $this;
     }
 }
