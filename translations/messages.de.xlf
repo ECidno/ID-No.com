@@ -5229,5 +5229,17 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
         <target>Vorsorgevollmacht Anmerkung</target>
       </segment>
     </unit>
+    <unit id="nQtPXeo" name="meta.description.lbl">
+      <segment>
+        <source>meta.description.lbl</source>
+        <target>Schützen Sie sich und Ihre Liebsten mit ID-No.com: Hinterlegen Sie wichtige medizinische Informationen digital und ermöglichen Sie Rettungskräften im Notfall schnellen Zugriff. Unsere SOS-ID-Produkte bieten einfache Handhabung und höchste Datensicherheit.</target>
+      </segment>
+    </unit>
+    <unit id="muwUYYo" name="meta.title.lbl">
+      <segment>
+        <source>meta.title.lbl</source>
+        <target>ID-No.com – Ihr digitaler Notfallpass für medizinische Daten</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
