@@ -80,7 +80,7 @@
                     {#
                     {% if person.reanimationShow == true and person.reanimation is not empty %}
                       <p>
-                        {{ ('person.reanimation.'~person.reanimation)|trans }} 
+                        {{ ('person.reanimation.'~person.reanimation)|trans }}
                         {% if person.reanimation == 'rea_condition' %}
                           {{ person.reanimationComment }}
                         {% endif %}
@@ -89,7 +89,7 @@
                     #}
                     {% if person.pacemakerShow == true and  person.pacemaker is not empty %}
                       <p>
-                        {{ 'person.pacemaker.lbl'|trans }}: 
+                        {{ 'person.pacemaker.lbl'|trans }}:
                         {% if person.pacemakerComment %}
                           {{ person.pacemakerComment }}
                         {% else %}
@@ -99,7 +99,7 @@
                     {% endif %}
                     {% if person.pregnancyShow == true and  person.pregnancy is not empty %}
                       <p>
-                        {{ 'person.pregnancy.lbl'|trans }}: 
+                        {{ 'person.pregnancy.lbl'|trans }}:
                         {% if person.pregnancyComment %}
                           {{ person.pregnancyComment }}
                         {% else %}
@@ -414,7 +414,7 @@
               {% if person.reanimationShow == true and person.reanimation is not empty %}
                 <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'person.reanimation.lbl'|trans }}</strong><br />
-                  {{ ('person.reanimation.'~person.reanimation)|trans }} 
+                  {{ ('person.reanimation.'~person.reanimation)|trans }}
                   {% if person.reanimation == 'rea_condition' %}
                     {{ person.reanimationComment }}
                   {% endif %}
@@ -426,7 +426,7 @@
               {% if person.pacemakerShow == true and person.pacemaker is not empty %}
                 <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'person.pacemaker.lbl'|trans }}</strong><br />
-                  {{ person.pacemaker ? 'ja'|trans : 'nein'|trans }} 
+                  {{ person.pacemaker ? 'ja'|trans : 'nein'|trans }}
                   {% if person.pacemakerComment %}
                     - {{ person.pacemakerComment }}
                   {% endif %}
@@ -437,7 +437,7 @@
               {% if person.pregnancyShow == true and person.pregnancy is not empty %}
                 <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'person.pregnancy.lbl'|trans }}</strong><br />
-                  {{ person.pregnancy ? 'ja'|trans : 'nein'|trans }} 
+                  {{ person.pregnancy ? 'ja'|trans : 'nein'|trans }}
                   {% if person.pregnancyComment %}
                     - {{ person.pregnancyComment }}
                   {% endif %}
@@ -448,7 +448,7 @@
               {% if person.organspenderShow == true and person.organspender is not empty %}
                 <div class="my-3 p-3 border border-dark">
                   <strong>{{ 'Organspendeausweis'|trans }}</strong><br />
-                  {{ person.organspender ? 'ja'|trans : 'nein'|trans }} 
+                  {{ person.organspender ? 'ja'|trans : 'nein'|trans }}
                   {% if person.organspenderComment %}
                     - {{ person.organspenderComment }}
                   {% endif %}
@@ -462,6 +462,17 @@
                   {{ person.patientenverf ? 'ja'|trans : 'nein'|trans }}
                   {% if person.patientenverfComment %}
                     - {{ person.patientenverfComment }}
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              {# health care proxy #}
+              {% if person.healthCareProxyShow == true and person.healthCareProxy is not empty %}
+                <div class="my-3 p-3 border border-dark">
+                  <strong>{{ 'person.healthCareProxy.lbl'|trans }}</strong><br />
+                  {{ person.healthCareProxy ? 'ja'|trans : 'nein'|trans }}
+                  {% if person.healthCareProxyComment %}
+                    - {{ person.healthCareProxyComment }}
                   {% endif %}
                 </div>
               {% endif %}

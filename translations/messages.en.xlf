@@ -331,7 +331,7 @@ for seniors</target>
     <unit id="7cX4FXm" name="index.boxrow1.shop.text">
       <segment>
         <source>index.boxrow1.shop.text</source>
-        <target>Find our emergency ID products for RRP 9,95 € here in the [shop](https://www.code-no.shop/sos-id-chip/)</target>
+        <target>Find our emergency ID products for RRP 9,95 € here in the [shop](https://www.lebensretter.shop)</target>
       </segment>
     </unit>
     <unit id="DqhitoI" name="index.boxrow1.datasecurity.header">
@@ -590,8 +590,7 @@ Red Cross squad leader civil protection</target>
     <unit id="JR7p9yq" name="imprint.text">
       <segment>
         <source>imprint.text</source>
-        <target>####ID-No.com GmbH  
-Member of the CODE-No.com group  
+        <target>####ID-No.com GmbH   
 Cassellastraße 30-32  
 D-60386 Frankfurt am Main
 
@@ -616,7 +615,7 @@ IBAN DE21 5004 0000 0337 5847 00
 BIC: COBADEFFXXX
 
 **Authorship**  
-Copyright @ CODE-No.com GmbH. All rights reserved. All data, texts and images are the property of CODE-No.com GmbH. The use for commercial purposes is prohibited. Warranty The warranty conditions can be found in our terms and conditions.
+Copyright @ ID-No.com GmbH. All rights reserved. All data, texts and images are the property of ID-No.com GmbH. The use for commercial purposes is prohibited. Warranty The warranty conditions can be found in our terms and conditions.
 
 **Liability**  
 All external links were carefully checked prior to inclusion; despite careful content control, however, we assume no liability for their content. The content of the pages is the sole responsibility of their operators.</target>
@@ -756,7 +755,7 @@ The credit-rating information may contain probability values (score values) calc
 You are entitled to cancel this contract within fourteen days, without providing reasons. The cancellation period is fourteen days from the day on which you, or a third party appointed by you who is not the carrier, have/has taken possession of the last item.
 To exercise your right of cancellation, please clearly inform us
 
-**ID-No**.com GmbH – Member of the **CODE-No**.com Group  
+**ID-No**.com GmbH
 Cassellastr. 30-32  
 60386 Frankfurt  
 E-Mail: info@ID-No.com
@@ -4891,6 +4890,30 @@ All ID-Numbers and contacts associated with this profile will be deleted as well
       <segment>
         <source>Epilepsie</source>
         <target>Epilepsie</target>
+      </segment>
+    </unit>
+    <unit id="bv45tfI" name="person.healthCareProxy.lbl">
+      <segment>
+        <source>person.healthCareProxy.lbl</source>
+        <target>Healthcare proxy</target>
+      </segment>
+    </unit>
+    <unit id="n1_iWTC" name="person.healthCareProxyComment.lbl">
+      <segment>
+        <source>person.healthCareProxyComment.lbl</source>
+        <target>Comment healthcare proxy</target>
+      </segment>
+    </unit>
+    <unit id="nQtPXeo" name="meta.description.lbl">
+      <segment>
+        <source>meta.description.lbl</source>
+        <target>Protect yourself and your loved ones with ID-No.com: Store important medical information digitally and provide emergency responders with quick access in an emergency. Our SOS-ID products offer easy handling and maximum data security.</target>
+      </segment>
+    </unit>
+    <unit id="muwUYYo" name="meta.title.lbl">
+      <segment>
+        <source>meta.title.lbl</source>
+        <target>ID-No.com – Your digital emergency passport for medical data</target>
       </segment>
     </unit>
   </file>

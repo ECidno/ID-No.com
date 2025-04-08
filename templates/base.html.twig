@@ -10,7 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index,follow" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta name="description" content="{{ 'meta.description.lbl'|trans }}">
+    <title>{{ 'meta.title.lbl'|trans }} - {% block title %}Welcome!{% endblock %}</title>
     <link rel="shortcut icon" href="{{ asset('icon/favicon.png', 'media') }}" />
     <link rel="icon" href="{{ asset('icon/favicon.png', 'media') }}" />
 
