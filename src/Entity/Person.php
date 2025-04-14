@@ -500,7 +500,7 @@ class Person
      * @ORM\Column(type="text", length=65535, nullable=true)
      * @Gedmo\Versioned
      */
-    private string $healthCareProxyComment;
+    private ?string $healthCareProxyComment = '';
 
     /**
      * @var bool
@@ -2561,9 +2561,9 @@ class Person
     /**
      * Get the value of healthCareProxyComment
      *
-     * @return string
+     * @return ?string
      */
-    public function getHealthCareProxyComment(): string
+    public function getHealthCareProxyComment(): ?string
     {
         return $this->healthCareProxyComment;
     }
@@ -2571,11 +2571,11 @@ class Person
     /**
      * Set the value of healthCareProxyComment
      *
-     * @param string $healthCareProxyComment
+     * @param ?string $healthCareProxyComment
      *
      * @return self
      */
-    public function setHealthCareProxyComment(string $healthCareProxyComment): self
+    public function setHealthCareProxyComment(?string $healthCareProxyComment): self
     {
         $this->healthCareProxyComment = $healthCareProxyComment;
         return $this;
