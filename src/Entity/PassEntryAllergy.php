@@ -7,14 +7,10 @@ namespace App\Entity;
  *
  **********************************************************************/
 
-use Doctrine\Common\Collections\Collection;
-use Doctrine\Common\Collections\ArrayCollection;
+use App\Entity\Person;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-use Symfony\Component\Mime\MimeTypes;
-use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
-use App\Entity\Person;
 
 /**
  * PassEntryAllergy
@@ -40,7 +36,7 @@ class PassEntryAllergy
 
     /**
      * @var Person
-     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="passEntryAllergy")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="passEntryAllergies")
      */
     private $person;
 
