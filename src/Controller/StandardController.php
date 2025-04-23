@@ -33,7 +33,7 @@ class StandardController extends AbstractController
     {
         $bannerImages = [];
         $dir = 'media/images/banner';
-        $idno = strtoupper($request->get('p_idno') ?? $idno);
+        $idno = strtoupper($request->get('p_idno') ?? $idno ?? '');
         $submittedToken = $request->request->get('token');
 
         // dir exists?

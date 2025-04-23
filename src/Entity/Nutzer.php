@@ -396,7 +396,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getVorname(): ?string
     {
-        return html_entity_decode($this->vorname);
+        return html_entity_decode($this->vorname ?? '');
     }
 
 
@@ -415,7 +415,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getNachname(): ?string
     {
-        return html_entity_decode($this->nachname);
+        return html_entity_decode($this->nachname ?? '');
     }
 
     /**
@@ -626,9 +626,10 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @see UserInterface
      */
-    public function getSalt()
+    public function getSalt(): ?string
     {
         // not needed when using the "bcrypt" algorithm in security.yaml
+        return null;
     }
 
 
