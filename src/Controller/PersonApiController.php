@@ -169,7 +169,7 @@ class PersonApiController extends AbstractApiController
                 $image = $image[0];
                 $image->setBildShow($imageShow);
                 $em->persist($image);
-                $em->flush($image);
+                $em->flush();
             }
 
             // person image
