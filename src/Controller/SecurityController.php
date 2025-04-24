@@ -120,7 +120,7 @@ class SecurityController extends AbstractController
      *
      * @Route("/auth/{auth_code?}", name="app_account_authenticate")
      */
-    public function auth(string $auth_code = null, Request $request): Response
+    public function auth(?string $auth_code = null, Request $request): Response
     {
         // check auth_code
         $nutzerAuth = $this->emDefault
@@ -218,12 +218,12 @@ class SecurityController extends AbstractController
     /**
      * Reset Password
      *
-     * @param string $email
+     * @param ?string $email
      * @return void
      *
      * @Route("/resetPassword/{code?}", name="app_account_resetPasswort")
      */
-    public function resetPassword(string $code = null, Request $request, UserPasswordHasherInterface $passwordEncoder)
+    public function resetPassword(?string $code = null, Request $request, UserPasswordHasherInterface $passwordEncoder)
     {
         // no code
         if (empty($code)) {

@@ -80,26 +80,20 @@ staging:
     - git pull origin staging
 
     # composer
-    - "/usr/bin/php8.2 /usr/local/bin/composer install"
+    - "/usr/bin/php8.3 /usr/local/bin/composer install"
 
     # db
-    - "/usr/bin/php8.2 bin/console doctrine:migrations:migrate -q"
+    - "/usr/bin/php8.3 bin/console doctrine:migrations:migrate -q"
 
     # cache
-    - "/usr/bin/php8.2 bin/console cache:clear"
-    - "/usr/bin/php8.2 bin/console cache:warmup"
+    - "/usr/bin/php8.3 bin/console cache:clear"
+    - "/usr/bin/php8.3 bin/console cache:warmup"
 
     # nvm
     - "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash"
     - ". ~/.nvm/nvm.sh"
     - "nvm --version"
     - "nvm use"
-
-    # nvm
-    - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
-    - ". ~/.nvm/nvm.sh"
-    - nvm --version
-    - nvm use
 
     # yarn
     - yarn
@@ -110,7 +104,7 @@ staging:
     - sudo chgrp www-data translations/*
 
     # finally, reload php-fpm
-    - sudo systemctl reload php8.1-fpm.service
+    - sudo systemctl reload php8.3-fpm.service
 
 
 # production
@@ -139,15 +133,15 @@ production:
     - git pull origin main
 
     # composer
-    - /usr/bin/php8.2 /usr/local/bin/composer install --optimize-autoloader
-    - /usr/bin/php8.2 /usr/local/bin/composer dump-env prod
+    - /usr/bin/php8.3 /usr/local/bin/composer install --optimize-autoloader
+    - /usr/bin/php8.3 /usr/local/bin/composer dump-env prod
 
     # db
-    - "/usr/bin/php8.2 bin/console doctrine:migrations:migrate -q"
+    - "/usr/bin/php8.3 bin/console doctrine:migrations:migrate -q"
 
     # cache
-    - "/usr/bin/php8.2 bin/console cache:clear"
-    - "/usr/bin/php8.2 bin/console cache:warmup"
+    - "/usr/bin/php8.3 bin/console cache:clear"
+    - "/usr/bin/php8.3 bin/console cache:warmup"
 
     # nvm
     - "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash"
@@ -167,9 +161,9 @@ production:
     - sudo chgrp -R www-data var/cache/
     - sudo chmod -R g+w var/cache/*
 
-#     # finally, reload php-fpm
-#     - sudo systemctl reload php7.4-fpm.service
-#     - sudo systemctl restart memcached.service
+    # finally, reload php-fpm
+    - sudo systemctl reload php8.3-fpm.service
+    - sudo systemctl restart memcached.service
 
 # test
 #test:
