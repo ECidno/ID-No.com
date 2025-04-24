@@ -123,7 +123,7 @@ class Contact extends AbstractEntity
      */
     public function getContactname(): ?string
     {
-        return html_entity_decode($this->contactname);
+        return html_entity_decode($this->contactname ?? '');
     }
 
 
@@ -199,7 +199,7 @@ class Contact extends AbstractEntity
      */
     public function getBeziehung(): ?string
     {
-        return html_entity_decode($this->beziehung);
+        return html_entity_decode($this->beziehung ?? '');
     }
 
 
