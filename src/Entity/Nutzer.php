@@ -338,9 +338,9 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return string|null
+     * @return string
      */
-    public function getEmail(): ?string
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -354,9 +354,9 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return string|null
+     * @return string
      */
-    public function getUserIdentifier(): ?string
+    public function getUserIdentifier(): string
     {
         return $this->email;
     }
@@ -396,7 +396,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getVorname(): ?string
     {
-        return html_entity_decode($this->vorname);
+        return html_entity_decode($this->vorname ?? '');
     }
 
 
@@ -415,7 +415,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getNachname(): ?string
     {
-        return html_entity_decode($this->nachname);
+        return html_entity_decode($this->nachname ?? '');
     }
 
     /**
@@ -635,7 +635,7 @@ class Nutzer implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @see UserInterface
      */
-    public function eraseCredentials()
+    public function eraseCredentials(): void
     {
         // If you store any temporary, sensitive data on the user, clear it here
         $this->plainPassword = null;

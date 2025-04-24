@@ -880,7 +880,7 @@ class Person
      */
     public function getVorname(): ?string
     {
-        return html_entity_decode($this->vorname);
+        return html_entity_decode($this->vorname ?? '');
     }
 
 
@@ -899,7 +899,7 @@ class Person
      */
     public function getNachname(): ?string
     {
-        return html_entity_decode($this->nachname);
+        return html_entity_decode($this->nachname ?? '');
     }
 
     /**
@@ -911,8 +911,8 @@ class Person
             ' ',
             array_filter(
                 [
-                    html_entity_decode($this->vorname),
-                    html_entity_decode($this->nachname),
+                    html_entity_decode($this->vorname ?? ''),
+                    html_entity_decode($this->nachname ?? ''),
                 ]
             )
         );
@@ -964,7 +964,7 @@ class Person
      */
     public function getStrasse(): ?string
     {
-        return html_entity_decode($this->strasse);
+        return html_entity_decode($this->strasse ?? '');
     }
 
 
@@ -1021,7 +1021,7 @@ class Person
      */
     public function getOrt(): ?string
     {
-        return html_entity_decode($this->ort);
+        return html_entity_decode($this->ort ?? '');
     }
 
 
@@ -1059,7 +1059,7 @@ class Person
      */
     public function getZusatz(): ?string
     {
-        return html_entity_decode($this->zusatz);
+        return html_entity_decode($this->zusatz ?? '');
     }
 
 
@@ -1516,7 +1516,7 @@ class Person
      */
     public function getOperations(): ?string
     {
-        return html_entity_decode($this->operations);
+        return html_entity_decode($this->operations ?? '');
     }
 
     /**
@@ -1553,7 +1553,7 @@ class Person
      */
     public function getKrankenversicherung(): ?string
     {
-        return html_entity_decode($this->krankenversicherung);
+        return html_entity_decode($this->krankenversicherung ?? '');
     }
 
 
@@ -1629,7 +1629,7 @@ class Person
      */
     public function getZusatzversicherung(): ?string
     {
-        return html_entity_decode($this->zusatzversicherung);
+        return html_entity_decode($this->zusatzversicherung ?? '');
     }
 
 
@@ -1705,7 +1705,7 @@ class Person
      */
     public function getErkrankungen(): ?string
     {
-        return html_entity_decode($this->erkrankungen);
+        return html_entity_decode($this->erkrankungen ?? '');
     }
 
 
@@ -1743,7 +1743,7 @@ class Person
      */
     public function getMedikamente(): ?string
     {
-        return html_entity_decode($this->medikamente);
+        return html_entity_decode($this->medikamente ?? '');
     }
 
 
@@ -1781,7 +1781,7 @@ class Person
      */
     public function getAllergieen(): ?string
     {
-        return html_entity_decode($this->allergieen);
+        return html_entity_decode($this->allergieen ?? '');
     }
 
 
@@ -1895,7 +1895,7 @@ class Person
      */
     public function getWeitereangaben(): ?string
     {
-        return html_entity_decode($this->weitereangaben);
+        return html_entity_decode($this->weitereangaben ?? '');
     }
 
 
@@ -1980,7 +1980,7 @@ class Person
 
 
     /**
-     * @param int $itemCount
+     * @param ?int $itemCount
      * @return Person
      */
     public function setItemCount(?int $itemCount): self
@@ -1994,7 +1994,7 @@ class Person
      */
     public function getItemCount(): ?int
     {
-        return html_entity_decode($this->itemCount);
+        return $this->itemCount;
     }
 
     /**
