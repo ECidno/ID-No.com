@@ -8,6 +8,7 @@ namespace App\Controller;
  **********************************************************************/
 
 use App\Entity\Items;
+use App\Entity\LogEntry;
 use App\Entity\Person;
 use App\Entity\PersonImages;
 use App\Form\Type\PersonType;
@@ -236,6 +237,24 @@ class PersonApiController extends AbstractApiController
                 $this->getTranslateKey('action.edit.error')
             );
 
+            // log
+            $logEntry = new LogEntry(
+                PersonApiController::class,
+                $object->getId(),
+                'form-validation',
+                $object->getEmail(),
+                LogEntry::SEVERITY_INFO
+            );
+
+            // details
+            $logEntry->setDetails([
+                'errors' => $errors,
+            ]);
+
+            // persist to database
+            $this->emDefault->persist($logEntry);
+            $this->emDefault->flush();
+
             // Return status code 400 for validation errors: https://stackoverflow.com/a/3290198
             return $this->json(
                 [
@@ -249,6 +268,24 @@ class PersonApiController extends AbstractApiController
             $message = $this->translator->trans(
                 $this->getTranslateKey('action.edit.error')
             );
+
+            // log
+            $logEntry = new LogEntry(
+                PersonApiController::class,
+                $object->getId(),
+                'form-validation',
+                $object->getEmail(),
+                LogEntry::SEVERITY_INFO
+            );
+
+            // details
+            $logEntry->setDetails([
+                'errors' => 'form not submitted',
+            ]);
+
+            // persist to database
+            $this->emDefault->persist($logEntry);
+            $this->emDefault->flush();
         }
 
         // return
