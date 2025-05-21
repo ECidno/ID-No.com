@@ -248,7 +248,7 @@ class PersonApiController extends AbstractApiController
 
             // details
             $logEntry->setDetails([
-                'errors' => $errors,
+                'errors' => json_encode($errors),
             ]);
 
             // persist to database
