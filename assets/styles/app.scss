@@ -351,14 +351,25 @@ body.modal-open .background-container {
 .emblem-datenschutzexperte.footer {
   margin-top: -16px;
 }
-/*
-@media (max-width: 575px) {
-  .emblem-datenschutzexperte.footer {
-    margin-top: 0;
-    margin-left: -10px;
+@media (max-width: 1100px) {
+  .emblem-datenschutzexperte.account {
+    right: -130px;
   }
 }
-*/
+@media (max-width: 991px) {
+  .emblem-datenschutzexperte.account {
+    width: 90px;
+    right: 0;
+    img {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .emblem-datenschutzexperte.account {
+    width: 75px;
+  }
+}
 
 /* notfallpass form */
 .pass-entry-list {
