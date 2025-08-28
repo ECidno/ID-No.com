@@ -252,8 +252,8 @@ class SecurityController extends AbstractController
             if ($form->isSubmitted() && $form->isValid()) {
                 $email = strtolower($form->get('email')->getData());
 
-                $person = $this->emDefault
-                    ->getRepository(Person::class)
+                $nutzer = $this->emDefault
+                    ->getRepository(Nutzer::class)
                     ->findOneByEmail($email);
 
                 // code for password reset
@@ -277,9 +277,9 @@ class SecurityController extends AbstractController
                 $this->mailService->infoMail(
                     [
                         'subject' => 'Passworthilfe',
-                        'recipientEmail' => $person->getEmail(),
-                        'recipientName' => $person->getFullName(),
-                        'person' => $person,
+                        'recipientEmail' => $nutzer->getEmail(),
+                        'recipientName' => $nutzer->getFullName(),
+                        'person' => $nutzer,
                         'code' => $code
                     ],
                     'resetPassword'
