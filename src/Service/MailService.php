@@ -129,7 +129,7 @@ class MailService
             0,
             'mail_sent',
             $data['recipientEmail'],
-            LogEntry::SEVERITY_INFO
+            ($template === 'itemScanned') ? LogEntry::SEVERITY_WARN : LogEntry::SEVERITY_INFO
         );
 
         // details
