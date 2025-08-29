@@ -7,6 +7,8 @@ namespace App\Service;
  *
  ***********************************************************************/
 
+use App\Entity\LogEntry;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
@@ -28,6 +30,10 @@ class MailService
      */
     private $mailer;
 
+    /**
+     * @var EntitiyManager $em
+     */
+    protected $em;
 
     /**
      * Constructor
@@ -35,9 +41,11 @@ class MailService
      * @param MailerInterface $mailer
      */
     public function __construct(
-        MailerInterface $mailer
+        MailerInterface $mailer,
+        ManagerRegistry $registry
     ) {
         $this->mailer = $mailer;
+        $this->em = $registry->getManager('default');
     }
 
 
@@ -115,13 +123,46 @@ class MailService
 #            ->textTemplate('mail/'.$template.'.txt.twig')
             ->context($data);
 
+        // log
+        $logEntry = new LogEntry(
+            MailService::class,
+            0,
+            'mail_sent',
+            $data['recipientEmail'],
+            LogEntry::SEVERITY_INFO
+        );
+
+        // details
+        $logEntry->setDetails([
+            'template' => $template
+        ]);
+
+        // persist to database
+        $this->em->persist($logEntry);
+        $this->em->flush();
+
         // try send
         try {
             $this->mailer->send($email);
 
         // catch e
         } catch (TransportExceptionInterface $e) {
-            # @TODO Logging
+            // log fail
+            $logEntry = new LogEntry(
+                MailService::class,
+                0,
+                'mail_failure',
+                $data['recipientEmail'],
+                LogEntry::SEVERITY_ERROR,
+                [
+                    'error' => get_class($e),
+                    'message' => $e->getMessage(),
+                ]
+            );
+
+            // persist to database
+            $this->em->persist($logEntry);
+            $this->em->flush();
         }
     }
 }
