@@ -55,9 +55,9 @@ parameters:
       index:
         route: app_standard_index
         slug:
-      company:
-        route: idno_content_unternehmen
-        slug: unternehmen
+      #company:
+      #  route: idno_content_unternehmen
+      #  slug: unternehmen
       press:
         route: idno_content_presse
         slug: presse
@@ -103,8 +103,8 @@ parameters:
           testimonials:
             page: index
             anchor: testimonials
-          company:
-            page: company
+          #company:
+          #  page: company
           press:
             page: press
           references:
@@ -123,8 +123,8 @@ parameters:
 
       # footer menu
       footer:
-        company:
-          page: company
+        #company:
+        #  page: company
         presse:
           page: press
         agb:
