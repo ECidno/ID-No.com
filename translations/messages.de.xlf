@@ -5244,5 +5244,11 @@ Alle Kontakte, die mit diesem Profil verbunden sind, werden ebenfalls gelöscht.
         <target>ID-No.com – Ihr digitaler Notfallpass für medizinische Daten</target>
       </segment>
     </unit>
+    <unit id="VmHhU3I" name="session.expired.error">
+      <segment>
+        <source>session.expired.error</source>
+        <target>Ihre Session ist abgelaufen. Bitte loggen Sie sich erneut ein.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

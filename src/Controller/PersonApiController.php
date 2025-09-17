@@ -233,9 +233,18 @@ class PersonApiController extends AbstractApiController
         // form invalid
         } else if ($form->isSubmitted() && !$form->isValid()) {
             $errors = $this->collectFormErrors($form);
+            $sessionExpired = array_filter($errors, function($entry) {
+                if (is_string($entry)) {
+                    return strpos($entry, 'CSRF')!==false;
+                }
+            });
             $message = $this->translator->trans(
                 $this->getTranslateKey('action.edit.error')
             );
+            if (count($sessionExpired)) {
+                $message = $this->translator->trans('session.expired.error');
+            }
+
 
             // log
             $logEntry = new LogEntry(
