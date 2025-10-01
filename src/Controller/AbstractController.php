@@ -5,7 +5,7 @@ namespace App\Controller;
  *
  * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
  *
- * /*********************************************************************/
+ ***********************************************************************/
 
 use App\Service\MailService;
 use Psr\Log\LoggerInterface;
