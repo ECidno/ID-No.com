@@ -28,6 +28,7 @@
 /public/build/
 npm-debug.log
 yarn-error.log
+.yarn/install-state.gz
 ###< symfony/webpack-encore-bundle ###
 
 composer.lock
