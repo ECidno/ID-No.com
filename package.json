@@ -31,5 +31,6 @@
         "leaflet": "^1.9.3",
         "placeholder-loading": "^0.6.0",
         "timeago.js": "^4.0.2"
-    }
+    },
+    "packageManager": "yarn@4.10.3"
 }
