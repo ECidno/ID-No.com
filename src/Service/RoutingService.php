@@ -5,7 +5,7 @@ namespace App\Service;
  *
  * (c) 2022 mpDevTeam <dev@mp-group.net>, mp group GmbH
  *
- * /*********************************************************************/
+ ***********************************************************************/
 
 use Symfony\Bundle\FrameworkBundle\Routing\RouteLoaderInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
