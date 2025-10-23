@@ -1,0 +1,57 @@
+name: Deploy Staging
+
+on:
+  push:
+    branches: [ "staging" ]
+  pull_request:
+    branches: [ "staging" ]
+
+permissions:
+  contents: read
+
+jobs:
+  symfony-tests:
+    runs-on: ubuntu-latest
+    steps:
+
+    #  To automatically get bug fixes and new Php versions for shivammathur/setup-php,
+    # change this to (see https://github.com/shivammathur/setup-php#bookmark-versioning):
+    # uses: shivammathur/setup-php@v2
+    - uses: shivammathur/setup-php@2cb9b829437ee246e9b3cac53555a39208ca6d28
+      with:
+        php-version: '8.3'
+    - uses: actions/checkout@v4
+
+    #- name: Copy .env.test.local
+    #  run: php -r "file_exists('.env.test.local') || copy('.env.test', '.env.test.local');"
+
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+    - name: Deploy SSH keys
+      env:
+        MITTWALD_SSH_PRIVATE_KEY: ${{ secrets.MITTWALD_SSH_PRIVATE_KEY }}
+        MITTWALD_SSH_PUBLIC_KEY: ${{ secrets.MITTWALD_SSH_PUBLIC_KEY }}
+      run: |
+        mkdir -p .mw-deploy
+        echo "${MITTWALD_SSH_PRIVATE_KEY}" > .mw-deploy/id_rsa
+        echo "${MITTWALD_SSH_PUBLIC_KEY}" > .mw-deploy/id_rsa.pub
+        chmod 600 .mw-deploy/id_rsa*
+
+    - name: Run deployer
+      run: |
+        ./vendor/bin/dep deploy \
+          -o mittwald_app_id={{ secrets.MITTWALD_APP_ID }} \
+          -o mittwald_ssh_public_key_file=.mw-deploy/id_rsa.pub \
+          -o mittwald_ssh_private_key_file=.mw-deploy/id_rsa
+      env:
+        MITTWALD_API_TOKEN: ${{ secrets.MITTWALD_API_TOKEN }}

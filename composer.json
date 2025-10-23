@@ -103,6 +103,8 @@
         }
     },
     "require-dev": {
+        "deployer/deployer": "^7.5",
+        "mittwald/deployer-recipes": "^1.0",
         "php-translation/symfony-bundle": "^0.12.7",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "5.4.*",
