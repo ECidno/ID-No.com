@@ -62,14 +62,10 @@ staging:
   # limit build to staging
   only:
     - staging
+
   except:
     - main
     - development
-
-  # before
-  before_script:
-    - cd /srv/www/symfony.idno/html
-    - yarn config set cache-folder .yarn
 
   # the script itself
   script:
@@ -80,7 +76,7 @@ staging:
     - git pull origin staging
 
     # composer
-    - "/usr/bin/php8.3 /usr/local/bin/composer install"
+    - "/usr/bin/php8.3 /usr/local/bin/composer install --optimize-autoloader --apcu-autoloader"
 
     # db
     - "/usr/bin/php8.3 bin/console doctrine:migrations:migrate -q"
@@ -90,14 +86,14 @@ staging:
     - "/usr/bin/php8.3 bin/console cache:warmup"
 
     # nvm
-    - "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash"
+    - "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash"
     - ". ~/.nvm/nvm.sh"
     - "nvm --version"
     - "nvm use"
 
     # yarn
     - yarn
-    - yarn encore dev
+    - yarn build
 
     # rights
     - sudo chgrp -R www-data var/cache/*
@@ -116,14 +112,10 @@ production:
   # limit build to main
   only:
     - main
+
   except:
     - staging
     - development
-
-  # before
-  before_script:
-    - cd /srv/www/id-no.com/html
-    - yarn config set cache-folder .yarn
 
   # the script itself
   script:
@@ -133,7 +125,7 @@ production:
     - git pull origin main
 
     # composer
-    - /usr/bin/php8.3 /usr/local/bin/composer install --optimize-autoloader
+    - "/usr/bin/php8.3 /usr/local/bin/composer install --optimize-autoloader --apcu-autoloader"
     - /usr/bin/php8.3 /usr/local/bin/composer dump-env prod
 
     # db
@@ -144,14 +136,14 @@ production:
     - "/usr/bin/php8.3 bin/console cache:warmup"
 
     # nvm
-    - "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash"
+    - "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash"
     - ". ~/.nvm/nvm.sh"
     - "nvm --version"
     - "nvm use --delete-prefix"
 
     # yarn
     - yarn
-    - yarn encore production --progress
+    - yarn build
 
   # after
   after_script:
